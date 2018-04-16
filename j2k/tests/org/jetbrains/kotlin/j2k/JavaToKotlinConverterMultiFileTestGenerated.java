@@ -21,52 +21,56 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class JavaToKotlinConverterMultiFileTestGenerated extends AbstractJavaToKotlinConverterMultiFileTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInMultiFile() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("j2k/testData/multiFile"), Pattern.compile("^([^\\.]+)$"), TargetBackend.ANY, false);
     }
 
     @TestMetadata("AnnotationWithArrayParameter")
     public void testAnnotationWithArrayParameter() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "j2k/testData/multiFile/AnnotationWithArrayParameter/");
+        runTest("j2k/testData/multiFile/AnnotationWithArrayParameter/");
     }
 
     @TestMetadata("FieldToProperty")
     public void testFieldToProperty() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "j2k/testData/multiFile/FieldToProperty/");
+        runTest("j2k/testData/multiFile/FieldToProperty/");
     }
 
     @TestMetadata("FunctionalInterfaceAcceptor")
     public void testFunctionalInterfaceAcceptor() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "j2k/testData/multiFile/FunctionalInterfaceAcceptor/");
+        runTest("j2k/testData/multiFile/FunctionalInterfaceAcceptor/");
     }
 
     @TestMetadata("GetterAndSetterUsages")
     public void testGetterAndSetterUsages() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "j2k/testData/multiFile/GetterAndSetterUsages/");
+        runTest("j2k/testData/multiFile/GetterAndSetterUsages/");
     }
 
     @TestMetadata("KT11952")
     public void testKT11952() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "j2k/testData/multiFile/KT11952/");
+        runTest("j2k/testData/multiFile/KT11952/");
     }
 
     @TestMetadata("NullabilityByDFa")
     public void testNullabilityByDFa() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "j2k/testData/multiFile/NullabilityByDFa/");
+        runTest("j2k/testData/multiFile/NullabilityByDFa/");
     }
 
     @TestMetadata("ProtectedVisibility")
     public void testProtectedVisibility() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "j2k/testData/multiFile/ProtectedVisibility/");
+        runTest("j2k/testData/multiFile/ProtectedVisibility/");
     }
 
     @TestMetadata("ToCompanionObject")
     public void testToCompanionObject() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "j2k/testData/multiFile/ToCompanionObject/");
+        runTest("j2k/testData/multiFile/ToCompanionObject/");
     }
 
     @TestMetadata("ToObject")
     public void testToObject() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "j2k/testData/multiFile/ToObject/");
+        runTest("j2k/testData/multiFile/ToObject/");
     }
 }

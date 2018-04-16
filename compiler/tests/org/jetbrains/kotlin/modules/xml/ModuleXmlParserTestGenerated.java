@@ -21,47 +21,51 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class ModuleXmlParserTestGenerated extends AbstractModuleXmlParserTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInModules_xml() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/modules.xml"), Pattern.compile("^(.+)\\.xml$"), TargetBackend.ANY, true);
     }
 
     @TestMetadata("allOnce.xml")
     public void testAllOnce() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/modules.xml/allOnce.xml");
+        runTest("compiler/testData/modules.xml/allOnce.xml");
     }
 
     @TestMetadata("comments.xml")
     public void testComments() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/modules.xml/comments.xml");
+        runTest("compiler/testData/modules.xml/comments.xml");
     }
 
     @TestMetadata("empty.xml")
     public void testEmpty() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/modules.xml/empty.xml");
+        runTest("compiler/testData/modules.xml/empty.xml");
     }
 
     @TestMetadata("emptyModule.xml")
     public void testEmptyModule() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/modules.xml/emptyModule.xml");
+        runTest("compiler/testData/modules.xml/emptyModule.xml");
     }
 
     @TestMetadata("manyTimes.xml")
     public void testManyTimes() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/modules.xml/manyTimes.xml");
+        runTest("compiler/testData/modules.xml/manyTimes.xml");
     }
 
     @TestMetadata("onlySources.xml")
     public void testOnlySources() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/modules.xml/onlySources.xml");
+        runTest("compiler/testData/modules.xml/onlySources.xml");
     }
 
     @TestMetadata("twoModules.xml")
     public void testTwoModules() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/modules.xml/twoModules.xml");
+        runTest("compiler/testData/modules.xml/twoModules.xml");
     }
 
     @TestMetadata("typeTestModule.xml")
     public void testTypeTestModule() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/modules.xml/typeTestModule.xml");
+        runTest("compiler/testData/modules.xml/typeTestModule.xml");
     }
 }

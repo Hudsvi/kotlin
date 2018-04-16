@@ -23,28 +23,32 @@ public class LoadJava8UsingJavacTestGenerated extends AbstractLoadJava8UsingJava
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class CompiledJava extends AbstractLoadJava8UsingJavacTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTestCompiledJava, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInCompiledJava() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/loadJava8/compiledJava"), Pattern.compile("^(.+)\\.java$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("InnerClassTypeAnnotation.java")
         public void testInnerClassTypeAnnotation() throws Exception {
-            KotlinTestUtils.runTest(this::doTestCompiledJava,TargetBackend.ANY, "compiler/testData/loadJava8/compiledJava/InnerClassTypeAnnotation.java");
+            runTest("compiler/testData/loadJava8/compiledJava/InnerClassTypeAnnotation.java");
         }
 
         @TestMetadata("MapRemove.java")
         public void testMapRemove() throws Exception {
-            KotlinTestUtils.runTest(this::doTestCompiledJava,TargetBackend.ANY, "compiler/testData/loadJava8/compiledJava/MapRemove.java");
+            runTest("compiler/testData/loadJava8/compiledJava/MapRemove.java");
         }
 
         @TestMetadata("TypeAnnotations.java")
         public void testTypeAnnotations() throws Exception {
-            KotlinTestUtils.runTest(this::doTestCompiledJava,TargetBackend.ANY, "compiler/testData/loadJava8/compiledJava/TypeAnnotations.java");
+            runTest("compiler/testData/loadJava8/compiledJava/TypeAnnotations.java");
         }
 
         @TestMetadata("TypeParameterAnnotations.java")
         public void testTypeParameterAnnotations() throws Exception {
-            KotlinTestUtils.runTest(this::doTestCompiledJava,TargetBackend.ANY, "compiler/testData/loadJava8/compiledJava/TypeParameterAnnotations.java");
+            runTest("compiler/testData/loadJava8/compiledJava/TypeParameterAnnotations.java");
         }
     }
 
@@ -52,23 +56,27 @@ public class LoadJava8UsingJavacTestGenerated extends AbstractLoadJava8UsingJava
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class SourceJava extends AbstractLoadJava8UsingJavacTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTestSourceJava, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInSourceJava() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/loadJava8/sourceJava"), Pattern.compile("^(.+)\\.java$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("MapRemove.java")
         public void testMapRemove() throws Exception {
-            KotlinTestUtils.runTest(this::doTestSourceJava,TargetBackend.ANY, "compiler/testData/loadJava8/sourceJava/MapRemove.java");
+            runTest("compiler/testData/loadJava8/sourceJava/MapRemove.java");
         }
 
         @TestMetadata("TypeAnnotations.java")
         public void testTypeAnnotations() throws Exception {
-            KotlinTestUtils.runTest(this::doTestSourceJava,TargetBackend.ANY, "compiler/testData/loadJava8/sourceJava/TypeAnnotations.java");
+            runTest("compiler/testData/loadJava8/sourceJava/TypeAnnotations.java");
         }
 
         @TestMetadata("TypeParameterAnnotations.java")
         public void testTypeParameterAnnotations() throws Exception {
-            KotlinTestUtils.runTest(this::doTestSourceJava,TargetBackend.ANY, "compiler/testData/loadJava8/sourceJava/TypeParameterAnnotations.java");
+            runTest("compiler/testData/loadJava8/sourceJava/TypeParameterAnnotations.java");
         }
     }
 }

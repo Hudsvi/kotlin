@@ -21,42 +21,46 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class IdeReplCompletionTestGenerated extends AbstractIdeReplCompletionTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInCompletion() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/repl/completion"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
     }
 
     @TestMetadata("builtInMember.kt")
     public void testBuiltInMember() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/repl/completion/builtInMember.kt");
+        runTest("idea/testData/repl/completion/builtInMember.kt");
     }
 
     @TestMetadata("definedClass.kt")
     public void testDefinedClass() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/repl/completion/definedClass.kt");
+        runTest("idea/testData/repl/completion/definedClass.kt");
     }
 
     @TestMetadata("definedClassMember.kt")
     public void testDefinedClassMember() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/repl/completion/definedClassMember.kt");
+        runTest("idea/testData/repl/completion/definedClassMember.kt");
     }
 
     @TestMetadata("definedExtension.kt")
     public void testDefinedExtension() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/repl/completion/definedExtension.kt");
+        runTest("idea/testData/repl/completion/definedExtension.kt");
     }
 
     @TestMetadata("functions.kt")
     public void testFunctions() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/repl/completion/functions.kt");
+        runTest("idea/testData/repl/completion/functions.kt");
     }
 
     @TestMetadata("stdlib.kt")
     public void testStdlib() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/repl/completion/stdlib.kt");
+        runTest("idea/testData/repl/completion/stdlib.kt");
     }
 
     @TestMetadata("variables.kt")
     public void testVariables() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/repl/completion/variables.kt");
+        runTest("idea/testData/repl/completion/variables.kt");
     }
 }

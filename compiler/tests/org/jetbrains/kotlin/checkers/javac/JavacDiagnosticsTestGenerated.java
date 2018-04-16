@@ -23,106 +23,114 @@ public class JavacDiagnosticsTestGenerated extends AbstractJavacDiagnosticsTest 
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Tests extends AbstractJavacDiagnosticsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInTests() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/javac/diagnostics/tests"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("Annotations.kt")
         public void testAnnotations() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/Annotations.kt");
+            runTest("compiler/testData/javac/diagnostics/tests/Annotations.kt");
         }
 
         @TestMetadata("compiler/testData/javac/diagnostics/tests/imports")
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Imports extends AbstractJavacDiagnosticsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInImports() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/javac/diagnostics/tests/imports"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("AllUnderImportsAmbiguity.kt")
             public void testAllUnderImportsAmbiguity() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/imports/AllUnderImportsAmbiguity.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/imports/AllUnderImportsAmbiguity.kt");
             }
 
             @TestMetadata("AllUnderImportsLessPriority.kt")
             public void testAllUnderImportsLessPriority() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/imports/AllUnderImportsLessPriority.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/imports/AllUnderImportsLessPriority.kt");
             }
 
             @TestMetadata("ClassImportsConflicting.kt")
             public void testClassImportsConflicting() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/imports/ClassImportsConflicting.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/imports/ClassImportsConflicting.kt");
             }
 
             @TestMetadata("CurrentPackageAndAllUnderImport.kt")
             public void testCurrentPackageAndAllUnderImport() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/imports/CurrentPackageAndAllUnderImport.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/imports/CurrentPackageAndAllUnderImport.kt");
             }
 
             @TestMetadata("CurrentPackageAndExplicitImport.kt")
             public void testCurrentPackageAndExplicitImport() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/imports/CurrentPackageAndExplicitImport.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/imports/CurrentPackageAndExplicitImport.kt");
             }
 
             @TestMetadata("CurrentPackageAndExplicitNestedImport.kt")
             public void testCurrentPackageAndExplicitNestedImport() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/imports/CurrentPackageAndExplicitNestedImport.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/imports/CurrentPackageAndExplicitNestedImport.kt");
             }
 
             @TestMetadata("CurrentPackageAndNestedAsteriskImport.kt")
             public void testCurrentPackageAndNestedAsteriskImport() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/imports/CurrentPackageAndNestedAsteriskImport.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/imports/CurrentPackageAndNestedAsteriskImport.kt");
             }
 
             @TestMetadata("ImportGenericVsPackage.kt")
             public void testImportGenericVsPackage() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/imports/ImportGenericVsPackage.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/imports/ImportGenericVsPackage.kt");
             }
 
             @TestMetadata("ImportProtectedClass.kt")
             public void testImportProtectedClass() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/imports/ImportProtectedClass.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/imports/ImportProtectedClass.kt");
             }
 
             @TestMetadata("ImportTwoTimes.kt")
             public void testImportTwoTimes() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/imports/ImportTwoTimes.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/imports/ImportTwoTimes.kt");
             }
 
             @TestMetadata("ImportTwoTimesStar.kt")
             public void testImportTwoTimesStar() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/imports/ImportTwoTimesStar.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/imports/ImportTwoTimesStar.kt");
             }
 
             @TestMetadata("NestedAndTopLevelClassClash.kt")
             public void testNestedAndTopLevelClassClash() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/imports/NestedAndTopLevelClassClash.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/imports/NestedAndTopLevelClassClash.kt");
             }
 
             @TestMetadata("NestedClassClash.kt")
             public void testNestedClassClash() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/imports/NestedClassClash.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/imports/NestedClassClash.kt");
             }
 
             @TestMetadata("PackageExplicitAndStartImport.kt")
             public void testPackageExplicitAndStartImport() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/imports/PackageExplicitAndStartImport.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/imports/PackageExplicitAndStartImport.kt");
             }
 
             @TestMetadata("PackagePrivateAndPublicNested.kt")
             public void testPackagePrivateAndPublicNested() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/imports/PackagePrivateAndPublicNested.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/imports/PackagePrivateAndPublicNested.kt");
             }
 
             @TestMetadata("TopLevelClassVsPackage.kt")
             public void testTopLevelClassVsPackage() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/imports/TopLevelClassVsPackage.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/imports/TopLevelClassVsPackage.kt");
             }
 
             @TestMetadata("TopLevelClassVsPackage2.kt")
             public void testTopLevelClassVsPackage2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/imports/TopLevelClassVsPackage2.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/imports/TopLevelClassVsPackage2.kt");
             }
         }
 
@@ -130,103 +138,107 @@ public class JavacDiagnosticsTestGenerated extends AbstractJavacDiagnosticsTest 
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Inheritance extends AbstractJavacDiagnosticsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInInheritance() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/javac/diagnostics/tests/inheritance"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("IheritanceOfInner.kt")
             public void testIheritanceOfInner() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/IheritanceOfInner.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/IheritanceOfInner.kt");
             }
 
             @TestMetadata("InheritanceAmbiguity.kt")
             public void testInheritanceAmbiguity() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/InheritanceAmbiguity.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/InheritanceAmbiguity.kt");
             }
 
             @TestMetadata("InheritanceAmbiguity2.kt")
             public void testInheritanceAmbiguity2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/InheritanceAmbiguity2.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/InheritanceAmbiguity2.kt");
             }
 
             @TestMetadata("InheritanceAmbiguity3.kt")
             public void testInheritanceAmbiguity3() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/InheritanceAmbiguity3.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/InheritanceAmbiguity3.kt");
             }
 
             @TestMetadata("InheritanceAmbiguity4.kt")
             public void testInheritanceAmbiguity4() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/InheritanceAmbiguity4.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/InheritanceAmbiguity4.kt");
             }
 
             @TestMetadata("InheritanceWithKotlin.kt")
             public void testInheritanceWithKotlin() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/InheritanceWithKotlin.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/InheritanceWithKotlin.kt");
             }
 
             @TestMetadata("InheritanceWithKotlinClasses.kt")
             public void testInheritanceWithKotlinClasses() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/InheritanceWithKotlinClasses.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/InheritanceWithKotlinClasses.kt");
             }
 
             @TestMetadata("InheritedInner.kt")
             public void testInheritedInner() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/InheritedInner.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/InheritedInner.kt");
             }
 
             @TestMetadata("InheritedInner2.kt")
             public void testInheritedInner2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/InheritedInner2.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/InheritedInner2.kt");
             }
 
             @TestMetadata("InheritedInnerAndSupertypeWithSameName.kt")
             public void testInheritedInnerAndSupertypeWithSameName() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/InheritedInnerAndSupertypeWithSameName.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/InheritedInnerAndSupertypeWithSameName.kt");
             }
 
             @TestMetadata("InheritedInnerUsageInInner.kt")
             public void testInheritedInnerUsageInInner() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/InheritedInnerUsageInInner.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/InheritedInnerUsageInInner.kt");
             }
 
             @TestMetadata("InheritedKotlinInner.kt")
             public void testInheritedKotlinInner() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/InheritedKotlinInner.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/InheritedKotlinInner.kt");
             }
 
             @TestMetadata("InnerAndInheritedInner.kt")
             public void testInnerAndInheritedInner() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/InnerAndInheritedInner.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/InnerAndInheritedInner.kt");
             }
 
             @TestMetadata("ManyInheritedClasses.kt")
             public void testManyInheritedClasses() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/ManyInheritedClasses.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/ManyInheritedClasses.kt");
             }
 
             @TestMetadata("NoAmbiguity.kt")
             public void testNoAmbiguity() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/NoAmbiguity.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/NoAmbiguity.kt");
             }
 
             @TestMetadata("NoAmbiguity2.kt")
             public void testNoAmbiguity2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/NoAmbiguity2.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/NoAmbiguity2.kt");
             }
 
             @TestMetadata("SameInnersInSupertypeAndSupertypesSupertype.kt")
             public void testSameInnersInSupertypeAndSupertypesSupertype() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/SameInnersInSupertypeAndSupertypesSupertype.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/SameInnersInSupertypeAndSupertypesSupertype.kt");
             }
 
             @TestMetadata("SuperTypeWithSameInner.kt")
             public void testSuperTypeWithSameInner() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/SuperTypeWithSameInner.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/SuperTypeWithSameInner.kt");
             }
 
             @TestMetadata("SupertypeInnerAndTypeParameterWithSameNames.kt")
             public void testSupertypeInnerAndTypeParameterWithSameNames() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/SupertypeInnerAndTypeParameterWithSameNames.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/SupertypeInnerAndTypeParameterWithSameNames.kt");
             }
         }
 
@@ -234,43 +246,47 @@ public class JavacDiagnosticsTestGenerated extends AbstractJavacDiagnosticsTest 
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Inners extends AbstractJavacDiagnosticsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInInners() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/javac/diagnostics/tests/inners"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("ComplexCase.kt")
             public void testComplexCase() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inners/ComplexCase.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inners/ComplexCase.kt");
             }
 
             @TestMetadata("ComplexCase2.kt")
             public void testComplexCase2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inners/ComplexCase2.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inners/ComplexCase2.kt");
             }
 
             @TestMetadata("CurrentPackageAndInner.kt")
             public void testCurrentPackageAndInner() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inners/CurrentPackageAndInner.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inners/CurrentPackageAndInner.kt");
             }
 
             @TestMetadata("ImportThriceNestedClass.kt")
             public void testImportThriceNestedClass() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inners/ImportThriceNestedClass.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inners/ImportThriceNestedClass.kt");
             }
 
             @TestMetadata("InnerInInner.kt")
             public void testInnerInInner() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inners/InnerInInner.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inners/InnerInInner.kt");
             }
 
             @TestMetadata("Nested.kt")
             public void testNested() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inners/Nested.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inners/Nested.kt");
             }
 
             @TestMetadata("ThriceNestedClass.kt")
             public void testThriceNestedClass() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inners/ThriceNestedClass.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inners/ThriceNestedClass.kt");
             }
         }
 
@@ -278,33 +294,37 @@ public class JavacDiagnosticsTestGenerated extends AbstractJavacDiagnosticsTest 
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class QualifiedExpression extends AbstractJavacDiagnosticsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInQualifiedExpression() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/javac/diagnostics/tests/qualifiedExpression"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("GenericClassVsPackage.kt")
             public void testGenericClassVsPackage() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/qualifiedExpression/GenericClassVsPackage.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/qualifiedExpression/GenericClassVsPackage.kt");
             }
 
             @TestMetadata("PackageVsClass.kt")
             public void testPackageVsClass() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/qualifiedExpression/PackageVsClass.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/qualifiedExpression/PackageVsClass.kt");
             }
 
             @TestMetadata("PackageVsClass2.kt")
             public void testPackageVsClass2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/qualifiedExpression/PackageVsClass2.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/qualifiedExpression/PackageVsClass2.kt");
             }
 
             @TestMetadata("PackageVsRootClass.kt")
             public void testPackageVsRootClass() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/qualifiedExpression/PackageVsRootClass.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/qualifiedExpression/PackageVsRootClass.kt");
             }
 
             @TestMetadata("visibleClassVsQualifiedClass.kt")
             public void testVisibleClassVsQualifiedClass() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/qualifiedExpression/visibleClassVsQualifiedClass.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/qualifiedExpression/visibleClassVsQualifiedClass.kt");
             }
         }
 
@@ -312,43 +332,47 @@ public class JavacDiagnosticsTestGenerated extends AbstractJavacDiagnosticsTest 
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class TypeParameters extends AbstractJavacDiagnosticsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInTypeParameters() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/javac/diagnostics/tests/typeParameters"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("Clash.kt")
             public void testClash() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/typeParameters/Clash.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/typeParameters/Clash.kt");
             }
 
             @TestMetadata("ComplexCase.kt")
             public void testComplexCase() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/typeParameters/ComplexCase.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/typeParameters/ComplexCase.kt");
             }
 
             @TestMetadata("InheritedInnerAndTypeParameterWithSameNames.kt")
             public void testInheritedInnerAndTypeParameterWithSameNames() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/typeParameters/InheritedInnerAndTypeParameterWithSameNames.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/typeParameters/InheritedInnerAndTypeParameterWithSameNames.kt");
             }
 
             @TestMetadata("InnerWithTypeParameter.kt")
             public void testInnerWithTypeParameter() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/typeParameters/InnerWithTypeParameter.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/typeParameters/InnerWithTypeParameter.kt");
             }
 
             @TestMetadata("NestedWithInner.kt")
             public void testNestedWithInner() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/typeParameters/NestedWithInner.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/typeParameters/NestedWithInner.kt");
             }
 
             @TestMetadata("SeveralInnersWithTypeParameters.kt")
             public void testSeveralInnersWithTypeParameters() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/typeParameters/SeveralInnersWithTypeParameters.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/typeParameters/SeveralInnersWithTypeParameters.kt");
             }
 
             @TestMetadata("TypeParametersInInnerAndOuterWithSameNames.kt")
             public void testTypeParametersInInnerAndOuterWithSameNames() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/typeParameters/TypeParametersInInnerAndOuterWithSameNames.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/typeParameters/TypeParametersInInnerAndOuterWithSameNames.kt");
             }
         }
     }
@@ -357,106 +381,114 @@ public class JavacDiagnosticsTestGenerated extends AbstractJavacDiagnosticsTest 
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class TestsWithoutJavac extends AbstractJavacDiagnosticsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInTestsWithoutJavac() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/javac/diagnostics/tests"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("Annotations.kt")
         public void testAnnotations() throws Exception {
-            KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/Annotations.kt");
+            runTest("compiler/testData/javac/diagnostics/tests/Annotations.kt");
         }
 
         @TestMetadata("compiler/testData/javac/diagnostics/tests/imports")
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Imports extends AbstractJavacDiagnosticsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInImports() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/javac/diagnostics/tests/imports"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("AllUnderImportsAmbiguity.kt")
             public void testAllUnderImportsAmbiguity() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/imports/AllUnderImportsAmbiguity.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/imports/AllUnderImportsAmbiguity.kt");
             }
 
             @TestMetadata("AllUnderImportsLessPriority.kt")
             public void testAllUnderImportsLessPriority() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/imports/AllUnderImportsLessPriority.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/imports/AllUnderImportsLessPriority.kt");
             }
 
             @TestMetadata("ClassImportsConflicting.kt")
             public void testClassImportsConflicting() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/imports/ClassImportsConflicting.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/imports/ClassImportsConflicting.kt");
             }
 
             @TestMetadata("CurrentPackageAndAllUnderImport.kt")
             public void testCurrentPackageAndAllUnderImport() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/imports/CurrentPackageAndAllUnderImport.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/imports/CurrentPackageAndAllUnderImport.kt");
             }
 
             @TestMetadata("CurrentPackageAndExplicitImport.kt")
             public void testCurrentPackageAndExplicitImport() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/imports/CurrentPackageAndExplicitImport.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/imports/CurrentPackageAndExplicitImport.kt");
             }
 
             @TestMetadata("CurrentPackageAndExplicitNestedImport.kt")
             public void testCurrentPackageAndExplicitNestedImport() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/imports/CurrentPackageAndExplicitNestedImport.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/imports/CurrentPackageAndExplicitNestedImport.kt");
             }
 
             @TestMetadata("CurrentPackageAndNestedAsteriskImport.kt")
             public void testCurrentPackageAndNestedAsteriskImport() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/imports/CurrentPackageAndNestedAsteriskImport.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/imports/CurrentPackageAndNestedAsteriskImport.kt");
             }
 
             @TestMetadata("ImportGenericVsPackage.kt")
             public void testImportGenericVsPackage() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/imports/ImportGenericVsPackage.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/imports/ImportGenericVsPackage.kt");
             }
 
             @TestMetadata("ImportProtectedClass.kt")
             public void testImportProtectedClass() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/imports/ImportProtectedClass.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/imports/ImportProtectedClass.kt");
             }
 
             @TestMetadata("ImportTwoTimes.kt")
             public void testImportTwoTimes() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/imports/ImportTwoTimes.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/imports/ImportTwoTimes.kt");
             }
 
             @TestMetadata("ImportTwoTimesStar.kt")
             public void testImportTwoTimesStar() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/imports/ImportTwoTimesStar.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/imports/ImportTwoTimesStar.kt");
             }
 
             @TestMetadata("NestedAndTopLevelClassClash.kt")
             public void testNestedAndTopLevelClassClash() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/imports/NestedAndTopLevelClassClash.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/imports/NestedAndTopLevelClassClash.kt");
             }
 
             @TestMetadata("NestedClassClash.kt")
             public void testNestedClassClash() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/imports/NestedClassClash.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/imports/NestedClassClash.kt");
             }
 
             @TestMetadata("PackageExplicitAndStartImport.kt")
             public void testPackageExplicitAndStartImport() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/imports/PackageExplicitAndStartImport.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/imports/PackageExplicitAndStartImport.kt");
             }
 
             @TestMetadata("PackagePrivateAndPublicNested.kt")
             public void testPackagePrivateAndPublicNested() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/imports/PackagePrivateAndPublicNested.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/imports/PackagePrivateAndPublicNested.kt");
             }
 
             @TestMetadata("TopLevelClassVsPackage.kt")
             public void testTopLevelClassVsPackage() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/imports/TopLevelClassVsPackage.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/imports/TopLevelClassVsPackage.kt");
             }
 
             @TestMetadata("TopLevelClassVsPackage2.kt")
             public void testTopLevelClassVsPackage2() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/imports/TopLevelClassVsPackage2.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/imports/TopLevelClassVsPackage2.kt");
             }
         }
 
@@ -464,103 +496,107 @@ public class JavacDiagnosticsTestGenerated extends AbstractJavacDiagnosticsTest 
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Inheritance extends AbstractJavacDiagnosticsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInInheritance() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/javac/diagnostics/tests/inheritance"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("IheritanceOfInner.kt")
             public void testIheritanceOfInner() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/IheritanceOfInner.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/IheritanceOfInner.kt");
             }
 
             @TestMetadata("InheritanceAmbiguity.kt")
             public void testInheritanceAmbiguity() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/InheritanceAmbiguity.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/InheritanceAmbiguity.kt");
             }
 
             @TestMetadata("InheritanceAmbiguity2.kt")
             public void testInheritanceAmbiguity2() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/InheritanceAmbiguity2.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/InheritanceAmbiguity2.kt");
             }
 
             @TestMetadata("InheritanceAmbiguity3.kt")
             public void testInheritanceAmbiguity3() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/InheritanceAmbiguity3.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/InheritanceAmbiguity3.kt");
             }
 
             @TestMetadata("InheritanceAmbiguity4.kt")
             public void testInheritanceAmbiguity4() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/InheritanceAmbiguity4.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/InheritanceAmbiguity4.kt");
             }
 
             @TestMetadata("InheritanceWithKotlin.kt")
             public void testInheritanceWithKotlin() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/InheritanceWithKotlin.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/InheritanceWithKotlin.kt");
             }
 
             @TestMetadata("InheritanceWithKotlinClasses.kt")
             public void testInheritanceWithKotlinClasses() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/InheritanceWithKotlinClasses.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/InheritanceWithKotlinClasses.kt");
             }
 
             @TestMetadata("InheritedInner.kt")
             public void testInheritedInner() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/InheritedInner.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/InheritedInner.kt");
             }
 
             @TestMetadata("InheritedInner2.kt")
             public void testInheritedInner2() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/InheritedInner2.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/InheritedInner2.kt");
             }
 
             @TestMetadata("InheritedInnerAndSupertypeWithSameName.kt")
             public void testInheritedInnerAndSupertypeWithSameName() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/InheritedInnerAndSupertypeWithSameName.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/InheritedInnerAndSupertypeWithSameName.kt");
             }
 
             @TestMetadata("InheritedInnerUsageInInner.kt")
             public void testInheritedInnerUsageInInner() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/InheritedInnerUsageInInner.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/InheritedInnerUsageInInner.kt");
             }
 
             @TestMetadata("InheritedKotlinInner.kt")
             public void testInheritedKotlinInner() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/InheritedKotlinInner.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/InheritedKotlinInner.kt");
             }
 
             @TestMetadata("InnerAndInheritedInner.kt")
             public void testInnerAndInheritedInner() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/InnerAndInheritedInner.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/InnerAndInheritedInner.kt");
             }
 
             @TestMetadata("ManyInheritedClasses.kt")
             public void testManyInheritedClasses() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/ManyInheritedClasses.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/ManyInheritedClasses.kt");
             }
 
             @TestMetadata("NoAmbiguity.kt")
             public void testNoAmbiguity() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/NoAmbiguity.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/NoAmbiguity.kt");
             }
 
             @TestMetadata("NoAmbiguity2.kt")
             public void testNoAmbiguity2() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/NoAmbiguity2.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/NoAmbiguity2.kt");
             }
 
             @TestMetadata("SameInnersInSupertypeAndSupertypesSupertype.kt")
             public void testSameInnersInSupertypeAndSupertypesSupertype() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/SameInnersInSupertypeAndSupertypesSupertype.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/SameInnersInSupertypeAndSupertypesSupertype.kt");
             }
 
             @TestMetadata("SuperTypeWithSameInner.kt")
             public void testSuperTypeWithSameInner() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/SuperTypeWithSameInner.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/SuperTypeWithSameInner.kt");
             }
 
             @TestMetadata("SupertypeInnerAndTypeParameterWithSameNames.kt")
             public void testSupertypeInnerAndTypeParameterWithSameNames() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inheritance/SupertypeInnerAndTypeParameterWithSameNames.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inheritance/SupertypeInnerAndTypeParameterWithSameNames.kt");
             }
         }
 
@@ -568,43 +604,47 @@ public class JavacDiagnosticsTestGenerated extends AbstractJavacDiagnosticsTest 
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Inners extends AbstractJavacDiagnosticsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInInners() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/javac/diagnostics/tests/inners"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("ComplexCase.kt")
             public void testComplexCase() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inners/ComplexCase.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inners/ComplexCase.kt");
             }
 
             @TestMetadata("ComplexCase2.kt")
             public void testComplexCase2() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inners/ComplexCase2.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inners/ComplexCase2.kt");
             }
 
             @TestMetadata("CurrentPackageAndInner.kt")
             public void testCurrentPackageAndInner() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inners/CurrentPackageAndInner.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inners/CurrentPackageAndInner.kt");
             }
 
             @TestMetadata("ImportThriceNestedClass.kt")
             public void testImportThriceNestedClass() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inners/ImportThriceNestedClass.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inners/ImportThriceNestedClass.kt");
             }
 
             @TestMetadata("InnerInInner.kt")
             public void testInnerInInner() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inners/InnerInInner.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inners/InnerInInner.kt");
             }
 
             @TestMetadata("Nested.kt")
             public void testNested() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inners/Nested.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inners/Nested.kt");
             }
 
             @TestMetadata("ThriceNestedClass.kt")
             public void testThriceNestedClass() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/inners/ThriceNestedClass.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/inners/ThriceNestedClass.kt");
             }
         }
 
@@ -612,33 +652,37 @@ public class JavacDiagnosticsTestGenerated extends AbstractJavacDiagnosticsTest 
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class QualifiedExpression extends AbstractJavacDiagnosticsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInQualifiedExpression() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/javac/diagnostics/tests/qualifiedExpression"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("GenericClassVsPackage.kt")
             public void testGenericClassVsPackage() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/qualifiedExpression/GenericClassVsPackage.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/qualifiedExpression/GenericClassVsPackage.kt");
             }
 
             @TestMetadata("PackageVsClass.kt")
             public void testPackageVsClass() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/qualifiedExpression/PackageVsClass.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/qualifiedExpression/PackageVsClass.kt");
             }
 
             @TestMetadata("PackageVsClass2.kt")
             public void testPackageVsClass2() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/qualifiedExpression/PackageVsClass2.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/qualifiedExpression/PackageVsClass2.kt");
             }
 
             @TestMetadata("PackageVsRootClass.kt")
             public void testPackageVsRootClass() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/qualifiedExpression/PackageVsRootClass.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/qualifiedExpression/PackageVsRootClass.kt");
             }
 
             @TestMetadata("visibleClassVsQualifiedClass.kt")
             public void testVisibleClassVsQualifiedClass() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/qualifiedExpression/visibleClassVsQualifiedClass.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/qualifiedExpression/visibleClassVsQualifiedClass.kt");
             }
         }
 
@@ -646,43 +690,47 @@ public class JavacDiagnosticsTestGenerated extends AbstractJavacDiagnosticsTest 
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class TypeParameters extends AbstractJavacDiagnosticsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInTypeParameters() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/javac/diagnostics/tests/typeParameters"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("Clash.kt")
             public void testClash() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/typeParameters/Clash.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/typeParameters/Clash.kt");
             }
 
             @TestMetadata("ComplexCase.kt")
             public void testComplexCase() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/typeParameters/ComplexCase.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/typeParameters/ComplexCase.kt");
             }
 
             @TestMetadata("InheritedInnerAndTypeParameterWithSameNames.kt")
             public void testInheritedInnerAndTypeParameterWithSameNames() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/typeParameters/InheritedInnerAndTypeParameterWithSameNames.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/typeParameters/InheritedInnerAndTypeParameterWithSameNames.kt");
             }
 
             @TestMetadata("InnerWithTypeParameter.kt")
             public void testInnerWithTypeParameter() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/typeParameters/InnerWithTypeParameter.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/typeParameters/InnerWithTypeParameter.kt");
             }
 
             @TestMetadata("NestedWithInner.kt")
             public void testNestedWithInner() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/typeParameters/NestedWithInner.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/typeParameters/NestedWithInner.kt");
             }
 
             @TestMetadata("SeveralInnersWithTypeParameters.kt")
             public void testSeveralInnersWithTypeParameters() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/typeParameters/SeveralInnersWithTypeParameters.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/typeParameters/SeveralInnersWithTypeParameters.kt");
             }
 
             @TestMetadata("TypeParametersInInnerAndOuterWithSameNames.kt")
             public void testTypeParametersInInnerAndOuterWithSameNames() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavacWrapper,TargetBackend.ANY, "compiler/testData/javac/diagnostics/tests/typeParameters/TypeParametersInInnerAndOuterWithSameNames.kt");
+                runTest("compiler/testData/javac/diagnostics/tests/typeParameters/TypeParametersInInnerAndOuterWithSameNames.kt");
             }
         }
     }

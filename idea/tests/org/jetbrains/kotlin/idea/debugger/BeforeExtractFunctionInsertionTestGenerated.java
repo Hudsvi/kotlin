@@ -21,32 +21,36 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class BeforeExtractFunctionInsertionTestGenerated extends AbstractBeforeExtractFunctionInsertionTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInInsertBeforeExtractFunction() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/debugger/insertBeforeExtractFunction"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
     }
 
     @TestMetadata("emptyImportDirective.kt")
     public void testEmptyImportDirective() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/debugger/insertBeforeExtractFunction/emptyImportDirective.kt");
+        runTest("idea/testData/debugger/insertBeforeExtractFunction/emptyImportDirective.kt");
     }
 
     @TestMetadata("emptyImportDirective2.kt")
     public void testEmptyImportDirective2() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/debugger/insertBeforeExtractFunction/emptyImportDirective2.kt");
+        runTest("idea/testData/debugger/insertBeforeExtractFunction/emptyImportDirective2.kt");
     }
 
     @TestMetadata("emptyPackageDirective.kt")
     public void testEmptyPackageDirective() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/debugger/insertBeforeExtractFunction/emptyPackageDirective.kt");
+        runTest("idea/testData/debugger/insertBeforeExtractFunction/emptyPackageDirective.kt");
     }
 
     @TestMetadata("emptyPackageDirective2.kt")
     public void testEmptyPackageDirective2() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/debugger/insertBeforeExtractFunction/emptyPackageDirective2.kt");
+        runTest("idea/testData/debugger/insertBeforeExtractFunction/emptyPackageDirective2.kt");
     }
 
     @TestMetadata("manyImports.kt")
     public void testManyImports() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/debugger/insertBeforeExtractFunction/manyImports.kt");
+        runTest("idea/testData/debugger/insertBeforeExtractFunction/manyImports.kt");
     }
 }

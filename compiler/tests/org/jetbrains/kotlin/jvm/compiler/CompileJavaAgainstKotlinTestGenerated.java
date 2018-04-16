@@ -23,6 +23,10 @@ public class CompileJavaAgainstKotlinTestGenerated extends AbstractCompileJavaAg
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class WithoutJavac extends AbstractCompileJavaAgainstKotlinTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTestWithoutJavac, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInWithoutJavac() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/compileJavaAgainstKotlin"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
         }
@@ -31,13 +35,17 @@ public class CompileJavaAgainstKotlinTestGenerated extends AbstractCompileJavaAg
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class CallableReference extends AbstractCompileJavaAgainstKotlinTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTestWithoutJavac, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInCallableReference() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/compileJavaAgainstKotlin/callableReference"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("GenericSignature.kt")
             public void testGenericSignature() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/callableReference/GenericSignature.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/callableReference/GenericSignature.kt");
             }
         }
 
@@ -45,73 +53,77 @@ public class CompileJavaAgainstKotlinTestGenerated extends AbstractCompileJavaAg
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Class extends AbstractCompileJavaAgainstKotlinTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTestWithoutJavac, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInClass() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/compileJavaAgainstKotlin/class"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("ClassObject.kt")
             public void testClassObject() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac, TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/class/ClassObject.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/class/ClassObject.kt");
             }
 
             @TestMetadata("DefaultConstructor.kt")
             public void testDefaultConstructor() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/class/DefaultConstructor.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/class/DefaultConstructor.kt");
             }
 
             @TestMetadata("DefaultConstructorWithTwoArgs.kt")
             public void testDefaultConstructorWithTwoArgs() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/class/DefaultConstructorWithTwoArgs.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/class/DefaultConstructorWithTwoArgs.kt");
             }
 
             @TestMetadata("ExtendsAbstractListT.kt")
             public void testExtendsAbstractListT() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/class/ExtendsAbstractListT.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/class/ExtendsAbstractListT.kt");
             }
 
             @TestMetadata("ImplementsListString.kt")
             public void testImplementsListString() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/class/ImplementsListString.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/class/ImplementsListString.kt");
             }
 
             @TestMetadata("ImplementsMapPP.kt")
             public void testImplementsMapPP() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/class/ImplementsMapPP.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/class/ImplementsMapPP.kt");
             }
 
             @TestMetadata("InnerClass.kt")
             public void testInnerClass() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/class/InnerClass.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/class/InnerClass.kt");
             }
 
             @TestMetadata("InnerClassConstructors.kt")
             public void testInnerClassConstructors() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/class/InnerClassConstructors.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/class/InnerClassConstructors.kt");
             }
 
             @TestMetadata("InnerClassOfGeneric.kt")
             public void testInnerClassOfGeneric() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/class/InnerClassOfGeneric.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/class/InnerClassOfGeneric.kt");
             }
 
             @TestMetadata("kt3561.kt")
             public void testKt3561() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/class/kt3561.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/class/kt3561.kt");
             }
 
             @TestMetadata("kt4050.kt")
             public void testKt4050() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/class/kt4050.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/class/kt4050.kt");
             }
 
             @TestMetadata("Simple.kt")
             public void testSimple() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/class/Simple.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/class/Simple.kt");
             }
 
             @TestMetadata("StarProjection.kt")
             public void testStarProjection() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/class/StarProjection.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/class/StarProjection.kt");
             }
         }
 
@@ -119,13 +131,17 @@ public class CompileJavaAgainstKotlinTestGenerated extends AbstractCompileJavaAg
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Enum extends AbstractCompileJavaAgainstKotlinTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTestWithoutJavac, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInEnum() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/compileJavaAgainstKotlin/enum"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("DefaultArgumentInEnumConstructor.kt")
             public void testDefaultArgumentInEnumConstructor() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/enum/DefaultArgumentInEnumConstructor.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/enum/DefaultArgumentInEnumConstructor.kt");
             }
         }
 
@@ -133,28 +149,32 @@ public class CompileJavaAgainstKotlinTestGenerated extends AbstractCompileJavaAg
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class JvmStatic extends AbstractCompileJavaAgainstKotlinTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTestWithoutJavac, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInJvmStatic() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/compileJavaAgainstKotlin/jvmStatic"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("simpleCompanionObject.kt")
             public void testSimpleCompanionObject() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/jvmStatic/simpleCompanionObject.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/jvmStatic/simpleCompanionObject.kt");
             }
 
             @TestMetadata("simpleCompanionObjectProperty.kt")
             public void testSimpleCompanionObjectProperty() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/jvmStatic/simpleCompanionObjectProperty.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/jvmStatic/simpleCompanionObjectProperty.kt");
             }
 
             @TestMetadata("simpleObject.kt")
             public void testSimpleObject() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/jvmStatic/simpleObject.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/jvmStatic/simpleObject.kt");
             }
 
             @TestMetadata("simpleObjectProperty.kt")
             public void testSimpleObjectProperty() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/jvmStatic/simpleObjectProperty.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/jvmStatic/simpleObjectProperty.kt");
             }
         }
 
@@ -162,9 +182,13 @@ public class CompileJavaAgainstKotlinTestGenerated extends AbstractCompileJavaAg
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Method extends AbstractCompileJavaAgainstKotlinTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTestWithoutJavac, TargetBackend.ANY, testDataFilePath);
+            }
+
             @TestMetadata("AccessorGenericSignature.kt")
             public void testAccessorGenericSignature() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/AccessorGenericSignature.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/AccessorGenericSignature.kt");
             }
 
             public void testAllFilesPresentInMethod() throws Exception {
@@ -173,125 +197,129 @@ public class CompileJavaAgainstKotlinTestGenerated extends AbstractCompileJavaAg
 
             @TestMetadata("Any.kt")
             public void testAny() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/Any.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/Any.kt");
             }
 
             @TestMetadata("ArrayOfIntArray.kt")
             public void testArrayOfIntArray() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/ArrayOfIntArray.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/ArrayOfIntArray.kt");
             }
 
             @TestMetadata("ArrayOfIntegerArray.kt")
             public void testArrayOfIntegerArray() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/ArrayOfIntegerArray.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/ArrayOfIntegerArray.kt");
             }
 
             @TestMetadata("ClashingSignaturesWithoutReturnType.kt")
             public void testClashingSignaturesWithoutReturnType() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/ClashingSignaturesWithoutReturnType.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/ClashingSignaturesWithoutReturnType.kt");
             }
 
             @TestMetadata("Delegation.kt")
             public void testDelegation() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/Delegation.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/Delegation.kt");
             }
 
             @TestMetadata("Extensions.kt")
             public void testExtensions() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/Extensions.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/Extensions.kt");
             }
 
             @TestMetadata("GenericArray.kt")
             public void testGenericArray() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/GenericArray.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/GenericArray.kt");
             }
 
             @TestMetadata("Hello.kt")
             public void testHello() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/Hello.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/Hello.kt");
             }
 
             @TestMetadata("Int.kt")
             public void testInt() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/Int.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/Int.kt");
             }
 
             @TestMetadata("IntArray.kt")
             public void testIntArray() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/IntArray.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/IntArray.kt");
             }
 
             @TestMetadata("IntWithDefault.kt")
             public void testIntWithDefault() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/IntWithDefault.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/IntWithDefault.kt");
             }
 
             @TestMetadata("IntegerArray.kt")
             public void testIntegerArray() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/IntegerArray.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/IntegerArray.kt");
             }
 
             @TestMetadata("ListOfInt.kt")
             public void testListOfInt() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/ListOfInt.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/ListOfInt.kt");
             }
 
             @TestMetadata("ListOfString.kt")
             public void testListOfString() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/ListOfString.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/ListOfString.kt");
             }
 
             @TestMetadata("ListOfT.kt")
             public void testListOfT() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/ListOfT.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/ListOfT.kt");
             }
 
             @TestMetadata("MapOfKString.kt")
             public void testMapOfKString() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/MapOfKString.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/MapOfKString.kt");
             }
 
             @TestMetadata("MapOfStringIntQ.kt")
             public void testMapOfStringIntQ() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/MapOfStringIntQ.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/MapOfStringIntQ.kt");
             }
 
             @TestMetadata("QExtendsListString.kt")
             public void testQExtendsListString() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/QExtendsListString.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/QExtendsListString.kt");
             }
 
             @TestMetadata("QExtendsString.kt")
             public void testQExtendsString() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/QExtendsString.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/QExtendsString.kt");
             }
 
             @TestMetadata("TraitImpl.kt")
             public void testTraitImpl() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/TraitImpl.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/TraitImpl.kt");
             }
 
             @TestMetadata("Vararg.kt")
             public void testVararg() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/Vararg.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/Vararg.kt");
             }
 
             @TestMetadata("Void.kt")
             public void testVoid() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/Void.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/Void.kt");
             }
 
             @TestMetadata("compiler/testData/compileJavaAgainstKotlin/method/platformName")
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class PlatformName extends AbstractCompileJavaAgainstKotlinTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doTestWithoutJavac, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInPlatformName() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/compileJavaAgainstKotlin/method/platformName"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("PlatformName.kt")
                 public void testPlatformName() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/platformName/PlatformName.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/platformName/PlatformName.kt");
                 }
             }
 
@@ -299,63 +327,67 @@ public class CompileJavaAgainstKotlinTestGenerated extends AbstractCompileJavaAg
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class PrimitiveOverride extends AbstractCompileJavaAgainstKotlinTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doTestWithoutJavac, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInPrimitiveOverride() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("ByteOverridesObject.kt")
                 public void testByteOverridesObject() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/ByteOverridesObject.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/ByteOverridesObject.kt");
                 }
 
                 @TestMetadata("CallFinalNotInSubclass.kt")
                 public void testCallFinalNotInSubclass() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/CallFinalNotInSubclass.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/CallFinalNotInSubclass.kt");
                 }
 
                 @TestMetadata("CallNotInSubclass.kt")
                 public void testCallNotInSubclass() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/CallNotInSubclass.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/CallNotInSubclass.kt");
                 }
 
                 @TestMetadata("CovariantReturnTypeOverride.kt")
                 public void testCovariantReturnTypeOverride() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/CovariantReturnTypeOverride.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/CovariantReturnTypeOverride.kt");
                 }
 
                 @TestMetadata("FinalOverride.kt")
                 public void testFinalOverride() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/FinalOverride.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/FinalOverride.kt");
                 }
 
                 @TestMetadata("IntOverridesComparable.kt")
                 public void testIntOverridesComparable() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/IntOverridesComparable.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/IntOverridesComparable.kt");
                 }
 
                 @TestMetadata("IntOverridesNumber.kt")
                 public void testIntOverridesNumber() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/IntOverridesNumber.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/IntOverridesNumber.kt");
                 }
 
                 @TestMetadata("IntOverridesObject.kt")
                 public void testIntOverridesObject() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/IntOverridesObject.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/IntOverridesObject.kt");
                 }
 
                 @TestMetadata("ManyClassesHierarchy.kt")
                 public void testManyClassesHierarchy() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/ManyClassesHierarchy.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/ManyClassesHierarchy.kt");
                 }
 
                 @TestMetadata("NullableIntOverridesObject.kt")
                 public void testNullableIntOverridesObject() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/NullableIntOverridesObject.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/NullableIntOverridesObject.kt");
                 }
 
                 @TestMetadata("OverrideInJava.kt")
                 public void testOverrideInJava() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/OverrideInJava.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/OverrideInJava.kt");
                 }
             }
 
@@ -363,43 +395,47 @@ public class CompileJavaAgainstKotlinTestGenerated extends AbstractCompileJavaAg
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class Throws extends AbstractCompileJavaAgainstKotlinTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doTestWithoutJavac, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInThrows() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/compileJavaAgainstKotlin/method/throws"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("ClassMembers.kt")
                 public void testClassMembers() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/throws/ClassMembers.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/throws/ClassMembers.kt");
                 }
 
                 @TestMetadata("Constructor.kt")
                 public void testConstructor() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/throws/Constructor.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/throws/Constructor.kt");
                 }
 
                 @TestMetadata("DefaultArgs.kt")
                 public void testDefaultArgs() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/throws/DefaultArgs.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/throws/DefaultArgs.kt");
                 }
 
                 @TestMetadata("Delegation.kt")
                 public void testDelegation() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/throws/Delegation.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/throws/Delegation.kt");
                 }
 
                 @TestMetadata("GenericSubstitution.kt")
                 public void testGenericSubstitution() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/throws/GenericSubstitution.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/throws/GenericSubstitution.kt");
                 }
 
                 @TestMetadata("TopLevel.kt")
                 public void testTopLevel() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/throws/TopLevel.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/throws/TopLevel.kt");
                 }
 
                 @TestMetadata("TraitMembers.kt")
                 public void testTraitMembers() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/throws/TraitMembers.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/throws/TraitMembers.kt");
                 }
             }
         }
@@ -408,36 +444,44 @@ public class CompileJavaAgainstKotlinTestGenerated extends AbstractCompileJavaAg
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Property extends AbstractCompileJavaAgainstKotlinTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTestWithoutJavac, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInProperty() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/compileJavaAgainstKotlin/property"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("ConstVal.kt")
             public void testConstVal() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/property/ConstVal.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/property/ConstVal.kt");
             }
 
             @TestMetadata("Extensions.kt")
             public void testExtensions() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/property/Extensions.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/property/Extensions.kt");
             }
 
             @TestMetadata("GenericProperty.kt")
             public void testGenericProperty() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/property/GenericProperty.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/property/GenericProperty.kt");
             }
 
             @TestMetadata("compiler/testData/compileJavaAgainstKotlin/property/platformName")
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class PlatformName extends AbstractCompileJavaAgainstKotlinTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doTestWithoutJavac, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInPlatformName() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/compileJavaAgainstKotlin/property/platformName"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("PlatformName.kt")
                 public void testPlatformName() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/property/platformName/PlatformName.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/property/platformName/PlatformName.kt");
                 }
             }
         }
@@ -446,18 +490,22 @@ public class CompileJavaAgainstKotlinTestGenerated extends AbstractCompileJavaAg
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Sealed extends AbstractCompileJavaAgainstKotlinTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTestWithoutJavac, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInSealed() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/compileJavaAgainstKotlin/sealed"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("Derived.kt")
             public void testDerived() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/sealed/Derived.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/sealed/Derived.kt");
             }
 
             @TestMetadata("Instance.kt")
             public void testInstance() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/sealed/Instance.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/sealed/Instance.kt");
             }
         }
 
@@ -465,33 +513,37 @@ public class CompileJavaAgainstKotlinTestGenerated extends AbstractCompileJavaAg
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class StaticFields extends AbstractCompileJavaAgainstKotlinTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTestWithoutJavac, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInStaticFields() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/compileJavaAgainstKotlin/staticFields"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("AnnotationClass.kt")
             public void testAnnotationClass() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/staticFields/AnnotationClass.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/staticFields/AnnotationClass.kt");
             }
 
             @TestMetadata("AnnotationTrait.kt")
             public void testAnnotationTrait() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/staticFields/AnnotationTrait.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/staticFields/AnnotationTrait.kt");
             }
 
             @TestMetadata("kt3698.kt")
             public void testKt3698() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/staticFields/kt3698.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/staticFields/kt3698.kt");
             }
 
             @TestMetadata("staticClassProperty.kt")
             public void testStaticClassProperty() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/staticFields/staticClassProperty.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/staticFields/staticClassProperty.kt");
             }
 
             @TestMetadata("staticTraitProperty.kt")
             public void testStaticTraitProperty() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/staticFields/staticTraitProperty.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/staticFields/staticTraitProperty.kt");
             }
         }
 
@@ -499,73 +551,77 @@ public class CompileJavaAgainstKotlinTestGenerated extends AbstractCompileJavaAg
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Targets extends AbstractCompileJavaAgainstKotlinTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTestWithoutJavac, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInTargets() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/compileJavaAgainstKotlin/targets"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("annotation.kt")
             public void testAnnotation() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/targets/annotation.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/targets/annotation.kt");
             }
 
             @TestMetadata("base.kt")
             public void testBase() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/targets/base.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/targets/base.kt");
             }
 
             @TestMetadata("classifier.kt")
             public void testClassifier() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/targets/classifier.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/targets/classifier.kt");
             }
 
             @TestMetadata("constructor.kt")
             public void testConstructor() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/targets/constructor.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/targets/constructor.kt");
             }
 
             @TestMetadata("empty.kt")
             public void testEmpty() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/targets/empty.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/targets/empty.kt");
             }
 
             @TestMetadata("field.kt")
             public void testField() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/targets/field.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/targets/field.kt");
             }
 
             @TestMetadata("function.kt")
             public void testFunction() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/targets/function.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/targets/function.kt");
             }
 
             @TestMetadata("getter.kt")
             public void testGetter() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/targets/getter.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/targets/getter.kt");
             }
 
             @TestMetadata("local.kt")
             public void testLocal() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/targets/local.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/targets/local.kt");
             }
 
             @TestMetadata("multiple.kt")
             public void testMultiple() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/targets/multiple.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/targets/multiple.kt");
             }
 
             @TestMetadata("parameter.kt")
             public void testParameter() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/targets/parameter.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/targets/parameter.kt");
             }
 
             @TestMetadata("property.kt")
             public void testProperty() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/targets/property.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/targets/property.kt");
             }
 
             @TestMetadata("setter.kt")
             public void testSetter() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithoutJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/targets/setter.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/targets/setter.kt");
             }
         }
     }
@@ -574,6 +630,10 @@ public class CompileJavaAgainstKotlinTestGenerated extends AbstractCompileJavaAg
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class WithJavac extends AbstractCompileJavaAgainstKotlinTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTestWithJavac, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInWithJavac() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/compileJavaAgainstKotlin"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
         }
@@ -582,13 +642,17 @@ public class CompileJavaAgainstKotlinTestGenerated extends AbstractCompileJavaAg
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class CallableReference extends AbstractCompileJavaAgainstKotlinTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTestWithJavac, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInCallableReference() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/compileJavaAgainstKotlin/callableReference"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("GenericSignature.kt")
             public void testGenericSignature() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/callableReference/GenericSignature.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/callableReference/GenericSignature.kt");
             }
         }
 
@@ -596,73 +660,77 @@ public class CompileJavaAgainstKotlinTestGenerated extends AbstractCompileJavaAg
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Class extends AbstractCompileJavaAgainstKotlinTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTestWithJavac, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInClass() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/compileJavaAgainstKotlin/class"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("ClassObject.kt")
             public void testClassObject() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/class/ClassObject.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/class/ClassObject.kt");
             }
 
             @TestMetadata("DefaultConstructor.kt")
             public void testDefaultConstructor() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/class/DefaultConstructor.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/class/DefaultConstructor.kt");
             }
 
             @TestMetadata("DefaultConstructorWithTwoArgs.kt")
             public void testDefaultConstructorWithTwoArgs() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/class/DefaultConstructorWithTwoArgs.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/class/DefaultConstructorWithTwoArgs.kt");
             }
 
             @TestMetadata("ExtendsAbstractListT.kt")
             public void testExtendsAbstractListT() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/class/ExtendsAbstractListT.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/class/ExtendsAbstractListT.kt");
             }
 
             @TestMetadata("ImplementsListString.kt")
             public void testImplementsListString() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/class/ImplementsListString.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/class/ImplementsListString.kt");
             }
 
             @TestMetadata("ImplementsMapPP.kt")
             public void testImplementsMapPP() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/class/ImplementsMapPP.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/class/ImplementsMapPP.kt");
             }
 
             @TestMetadata("InnerClass.kt")
             public void testInnerClass() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/class/InnerClass.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/class/InnerClass.kt");
             }
 
             @TestMetadata("InnerClassConstructors.kt")
             public void testInnerClassConstructors() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/class/InnerClassConstructors.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/class/InnerClassConstructors.kt");
             }
 
             @TestMetadata("InnerClassOfGeneric.kt")
             public void testInnerClassOfGeneric() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/class/InnerClassOfGeneric.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/class/InnerClassOfGeneric.kt");
             }
 
             @TestMetadata("kt3561.kt")
             public void testKt3561() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/class/kt3561.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/class/kt3561.kt");
             }
 
             @TestMetadata("kt4050.kt")
             public void testKt4050() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/class/kt4050.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/class/kt4050.kt");
             }
 
             @TestMetadata("Simple.kt")
             public void testSimple() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/class/Simple.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/class/Simple.kt");
             }
 
             @TestMetadata("StarProjection.kt")
             public void testStarProjection() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/class/StarProjection.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/class/StarProjection.kt");
             }
         }
 
@@ -670,13 +738,17 @@ public class CompileJavaAgainstKotlinTestGenerated extends AbstractCompileJavaAg
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Enum extends AbstractCompileJavaAgainstKotlinTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTestWithJavac, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInEnum() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/compileJavaAgainstKotlin/enum"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("DefaultArgumentInEnumConstructor.kt")
             public void testDefaultArgumentInEnumConstructor() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/enum/DefaultArgumentInEnumConstructor.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/enum/DefaultArgumentInEnumConstructor.kt");
             }
         }
 
@@ -684,28 +756,32 @@ public class CompileJavaAgainstKotlinTestGenerated extends AbstractCompileJavaAg
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class JvmStatic extends AbstractCompileJavaAgainstKotlinTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTestWithJavac, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInJvmStatic() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/compileJavaAgainstKotlin/jvmStatic"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("simpleCompanionObject.kt")
             public void testSimpleCompanionObject() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/jvmStatic/simpleCompanionObject.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/jvmStatic/simpleCompanionObject.kt");
             }
 
             @TestMetadata("simpleCompanionObjectProperty.kt")
             public void testSimpleCompanionObjectProperty() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/jvmStatic/simpleCompanionObjectProperty.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/jvmStatic/simpleCompanionObjectProperty.kt");
             }
 
             @TestMetadata("simpleObject.kt")
             public void testSimpleObject() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/jvmStatic/simpleObject.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/jvmStatic/simpleObject.kt");
             }
 
             @TestMetadata("simpleObjectProperty.kt")
             public void testSimpleObjectProperty() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/jvmStatic/simpleObjectProperty.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/jvmStatic/simpleObjectProperty.kt");
             }
         }
 
@@ -713,9 +789,13 @@ public class CompileJavaAgainstKotlinTestGenerated extends AbstractCompileJavaAg
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Method extends AbstractCompileJavaAgainstKotlinTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTestWithJavac, TargetBackend.ANY, testDataFilePath);
+            }
+
             @TestMetadata("AccessorGenericSignature.kt")
             public void testAccessorGenericSignature() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/AccessorGenericSignature.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/AccessorGenericSignature.kt");
             }
 
             public void testAllFilesPresentInMethod() throws Exception {
@@ -724,125 +804,129 @@ public class CompileJavaAgainstKotlinTestGenerated extends AbstractCompileJavaAg
 
             @TestMetadata("Any.kt")
             public void testAny() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/Any.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/Any.kt");
             }
 
             @TestMetadata("ArrayOfIntArray.kt")
             public void testArrayOfIntArray() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/ArrayOfIntArray.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/ArrayOfIntArray.kt");
             }
 
             @TestMetadata("ArrayOfIntegerArray.kt")
             public void testArrayOfIntegerArray() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/ArrayOfIntegerArray.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/ArrayOfIntegerArray.kt");
             }
 
             @TestMetadata("ClashingSignaturesWithoutReturnType.kt")
             public void testClashingSignaturesWithoutReturnType() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/ClashingSignaturesWithoutReturnType.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/ClashingSignaturesWithoutReturnType.kt");
             }
 
             @TestMetadata("Delegation.kt")
             public void testDelegation() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/Delegation.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/Delegation.kt");
             }
 
             @TestMetadata("Extensions.kt")
             public void testExtensions() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/Extensions.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/Extensions.kt");
             }
 
             @TestMetadata("GenericArray.kt")
             public void testGenericArray() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/GenericArray.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/GenericArray.kt");
             }
 
             @TestMetadata("Hello.kt")
             public void testHello() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/Hello.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/Hello.kt");
             }
 
             @TestMetadata("Int.kt")
             public void testInt() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/Int.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/Int.kt");
             }
 
             @TestMetadata("IntArray.kt")
             public void testIntArray() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/IntArray.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/IntArray.kt");
             }
 
             @TestMetadata("IntWithDefault.kt")
             public void testIntWithDefault() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/IntWithDefault.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/IntWithDefault.kt");
             }
 
             @TestMetadata("IntegerArray.kt")
             public void testIntegerArray() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/IntegerArray.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/IntegerArray.kt");
             }
 
             @TestMetadata("ListOfInt.kt")
             public void testListOfInt() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/ListOfInt.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/ListOfInt.kt");
             }
 
             @TestMetadata("ListOfString.kt")
             public void testListOfString() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/ListOfString.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/ListOfString.kt");
             }
 
             @TestMetadata("ListOfT.kt")
             public void testListOfT() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/ListOfT.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/ListOfT.kt");
             }
 
             @TestMetadata("MapOfKString.kt")
             public void testMapOfKString() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/MapOfKString.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/MapOfKString.kt");
             }
 
             @TestMetadata("MapOfStringIntQ.kt")
             public void testMapOfStringIntQ() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/MapOfStringIntQ.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/MapOfStringIntQ.kt");
             }
 
             @TestMetadata("QExtendsListString.kt")
             public void testQExtendsListString() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/QExtendsListString.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/QExtendsListString.kt");
             }
 
             @TestMetadata("QExtendsString.kt")
             public void testQExtendsString() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/QExtendsString.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/QExtendsString.kt");
             }
 
             @TestMetadata("TraitImpl.kt")
             public void testTraitImpl() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/TraitImpl.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/TraitImpl.kt");
             }
 
             @TestMetadata("Vararg.kt")
             public void testVararg() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/Vararg.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/Vararg.kt");
             }
 
             @TestMetadata("Void.kt")
             public void testVoid() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/Void.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/method/Void.kt");
             }
 
             @TestMetadata("compiler/testData/compileJavaAgainstKotlin/method/platformName")
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class PlatformName extends AbstractCompileJavaAgainstKotlinTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doTestWithJavac, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInPlatformName() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/compileJavaAgainstKotlin/method/platformName"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("PlatformName.kt")
                 public void testPlatformName() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/platformName/PlatformName.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/platformName/PlatformName.kt");
                 }
             }
 
@@ -850,63 +934,67 @@ public class CompileJavaAgainstKotlinTestGenerated extends AbstractCompileJavaAg
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class PrimitiveOverride extends AbstractCompileJavaAgainstKotlinTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doTestWithJavac, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInPrimitiveOverride() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("ByteOverridesObject.kt")
                 public void testByteOverridesObject() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/ByteOverridesObject.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/ByteOverridesObject.kt");
                 }
 
                 @TestMetadata("CallFinalNotInSubclass.kt")
                 public void testCallFinalNotInSubclass() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/CallFinalNotInSubclass.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/CallFinalNotInSubclass.kt");
                 }
 
                 @TestMetadata("CallNotInSubclass.kt")
                 public void testCallNotInSubclass() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/CallNotInSubclass.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/CallNotInSubclass.kt");
                 }
 
                 @TestMetadata("CovariantReturnTypeOverride.kt")
                 public void testCovariantReturnTypeOverride() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/CovariantReturnTypeOverride.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/CovariantReturnTypeOverride.kt");
                 }
 
                 @TestMetadata("FinalOverride.kt")
                 public void testFinalOverride() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/FinalOverride.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/FinalOverride.kt");
                 }
 
                 @TestMetadata("IntOverridesComparable.kt")
                 public void testIntOverridesComparable() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/IntOverridesComparable.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/IntOverridesComparable.kt");
                 }
 
                 @TestMetadata("IntOverridesNumber.kt")
                 public void testIntOverridesNumber() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/IntOverridesNumber.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/IntOverridesNumber.kt");
                 }
 
                 @TestMetadata("IntOverridesObject.kt")
                 public void testIntOverridesObject() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/IntOverridesObject.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/IntOverridesObject.kt");
                 }
 
                 @TestMetadata("ManyClassesHierarchy.kt")
                 public void testManyClassesHierarchy() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/ManyClassesHierarchy.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/ManyClassesHierarchy.kt");
                 }
 
                 @TestMetadata("NullableIntOverridesObject.kt")
                 public void testNullableIntOverridesObject() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/NullableIntOverridesObject.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/NullableIntOverridesObject.kt");
                 }
 
                 @TestMetadata("OverrideInJava.kt")
                 public void testOverrideInJava() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/OverrideInJava.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/primitiveOverride/OverrideInJava.kt");
                 }
             }
 
@@ -914,43 +1002,47 @@ public class CompileJavaAgainstKotlinTestGenerated extends AbstractCompileJavaAg
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class Throws extends AbstractCompileJavaAgainstKotlinTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doTestWithJavac, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInThrows() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/compileJavaAgainstKotlin/method/throws"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("ClassMembers.kt")
                 public void testClassMembers() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/throws/ClassMembers.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/throws/ClassMembers.kt");
                 }
 
                 @TestMetadata("Constructor.kt")
                 public void testConstructor() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/throws/Constructor.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/throws/Constructor.kt");
                 }
 
                 @TestMetadata("DefaultArgs.kt")
                 public void testDefaultArgs() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/throws/DefaultArgs.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/throws/DefaultArgs.kt");
                 }
 
                 @TestMetadata("Delegation.kt")
                 public void testDelegation() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/throws/Delegation.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/throws/Delegation.kt");
                 }
 
                 @TestMetadata("GenericSubstitution.kt")
                 public void testGenericSubstitution() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/throws/GenericSubstitution.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/throws/GenericSubstitution.kt");
                 }
 
                 @TestMetadata("TopLevel.kt")
                 public void testTopLevel() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/throws/TopLevel.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/throws/TopLevel.kt");
                 }
 
                 @TestMetadata("TraitMembers.kt")
                 public void testTraitMembers() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/method/throws/TraitMembers.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/method/throws/TraitMembers.kt");
                 }
             }
         }
@@ -959,36 +1051,44 @@ public class CompileJavaAgainstKotlinTestGenerated extends AbstractCompileJavaAg
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Property extends AbstractCompileJavaAgainstKotlinTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTestWithJavac, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInProperty() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/compileJavaAgainstKotlin/property"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("ConstVal.kt")
             public void testConstVal() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/property/ConstVal.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/property/ConstVal.kt");
             }
 
             @TestMetadata("Extensions.kt")
             public void testExtensions() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/property/Extensions.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/property/Extensions.kt");
             }
 
             @TestMetadata("GenericProperty.kt")
             public void testGenericProperty() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/property/GenericProperty.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/property/GenericProperty.kt");
             }
 
             @TestMetadata("compiler/testData/compileJavaAgainstKotlin/property/platformName")
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class PlatformName extends AbstractCompileJavaAgainstKotlinTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doTestWithJavac, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInPlatformName() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/compileJavaAgainstKotlin/property/platformName"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("PlatformName.kt")
                 public void testPlatformName() throws Exception {
-                    KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/property/platformName/PlatformName.kt");
+                    runTest("compiler/testData/compileJavaAgainstKotlin/property/platformName/PlatformName.kt");
                 }
             }
         }
@@ -997,18 +1097,22 @@ public class CompileJavaAgainstKotlinTestGenerated extends AbstractCompileJavaAg
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Sealed extends AbstractCompileJavaAgainstKotlinTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTestWithJavac, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInSealed() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/compileJavaAgainstKotlin/sealed"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("Derived.kt")
             public void testDerived() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/sealed/Derived.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/sealed/Derived.kt");
             }
 
             @TestMetadata("Instance.kt")
             public void testInstance() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/sealed/Instance.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/sealed/Instance.kt");
             }
         }
 
@@ -1016,33 +1120,37 @@ public class CompileJavaAgainstKotlinTestGenerated extends AbstractCompileJavaAg
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class StaticFields extends AbstractCompileJavaAgainstKotlinTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTestWithJavac, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInStaticFields() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/compileJavaAgainstKotlin/staticFields"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("AnnotationClass.kt")
             public void testAnnotationClass() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/staticFields/AnnotationClass.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/staticFields/AnnotationClass.kt");
             }
 
             @TestMetadata("AnnotationTrait.kt")
             public void testAnnotationTrait() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/staticFields/AnnotationTrait.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/staticFields/AnnotationTrait.kt");
             }
 
             @TestMetadata("kt3698.kt")
             public void testKt3698() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/staticFields/kt3698.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/staticFields/kt3698.kt");
             }
 
             @TestMetadata("staticClassProperty.kt")
             public void testStaticClassProperty() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/staticFields/staticClassProperty.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/staticFields/staticClassProperty.kt");
             }
 
             @TestMetadata("staticTraitProperty.kt")
             public void testStaticTraitProperty() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/staticFields/staticTraitProperty.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/staticFields/staticTraitProperty.kt");
             }
         }
 
@@ -1050,73 +1158,77 @@ public class CompileJavaAgainstKotlinTestGenerated extends AbstractCompileJavaAg
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Targets extends AbstractCompileJavaAgainstKotlinTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTestWithJavac, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInTargets() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/compileJavaAgainstKotlin/targets"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("annotation.kt")
             public void testAnnotation() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/targets/annotation.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/targets/annotation.kt");
             }
 
             @TestMetadata("base.kt")
             public void testBase() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/targets/base.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/targets/base.kt");
             }
 
             @TestMetadata("classifier.kt")
             public void testClassifier() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/targets/classifier.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/targets/classifier.kt");
             }
 
             @TestMetadata("constructor.kt")
             public void testConstructor() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/targets/constructor.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/targets/constructor.kt");
             }
 
             @TestMetadata("empty.kt")
             public void testEmpty() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/targets/empty.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/targets/empty.kt");
             }
 
             @TestMetadata("field.kt")
             public void testField() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/targets/field.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/targets/field.kt");
             }
 
             @TestMetadata("function.kt")
             public void testFunction() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/targets/function.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/targets/function.kt");
             }
 
             @TestMetadata("getter.kt")
             public void testGetter() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/targets/getter.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/targets/getter.kt");
             }
 
             @TestMetadata("local.kt")
             public void testLocal() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/targets/local.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/targets/local.kt");
             }
 
             @TestMetadata("multiple.kt")
             public void testMultiple() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/targets/multiple.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/targets/multiple.kt");
             }
 
             @TestMetadata("parameter.kt")
             public void testParameter() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/targets/parameter.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/targets/parameter.kt");
             }
 
             @TestMetadata("property.kt")
             public void testProperty() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/targets/property.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/targets/property.kt");
             }
 
             @TestMetadata("setter.kt")
             public void testSetter() throws Exception {
-                KotlinTestUtils.runTest(this::doTestWithJavac,TargetBackend.ANY, "compiler/testData/compileJavaAgainstKotlin/targets/setter.kt");
+                runTest("compiler/testData/compileJavaAgainstKotlin/targets/setter.kt");
             }
         }
     }

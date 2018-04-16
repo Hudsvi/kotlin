@@ -21,37 +21,41 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class UsageHighlightingTestGenerated extends AbstractUsageHighlightingTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInUsageHighlighter() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/usageHighlighter"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
     }
 
     @TestMetadata("implicitIt.kt")
     public void testImplicitIt() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/usageHighlighter/implicitIt.kt");
+        runTest("idea/testData/usageHighlighter/implicitIt.kt");
     }
 
     @TestMetadata("importAlias.kt")
     public void testImportAlias() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/usageHighlighter/importAlias.kt");
+        runTest("idea/testData/usageHighlighter/importAlias.kt");
     }
 
     @TestMetadata("labeledAnonymousFun.kt")
     public void testLabeledAnonymousFun() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/usageHighlighter/labeledAnonymousFun.kt");
+        runTest("idea/testData/usageHighlighter/labeledAnonymousFun.kt");
     }
 
     @TestMetadata("labeledLambda.kt")
     public void testLabeledLambda() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/usageHighlighter/labeledLambda.kt");
+        runTest("idea/testData/usageHighlighter/labeledLambda.kt");
     }
 
     @TestMetadata("labeledLoop.kt")
     public void testLabeledLoop() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/usageHighlighter/labeledLoop.kt");
+        runTest("idea/testData/usageHighlighter/labeledLoop.kt");
     }
 
     @TestMetadata("localVal.kt")
     public void testLocalVal() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/usageHighlighter/localVal.kt");
+        runTest("idea/testData/usageHighlighter/localVal.kt");
     }
 }

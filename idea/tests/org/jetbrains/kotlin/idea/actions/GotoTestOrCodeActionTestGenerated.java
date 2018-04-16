@@ -21,47 +21,51 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class GotoTestOrCodeActionTestGenerated extends AbstractGotoTestOrCodeActionTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInGotoTestOrCode() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/navigation/gotoTestOrCode"), Pattern.compile("^(.+)\\.main\\..+$"), TargetBackend.ANY, true);
     }
 
     @TestMetadata("fromJavaClassToTest.main.java")
     public void testFromJavaClassToTest() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/navigation/gotoTestOrCode/fromJavaClassToTest.main.java");
+        runTest("idea/testData/navigation/gotoTestOrCode/fromJavaClassToTest.main.java");
     }
 
     @TestMetadata("fromJavaTestToKotlinClass.main.java")
     public void testFromJavaTestToKotlinClass() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/navigation/gotoTestOrCode/fromJavaTestToKotlinClass.main.java");
+        runTest("idea/testData/navigation/gotoTestOrCode/fromJavaTestToKotlinClass.main.java");
     }
 
     @TestMetadata("fromJavaTestToKotlinFile.main.java")
     public void testFromJavaTestToKotlinFile() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/navigation/gotoTestOrCode/fromJavaTestToKotlinFile.main.java");
+        runTest("idea/testData/navigation/gotoTestOrCode/fromJavaTestToKotlinFile.main.java");
     }
 
     @TestMetadata("fromKotlinClassToTest.main.kt")
     public void testFromKotlinClassToTest() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/navigation/gotoTestOrCode/fromKotlinClassToTest.main.kt");
+        runTest("idea/testData/navigation/gotoTestOrCode/fromKotlinClassToTest.main.kt");
     }
 
     @TestMetadata("fromKotlinFileToTest.main.kt")
     public void testFromKotlinFileToTest() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/navigation/gotoTestOrCode/fromKotlinFileToTest.main.kt");
+        runTest("idea/testData/navigation/gotoTestOrCode/fromKotlinFileToTest.main.kt");
     }
 
     @TestMetadata("fromKotlinTestToJavaClass.main.kt")
     public void testFromKotlinTestToJavaClass() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/navigation/gotoTestOrCode/fromKotlinTestToJavaClass.main.kt");
+        runTest("idea/testData/navigation/gotoTestOrCode/fromKotlinTestToJavaClass.main.kt");
     }
 
     @TestMetadata("fromKotlinTestToKotlinClass.main.kt")
     public void testFromKotlinTestToKotlinClass() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/navigation/gotoTestOrCode/fromKotlinTestToKotlinClass.main.kt");
+        runTest("idea/testData/navigation/gotoTestOrCode/fromKotlinTestToKotlinClass.main.kt");
     }
 
     @TestMetadata("fromKotlinTestToKotlinFile.main.kt")
     public void testFromKotlinTestToKotlinFile() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/navigation/gotoTestOrCode/fromKotlinTestToKotlinFile.main.kt");
+        runTest("idea/testData/navigation/gotoTestOrCode/fromKotlinTestToKotlinFile.main.kt");
     }
 }

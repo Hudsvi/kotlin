@@ -21,6 +21,10 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class PsiUnifierTestGenerated extends AbstractPsiUnifierTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInUnifier() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/unifier"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
     }
@@ -29,6 +33,10 @@ public class PsiUnifierTestGenerated extends AbstractPsiUnifierTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Equivalence extends AbstractPsiUnifierTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInEquivalence() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/unifier/equivalence"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
         }
@@ -37,96 +45,104 @@ public class PsiUnifierTestGenerated extends AbstractPsiUnifierTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class ControlStructures extends AbstractPsiUnifierTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInControlStructures() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/unifier/equivalence/controlStructures"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("break.kt")
             public void testBreak() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/controlStructures/break.kt");
+                runTest("idea/testData/unifier/equivalence/controlStructures/break.kt");
             }
 
             @TestMetadata("continue.kt")
             public void testContinue() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/controlStructures/continue.kt");
+                runTest("idea/testData/unifier/equivalence/controlStructures/continue.kt");
             }
 
             @TestMetadata("doWhileRuntime.kt")
             public void testDoWhileRuntime() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/controlStructures/doWhileRuntime.kt");
+                runTest("idea/testData/unifier/equivalence/controlStructures/doWhileRuntime.kt");
             }
 
             @TestMetadata("forRuntime.kt")
             public void testForRuntime() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/controlStructures/forRuntime.kt");
+                runTest("idea/testData/unifier/equivalence/controlStructures/forRuntime.kt");
             }
 
             @TestMetadata("ifElseRuntime.kt")
             public void testIfElseRuntime() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/controlStructures/ifElseRuntime.kt");
+                runTest("idea/testData/unifier/equivalence/controlStructures/ifElseRuntime.kt");
             }
 
             @TestMetadata("ifRuntime.kt")
             public void testIfRuntime() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/controlStructures/ifRuntime.kt");
+                runTest("idea/testData/unifier/equivalence/controlStructures/ifRuntime.kt");
             }
 
             @TestMetadata("labeledReturn.kt")
             public void testLabeledReturn() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/controlStructures/labeledReturn.kt");
+                runTest("idea/testData/unifier/equivalence/controlStructures/labeledReturn.kt");
             }
 
             @TestMetadata("throwRuntime.kt")
             public void testThrowRuntime() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/controlStructures/throwRuntime.kt");
+                runTest("idea/testData/unifier/equivalence/controlStructures/throwRuntime.kt");
             }
 
             @TestMetadata("unitReturn.kt")
             public void testUnitReturn() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/controlStructures/unitReturn.kt");
+                runTest("idea/testData/unifier/equivalence/controlStructures/unitReturn.kt");
             }
 
             @TestMetadata("valuedReturn.kt")
             public void testValuedReturn() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/controlStructures/valuedReturn.kt");
+                runTest("idea/testData/unifier/equivalence/controlStructures/valuedReturn.kt");
             }
 
             @TestMetadata("whenWithSubjectRuntime.kt")
             public void testWhenWithSubjectRuntime() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/controlStructures/whenWithSubjectRuntime.kt");
+                runTest("idea/testData/unifier/equivalence/controlStructures/whenWithSubjectRuntime.kt");
             }
 
             @TestMetadata("whenWithoutSubjectRuntime.kt")
             public void testWhenWithoutSubjectRuntime() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/controlStructures/whenWithoutSubjectRuntime.kt");
+                runTest("idea/testData/unifier/equivalence/controlStructures/whenWithoutSubjectRuntime.kt");
             }
 
             @TestMetadata("whileRuntime.kt")
             public void testWhileRuntime() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/controlStructures/whileRuntime.kt");
+                runTest("idea/testData/unifier/equivalence/controlStructures/whileRuntime.kt");
             }
 
             @TestMetadata("idea/testData/unifier/equivalence/controlStructures/blocks")
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class Blocks extends AbstractPsiUnifierTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInBlocks() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/unifier/equivalence/controlStructures/blocks"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("anonymousObjectsRuntime.kt")
                 public void testAnonymousObjectsRuntime() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/controlStructures/blocks/anonymousObjectsRuntime.kt");
+                    runTest("idea/testData/unifier/equivalence/controlStructures/blocks/anonymousObjectsRuntime.kt");
                 }
 
                 @TestMetadata("localFunctionsRuntime.kt")
                 public void testLocalFunctionsRuntime() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/controlStructures/blocks/localFunctionsRuntime.kt");
+                    runTest("idea/testData/unifier/equivalence/controlStructures/blocks/localFunctionsRuntime.kt");
                 }
 
                 @TestMetadata("localVarsRuntime.kt")
                 public void testLocalVarsRuntime() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/controlStructures/blocks/localVarsRuntime.kt");
+                    runTest("idea/testData/unifier/equivalence/controlStructures/blocks/localVarsRuntime.kt");
                 }
             }
         }
@@ -135,6 +151,10 @@ public class PsiUnifierTestGenerated extends AbstractPsiUnifierTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Declarations extends AbstractPsiUnifierTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInDeclarations() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/unifier/equivalence/declarations"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
@@ -143,38 +163,42 @@ public class PsiUnifierTestGenerated extends AbstractPsiUnifierTest {
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class ClassesAndObjects extends AbstractPsiUnifierTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInClassesAndObjects() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/unifier/equivalence/declarations/classesAndObjects"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("anonymousObjectBody.kt")
                 public void testAnonymousObjectBody() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/declarations/classesAndObjects/anonymousObjectBody.kt");
+                    runTest("idea/testData/unifier/equivalence/declarations/classesAndObjects/anonymousObjectBody.kt");
                 }
 
                 @TestMetadata("delegation.kt")
                 public void testDelegation() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/declarations/classesAndObjects/delegation.kt");
+                    runTest("idea/testData/unifier/equivalence/declarations/classesAndObjects/delegation.kt");
                 }
 
                 @TestMetadata("emptyBody.kt")
                 public void testEmptyBody() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/declarations/classesAndObjects/emptyBody.kt");
+                    runTest("idea/testData/unifier/equivalence/declarations/classesAndObjects/emptyBody.kt");
                 }
 
                 @TestMetadata("localClassBody.kt")
                 public void testLocalClassBody() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/declarations/classesAndObjects/localClassBody.kt");
+                    runTest("idea/testData/unifier/equivalence/declarations/classesAndObjects/localClassBody.kt");
                 }
 
                 @TestMetadata("localObjectBody.kt")
                 public void testLocalObjectBody() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/declarations/classesAndObjects/localObjectBody.kt");
+                    runTest("idea/testData/unifier/equivalence/declarations/classesAndObjects/localObjectBody.kt");
                 }
 
                 @TestMetadata("members.kt")
                 public void testMembers() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/declarations/classesAndObjects/members.kt");
+                    runTest("idea/testData/unifier/equivalence/declarations/classesAndObjects/members.kt");
                 }
             }
 
@@ -182,61 +206,69 @@ public class PsiUnifierTestGenerated extends AbstractPsiUnifierTest {
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class LocalCallables extends AbstractPsiUnifierTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInLocalCallables() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/unifier/equivalence/declarations/localCallables"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("localExtensionFunctions.kt")
                 public void testLocalExtensionFunctions() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/declarations/localCallables/localExtensionFunctions.kt");
+                    runTest("idea/testData/unifier/equivalence/declarations/localCallables/localExtensionFunctions.kt");
                 }
 
                 @TestMetadata("localFunctions.kt")
                 public void testLocalFunctions() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/declarations/localCallables/localFunctions.kt");
+                    runTest("idea/testData/unifier/equivalence/declarations/localCallables/localFunctions.kt");
                 }
 
                 @TestMetadata("localVariables.kt")
                 public void testLocalVariables() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/declarations/localCallables/localVariables.kt");
+                    runTest("idea/testData/unifier/equivalence/declarations/localCallables/localVariables.kt");
                 }
 
                 @TestMetadata("multiDeclaration.kt")
                 public void testMultiDeclaration() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/declarations/localCallables/multiDeclaration.kt");
+                    runTest("idea/testData/unifier/equivalence/declarations/localCallables/multiDeclaration.kt");
                 }
 
                 @TestMetadata("idea/testData/unifier/equivalence/declarations/localCallables/lambdas")
                 @TestDataPath("$PROJECT_ROOT")
                 @RunWith(JUnit3RunnerWithInners.class)
                 public static class Lambdas extends AbstractPsiUnifierTest {
+                    private void runTest(String testDataFilePath) throws Exception {
+                        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+                    }
+
                     public void testAllFilesPresentInLambdas() throws Exception {
                         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/unifier/equivalence/declarations/localCallables/lambdas"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
                     }
 
                     @TestMetadata("multipleParamsRuntime.kt")
                     public void testMultipleParamsRuntime() throws Exception {
-                        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/declarations/localCallables/lambdas/multipleParamsRuntime.kt");
+                        runTest("idea/testData/unifier/equivalence/declarations/localCallables/lambdas/multipleParamsRuntime.kt");
                     }
 
                     @TestMetadata("noParams.kt")
                     public void testNoParams() throws Exception {
-                        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/declarations/localCallables/lambdas/noParams.kt");
+                        runTest("idea/testData/unifier/equivalence/declarations/localCallables/lambdas/noParams.kt");
                     }
 
                     @TestMetadata("receiverArgumentsRuntime.kt")
                     public void testReceiverArgumentsRuntime() throws Exception {
-                        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/declarations/localCallables/lambdas/receiverArgumentsRuntime.kt");
+                        runTest("idea/testData/unifier/equivalence/declarations/localCallables/lambdas/receiverArgumentsRuntime.kt");
                     }
 
                     @TestMetadata("singleParam.kt")
                     public void testSingleParam() throws Exception {
-                        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/declarations/localCallables/lambdas/singleParam.kt");
+                        runTest("idea/testData/unifier/equivalence/declarations/localCallables/lambdas/singleParam.kt");
                     }
 
                     @TestMetadata("unitCoercion.kt")
                     public void testUnitCoercion() throws Exception {
-                        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/declarations/localCallables/lambdas/unitCoercion.kt");
+                        runTest("idea/testData/unifier/equivalence/declarations/localCallables/lambdas/unitCoercion.kt");
                     }
                 }
             }
@@ -245,13 +277,17 @@ public class PsiUnifierTestGenerated extends AbstractPsiUnifierTest {
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class TypeParameters extends AbstractPsiUnifierTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInTypeParameters() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/unifier/equivalence/declarations/typeParameters"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("boundsAndConstraints.kt")
                 public void testBoundsAndConstraints() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/declarations/typeParameters/boundsAndConstraints.kt");
+                    runTest("idea/testData/unifier/equivalence/declarations/typeParameters/boundsAndConstraints.kt");
                 }
             }
         }
@@ -260,56 +296,64 @@ public class PsiUnifierTestGenerated extends AbstractPsiUnifierTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Expressions extends AbstractPsiUnifierTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInExpressions() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/unifier/equivalence/expressions"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("arrayAccess.kt")
             public void testArrayAccess() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/arrayAccess.kt");
+                runTest("idea/testData/unifier/equivalence/expressions/arrayAccess.kt");
             }
 
             @TestMetadata("const.kt")
             public void testConst() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/const.kt");
+                runTest("idea/testData/unifier/equivalence/expressions/const.kt");
             }
 
             @TestMetadata("qualifiedName.kt")
             public void testQualifiedName() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/qualifiedName.kt");
+                runTest("idea/testData/unifier/equivalence/expressions/qualifiedName.kt");
             }
 
             @TestMetadata("simpleNameRuntime.kt")
             public void testSimpleNameRuntime() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/simpleNameRuntime.kt");
+                runTest("idea/testData/unifier/equivalence/expressions/simpleNameRuntime.kt");
             }
 
             @TestMetadata("stringTemplate.kt")
             public void testStringTemplate() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/stringTemplate.kt");
+                runTest("idea/testData/unifier/equivalence/expressions/stringTemplate.kt");
             }
 
             @TestMetadata("idea/testData/unifier/equivalence/expressions/callableReferences")
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class CallableReferences extends AbstractPsiUnifierTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInCallableReferences() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/unifier/equivalence/expressions/callableReferences"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("classRefRuntime.kt")
                 public void testClassRefRuntime() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/callableReferences/classRefRuntime.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/callableReferences/classRefRuntime.kt");
                 }
 
                 @TestMetadata("expressionReceivers.kt")
                 public void testExpressionReceivers() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/callableReferences/expressionReceivers.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/callableReferences/expressionReceivers.kt");
                 }
 
                 @TestMetadata("functionRefRuntime.kt")
                 public void testFunctionRefRuntime() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/callableReferences/functionRefRuntime.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/callableReferences/functionRefRuntime.kt");
                 }
             }
 
@@ -317,58 +361,62 @@ public class PsiUnifierTestGenerated extends AbstractPsiUnifierTest {
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class Calls extends AbstractPsiUnifierTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInCalls() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/unifier/equivalence/expressions/calls"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("callAndCalleeRuntime.kt")
                 public void testCallAndCalleeRuntime() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/calls/callAndCalleeRuntime.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/calls/callAndCalleeRuntime.kt");
                 }
 
                 @TestMetadata("callTypeArgumentsRuntime.kt")
                 public void testCallTypeArgumentsRuntime() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/calls/callTypeArgumentsRuntime.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/calls/callTypeArgumentsRuntime.kt");
                 }
 
                 @TestMetadata("callUnderSmartCast.kt")
                 public void testCallUnderSmartCast() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/calls/callUnderSmartCast.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/calls/callUnderSmartCast.kt");
                 }
 
                 @TestMetadata("externalArgumentsRuntime.kt")
                 public void testExternalArgumentsRuntime() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/calls/externalArgumentsRuntime.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/calls/externalArgumentsRuntime.kt");
                 }
 
                 @TestMetadata("extraArguments.kt")
                 public void testExtraArguments() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/calls/extraArguments.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/calls/extraArguments.kt");
                 }
 
                 @TestMetadata("implicitReceiverArgument.kt")
                 public void testImplicitReceiverArgument() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/calls/implicitReceiverArgument.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/calls/implicitReceiverArgument.kt");
                 }
 
                 @TestMetadata("implicitThis.kt")
                 public void testImplicitThis() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/calls/implicitThis.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/calls/implicitThis.kt");
                 }
 
                 @TestMetadata("safeCall.kt")
                 public void testSafeCall() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/calls/safeCall.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/calls/safeCall.kt");
                 }
 
                 @TestMetadata("unresolved.kt")
                 public void testUnresolved() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/calls/unresolved.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/calls/unresolved.kt");
                 }
 
                 @TestMetadata("varargs.kt")
                 public void testVarargs() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/calls/varargs.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/calls/varargs.kt");
                 }
             }
 
@@ -376,23 +424,27 @@ public class PsiUnifierTestGenerated extends AbstractPsiUnifierTest {
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class Casts extends AbstractPsiUnifierTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInCasts() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/unifier/equivalence/expressions/casts"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("as.kt")
                 public void testAs() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/casts/as.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/casts/as.kt");
                 }
 
                 @TestMetadata("is.kt")
                 public void testIs() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/casts/is.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/casts/is.kt");
                 }
 
                 @TestMetadata("safeAs.kt")
                 public void testSafeAs() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/casts/safeAs.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/casts/safeAs.kt");
                 }
             }
 
@@ -400,91 +452,99 @@ public class PsiUnifierTestGenerated extends AbstractPsiUnifierTest {
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class Conventions extends AbstractPsiUnifierTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInConventions() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/unifier/equivalence/expressions/conventions"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("containsRuntime.kt")
                 public void testContainsRuntime() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/conventions/containsRuntime.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/conventions/containsRuntime.kt");
                 }
 
                 @TestMetadata("equals.kt")
                 public void testEquals() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/conventions/equals.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/conventions/equals.kt");
                 }
 
                 @TestMetadata("getRuntime.kt")
                 public void testGetRuntime() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/conventions/getRuntime.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/conventions/getRuntime.kt");
                 }
 
                 @TestMetadata("inc.kt")
                 public void testInc() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/conventions/inc.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/conventions/inc.kt");
                 }
 
                 @TestMetadata("infixCall.kt")
                 public void testInfixCall() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/conventions/infixCall.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/conventions/infixCall.kt");
                 }
 
                 @TestMetadata("lessThan.kt")
                 public void testLessThan() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/conventions/lessThan.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/conventions/lessThan.kt");
                 }
 
                 @TestMetadata("notContains.kt")
                 public void testNotContains() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/conventions/notContains.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/conventions/notContains.kt");
                 }
 
                 @TestMetadata("notEquals.kt")
                 public void testNotEquals() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/conventions/notEquals.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/conventions/notEquals.kt");
                 }
 
                 @TestMetadata("plus.kt")
                 public void testPlus() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/conventions/plus.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/conventions/plus.kt");
                 }
 
                 @TestMetadata("unaryMinus.kt")
                 public void testUnaryMinus() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/conventions/unaryMinus.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/conventions/unaryMinus.kt");
                 }
 
                 @TestMetadata("idea/testData/unifier/equivalence/expressions/conventions/assignments")
                 @TestDataPath("$PROJECT_ROOT")
                 @RunWith(JUnit3RunnerWithInners.class)
                 public static class Assignments extends AbstractPsiUnifierTest {
+                    private void runTest(String testDataFilePath) throws Exception {
+                        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+                    }
+
                     public void testAllFilesPresentInAssignments() throws Exception {
                         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/unifier/equivalence/expressions/conventions/assignments"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
                     }
 
                     @TestMetadata("indexedPlusAssignRuntime.kt")
                     public void testIndexedPlusAssignRuntime() throws Exception {
-                        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/conventions/assignments/indexedPlusAssignRuntime.kt");
+                        runTest("idea/testData/unifier/equivalence/expressions/conventions/assignments/indexedPlusAssignRuntime.kt");
                     }
 
                     @TestMetadata("plusAndAssign.kt")
                     public void testPlusAndAssign() throws Exception {
-                        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/conventions/assignments/plusAndAssign.kt");
+                        runTest("idea/testData/unifier/equivalence/expressions/conventions/assignments/plusAndAssign.kt");
                     }
 
                     @TestMetadata("plusAndAssignWithSet.kt")
                     public void testPlusAndAssignWithSet() throws Exception {
-                        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/conventions/assignments/plusAndAssignWithSet.kt");
+                        runTest("idea/testData/unifier/equivalence/expressions/conventions/assignments/plusAndAssignWithSet.kt");
                     }
 
                     @TestMetadata("plusAssign.kt")
                     public void testPlusAssign() throws Exception {
-                        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/conventions/assignments/plusAssign.kt");
+                        runTest("idea/testData/unifier/equivalence/expressions/conventions/assignments/plusAssign.kt");
                     }
 
                     @TestMetadata("setRuntime.kt")
                     public void testSetRuntime() throws Exception {
-                        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/conventions/assignments/setRuntime.kt");
+                        runTest("idea/testData/unifier/equivalence/expressions/conventions/assignments/setRuntime.kt");
                     }
                 }
 
@@ -492,28 +552,32 @@ public class PsiUnifierTestGenerated extends AbstractPsiUnifierTest {
                 @TestDataPath("$PROJECT_ROOT")
                 @RunWith(JUnit3RunnerWithInners.class)
                 public static class Invoke extends AbstractPsiUnifierTest {
+                    private void runTest(String testDataFilePath) throws Exception {
+                        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+                    }
+
                     public void testAllFilesPresentInInvoke() throws Exception {
                         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/unifier/equivalence/expressions/conventions/invoke"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
                     }
 
                     @TestMetadata("invokeOnCall.kt")
                     public void testInvokeOnCall() throws Exception {
-                        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/conventions/invoke/invokeOnCall.kt");
+                        runTest("idea/testData/unifier/equivalence/expressions/conventions/invoke/invokeOnCall.kt");
                     }
 
                     @TestMetadata("invokeOnConst.kt")
                     public void testInvokeOnConst() throws Exception {
-                        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/conventions/invoke/invokeOnConst.kt");
+                        runTest("idea/testData/unifier/equivalence/expressions/conventions/invoke/invokeOnConst.kt");
                     }
 
                     @TestMetadata("invokeOnQualified.kt")
                     public void testInvokeOnQualified() throws Exception {
-                        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/conventions/invoke/invokeOnQualified.kt");
+                        runTest("idea/testData/unifier/equivalence/expressions/conventions/invoke/invokeOnQualified.kt");
                     }
 
                     @TestMetadata("invokeOnVar.kt")
                     public void testInvokeOnVar() throws Exception {
-                        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/conventions/invoke/invokeOnVar.kt");
+                        runTest("idea/testData/unifier/equivalence/expressions/conventions/invoke/invokeOnVar.kt");
                     }
                 }
             }
@@ -522,23 +586,27 @@ public class PsiUnifierTestGenerated extends AbstractPsiUnifierTest {
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class Misc extends AbstractPsiUnifierTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInMisc() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/unifier/equivalence/expressions/misc"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("misc1.kt")
                 public void testMisc1() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/misc/misc1.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/misc/misc1.kt");
                 }
 
                 @TestMetadata("misc2.kt")
                 public void testMisc2() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/misc/misc2.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/misc/misc2.kt");
                 }
 
                 @TestMetadata("misc3.kt")
                 public void testMisc3() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/misc/misc3.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/misc/misc3.kt");
                 }
             }
 
@@ -546,28 +614,32 @@ public class PsiUnifierTestGenerated extends AbstractPsiUnifierTest {
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class Super extends AbstractPsiUnifierTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInSuper() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/unifier/equivalence/expressions/super"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("multipleSuperTypes.kt")
                 public void testMultipleSuperTypes() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/super/multipleSuperTypes.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/super/multipleSuperTypes.kt");
                 }
 
                 @TestMetadata("qualifiedByClass1.kt")
                 public void testQualifiedByClass1() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/super/qualifiedByClass1.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/super/qualifiedByClass1.kt");
                 }
 
                 @TestMetadata("qualifiedByClass2.kt")
                 public void testQualifiedByClass2() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/super/qualifiedByClass2.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/super/qualifiedByClass2.kt");
                 }
 
                 @TestMetadata("qualifiedByClass3.kt")
                 public void testQualifiedByClass3() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/super/qualifiedByClass3.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/super/qualifiedByClass3.kt");
                 }
             }
 
@@ -575,58 +647,62 @@ public class PsiUnifierTestGenerated extends AbstractPsiUnifierTest {
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class This extends AbstractPsiUnifierTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInThis() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/unifier/equivalence/expressions/this"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("anonymousObjects.kt")
                 public void testAnonymousObjects() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/this/anonymousObjects.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/this/anonymousObjects.kt");
                 }
 
                 @TestMetadata("qualifiedByClass1.kt")
                 public void testQualifiedByClass1() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/this/qualifiedByClass1.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/this/qualifiedByClass1.kt");
                 }
 
                 @TestMetadata("qualifiedByClass2.kt")
                 public void testQualifiedByClass2() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/this/qualifiedByClass2.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/this/qualifiedByClass2.kt");
                 }
 
                 @TestMetadata("qualifiedByClass3.kt")
                 public void testQualifiedByClass3() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/this/qualifiedByClass3.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/this/qualifiedByClass3.kt");
                 }
 
                 @TestMetadata("qualifiedByFunction1.kt")
                 public void testQualifiedByFunction1() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/this/qualifiedByFunction1.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/this/qualifiedByFunction1.kt");
                 }
 
                 @TestMetadata("qualifiedByFunction2.kt")
                 public void testQualifiedByFunction2() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/this/qualifiedByFunction2.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/this/qualifiedByFunction2.kt");
                 }
 
                 @TestMetadata("qualifiedByFunction3.kt")
                 public void testQualifiedByFunction3() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/this/qualifiedByFunction3.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/this/qualifiedByFunction3.kt");
                 }
 
                 @TestMetadata("simpleThis1Runtime.kt")
                 public void testSimpleThis1Runtime() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/this/simpleThis1Runtime.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/this/simpleThis1Runtime.kt");
                 }
 
                 @TestMetadata("simpleThis2Runtime.kt")
                 public void testSimpleThis2Runtime() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/this/simpleThis2Runtime.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/this/simpleThis2Runtime.kt");
                 }
 
                 @TestMetadata("thisAsCallee.kt")
                 public void testThisAsCallee() throws Exception {
-                    KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/expressions/this/thisAsCallee.kt");
+                    runTest("idea/testData/unifier/equivalence/expressions/this/thisAsCallee.kt");
                 }
             }
         }
@@ -635,38 +711,42 @@ public class PsiUnifierTestGenerated extends AbstractPsiUnifierTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Types extends AbstractPsiUnifierTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInTypes() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/unifier/equivalence/types"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("function0.kt")
             public void testFunction0() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/types/function0.kt");
+                runTest("idea/testData/unifier/equivalence/types/function0.kt");
             }
 
             @TestMetadata("function1.kt")
             public void testFunction1() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/types/function1.kt");
+                runTest("idea/testData/unifier/equivalence/types/function1.kt");
             }
 
             @TestMetadata("function2.kt")
             public void testFunction2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/types/function2.kt");
+                runTest("idea/testData/unifier/equivalence/types/function2.kt");
             }
 
             @TestMetadata("nonNullable.kt")
             public void testNonNullable() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/types/nonNullable.kt");
+                runTest("idea/testData/unifier/equivalence/types/nonNullable.kt");
             }
 
             @TestMetadata("nullable.kt")
             public void testNullable() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/types/nullable.kt");
+                runTest("idea/testData/unifier/equivalence/types/nullable.kt");
             }
 
             @TestMetadata("userTypeRuntime.kt")
             public void testUserTypeRuntime() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/unifier/equivalence/types/userTypeRuntime.kt");
+                runTest("idea/testData/unifier/equivalence/types/userTypeRuntime.kt");
             }
         }
     }

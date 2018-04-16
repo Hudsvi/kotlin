@@ -21,57 +21,61 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class AndroidCompletionTestGenerated extends AbstractAndroidCompletionTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInCompletion() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("plugins/android-extensions/android-extensions-idea/testData/android/completion"), Pattern.compile("^([^\\.]+)$"), TargetBackend.ANY, false);
     }
 
     @TestMetadata("fqNameInAttr")
     public void testFqNameInAttr() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "plugins/android-extensions/android-extensions-idea/testData/android/completion/fqNameInAttr/");
+        runTest("plugins/android-extensions/android-extensions-idea/testData/android/completion/fqNameInAttr/");
     }
 
     @TestMetadata("fqNameInAttrFragment")
     public void testFqNameInAttrFragment() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "plugins/android-extensions/android-extensions-idea/testData/android/completion/fqNameInAttrFragment/");
+        runTest("plugins/android-extensions/android-extensions-idea/testData/android/completion/fqNameInAttrFragment/");
     }
 
     @TestMetadata("fqNameInTag")
     public void testFqNameInTag() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "plugins/android-extensions/android-extensions-idea/testData/android/completion/fqNameInTag/");
+        runTest("plugins/android-extensions/android-extensions-idea/testData/android/completion/fqNameInTag/");
     }
 
     @TestMetadata("fqNameInTagFragment")
     public void testFqNameInTagFragment() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "plugins/android-extensions/android-extensions-idea/testData/android/completion/fqNameInTagFragment/");
+        runTest("plugins/android-extensions/android-extensions-idea/testData/android/completion/fqNameInTagFragment/");
     }
 
     @TestMetadata("multiFile")
     public void testMultiFile() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "plugins/android-extensions/android-extensions-idea/testData/android/completion/multiFile/");
+        runTest("plugins/android-extensions/android-extensions-idea/testData/android/completion/multiFile/");
     }
 
     @TestMetadata("multiFileFragment")
     public void testMultiFileFragment() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "plugins/android-extensions/android-extensions-idea/testData/android/completion/multiFileFragment/");
+        runTest("plugins/android-extensions/android-extensions-idea/testData/android/completion/multiFileFragment/");
     }
 
     @TestMetadata("propertiesSimple")
     public void testPropertiesSimple() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "plugins/android-extensions/android-extensions-idea/testData/android/completion/propertiesSimple/");
+        runTest("plugins/android-extensions/android-extensions-idea/testData/android/completion/propertiesSimple/");
     }
 
     @TestMetadata("propertiesSimpleFragment")
     public void testPropertiesSimpleFragment() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "plugins/android-extensions/android-extensions-idea/testData/android/completion/propertiesSimpleFragment/");
+        runTest("plugins/android-extensions/android-extensions-idea/testData/android/completion/propertiesSimpleFragment/");
     }
 
     @TestMetadata("propertiesSimpleView")
     public void testPropertiesSimpleView() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "plugins/android-extensions/android-extensions-idea/testData/android/completion/propertiesSimpleView/");
+        runTest("plugins/android-extensions/android-extensions-idea/testData/android/completion/propertiesSimpleView/");
     }
 
     @TestMetadata("withoutImport")
     public void testWithoutImport() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "plugins/android-extensions/android-extensions-idea/testData/android/completion/withoutImport/");
+        runTest("plugins/android-extensions/android-extensions-idea/testData/android/completion/withoutImport/");
     }
 }

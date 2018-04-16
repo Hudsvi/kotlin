@@ -21,112 +21,116 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class AnnotationProcessorBoxTestGenerated extends AbstractAnnotationProcessorBoxTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInCollectToFile() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("plugins/annotation-collector/testData/collectToFile"), Pattern.compile("^([^\\.]+)$"), TargetBackend.ANY, false);
     }
 
     @TestMetadata("annotatedGettersSetters")
     public void testAnnotatedGettersSetters() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "plugins/annotation-collector/testData/collectToFile/annotatedGettersSetters/");
+        runTest("plugins/annotation-collector/testData/collectToFile/annotatedGettersSetters/");
     }
 
     @TestMetadata("annotationInSameFile")
     public void testAnnotationInSameFile() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "plugins/annotation-collector/testData/collectToFile/annotationInSameFile/");
+        runTest("plugins/annotation-collector/testData/collectToFile/annotationInSameFile/");
     }
 
     @TestMetadata("anonymousClasses")
     public void testAnonymousClasses() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "plugins/annotation-collector/testData/collectToFile/anonymousClasses/");
+        runTest("plugins/annotation-collector/testData/collectToFile/anonymousClasses/");
     }
 
     @TestMetadata("classAnnotations")
     public void testClassAnnotations() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "plugins/annotation-collector/testData/collectToFile/classAnnotations/");
+        runTest("plugins/annotation-collector/testData/collectToFile/classAnnotations/");
     }
 
     @TestMetadata("constructors")
     public void testConstructors() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "plugins/annotation-collector/testData/collectToFile/constructors/");
+        runTest("plugins/annotation-collector/testData/collectToFile/constructors/");
     }
 
     @TestMetadata("defaultPackage")
     public void testDefaultPackage() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "plugins/annotation-collector/testData/collectToFile/defaultPackage/");
+        runTest("plugins/annotation-collector/testData/collectToFile/defaultPackage/");
     }
 
     @TestMetadata("fieldAnnotations")
     public void testFieldAnnotations() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "plugins/annotation-collector/testData/collectToFile/fieldAnnotations/");
+        runTest("plugins/annotation-collector/testData/collectToFile/fieldAnnotations/");
     }
 
     @TestMetadata("inheritedComplex")
     public void testInheritedComplex() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "plugins/annotation-collector/testData/collectToFile/inheritedComplex/");
+        runTest("plugins/annotation-collector/testData/collectToFile/inheritedComplex/");
     }
 
     @TestMetadata("inheritedSimple")
     public void testInheritedSimple() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "plugins/annotation-collector/testData/collectToFile/inheritedSimple/");
+        runTest("plugins/annotation-collector/testData/collectToFile/inheritedSimple/");
     }
 
     @TestMetadata("inheritedTopLevel")
     public void testInheritedTopLevel() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "plugins/annotation-collector/testData/collectToFile/inheritedTopLevel/");
+        runTest("plugins/annotation-collector/testData/collectToFile/inheritedTopLevel/");
     }
 
     @TestMetadata("localClasses")
     public void testLocalClasses() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "plugins/annotation-collector/testData/collectToFile/localClasses/");
+        runTest("plugins/annotation-collector/testData/collectToFile/localClasses/");
     }
 
     @TestMetadata("localFunctions")
     public void testLocalFunctions() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "plugins/annotation-collector/testData/collectToFile/localFunctions/");
+        runTest("plugins/annotation-collector/testData/collectToFile/localFunctions/");
     }
 
     @TestMetadata("methodAnnotations")
     public void testMethodAnnotations() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "plugins/annotation-collector/testData/collectToFile/methodAnnotations/");
+        runTest("plugins/annotation-collector/testData/collectToFile/methodAnnotations/");
     }
 
     @TestMetadata("multiFileTopLevelAnnotated")
     public void testMultiFileTopLevelAnnotated() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "plugins/annotation-collector/testData/collectToFile/multiFileTopLevelAnnotated/");
+        runTest("plugins/annotation-collector/testData/collectToFile/multiFileTopLevelAnnotated/");
     }
 
     @TestMetadata("nestedClasses")
     public void testNestedClasses() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "plugins/annotation-collector/testData/collectToFile/nestedClasses/");
+        runTest("plugins/annotation-collector/testData/collectToFile/nestedClasses/");
     }
 
     @TestMetadata("platformStatic")
     public void testPlatformStatic() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "plugins/annotation-collector/testData/collectToFile/platformStatic/");
+        runTest("plugins/annotation-collector/testData/collectToFile/platformStatic/");
     }
 
     @TestMetadata("retentionPoliciesJavaAnnotations")
     public void testRetentionPoliciesJavaAnnotations() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "plugins/annotation-collector/testData/collectToFile/retentionPoliciesJavaAnnotations/");
+        runTest("plugins/annotation-collector/testData/collectToFile/retentionPoliciesJavaAnnotations/");
     }
 
     @TestMetadata("retentionPoliciesJavaAnnotationsStubs")
     public void testRetentionPoliciesJavaAnnotationsStubs() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "plugins/annotation-collector/testData/collectToFile/retentionPoliciesJavaAnnotationsStubs/");
+        runTest("plugins/annotation-collector/testData/collectToFile/retentionPoliciesJavaAnnotationsStubs/");
     }
 
     @TestMetadata("retentionPoliciesKotlinAnnotations")
     public void testRetentionPoliciesKotlinAnnotations() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "plugins/annotation-collector/testData/collectToFile/retentionPoliciesKotlinAnnotations/");
+        runTest("plugins/annotation-collector/testData/collectToFile/retentionPoliciesKotlinAnnotations/");
     }
 
     @TestMetadata("retentionPoliciesKotlinAnnotationsStubs")
     public void testRetentionPoliciesKotlinAnnotationsStubs() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "plugins/annotation-collector/testData/collectToFile/retentionPoliciesKotlinAnnotationsStubs/");
+        runTest("plugins/annotation-collector/testData/collectToFile/retentionPoliciesKotlinAnnotationsStubs/");
     }
 
     @TestMetadata("topLevelAnnotated")
     public void testTopLevelAnnotated() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "plugins/annotation-collector/testData/collectToFile/topLevelAnnotated/");
+        runTest("plugins/annotation-collector/testData/collectToFile/topLevelAnnotated/");
     }
 }

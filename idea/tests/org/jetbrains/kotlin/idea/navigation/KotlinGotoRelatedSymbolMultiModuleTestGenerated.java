@@ -21,67 +21,71 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class KotlinGotoRelatedSymbolMultiModuleTestGenerated extends AbstractKotlinGotoRelatedSymbolMultiModuleTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInMultiModule() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/navigation/relatedSymbols/multiModule"), Pattern.compile("^([^\\.]+)$"), TargetBackend.ANY, false);
     }
 
     @TestMetadata("fromActualMemberFunToExpect")
     public void testFromActualMemberFunToExpect() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/navigation/relatedSymbols/multiModule/fromActualMemberFunToExpect/");
+        runTest("idea/testData/navigation/relatedSymbols/multiModule/fromActualMemberFunToExpect/");
     }
 
     @TestMetadata("fromActualMemberValToExpect")
     public void testFromActualMemberValToExpect() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/navigation/relatedSymbols/multiModule/fromActualMemberValToExpect/");
+        runTest("idea/testData/navigation/relatedSymbols/multiModule/fromActualMemberValToExpect/");
     }
 
     @TestMetadata("fromExpectMemberFunToActuals")
     public void testFromExpectMemberFunToActuals() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/navigation/relatedSymbols/multiModule/fromExpectMemberFunToActuals/");
+        runTest("idea/testData/navigation/relatedSymbols/multiModule/fromExpectMemberFunToActuals/");
     }
 
     @TestMetadata("fromExpectMemberValToActuals")
     public void testFromExpectMemberValToActuals() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/navigation/relatedSymbols/multiModule/fromExpectMemberValToActuals/");
+        runTest("idea/testData/navigation/relatedSymbols/multiModule/fromExpectMemberValToActuals/");
     }
 
     @TestMetadata("fromNestedActualClassToExpect")
     public void testFromNestedActualClassToExpect() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/navigation/relatedSymbols/multiModule/fromNestedActualClassToExpect/");
+        runTest("idea/testData/navigation/relatedSymbols/multiModule/fromNestedActualClassToExpect/");
     }
 
     @TestMetadata("fromNestedExpectClassToActuals")
     public void testFromNestedExpectClassToActuals() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/navigation/relatedSymbols/multiModule/fromNestedExpectClassToActuals/");
+        runTest("idea/testData/navigation/relatedSymbols/multiModule/fromNestedExpectClassToActuals/");
     }
 
     @TestMetadata("fromTopLevelActualClassToExpect")
     public void testFromTopLevelActualClassToExpect() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/navigation/relatedSymbols/multiModule/fromTopLevelActualClassToExpect/");
+        runTest("idea/testData/navigation/relatedSymbols/multiModule/fromTopLevelActualClassToExpect/");
     }
 
     @TestMetadata("fromTopLevelActualFunToExpect")
     public void testFromTopLevelActualFunToExpect() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/navigation/relatedSymbols/multiModule/fromTopLevelActualFunToExpect/");
+        runTest("idea/testData/navigation/relatedSymbols/multiModule/fromTopLevelActualFunToExpect/");
     }
 
     @TestMetadata("fromTopLevelActualValToExpect")
     public void testFromTopLevelActualValToExpect() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/navigation/relatedSymbols/multiModule/fromTopLevelActualValToExpect/");
+        runTest("idea/testData/navigation/relatedSymbols/multiModule/fromTopLevelActualValToExpect/");
     }
 
     @TestMetadata("fromTopLevelExpectClassToActuals")
     public void testFromTopLevelExpectClassToActuals() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/navigation/relatedSymbols/multiModule/fromTopLevelExpectClassToActuals/");
+        runTest("idea/testData/navigation/relatedSymbols/multiModule/fromTopLevelExpectClassToActuals/");
     }
 
     @TestMetadata("fromTopLevelExpectFunToActuals")
     public void testFromTopLevelExpectFunToActuals() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/navigation/relatedSymbols/multiModule/fromTopLevelExpectFunToActuals/");
+        runTest("idea/testData/navigation/relatedSymbols/multiModule/fromTopLevelExpectFunToActuals/");
     }
 
     @TestMetadata("fromTopLevelExpectValToActuals")
     public void testFromTopLevelExpectValToActuals() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/navigation/relatedSymbols/multiModule/fromTopLevelExpectValToActuals/");
+        runTest("idea/testData/navigation/relatedSymbols/multiModule/fromTopLevelExpectValToActuals/");
     }
 }

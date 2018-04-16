@@ -21,17 +21,21 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class Java8BasicCompletionTestGenerated extends AbstractJava8BasicCompletionTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInJava8() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/idea-completion/testData/basic/java8"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
     }
 
     @TestMetadata("CollectionMethods.kt")
     public void testCollectionMethods() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/java8/CollectionMethods.kt");
+        runTest("idea/idea-completion/testData/basic/java8/CollectionMethods.kt");
     }
 
     @TestMetadata("StreamMethods.kt")
     public void testStreamMethods() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/java8/StreamMethods.kt");
+        runTest("idea/idea-completion/testData/basic/java8/StreamMethods.kt");
     }
 }

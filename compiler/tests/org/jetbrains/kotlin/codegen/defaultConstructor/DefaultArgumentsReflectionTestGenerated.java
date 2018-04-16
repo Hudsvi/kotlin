@@ -21,67 +21,71 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class DefaultArgumentsReflectionTestGenerated extends AbstractDefaultArgumentsReflectionTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInReflection() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/codegen/defaultArguments/reflection"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
     }
 
     @TestMetadata("classInClassObject.kt")
     public void testClassInClassObject() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/defaultArguments/reflection/classInClassObject.kt");
+        runTest("compiler/testData/codegen/defaultArguments/reflection/classInClassObject.kt");
     }
 
     @TestMetadata("classInObject.kt")
     public void testClassInObject() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/defaultArguments/reflection/classInObject.kt");
+        runTest("compiler/testData/codegen/defaultArguments/reflection/classInObject.kt");
     }
 
     @TestMetadata("classWithTwoDefaultArgs.kt")
     public void testClassWithTwoDefaultArgs() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/defaultArguments/reflection/classWithTwoDefaultArgs.kt");
+        runTest("compiler/testData/codegen/defaultArguments/reflection/classWithTwoDefaultArgs.kt");
     }
 
     @TestMetadata("classWithVararg.kt")
     public void testClassWithVararg() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/defaultArguments/reflection/classWithVararg.kt");
+        runTest("compiler/testData/codegen/defaultArguments/reflection/classWithVararg.kt");
     }
 
     @TestMetadata("enum.kt")
     public void testEnum() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/defaultArguments/reflection/enum.kt");
+        runTest("compiler/testData/codegen/defaultArguments/reflection/enum.kt");
     }
 
     @TestMetadata("internalClass.kt")
     public void testInternalClass() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/defaultArguments/reflection/internalClass.kt");
+        runTest("compiler/testData/codegen/defaultArguments/reflection/internalClass.kt");
     }
 
     @TestMetadata("privateClass.kt")
     public void testPrivateClass() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/defaultArguments/reflection/privateClass.kt");
+        runTest("compiler/testData/codegen/defaultArguments/reflection/privateClass.kt");
     }
 
     @TestMetadata("privateConstructor.kt")
     public void testPrivateConstructor() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/defaultArguments/reflection/privateConstructor.kt");
+        runTest("compiler/testData/codegen/defaultArguments/reflection/privateConstructor.kt");
     }
 
     @TestMetadata("publicClass.kt")
     public void testPublicClass() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/defaultArguments/reflection/publicClass.kt");
+        runTest("compiler/testData/codegen/defaultArguments/reflection/publicClass.kt");
     }
 
     @TestMetadata("publicClassWoDefArgs.kt")
     public void testPublicClassWoDefArgs() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/defaultArguments/reflection/publicClassWoDefArgs.kt");
+        runTest("compiler/testData/codegen/defaultArguments/reflection/publicClassWoDefArgs.kt");
     }
 
     @TestMetadata("publicInnerClass.kt")
     public void testPublicInnerClass() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/defaultArguments/reflection/publicInnerClass.kt");
+        runTest("compiler/testData/codegen/defaultArguments/reflection/publicInnerClass.kt");
     }
 
     @TestMetadata("publicInnerClassInPrivateClass.kt")
     public void testPublicInnerClassInPrivateClass() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/defaultArguments/reflection/publicInnerClassInPrivateClass.kt");
+        runTest("compiler/testData/codegen/defaultArguments/reflection/publicInnerClassInPrivateClass.kt");
     }
 }

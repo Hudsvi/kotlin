@@ -21,297 +21,301 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class SlicerNullnessGroupingTestGenerated extends AbstractSlicerNullnessGroupingTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInInflow() throws Exception {
         KotlinTestUtils.assertAllTestsPresentInSingleGeneratedClass(this.getClass(), new File("idea/testData/slicer/inflow"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY);
     }
 
     @TestMetadata("anonymousFunBodyExpression.kt")
     public void testAnonymousFunBodyExpression() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/anonymousFunBodyExpression.kt");
+        runTest("idea/testData/slicer/inflow/anonymousFunBodyExpression.kt");
     }
 
     @TestMetadata("anonymousFunReturnExpression.kt")
     public void testAnonymousFunReturnExpression() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/anonymousFunReturnExpression.kt");
+        runTest("idea/testData/slicer/inflow/anonymousFunReturnExpression.kt");
     }
 
     @TestMetadata("cast.kt")
     public void testCast() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/cast.kt");
+        runTest("idea/testData/slicer/inflow/cast.kt");
     }
 
     @TestMetadata("compositeAssignments.kt")
     public void testCompositeAssignments() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/compositeAssignments.kt");
+        runTest("idea/testData/slicer/inflow/compositeAssignments.kt");
     }
 
     @TestMetadata("defaultGetterFieldInSetter.kt")
     public void testDefaultGetterFieldInSetter() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/defaultGetterFieldInSetter.kt");
+        runTest("idea/testData/slicer/inflow/defaultGetterFieldInSetter.kt");
     }
 
     @TestMetadata("delegateGetter.kt")
     public void testDelegateGetter() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/delegateGetter.kt");
+        runTest("idea/testData/slicer/inflow/delegateGetter.kt");
     }
 
     @TestMetadata("delegateToJavaGetter.kt")
     public void testDelegateToJavaGetter() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/delegateToJavaGetter.kt");
+        runTest("idea/testData/slicer/inflow/delegateToJavaGetter.kt");
     }
 
     @TestMetadata("diamondHierarchyJKMiddleClassFun.kt")
     public void testDiamondHierarchyJKMiddleClassFun() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/diamondHierarchyJKMiddleClassFun.kt");
+        runTest("idea/testData/slicer/inflow/diamondHierarchyJKMiddleClassFun.kt");
     }
 
     @TestMetadata("diamondHierarchyJKMiddleInterfaceFun.kt")
     public void testDiamondHierarchyJKMiddleInterfaceFun() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/diamondHierarchyJKMiddleInterfaceFun.kt");
+        runTest("idea/testData/slicer/inflow/diamondHierarchyJKMiddleInterfaceFun.kt");
     }
 
     @TestMetadata("diamondHierarchyJKRootInterfaceFun.kt")
     public void testDiamondHierarchyJKRootInterfaceFun() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/diamondHierarchyJKRootInterfaceFun.kt");
+        runTest("idea/testData/slicer/inflow/diamondHierarchyJKRootInterfaceFun.kt");
     }
 
     @TestMetadata("diamondHierarchyMiddleClassFun.kt")
     public void testDiamondHierarchyMiddleClassFun() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/diamondHierarchyMiddleClassFun.kt");
+        runTest("idea/testData/slicer/inflow/diamondHierarchyMiddleClassFun.kt");
     }
 
     @TestMetadata("diamondHierarchyMiddleInterfaceFun.kt")
     public void testDiamondHierarchyMiddleInterfaceFun() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/diamondHierarchyMiddleInterfaceFun.kt");
+        runTest("idea/testData/slicer/inflow/diamondHierarchyMiddleInterfaceFun.kt");
     }
 
     @TestMetadata("diamondHierarchyRootInterfaceFun.kt")
     public void testDiamondHierarchyRootInterfaceFun() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/diamondHierarchyRootInterfaceFun.kt");
+        runTest("idea/testData/slicer/inflow/diamondHierarchyRootInterfaceFun.kt");
     }
 
     @TestMetadata("doubleLambdaResult.kt")
     public void testDoubleLambdaResult() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/doubleLambdaResult.kt");
+        runTest("idea/testData/slicer/inflow/doubleLambdaResult.kt");
     }
 
     @TestMetadata("funParamerer.kt")
     public void testFunParamerer() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/funParamerer.kt");
+        runTest("idea/testData/slicer/inflow/funParamerer.kt");
     }
 
     @TestMetadata("funParamererWithDefault.kt")
     public void testFunParamererWithDefault() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/funParamererWithDefault.kt");
+        runTest("idea/testData/slicer/inflow/funParamererWithDefault.kt");
     }
 
     @TestMetadata("funResultViaCallableRef.kt")
     public void testFunResultViaCallableRef() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/funResultViaCallableRef.kt");
+        runTest("idea/testData/slicer/inflow/funResultViaCallableRef.kt");
     }
 
     @TestMetadata("funResultViaCallableRefWithAssignment.kt")
     public void testFunResultViaCallableRefWithAssignment() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/funResultViaCallableRefWithAssignment.kt");
+        runTest("idea/testData/slicer/inflow/funResultViaCallableRefWithAssignment.kt");
     }
 
     @TestMetadata("funResultViaCallableRefWithDirectCall.kt")
     public void testFunResultViaCallableRefWithDirectCall() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/funResultViaCallableRefWithDirectCall.kt");
+        runTest("idea/testData/slicer/inflow/funResultViaCallableRefWithDirectCall.kt");
     }
 
     @TestMetadata("funWithExpressionBody.kt")
     public void testFunWithExpressionBody() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/funWithExpressionBody.kt");
+        runTest("idea/testData/slicer/inflow/funWithExpressionBody.kt");
     }
 
     @TestMetadata("funWithReturnExpressions.kt")
     public void testFunWithReturnExpressions() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/funWithReturnExpressions.kt");
+        runTest("idea/testData/slicer/inflow/funWithReturnExpressions.kt");
     }
 
     @TestMetadata("getterAndSetterUsingField.kt")
     public void testGetterAndSetterUsingField() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/getterAndSetterUsingField.kt");
+        runTest("idea/testData/slicer/inflow/getterAndSetterUsingField.kt");
     }
 
     @TestMetadata("getterExpressionBody.kt")
     public void testGetterExpressionBody() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/getterExpressionBody.kt");
+        runTest("idea/testData/slicer/inflow/getterExpressionBody.kt");
     }
 
     @TestMetadata("getterReturnExpression.kt")
     public void testGetterReturnExpression() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/getterReturnExpression.kt");
+        runTest("idea/testData/slicer/inflow/getterReturnExpression.kt");
     }
 
     @TestMetadata("ifExpression.kt")
     public void testIfExpression() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/ifExpression.kt");
+        runTest("idea/testData/slicer/inflow/ifExpression.kt");
     }
 
     @TestMetadata("lambdaResult.kt")
     public void testLambdaResult() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/lambdaResult.kt");
+        runTest("idea/testData/slicer/inflow/lambdaResult.kt");
     }
 
     @TestMetadata("lambdaResultWithAssignments.kt")
     public void testLambdaResultWithAssignments() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/lambdaResultWithAssignments.kt");
+        runTest("idea/testData/slicer/inflow/lambdaResultWithAssignments.kt");
     }
 
     @TestMetadata("lambdaResultWithDirectCall.kt")
     public void testLambdaResultWithDirectCall() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/lambdaResultWithDirectCall.kt");
+        runTest("idea/testData/slicer/inflow/lambdaResultWithDirectCall.kt");
     }
 
     @TestMetadata("lambdaResultWithDirectCallViaAssignment.kt")
     public void testLambdaResultWithDirectCallViaAssignment() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/lambdaResultWithDirectCallViaAssignment.kt");
+        runTest("idea/testData/slicer/inflow/lambdaResultWithDirectCallViaAssignment.kt");
     }
 
     @TestMetadata("localVal.kt")
     public void testLocalVal() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/localVal.kt");
+        runTest("idea/testData/slicer/inflow/localVal.kt");
     }
 
     @TestMetadata("localVar.kt")
     public void testLocalVar() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/localVar.kt");
+        runTest("idea/testData/slicer/inflow/localVar.kt");
     }
 
     @TestMetadata("memberValWithInitializer.kt")
     public void testMemberValWithInitializer() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/memberValWithInitializer.kt");
+        runTest("idea/testData/slicer/inflow/memberValWithInitializer.kt");
     }
 
     @TestMetadata("memberValWithSplitInitializer.kt")
     public void testMemberValWithSplitInitializer() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/memberValWithSplitInitializer.kt");
+        runTest("idea/testData/slicer/inflow/memberValWithSplitInitializer.kt");
     }
 
     @TestMetadata("memberVarWithInitializer.kt")
     public void testMemberVarWithInitializer() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/memberVarWithInitializer.kt");
+        runTest("idea/testData/slicer/inflow/memberVarWithInitializer.kt");
     }
 
     @TestMetadata("memberVarWithSplitInitializer.kt")
     public void testMemberVarWithSplitInitializer() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/memberVarWithSplitInitializer.kt");
+        runTest("idea/testData/slicer/inflow/memberVarWithSplitInitializer.kt");
     }
 
     @TestMetadata("noFieldInGetter.kt")
     public void testNoFieldInGetter() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/noFieldInGetter.kt");
+        runTest("idea/testData/slicer/inflow/noFieldInGetter.kt");
     }
 
     @TestMetadata("nonLocalReturn.kt")
     public void testNonLocalReturn() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/nonLocalReturn.kt");
+        runTest("idea/testData/slicer/inflow/nonLocalReturn.kt");
     }
 
     @TestMetadata("notNullAssertion.kt")
     public void testNotNullAssertion() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/notNullAssertion.kt");
+        runTest("idea/testData/slicer/inflow/notNullAssertion.kt");
     }
 
     @TestMetadata("nullsAndNotNulls.kt")
     public void testNullsAndNotNulls() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/nullsAndNotNulls.kt");
+        runTest("idea/testData/slicer/inflow/nullsAndNotNulls.kt");
     }
 
     @TestMetadata("overridingFunctionResult.kt")
     public void testOverridingFunctionResult() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/overridingFunctionResult.kt");
+        runTest("idea/testData/slicer/inflow/overridingFunctionResult.kt");
     }
 
     @TestMetadata("overridingParameter.kt")
     public void testOverridingParameter() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/overridingParameter.kt");
+        runTest("idea/testData/slicer/inflow/overridingParameter.kt");
     }
 
     @TestMetadata("overridingPropertyGetterResult.kt")
     public void testOverridingPropertyGetterResult() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/overridingPropertyGetterResult.kt");
+        runTest("idea/testData/slicer/inflow/overridingPropertyGetterResult.kt");
     }
 
     @TestMetadata("overridingPropertyResult.kt")
     public void testOverridingPropertyResult() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/overridingPropertyResult.kt");
+        runTest("idea/testData/slicer/inflow/overridingPropertyResult.kt");
     }
 
     @TestMetadata("primaryConstructorParameter.kt")
     public void testPrimaryConstructorParameter() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/primaryConstructorParameter.kt");
+        runTest("idea/testData/slicer/inflow/primaryConstructorParameter.kt");
     }
 
     @TestMetadata("primaryConstructorParameterWithDefault.kt")
     public void testPrimaryConstructorParameterWithDefault() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/primaryConstructorParameterWithDefault.kt");
+        runTest("idea/testData/slicer/inflow/primaryConstructorParameterWithDefault.kt");
     }
 
     @TestMetadata("qualifiedAssignmentsForQualifiedRef.kt")
     public void testQualifiedAssignmentsForQualifiedRef() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/qualifiedAssignmentsForQualifiedRef.kt");
+        runTest("idea/testData/slicer/inflow/qualifiedAssignmentsForQualifiedRef.kt");
     }
 
     @TestMetadata("qualifiedAssignmentsForSimpleRef.kt")
     public void testQualifiedAssignmentsForSimpleRef() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/qualifiedAssignmentsForSimpleRef.kt");
+        runTest("idea/testData/slicer/inflow/qualifiedAssignmentsForSimpleRef.kt");
     }
 
     @TestMetadata("safeCast.kt")
     public void testSafeCast() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/safeCast.kt");
+        runTest("idea/testData/slicer/inflow/safeCast.kt");
     }
 
     @TestMetadata("secondaryConstructorParameter.kt")
     public void testSecondaryConstructorParameter() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/secondaryConstructorParameter.kt");
+        runTest("idea/testData/slicer/inflow/secondaryConstructorParameter.kt");
     }
 
     @TestMetadata("secondaryConstructorParameterWithDefault.kt")
     public void testSecondaryConstructorParameterWithDefault() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/secondaryConstructorParameterWithDefault.kt");
+        runTest("idea/testData/slicer/inflow/secondaryConstructorParameterWithDefault.kt");
     }
 
     @TestMetadata("settersViaDelegateForQualifiedRef.kt")
     public void testSettersViaDelegateForQualifiedRef() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/settersViaDelegateForQualifiedRef.kt");
+        runTest("idea/testData/slicer/inflow/settersViaDelegateForQualifiedRef.kt");
     }
 
     @TestMetadata("settersViaDelegateForSimpleRef.kt")
     public void testSettersViaDelegateForSimpleRef() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/settersViaDelegateForSimpleRef.kt");
+        runTest("idea/testData/slicer/inflow/settersViaDelegateForSimpleRef.kt");
     }
 
     @TestMetadata("settersViaJavaDelegate.kt")
     public void testSettersViaJavaDelegate() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/settersViaJavaDelegate.kt");
+        runTest("idea/testData/slicer/inflow/settersViaJavaDelegate.kt");
     }
 
     @TestMetadata("topLevelVal.kt")
     public void testTopLevelVal() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/topLevelVal.kt");
+        runTest("idea/testData/slicer/inflow/topLevelVal.kt");
     }
 
     @TestMetadata("topLevelVar.kt")
     public void testTopLevelVar() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/topLevelVar.kt");
+        runTest("idea/testData/slicer/inflow/topLevelVar.kt");
     }
 
     @TestMetadata("valParameter.kt")
     public void testValParameter() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/valParameter.kt");
+        runTest("idea/testData/slicer/inflow/valParameter.kt");
     }
 
     @TestMetadata("varParameter.kt")
     public void testVarParameter() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/varParameter.kt");
+        runTest("idea/testData/slicer/inflow/varParameter.kt");
     }
 
     @TestMetadata("whenExpression.kt")
     public void testWhenExpression() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/slicer/inflow/whenExpression.kt");
+        runTest("idea/testData/slicer/inflow/whenExpression.kt");
     }
 }

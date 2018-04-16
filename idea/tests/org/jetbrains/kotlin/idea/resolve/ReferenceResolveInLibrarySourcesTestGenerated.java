@@ -21,27 +21,31 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class ReferenceResolveInLibrarySourcesTestGenerated extends AbstractReferenceResolveInLibrarySourcesTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInReferenceInLib() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/resolve/referenceInLib"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, false);
     }
 
     @TestMetadata("builtInNumber.kt")
     public void testBuiltInNumber() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/referenceInLib/builtInNumber.kt");
+        runTest("idea/testData/resolve/referenceInLib/builtInNumber.kt");
     }
 
     @TestMetadata("inLibrarySource.kt")
     public void testInLibrarySource() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/referenceInLib/inLibrarySource.kt");
+        runTest("idea/testData/resolve/referenceInLib/inLibrarySource.kt");
     }
 
     @TestMetadata("toFunParameter.kt")
     public void testToFunParameter() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/referenceInLib/toFunParameter.kt");
+        runTest("idea/testData/resolve/referenceInLib/toFunParameter.kt");
     }
 
     @TestMetadata("toLocalFun.kt")
     public void testToLocalFun() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/referenceInLib/toLocalFun.kt");
+        runTest("idea/testData/resolve/referenceInLib/toLocalFun.kt");
     }
 }

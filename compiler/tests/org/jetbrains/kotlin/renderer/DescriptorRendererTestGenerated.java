@@ -21,77 +21,81 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class DescriptorRendererTestGenerated extends AbstractDescriptorRendererTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInRenderer() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/renderer"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
     }
 
     @TestMetadata("Classes.kt")
     public void testClasses() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/renderer/Classes.kt");
+        runTest("compiler/testData/renderer/Classes.kt");
     }
 
     @TestMetadata("Enum.kt")
     public void testEnum() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/renderer/Enum.kt");
+        runTest("compiler/testData/renderer/Enum.kt");
     }
 
     @TestMetadata("ErrorType.kt")
     public void testErrorType() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/renderer/ErrorType.kt");
+        runTest("compiler/testData/renderer/ErrorType.kt");
     }
 
     @TestMetadata("FunctionTypes.kt")
     public void testFunctionTypes() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/renderer/FunctionTypes.kt");
+        runTest("compiler/testData/renderer/FunctionTypes.kt");
     }
 
     @TestMetadata("FunctionTypesInSignature.kt")
     public void testFunctionTypesInSignature() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/renderer/FunctionTypesInSignature.kt");
+        runTest("compiler/testData/renderer/FunctionTypesInSignature.kt");
     }
 
     @TestMetadata("GlobalFunctions.kt")
     public void testGlobalFunctions() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/renderer/GlobalFunctions.kt");
+        runTest("compiler/testData/renderer/GlobalFunctions.kt");
     }
 
     @TestMetadata("GlobalProperties.kt")
     public void testGlobalProperties() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/renderer/GlobalProperties.kt");
+        runTest("compiler/testData/renderer/GlobalProperties.kt");
     }
 
     @TestMetadata("InheritedMembersVisibility.kt")
     public void testInheritedMembersVisibility() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/renderer/InheritedMembersVisibility.kt");
+        runTest("compiler/testData/renderer/InheritedMembersVisibility.kt");
     }
 
     @TestMetadata("KeywordsInNames.kt")
     public void testKeywordsInNames() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/renderer/KeywordsInNames.kt");
+        runTest("compiler/testData/renderer/KeywordsInNames.kt");
     }
 
     @TestMetadata("ObjectWithConstructor.kt")
     public void testObjectWithConstructor() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/renderer/ObjectWithConstructor.kt");
+        runTest("compiler/testData/renderer/ObjectWithConstructor.kt");
     }
 
     @TestMetadata("StarProjection.kt")
     public void testStarProjection() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/renderer/StarProjection.kt");
+        runTest("compiler/testData/renderer/StarProjection.kt");
     }
 
     @TestMetadata("TraitWithConstructor.kt")
     public void testTraitWithConstructor() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/renderer/TraitWithConstructor.kt");
+        runTest("compiler/testData/renderer/TraitWithConstructor.kt");
     }
 
     @TestMetadata("TypeAnnotations.kt")
     public void testTypeAnnotations() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/renderer/TypeAnnotations.kt");
+        runTest("compiler/testData/renderer/TypeAnnotations.kt");
     }
 
     @TestMetadata("UnitType.kt")
     public void testUnitType() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/renderer/UnitType.kt");
+        runTest("compiler/testData/renderer/UnitType.kt");
     }
 }

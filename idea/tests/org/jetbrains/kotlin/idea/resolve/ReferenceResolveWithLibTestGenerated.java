@@ -21,72 +21,76 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class ReferenceResolveWithLibTestGenerated extends AbstractReferenceResolveWithLibTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInReferenceWithLib() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/resolve/referenceWithLib"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, false);
     }
 
     @TestMetadata("delegatedPropertyWithTypeParameters.kt")
     public void testDelegatedPropertyWithTypeParameters() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/referenceWithLib/delegatedPropertyWithTypeParameters.kt");
+        runTest("idea/testData/resolve/referenceWithLib/delegatedPropertyWithTypeParameters.kt");
     }
 
     @TestMetadata("fakeOverride.kt")
     public void testFakeOverride() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/referenceWithLib/fakeOverride.kt");
+        runTest("idea/testData/resolve/referenceWithLib/fakeOverride.kt");
     }
 
     @TestMetadata("fakeOverride2.kt")
     public void testFakeOverride2() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/referenceWithLib/fakeOverride2.kt");
+        runTest("idea/testData/resolve/referenceWithLib/fakeOverride2.kt");
     }
 
     @TestMetadata("innerClassFromLib.kt")
     public void testInnerClassFromLib() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/referenceWithLib/innerClassFromLib.kt");
+        runTest("idea/testData/resolve/referenceWithLib/innerClassFromLib.kt");
     }
 
     @TestMetadata("iteratorWithTypeParameter.kt")
     public void testIteratorWithTypeParameter() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/referenceWithLib/iteratorWithTypeParameter.kt");
+        runTest("idea/testData/resolve/referenceWithLib/iteratorWithTypeParameter.kt");
     }
 
     @TestMetadata("multiDeclarationWithTypeParameters.kt")
     public void testMultiDeclarationWithTypeParameters() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/referenceWithLib/multiDeclarationWithTypeParameters.kt");
+        runTest("idea/testData/resolve/referenceWithLib/multiDeclarationWithTypeParameters.kt");
     }
 
     @TestMetadata("nestedClassFromLib.kt")
     public void testNestedClassFromLib() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/referenceWithLib/nestedClassFromLib.kt");
+        runTest("idea/testData/resolve/referenceWithLib/nestedClassFromLib.kt");
     }
 
     @TestMetadata("overloadFun.kt")
     public void testOverloadFun() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/referenceWithLib/overloadFun.kt");
+        runTest("idea/testData/resolve/referenceWithLib/overloadFun.kt");
     }
 
     @TestMetadata("overridingFunctionWithSamAdapter.kt")
     public void testOverridingFunctionWithSamAdapter() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/referenceWithLib/overridingFunctionWithSamAdapter.kt");
+        runTest("idea/testData/resolve/referenceWithLib/overridingFunctionWithSamAdapter.kt");
     }
 
     @TestMetadata("packageOfLibDeclaration.kt")
     public void testPackageOfLibDeclaration() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/referenceWithLib/packageOfLibDeclaration.kt");
+        runTest("idea/testData/resolve/referenceWithLib/packageOfLibDeclaration.kt");
     }
 
     @TestMetadata("referenceToRootJavaClassFromLib.kt")
     public void testReferenceToRootJavaClassFromLib() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/referenceWithLib/referenceToRootJavaClassFromLib.kt");
+        runTest("idea/testData/resolve/referenceWithLib/referenceToRootJavaClassFromLib.kt");
     }
 
     @TestMetadata("sameNameInLib.kt")
     public void testSameNameInLib() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/referenceWithLib/sameNameInLib.kt");
+        runTest("idea/testData/resolve/referenceWithLib/sameNameInLib.kt");
     }
 
     @TestMetadata("setWithTypeParameters.kt")
     public void testSetWithTypeParameters() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/referenceWithLib/setWithTypeParameters.kt");
+        runTest("idea/testData/resolve/referenceWithLib/setWithTypeParameters.kt");
     }
 }

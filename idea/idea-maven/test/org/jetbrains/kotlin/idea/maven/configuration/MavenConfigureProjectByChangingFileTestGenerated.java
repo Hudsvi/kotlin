@@ -23,53 +23,57 @@ public class MavenConfigureProjectByChangingFileTestGenerated extends AbstractMa
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Jvm extends AbstractMavenConfigureProjectByChangingFileTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTestWithMaven, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInJvm() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/idea-maven/testData/configurator/jvm"), Pattern.compile("^([^\\.]+)$"), TargetBackend.ANY, false);
         }
 
         @TestMetadata("fixExisting")
         public void testFixExisting() throws Exception {
-            KotlinTestUtils.runTest(this::doTestWithMaven,TargetBackend.ANY, "idea/idea-maven/testData/configurator/jvm/fixExisting/");
+            runTest("idea/idea-maven/testData/configurator/jvm/fixExisting/");
         }
 
         @TestMetadata("jreLib")
         public void testJreLib() throws Exception {
-            KotlinTestUtils.runTest(this::doTestWithMaven,TargetBackend.ANY, "idea/idea-maven/testData/configurator/jvm/jreLib/");
+            runTest("idea/idea-maven/testData/configurator/jvm/jreLib/");
         }
 
         @TestMetadata("libraryMissed")
         public void testLibraryMissed() throws Exception {
-            KotlinTestUtils.runTest(this::doTestWithMaven,TargetBackend.ANY, "idea/idea-maven/testData/configurator/jvm/libraryMissed/");
+            runTest("idea/idea-maven/testData/configurator/jvm/libraryMissed/");
         }
 
         @TestMetadata("pluginMissed")
         public void testPluginMissed() throws Exception {
-            KotlinTestUtils.runTest(this::doTestWithMaven,TargetBackend.ANY, "idea/idea-maven/testData/configurator/jvm/pluginMissed/");
+            runTest("idea/idea-maven/testData/configurator/jvm/pluginMissed/");
         }
 
         @TestMetadata("simpleProject")
         public void testSimpleProject() throws Exception {
-            KotlinTestUtils.runTest(this::doTestWithMaven,TargetBackend.ANY, "idea/idea-maven/testData/configurator/jvm/simpleProject/");
+            runTest("idea/idea-maven/testData/configurator/jvm/simpleProject/");
         }
 
         @TestMetadata("simpleProjectEAP")
         public void testSimpleProjectEAP() throws Exception {
-            KotlinTestUtils.runTest(this::doTestWithMaven,TargetBackend.ANY, "idea/idea-maven/testData/configurator/jvm/simpleProjectEAP/");
+            runTest("idea/idea-maven/testData/configurator/jvm/simpleProjectEAP/");
         }
 
         @TestMetadata("simpleProjectRc")
         public void testSimpleProjectRc() throws Exception {
-            KotlinTestUtils.runTest(this::doTestWithMaven,TargetBackend.ANY, "idea/idea-maven/testData/configurator/jvm/simpleProjectRc/");
+            runTest("idea/idea-maven/testData/configurator/jvm/simpleProjectRc/");
         }
 
         @TestMetadata("simpleProjectSnapshot")
         public void testSimpleProjectSnapshot() throws Exception {
-            KotlinTestUtils.runTest(this::doTestWithMaven,TargetBackend.ANY, "idea/idea-maven/testData/configurator/jvm/simpleProjectSnapshot/");
+            runTest("idea/idea-maven/testData/configurator/jvm/simpleProjectSnapshot/");
         }
 
         @TestMetadata("withJava9ModuleInfo")
         public void testWithJava9ModuleInfo() throws Exception {
-            KotlinTestUtils.runTest(this::doTestWithMaven,TargetBackend.ANY, "idea/idea-maven/testData/configurator/jvm/withJava9ModuleInfo/");
+            runTest("idea/idea-maven/testData/configurator/jvm/withJava9ModuleInfo/");
         }
     }
 
@@ -77,28 +81,32 @@ public class MavenConfigureProjectByChangingFileTestGenerated extends AbstractMa
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Js extends AbstractMavenConfigureProjectByChangingFileTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTestWithJSMaven, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInJs() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/idea-maven/testData/configurator/js"), Pattern.compile("^([^\\.]+)$"), TargetBackend.ANY, false);
         }
 
         @TestMetadata("libraryMissed")
         public void testLibraryMissed() throws Exception {
-            KotlinTestUtils.runTest(this::doTestWithJSMaven,TargetBackend.ANY, "idea/idea-maven/testData/configurator/js/libraryMissed/");
+            runTest("idea/idea-maven/testData/configurator/js/libraryMissed/");
         }
 
         @TestMetadata("pluginMissed")
         public void testPluginMissed() throws Exception {
-            KotlinTestUtils.runTest(this::doTestWithJSMaven,TargetBackend.ANY, "idea/idea-maven/testData/configurator/js/pluginMissed/");
+            runTest("idea/idea-maven/testData/configurator/js/pluginMissed/");
         }
 
         @TestMetadata("simpleProject")
         public void testSimpleProject() throws Exception {
-            KotlinTestUtils.runTest(this::doTestWithJSMaven,TargetBackend.ANY, "idea/idea-maven/testData/configurator/js/simpleProject/");
+            runTest("idea/idea-maven/testData/configurator/js/simpleProject/");
         }
 
         @TestMetadata("simpleProjectSnapshot")
         public void testSimpleProjectSnapshot() throws Exception {
-            KotlinTestUtils.runTest(this::doTestWithJSMaven,TargetBackend.ANY, "idea/idea-maven/testData/configurator/js/simpleProjectSnapshot/");
+            runTest("idea/idea-maven/testData/configurator/js/simpleProjectSnapshot/");
         }
     }
 }

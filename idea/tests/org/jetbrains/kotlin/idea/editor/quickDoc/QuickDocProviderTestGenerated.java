@@ -21,237 +21,241 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class QuickDocProviderTestGenerated extends AbstractQuickDocProviderTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInQuickDoc() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/editor/quickDoc"), Pattern.compile("^([^_]+)\\.[^\\.]*$"), TargetBackend.ANY, true);
     }
 
     @TestMetadata("AnonymousObjectLocalVariable.kt")
     public void testAnonymousObjectLocalVariable() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/AnonymousObjectLocalVariable.kt");
+        runTest("idea/testData/editor/quickDoc/AnonymousObjectLocalVariable.kt");
     }
 
     @TestMetadata("AtConstantWithUnderscore.kt")
     public void testAtConstantWithUnderscore() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/AtConstantWithUnderscore.kt");
+        runTest("idea/testData/editor/quickDoc/AtConstantWithUnderscore.kt");
     }
 
     @TestMetadata("AtFunctionParameter.kt")
     public void testAtFunctionParameter() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/AtFunctionParameter.kt");
+        runTest("idea/testData/editor/quickDoc/AtFunctionParameter.kt");
     }
 
     @TestMetadata("AtImplicitLambdaParametEnd.kt")
     public void testAtImplicitLambdaParametEnd() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/AtImplicitLambdaParametEnd.kt");
+        runTest("idea/testData/editor/quickDoc/AtImplicitLambdaParametEnd.kt");
     }
 
     @TestMetadata("AtImplicitLambdaParameter.kt")
     public void testAtImplicitLambdaParameter() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/AtImplicitLambdaParameter.kt");
+        runTest("idea/testData/editor/quickDoc/AtImplicitLambdaParameter.kt");
     }
 
     @TestMetadata("AtLocalFunction.kt")
     public void testAtLocalFunction() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/AtLocalFunction.kt");
+        runTest("idea/testData/editor/quickDoc/AtLocalFunction.kt");
     }
 
     @TestMetadata("AtTypeParameter.kt")
     public void testAtTypeParameter() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/AtTypeParameter.kt");
+        runTest("idea/testData/editor/quickDoc/AtTypeParameter.kt");
     }
 
     @TestMetadata("AtVariableDeclaration.kt")
     public void testAtVariableDeclaration() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/AtVariableDeclaration.kt");
+        runTest("idea/testData/editor/quickDoc/AtVariableDeclaration.kt");
     }
 
     @TestMetadata("ConstructorVarParameter.kt")
     public void testConstructorVarParameter() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/ConstructorVarParameter.kt");
+        runTest("idea/testData/editor/quickDoc/ConstructorVarParameter.kt");
     }
 
     @TestMetadata("DeprecationWithReplaceInfo.kt")
     public void testDeprecationWithReplaceInfo() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/DeprecationWithReplaceInfo.kt");
+        runTest("idea/testData/editor/quickDoc/DeprecationWithReplaceInfo.kt");
     }
 
     @TestMetadata("EscapeHtmlInsideCodeBlocks.kt")
     public void testEscapeHtmlInsideCodeBlocks() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/EscapeHtmlInsideCodeBlocks.kt");
+        runTest("idea/testData/editor/quickDoc/EscapeHtmlInsideCodeBlocks.kt");
     }
 
     @TestMetadata("ExtensionReceiver.kt")
     public void testExtensionReceiver() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/ExtensionReceiver.kt");
+        runTest("idea/testData/editor/quickDoc/ExtensionReceiver.kt");
     }
 
     @TestMetadata("ExtensionReceiverEnd.kt")
     public void testExtensionReceiverEnd() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/ExtensionReceiverEnd.kt");
+        runTest("idea/testData/editor/quickDoc/ExtensionReceiverEnd.kt");
     }
 
     @TestMetadata("IndentedCodeBlock.kt")
     public void testIndentedCodeBlock() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/IndentedCodeBlock.kt");
+        runTest("idea/testData/editor/quickDoc/IndentedCodeBlock.kt");
     }
 
     @TestMetadata("JavaClassUsedInKotlin.kt")
     public void testJavaClassUsedInKotlin() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/JavaClassUsedInKotlin.kt");
+        runTest("idea/testData/editor/quickDoc/JavaClassUsedInKotlin.kt");
     }
 
     @TestMetadata("JavaDocFromOverridenClass.kt")
     public void testJavaDocFromOverridenClass() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/JavaDocFromOverridenClass.kt");
+        runTest("idea/testData/editor/quickDoc/JavaDocFromOverridenClass.kt");
     }
 
     @TestMetadata("JavaDocFromOverridenInterface.kt")
     public void testJavaDocFromOverridenInterface() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/JavaDocFromOverridenInterface.kt");
+        runTest("idea/testData/editor/quickDoc/JavaDocFromOverridenInterface.kt");
     }
 
     @TestMetadata("JavaMethodUsedInKotlin.kt")
     public void testJavaMethodUsedInKotlin() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/JavaMethodUsedInKotlin.kt");
+        runTest("idea/testData/editor/quickDoc/JavaMethodUsedInKotlin.kt");
     }
 
     @TestMetadata("KotlinClassUsedFromJava.java")
     public void testKotlinClassUsedFromJava() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/KotlinClassUsedFromJava.java");
+        runTest("idea/testData/editor/quickDoc/KotlinClassUsedFromJava.java");
     }
 
     @TestMetadata("KotlinPackageClassUsedFromJava.java")
     public void testKotlinPackageClassUsedFromJava() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/KotlinPackageClassUsedFromJava.java");
+        runTest("idea/testData/editor/quickDoc/KotlinPackageClassUsedFromJava.java");
     }
 
     @TestMetadata("MethodFromStdLib.kt")
     public void testMethodFromStdLib() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/MethodFromStdLib.kt");
+        runTest("idea/testData/editor/quickDoc/MethodFromStdLib.kt");
     }
 
     @TestMetadata("OnClassDeclarationWithNoPackage.kt")
     public void testOnClassDeclarationWithNoPackage() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/OnClassDeclarationWithNoPackage.kt");
+        runTest("idea/testData/editor/quickDoc/OnClassDeclarationWithNoPackage.kt");
     }
 
     @TestMetadata("OnEnumClassReference.kt")
     public void testOnEnumClassReference() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/OnEnumClassReference.kt");
+        runTest("idea/testData/editor/quickDoc/OnEnumClassReference.kt");
     }
 
     @TestMetadata("OnEnumDeclaration.kt")
     public void testOnEnumDeclaration() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/OnEnumDeclaration.kt");
+        runTest("idea/testData/editor/quickDoc/OnEnumDeclaration.kt");
     }
 
     @TestMetadata("OnEnumEntry.kt")
     public void testOnEnumEntry() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/OnEnumEntry.kt");
+        runTest("idea/testData/editor/quickDoc/OnEnumEntry.kt");
     }
 
     @TestMetadata("OnEnumEntryUsage.kt")
     public void testOnEnumEntryUsage() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/OnEnumEntryUsage.kt");
+        runTest("idea/testData/editor/quickDoc/OnEnumEntryUsage.kt");
     }
 
     @TestMetadata("OnEnumUsage.kt")
     public void testOnEnumUsage() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/OnEnumUsage.kt");
+        runTest("idea/testData/editor/quickDoc/OnEnumUsage.kt");
     }
 
     @TestMetadata("OnEnumValueOfFunction.kt")
     public void testOnEnumValueOfFunction() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/OnEnumValueOfFunction.kt");
+        runTest("idea/testData/editor/quickDoc/OnEnumValueOfFunction.kt");
     }
 
     @TestMetadata("OnEnumValuesFunction.kt")
     public void testOnEnumValuesFunction() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/OnEnumValuesFunction.kt");
+        runTest("idea/testData/editor/quickDoc/OnEnumValuesFunction.kt");
     }
 
     @TestMetadata("OnFunctionDeclarationWithPackage.kt")
     public void testOnFunctionDeclarationWithPackage() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/OnFunctionDeclarationWithPackage.kt");
+        runTest("idea/testData/editor/quickDoc/OnFunctionDeclarationWithPackage.kt");
     }
 
     @TestMetadata("OnInheritedMethodUsage.kt")
     public void testOnInheritedMethodUsage() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/OnInheritedMethodUsage.kt");
+        runTest("idea/testData/editor/quickDoc/OnInheritedMethodUsage.kt");
     }
 
     @TestMetadata("OnInheritedPropertyUsage.kt")
     public void testOnInheritedPropertyUsage() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/OnInheritedPropertyUsage.kt");
+        runTest("idea/testData/editor/quickDoc/OnInheritedPropertyUsage.kt");
     }
 
     @TestMetadata("OnMethodUsage.kt")
     public void testOnMethodUsage() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/OnMethodUsage.kt");
+        runTest("idea/testData/editor/quickDoc/OnMethodUsage.kt");
     }
 
     @TestMetadata("OnMethodUsageMultiline.kt")
     public void testOnMethodUsageMultiline() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/OnMethodUsageMultiline.kt");
+        runTest("idea/testData/editor/quickDoc/OnMethodUsageMultiline.kt");
     }
 
     @TestMetadata("OnMethodUsageWithBracketsInParam.kt")
     public void testOnMethodUsageWithBracketsInParam() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/OnMethodUsageWithBracketsInParam.kt");
+        runTest("idea/testData/editor/quickDoc/OnMethodUsageWithBracketsInParam.kt");
     }
 
     @TestMetadata("OnMethodUsageWithCodeBlock.kt")
     public void testOnMethodUsageWithCodeBlock() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/OnMethodUsageWithCodeBlock.kt");
+        runTest("idea/testData/editor/quickDoc/OnMethodUsageWithCodeBlock.kt");
     }
 
     @TestMetadata("OnMethodUsageWithMarkdown.kt")
     public void testOnMethodUsageWithMarkdown() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/OnMethodUsageWithMarkdown.kt");
+        runTest("idea/testData/editor/quickDoc/OnMethodUsageWithMarkdown.kt");
     }
 
     @TestMetadata("OnMethodUsageWithMultilineParam.kt")
     public void testOnMethodUsageWithMultilineParam() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/OnMethodUsageWithMultilineParam.kt");
+        runTest("idea/testData/editor/quickDoc/OnMethodUsageWithMultilineParam.kt");
     }
 
     @TestMetadata("OnMethodUsageWithReceiver.kt")
     public void testOnMethodUsageWithReceiver() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/OnMethodUsageWithReceiver.kt");
+        runTest("idea/testData/editor/quickDoc/OnMethodUsageWithReceiver.kt");
     }
 
     @TestMetadata("OnMethodUsageWithReturnAndLink.kt")
     public void testOnMethodUsageWithReturnAndLink() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/OnMethodUsageWithReturnAndLink.kt");
+        runTest("idea/testData/editor/quickDoc/OnMethodUsageWithReturnAndLink.kt");
     }
 
     @TestMetadata("OnMethodUsageWithReturnAndThrows.kt")
     public void testOnMethodUsageWithReturnAndThrows() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/OnMethodUsageWithReturnAndThrows.kt");
+        runTest("idea/testData/editor/quickDoc/OnMethodUsageWithReturnAndThrows.kt");
     }
 
     @TestMetadata("OnMethodUsageWithSee.kt")
     public void testOnMethodUsageWithSee() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/OnMethodUsageWithSee.kt");
+        runTest("idea/testData/editor/quickDoc/OnMethodUsageWithSee.kt");
     }
 
     @TestMetadata("OnMethodUsageWithTypeParameter.kt")
     public void testOnMethodUsageWithTypeParameter() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/OnMethodUsageWithTypeParameter.kt");
+        runTest("idea/testData/editor/quickDoc/OnMethodUsageWithTypeParameter.kt");
     }
 
     @TestMetadata("Samples.kt")
     public void testSamples() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/Samples.kt");
+        runTest("idea/testData/editor/quickDoc/Samples.kt");
     }
 
     @TestMetadata("TopLevelMethodFromJava.java")
     public void testTopLevelMethodFromJava() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/TopLevelMethodFromJava.java");
+        runTest("idea/testData/editor/quickDoc/TopLevelMethodFromJava.java");
     }
 
     @TestMetadata("TypeNamesFromStdLibNavigation.kt")
     public void testTypeNamesFromStdLibNavigation() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/editor/quickDoc/TypeNamesFromStdLibNavigation.kt");
+        runTest("idea/testData/editor/quickDoc/TypeNamesFromStdLibNavigation.kt");
     }
 }

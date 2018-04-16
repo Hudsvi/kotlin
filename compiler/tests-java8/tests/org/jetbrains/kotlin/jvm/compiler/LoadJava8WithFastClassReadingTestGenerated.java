@@ -21,27 +21,31 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class LoadJava8WithFastClassReadingTestGenerated extends AbstractLoadJava8WithFastClassReadingTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTestCompiledJava, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInCompiledJava() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/loadJava8/compiledJava"), Pattern.compile("^(.+)\\.java$"), TargetBackend.ANY, true);
     }
 
     @TestMetadata("InnerClassTypeAnnotation.java")
     public void testInnerClassTypeAnnotation() throws Exception {
-        KotlinTestUtils.runTest(this::doTestCompiledJava,TargetBackend.ANY, "compiler/testData/loadJava8/compiledJava/InnerClassTypeAnnotation.java");
+        runTest("compiler/testData/loadJava8/compiledJava/InnerClassTypeAnnotation.java");
     }
 
     @TestMetadata("MapRemove.java")
     public void testMapRemove() throws Exception {
-        KotlinTestUtils.runTest(this::doTestCompiledJava,TargetBackend.ANY, "compiler/testData/loadJava8/compiledJava/MapRemove.java");
+        runTest("compiler/testData/loadJava8/compiledJava/MapRemove.java");
     }
 
     @TestMetadata("TypeAnnotations.java")
     public void testTypeAnnotations() throws Exception {
-        KotlinTestUtils.runTest(this::doTestCompiledJava,TargetBackend.ANY, "compiler/testData/loadJava8/compiledJava/TypeAnnotations.java");
+        runTest("compiler/testData/loadJava8/compiledJava/TypeAnnotations.java");
     }
 
     @TestMetadata("TypeParameterAnnotations.java")
     public void testTypeParameterAnnotations() throws Exception {
-        KotlinTestUtils.runTest(this::doTestCompiledJava,TargetBackend.ANY, "compiler/testData/loadJava8/compiledJava/TypeParameterAnnotations.java");
+        runTest("compiler/testData/loadJava8/compiledJava/TypeParameterAnnotations.java");
     }
 }

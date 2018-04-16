@@ -23,58 +23,62 @@ public class ScratchRunActionTestGenerated extends AbstractScratchRunActionTest 
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Compiling extends AbstractScratchRunActionTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doCompilingTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInCompiling() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/scratch"), Pattern.compile("^(.+)\\.kts$"), TargetBackend.ANY, false);
         }
 
         @TestMetadata("for.kts")
         public void testFor() throws Exception {
-            KotlinTestUtils.runTest(this::doCompilingTest,TargetBackend.ANY, "idea/testData/scratch/for.kts");
+            runTest("idea/testData/scratch/for.kts");
         }
 
         @TestMetadata("generics.kts")
         public void testGenerics() throws Exception {
-            KotlinTestUtils.runTest(this::doCompilingTest,TargetBackend.ANY, "idea/testData/scratch/generics.kts");
+            runTest("idea/testData/scratch/generics.kts");
         }
 
         @TestMetadata("klass.kts")
         public void testKlass() throws Exception {
-            KotlinTestUtils.runTest(this::doCompilingTest,TargetBackend.ANY, "idea/testData/scratch/klass.kts");
+            runTest("idea/testData/scratch/klass.kts");
         }
 
         @TestMetadata("simple.kts")
         public void testSimple() throws Exception {
-            KotlinTestUtils.runTest(this::doCompilingTest,TargetBackend.ANY, "idea/testData/scratch/simple.kts");
+            runTest("idea/testData/scratch/simple.kts");
         }
 
         @TestMetadata("simpleFun.kts")
         public void testSimpleFun() throws Exception {
-            KotlinTestUtils.runTest(this::doCompilingTest,TargetBackend.ANY, "idea/testData/scratch/simpleFun.kts");
+            runTest("idea/testData/scratch/simpleFun.kts");
         }
 
         @TestMetadata("stdlibFun.kts")
         public void testStdlibFun() throws Exception {
-            KotlinTestUtils.runTest(this::doCompilingTest,TargetBackend.ANY, "idea/testData/scratch/stdlibFun.kts");
+            runTest("idea/testData/scratch/stdlibFun.kts");
         }
 
         @TestMetadata("unresolved.kts")
         public void testUnresolved() throws Exception {
-            KotlinTestUtils.runTest(this::doCompilingTest,TargetBackend.ANY, "idea/testData/scratch/unresolved.kts");
+            runTest("idea/testData/scratch/unresolved.kts");
         }
 
         @TestMetadata("userOutput.kts")
         public void testUserOutput() throws Exception {
-            KotlinTestUtils.runTest(this::doCompilingTest,TargetBackend.ANY, "idea/testData/scratch/userOutput.kts");
+            runTest("idea/testData/scratch/userOutput.kts");
         }
 
         @TestMetadata("var.kts")
         public void testVar() throws Exception {
-            KotlinTestUtils.runTest(this::doCompilingTest,TargetBackend.ANY, "idea/testData/scratch/var.kts");
+            runTest("idea/testData/scratch/var.kts");
         }
 
         @TestMetadata("when.kts")
         public void testWhen() throws Exception {
-            KotlinTestUtils.runTest(this::doCompilingTest,TargetBackend.ANY, "idea/testData/scratch/when.kts");
+            runTest("idea/testData/scratch/when.kts");
         }
     }
 
@@ -82,58 +86,62 @@ public class ScratchRunActionTestGenerated extends AbstractScratchRunActionTest 
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Repl extends AbstractScratchRunActionTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doReplTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInRepl() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/scratch"), Pattern.compile("^(.+)\\.kts$"), TargetBackend.ANY, false);
         }
 
         @TestMetadata("for.kts")
         public void testFor() throws Exception {
-            KotlinTestUtils.runTest(this::doReplTest,TargetBackend.ANY, "idea/testData/scratch/for.kts");
+            runTest("idea/testData/scratch/for.kts");
         }
 
         @TestMetadata("generics.kts")
         public void testGenerics() throws Exception {
-            KotlinTestUtils.runTest(this::doReplTest,TargetBackend.ANY, "idea/testData/scratch/generics.kts");
+            runTest("idea/testData/scratch/generics.kts");
         }
 
         @TestMetadata("klass.kts")
         public void testKlass() throws Exception {
-            KotlinTestUtils.runTest(this::doReplTest,TargetBackend.ANY, "idea/testData/scratch/klass.kts");
+            runTest("idea/testData/scratch/klass.kts");
         }
 
         @TestMetadata("simple.kts")
         public void testSimple() throws Exception {
-            KotlinTestUtils.runTest(this::doReplTest,TargetBackend.ANY, "idea/testData/scratch/simple.kts");
+            runTest("idea/testData/scratch/simple.kts");
         }
 
         @TestMetadata("simpleFun.kts")
         public void testSimpleFun() throws Exception {
-            KotlinTestUtils.runTest(this::doReplTest,TargetBackend.ANY, "idea/testData/scratch/simpleFun.kts");
+            runTest("idea/testData/scratch/simpleFun.kts");
         }
 
         @TestMetadata("stdlibFun.kts")
         public void testStdlibFun() throws Exception {
-            KotlinTestUtils.runTest(this::doReplTest,TargetBackend.ANY, "idea/testData/scratch/stdlibFun.kts");
+            runTest("idea/testData/scratch/stdlibFun.kts");
         }
 
         @TestMetadata("unresolved.kts")
         public void testUnresolved() throws Exception {
-            KotlinTestUtils.runTest(this::doReplTest,TargetBackend.ANY, "idea/testData/scratch/unresolved.kts");
+            runTest("idea/testData/scratch/unresolved.kts");
         }
 
         @TestMetadata("userOutput.kts")
         public void testUserOutput() throws Exception {
-            KotlinTestUtils.runTest(this::doReplTest,TargetBackend.ANY, "idea/testData/scratch/userOutput.kts");
+            runTest("idea/testData/scratch/userOutput.kts");
         }
 
         @TestMetadata("var.kts")
         public void testVar() throws Exception {
-            KotlinTestUtils.runTest(this::doReplTest,TargetBackend.ANY, "idea/testData/scratch/var.kts");
+            runTest("idea/testData/scratch/var.kts");
         }
 
         @TestMetadata("when.kts")
         public void testWhen() throws Exception {
-            KotlinTestUtils.runTest(this::doReplTest,TargetBackend.ANY, "idea/testData/scratch/when.kts");
+            runTest("idea/testData/scratch/when.kts");
         }
     }
 
@@ -141,18 +149,22 @@ public class ScratchRunActionTestGenerated extends AbstractScratchRunActionTest 
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class MultiFile extends AbstractScratchRunActionTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doMultiFileTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInMultiFile() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/scratch/multiFile"), Pattern.compile("^([^\\.]+)$"), TargetBackend.ANY, false);
         }
 
         @TestMetadata("inlineFun")
         public void testInlineFun() throws Exception {
-            KotlinTestUtils.runTest(this::doMultiFileTest,TargetBackend.ANY, "idea/testData/scratch/multiFile/inlineFun/");
+            runTest("idea/testData/scratch/multiFile/inlineFun/");
         }
 
         @TestMetadata("javaDep")
         public void testJavaDep() throws Exception {
-            KotlinTestUtils.runTest(this::doMultiFileTest,TargetBackend.ANY, "idea/testData/scratch/multiFile/javaDep/");
+            runTest("idea/testData/scratch/multiFile/javaDep/");
         }
     }
 }

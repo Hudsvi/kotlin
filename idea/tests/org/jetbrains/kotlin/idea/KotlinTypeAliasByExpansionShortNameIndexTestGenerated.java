@@ -21,22 +21,26 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class KotlinTypeAliasByExpansionShortNameIndexTestGenerated extends AbstractKotlinTypeAliasByExpansionShortNameIndexTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInTypealiasExpansionIndex() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/typealiasExpansionIndex"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
     }
 
     @TestMetadata("functionalTypes.kt")
     public void testFunctionalTypes() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/typealiasExpansionIndex/functionalTypes.kt");
+        runTest("idea/testData/typealiasExpansionIndex/functionalTypes.kt");
     }
 
     @TestMetadata("generics.kt")
     public void testGenerics() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/typealiasExpansionIndex/generics.kt");
+        runTest("idea/testData/typealiasExpansionIndex/generics.kt");
     }
 
     @TestMetadata("simpleType.kt")
     public void testSimpleType() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/typealiasExpansionIndex/simpleType.kt");
+        runTest("idea/testData/typealiasExpansionIndex/simpleType.kt");
     }
 }

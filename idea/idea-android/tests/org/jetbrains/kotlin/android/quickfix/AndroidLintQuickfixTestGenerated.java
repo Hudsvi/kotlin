@@ -21,6 +21,10 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class AndroidLintQuickfixTestGenerated extends AbstractAndroidLintQuickfixTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInLintQuickfix() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/android/lintQuickfix"), Pattern.compile("^([\\w\\-_]+)\\.kt$"), TargetBackend.ANY, true);
     }
@@ -29,18 +33,22 @@ public class AndroidLintQuickfixTestGenerated extends AbstractAndroidLintQuickfi
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class FindViewById extends AbstractAndroidLintQuickfixTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInFindViewById() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/android/lintQuickfix/findViewById"), Pattern.compile("^([\\w\\-_]+)\\.kt$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("nullableType.kt")
         public void testNullableType() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/findViewById/nullableType.kt");
+            runTest("idea/testData/android/lintQuickfix/findViewById/nullableType.kt");
         }
 
         @TestMetadata("simple.kt")
         public void testSimple() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/findViewById/simple.kt");
+            runTest("idea/testData/android/lintQuickfix/findViewById/simple.kt");
         }
     }
 
@@ -48,18 +56,22 @@ public class AndroidLintQuickfixTestGenerated extends AbstractAndroidLintQuickfi
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Parcelable extends AbstractAndroidLintQuickfixTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInParcelable() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/android/lintQuickfix/parcelable"), Pattern.compile("^([\\w\\-_]+)\\.kt$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("missingCreator.kt")
         public void testMissingCreator() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/parcelable/missingCreator.kt");
+            runTest("idea/testData/android/lintQuickfix/parcelable/missingCreator.kt");
         }
 
         @TestMetadata("noImplementation.kt")
         public void testNoImplementation() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/parcelable/noImplementation.kt");
+            runTest("idea/testData/android/lintQuickfix/parcelable/noImplementation.kt");
         }
     }
 
@@ -67,58 +79,62 @@ public class AndroidLintQuickfixTestGenerated extends AbstractAndroidLintQuickfi
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class RequiresApi extends AbstractAndroidLintQuickfixTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInRequiresApi() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/android/lintQuickfix/requiresApi"), Pattern.compile("^([\\w\\-_]+)\\.kt$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("annotation.kt")
         public void testAnnotation() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/requiresApi/annotation.kt");
+            runTest("idea/testData/android/lintQuickfix/requiresApi/annotation.kt");
         }
 
         @TestMetadata("companion.kt")
         public void testCompanion() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/requiresApi/companion.kt");
+            runTest("idea/testData/android/lintQuickfix/requiresApi/companion.kt");
         }
 
         @TestMetadata("defaultParameter.kt")
         public void testDefaultParameter() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/requiresApi/defaultParameter.kt");
+            runTest("idea/testData/android/lintQuickfix/requiresApi/defaultParameter.kt");
         }
 
         @TestMetadata("extend.kt")
         public void testExtend() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/requiresApi/extend.kt");
+            runTest("idea/testData/android/lintQuickfix/requiresApi/extend.kt");
         }
 
         @TestMetadata("functionLiteral.kt")
         public void testFunctionLiteral() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/requiresApi/functionLiteral.kt");
+            runTest("idea/testData/android/lintQuickfix/requiresApi/functionLiteral.kt");
         }
 
         @TestMetadata("inlinedConstant.kt")
         public void testInlinedConstant() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/requiresApi/inlinedConstant.kt");
+            runTest("idea/testData/android/lintQuickfix/requiresApi/inlinedConstant.kt");
         }
 
         @TestMetadata("method.kt")
         public void testMethod() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/requiresApi/method.kt");
+            runTest("idea/testData/android/lintQuickfix/requiresApi/method.kt");
         }
 
         @TestMetadata("property.kt")
         public void testProperty() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/requiresApi/property.kt");
+            runTest("idea/testData/android/lintQuickfix/requiresApi/property.kt");
         }
 
         @TestMetadata("topLevelProperty.kt")
         public void testTopLevelProperty() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/requiresApi/topLevelProperty.kt");
+            runTest("idea/testData/android/lintQuickfix/requiresApi/topLevelProperty.kt");
         }
 
         @TestMetadata("when.kt")
         public void testWhen() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/requiresApi/when.kt");
+            runTest("idea/testData/android/lintQuickfix/requiresApi/when.kt");
         }
     }
 
@@ -126,14 +142,18 @@ public class AndroidLintQuickfixTestGenerated extends AbstractAndroidLintQuickfi
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class SuppressLint extends AbstractAndroidLintQuickfixTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         @TestMetadata("activityMethod.kt")
         public void testActivityMethod() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/suppressLint/activityMethod.kt");
+            runTest("idea/testData/android/lintQuickfix/suppressLint/activityMethod.kt");
         }
 
         @TestMetadata("addToExistingAnnotation.kt")
         public void testAddToExistingAnnotation() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/suppressLint/addToExistingAnnotation.kt");
+            runTest("idea/testData/android/lintQuickfix/suppressLint/addToExistingAnnotation.kt");
         }
 
         public void testAllFilesPresentInSuppressLint() throws Exception {
@@ -142,37 +162,37 @@ public class AndroidLintQuickfixTestGenerated extends AbstractAndroidLintQuickfi
 
         @TestMetadata("constructorParameter.kt")
         public void testConstructorParameter() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/suppressLint/constructorParameter.kt");
+            runTest("idea/testData/android/lintQuickfix/suppressLint/constructorParameter.kt");
         }
 
         @TestMetadata("destructuringDeclaration.kt")
         public void testDestructuringDeclaration() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/suppressLint/destructuringDeclaration.kt");
+            runTest("idea/testData/android/lintQuickfix/suppressLint/destructuringDeclaration.kt");
         }
 
         @TestMetadata("lambdaArgument.kt")
         public void testLambdaArgument() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/suppressLint/lambdaArgument.kt");
+            runTest("idea/testData/android/lintQuickfix/suppressLint/lambdaArgument.kt");
         }
 
         @TestMetadata("lambdaArgumentProperty.kt")
         public void testLambdaArgumentProperty() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/suppressLint/lambdaArgumentProperty.kt");
+            runTest("idea/testData/android/lintQuickfix/suppressLint/lambdaArgumentProperty.kt");
         }
 
         @TestMetadata("methodParameter.kt")
         public void testMethodParameter() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/suppressLint/methodParameter.kt");
+            runTest("idea/testData/android/lintQuickfix/suppressLint/methodParameter.kt");
         }
 
         @TestMetadata("propertyWithLambda.kt")
         public void testPropertyWithLambda() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/suppressLint/propertyWithLambda.kt");
+            runTest("idea/testData/android/lintQuickfix/suppressLint/propertyWithLambda.kt");
         }
 
         @TestMetadata("simpleProperty.kt")
         public void testSimpleProperty() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/suppressLint/simpleProperty.kt");
+            runTest("idea/testData/android/lintQuickfix/suppressLint/simpleProperty.kt");
         }
     }
 
@@ -180,58 +200,62 @@ public class AndroidLintQuickfixTestGenerated extends AbstractAndroidLintQuickfi
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class TargetApi extends AbstractAndroidLintQuickfixTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInTargetApi() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/android/lintQuickfix/targetApi"), Pattern.compile("^([\\w\\-_]+)\\.kt$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("annotation.kt")
         public void testAnnotation() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/targetApi/annotation.kt");
+            runTest("idea/testData/android/lintQuickfix/targetApi/annotation.kt");
         }
 
         @TestMetadata("companion.kt")
         public void testCompanion() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/targetApi/companion.kt");
+            runTest("idea/testData/android/lintQuickfix/targetApi/companion.kt");
         }
 
         @TestMetadata("defaultParameter.kt")
         public void testDefaultParameter() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/targetApi/defaultParameter.kt");
+            runTest("idea/testData/android/lintQuickfix/targetApi/defaultParameter.kt");
         }
 
         @TestMetadata("extend.kt")
         public void testExtend() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/targetApi/extend.kt");
+            runTest("idea/testData/android/lintQuickfix/targetApi/extend.kt");
         }
 
         @TestMetadata("functionLiteral.kt")
         public void testFunctionLiteral() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/targetApi/functionLiteral.kt");
+            runTest("idea/testData/android/lintQuickfix/targetApi/functionLiteral.kt");
         }
 
         @TestMetadata("inlinedConstant.kt")
         public void testInlinedConstant() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/targetApi/inlinedConstant.kt");
+            runTest("idea/testData/android/lintQuickfix/targetApi/inlinedConstant.kt");
         }
 
         @TestMetadata("method.kt")
         public void testMethod() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/targetApi/method.kt");
+            runTest("idea/testData/android/lintQuickfix/targetApi/method.kt");
         }
 
         @TestMetadata("property.kt")
         public void testProperty() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/targetApi/property.kt");
+            runTest("idea/testData/android/lintQuickfix/targetApi/property.kt");
         }
 
         @TestMetadata("topLevelProperty.kt")
         public void testTopLevelProperty() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/targetApi/topLevelProperty.kt");
+            runTest("idea/testData/android/lintQuickfix/targetApi/topLevelProperty.kt");
         }
 
         @TestMetadata("when.kt")
         public void testWhen() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/targetApi/when.kt");
+            runTest("idea/testData/android/lintQuickfix/targetApi/when.kt");
         }
     }
 
@@ -239,63 +263,67 @@ public class AndroidLintQuickfixTestGenerated extends AbstractAndroidLintQuickfi
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class TargetVersionCheck extends AbstractAndroidLintQuickfixTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInTargetVersionCheck() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/android/lintQuickfix/targetVersionCheck"), Pattern.compile("^([\\w\\-_]+)\\.kt$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("annotation.kt")
         public void testAnnotation() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/targetVersionCheck/annotation.kt");
+            runTest("idea/testData/android/lintQuickfix/targetVersionCheck/annotation.kt");
         }
 
         @TestMetadata("defaultParameter.kt")
         public void testDefaultParameter() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/targetVersionCheck/defaultParameter.kt");
+            runTest("idea/testData/android/lintQuickfix/targetVersionCheck/defaultParameter.kt");
         }
 
         @TestMetadata("destructuringDeclaration.kt")
         public void testDestructuringDeclaration() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/targetVersionCheck/destructuringDeclaration.kt");
+            runTest("idea/testData/android/lintQuickfix/targetVersionCheck/destructuringDeclaration.kt");
         }
 
         @TestMetadata("expressionBody.kt")
         public void testExpressionBody() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/targetVersionCheck/expressionBody.kt");
+            runTest("idea/testData/android/lintQuickfix/targetVersionCheck/expressionBody.kt");
         }
 
         @TestMetadata("functionLiteral.kt")
         public void testFunctionLiteral() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/targetVersionCheck/functionLiteral.kt");
+            runTest("idea/testData/android/lintQuickfix/targetVersionCheck/functionLiteral.kt");
         }
 
         @TestMetadata("getterWIthExpressionBody.kt")
         public void testGetterWIthExpressionBody() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/targetVersionCheck/getterWIthExpressionBody.kt");
+            runTest("idea/testData/android/lintQuickfix/targetVersionCheck/getterWIthExpressionBody.kt");
         }
 
         @TestMetadata("if.kt")
         public void testIf() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/targetVersionCheck/if.kt");
+            runTest("idea/testData/android/lintQuickfix/targetVersionCheck/if.kt");
         }
 
         @TestMetadata("ifWithBlock.kt")
         public void testIfWithBlock() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/targetVersionCheck/ifWithBlock.kt");
+            runTest("idea/testData/android/lintQuickfix/targetVersionCheck/ifWithBlock.kt");
         }
 
         @TestMetadata("inlinedConstant.kt")
         public void testInlinedConstant() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/targetVersionCheck/inlinedConstant.kt");
+            runTest("idea/testData/android/lintQuickfix/targetVersionCheck/inlinedConstant.kt");
         }
 
         @TestMetadata("method.kt")
         public void testMethod() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/targetVersionCheck/method.kt");
+            runTest("idea/testData/android/lintQuickfix/targetVersionCheck/method.kt");
         }
 
         @TestMetadata("when.kt")
         public void testWhen() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/android/lintQuickfix/targetVersionCheck/when.kt");
+            runTest("idea/testData/android/lintQuickfix/targetVersionCheck/when.kt");
         }
     }
 }

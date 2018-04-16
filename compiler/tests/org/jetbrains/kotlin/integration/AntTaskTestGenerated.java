@@ -21,9 +21,13 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class AntTaskTestGenerated extends AbstractAntTaskTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+    }
+
     @TestMetadata("additionalArguments")
     public void testAdditionalArguments() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/integration/ant/jvm/additionalArguments/");
+        runTest("compiler/testData/integration/ant/jvm/additionalArguments/");
     }
 
     public void testAllFilesPresentInJvm() throws Exception {
@@ -32,121 +36,121 @@ public class AntTaskTestGenerated extends AbstractAntTaskTest {
 
     @TestMetadata("doNotFailOnError")
     public void testDoNotFailOnError() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/integration/ant/jvm/doNotFailOnError/");
+        runTest("compiler/testData/integration/ant/jvm/doNotFailOnError/");
     }
 
     @TestMetadata("failOnErrorByDefault")
     public void testFailOnErrorByDefault() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/integration/ant/jvm/failOnErrorByDefault/");
+        runTest("compiler/testData/integration/ant/jvm/failOnErrorByDefault/");
     }
 
     @TestMetadata("helloWorld")
     public void testHelloWorld() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/integration/ant/jvm/helloWorld/");
+        runTest("compiler/testData/integration/ant/jvm/helloWorld/");
     }
 
     @TestMetadata("internalMembers")
     public void testInternalMembers() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/integration/ant/jvm/internalMembers/");
+        runTest("compiler/testData/integration/ant/jvm/internalMembers/");
     }
 
     @TestMetadata("jvmClasspath")
     public void testJvmClasspath() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/integration/ant/jvm/jvmClasspath/");
+        runTest("compiler/testData/integration/ant/jvm/jvmClasspath/");
     }
 
     @TestMetadata("kt11995")
     public void testKt11995() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/integration/ant/jvm/kt11995/");
+        runTest("compiler/testData/integration/ant/jvm/kt11995/");
     }
 
     @TestMetadata("languageVersion")
     public void testLanguageVersion() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/integration/ant/jvm/languageVersion/");
+        runTest("compiler/testData/integration/ant/jvm/languageVersion/");
     }
 
     @TestMetadata("mainInFiles")
     public void testMainInFiles() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/integration/ant/jvm/mainInFiles/");
+        runTest("compiler/testData/integration/ant/jvm/mainInFiles/");
     }
 
     @TestMetadata("moduleName")
     public void testModuleName() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/integration/ant/jvm/moduleName/");
+        runTest("compiler/testData/integration/ant/jvm/moduleName/");
     }
 
     @TestMetadata("moduleNameDefault")
     public void testModuleNameDefault() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/integration/ant/jvm/moduleNameDefault/");
+        runTest("compiler/testData/integration/ant/jvm/moduleNameDefault/");
     }
 
     @TestMetadata("moduleNameWithKotlin")
     public void testModuleNameWithKotlin() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/integration/ant/jvm/moduleNameWithKotlin/");
+        runTest("compiler/testData/integration/ant/jvm/moduleNameWithKotlin/");
     }
 
     @TestMetadata("noReflectForJavac")
     public void testNoReflectForJavac() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/integration/ant/jvm/noReflectForJavac/");
+        runTest("compiler/testData/integration/ant/jvm/noReflectForJavac/");
     }
 
     @TestMetadata("noStdlibForJavac")
     public void testNoStdlibForJavac() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/integration/ant/jvm/noStdlibForJavac/");
+        runTest("compiler/testData/integration/ant/jvm/noStdlibForJavac/");
     }
 
     @TestMetadata("overloadResolutionOnCollectionLiteral")
     public void testOverloadResolutionOnCollectionLiteral() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/integration/ant/jvm/overloadResolutionOnCollectionLiteral/");
+        runTest("compiler/testData/integration/ant/jvm/overloadResolutionOnCollectionLiteral/");
     }
 
     @TestMetadata("stdlibForJavacWithNoKotlin")
     public void testStdlibForJavacWithNoKotlin() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/integration/ant/jvm/stdlibForJavacWithNoKotlin/");
+        runTest("compiler/testData/integration/ant/jvm/stdlibForJavacWithNoKotlin/");
     }
 
     @TestMetadata("stdlibJre78AndStdlibJdk78")
     public void testStdlibJre78AndStdlibJdk78() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/integration/ant/jvm/stdlibJre78AndStdlibJdk78/");
+        runTest("compiler/testData/integration/ant/jvm/stdlibJre78AndStdlibJdk78/");
     }
 
     @TestMetadata("suppressWarnings")
     public void testSuppressWarnings() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/integration/ant/jvm/suppressWarnings/");
+        runTest("compiler/testData/integration/ant/jvm/suppressWarnings/");
     }
 
     @TestMetadata("twoStdlibForCollectionLiterals")
     public void testTwoStdlibForCollectionLiterals() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/integration/ant/jvm/twoStdlibForCollectionLiterals/");
+        runTest("compiler/testData/integration/ant/jvm/twoStdlibForCollectionLiterals/");
     }
 
     @TestMetadata("valWithInvoke")
     public void testValWithInvoke() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/integration/ant/jvm/valWithInvoke/");
+        runTest("compiler/testData/integration/ant/jvm/valWithInvoke/");
     }
 
     @TestMetadata("verbose")
     public void testVerbose() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/integration/ant/jvm/verbose/");
+        runTest("compiler/testData/integration/ant/jvm/verbose/");
     }
 
     @TestMetadata("version")
     public void testVersion() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/integration/ant/jvm/version/");
+        runTest("compiler/testData/integration/ant/jvm/version/");
     }
 
     @TestMetadata("withKotlinFork")
     public void testWithKotlinFork() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/integration/ant/jvm/withKotlinFork/");
+        runTest("compiler/testData/integration/ant/jvm/withKotlinFork/");
     }
 
     @TestMetadata("withKotlinNoJavaSources")
     public void testWithKotlinNoJavaSources() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/integration/ant/jvm/withKotlinNoJavaSources/");
+        runTest("compiler/testData/integration/ant/jvm/withKotlinNoJavaSources/");
     }
 
     @TestMetadata("wrongCallForCollectionLiteral")
     public void testWrongCallForCollectionLiteral() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/integration/ant/jvm/wrongCallForCollectionLiteral/");
+        runTest("compiler/testData/integration/ant/jvm/wrongCallForCollectionLiteral/");
     }
 }

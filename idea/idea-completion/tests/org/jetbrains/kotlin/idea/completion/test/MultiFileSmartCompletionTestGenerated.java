@@ -21,112 +21,116 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class MultiFileSmartCompletionTestGenerated extends AbstractMultiFileSmartCompletionTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInSmartMultiFile() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/idea-completion/testData/smartMultiFile"), Pattern.compile("^([^\\.]+)$"), TargetBackend.ANY, false);
     }
 
     @TestMetadata("AnonymousObjectGenericJava")
     public void testAnonymousObjectGenericJava() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/smartMultiFile/AnonymousObjectGenericJava/");
+        runTest("idea/idea-completion/testData/smartMultiFile/AnonymousObjectGenericJava/");
     }
 
     @TestMetadata("CallableReferenceNotImported")
     public void testCallableReferenceNotImported() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/smartMultiFile/CallableReferenceNotImported/");
+        runTest("idea/idea-completion/testData/smartMultiFile/CallableReferenceNotImported/");
     }
 
     @TestMetadata("CallablesInExcludedPackage")
     public void testCallablesInExcludedPackage() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/smartMultiFile/CallablesInExcludedPackage/");
+        runTest("idea/idea-completion/testData/smartMultiFile/CallablesInExcludedPackage/");
     }
 
     @TestMetadata("FunctionFromAnotherPackage")
     public void testFunctionFromAnotherPackage() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/smartMultiFile/FunctionFromAnotherPackage/");
+        runTest("idea/idea-completion/testData/smartMultiFile/FunctionFromAnotherPackage/");
     }
 
     @TestMetadata("GenericInheritors1")
     public void testGenericInheritors1() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/smartMultiFile/GenericInheritors1/");
+        runTest("idea/idea-completion/testData/smartMultiFile/GenericInheritors1/");
     }
 
     @TestMetadata("GenericInheritors2")
     public void testGenericInheritors2() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/smartMultiFile/GenericInheritors2/");
+        runTest("idea/idea-completion/testData/smartMultiFile/GenericInheritors2/");
     }
 
     @TestMetadata("GenericInheritors3")
     public void testGenericInheritors3() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/smartMultiFile/GenericInheritors3/");
+        runTest("idea/idea-completion/testData/smartMultiFile/GenericInheritors3/");
     }
 
     @TestMetadata("GenericInheritors4")
     public void testGenericInheritors4() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/smartMultiFile/GenericInheritors4/");
+        runTest("idea/idea-completion/testData/smartMultiFile/GenericInheritors4/");
     }
 
     @TestMetadata("InheritorInTheSameFile")
     public void testInheritorInTheSameFile() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/smartMultiFile/InheritorInTheSameFile/");
+        runTest("idea/idea-completion/testData/smartMultiFile/InheritorInTheSameFile/");
     }
 
     @TestMetadata("Inheritors")
     public void testInheritors() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/smartMultiFile/Inheritors/");
+        runTest("idea/idea-completion/testData/smartMultiFile/Inheritors/");
     }
 
     @TestMetadata("InheritorsAndMultipleExpectedTypes")
     public void testInheritorsAndMultipleExpectedTypes() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/smartMultiFile/InheritorsAndMultipleExpectedTypes/");
+        runTest("idea/idea-completion/testData/smartMultiFile/InheritorsAndMultipleExpectedTypes/");
     }
 
     @TestMetadata("JavaStaticMethodArgument")
     public void testJavaStaticMethodArgument() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/smartMultiFile/JavaStaticMethodArgument/");
+        runTest("idea/idea-completion/testData/smartMultiFile/JavaStaticMethodArgument/");
     }
 
     @TestMetadata("JavaStaticMethodArgument2")
     public void testJavaStaticMethodArgument2() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/smartMultiFile/JavaStaticMethodArgument2/");
+        runTest("idea/idea-completion/testData/smartMultiFile/JavaStaticMethodArgument2/");
     }
 
     @TestMetadata("KT_8751")
     public void testKT_8751() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/smartMultiFile/KT_8751/");
+        runTest("idea/idea-completion/testData/smartMultiFile/KT_8751/");
     }
 
     @TestMetadata("KT_8751_2")
     public void testKT_8751_2() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/smartMultiFile/KT_8751_2/");
+        runTest("idea/idea-completion/testData/smartMultiFile/KT_8751_2/");
     }
 
     @TestMetadata("NestedClassAfterAs")
     public void testNestedClassAfterAs() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/smartMultiFile/NestedClassAfterAs/");
+        runTest("idea/idea-completion/testData/smartMultiFile/NestedClassAfterAs/");
     }
 
     @TestMetadata("NoObjectDuplication")
     public void testNoObjectDuplication() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/smartMultiFile/NoObjectDuplication/");
+        runTest("idea/idea-completion/testData/smartMultiFile/NoObjectDuplication/");
     }
 
     @TestMetadata("NotImportedContains")
     public void testNotImportedContains() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/smartMultiFile/NotImportedContains/");
+        runTest("idea/idea-completion/testData/smartMultiFile/NotImportedContains/");
     }
 
     @TestMetadata("NotImportedGetValue")
     public void testNotImportedGetValue() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/smartMultiFile/NotImportedGetValue/");
+        runTest("idea/idea-completion/testData/smartMultiFile/NotImportedGetValue/");
     }
 
     @TestMetadata("StaticMembers1")
     public void testStaticMembers1() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/smartMultiFile/StaticMembers1/");
+        runTest("idea/idea-completion/testData/smartMultiFile/StaticMembers1/");
     }
 
     @TestMetadata("StaticMembers2")
     public void testStaticMembers2() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/smartMultiFile/StaticMembers2/");
+        runTest("idea/idea-completion/testData/smartMultiFile/StaticMembers2/");
     }
 }

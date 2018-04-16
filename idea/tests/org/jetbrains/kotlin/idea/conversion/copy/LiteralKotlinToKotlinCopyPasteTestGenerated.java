@@ -21,37 +21,41 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class LiteralKotlinToKotlinCopyPasteTestGenerated extends AbstractLiteralKotlinToKotlinCopyPasteTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInLiteral() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/copyPaste/literal"), Pattern.compile("^([^\\.]+)\\.kt$"), TargetBackend.ANY, true);
     }
 
     @TestMetadata("CollectionLiteralReference.kt")
     public void testCollectionLiteralReference() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/copyPaste/literal/CollectionLiteralReference.kt");
+        runTest("idea/testData/copyPaste/literal/CollectionLiteralReference.kt");
     }
 
     @TestMetadata("DontEscapeEntries.kt")
     public void testDontEscapeEntries() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/copyPaste/literal/DontEscapeEntries.kt");
+        runTest("idea/testData/copyPaste/literal/DontEscapeEntries.kt");
     }
 
     @TestMetadata("DontEscapeEntries2.kt")
     public void testDontEscapeEntries2() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/copyPaste/literal/DontEscapeEntries2.kt");
+        runTest("idea/testData/copyPaste/literal/DontEscapeEntries2.kt");
     }
 
     @TestMetadata("DontEscapeThis.kt")
     public void testDontEscapeThis() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/copyPaste/literal/DontEscapeThis.kt");
+        runTest("idea/testData/copyPaste/literal/DontEscapeThis.kt");
     }
 
     @TestMetadata("DontUnescapeLiteralWIthCode.kt")
     public void testDontUnescapeLiteralWIthCode() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/copyPaste/literal/DontUnescapeLiteralWIthCode.kt");
+        runTest("idea/testData/copyPaste/literal/DontUnescapeLiteralWIthCode.kt");
     }
 
     @TestMetadata("UnescapeFullSelection.kt")
     public void testUnescapeFullSelection() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/copyPaste/literal/UnescapeFullSelection.kt");
+        runTest("idea/testData/copyPaste/literal/UnescapeFullSelection.kt");
     }
 }

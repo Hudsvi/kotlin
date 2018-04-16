@@ -21,6 +21,10 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class ParcelQuickFixTestGenerated extends AbstractParcelQuickFixTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTestWithExtraFile, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInQuickfix() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix"), Pattern.compile("^(\\w+)\\.((before\\.Main\\.\\w+)|(test))$"), TargetBackend.ANY, true);
     }
@@ -29,23 +33,27 @@ public class ParcelQuickFixTestGenerated extends AbstractParcelQuickFixTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class AddPrimaryConstructor extends AbstractParcelQuickFixTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTestWithExtraFile, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInAddPrimaryConstructor() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/addPrimaryConstructor"), Pattern.compile("^(\\w+)\\.((before\\.Main\\.\\w+)|(test))$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("constructorWithDelegate.before.Main.kt")
         public void testConstructorWithDelegate() throws Exception {
-            KotlinTestUtils.runTest(this::doTestWithExtraFile,TargetBackend.ANY, "plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/addPrimaryConstructor/constructorWithDelegate.before.Main.kt");
+            runTest("plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/addPrimaryConstructor/constructorWithDelegate.before.Main.kt");
         }
 
         @TestMetadata("noQuickFix.before.Main.kt")
         public void testNoQuickFix() throws Exception {
-            KotlinTestUtils.runTest(this::doTestWithExtraFile,TargetBackend.ANY, "plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/addPrimaryConstructor/noQuickFix.before.Main.kt");
+            runTest("plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/addPrimaryConstructor/noQuickFix.before.Main.kt");
         }
 
         @TestMetadata("simple.before.Main.kt")
         public void testSimple() throws Exception {
-            KotlinTestUtils.runTest(this::doTestWithExtraFile,TargetBackend.ANY, "plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/addPrimaryConstructor/simple.before.Main.kt");
+            runTest("plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/addPrimaryConstructor/simple.before.Main.kt");
         }
     }
 
@@ -53,13 +61,17 @@ public class ParcelQuickFixTestGenerated extends AbstractParcelQuickFixTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class CantBeInnerClass extends AbstractParcelQuickFixTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTestWithExtraFile, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInCantBeInnerClass() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/cantBeInnerClass"), Pattern.compile("^(\\w+)\\.((before\\.Main\\.\\w+)|(test))$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("simple.before.Main.kt")
         public void testSimple() throws Exception {
-            KotlinTestUtils.runTest(this::doTestWithExtraFile,TargetBackend.ANY, "plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/cantBeInnerClass/simple.before.Main.kt");
+            runTest("plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/cantBeInnerClass/simple.before.Main.kt");
         }
     }
 
@@ -67,13 +79,17 @@ public class ParcelQuickFixTestGenerated extends AbstractParcelQuickFixTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class ClassShouldBeAnnotated extends AbstractParcelQuickFixTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTestWithExtraFile, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInClassShouldBeAnnotated() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/classShouldBeAnnotated"), Pattern.compile("^(\\w+)\\.((before\\.Main\\.\\w+)|(test))$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("simple.before.Main.kt")
         public void testSimple() throws Exception {
-            KotlinTestUtils.runTest(this::doTestWithExtraFile,TargetBackend.ANY, "plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/classShouldBeAnnotated/simple.before.Main.kt");
+            runTest("plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/classShouldBeAnnotated/simple.before.Main.kt");
         }
     }
 
@@ -81,18 +97,22 @@ public class ParcelQuickFixTestGenerated extends AbstractParcelQuickFixTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class DeleteIncompatible extends AbstractParcelQuickFixTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTestWithExtraFile, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInDeleteIncompatible() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/deleteIncompatible"), Pattern.compile("^(\\w+)\\.((before\\.Main\\.\\w+)|(test))$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("creatorField.before.Main.kt")
         public void testCreatorField() throws Exception {
-            KotlinTestUtils.runTest(this::doTestWithExtraFile,TargetBackend.ANY, "plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/deleteIncompatible/creatorField.before.Main.kt");
+            runTest("plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/deleteIncompatible/creatorField.before.Main.kt");
         }
 
         @TestMetadata("writeToParcel.before.Main.kt")
         public void testWriteToParcel() throws Exception {
-            KotlinTestUtils.runTest(this::doTestWithExtraFile,TargetBackend.ANY, "plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/deleteIncompatible/writeToParcel.before.Main.kt");
+            runTest("plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/deleteIncompatible/writeToParcel.before.Main.kt");
         }
     }
 
@@ -100,48 +120,52 @@ public class ParcelQuickFixTestGenerated extends AbstractParcelQuickFixTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Migrations extends AbstractParcelQuickFixTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTestWithExtraFile, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInMigrations() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/migrations"), Pattern.compile("^(\\w+)\\.((before\\.Main\\.\\w+)|(test))$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("basic.before.Main.kt")
         public void testBasic() throws Exception {
-            KotlinTestUtils.runTest(this::doTestWithExtraFile,TargetBackend.ANY, "plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/migrations/basic.before.Main.kt");
+            runTest("plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/migrations/basic.before.Main.kt");
         }
 
         @TestMetadata("complexCase1.before.Main.kt")
         public void testComplexCase1() throws Exception {
-            KotlinTestUtils.runTest(this::doTestWithExtraFile,TargetBackend.ANY, "plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/migrations/complexCase1.before.Main.kt");
+            runTest("plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/migrations/complexCase1.before.Main.kt");
         }
 
         @TestMetadata("customDescribeContents.before.Main.kt")
         public void testCustomDescribeContents() throws Exception {
-            KotlinTestUtils.runTest(this::doTestWithExtraFile,TargetBackend.ANY, "plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/migrations/customDescribeContents.before.Main.kt");
+            runTest("plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/migrations/customDescribeContents.before.Main.kt");
         }
 
         @TestMetadata("fromCreatorObject.before.Main.kt")
         public void testFromCreatorObject() throws Exception {
-            KotlinTestUtils.runTest(this::doTestWithExtraFile,TargetBackend.ANY, "plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/migrations/fromCreatorObject.before.Main.kt");
+            runTest("plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/migrations/fromCreatorObject.before.Main.kt");
         }
 
         @TestMetadata("innerClassFactory.before.Main.kt")
         public void testInnerClassFactory() throws Exception {
-            KotlinTestUtils.runTest(this::doTestWithExtraFile,TargetBackend.ANY, "plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/migrations/innerClassFactory.before.Main.kt");
+            runTest("plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/migrations/innerClassFactory.before.Main.kt");
         }
 
         @TestMetadata("jvmField.before.Main.kt")
         public void testJvmField() throws Exception {
-            KotlinTestUtils.runTest(this::doTestWithExtraFile,TargetBackend.ANY, "plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/migrations/jvmField.before.Main.kt");
+            runTest("plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/migrations/jvmField.before.Main.kt");
         }
 
         @TestMetadata("noWriteToParcel.before.Main.kt")
         public void testNoWriteToParcel() throws Exception {
-            KotlinTestUtils.runTest(this::doTestWithExtraFile,TargetBackend.ANY, "plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/migrations/noWriteToParcel.before.Main.kt");
+            runTest("plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/migrations/noWriteToParcel.before.Main.kt");
         }
 
         @TestMetadata("withoutDescribeContents.before.Main.kt")
         public void testWithoutDescribeContents() throws Exception {
-            KotlinTestUtils.runTest(this::doTestWithExtraFile,TargetBackend.ANY, "plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/migrations/withoutDescribeContents.before.Main.kt");
+            runTest("plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/migrations/withoutDescribeContents.before.Main.kt");
         }
     }
 
@@ -149,18 +173,22 @@ public class ParcelQuickFixTestGenerated extends AbstractParcelQuickFixTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class NoParcelableSupertype extends AbstractParcelQuickFixTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTestWithExtraFile, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInNoParcelableSupertype() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/noParcelableSupertype"), Pattern.compile("^(\\w+)\\.((before\\.Main\\.\\w+)|(test))$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("alreadyHasSupertype.before.Main.kt")
         public void testAlreadyHasSupertype() throws Exception {
-            KotlinTestUtils.runTest(this::doTestWithExtraFile,TargetBackend.ANY, "plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/noParcelableSupertype/alreadyHasSupertype.before.Main.kt");
+            runTest("plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/noParcelableSupertype/alreadyHasSupertype.before.Main.kt");
         }
 
         @TestMetadata("simple.before.Main.kt")
         public void testSimple() throws Exception {
-            KotlinTestUtils.runTest(this::doTestWithExtraFile,TargetBackend.ANY, "plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/noParcelableSupertype/simple.before.Main.kt");
+            runTest("plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/noParcelableSupertype/simple.before.Main.kt");
         }
     }
 
@@ -168,13 +196,17 @@ public class ParcelQuickFixTestGenerated extends AbstractParcelQuickFixTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class PropertyWontBeSerialized extends AbstractParcelQuickFixTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTestWithExtraFile, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInPropertyWontBeSerialized() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/propertyWontBeSerialized"), Pattern.compile("^(\\w+)\\.((before\\.Main\\.\\w+)|(test))$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("simple.before.Main.kt")
         public void testSimple() throws Exception {
-            KotlinTestUtils.runTest(this::doTestWithExtraFile,TargetBackend.ANY, "plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/propertyWontBeSerialized/simple.before.Main.kt");
+            runTest("plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/propertyWontBeSerialized/simple.before.Main.kt");
         }
     }
 
@@ -182,13 +214,17 @@ public class ParcelQuickFixTestGenerated extends AbstractParcelQuickFixTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class RemoveDuplicatingTypeParcelerAnnotation extends AbstractParcelQuickFixTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTestWithExtraFile, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInRemoveDuplicatingTypeParcelerAnnotation() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/removeDuplicatingTypeParcelerAnnotation"), Pattern.compile("^(\\w+)\\.((before\\.Main\\.\\w+)|(test))$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("simple.before.Main.kt")
         public void testSimple() throws Exception {
-            KotlinTestUtils.runTest(this::doTestWithExtraFile,TargetBackend.ANY, "plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/removeDuplicatingTypeParcelerAnnotation/simple.before.Main.kt");
+            runTest("plugins/android-extensions/android-extensions-idea/testData/android/parcel/quickfix/removeDuplicatingTypeParcelerAnnotation/simple.before.Main.kt");
         }
     }
 }

@@ -23,93 +23,97 @@ public class LineNumberTestGenerated extends AbstractLineNumberTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class LineNumber extends AbstractLineNumberTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInLineNumber() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/lineNumber"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, false);
         }
 
         @TestMetadata("anonymousFunction.kt")
         public void testAnonymousFunction() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/lineNumber/anonymousFunction.kt");
+            runTest("compiler/testData/lineNumber/anonymousFunction.kt");
         }
 
         @TestMetadata("class.kt")
         public void testClass() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/lineNumber/class.kt");
+            runTest("compiler/testData/lineNumber/class.kt");
         }
 
         @TestMetadata("classObject.kt")
         public void testClassObject() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/lineNumber/classObject.kt");
+            runTest("compiler/testData/lineNumber/classObject.kt");
         }
 
         @TestMetadata("defaultParameter.kt")
         public void testDefaultParameter() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/lineNumber/defaultParameter.kt");
+            runTest("compiler/testData/lineNumber/defaultParameter.kt");
         }
 
         @TestMetadata("enum.kt")
         public void testEnum() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/lineNumber/enum.kt");
+            runTest("compiler/testData/lineNumber/enum.kt");
         }
 
         @TestMetadata("for.kt")
         public void testFor() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/lineNumber/for.kt");
+            runTest("compiler/testData/lineNumber/for.kt");
         }
 
         @TestMetadata("if.kt")
         public void testIf() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/lineNumber/if.kt");
+            runTest("compiler/testData/lineNumber/if.kt");
         }
 
         @TestMetadata("inlineSimpleCall.kt")
         public void testInlineSimpleCall() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/lineNumber/inlineSimpleCall.kt");
+            runTest("compiler/testData/lineNumber/inlineSimpleCall.kt");
         }
 
         @TestMetadata("localFunction.kt")
         public void testLocalFunction() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/lineNumber/localFunction.kt");
+            runTest("compiler/testData/lineNumber/localFunction.kt");
         }
 
         @TestMetadata("object.kt")
         public void testObject() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/lineNumber/object.kt");
+            runTest("compiler/testData/lineNumber/object.kt");
         }
 
         @TestMetadata("propertyAccessor.kt")
         public void testPropertyAccessor() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/lineNumber/propertyAccessor.kt");
+            runTest("compiler/testData/lineNumber/propertyAccessor.kt");
         }
 
         @TestMetadata("psvm.kt")
         public void testPsvm() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/lineNumber/psvm.kt");
+            runTest("compiler/testData/lineNumber/psvm.kt");
         }
 
         @TestMetadata("simpleSmap.kt")
         public void testSimpleSmap() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/lineNumber/simpleSmap.kt");
+            runTest("compiler/testData/lineNumber/simpleSmap.kt");
         }
 
         @TestMetadata("topLevel.kt")
         public void testTopLevel() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/lineNumber/topLevel.kt");
+            runTest("compiler/testData/lineNumber/topLevel.kt");
         }
 
         @TestMetadata("trait.kt")
         public void testTrait() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/lineNumber/trait.kt");
+            runTest("compiler/testData/lineNumber/trait.kt");
         }
 
         @TestMetadata("tryCatch.kt")
         public void testTryCatch() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/lineNumber/tryCatch.kt");
+            runTest("compiler/testData/lineNumber/tryCatch.kt");
         }
 
         @TestMetadata("while.kt")
         public void testWhile() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/lineNumber/while.kt");
+            runTest("compiler/testData/lineNumber/while.kt");
         }
     }
 
@@ -117,123 +121,127 @@ public class LineNumberTestGenerated extends AbstractLineNumberTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Custom extends AbstractLineNumberTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTestCustom, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInCustom() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/lineNumber/custom"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("beforeGotoToWhileStart.kt")
         public void testBeforeGotoToWhileStart() throws Exception {
-            KotlinTestUtils.runTest(this::doTestCustom,TargetBackend.ANY, "compiler/testData/lineNumber/custom/beforeGotoToWhileStart.kt");
+            runTest("compiler/testData/lineNumber/custom/beforeGotoToWhileStart.kt");
         }
 
         @TestMetadata("callWithCallInArguments.kt")
         public void testCallWithCallInArguments() throws Exception {
-            KotlinTestUtils.runTest(this::doTestCustom,TargetBackend.ANY, "compiler/testData/lineNumber/custom/callWithCallInArguments.kt");
+            runTest("compiler/testData/lineNumber/custom/callWithCallInArguments.kt");
         }
 
         @TestMetadata("callWithReceiver.kt")
         public void testCallWithReceiver() throws Exception {
-            KotlinTestUtils.runTest(this::doTestCustom,TargetBackend.ANY, "compiler/testData/lineNumber/custom/callWithReceiver.kt");
+            runTest("compiler/testData/lineNumber/custom/callWithReceiver.kt");
         }
 
         @TestMetadata("chainCall.kt")
         public void testChainCall() throws Exception {
-            KotlinTestUtils.runTest(this::doTestCustom,TargetBackend.ANY, "compiler/testData/lineNumber/custom/chainCall.kt");
+            runTest("compiler/testData/lineNumber/custom/chainCall.kt");
         }
 
         @TestMetadata("compileTimeConstant.kt")
         public void testCompileTimeConstant() throws Exception {
-            KotlinTestUtils.runTest(this::doTestCustom,TargetBackend.ANY, "compiler/testData/lineNumber/custom/compileTimeConstant.kt");
+            runTest("compiler/testData/lineNumber/custom/compileTimeConstant.kt");
         }
 
         @TestMetadata("functionCallWithDefault.kt")
         public void testFunctionCallWithDefault() throws Exception {
-            KotlinTestUtils.runTest(this::doTestCustom,TargetBackend.ANY, "compiler/testData/lineNumber/custom/functionCallWithDefault.kt");
+            runTest("compiler/testData/lineNumber/custom/functionCallWithDefault.kt");
         }
 
         @TestMetadata("functionCallWithInlinedLambdaParam.kt")
         public void testFunctionCallWithInlinedLambdaParam() throws Exception {
-            KotlinTestUtils.runTest(this::doTestCustom,TargetBackend.ANY, "compiler/testData/lineNumber/custom/functionCallWithInlinedLambdaParam.kt");
+            runTest("compiler/testData/lineNumber/custom/functionCallWithInlinedLambdaParam.kt");
         }
 
         @TestMetadata("functionCallWithLambdaParam.kt")
         public void testFunctionCallWithLambdaParam() throws Exception {
-            KotlinTestUtils.runTest(this::doTestCustom,TargetBackend.ANY, "compiler/testData/lineNumber/custom/functionCallWithLambdaParam.kt");
+            runTest("compiler/testData/lineNumber/custom/functionCallWithLambdaParam.kt");
         }
 
         @TestMetadata("ifThen.kt")
         public void testIfThen() throws Exception {
-            KotlinTestUtils.runTest(this::doTestCustom,TargetBackend.ANY, "compiler/testData/lineNumber/custom/ifThen.kt");
+            runTest("compiler/testData/lineNumber/custom/ifThen.kt");
         }
 
         @TestMetadata("ifThenElse.kt")
         public void testIfThenElse() throws Exception {
-            KotlinTestUtils.runTest(this::doTestCustom,TargetBackend.ANY, "compiler/testData/lineNumber/custom/ifThenElse.kt");
+            runTest("compiler/testData/lineNumber/custom/ifThenElse.kt");
         }
 
         @TestMetadata("inTheEndOfLambdaArgumentOfInlineCall.kt")
         public void testInTheEndOfLambdaArgumentOfInlineCall() throws Exception {
-            KotlinTestUtils.runTest(this::doTestCustom,TargetBackend.ANY, "compiler/testData/lineNumber/custom/inTheEndOfLambdaArgumentOfInlineCall.kt");
+            runTest("compiler/testData/lineNumber/custom/inTheEndOfLambdaArgumentOfInlineCall.kt");
         }
 
         @TestMetadata("multilineFunctionCall.kt")
         public void testMultilineFunctionCall() throws Exception {
-            KotlinTestUtils.runTest(this::doTestCustom,TargetBackend.ANY, "compiler/testData/lineNumber/custom/multilineFunctionCall.kt");
+            runTest("compiler/testData/lineNumber/custom/multilineFunctionCall.kt");
         }
 
         @TestMetadata("multilineInfixCall.kt")
         public void testMultilineInfixCall() throws Exception {
-            KotlinTestUtils.runTest(this::doTestCustom,TargetBackend.ANY, "compiler/testData/lineNumber/custom/multilineInfixCall.kt");
+            runTest("compiler/testData/lineNumber/custom/multilineInfixCall.kt");
         }
 
         @TestMetadata("noParametersArgumentCallInExpression.kt")
         public void testNoParametersArgumentCallInExpression() throws Exception {
-            KotlinTestUtils.runTest(this::doTestCustom,TargetBackend.ANY, "compiler/testData/lineNumber/custom/noParametersArgumentCallInExpression.kt");
+            runTest("compiler/testData/lineNumber/custom/noParametersArgumentCallInExpression.kt");
         }
 
         @TestMetadata("smapInlineAsArgument.kt")
         public void testSmapInlineAsArgument() throws Exception {
-            KotlinTestUtils.runTest(this::doTestCustom,TargetBackend.ANY, "compiler/testData/lineNumber/custom/smapInlineAsArgument.kt");
+            runTest("compiler/testData/lineNumber/custom/smapInlineAsArgument.kt");
         }
 
         @TestMetadata("smapInlineAsInfixArgument.kt")
         public void testSmapInlineAsInfixArgument() throws Exception {
-            KotlinTestUtils.runTest(this::doTestCustom,TargetBackend.ANY, "compiler/testData/lineNumber/custom/smapInlineAsInfixArgument.kt");
+            runTest("compiler/testData/lineNumber/custom/smapInlineAsInfixArgument.kt");
         }
 
         @TestMetadata("smapInlineAsInlineArgument.kt")
         public void testSmapInlineAsInlineArgument() throws Exception {
-            KotlinTestUtils.runTest(this::doTestCustom,TargetBackend.ANY, "compiler/testData/lineNumber/custom/smapInlineAsInlineArgument.kt");
+            runTest("compiler/testData/lineNumber/custom/smapInlineAsInlineArgument.kt");
         }
 
         @TestMetadata("smapInlineInIntrinsicArgument.kt")
         public void testSmapInlineInIntrinsicArgument() throws Exception {
-            KotlinTestUtils.runTest(this::doTestCustom,TargetBackend.ANY, "compiler/testData/lineNumber/custom/smapInlineInIntrinsicArgument.kt");
+            runTest("compiler/testData/lineNumber/custom/smapInlineInIntrinsicArgument.kt");
         }
 
         @TestMetadata("tryCatchExpression.kt")
         public void testTryCatchExpression() throws Exception {
-            KotlinTestUtils.runTest(this::doTestCustom,TargetBackend.ANY, "compiler/testData/lineNumber/custom/tryCatchExpression.kt");
+            runTest("compiler/testData/lineNumber/custom/tryCatchExpression.kt");
         }
 
         @TestMetadata("tryCatchFinally.kt")
         public void testTryCatchFinally() throws Exception {
-            KotlinTestUtils.runTest(this::doTestCustom,TargetBackend.ANY, "compiler/testData/lineNumber/custom/tryCatchFinally.kt");
+            runTest("compiler/testData/lineNumber/custom/tryCatchFinally.kt");
         }
 
         @TestMetadata("tryFinally.kt")
         public void testTryFinally() throws Exception {
-            KotlinTestUtils.runTest(this::doTestCustom,TargetBackend.ANY, "compiler/testData/lineNumber/custom/tryFinally.kt");
+            runTest("compiler/testData/lineNumber/custom/tryFinally.kt");
         }
 
         @TestMetadata("when.kt")
         public void testWhen() throws Exception {
-            KotlinTestUtils.runTest(this::doTestCustom,TargetBackend.ANY, "compiler/testData/lineNumber/custom/when.kt");
+            runTest("compiler/testData/lineNumber/custom/when.kt");
         }
 
         @TestMetadata("whenSubject.kt")
         public void testWhenSubject() throws Exception {
-            KotlinTestUtils.runTest(this::doTestCustom,TargetBackend.ANY, "compiler/testData/lineNumber/custom/whenSubject.kt");
+            runTest("compiler/testData/lineNumber/custom/whenSubject.kt");
         }
     }
 }

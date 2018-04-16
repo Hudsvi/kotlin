@@ -21,82 +21,86 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class SmartSelectionTestGenerated extends AbstractSmartSelectionTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTestSmartSelection, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInSmartSelection() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/smartSelection"), Pattern.compile("^([^.]+)\\.kt$"), TargetBackend.ANY, true);
     }
 
     @TestMetadata("commentsAndExtraSpaces.kt")
     public void testCommentsAndExtraSpaces() throws Exception {
-        KotlinTestUtils.runTest(this::doTestSmartSelection,TargetBackend.ANY, "idea/testData/smartSelection/commentsAndExtraSpaces.kt");
+        runTest("idea/testData/smartSelection/commentsAndExtraSpaces.kt");
     }
 
     @TestMetadata("labelledStatement.kt")
     public void testLabelledStatement() throws Exception {
-        KotlinTestUtils.runTest(this::doTestSmartSelection,TargetBackend.ANY, "idea/testData/smartSelection/labelledStatement.kt");
+        runTest("idea/testData/smartSelection/labelledStatement.kt");
     }
 
     @TestMetadata("labelledThis.kt")
     public void testLabelledThis() throws Exception {
-        KotlinTestUtils.runTest(this::doTestSmartSelection,TargetBackend.ANY, "idea/testData/smartSelection/labelledThis.kt");
+        runTest("idea/testData/smartSelection/labelledThis.kt");
     }
 
     @TestMetadata("lambdaCalls.kt")
     public void testLambdaCalls() throws Exception {
-        KotlinTestUtils.runTest(this::doTestSmartSelection,TargetBackend.ANY, "idea/testData/smartSelection/lambdaCalls.kt");
+        runTest("idea/testData/smartSelection/lambdaCalls.kt");
     }
 
     @TestMetadata("multilineCalls.kt")
     public void testMultilineCalls() throws Exception {
-        KotlinTestUtils.runTest(this::doTestSmartSelection,TargetBackend.ANY, "idea/testData/smartSelection/multilineCalls.kt");
+        runTest("idea/testData/smartSelection/multilineCalls.kt");
     }
 
     @TestMetadata("multilineOperations.kt")
     public void testMultilineOperations() throws Exception {
-        KotlinTestUtils.runTest(this::doTestSmartSelection,TargetBackend.ANY, "idea/testData/smartSelection/multilineOperations.kt");
+        runTest("idea/testData/smartSelection/multilineOperations.kt");
     }
 
     @TestMetadata("objectLiteral.kt")
     public void testObjectLiteral() throws Exception {
-        KotlinTestUtils.runTest(this::doTestSmartSelection,TargetBackend.ANY, "idea/testData/smartSelection/objectLiteral.kt");
+        runTest("idea/testData/smartSelection/objectLiteral.kt");
     }
 
     @TestMetadata("parenthesized.kt")
     public void testParenthesized() throws Exception {
-        KotlinTestUtils.runTest(this::doTestSmartSelection,TargetBackend.ANY, "idea/testData/smartSelection/parenthesized.kt");
+        runTest("idea/testData/smartSelection/parenthesized.kt");
     }
 
     @TestMetadata("simple.kt")
     public void testSimple() throws Exception {
-        KotlinTestUtils.runTest(this::doTestSmartSelection,TargetBackend.ANY, "idea/testData/smartSelection/simple.kt");
+        runTest("idea/testData/smartSelection/simple.kt");
     }
 
     @TestMetadata("superExpression.kt")
     public void testSuperExpression() throws Exception {
-        KotlinTestUtils.runTest(this::doTestSmartSelection,TargetBackend.ANY, "idea/testData/smartSelection/superExpression.kt");
+        runTest("idea/testData/smartSelection/superExpression.kt");
     }
 
     @TestMetadata("superExpressionWithLabel.kt")
     public void testSuperExpressionWithLabel() throws Exception {
-        KotlinTestUtils.runTest(this::doTestSmartSelection,TargetBackend.ANY, "idea/testData/smartSelection/superExpressionWithLabel.kt");
+        runTest("idea/testData/smartSelection/superExpressionWithLabel.kt");
     }
 
     @TestMetadata("superExpressionWithLabelAndType.kt")
     public void testSuperExpressionWithLabelAndType() throws Exception {
-        KotlinTestUtils.runTest(this::doTestSmartSelection,TargetBackend.ANY, "idea/testData/smartSelection/superExpressionWithLabelAndType.kt");
+        runTest("idea/testData/smartSelection/superExpressionWithLabelAndType.kt");
     }
 
     @TestMetadata("superExpressionWithType.kt")
     public void testSuperExpressionWithType() throws Exception {
-        KotlinTestUtils.runTest(this::doTestSmartSelection,TargetBackend.ANY, "idea/testData/smartSelection/superExpressionWithType.kt");
+        runTest("idea/testData/smartSelection/superExpressionWithType.kt");
     }
 
     @TestMetadata("typeInSuperExpression.kt")
     public void testTypeInSuperExpression() throws Exception {
-        KotlinTestUtils.runTest(this::doTestSmartSelection,TargetBackend.ANY, "idea/testData/smartSelection/typeInSuperExpression.kt");
+        runTest("idea/testData/smartSelection/typeInSuperExpression.kt");
     }
 
     @TestMetadata("typeInSuperExpressionWithLabel.kt")
     public void testTypeInSuperExpressionWithLabel() throws Exception {
-        KotlinTestUtils.runTest(this::doTestSmartSelection,TargetBackend.ANY, "idea/testData/smartSelection/typeInSuperExpressionWithLabel.kt");
+        runTest("idea/testData/smartSelection/typeInSuperExpressionWithLabel.kt");
     }
 }

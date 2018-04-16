@@ -21,126 +21,134 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class IdeCompiledLightClassTestGenerated extends AbstractIdeCompiledLightClassTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInLightClasses() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/asJava/lightClasses"), Pattern.compile("^([^.]+)\\.(kt|kts)$"), TargetBackend.ANY, true, "local", "compilationErrors", "ideRegression");
     }
 
     @TestMetadata("AnnotationClass.kt")
     public void testAnnotationClass() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/AnnotationClass.kt");
+        runTest("compiler/testData/asJava/lightClasses/AnnotationClass.kt");
     }
 
     @TestMetadata("DataClassWithCustomImplementedMembers.kt")
     public void testDataClassWithCustomImplementedMembers() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/DataClassWithCustomImplementedMembers.kt");
+        runTest("compiler/testData/asJava/lightClasses/DataClassWithCustomImplementedMembers.kt");
     }
 
     @TestMetadata("DelegatedNested.kt")
     public void testDelegatedNested() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/DelegatedNested.kt");
+        runTest("compiler/testData/asJava/lightClasses/DelegatedNested.kt");
     }
 
     @TestMetadata("Delegation.kt")
     public void testDelegation() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/Delegation.kt");
+        runTest("compiler/testData/asJava/lightClasses/Delegation.kt");
     }
 
     @TestMetadata("DeprecatedEnumEntry.kt")
     public void testDeprecatedEnumEntry() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/DeprecatedEnumEntry.kt");
+        runTest("compiler/testData/asJava/lightClasses/DeprecatedEnumEntry.kt");
     }
 
     @TestMetadata("DeprecatedNotHiddenInClass.kt")
     public void testDeprecatedNotHiddenInClass() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/DeprecatedNotHiddenInClass.kt");
+        runTest("compiler/testData/asJava/lightClasses/DeprecatedNotHiddenInClass.kt");
     }
 
     @TestMetadata("DollarsInName.kt")
     public void testDollarsInName() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/DollarsInName.kt");
+        runTest("compiler/testData/asJava/lightClasses/DollarsInName.kt");
     }
 
     @TestMetadata("DollarsInNameNoPackage.kt")
     public void testDollarsInNameNoPackage() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/DollarsInNameNoPackage.kt");
+        runTest("compiler/testData/asJava/lightClasses/DollarsInNameNoPackage.kt");
     }
 
     @TestMetadata("ExtendingInterfaceWithDefaultImpls.kt")
     public void testExtendingInterfaceWithDefaultImpls() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/ExtendingInterfaceWithDefaultImpls.kt");
+        runTest("compiler/testData/asJava/lightClasses/ExtendingInterfaceWithDefaultImpls.kt");
     }
 
     @TestMetadata("HiddenDeprecated.kt")
     public void testHiddenDeprecated() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/HiddenDeprecated.kt");
+        runTest("compiler/testData/asJava/lightClasses/HiddenDeprecated.kt");
     }
 
     @TestMetadata("HiddenDeprecatedInClass.kt")
     public void testHiddenDeprecatedInClass() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/HiddenDeprecatedInClass.kt");
+        runTest("compiler/testData/asJava/lightClasses/HiddenDeprecatedInClass.kt");
     }
 
     @TestMetadata("InheritingInterfaceDefaultImpls.kt")
     public void testInheritingInterfaceDefaultImpls() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/InheritingInterfaceDefaultImpls.kt");
+        runTest("compiler/testData/asJava/lightClasses/InheritingInterfaceDefaultImpls.kt");
     }
 
     @TestMetadata("JvmNameOnMember.kt")
     public void testJvmNameOnMember() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/JvmNameOnMember.kt");
+        runTest("compiler/testData/asJava/lightClasses/JvmNameOnMember.kt");
     }
 
     @TestMetadata("JvmStatic.kt")
     public void testJvmStatic() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/JvmStatic.kt");
+        runTest("compiler/testData/asJava/lightClasses/JvmStatic.kt");
     }
 
     @TestMetadata("NestedObjects.kt")
     public void testNestedObjects() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/NestedObjects.kt");
+        runTest("compiler/testData/asJava/lightClasses/NestedObjects.kt");
     }
 
     @TestMetadata("NonDataClassWithComponentFunctions.kt")
     public void testNonDataClassWithComponentFunctions() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/NonDataClassWithComponentFunctions.kt");
+        runTest("compiler/testData/asJava/lightClasses/NonDataClassWithComponentFunctions.kt");
     }
 
     @TestMetadata("PublishedApi.kt")
     public void testPublishedApi() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/PublishedApi.kt");
+        runTest("compiler/testData/asJava/lightClasses/PublishedApi.kt");
     }
 
     @TestMetadata("SpecialAnnotationsOnAnnotationClass.kt")
     public void testSpecialAnnotationsOnAnnotationClass() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/SpecialAnnotationsOnAnnotationClass.kt");
+        runTest("compiler/testData/asJava/lightClasses/SpecialAnnotationsOnAnnotationClass.kt");
     }
 
     @TestMetadata("StubOrderForOverloads.kt")
     public void testStubOrderForOverloads() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/StubOrderForOverloads.kt");
+        runTest("compiler/testData/asJava/lightClasses/StubOrderForOverloads.kt");
     }
 
     @TestMetadata("VarArgs.kt")
     public void testVarArgs() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/VarArgs.kt");
+        runTest("compiler/testData/asJava/lightClasses/VarArgs.kt");
     }
 
     @TestMetadata("compiler/testData/asJava/lightClasses/delegation")
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Delegation extends AbstractIdeCompiledLightClassTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInDelegation() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/asJava/lightClasses/delegation"), Pattern.compile("^([^.]+)\\.(kt|kts)$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("Function.kt")
         public void testFunction() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/delegation/Function.kt");
+            runTest("compiler/testData/asJava/lightClasses/delegation/Function.kt");
         }
 
         @TestMetadata("Property.kt")
         public void testProperty() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/delegation/Property.kt");
+            runTest("compiler/testData/asJava/lightClasses/delegation/Property.kt");
         }
     }
 
@@ -148,28 +156,32 @@ public class IdeCompiledLightClassTestGenerated extends AbstractIdeCompiledLight
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Facades extends AbstractIdeCompiledLightClassTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInFacades() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/asJava/lightClasses/facades"), Pattern.compile("^([^.]+)\\.(kt|kts)$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("AllPrivate.kt")
         public void testAllPrivate() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/facades/AllPrivate.kt");
+            runTest("compiler/testData/asJava/lightClasses/facades/AllPrivate.kt");
         }
 
         @TestMetadata("MultiFile.kt")
         public void testMultiFile() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/facades/MultiFile.kt");
+            runTest("compiler/testData/asJava/lightClasses/facades/MultiFile.kt");
         }
 
         @TestMetadata("SingleFile.kt")
         public void testSingleFile() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/facades/SingleFile.kt");
+            runTest("compiler/testData/asJava/lightClasses/facades/SingleFile.kt");
         }
 
         @TestMetadata("SingleJvmClassName.kt")
         public void testSingleJvmClassName() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/facades/SingleJvmClassName.kt");
+            runTest("compiler/testData/asJava/lightClasses/facades/SingleJvmClassName.kt");
         }
     }
 
@@ -177,98 +189,102 @@ public class IdeCompiledLightClassTestGenerated extends AbstractIdeCompiledLight
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class NullabilityAnnotations extends AbstractIdeCompiledLightClassTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInNullabilityAnnotations() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/asJava/lightClasses/nullabilityAnnotations"), Pattern.compile("^([^.]+)\\.(kt|kts)$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("Class.kt")
         public void testClass() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/nullabilityAnnotations/Class.kt");
+            runTest("compiler/testData/asJava/lightClasses/nullabilityAnnotations/Class.kt");
         }
 
         @TestMetadata("ClassObjectField.kt")
         public void testClassObjectField() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/nullabilityAnnotations/ClassObjectField.kt");
+            runTest("compiler/testData/asJava/lightClasses/nullabilityAnnotations/ClassObjectField.kt");
         }
 
         @TestMetadata("ClassWithConstructor.kt")
         public void testClassWithConstructor() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/nullabilityAnnotations/ClassWithConstructor.kt");
+            runTest("compiler/testData/asJava/lightClasses/nullabilityAnnotations/ClassWithConstructor.kt");
         }
 
         @TestMetadata("ClassWithConstructorAndProperties.kt")
         public void testClassWithConstructorAndProperties() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/nullabilityAnnotations/ClassWithConstructorAndProperties.kt");
+            runTest("compiler/testData/asJava/lightClasses/nullabilityAnnotations/ClassWithConstructorAndProperties.kt");
         }
 
         @TestMetadata("FileFacade.kt")
         public void testFileFacade() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/nullabilityAnnotations/FileFacade.kt");
+            runTest("compiler/testData/asJava/lightClasses/nullabilityAnnotations/FileFacade.kt");
         }
 
         @TestMetadata("Generic.kt")
         public void testGeneric() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/nullabilityAnnotations/Generic.kt");
+            runTest("compiler/testData/asJava/lightClasses/nullabilityAnnotations/Generic.kt");
         }
 
         @TestMetadata("IntOverridesAny.kt")
         public void testIntOverridesAny() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/nullabilityAnnotations/IntOverridesAny.kt");
+            runTest("compiler/testData/asJava/lightClasses/nullabilityAnnotations/IntOverridesAny.kt");
         }
 
         @TestMetadata("JvmOverloads.kt")
         public void testJvmOverloads() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/nullabilityAnnotations/JvmOverloads.kt");
+            runTest("compiler/testData/asJava/lightClasses/nullabilityAnnotations/JvmOverloads.kt");
         }
 
         @TestMetadata("NullableUnitReturn.kt")
         public void testNullableUnitReturn() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/nullabilityAnnotations/NullableUnitReturn.kt");
+            runTest("compiler/testData/asJava/lightClasses/nullabilityAnnotations/NullableUnitReturn.kt");
         }
 
         @TestMetadata("OverrideAnyWithUnit.kt")
         public void testOverrideAnyWithUnit() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/nullabilityAnnotations/OverrideAnyWithUnit.kt");
+            runTest("compiler/testData/asJava/lightClasses/nullabilityAnnotations/OverrideAnyWithUnit.kt");
         }
 
         @TestMetadata("PlatformTypes.kt")
         public void testPlatformTypes() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/nullabilityAnnotations/PlatformTypes.kt");
+            runTest("compiler/testData/asJava/lightClasses/nullabilityAnnotations/PlatformTypes.kt");
         }
 
         @TestMetadata("Primitives.kt")
         public void testPrimitives() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/nullabilityAnnotations/Primitives.kt");
+            runTest("compiler/testData/asJava/lightClasses/nullabilityAnnotations/Primitives.kt");
         }
 
         @TestMetadata("PrivateInClass.kt")
         public void testPrivateInClass() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/nullabilityAnnotations/PrivateInClass.kt");
+            runTest("compiler/testData/asJava/lightClasses/nullabilityAnnotations/PrivateInClass.kt");
         }
 
         @TestMetadata("Synthetic.kt")
         public void testSynthetic() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/nullabilityAnnotations/Synthetic.kt");
+            runTest("compiler/testData/asJava/lightClasses/nullabilityAnnotations/Synthetic.kt");
         }
 
         @TestMetadata("Trait.kt")
         public void testTrait() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/nullabilityAnnotations/Trait.kt");
+            runTest("compiler/testData/asJava/lightClasses/nullabilityAnnotations/Trait.kt");
         }
 
         @TestMetadata("UnitAsGenericArgument.kt")
         public void testUnitAsGenericArgument() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/nullabilityAnnotations/UnitAsGenericArgument.kt");
+            runTest("compiler/testData/asJava/lightClasses/nullabilityAnnotations/UnitAsGenericArgument.kt");
         }
 
         @TestMetadata("UnitParameter.kt")
         public void testUnitParameter() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/nullabilityAnnotations/UnitParameter.kt");
+            runTest("compiler/testData/asJava/lightClasses/nullabilityAnnotations/UnitParameter.kt");
         }
 
         @TestMetadata("VoidReturn.kt")
         public void testVoidReturn() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/nullabilityAnnotations/VoidReturn.kt");
+            runTest("compiler/testData/asJava/lightClasses/nullabilityAnnotations/VoidReturn.kt");
         }
     }
 
@@ -276,13 +292,17 @@ public class IdeCompiledLightClassTestGenerated extends AbstractIdeCompiledLight
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Object extends AbstractIdeCompiledLightClassTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInObject() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/asJava/lightClasses/object"), Pattern.compile("^([^.]+)\\.(kt|kts)$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("SimpleObject.kt")
         public void testSimpleObject() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/object/SimpleObject.kt");
+            runTest("compiler/testData/asJava/lightClasses/object/SimpleObject.kt");
         }
     }
 
@@ -290,18 +310,22 @@ public class IdeCompiledLightClassTestGenerated extends AbstractIdeCompiledLight
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class PublicField extends AbstractIdeCompiledLightClassTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInPublicField() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/asJava/lightClasses/publicField"), Pattern.compile("^([^.]+)\\.(kt|kts)$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("CompanionObject.kt")
         public void testCompanionObject() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/publicField/CompanionObject.kt");
+            runTest("compiler/testData/asJava/lightClasses/publicField/CompanionObject.kt");
         }
 
         @TestMetadata("Simple.kt")
         public void testSimple() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/publicField/Simple.kt");
+            runTest("compiler/testData/asJava/lightClasses/publicField/Simple.kt");
         }
     }
 
@@ -309,18 +333,22 @@ public class IdeCompiledLightClassTestGenerated extends AbstractIdeCompiledLight
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Script extends AbstractIdeCompiledLightClassTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInScript() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/asJava/lightClasses/script"), Pattern.compile("^([^.]+)\\.(kt|kts)$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("HelloWorld.kts")
         public void testHelloWorld() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/script/HelloWorld.kts");
+            runTest("compiler/testData/asJava/lightClasses/script/HelloWorld.kts");
         }
 
         @TestMetadata("InnerClasses.kts")
         public void testInnerClasses() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/asJava/lightClasses/script/InnerClasses.kts");
+            runTest("compiler/testData/asJava/lightClasses/script/InnerClasses.kts");
         }
     }
 }

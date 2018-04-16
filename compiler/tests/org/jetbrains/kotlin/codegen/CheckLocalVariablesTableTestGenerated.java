@@ -21,87 +21,91 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class CheckLocalVariablesTableTestGenerated extends AbstractCheckLocalVariablesTableTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInCheckLocalVariablesTable() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("compiler/testData/checkLocalVariablesTable"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
     }
 
     @TestMetadata("catchClause.kt")
     public void testCatchClause() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/checkLocalVariablesTable/catchClause.kt");
+        runTest("compiler/testData/checkLocalVariablesTable/catchClause.kt");
     }
 
     @TestMetadata("copyFunction.kt")
     public void testCopyFunction() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/checkLocalVariablesTable/copyFunction.kt");
+        runTest("compiler/testData/checkLocalVariablesTable/copyFunction.kt");
     }
 
     @TestMetadata("destructuringInLambdas.kt")
     public void testDestructuringInLambdas() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/checkLocalVariablesTable/destructuringInLambdas.kt");
+        runTest("compiler/testData/checkLocalVariablesTable/destructuringInLambdas.kt");
     }
 
     @TestMetadata("destructuringInlineLambda.kt")
     public void testDestructuringInlineLambda() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/checkLocalVariablesTable/destructuringInlineLambda.kt");
+        runTest("compiler/testData/checkLocalVariablesTable/destructuringInlineLambda.kt");
     }
 
     @TestMetadata("inlineLambdaWithItParam.kt")
     public void testInlineLambdaWithItParam() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/checkLocalVariablesTable/inlineLambdaWithItParam.kt");
+        runTest("compiler/testData/checkLocalVariablesTable/inlineLambdaWithItParam.kt");
     }
 
     @TestMetadata("inlineLambdaWithParam.kt")
     public void testInlineLambdaWithParam() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/checkLocalVariablesTable/inlineLambdaWithParam.kt");
+        runTest("compiler/testData/checkLocalVariablesTable/inlineLambdaWithParam.kt");
     }
 
     @TestMetadata("inlineProperty.kt")
     public void testInlineProperty() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/checkLocalVariablesTable/inlineProperty.kt");
+        runTest("compiler/testData/checkLocalVariablesTable/inlineProperty.kt");
     }
 
     @TestMetadata("inlineSimple.kt")
     public void testInlineSimple() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/checkLocalVariablesTable/inlineSimple.kt");
+        runTest("compiler/testData/checkLocalVariablesTable/inlineSimple.kt");
     }
 
     @TestMetadata("inlineSimpleChain.kt")
     public void testInlineSimpleChain() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/checkLocalVariablesTable/inlineSimpleChain.kt");
+        runTest("compiler/testData/checkLocalVariablesTable/inlineSimpleChain.kt");
     }
 
     @TestMetadata("itInLambda.kt")
     public void testItInLambda() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/checkLocalVariablesTable/itInLambda.kt");
+        runTest("compiler/testData/checkLocalVariablesTable/itInLambda.kt");
     }
 
     @TestMetadata("itInReturnedLambda.kt")
     public void testItInReturnedLambda() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/checkLocalVariablesTable/itInReturnedLambda.kt");
+        runTest("compiler/testData/checkLocalVariablesTable/itInReturnedLambda.kt");
     }
 
     @TestMetadata("jvmOverloads.kt")
     public void testJvmOverloads() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/checkLocalVariablesTable/jvmOverloads.kt");
+        runTest("compiler/testData/checkLocalVariablesTable/jvmOverloads.kt");
     }
 
     @TestMetadata("kt11117.kt")
     public void testKt11117() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/checkLocalVariablesTable/kt11117.kt");
+        runTest("compiler/testData/checkLocalVariablesTable/kt11117.kt");
     }
 
     @TestMetadata("lambdaAsVar.kt")
     public void testLambdaAsVar() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/checkLocalVariablesTable/lambdaAsVar.kt");
+        runTest("compiler/testData/checkLocalVariablesTable/lambdaAsVar.kt");
     }
 
     @TestMetadata("localFun.kt")
     public void testLocalFun() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/checkLocalVariablesTable/localFun.kt");
+        runTest("compiler/testData/checkLocalVariablesTable/localFun.kt");
     }
 
     @TestMetadata("underscoreNames.kt")
     public void testUnderscoreNames() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/checkLocalVariablesTable/underscoreNames.kt");
+        runTest("compiler/testData/checkLocalVariablesTable/underscoreNames.kt");
     }
 }

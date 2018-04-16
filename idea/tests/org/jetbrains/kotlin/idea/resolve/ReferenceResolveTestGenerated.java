@@ -21,424 +21,436 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class ReferenceResolveTestGenerated extends AbstractReferenceResolveTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInReferences() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/resolve/references"), Pattern.compile("^([^.]+)\\.kt$"), TargetBackend.ANY, true);
     }
 
     @TestMetadata("AnnotationForClass.kt")
     public void testAnnotationForClass() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/AnnotationForClass.kt");
+        runTest("idea/testData/resolve/references/AnnotationForClass.kt");
     }
 
     @TestMetadata("AnnotationInsideFunction.kt")
     public void testAnnotationInsideFunction() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/AnnotationInsideFunction.kt");
+        runTest("idea/testData/resolve/references/AnnotationInsideFunction.kt");
     }
 
     @TestMetadata("AnnotationOnFile.kt")
     public void testAnnotationOnFile() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/AnnotationOnFile.kt");
+        runTest("idea/testData/resolve/references/AnnotationOnFile.kt");
     }
 
     @TestMetadata("AnnotationOnFileWithImport.kt")
     public void testAnnotationOnFileWithImport() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/AnnotationOnFileWithImport.kt");
+        runTest("idea/testData/resolve/references/AnnotationOnFileWithImport.kt");
     }
 
     @TestMetadata("AnnotationParameter.kt")
     public void testAnnotationParameter() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/AnnotationParameter.kt");
+        runTest("idea/testData/resolve/references/AnnotationParameter.kt");
     }
 
     @TestMetadata("AnnotationTypeParameter.kt")
     public void testAnnotationTypeParameter() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/AnnotationTypeParameter.kt");
+        runTest("idea/testData/resolve/references/AnnotationTypeParameter.kt");
     }
 
     @TestMetadata("ClassInTypeConstraint.kt")
     public void testClassInTypeConstraint() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/ClassInTypeConstraint.kt");
+        runTest("idea/testData/resolve/references/ClassInTypeConstraint.kt");
     }
 
     @TestMetadata("ClassNameBeforeDot.kt")
     public void testClassNameBeforeDot() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/ClassNameBeforeDot.kt");
+        runTest("idea/testData/resolve/references/ClassNameBeforeDot.kt");
     }
 
     @TestMetadata("ClassObjectClassLiteralReference.kt")
     public void testClassObjectClassLiteralReference() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/ClassObjectClassLiteralReference.kt");
+        runTest("idea/testData/resolve/references/ClassObjectClassLiteralReference.kt");
     }
 
     @TestMetadata("ClassObjectClassLiteralReferenceWithField.kt")
     public void testClassObjectClassLiteralReferenceWithField() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/ClassObjectClassLiteralReferenceWithField.kt");
+        runTest("idea/testData/resolve/references/ClassObjectClassLiteralReferenceWithField.kt");
     }
 
     @TestMetadata("ClassQualifierForNestedClassConstructorCall.kt")
     public void testClassQualifierForNestedClassConstructorCall() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/ClassQualifierForNestedClassConstructorCall.kt");
+        runTest("idea/testData/resolve/references/ClassQualifierForNestedClassConstructorCall.kt");
     }
 
     @TestMetadata("ClassReferenceInImport.kt")
     public void testClassReferenceInImport() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/ClassReferenceInImport.kt");
+        runTest("idea/testData/resolve/references/ClassReferenceInImport.kt");
     }
 
     @TestMetadata("CollectionLiteralLeft.kt")
     public void testCollectionLiteralLeft() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/CollectionLiteralLeft.kt");
+        runTest("idea/testData/resolve/references/CollectionLiteralLeft.kt");
     }
 
     @TestMetadata("CollectionLiteralRight.kt")
     public void testCollectionLiteralRight() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/CollectionLiteralRight.kt");
+        runTest("idea/testData/resolve/references/CollectionLiteralRight.kt");
     }
 
     @TestMetadata("CoroutineSuspensionPoint.kt")
     public void testCoroutineSuspensionPoint() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/CoroutineSuspensionPoint.kt");
+        runTest("idea/testData/resolve/references/CoroutineSuspensionPoint.kt");
     }
 
     @TestMetadata("CtrlClickResolve.kt")
     public void testCtrlClickResolve() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/CtrlClickResolve.kt");
+        runTest("idea/testData/resolve/references/CtrlClickResolve.kt");
     }
 
     @TestMetadata("DataClassCopy.kt")
     public void testDataClassCopy() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/DataClassCopy.kt");
+        runTest("idea/testData/resolve/references/DataClassCopy.kt");
     }
 
     @TestMetadata("DefaultObjectAsExtensionReceiverForFunction.kt")
     public void testDefaultObjectAsExtensionReceiverForFunction() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/DefaultObjectAsExtensionReceiverForFunction.kt");
+        runTest("idea/testData/resolve/references/DefaultObjectAsExtensionReceiverForFunction.kt");
     }
 
     @TestMetadata("DefaultObjectAsExtensionReceiverForProperty.kt")
     public void testDefaultObjectAsExtensionReceiverForProperty() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/DefaultObjectAsExtensionReceiverForProperty.kt");
+        runTest("idea/testData/resolve/references/DefaultObjectAsExtensionReceiverForProperty.kt");
     }
 
     @TestMetadata("DefaultObjectAsReceiverForExtensionFunctionOnSuperType.kt")
     public void testDefaultObjectAsReceiverForExtensionFunctionOnSuperType() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/DefaultObjectAsReceiverForExtensionFunctionOnSuperType.kt");
+        runTest("idea/testData/resolve/references/DefaultObjectAsReceiverForExtensionFunctionOnSuperType.kt");
     }
 
     @TestMetadata("DefaultObjectAsReceiverForMemberPropertyInSuperType.kt")
     public void testDefaultObjectAsReceiverForMemberPropertyInSuperType() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/DefaultObjectAsReceiverForMemberPropertyInSuperType.kt");
+        runTest("idea/testData/resolve/references/DefaultObjectAsReceiverForMemberPropertyInSuperType.kt");
     }
 
     @TestMetadata("DefaultObjectInShortReferenceFormCall.kt")
     public void testDefaultObjectInShortReferenceFormCall() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/DefaultObjectInShortReferenceFormCall.kt");
+        runTest("idea/testData/resolve/references/DefaultObjectInShortReferenceFormCall.kt");
     }
 
     @TestMetadata("EnumValues.kt")
     public void testEnumValues() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/EnumValues.kt");
+        runTest("idea/testData/resolve/references/EnumValues.kt");
     }
 
     @TestMetadata("FakeJavaLang1.kt")
     public void testFakeJavaLang1() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/FakeJavaLang1.kt");
+        runTest("idea/testData/resolve/references/FakeJavaLang1.kt");
     }
 
     @TestMetadata("FakeJavaLang2.kt")
     public void testFakeJavaLang2() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/FakeJavaLang2.kt");
+        runTest("idea/testData/resolve/references/FakeJavaLang2.kt");
     }
 
     @TestMetadata("FakeJavaLang3.kt")
     public void testFakeJavaLang3() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/FakeJavaLang3.kt");
+        runTest("idea/testData/resolve/references/FakeJavaLang3.kt");
     }
 
     @TestMetadata("FakeJavaLang4.kt")
     public void testFakeJavaLang4() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/FakeJavaLang4.kt");
+        runTest("idea/testData/resolve/references/FakeJavaLang4.kt");
     }
 
     @TestMetadata("fileRefInRawStringLiteral.kt")
     public void testFileRefInRawStringLiteral() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/fileRefInRawStringLiteral.kt");
+        runTest("idea/testData/resolve/references/fileRefInRawStringLiteral.kt");
     }
 
     @TestMetadata("fileRefInStringLiteral.kt")
     public void testFileRefInStringLiteral() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/fileRefInStringLiteral.kt");
+        runTest("idea/testData/resolve/references/fileRefInStringLiteral.kt");
     }
 
     @TestMetadata("GenericFunctionParameter.kt")
     public void testGenericFunctionParameter() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/GenericFunctionParameter.kt");
+        runTest("idea/testData/resolve/references/GenericFunctionParameter.kt");
     }
 
     @TestMetadata("GenericTypeInFunctionParameter.kt")
     public void testGenericTypeInFunctionParameter() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/GenericTypeInFunctionParameter.kt");
+        runTest("idea/testData/resolve/references/GenericTypeInFunctionParameter.kt");
     }
 
     @TestMetadata("ImportFromRootScope.kt")
     public void testImportFromRootScope() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/ImportFromRootScope.kt");
+        runTest("idea/testData/resolve/references/ImportFromRootScope.kt");
     }
 
     @TestMetadata("InClassParameter.kt")
     public void testInClassParameter() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/InClassParameter.kt");
+        runTest("idea/testData/resolve/references/InClassParameter.kt");
     }
 
     @TestMetadata("InClassParameterField.kt")
     public void testInClassParameterField() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/InClassParameterField.kt");
+        runTest("idea/testData/resolve/references/InClassParameterField.kt");
     }
 
     @TestMetadata("InEnumEntry.kt")
     public void testInEnumEntry() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/InEnumEntry.kt");
+        runTest("idea/testData/resolve/references/InEnumEntry.kt");
     }
 
     @TestMetadata("InFunctionParameterType.kt")
     public void testInFunctionParameterType() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/InFunctionParameterType.kt");
+        runTest("idea/testData/resolve/references/InFunctionParameterType.kt");
     }
 
     @TestMetadata("InMethodParameter.kt")
     public void testInMethodParameter() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/InMethodParameter.kt");
+        runTest("idea/testData/resolve/references/InMethodParameter.kt");
     }
 
     @TestMetadata("InObjectClassObject.kt")
     public void testInObjectClassObject() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/InObjectClassObject.kt");
+        runTest("idea/testData/resolve/references/InObjectClassObject.kt");
     }
 
     @TestMetadata("InSecondClassObject.kt")
     public void testInSecondClassObject() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/InSecondClassObject.kt");
+        runTest("idea/testData/resolve/references/InSecondClassObject.kt");
     }
 
     @TestMetadata("JavaAnnotationParameter.kt")
     public void testJavaAnnotationParameter() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/JavaAnnotationParameter.kt");
+        runTest("idea/testData/resolve/references/JavaAnnotationParameter.kt");
     }
 
     @TestMetadata("JavaConstructorNotNullParameter.kt")
     public void testJavaConstructorNotNullParameter() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/JavaConstructorNotNullParameter.kt");
+        runTest("idea/testData/resolve/references/JavaConstructorNotNullParameter.kt");
     }
 
     @TestMetadata("JavaEnumEntry.kt")
     public void testJavaEnumEntry() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/JavaEnumEntry.kt");
+        runTest("idea/testData/resolve/references/JavaEnumEntry.kt");
     }
 
     @TestMetadata("JavaEnumValueOf.kt")
     public void testJavaEnumValueOf() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/JavaEnumValueOf.kt");
+        runTest("idea/testData/resolve/references/JavaEnumValueOf.kt");
     }
 
     @TestMetadata("JavaParameter.kt")
     public void testJavaParameter() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/JavaParameter.kt");
+        runTest("idea/testData/resolve/references/JavaParameter.kt");
     }
 
     @TestMetadata("JavaReference.kt")
     public void testJavaReference() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/JavaReference.kt");
+        runTest("idea/testData/resolve/references/JavaReference.kt");
     }
 
     @TestMetadata("MultiDeclarationExtension.kt")
     public void testMultiDeclarationExtension() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/MultiDeclarationExtension.kt");
+        runTest("idea/testData/resolve/references/MultiDeclarationExtension.kt");
     }
 
     @TestMetadata("MultiDeclarationMember.kt")
     public void testMultiDeclarationMember() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/MultiDeclarationMember.kt");
+        runTest("idea/testData/resolve/references/MultiDeclarationMember.kt");
     }
 
     @TestMetadata("NamedClassObject.kt")
     public void testNamedClassObject() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/NamedClassObject.kt");
+        runTest("idea/testData/resolve/references/NamedClassObject.kt");
     }
 
     @TestMetadata("PackageReference.kt")
     public void testPackageReference() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/PackageReference.kt");
+        runTest("idea/testData/resolve/references/PackageReference.kt");
     }
 
     @TestMetadata("PackageReferenceInImport.kt")
     public void testPackageReferenceInImport() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/PackageReferenceInImport.kt");
+        runTest("idea/testData/resolve/references/PackageReferenceInImport.kt");
     }
 
     @TestMetadata("PropertyPlaceInClassObjectInObject.kt")
     public void testPropertyPlaceInClassObjectInObject() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/PropertyPlaceInClassObjectInObject.kt");
+        runTest("idea/testData/resolve/references/PropertyPlaceInClassObjectInObject.kt");
     }
 
     @TestMetadata("ReferenceInClassWhereConstraint.kt")
     public void testReferenceInClassWhereConstraint() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/ReferenceInClassWhereConstraint.kt");
+        runTest("idea/testData/resolve/references/ReferenceInClassWhereConstraint.kt");
     }
 
     @TestMetadata("ReferenceInFunWhereConstraint.kt")
     public void testReferenceInFunWhereConstraint() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/ReferenceInFunWhereConstraint.kt");
+        runTest("idea/testData/resolve/references/ReferenceInFunWhereConstraint.kt");
     }
 
     @TestMetadata("ReferenceToSam.kt")
     public void testReferenceToSam() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/ReferenceToSam.kt");
+        runTest("idea/testData/resolve/references/ReferenceToSam.kt");
     }
 
     @TestMetadata("ResolveClass.kt")
     public void testResolveClass() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/ResolveClass.kt");
+        runTest("idea/testData/resolve/references/ResolveClass.kt");
     }
 
     @TestMetadata("ResolvePackageInProperty.kt")
     public void testResolvePackageInProperty() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/ResolvePackageInProperty.kt");
+        runTest("idea/testData/resolve/references/ResolvePackageInProperty.kt");
     }
 
     @TestMetadata("SamAdapter.kt")
     public void testSamAdapter() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/SamAdapter.kt");
+        runTest("idea/testData/resolve/references/SamAdapter.kt");
     }
 
     @TestMetadata("SamConstructor.kt")
     public void testSamConstructor() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/SamConstructor.kt");
+        runTest("idea/testData/resolve/references/SamConstructor.kt");
     }
 
     @TestMetadata("SamConstructorTypeArguments.kt")
     public void testSamConstructorTypeArguments() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/SamConstructorTypeArguments.kt");
+        runTest("idea/testData/resolve/references/SamConstructorTypeArguments.kt");
     }
 
     @TestMetadata("SeveralOverrides.kt")
     public void testSeveralOverrides() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/SeveralOverrides.kt");
+        runTest("idea/testData/resolve/references/SeveralOverrides.kt");
     }
 
     @TestMetadata("SyntheticProperty.kt")
     public void testSyntheticProperty() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/SyntheticProperty.kt");
+        runTest("idea/testData/resolve/references/SyntheticProperty.kt");
     }
 
     @TestMetadata("TypeAlias.kt")
     public void testTypeAlias() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/TypeAlias.kt");
+        runTest("idea/testData/resolve/references/TypeAlias.kt");
     }
 
     @TestMetadata("TypeAliasAsSupertypeConstructor.kt")
     public void testTypeAliasAsSupertypeConstructor() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/TypeAliasAsSupertypeConstructor.kt");
+        runTest("idea/testData/resolve/references/TypeAliasAsSupertypeConstructor.kt");
     }
 
     @TestMetadata("TypeAliasRHS.kt")
     public void testTypeAliasRHS() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/TypeAliasRHS.kt");
+        runTest("idea/testData/resolve/references/TypeAliasRHS.kt");
     }
 
     @TestMetadata("TypeArgumentBeforeDot.kt")
     public void testTypeArgumentBeforeDot() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/TypeArgumentBeforeDot.kt");
+        runTest("idea/testData/resolve/references/TypeArgumentBeforeDot.kt");
     }
 
     @TestMetadata("TypeArgumentBeforeDot2.kt")
     public void testTypeArgumentBeforeDot2() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/TypeArgumentBeforeDot2.kt");
+        runTest("idea/testData/resolve/references/TypeArgumentBeforeDot2.kt");
     }
 
     @TestMetadata("TypeArgumentUnresolvedClass.kt")
     public void testTypeArgumentUnresolvedClass() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/TypeArgumentUnresolvedClass.kt");
+        runTest("idea/testData/resolve/references/TypeArgumentUnresolvedClass.kt");
     }
 
     @TestMetadata("TypeArgumentUnresolvedConstructor.kt")
     public void testTypeArgumentUnresolvedConstructor() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/TypeArgumentUnresolvedConstructor.kt");
+        runTest("idea/testData/resolve/references/TypeArgumentUnresolvedConstructor.kt");
     }
 
     @TestMetadata("TypeArgumentWrongNumber.kt")
     public void testTypeArgumentWrongNumber() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/TypeArgumentWrongNumber.kt");
+        runTest("idea/testData/resolve/references/TypeArgumentWrongNumber.kt");
     }
 
     @TestMetadata("TypeParameterInAnonymousObject.kt")
     public void testTypeParameterInAnonymousObject() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/TypeParameterInAnonymousObject.kt");
+        runTest("idea/testData/resolve/references/TypeParameterInAnonymousObject.kt");
     }
 
     @TestMetadata("TypeParameterInFunctionLiteral.kt")
     public void testTypeParameterInFunctionLiteral() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/TypeParameterInFunctionLiteral.kt");
+        runTest("idea/testData/resolve/references/TypeParameterInFunctionLiteral.kt");
     }
 
     @TestMetadata("ValueParameter.kt")
     public void testValueParameter() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/ValueParameter.kt");
+        runTest("idea/testData/resolve/references/ValueParameter.kt");
     }
 
     @TestMetadata("WrongNumberOfTypeArguments.kt")
     public void testWrongNumberOfTypeArguments() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/WrongNumberOfTypeArguments.kt");
+        runTest("idea/testData/resolve/references/WrongNumberOfTypeArguments.kt");
     }
 
     @TestMetadata("WrongNumberOfTypeArguments2.kt")
     public void testWrongNumberOfTypeArguments2() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/WrongNumberOfTypeArguments2.kt");
+        runTest("idea/testData/resolve/references/WrongNumberOfTypeArguments2.kt");
     }
 
     @TestMetadata("WrongNumberOfTypeArgumentsInSupertype.kt")
     public void testWrongNumberOfTypeArgumentsInSupertype() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/WrongNumberOfTypeArgumentsInSupertype.kt");
+        runTest("idea/testData/resolve/references/WrongNumberOfTypeArgumentsInSupertype.kt");
     }
 
     @TestMetadata("idea/testData/resolve/references/delegatedPropertyAccessors")
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class DelegatedPropertyAccessors extends AbstractReferenceResolveTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInDelegatedPropertyAccessors() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/resolve/references/delegatedPropertyAccessors"), Pattern.compile("^([^.]+)\\.kt$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("unresolved.kt")
         public void testUnresolved() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/delegatedPropertyAccessors/unresolved.kt");
+            runTest("idea/testData/resolve/references/delegatedPropertyAccessors/unresolved.kt");
         }
 
         @TestMetadata("idea/testData/resolve/references/delegatedPropertyAccessors/inSource")
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class InSource extends AbstractReferenceResolveTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInInSource() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/resolve/references/delegatedPropertyAccessors/inSource"), Pattern.compile("^([^.]+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("getExtension.kt")
             public void testGetExtension() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/delegatedPropertyAccessors/inSource/getExtension.kt");
+                runTest("idea/testData/resolve/references/delegatedPropertyAccessors/inSource/getExtension.kt");
             }
 
             @TestMetadata("getMember.kt")
             public void testGetMember() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/delegatedPropertyAccessors/inSource/getMember.kt");
+                runTest("idea/testData/resolve/references/delegatedPropertyAccessors/inSource/getMember.kt");
             }
 
             @TestMetadata("getMultipleDeclarations.kt")
             public void testGetMultipleDeclarations() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/delegatedPropertyAccessors/inSource/getMultipleDeclarations.kt");
+                runTest("idea/testData/resolve/references/delegatedPropertyAccessors/inSource/getMultipleDeclarations.kt");
             }
 
             @TestMetadata("getOneFakeOverride.kt")
             public void testGetOneFakeOverride() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/delegatedPropertyAccessors/inSource/getOneFakeOverride.kt");
+                runTest("idea/testData/resolve/references/delegatedPropertyAccessors/inSource/getOneFakeOverride.kt");
             }
         }
 
@@ -446,18 +458,22 @@ public class ReferenceResolveTestGenerated extends AbstractReferenceResolveTest 
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class InStandardLibrary extends AbstractReferenceResolveTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInInStandardLibrary() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/resolve/references/delegatedPropertyAccessors/inStandardLibrary"), Pattern.compile("^([^.]+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("lazy.kt")
             public void testLazy() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/delegatedPropertyAccessors/inStandardLibrary/lazy.kt");
+                runTest("idea/testData/resolve/references/delegatedPropertyAccessors/inStandardLibrary/lazy.kt");
             }
 
             @TestMetadata("notNull.kt")
             public void testNotNull() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/delegatedPropertyAccessors/inStandardLibrary/notNull.kt");
+                runTest("idea/testData/resolve/references/delegatedPropertyAccessors/inStandardLibrary/notNull.kt");
             }
         }
     }
@@ -466,31 +482,39 @@ public class ReferenceResolveTestGenerated extends AbstractReferenceResolveTest 
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class ForLoopIn extends AbstractReferenceResolveTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInForLoopIn() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/resolve/references/forLoopIn"), Pattern.compile("^([^.]+)\\.kt$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("unresolvedIterator.kt")
         public void testUnresolvedIterator() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/forLoopIn/unresolvedIterator.kt");
+            runTest("idea/testData/resolve/references/forLoopIn/unresolvedIterator.kt");
         }
 
         @TestMetadata("idea/testData/resolve/references/forLoopIn/inBuiltIns")
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class InBuiltIns extends AbstractReferenceResolveTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInInBuiltIns() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/resolve/references/forLoopIn/inBuiltIns"), Pattern.compile("^([^.]+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("extension.kt")
             public void testExtension() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/forLoopIn/inBuiltIns/extension.kt");
+                runTest("idea/testData/resolve/references/forLoopIn/inBuiltIns/extension.kt");
             }
 
             @TestMetadata("member.kt")
             public void testMember() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/forLoopIn/inBuiltIns/member.kt");
+                runTest("idea/testData/resolve/references/forLoopIn/inBuiltIns/member.kt");
             }
         }
 
@@ -498,13 +522,17 @@ public class ReferenceResolveTestGenerated extends AbstractReferenceResolveTest 
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class InLibrary extends AbstractReferenceResolveTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInInLibrary() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/resolve/references/forLoopIn/inLibrary"), Pattern.compile("^([^.]+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("extension.kt")
             public void testExtension() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/forLoopIn/inLibrary/extension.kt");
+                runTest("idea/testData/resolve/references/forLoopIn/inLibrary/extension.kt");
             }
         }
 
@@ -512,9 +540,13 @@ public class ReferenceResolveTestGenerated extends AbstractReferenceResolveTest 
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class InSource extends AbstractReferenceResolveTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             @TestMetadata("allExtensions.kt")
             public void testAllExtensions() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/forLoopIn/inSource/allExtensions.kt");
+                runTest("idea/testData/resolve/references/forLoopIn/inSource/allExtensions.kt");
             }
 
             public void testAllFilesPresentInInSource() throws Exception {
@@ -523,12 +555,12 @@ public class ReferenceResolveTestGenerated extends AbstractReferenceResolveTest 
 
             @TestMetadata("allMembers.kt")
             public void testAllMembers() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/forLoopIn/inSource/allMembers.kt");
+                runTest("idea/testData/resolve/references/forLoopIn/inSource/allMembers.kt");
             }
 
             @TestMetadata("nextMissing.kt")
             public void testNextMissing() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/forLoopIn/inSource/nextMissing.kt");
+                runTest("idea/testData/resolve/references/forLoopIn/inSource/nextMissing.kt");
             }
         }
     }
@@ -537,53 +569,57 @@ public class ReferenceResolveTestGenerated extends AbstractReferenceResolveTest 
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Invoke extends AbstractReferenceResolveTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInInvoke() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/resolve/references/invoke"), Pattern.compile("^([^.]+)\\.kt$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("lambdaAndParens.kt")
         public void testLambdaAndParens() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/invoke/lambdaAndParens.kt");
+            runTest("idea/testData/resolve/references/invoke/lambdaAndParens.kt");
         }
 
         @TestMetadata("lambdaNoPar.kt")
         public void testLambdaNoPar() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/invoke/lambdaNoPar.kt");
+            runTest("idea/testData/resolve/references/invoke/lambdaNoPar.kt");
         }
 
         @TestMetadata("lambdaNoParLabel.kt")
         public void testLambdaNoParLabel() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/invoke/lambdaNoParLabel.kt");
+            runTest("idea/testData/resolve/references/invoke/lambdaNoParLabel.kt");
         }
 
         @TestMetadata("lambdaNoParRCurly.kt")
         public void testLambdaNoParRCurly() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/invoke/lambdaNoParRCurly.kt");
+            runTest("idea/testData/resolve/references/invoke/lambdaNoParRCurly.kt");
         }
 
         @TestMetadata("noParams.kt")
         public void testNoParams() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/invoke/noParams.kt");
+            runTest("idea/testData/resolve/references/invoke/noParams.kt");
         }
 
         @TestMetadata("noParamsRPar.kt")
         public void testNoParamsRPar() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/invoke/noParamsRPar.kt");
+            runTest("idea/testData/resolve/references/invoke/noParamsRPar.kt");
         }
 
         @TestMetadata("nonemptyLambdaRPar.kt")
         public void testNonemptyLambdaRPar() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/invoke/nonemptyLambdaRPar.kt");
+            runTest("idea/testData/resolve/references/invoke/nonemptyLambdaRPar.kt");
         }
 
         @TestMetadata("oneParam.kt")
         public void testOneParam() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/invoke/oneParam.kt");
+            runTest("idea/testData/resolve/references/invoke/oneParam.kt");
         }
 
         @TestMetadata("oneParamRPar.kt")
         public void testOneParamRPar() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/resolve/references/invoke/oneParamRPar.kt");
+            runTest("idea/testData/resolve/references/invoke/oneParamRPar.kt");
         }
     }
 }

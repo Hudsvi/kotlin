@@ -21,6 +21,10 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class GenerateTestSupportMethodActionTestGenerated extends AbstractGenerateTestSupportMethodActionTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInTestFrameworkSupport() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/codeInsight/generate/testFrameworkSupport"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
     }
@@ -29,43 +33,47 @@ public class GenerateTestSupportMethodActionTestGenerated extends AbstractGenera
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class JUnit4 extends AbstractGenerateTestSupportMethodActionTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInJUnit4() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/codeInsight/generate/testFrameworkSupport/jUnit4"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("dataMethod.kt")
         public void testDataMethod() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/generate/testFrameworkSupport/jUnit4/dataMethod.kt");
+            runTest("idea/testData/codeInsight/generate/testFrameworkSupport/jUnit4/dataMethod.kt");
         }
 
         @TestMetadata("setUp.kt")
         public void testSetUp() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/generate/testFrameworkSupport/jUnit4/setUp.kt");
+            runTest("idea/testData/codeInsight/generate/testFrameworkSupport/jUnit4/setUp.kt");
         }
 
         @TestMetadata("setUpExists.kt")
         public void testSetUpExists() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/generate/testFrameworkSupport/jUnit4/setUpExists.kt");
+            runTest("idea/testData/codeInsight/generate/testFrameworkSupport/jUnit4/setUpExists.kt");
         }
 
         @TestMetadata("setUpOverrides.kt")
         public void testSetUpOverrides() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/generate/testFrameworkSupport/jUnit4/setUpOverrides.kt");
+            runTest("idea/testData/codeInsight/generate/testFrameworkSupport/jUnit4/setUpOverrides.kt");
         }
 
         @TestMetadata("tearDown.kt")
         public void testTearDown() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/generate/testFrameworkSupport/jUnit4/tearDown.kt");
+            runTest("idea/testData/codeInsight/generate/testFrameworkSupport/jUnit4/tearDown.kt");
         }
 
         @TestMetadata("tearDownExists.kt")
         public void testTearDownExists() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/generate/testFrameworkSupport/jUnit4/tearDownExists.kt");
+            runTest("idea/testData/codeInsight/generate/testFrameworkSupport/jUnit4/tearDownExists.kt");
         }
 
         @TestMetadata("testMethod.kt")
         public void testTestMethod() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/generate/testFrameworkSupport/jUnit4/testMethod.kt");
+            runTest("idea/testData/codeInsight/generate/testFrameworkSupport/jUnit4/testMethod.kt");
         }
     }
 
@@ -73,33 +81,37 @@ public class GenerateTestSupportMethodActionTestGenerated extends AbstractGenera
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Junit3 extends AbstractGenerateTestSupportMethodActionTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInJunit3() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/codeInsight/generate/testFrameworkSupport/junit3"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("setUp.kt")
         public void testSetUp() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/generate/testFrameworkSupport/junit3/setUp.kt");
+            runTest("idea/testData/codeInsight/generate/testFrameworkSupport/junit3/setUp.kt");
         }
 
         @TestMetadata("setUpExists.kt")
         public void testSetUpExists() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/generate/testFrameworkSupport/junit3/setUpExists.kt");
+            runTest("idea/testData/codeInsight/generate/testFrameworkSupport/junit3/setUpExists.kt");
         }
 
         @TestMetadata("tearDown.kt")
         public void testTearDown() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/generate/testFrameworkSupport/junit3/tearDown.kt");
+            runTest("idea/testData/codeInsight/generate/testFrameworkSupport/junit3/tearDown.kt");
         }
 
         @TestMetadata("tearDownExists.kt")
         public void testTearDownExists() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/generate/testFrameworkSupport/junit3/tearDownExists.kt");
+            runTest("idea/testData/codeInsight/generate/testFrameworkSupport/junit3/tearDownExists.kt");
         }
 
         @TestMetadata("testMethod.kt")
         public void testTestMethod() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/generate/testFrameworkSupport/junit3/testMethod.kt");
+            runTest("idea/testData/codeInsight/generate/testFrameworkSupport/junit3/testMethod.kt");
         }
     }
 
@@ -107,43 +119,47 @@ public class GenerateTestSupportMethodActionTestGenerated extends AbstractGenera
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class TestNG extends AbstractGenerateTestSupportMethodActionTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInTestNG() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/codeInsight/generate/testFrameworkSupport/testNG"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("dataMethod.kt")
         public void testDataMethod() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/generate/testFrameworkSupport/testNG/dataMethod.kt");
+            runTest("idea/testData/codeInsight/generate/testFrameworkSupport/testNG/dataMethod.kt");
         }
 
         @TestMetadata("setUp.kt")
         public void testSetUp() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/generate/testFrameworkSupport/testNG/setUp.kt");
+            runTest("idea/testData/codeInsight/generate/testFrameworkSupport/testNG/setUp.kt");
         }
 
         @TestMetadata("setUpExists.kt")
         public void testSetUpExists() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/generate/testFrameworkSupport/testNG/setUpExists.kt");
+            runTest("idea/testData/codeInsight/generate/testFrameworkSupport/testNG/setUpExists.kt");
         }
 
         @TestMetadata("setUpOverrides.kt")
         public void testSetUpOverrides() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/generate/testFrameworkSupport/testNG/setUpOverrides.kt");
+            runTest("idea/testData/codeInsight/generate/testFrameworkSupport/testNG/setUpOverrides.kt");
         }
 
         @TestMetadata("tearDown.kt")
         public void testTearDown() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/generate/testFrameworkSupport/testNG/tearDown.kt");
+            runTest("idea/testData/codeInsight/generate/testFrameworkSupport/testNG/tearDown.kt");
         }
 
         @TestMetadata("tearDownExists.kt")
         public void testTearDownExists() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/generate/testFrameworkSupport/testNG/tearDownExists.kt");
+            runTest("idea/testData/codeInsight/generate/testFrameworkSupport/testNG/tearDownExists.kt");
         }
 
         @TestMetadata("testMethod.kt")
         public void testTestMethod() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/generate/testFrameworkSupport/testNG/testMethod.kt");
+            runTest("idea/testData/codeInsight/generate/testFrameworkSupport/testNG/testMethod.kt");
         }
     }
 }

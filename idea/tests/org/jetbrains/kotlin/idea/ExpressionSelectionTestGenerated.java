@@ -21,27 +21,31 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class ExpressionSelectionTestGenerated extends AbstractExpressionSelectionTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTestExpressionSelection, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInExpressionSelection() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/expressionSelection"), Pattern.compile("^([^.]+)\\.kt$"), TargetBackend.ANY, true);
     }
 
     @TestMetadata("binaryExpr.kt")
     public void testBinaryExpr() throws Exception {
-        KotlinTestUtils.runTest(this::doTestExpressionSelection,TargetBackend.ANY, "idea/testData/expressionSelection/binaryExpr.kt");
+        runTest("idea/testData/expressionSelection/binaryExpr.kt");
     }
 
     @TestMetadata("labelledStatement.kt")
     public void testLabelledStatement() throws Exception {
-        KotlinTestUtils.runTest(this::doTestExpressionSelection,TargetBackend.ANY, "idea/testData/expressionSelection/labelledStatement.kt");
+        runTest("idea/testData/expressionSelection/labelledStatement.kt");
     }
 
     @TestMetadata("labelledThis.kt")
     public void testLabelledThis() throws Exception {
-        KotlinTestUtils.runTest(this::doTestExpressionSelection,TargetBackend.ANY, "idea/testData/expressionSelection/labelledThis.kt");
+        runTest("idea/testData/expressionSelection/labelledThis.kt");
     }
 
     @TestMetadata("noExpression.kt")
     public void testNoExpression() throws Exception {
-        KotlinTestUtils.runTest(this::doTestExpressionSelection,TargetBackend.ANY, "idea/testData/expressionSelection/noExpression.kt");
+        runTest("idea/testData/expressionSelection/noExpression.kt");
     }
 }

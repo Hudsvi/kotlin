@@ -21,9 +21,13 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class ScriptCodegenTestGenerated extends AbstractScriptCodegenTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+    }
+
     @TestMetadata("adder.kts")
     public void testAdder() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/script/adder.kts");
+        runTest("compiler/testData/codegen/script/adder.kts");
     }
 
     public void testAllFilesPresentInScript() throws Exception {
@@ -32,141 +36,141 @@ public class ScriptCodegenTestGenerated extends AbstractScriptCodegenTest {
 
     @TestMetadata("classLiteralInsideFunction.kts")
     public void testClassLiteralInsideFunction() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/script/classLiteralInsideFunction.kts");
+        runTest("compiler/testData/codegen/script/classLiteralInsideFunction.kts");
     }
 
     @TestMetadata("destructuringDeclaration.kts")
     public void testDestructuringDeclaration() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/script/destructuringDeclaration.kts");
+        runTest("compiler/testData/codegen/script/destructuringDeclaration.kts");
     }
 
     @TestMetadata("destructuringDeclarationUnderscore.kts")
     public void testDestructuringDeclarationUnderscore() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/script/destructuringDeclarationUnderscore.kts");
+        runTest("compiler/testData/codegen/script/destructuringDeclarationUnderscore.kts");
     }
 
     @TestMetadata("empty.kts")
     public void testEmpty() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/script/empty.kts");
+        runTest("compiler/testData/codegen/script/empty.kts");
     }
 
     @TestMetadata("helloWorld.kts")
     public void testHelloWorld() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/script/helloWorld.kts");
+        runTest("compiler/testData/codegen/script/helloWorld.kts");
     }
 
     @TestMetadata("inline.kts")
     public void testInline() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/script/inline.kts");
+        runTest("compiler/testData/codegen/script/inline.kts");
     }
 
     @TestMetadata("kt20707.kts")
     public void testKt20707() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/script/kt20707.kts");
+        runTest("compiler/testData/codegen/script/kt20707.kts");
     }
 
     @TestMetadata("kt22029.kts")
     public void testKt22029() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/script/kt22029.kts");
+        runTest("compiler/testData/codegen/script/kt22029.kts");
     }
 
     @TestMetadata("localDelegatedProperty.kts")
     public void testLocalDelegatedProperty() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/script/localDelegatedProperty.kts");
+        runTest("compiler/testData/codegen/script/localDelegatedProperty.kts");
     }
 
     @TestMetadata("localDelegatedPropertyNoExplicitType.kts")
     public void testLocalDelegatedPropertyNoExplicitType() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/script/localDelegatedPropertyNoExplicitType.kts");
+        runTest("compiler/testData/codegen/script/localDelegatedPropertyNoExplicitType.kts");
     }
 
     @TestMetadata("localFunction.kts")
     public void testLocalFunction() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/script/localFunction.kts");
+        runTest("compiler/testData/codegen/script/localFunction.kts");
     }
 
     @TestMetadata("outerCapture.kts")
     public void testOuterCapture() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/script/outerCapture.kts");
+        runTest("compiler/testData/codegen/script/outerCapture.kts");
     }
 
     @TestMetadata("parameter.kts")
     public void testParameter() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/script/parameter.kts");
+        runTest("compiler/testData/codegen/script/parameter.kts");
     }
 
     @TestMetadata("parameterArray.kts")
     public void testParameterArray() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/script/parameterArray.kts");
+        runTest("compiler/testData/codegen/script/parameterArray.kts");
     }
 
     @TestMetadata("parameterClosure.kts")
     public void testParameterClosure() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/script/parameterClosure.kts");
+        runTest("compiler/testData/codegen/script/parameterClosure.kts");
     }
 
     @TestMetadata("parameterLong.kts")
     public void testParameterLong() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/script/parameterLong.kts");
+        runTest("compiler/testData/codegen/script/parameterLong.kts");
     }
 
     @TestMetadata("secondLevelFunction.kts")
     public void testSecondLevelFunction() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/script/secondLevelFunction.kts");
+        runTest("compiler/testData/codegen/script/secondLevelFunction.kts");
     }
 
     @TestMetadata("secondLevelFunctionClosure.kts")
     public void testSecondLevelFunctionClosure() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/script/secondLevelFunctionClosure.kts");
+        runTest("compiler/testData/codegen/script/secondLevelFunctionClosure.kts");
     }
 
     @TestMetadata("secondLevelVal.kts")
     public void testSecondLevelVal() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/script/secondLevelVal.kts");
+        runTest("compiler/testData/codegen/script/secondLevelVal.kts");
     }
 
     @TestMetadata("simpleClass.kts")
     public void testSimpleClass() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/script/simpleClass.kts");
+        runTest("compiler/testData/codegen/script/simpleClass.kts");
     }
 
     @TestMetadata("string.kts")
     public void testString() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/script/string.kts");
+        runTest("compiler/testData/codegen/script/string.kts");
     }
 
     @TestMetadata("topLevelFunction.kts")
     public void testTopLevelFunction() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/script/topLevelFunction.kts");
+        runTest("compiler/testData/codegen/script/topLevelFunction.kts");
     }
 
     @TestMetadata("topLevelFunctionClosure.kts")
     public void testTopLevelFunctionClosure() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/script/topLevelFunctionClosure.kts");
+        runTest("compiler/testData/codegen/script/topLevelFunctionClosure.kts");
     }
 
     @TestMetadata("topLevelLocalDelegatedProperty.kts")
     public void testTopLevelLocalDelegatedProperty() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/script/topLevelLocalDelegatedProperty.kts");
+        runTest("compiler/testData/codegen/script/topLevelLocalDelegatedProperty.kts");
     }
 
     @TestMetadata("topLevelPropertiesWithGetSet.kts")
     public void testTopLevelPropertiesWithGetSet() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/script/topLevelPropertiesWithGetSet.kts");
+        runTest("compiler/testData/codegen/script/topLevelPropertiesWithGetSet.kts");
     }
 
     @TestMetadata("topLevelProperty.kts")
     public void testTopLevelProperty() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/script/topLevelProperty.kts");
+        runTest("compiler/testData/codegen/script/topLevelProperty.kts");
     }
 
     @TestMetadata("topLevelPropertyWithProvideDelegate.kts")
     public void testTopLevelPropertyWithProvideDelegate() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/script/topLevelPropertyWithProvideDelegate.kts");
+        runTest("compiler/testData/codegen/script/topLevelPropertyWithProvideDelegate.kts");
     }
 
     @TestMetadata("topLevelTypealias.kts")
     public void testTopLevelTypealias() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "compiler/testData/codegen/script/topLevelTypealias.kts");
+        runTest("compiler/testData/codegen/script/topLevelTypealias.kts");
     }
 }

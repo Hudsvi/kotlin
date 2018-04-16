@@ -21,6 +21,10 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class ParameterInfoTestGenerated extends AbstractParameterInfoTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInParameterInfo() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/parameterInfo"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true, "withLib1/sharedLib", "withLib2/sharedLib", "withLib3/sharedLib");
     }
@@ -29,23 +33,27 @@ public class ParameterInfoTestGenerated extends AbstractParameterInfoTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Annotations extends AbstractParameterInfoTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInAnnotations() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/parameterInfo/annotations"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("ConstructorCall.kt")
         public void testConstructorCall() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/annotations/ConstructorCall.kt");
+            runTest("idea/testData/parameterInfo/annotations/ConstructorCall.kt");
         }
 
         @TestMetadata("ConstructorCallWithUseSite.kt")
         public void testConstructorCallWithUseSite() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/annotations/ConstructorCallWithUseSite.kt");
+            runTest("idea/testData/parameterInfo/annotations/ConstructorCallWithUseSite.kt");
         }
 
         @TestMetadata("FunctionCall.kt")
         public void testFunctionCall() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/annotations/FunctionCall.kt");
+            runTest("idea/testData/parameterInfo/annotations/FunctionCall.kt");
         }
     }
 
@@ -53,33 +61,37 @@ public class ParameterInfoTestGenerated extends AbstractParameterInfoTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class ArrayAccess extends AbstractParameterInfoTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInArrayAccess() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/parameterInfo/arrayAccess"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("Overloads.kt")
         public void testOverloads() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/arrayAccess/Overloads.kt");
+            runTest("idea/testData/parameterInfo/arrayAccess/Overloads.kt");
         }
 
         @TestMetadata("Overloads2.kt")
         public void testOverloads2() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/arrayAccess/Overloads2.kt");
+            runTest("idea/testData/parameterInfo/arrayAccess/Overloads2.kt");
         }
 
         @TestMetadata("Set.kt")
         public void testSet() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/arrayAccess/Set.kt");
+            runTest("idea/testData/parameterInfo/arrayAccess/Set.kt");
         }
 
         @TestMetadata("SetTooManyArgs.kt")
         public void testSetTooManyArgs() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/arrayAccess/SetTooManyArgs.kt");
+            runTest("idea/testData/parameterInfo/arrayAccess/SetTooManyArgs.kt");
         }
 
         @TestMetadata("Simple.kt")
         public void testSimple() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/arrayAccess/Simple.kt");
+            runTest("idea/testData/parameterInfo/arrayAccess/Simple.kt");
         }
     }
 
@@ -87,244 +99,247 @@ public class ParameterInfoTestGenerated extends AbstractParameterInfoTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class FunctionCall extends AbstractParameterInfoTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInFunctionCall() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/parameterInfo/functionCall"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("DefaultValuesFromLib.kt")
         public void testDefaultValuesFromLib() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/DefaultValuesFromLib.kt");
+            runTest("idea/testData/parameterInfo/functionCall/DefaultValuesFromLib.kt");
         }
 
         @TestMetadata("Deprecated.kt")
         public void testDeprecated() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/Deprecated.kt");
+            runTest("idea/testData/parameterInfo/functionCall/Deprecated.kt");
         }
 
         @TestMetadata("ExtensionOnCapturedScopeChange.kt")
         public void testExtensionOnCapturedScopeChange() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/ExtensionOnCapturedScopeChange.kt");
+            runTest("idea/testData/parameterInfo/functionCall/ExtensionOnCapturedScopeChange.kt");
         }
 
         @TestMetadata("ExtensionOnClassObject.kt")
         public void testExtensionOnClassObject() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/ExtensionOnClassObject.kt");
+            runTest("idea/testData/parameterInfo/functionCall/ExtensionOnClassObject.kt");
         }
 
         @TestMetadata("FunctionalValue1.kt")
         public void testFunctionalValue1() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/FunctionalValue1.kt");
+            runTest("idea/testData/parameterInfo/functionCall/FunctionalValue1.kt");
         }
 
         @TestMetadata("FunctionalValue2.kt")
         public void testFunctionalValue2() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/FunctionalValue2.kt");
+            runTest("idea/testData/parameterInfo/functionCall/FunctionalValue2.kt");
         }
 
         @TestMetadata("FunctionalValueAndTypeAlias.kt")
         public void testFunctionalValueAndTypeAlias() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/FunctionalValueAndTypeAlias.kt");
+            runTest("idea/testData/parameterInfo/functionCall/FunctionalValueAndTypeAlias.kt");
         }
 
         @TestMetadata("FunctionalValueGeneric1.kt")
         public void testFunctionalValueGeneric1() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/FunctionalValueGeneric1.kt");
+            runTest("idea/testData/parameterInfo/functionCall/FunctionalValueGeneric1.kt");
         }
 
         @TestMetadata("FunctionalValueGeneric2.kt")
         public void testFunctionalValueGeneric2() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/FunctionalValueGeneric2.kt");
+            runTest("idea/testData/parameterInfo/functionCall/FunctionalValueGeneric2.kt");
         }
 
         @TestMetadata("InheritedFunctions.kt")
         public void testInheritedFunctions() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/InheritedFunctions.kt");
+            runTest("idea/testData/parameterInfo/functionCall/InheritedFunctions.kt");
         }
 
         @TestMetadata("InheritedWithCurrentFunctions.kt")
         public void testInheritedWithCurrentFunctions() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/InheritedWithCurrentFunctions.kt");
+            runTest("idea/testData/parameterInfo/functionCall/InheritedWithCurrentFunctions.kt");
         }
 
         @TestMetadata("Invoke.kt")
         public void testInvoke() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/Invoke.kt");
+            runTest("idea/testData/parameterInfo/functionCall/Invoke.kt");
         }
 
         @TestMetadata("LocalFunctionBug.kt")
         public void testLocalFunctionBug() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/LocalFunctionBug.kt");
+            runTest("idea/testData/parameterInfo/functionCall/LocalFunctionBug.kt");
         }
 
         @TestMetadata("NamedAndDefaultParameter.kt")
         public void testNamedAndDefaultParameter() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/NamedAndDefaultParameter.kt");
+            runTest("idea/testData/parameterInfo/functionCall/NamedAndDefaultParameter.kt");
         }
 
         @TestMetadata("NamedParameter.kt")
         public void testNamedParameter() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/NamedParameter.kt");
+            runTest("idea/testData/parameterInfo/functionCall/NamedParameter.kt");
         }
 
         @TestMetadata("NamedParameter2.kt")
         public void testNamedParameter2() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/NamedParameter2.kt");
+            runTest("idea/testData/parameterInfo/functionCall/NamedParameter2.kt");
         }
 
         @TestMetadata("NoAnnotations.kt")
         public void testNoAnnotations() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/NoAnnotations.kt");
+            runTest("idea/testData/parameterInfo/functionCall/NoAnnotations.kt");
         }
 
         @TestMetadata("NoShadowedDeclarations.kt")
         public void testNoShadowedDeclarations() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/NoShadowedDeclarations.kt");
+            runTest("idea/testData/parameterInfo/functionCall/NoShadowedDeclarations.kt");
         }
 
         @TestMetadata("NoShadowedDeclarations2.kt")
         public void testNoShadowedDeclarations2() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/NoShadowedDeclarations2.kt");
+            runTest("idea/testData/parameterInfo/functionCall/NoShadowedDeclarations2.kt");
         }
 
         @TestMetadata("NoSynthesizedParameterNames.kt")
         public void testNoSynthesizedParameterNames() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/NoSynthesizedParameterNames.kt");
+            runTest("idea/testData/parameterInfo/functionCall/NoSynthesizedParameterNames.kt");
         }
 
         @TestMetadata("NotAccessible.kt")
         public void testNotAccessible() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/NotAccessible.kt");
+            runTest("idea/testData/parameterInfo/functionCall/NotAccessible.kt");
         }
 
         @TestMetadata("NotGreen.kt")
         public void testNotGreen() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/NotGreen.kt");
+            runTest("idea/testData/parameterInfo/functionCall/NotGreen.kt");
         }
 
         @TestMetadata("Nullability.kt")
         public void testNullability() throws Exception {
-            String fileName = KotlinTestUtils.navigationMetadata("idea/testData/parameterInfo/functionCall/Nullability.kt");
-            doTest(fileName);
+            runTest("idea/testData/parameterInfo/functionCall/Nullability.kt");
         }
 
         @TestMetadata("NullableTypeCall.kt")
         public void testNullableTypeCall() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/NullableTypeCall.kt");
+            runTest("idea/testData/parameterInfo/functionCall/NullableTypeCall.kt");
         }
 
         @TestMetadata("OtherConstructorFromSecondary.kt")
         public void testOtherConstructorFromSecondary() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/OtherConstructorFromSecondary.kt");
+            runTest("idea/testData/parameterInfo/functionCall/OtherConstructorFromSecondary.kt");
         }
 
         @TestMetadata("Println.kt")
         public void testPrintln() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/Println.kt");
+            runTest("idea/testData/parameterInfo/functionCall/Println.kt");
         }
 
         @TestMetadata("PrivateConstructor.kt")
         public void testPrivateConstructor() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/PrivateConstructor.kt");
+            runTest("idea/testData/parameterInfo/functionCall/PrivateConstructor.kt");
         }
 
         @TestMetadata("Simple.kt")
         public void testSimple() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/Simple.kt");
+            runTest("idea/testData/parameterInfo/functionCall/Simple.kt");
         }
 
         @TestMetadata("SimpleConstructor.kt")
         public void testSimpleConstructor() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/SimpleConstructor.kt");
+            runTest("idea/testData/parameterInfo/functionCall/SimpleConstructor.kt");
         }
 
         @TestMetadata("SmartCastReceiver.kt")
         public void testSmartCastReceiver() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/SmartCastReceiver.kt");
+            runTest("idea/testData/parameterInfo/functionCall/SmartCastReceiver.kt");
         }
 
         @TestMetadata("SmartCastReceiver2.kt")
         public void testSmartCastReceiver2() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/SmartCastReceiver2.kt");
+            runTest("idea/testData/parameterInfo/functionCall/SmartCastReceiver2.kt");
         }
 
         @TestMetadata("SubstituteExpectedType.kt")
         public void testSubstituteExpectedType() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/SubstituteExpectedType.kt");
+            runTest("idea/testData/parameterInfo/functionCall/SubstituteExpectedType.kt");
         }
 
         @TestMetadata("SubstituteExplicitTypeArgs.kt")
         public void testSubstituteExplicitTypeArgs() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/SubstituteExplicitTypeArgs.kt");
+            runTest("idea/testData/parameterInfo/functionCall/SubstituteExplicitTypeArgs.kt");
         }
 
         @TestMetadata("SubstituteFromArguments1.kt")
         public void testSubstituteFromArguments1() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/SubstituteFromArguments1.kt");
+            runTest("idea/testData/parameterInfo/functionCall/SubstituteFromArguments1.kt");
         }
 
         @TestMetadata("SubstituteFromArguments2.kt")
         public void testSubstituteFromArguments2() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/SubstituteFromArguments2.kt");
+            runTest("idea/testData/parameterInfo/functionCall/SubstituteFromArguments2.kt");
         }
 
         @TestMetadata("SubstituteFromArguments3.kt")
         public void testSubstituteFromArguments3() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/SubstituteFromArguments3.kt");
+            runTest("idea/testData/parameterInfo/functionCall/SubstituteFromArguments3.kt");
         }
 
         @TestMetadata("SubstituteFromArguments4.kt")
         public void testSubstituteFromArguments4() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/SubstituteFromArguments4.kt");
+            runTest("idea/testData/parameterInfo/functionCall/SubstituteFromArguments4.kt");
         }
 
         @TestMetadata("SubstituteFromArgumentsOnTyping.kt")
         public void testSubstituteFromArgumentsOnTyping() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/SubstituteFromArgumentsOnTyping.kt");
+            runTest("idea/testData/parameterInfo/functionCall/SubstituteFromArgumentsOnTyping.kt");
         }
 
         @TestMetadata("SuperConstructorCall.kt")
         public void testSuperConstructorCall() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/SuperConstructorCall.kt");
+            runTest("idea/testData/parameterInfo/functionCall/SuperConstructorCall.kt");
         }
 
         @TestMetadata("SuperConstructorFromSecondary.kt")
         public void testSuperConstructorFromSecondary() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/SuperConstructorFromSecondary.kt");
+            runTest("idea/testData/parameterInfo/functionCall/SuperConstructorFromSecondary.kt");
         }
 
         @TestMetadata("TooManyArgs.kt")
         public void testTooManyArgs() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/TooManyArgs.kt");
+            runTest("idea/testData/parameterInfo/functionCall/TooManyArgs.kt");
         }
 
         @TestMetadata("TwoFunctions.kt")
         public void testTwoFunctions() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/TwoFunctions.kt");
+            runTest("idea/testData/parameterInfo/functionCall/TwoFunctions.kt");
         }
 
         @TestMetadata("TwoFunctionsGrey.kt")
         public void testTwoFunctionsGrey() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/TwoFunctionsGrey.kt");
+            runTest("idea/testData/parameterInfo/functionCall/TwoFunctionsGrey.kt");
         }
 
         @TestMetadata("TwoSmartCasts.kt")
         public void testTwoSmartCasts() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/TwoSmartCasts.kt");
+            runTest("idea/testData/parameterInfo/functionCall/TwoSmartCasts.kt");
         }
 
         @TestMetadata("TypeAliasConstructor.kt")
         public void testTypeAliasConstructor() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/TypeAliasConstructor.kt");
+            runTest("idea/testData/parameterInfo/functionCall/TypeAliasConstructor.kt");
         }
 
         @TestMetadata("TypeInference.kt")
         public void testTypeInference() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/TypeInference.kt");
+            runTest("idea/testData/parameterInfo/functionCall/TypeInference.kt");
         }
 
         @TestMetadata("UpdateOnTyping.kt")
         public void testUpdateOnTyping() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/functionCall/UpdateOnTyping.kt");
+            runTest("idea/testData/parameterInfo/functionCall/UpdateOnTyping.kt");
         }
     }
 
@@ -332,48 +347,52 @@ public class ParameterInfoTestGenerated extends AbstractParameterInfoTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class TypeArguments extends AbstractParameterInfoTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInTypeArguments() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/parameterInfo/typeArguments"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("BaseClass.kt")
         public void testBaseClass() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/typeArguments/BaseClass.kt");
+            runTest("idea/testData/parameterInfo/typeArguments/BaseClass.kt");
         }
 
         @TestMetadata("Constraints.kt")
         public void testConstraints() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/typeArguments/Constraints.kt");
+            runTest("idea/testData/parameterInfo/typeArguments/Constraints.kt");
         }
 
         @TestMetadata("ConstructorCall.kt")
         public void testConstructorCall() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/typeArguments/ConstructorCall.kt");
+            runTest("idea/testData/parameterInfo/typeArguments/ConstructorCall.kt");
         }
 
         @TestMetadata("FunctionCall.kt")
         public void testFunctionCall() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/typeArguments/FunctionCall.kt");
+            runTest("idea/testData/parameterInfo/typeArguments/FunctionCall.kt");
         }
 
         @TestMetadata("JavaClass.kt")
         public void testJavaClass() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/typeArguments/JavaClass.kt");
+            runTest("idea/testData/parameterInfo/typeArguments/JavaClass.kt");
         }
 
         @TestMetadata("Overloads.kt")
         public void testOverloads() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/typeArguments/Overloads.kt");
+            runTest("idea/testData/parameterInfo/typeArguments/Overloads.kt");
         }
 
         @TestMetadata("Reified.kt")
         public void testReified() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/typeArguments/Reified.kt");
+            runTest("idea/testData/parameterInfo/typeArguments/Reified.kt");
         }
 
         @TestMetadata("VariableType.kt")
         public void testVariableType() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/typeArguments/VariableType.kt");
+            runTest("idea/testData/parameterInfo/typeArguments/VariableType.kt");
         }
     }
 
@@ -381,13 +400,17 @@ public class ParameterInfoTestGenerated extends AbstractParameterInfoTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class WithLib1 extends AbstractParameterInfoTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInWithLib1() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/parameterInfo/withLib1"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true, "sharedLib");
         }
 
         @TestMetadata("useJavaFromLib.kt")
         public void testUseJavaFromLib() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/withLib1/useJavaFromLib.kt");
+            runTest("idea/testData/parameterInfo/withLib1/useJavaFromLib.kt");
         }
     }
 
@@ -395,13 +418,17 @@ public class ParameterInfoTestGenerated extends AbstractParameterInfoTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class WithLib2 extends AbstractParameterInfoTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInWithLib2() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/parameterInfo/withLib2"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true, "sharedLib");
         }
 
         @TestMetadata("useJavaSAMFromLib.kt")
         public void testUseJavaSAMFromLib() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/withLib2/useJavaSAMFromLib.kt");
+            runTest("idea/testData/parameterInfo/withLib2/useJavaSAMFromLib.kt");
         }
     }
 
@@ -409,13 +436,17 @@ public class ParameterInfoTestGenerated extends AbstractParameterInfoTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class WithLib3 extends AbstractParameterInfoTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInWithLib3() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/parameterInfo/withLib3"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true, "sharedLib");
         }
 
         @TestMetadata("useJavaSAMFromLib.kt")
         public void testUseJavaSAMFromLib() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/parameterInfo/withLib3/useJavaSAMFromLib.kt");
+            runTest("idea/testData/parameterInfo/withLib3/useJavaSAMFromLib.kt");
         }
     }
 }

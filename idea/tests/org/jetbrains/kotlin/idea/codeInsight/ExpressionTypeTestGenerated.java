@@ -21,92 +21,96 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class ExpressionTypeTestGenerated extends AbstractExpressionTypeTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInExpressionType() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/codeInsight/expressionType"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
     }
 
     @TestMetadata("AnonymousObject.kt")
     public void testAnonymousObject() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/expressionType/AnonymousObject.kt");
+        runTest("idea/testData/codeInsight/expressionType/AnonymousObject.kt");
     }
 
     @TestMetadata("BlockBodyFunction.kt")
     public void testBlockBodyFunction() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/expressionType/BlockBodyFunction.kt");
+        runTest("idea/testData/codeInsight/expressionType/BlockBodyFunction.kt");
     }
 
     @TestMetadata("IfAsExpression.kt")
     public void testIfAsExpression() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/expressionType/IfAsExpression.kt");
+        runTest("idea/testData/codeInsight/expressionType/IfAsExpression.kt");
     }
 
     @TestMetadata("IfAsExpressionInsideBlock.kt")
     public void testIfAsExpressionInsideBlock() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/expressionType/IfAsExpressionInsideBlock.kt");
+        runTest("idea/testData/codeInsight/expressionType/IfAsExpressionInsideBlock.kt");
     }
 
     @TestMetadata("Kt11601.kt")
     public void testKt11601() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/expressionType/Kt11601.kt");
+        runTest("idea/testData/codeInsight/expressionType/Kt11601.kt");
     }
 
     @TestMetadata("Lambda.kt")
     public void testLambda() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/expressionType/Lambda.kt");
+        runTest("idea/testData/codeInsight/expressionType/Lambda.kt");
     }
 
     @TestMetadata("MethodName.kt")
     public void testMethodName() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/expressionType/MethodName.kt");
+        runTest("idea/testData/codeInsight/expressionType/MethodName.kt");
     }
 
     @TestMetadata("MethodReference.kt")
     public void testMethodReference() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/expressionType/MethodReference.kt");
+        runTest("idea/testData/codeInsight/expressionType/MethodReference.kt");
     }
 
     @TestMetadata("MultiDeclaration.kt")
     public void testMultiDeclaration() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/expressionType/MultiDeclaration.kt");
+        runTest("idea/testData/codeInsight/expressionType/MultiDeclaration.kt");
     }
 
     @TestMetadata("MultiDeclarationInLambda.kt")
     public void testMultiDeclarationInLambda() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/expressionType/MultiDeclarationInLambda.kt");
+        runTest("idea/testData/codeInsight/expressionType/MultiDeclarationInLambda.kt");
     }
 
     @TestMetadata("MultiDeclarationInLoop.kt")
     public void testMultiDeclarationInLoop() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/expressionType/MultiDeclarationInLoop.kt");
+        runTest("idea/testData/codeInsight/expressionType/MultiDeclarationInLoop.kt");
     }
 
     @TestMetadata("PropertyAccessor.kt")
     public void testPropertyAccessor() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/expressionType/PropertyAccessor.kt");
+        runTest("idea/testData/codeInsight/expressionType/PropertyAccessor.kt");
     }
 
     @TestMetadata("SmartCast.kt")
     public void testSmartCast() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/expressionType/SmartCast.kt");
+        runTest("idea/testData/codeInsight/expressionType/SmartCast.kt");
     }
 
     @TestMetadata("SoftSmartCast.kt")
     public void testSoftSmartCast() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/expressionType/SoftSmartCast.kt");
+        runTest("idea/testData/codeInsight/expressionType/SoftSmartCast.kt");
     }
 
     @TestMetadata("SoftSmartCastMultipleTypes.kt")
     public void testSoftSmartCastMultipleTypes() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/expressionType/SoftSmartCastMultipleTypes.kt");
+        runTest("idea/testData/codeInsight/expressionType/SoftSmartCastMultipleTypes.kt");
     }
 
     @TestMetadata("ThisInLambda.kt")
     public void testThisInLambda() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/expressionType/ThisInLambda.kt");
+        runTest("idea/testData/codeInsight/expressionType/ThisInLambda.kt");
     }
 
     @TestMetadata("VariableDeclaration.kt")
     public void testVariableDeclaration() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/codeInsight/expressionType/VariableDeclaration.kt");
+        runTest("idea/testData/codeInsight/expressionType/VariableDeclaration.kt");
     }
 }

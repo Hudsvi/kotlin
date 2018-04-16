@@ -21,6 +21,10 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+    }
+
     public void testAllFilesPresentInBox() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
     }
@@ -29,13 +33,17 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Annotation extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInAnnotation() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/annotation"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("annotationClass.kt")
         public void testAnnotationClass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/annotation/annotationClass.kt");
+            runTest("js/js.translator/testData/box/annotation/annotationClass.kt");
         }
     }
 
@@ -43,6 +51,10 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class CallableReference extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInCallableReference() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/callableReference"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
@@ -51,9 +63,13 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Function extends AbstractIrBoxJsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+            }
+
             @TestMetadata("abstractClassMember.kt")
             public void testAbstractClassMember() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/abstractClassMember.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/abstractClassMember.kt");
             }
 
             public void testAllFilesPresentInFunction() throws Exception {
@@ -62,177 +78,177 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
 
             @TestMetadata("classMemberAndExtension.kt")
             public void testClassMemberAndExtension() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/classMemberAndExtension.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/classMemberAndExtension.kt");
             }
 
             @TestMetadata("classMemberAndNonExtensionCompatibility.kt")
             public void testClassMemberAndNonExtensionCompatibility() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/classMemberAndNonExtensionCompatibility.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/classMemberAndNonExtensionCompatibility.kt");
             }
 
             @TestMetadata("classMemberFromClass.kt")
             public void testClassMemberFromClass() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/classMemberFromClass.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/classMemberFromClass.kt");
             }
 
             @TestMetadata("classMemberFromExtension.kt")
             public void testClassMemberFromExtension() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/classMemberFromExtension.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/classMemberFromExtension.kt");
             }
 
             @TestMetadata("classMemberFromTopLevelStringNoArgs.kt")
             public void testClassMemberFromTopLevelStringNoArgs() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/classMemberFromTopLevelStringNoArgs.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/classMemberFromTopLevelStringNoArgs.kt");
             }
 
             @TestMetadata("classMemberFromTopLevelStringOneStringArg.kt")
             public void testClassMemberFromTopLevelStringOneStringArg() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/classMemberFromTopLevelStringOneStringArg.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/classMemberFromTopLevelStringOneStringArg.kt");
             }
 
             @TestMetadata("classMemberFromTopLevelUnitNoArgs.kt")
             public void testClassMemberFromTopLevelUnitNoArgs() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/classMemberFromTopLevelUnitNoArgs.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/classMemberFromTopLevelUnitNoArgs.kt");
             }
 
             @TestMetadata("classMemberFromTopLevelUnitOneStringArg.kt")
             public void testClassMemberFromTopLevelUnitOneStringArg() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/classMemberFromTopLevelUnitOneStringArg.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/classMemberFromTopLevelUnitOneStringArg.kt");
             }
 
             @TestMetadata("classMemberOverridden.kt")
             public void testClassMemberOverridden() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/classMemberOverridden.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/classMemberOverridden.kt");
             }
 
             @TestMetadata("closureWithSideEffect.kt")
             public void testClosureWithSideEffect() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/closureWithSideEffect.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/closureWithSideEffect.kt");
             }
 
             @TestMetadata("constructorFromTopLevelNoArgs.kt")
             public void testConstructorFromTopLevelNoArgs() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/constructorFromTopLevelNoArgs.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/constructorFromTopLevelNoArgs.kt");
             }
 
             @TestMetadata("constructorFromTopLevelOneStringArg.kt")
             public void testConstructorFromTopLevelOneStringArg() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/constructorFromTopLevelOneStringArg.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/constructorFromTopLevelOneStringArg.kt");
             }
 
             @TestMetadata("constructorsWithArgs.kt")
             public void testConstructorsWithArgs() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/constructorsWithArgs.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/constructorsWithArgs.kt");
             }
 
             @TestMetadata("extension.kt")
             public void testExtension() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/extension.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/extension.kt");
             }
 
             @TestMetadata("extensionFromClass.kt")
             public void testExtensionFromClass() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/extensionFromClass.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/extensionFromClass.kt");
             }
 
             @TestMetadata("extensionFromExtension.kt")
             public void testExtensionFromExtension() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/extensionFromExtension.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/extensionFromExtension.kt");
             }
 
             @TestMetadata("extensionFromTopLevel.kt")
             public void testExtensionFromTopLevel() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/extensionFromTopLevel.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/extensionFromTopLevel.kt");
             }
 
             @TestMetadata("extensionFromTopLevelStringNoArgs.kt")
             public void testExtensionFromTopLevelStringNoArgs() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/extensionFromTopLevelStringNoArgs.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/extensionFromTopLevelStringNoArgs.kt");
             }
 
             @TestMetadata("extensionFromTopLevelStringOneStringArg.kt")
             public void testExtensionFromTopLevelStringOneStringArg() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/extensionFromTopLevelStringOneStringArg.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/extensionFromTopLevelStringOneStringArg.kt");
             }
 
             @TestMetadata("extensionFromTopLevelUnitNoArgs.kt")
             public void testExtensionFromTopLevelUnitNoArgs() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/extensionFromTopLevelUnitNoArgs.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/extensionFromTopLevelUnitNoArgs.kt");
             }
 
             @TestMetadata("extensionFromTopLevelUnitOneStringArg.kt")
             public void testExtensionFromTopLevelUnitOneStringArg() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/extensionFromTopLevelUnitOneStringArg.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/extensionFromTopLevelUnitOneStringArg.kt");
             }
 
             @TestMetadata("extensionToPrimitive.kt")
             public void testExtensionToPrimitive() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/extensionToPrimitive.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/extensionToPrimitive.kt");
             }
 
             @TestMetadata("extensionWithClosure.kt")
             public void testExtensionWithClosure() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/extensionWithClosure.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/extensionWithClosure.kt");
             }
 
             @TestMetadata("localAndTopLevelExtensions.kt")
             public void testLocalAndTopLevelExtensions() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/localAndTopLevelExtensions.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/localAndTopLevelExtensions.kt");
             }
 
             @TestMetadata("localLocal.kt")
             public void testLocalLocal() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/localLocal.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/localLocal.kt");
             }
 
             @TestMetadata("recursiveClosure.kt")
             public void testRecursiveClosure() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/recursiveClosure.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/recursiveClosure.kt");
             }
 
             @TestMetadata("simple.kt")
             public void testSimple() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/simple.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/simple.kt");
             }
 
             @TestMetadata("simpleClosure.kt")
             public void testSimpleClosure() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/simpleClosure.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/simpleClosure.kt");
             }
 
             @TestMetadata("simpleWithArg.kt")
             public void testSimpleWithArg() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/simpleWithArg.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/simpleWithArg.kt");
             }
 
             @TestMetadata("stringNativeExtension.kt")
             public void testStringNativeExtension() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/stringNativeExtension.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/stringNativeExtension.kt");
             }
 
             @TestMetadata("topLevelFromClass.kt")
             public void testTopLevelFromClass() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/topLevelFromClass.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/topLevelFromClass.kt");
             }
 
             @TestMetadata("topLevelFromExtension.kt")
             public void testTopLevelFromExtension() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/topLevelFromExtension.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/topLevelFromExtension.kt");
             }
 
             @TestMetadata("topLevelFromTopLevelStringNoArgs.kt")
             public void testTopLevelFromTopLevelStringNoArgs() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/topLevelFromTopLevelStringNoArgs.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/topLevelFromTopLevelStringNoArgs.kt");
             }
 
             @TestMetadata("topLevelFromTopLevelWithArg.kt")
             public void testTopLevelFromTopLevelWithArg() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/topLevelFromTopLevelWithArg.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/topLevelFromTopLevelWithArg.kt");
             }
 
             @TestMetadata("unitWithSideEffect.kt")
             public void testUnitWithSideEffect() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/function/unitWithSideEffect.kt");
+                runTest("js/js.translator/testData/box/callableReference/function/unitWithSideEffect.kt");
             }
         }
 
@@ -240,9 +256,13 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Property extends AbstractIrBoxJsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+            }
+
             @TestMetadata("accessViaSubclass.kt")
             public void testAccessViaSubclass() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/property/accessViaSubclass.kt");
+                runTest("js/js.translator/testData/box/callableReference/property/accessViaSubclass.kt");
             }
 
             public void testAllFilesPresentInProperty() throws Exception {
@@ -251,67 +271,67 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
 
             @TestMetadata("delegated.kt")
             public void testDelegated() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/property/delegated.kt");
+                runTest("js/js.translator/testData/box/callableReference/property/delegated.kt");
             }
 
             @TestMetadata("delegatedMutable.kt")
             public void testDelegatedMutable() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/property/delegatedMutable.kt");
+                runTest("js/js.translator/testData/box/callableReference/property/delegatedMutable.kt");
             }
 
             @TestMetadata("extensionProperty.kt")
             public void testExtensionProperty() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/property/extensionProperty.kt");
+                runTest("js/js.translator/testData/box/callableReference/property/extensionProperty.kt");
             }
 
             @TestMetadata("kClassInstanceIsInitializedFirst.kt")
             public void testKClassInstanceIsInitializedFirst() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/property/kClassInstanceIsInitializedFirst.kt");
+                runTest("js/js.translator/testData/box/callableReference/property/kClassInstanceIsInitializedFirst.kt");
             }
 
             @TestMetadata("memberProperty.kt")
             public void testMemberProperty() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/property/memberProperty.kt");
+                runTest("js/js.translator/testData/box/callableReference/property/memberProperty.kt");
             }
 
             @TestMetadata("overriddenInSubclass.kt")
             public void testOverriddenInSubclass() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/property/overriddenInSubclass.kt");
+                runTest("js/js.translator/testData/box/callableReference/property/overriddenInSubclass.kt");
             }
 
             @TestMetadata("simpleExtension.kt")
             public void testSimpleExtension() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/property/simpleExtension.kt");
+                runTest("js/js.translator/testData/box/callableReference/property/simpleExtension.kt");
             }
 
             @TestMetadata("simpleMember.kt")
             public void testSimpleMember() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/property/simpleMember.kt");
+                runTest("js/js.translator/testData/box/callableReference/property/simpleMember.kt");
             }
 
             @TestMetadata("simpleMutableExtension.kt")
             public void testSimpleMutableExtension() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/property/simpleMutableExtension.kt");
+                runTest("js/js.translator/testData/box/callableReference/property/simpleMutableExtension.kt");
             }
 
             @TestMetadata("simpleMutableMember.kt")
             public void testSimpleMutableMember() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/property/simpleMutableMember.kt");
+                runTest("js/js.translator/testData/box/callableReference/property/simpleMutableMember.kt");
             }
 
             @TestMetadata("simpleMutableTopLevel.kt")
             public void testSimpleMutableTopLevel() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/property/simpleMutableTopLevel.kt");
+                runTest("js/js.translator/testData/box/callableReference/property/simpleMutableTopLevel.kt");
             }
 
             @TestMetadata("simpleTopLevel.kt")
             public void testSimpleTopLevel() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/property/simpleTopLevel.kt");
+                runTest("js/js.translator/testData/box/callableReference/property/simpleTopLevel.kt");
             }
 
             @TestMetadata("topLevelVar.kt")
             public void testTopLevelVar() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/callableReference/property/topLevelVar.kt");
+                runTest("js/js.translator/testData/box/callableReference/property/topLevelVar.kt");
             }
         }
     }
@@ -320,68 +340,72 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Char extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInChar() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/char"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("charBinaryOperations.kt")
         public void testCharBinaryOperations() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/char/charBinaryOperations.kt");
+            runTest("js/js.translator/testData/box/char/charBinaryOperations.kt");
         }
 
         @TestMetadata("charCompareToIntrinsic.kt")
         public void testCharCompareToIntrinsic() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/char/charCompareToIntrinsic.kt");
+            runTest("js/js.translator/testData/box/char/charCompareToIntrinsic.kt");
         }
 
         @TestMetadata("charConstantByUnicodeId.kt")
         public void testCharConstantByUnicodeId() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/char/charConstantByUnicodeId.kt");
+            runTest("js/js.translator/testData/box/char/charConstantByUnicodeId.kt");
         }
 
         @TestMetadata("charConversions.kt")
         public void testCharConversions() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/char/charConversions.kt");
+            runTest("js/js.translator/testData/box/char/charConversions.kt");
         }
 
         @TestMetadata("charElvis.kt")
         public void testCharElvis() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/char/charElvis.kt");
+            runTest("js/js.translator/testData/box/char/charElvis.kt");
         }
 
         @TestMetadata("charEquals.kt")
         public void testCharEquals() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/char/charEquals.kt");
+            runTest("js/js.translator/testData/box/char/charEquals.kt");
         }
 
         @TestMetadata("charInStringTemplate.kt")
         public void testCharInStringTemplate() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/char/charInStringTemplate.kt");
+            runTest("js/js.translator/testData/box/char/charInStringTemplate.kt");
         }
 
         @TestMetadata("charIsCheck.kt")
         public void testCharIsCheck() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/char/charIsCheck.kt");
+            runTest("js/js.translator/testData/box/char/charIsCheck.kt");
         }
 
         @TestMetadata("charRanges.kt")
         public void testCharRanges() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/char/charRanges.kt");
+            runTest("js/js.translator/testData/box/char/charRanges.kt");
         }
 
         @TestMetadata("charUnaryOperations.kt")
         public void testCharUnaryOperations() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/char/charUnaryOperations.kt");
+            runTest("js/js.translator/testData/box/char/charUnaryOperations.kt");
         }
 
         @TestMetadata("topLevelCallables.kt")
         public void testTopLevelCallables() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/char/topLevelCallables.kt");
+            runTest("js/js.translator/testData/box/char/topLevelCallables.kt");
         }
 
         @TestMetadata("unboxedCharSpecials.kt")
         public void testUnboxedCharSpecials() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/char/unboxedCharSpecials.kt");
+            runTest("js/js.translator/testData/box/char/unboxedCharSpecials.kt");
         }
     }
 
@@ -389,9 +413,13 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class ClassObject extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         @TestMetadata("accessing.kt")
         public void testAccessing() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/classObject/accessing.kt");
+            runTest("js/js.translator/testData/box/classObject/accessing.kt");
         }
 
         public void testAllFilesPresentInClassObject() throws Exception {
@@ -400,47 +428,47 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
 
         @TestMetadata("defaultObjectSameNamesAsInOuter.kt")
         public void testDefaultObjectSameNamesAsInOuter() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/classObject/defaultObjectSameNamesAsInOuter.kt");
+            runTest("js/js.translator/testData/box/classObject/defaultObjectSameNamesAsInOuter.kt");
         }
 
         @TestMetadata("enumCompanionObject.kt")
         public void testEnumCompanionObject() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/classObject/enumCompanionObject.kt");
+            runTest("js/js.translator/testData/box/classObject/enumCompanionObject.kt");
         }
 
         @TestMetadata("inTrait.kt")
         public void testInTrait() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/classObject/inTrait.kt");
+            runTest("js/js.translator/testData/box/classObject/inTrait.kt");
         }
 
         @TestMetadata("invokeOperatorInCompanionObject.kt")
         public void testInvokeOperatorInCompanionObject() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/classObject/invokeOperatorInCompanionObject.kt");
+            runTest("js/js.translator/testData/box/classObject/invokeOperatorInCompanionObject.kt");
         }
 
         @TestMetadata("namedClassObject.kt")
         public void testNamedClassObject() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/classObject/namedClassObject.kt");
+            runTest("js/js.translator/testData/box/classObject/namedClassObject.kt");
         }
 
         @TestMetadata("objectInCompanionObject.kt")
         public void testObjectInCompanionObject() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/classObject/objectInCompanionObject.kt");
+            runTest("js/js.translator/testData/box/classObject/objectInCompanionObject.kt");
         }
 
         @TestMetadata("setVar.kt")
         public void testSetVar() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/classObject/setVar.kt");
+            runTest("js/js.translator/testData/box/classObject/setVar.kt");
         }
 
         @TestMetadata("simple.kt")
         public void testSimple() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/classObject/simple.kt");
+            runTest("js/js.translator/testData/box/classObject/simple.kt");
         }
 
         @TestMetadata("withInheritance.kt")
         public void testWithInheritance() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/classObject/withInheritance.kt");
+            runTest("js/js.translator/testData/box/classObject/withInheritance.kt");
         }
     }
 
@@ -448,233 +476,237 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Closure extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInClosure() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/closure"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("closureArrayListInstance.kt")
         public void testClosureArrayListInstance() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/closureArrayListInstance.kt");
+            runTest("js/js.translator/testData/box/closure/closureArrayListInstance.kt");
         }
 
         @TestMetadata("closureFunctionAsArgument.kt")
         public void testClosureFunctionAsArgument() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/closureFunctionAsArgument.kt");
+            runTest("js/js.translator/testData/box/closure/closureFunctionAsArgument.kt");
         }
 
         @TestMetadata("closureFunctionByInnerFunction.kt")
         public void testClosureFunctionByInnerFunction() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/closureFunctionByInnerFunction.kt");
+            runTest("js/js.translator/testData/box/closure/closureFunctionByInnerFunction.kt");
         }
 
         @TestMetadata("closureGenericTypeValue.kt")
         public void testClosureGenericTypeValue() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/closureGenericTypeValue.kt");
+            runTest("js/js.translator/testData/box/closure/closureGenericTypeValue.kt");
         }
 
         @TestMetadata("closureInFewFunctionWithDifferentName.kt")
         public void testClosureInFewFunctionWithDifferentName() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/closureInFewFunctionWithDifferentName.kt");
+            runTest("js/js.translator/testData/box/closure/closureInFewFunctionWithDifferentName.kt");
         }
 
         @TestMetadata("closureInNestedFunctions.kt")
         public void testClosureInNestedFunctions() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/closureInNestedFunctions.kt");
+            runTest("js/js.translator/testData/box/closure/closureInNestedFunctions.kt");
         }
 
         @TestMetadata("closureInNestedFunctionsInMethod.kt")
         public void testClosureInNestedFunctionsInMethod() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/closureInNestedFunctionsInMethod.kt");
+            runTest("js/js.translator/testData/box/closure/closureInNestedFunctionsInMethod.kt");
         }
 
         @TestMetadata("closureInNestedFunctionsWhichMixedWithObject.kt")
         public void testClosureInNestedFunctionsWhichMixedWithObject() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/closureInNestedFunctionsWhichMixedWithObject.kt");
+            runTest("js/js.translator/testData/box/closure/closureInNestedFunctionsWhichMixedWithObject.kt");
         }
 
         @TestMetadata("closureInNestedLambdasInObject.kt")
         public void testClosureInNestedLambdasInObject() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/closureInNestedLambdasInObject.kt");
+            runTest("js/js.translator/testData/box/closure/closureInNestedLambdasInObject.kt");
         }
 
         @TestMetadata("closureInObject.kt")
         public void testClosureInObject() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/closureInObject.kt");
+            runTest("js/js.translator/testData/box/closure/closureInObject.kt");
         }
 
         @TestMetadata("closureInWithInsideWith.kt")
         public void testClosureInWithInsideWith() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/closureInWithInsideWith.kt");
+            runTest("js/js.translator/testData/box/closure/closureInWithInsideWith.kt");
         }
 
         @TestMetadata("closureLambdaVarInLambda.kt")
         public void testClosureLambdaVarInLambda() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/closureLambdaVarInLambda.kt");
+            runTest("js/js.translator/testData/box/closure/closureLambdaVarInLambda.kt");
         }
 
         @TestMetadata("closureLocalFunction.kt")
         public void testClosureLocalFunction() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/closureLocalFunction.kt");
+            runTest("js/js.translator/testData/box/closure/closureLocalFunction.kt");
         }
 
         @TestMetadata("closureLocalFunctionByInnerFunction.kt")
         public void testClosureLocalFunctionByInnerFunction() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/closureLocalFunctionByInnerFunction.kt");
+            runTest("js/js.translator/testData/box/closure/closureLocalFunctionByInnerFunction.kt");
         }
 
         @TestMetadata("closureLocalFunctionByInnerFunctionInConstructor.kt")
         public void testClosureLocalFunctionByInnerFunctionInConstructor() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/closureLocalFunctionByInnerFunctionInConstructor.kt");
+            runTest("js/js.translator/testData/box/closure/closureLocalFunctionByInnerFunctionInConstructor.kt");
         }
 
         @TestMetadata("closureLocalInNestedObject.kt")
         public void testClosureLocalInNestedObject() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/closureLocalInNestedObject.kt");
+            runTest("js/js.translator/testData/box/closure/closureLocalInNestedObject.kt");
         }
 
         @TestMetadata("closureLocalLiteralFunction.kt")
         public void testClosureLocalLiteralFunction() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/closureLocalLiteralFunction.kt");
+            runTest("js/js.translator/testData/box/closure/closureLocalLiteralFunction.kt");
         }
 
         @TestMetadata("closureReceiverInLocalExtFunByLocalExtFun.kt")
         public void testClosureReceiverInLocalExtFunByLocalExtFun() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/closureReceiverInLocalExtFunByLocalExtFun.kt");
+            runTest("js/js.translator/testData/box/closure/closureReceiverInLocalExtFunByLocalExtFun.kt");
         }
 
         @TestMetadata("closureReferencingMember.kt")
         public void testClosureReferencingMember() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/closureReferencingMember.kt");
+            runTest("js/js.translator/testData/box/closure/closureReferencingMember.kt");
         }
 
         @TestMetadata("closureThisAndClassObject.kt")
         public void testClosureThisAndClassObject() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/closureThisAndClassObject.kt");
+            runTest("js/js.translator/testData/box/closure/closureThisAndClassObject.kt");
         }
 
         @TestMetadata("closureThisAndReceiver.kt")
         public void testClosureThisAndReceiver() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/closureThisAndReceiver.kt");
+            runTest("js/js.translator/testData/box/closure/closureThisAndReceiver.kt");
         }
 
         @TestMetadata("closureThisByUsingMethodFromParentClass.kt")
         public void testClosureThisByUsingMethodFromParentClass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/closureThisByUsingMethodFromParentClass.kt");
+            runTest("js/js.translator/testData/box/closure/closureThisByUsingMethodFromParentClass.kt");
         }
 
         @TestMetadata("closureThisInConstructor.kt")
         public void testClosureThisInConstructor() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/closureThisInConstructor.kt");
+            runTest("js/js.translator/testData/box/closure/closureThisInConstructor.kt");
         }
 
         @TestMetadata("closureThisInExtLambdaInsideMethod.kt")
         public void testClosureThisInExtLambdaInsideMethod() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/closureThisInExtLambdaInsideMethod.kt");
+            runTest("js/js.translator/testData/box/closure/closureThisInExtLambdaInsideMethod.kt");
         }
 
         @TestMetadata("closureThisInFunctionWhichNamedSameAsParentClass.kt")
         public void testClosureThisInFunctionWhichNamedSameAsParentClass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/closureThisInFunctionWhichNamedSameAsParentClass.kt");
+            runTest("js/js.translator/testData/box/closure/closureThisInFunctionWhichNamedSameAsParentClass.kt");
         }
 
         @TestMetadata("closureThisInLambdaInsideMethod.kt")
         public void testClosureThisInLambdaInsideMethod() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/closureThisInLambdaInsideMethod.kt");
+            runTest("js/js.translator/testData/box/closure/closureThisInLambdaInsideMethod.kt");
         }
 
         @TestMetadata("closureThisInLambdaInsideObject.kt")
         public void testClosureThisInLambdaInsideObject() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/closureThisInLambdaInsideObject.kt");
+            runTest("js/js.translator/testData/box/closure/closureThisInLambdaInsideObject.kt");
         }
 
         @TestMetadata("closureThisInLocalFunction.kt")
         public void testClosureThisInLocalFunction() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/closureThisInLocalFunction.kt");
+            runTest("js/js.translator/testData/box/closure/closureThisInLocalFunction.kt");
         }
 
         @TestMetadata("closureValToScopeWithSameNameDeclaration.kt")
         public void testClosureValToScopeWithSameNameDeclaration() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/closureValToScopeWithSameNameDeclaration.kt");
+            runTest("js/js.translator/testData/box/closure/closureValToScopeWithSameNameDeclaration.kt");
         }
 
         @TestMetadata("closureVarToScopeWithSameNameDeclaration.kt")
         public void testClosureVarToScopeWithSameNameDeclaration() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/closureVarToScopeWithSameNameDeclaration.kt");
+            runTest("js/js.translator/testData/box/closure/closureVarToScopeWithSameNameDeclaration.kt");
         }
 
         @TestMetadata("deepInnerClassInLocalClass.kt")
         public void testDeepInnerClassInLocalClass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/deepInnerClassInLocalClass.kt");
+            runTest("js/js.translator/testData/box/closure/deepInnerClassInLocalClass.kt");
         }
 
         @TestMetadata("deepInnerClassInLocalClassFromExtension.kt")
         public void testDeepInnerClassInLocalClassFromExtension() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/deepInnerClassInLocalClassFromExtension.kt");
+            runTest("js/js.translator/testData/box/closure/deepInnerClassInLocalClassFromExtension.kt");
         }
 
         @TestMetadata("enclosingClassFromInnerLocalClass.kt")
         public void testEnclosingClassFromInnerLocalClass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/enclosingClassFromInnerLocalClass.kt");
+            runTest("js/js.translator/testData/box/closure/enclosingClassFromInnerLocalClass.kt");
         }
 
         @TestMetadata("enclosingClassFromLocalClass.kt")
         public void testEnclosingClassFromLocalClass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/enclosingClassFromLocalClass.kt");
+            runTest("js/js.translator/testData/box/closure/enclosingClassFromLocalClass.kt");
         }
 
         @TestMetadata("implicitGenericReceiverInExtensionInLocalClass.kt")
         public void testImplicitGenericReceiverInExtensionInLocalClass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/implicitGenericReceiverInExtensionInLocalClass.kt");
+            runTest("js/js.translator/testData/box/closure/implicitGenericReceiverInExtensionInLocalClass.kt");
         }
 
         @TestMetadata("iteratingCallbacks.kt")
         public void testIteratingCallbacks() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/iteratingCallbacks.kt");
+            runTest("js/js.translator/testData/box/closure/iteratingCallbacks.kt");
         }
 
         @TestMetadata("lambdaInLocalFun.kt")
         public void testLambdaInLocalFun() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/lambdaInLocalFun.kt");
+            runTest("js/js.translator/testData/box/closure/lambdaInLocalFun.kt");
         }
 
         @TestMetadata("localConstructorAndMethod.kt")
         public void testLocalConstructorAndMethod() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/localConstructorAndMethod.kt");
+            runTest("js/js.translator/testData/box/closure/localConstructorAndMethod.kt");
         }
 
         @TestMetadata("localParameterInCallback.kt")
         public void testLocalParameterInCallback() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/localParameterInCallback.kt");
+            runTest("js/js.translator/testData/box/closure/localParameterInCallback.kt");
         }
 
         @TestMetadata("objectWithInvokeOperator.kt")
         public void testObjectWithInvokeOperator() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/objectWithInvokeOperator.kt");
+            runTest("js/js.translator/testData/box/closure/objectWithInvokeOperator.kt");
         }
 
         @TestMetadata("recursiveExtFunction.kt")
         public void testRecursiveExtFunction() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/recursiveExtFunction.kt");
+            runTest("js/js.translator/testData/box/closure/recursiveExtFunction.kt");
         }
 
         @TestMetadata("recursiveFunction.kt")
         public void testRecursiveFunction() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/recursiveFunction.kt");
+            runTest("js/js.translator/testData/box/closure/recursiveFunction.kt");
         }
 
         @TestMetadata("recursiveFunctionWithSameNameDeclaration.kt")
         public void testRecursiveFunctionWithSameNameDeclaration() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/recursiveFunctionWithSameNameDeclaration.kt");
+            runTest("js/js.translator/testData/box/closure/recursiveFunctionWithSameNameDeclaration.kt");
         }
 
         @TestMetadata("withManyClosuresInNestedFunctionsAndObjects.kt")
         public void testWithManyClosuresInNestedFunctionsAndObjects() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/withManyClosuresInNestedFunctionsAndObjects.kt");
+            runTest("js/js.translator/testData/box/closure/withManyClosuresInNestedFunctionsAndObjects.kt");
         }
 
         @TestMetadata("wrappedVariableInExtensionFun.kt")
         public void testWrappedVariableInExtensionFun() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/closure/wrappedVariableInExtensionFun.kt");
+            runTest("js/js.translator/testData/box/closure/wrappedVariableInExtensionFun.kt");
         }
     }
 
@@ -682,118 +714,122 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Coercion extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInCoercion() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/coercion"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("bridgeChar.kt")
         public void testBridgeChar() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/coercion/bridgeChar.kt");
+            runTest("js/js.translator/testData/box/coercion/bridgeChar.kt");
         }
 
         @TestMetadata("charValParameter.kt")
         public void testCharValParameter() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/coercion/charValParameter.kt");
+            runTest("js/js.translator/testData/box/coercion/charValParameter.kt");
         }
 
         @TestMetadata("classProperty.kt")
         public void testClassProperty() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/coercion/classProperty.kt");
+            runTest("js/js.translator/testData/box/coercion/classProperty.kt");
         }
 
         @TestMetadata("defaultAccessors.kt")
         public void testDefaultAccessors() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/coercion/defaultAccessors.kt");
+            runTest("js/js.translator/testData/box/coercion/defaultAccessors.kt");
         }
 
         @TestMetadata("derivedFunctionReturningChar.kt")
         public void testDerivedFunctionReturningChar() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/coercion/derivedFunctionReturningChar.kt");
+            runTest("js/js.translator/testData/box/coercion/derivedFunctionReturningChar.kt");
         }
 
         @TestMetadata("derivedFunctionReturningUnit.kt")
         public void testDerivedFunctionReturningUnit() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/coercion/derivedFunctionReturningUnit.kt");
+            runTest("js/js.translator/testData/box/coercion/derivedFunctionReturningUnit.kt");
         }
 
         @TestMetadata("destructuringToUnit.kt")
         public void testDestructuringToUnit() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/coercion/destructuringToUnit.kt");
+            runTest("js/js.translator/testData/box/coercion/destructuringToUnit.kt");
         }
 
         @TestMetadata("extensionReceiver.kt")
         public void testExtensionReceiver() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/coercion/extensionReceiver.kt");
+            runTest("js/js.translator/testData/box/coercion/extensionReceiver.kt");
         }
 
         @TestMetadata("ifWithUnit.kt")
         public void testIfWithUnit() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/coercion/ifWithUnit.kt");
+            runTest("js/js.translator/testData/box/coercion/ifWithUnit.kt");
         }
 
         @TestMetadata("inlineFunReturningUnit.kt")
         public void testInlineFunReturningUnit() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/coercion/inlineFunReturningUnit.kt");
+            runTest("js/js.translator/testData/box/coercion/inlineFunReturningUnit.kt");
         }
 
         @TestMetadata("lambdaParameters.kt")
         public void testLambdaParameters() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/coercion/lambdaParameters.kt");
+            runTest("js/js.translator/testData/box/coercion/lambdaParameters.kt");
         }
 
         @TestMetadata("loopOverUnits.kt")
         public void testLoopOverUnits() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/coercion/loopOverUnits.kt");
+            runTest("js/js.translator/testData/box/coercion/loopOverUnits.kt");
         }
 
         @TestMetadata("propertyBridgeChar.kt")
         public void testPropertyBridgeChar() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/coercion/propertyBridgeChar.kt");
+            runTest("js/js.translator/testData/box/coercion/propertyBridgeChar.kt");
         }
 
         @TestMetadata("receiverSmartCast.kt")
         public void testReceiverSmartCast() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/coercion/receiverSmartCast.kt");
+            runTest("js/js.translator/testData/box/coercion/receiverSmartCast.kt");
         }
 
         @TestMetadata("safeCallLetReturningUnit.kt")
         public void testSafeCallLetReturningUnit() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/coercion/safeCallLetReturningUnit.kt");
+            runTest("js/js.translator/testData/box/coercion/safeCallLetReturningUnit.kt");
         }
 
         @TestMetadata("topLevelProperty.kt")
         public void testTopLevelProperty() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/coercion/topLevelProperty.kt");
+            runTest("js/js.translator/testData/box/coercion/topLevelProperty.kt");
         }
 
         @TestMetadata("tryWithEmptyCatch.kt")
         public void testTryWithEmptyCatch() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/coercion/tryWithEmptyCatch.kt");
+            runTest("js/js.translator/testData/box/coercion/tryWithEmptyCatch.kt");
         }
 
         @TestMetadata("unitAsExtensionReceiver.kt")
         public void testUnitAsExtensionReceiver() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/coercion/unitAsExtensionReceiver.kt");
+            runTest("js/js.translator/testData/box/coercion/unitAsExtensionReceiver.kt");
         }
 
         @TestMetadata("unitIsAs.kt")
         public void testUnitIsAs() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/coercion/unitIsAs.kt");
+            runTest("js/js.translator/testData/box/coercion/unitIsAs.kt");
         }
 
         @TestMetadata("unitNullCheck.kt")
         public void testUnitNullCheck() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/coercion/unitNullCheck.kt");
+            runTest("js/js.translator/testData/box/coercion/unitNullCheck.kt");
         }
 
         @TestMetadata("unitSafeCall.kt")
         public void testUnitSafeCall() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/coercion/unitSafeCall.kt");
+            runTest("js/js.translator/testData/box/coercion/unitSafeCall.kt");
         }
 
         @TestMetadata("whenWithUnit.kt")
         public void testWhenWithUnit() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/coercion/whenWithUnit.kt");
+            runTest("js/js.translator/testData/box/coercion/whenWithUnit.kt");
         }
     }
 
@@ -801,23 +837,27 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Coroutines extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInCoroutines() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/coroutines"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("debugStatement.kt")
         public void testDebugStatement() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/coroutines/debugStatement.kt");
+            runTest("js/js.translator/testData/box/coroutines/debugStatement.kt");
         }
 
         @TestMetadata("localVarOptimization.kt")
         public void testLocalVarOptimization() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/coroutines/localVarOptimization.kt");
+            runTest("js/js.translator/testData/box/coroutines/localVarOptimization.kt");
         }
 
         @TestMetadata("nativeExceptions.kt")
         public void testNativeExceptions() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/coroutines/nativeExceptions.kt");
+            runTest("js/js.translator/testData/box/coroutines/nativeExceptions.kt");
         }
     }
 
@@ -825,88 +865,92 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class CrossModuleRef extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInCrossModuleRef() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/crossModuleRef"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("callableObjectRef.kt")
         public void testCallableObjectRef() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/crossModuleRef/callableObjectRef.kt");
+            runTest("js/js.translator/testData/box/crossModuleRef/callableObjectRef.kt");
         }
 
         @TestMetadata("constructor.kt")
         public void testConstructor() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/crossModuleRef/constructor.kt");
+            runTest("js/js.translator/testData/box/crossModuleRef/constructor.kt");
         }
 
         @TestMetadata("inheritance.kt")
         public void testInheritance() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/crossModuleRef/inheritance.kt");
+            runTest("js/js.translator/testData/box/crossModuleRef/inheritance.kt");
         }
 
         @TestMetadata("inlineJsModule.kt")
         public void testInlineJsModule() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/crossModuleRef/inlineJsModule.kt");
+            runTest("js/js.translator/testData/box/crossModuleRef/inlineJsModule.kt");
         }
 
         @TestMetadata("inlineJsModuleNonIdentifier.kt")
         public void testInlineJsModuleNonIdentifier() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/crossModuleRef/inlineJsModuleNonIdentifier.kt");
+            runTest("js/js.translator/testData/box/crossModuleRef/inlineJsModuleNonIdentifier.kt");
         }
 
         @TestMetadata("inlineJsModulePackage.kt")
         public void testInlineJsModulePackage() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/crossModuleRef/inlineJsModulePackage.kt");
+            runTest("js/js.translator/testData/box/crossModuleRef/inlineJsModulePackage.kt");
         }
 
         @TestMetadata("inlineModule.kt")
         public void testInlineModule() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/crossModuleRef/inlineModule.kt");
+            runTest("js/js.translator/testData/box/crossModuleRef/inlineModule.kt");
         }
 
         @TestMetadata("inlineModuleNonIndentifier.kt")
         public void testInlineModuleNonIndentifier() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/crossModuleRef/inlineModuleNonIndentifier.kt");
+            runTest("js/js.translator/testData/box/crossModuleRef/inlineModuleNonIndentifier.kt");
         }
 
         @TestMetadata("lambda.kt")
         public void testLambda() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/crossModuleRef/lambda.kt");
+            runTest("js/js.translator/testData/box/crossModuleRef/lambda.kt");
         }
 
         @TestMetadata("object.kt")
         public void testObject() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/crossModuleRef/object.kt");
+            runTest("js/js.translator/testData/box/crossModuleRef/object.kt");
         }
 
         @TestMetadata("objectInInlineClosure.kt")
         public void testObjectInInlineClosure() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/crossModuleRef/objectInInlineClosure.kt");
+            runTest("js/js.translator/testData/box/crossModuleRef/objectInInlineClosure.kt");
         }
 
         @TestMetadata("objectIsObject.kt")
         public void testObjectIsObject() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/crossModuleRef/objectIsObject.kt");
+            runTest("js/js.translator/testData/box/crossModuleRef/objectIsObject.kt");
         }
 
         @TestMetadata("topLevelExtension.kt")
         public void testTopLevelExtension() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/crossModuleRef/topLevelExtension.kt");
+            runTest("js/js.translator/testData/box/crossModuleRef/topLevelExtension.kt");
         }
 
         @TestMetadata("topLevelFunction.kt")
         public void testTopLevelFunction() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/crossModuleRef/topLevelFunction.kt");
+            runTest("js/js.translator/testData/box/crossModuleRef/topLevelFunction.kt");
         }
 
         @TestMetadata("topLevelMutableProperty.kt")
         public void testTopLevelMutableProperty() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/crossModuleRef/topLevelMutableProperty.kt");
+            runTest("js/js.translator/testData/box/crossModuleRef/topLevelMutableProperty.kt");
         }
 
         @TestMetadata("topLevelProperty.kt")
         public void testTopLevelProperty() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/crossModuleRef/topLevelProperty.kt");
+            runTest("js/js.translator/testData/box/crossModuleRef/topLevelProperty.kt");
         }
     }
 
@@ -914,48 +958,52 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class DataClass extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInDataClass() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/dataClass"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("components.kt")
         public void testComponents() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/dataClass/components.kt");
+            runTest("js/js.translator/testData/box/dataClass/components.kt");
         }
 
         @TestMetadata("copy.kt")
         public void testCopy() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/dataClass/copy.kt");
+            runTest("js/js.translator/testData/box/dataClass/copy.kt");
         }
 
         @TestMetadata("equals.kt")
         public void testEquals() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/dataClass/equals.kt");
+            runTest("js/js.translator/testData/box/dataClass/equals.kt");
         }
 
         @TestMetadata("hashcode.kt")
         public void testHashcode() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/dataClass/hashcode.kt");
+            runTest("js/js.translator/testData/box/dataClass/hashcode.kt");
         }
 
         @TestMetadata("keyrole.kt")
         public void testKeyrole() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/dataClass/keyrole.kt");
+            runTest("js/js.translator/testData/box/dataClass/keyrole.kt");
         }
 
         @TestMetadata("override.kt")
         public void testOverride() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/dataClass/override.kt");
+            runTest("js/js.translator/testData/box/dataClass/override.kt");
         }
 
         @TestMetadata("privateFields.kt")
         public void testPrivateFields() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/dataClass/privateFields.kt");
+            runTest("js/js.translator/testData/box/dataClass/privateFields.kt");
         }
 
         @TestMetadata("tostring.kt")
         public void testTostring() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/dataClass/tostring.kt");
+            runTest("js/js.translator/testData/box/dataClass/tostring.kt");
         }
     }
 
@@ -963,108 +1011,112 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class DefaultArguments extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInDefaultArguments() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/defaultArguments"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("complexExpressionAsConstructorDefaultArgument.kt")
         public void testComplexExpressionAsConstructorDefaultArgument() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/defaultArguments/complexExpressionAsConstructorDefaultArgument.kt");
+            runTest("js/js.translator/testData/box/defaultArguments/complexExpressionAsConstructorDefaultArgument.kt");
         }
 
         @TestMetadata("complexExpressionAsDefaultArgument.kt")
         public void testComplexExpressionAsDefaultArgument() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/defaultArguments/complexExpressionAsDefaultArgument.kt");
+            runTest("js/js.translator/testData/box/defaultArguments/complexExpressionAsDefaultArgument.kt");
         }
 
         @TestMetadata("complexExpressionAsOverriddenDefaultArgument.kt")
         public void testComplexExpressionAsOverriddenDefaultArgument() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/defaultArguments/complexExpressionAsOverriddenDefaultArgument.kt");
+            runTest("js/js.translator/testData/box/defaultArguments/complexExpressionAsOverriddenDefaultArgument.kt");
         }
 
         @TestMetadata("constructorCallWithDefArg1.kt")
         public void testConstructorCallWithDefArg1() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/defaultArguments/constructorCallWithDefArg1.kt");
+            runTest("js/js.translator/testData/box/defaultArguments/constructorCallWithDefArg1.kt");
         }
 
         @TestMetadata("constructorCallWithDefArg2.kt")
         public void testConstructorCallWithDefArg2() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/defaultArguments/constructorCallWithDefArg2.kt");
+            runTest("js/js.translator/testData/box/defaultArguments/constructorCallWithDefArg2.kt");
         }
 
         @TestMetadata("defArgsWithSuperCall.kt")
         public void testDefArgsWithSuperCall() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/defaultArguments/defArgsWithSuperCall.kt");
+            runTest("js/js.translator/testData/box/defaultArguments/defArgsWithSuperCall.kt");
         }
 
         @TestMetadata("defaultArgumentsInFunctionWithExpressionAsBody.kt")
         public void testDefaultArgumentsInFunctionWithExpressionAsBody() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/defaultArguments/defaultArgumentsInFunctionWithExpressionAsBody.kt");
+            runTest("js/js.translator/testData/box/defaultArguments/defaultArgumentsInFunctionWithExpressionAsBody.kt");
         }
 
         @TestMetadata("enumSuperConstructor.kt")
         public void testEnumSuperConstructor() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/defaultArguments/enumSuperConstructor.kt");
+            runTest("js/js.translator/testData/box/defaultArguments/enumSuperConstructor.kt");
         }
 
         @TestMetadata("enumWithDefArg.kt")
         public void testEnumWithDefArg() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/defaultArguments/enumWithDefArg.kt");
+            runTest("js/js.translator/testData/box/defaultArguments/enumWithDefArg.kt");
         }
 
         @TestMetadata("enumWithOneDefArg.kt")
         public void testEnumWithOneDefArg() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/defaultArguments/enumWithOneDefArg.kt");
+            runTest("js/js.translator/testData/box/defaultArguments/enumWithOneDefArg.kt");
         }
 
         @TestMetadata("enumWithTwoDefArgs.kt")
         public void testEnumWithTwoDefArgs() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/defaultArguments/enumWithTwoDefArgs.kt");
+            runTest("js/js.translator/testData/box/defaultArguments/enumWithTwoDefArgs.kt");
         }
 
         @TestMetadata("extensionFunWithDefArgs.kt")
         public void testExtensionFunWithDefArgs() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/defaultArguments/extensionFunWithDefArgs.kt");
+            runTest("js/js.translator/testData/box/defaultArguments/extensionFunWithDefArgs.kt");
         }
 
         @TestMetadata("funInAbstractClassWithDefArg.kt")
         public void testFunInAbstractClassWithDefArg() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/defaultArguments/funInAbstractClassWithDefArg.kt");
+            runTest("js/js.translator/testData/box/defaultArguments/funInAbstractClassWithDefArg.kt");
         }
 
         @TestMetadata("inheritViaAnotherInterface.kt")
         public void testInheritViaAnotherInterface() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/defaultArguments/inheritViaAnotherInterface.kt");
+            runTest("js/js.translator/testData/box/defaultArguments/inheritViaAnotherInterface.kt");
         }
 
         @TestMetadata("inheritViaAnotherInterfaceIndirectly.kt")
         public void testInheritViaAnotherInterfaceIndirectly() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/defaultArguments/inheritViaAnotherInterfaceIndirectly.kt");
+            runTest("js/js.translator/testData/box/defaultArguments/inheritViaAnotherInterfaceIndirectly.kt");
         }
 
         @TestMetadata("overloadFunWithDefArg.kt")
         public void testOverloadFunWithDefArg() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/defaultArguments/overloadFunWithDefArg.kt");
+            runTest("js/js.translator/testData/box/defaultArguments/overloadFunWithDefArg.kt");
         }
 
         @TestMetadata("primarySuperConstructor.kt")
         public void testPrimarySuperConstructor() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/defaultArguments/primarySuperConstructor.kt");
+            runTest("js/js.translator/testData/box/defaultArguments/primarySuperConstructor.kt");
         }
 
         @TestMetadata("secondarySuperConstructor.kt")
         public void testSecondarySuperConstructor() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/defaultArguments/secondarySuperConstructor.kt");
+            runTest("js/js.translator/testData/box/defaultArguments/secondarySuperConstructor.kt");
         }
 
         @TestMetadata("superCall.kt")
         public void testSuperCall() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/defaultArguments/superCall.kt");
+            runTest("js/js.translator/testData/box/defaultArguments/superCall.kt");
         }
 
         @TestMetadata("virtualCallWithDefArg.kt")
         public void testVirtualCallWithDefArg() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/defaultArguments/virtualCallWithDefArg.kt");
+            runTest("js/js.translator/testData/box/defaultArguments/virtualCallWithDefArg.kt");
         }
     }
 
@@ -1072,123 +1124,127 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class DelegateProperty extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInDelegateProperty() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/delegateProperty"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("capturedLocalVal.kt")
         public void testCapturedLocalVal() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegateProperty/capturedLocalVal.kt");
+            runTest("js/js.translator/testData/box/delegateProperty/capturedLocalVal.kt");
         }
 
         @TestMetadata("capturedLocalValNoInline.kt")
         public void testCapturedLocalValNoInline() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegateProperty/capturedLocalValNoInline.kt");
+            runTest("js/js.translator/testData/box/delegateProperty/capturedLocalValNoInline.kt");
         }
 
         @TestMetadata("capturedLocalVar.kt")
         public void testCapturedLocalVar() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegateProperty/capturedLocalVar.kt");
+            runTest("js/js.translator/testData/box/delegateProperty/capturedLocalVar.kt");
         }
 
         @TestMetadata("capturedLocalVarNoInline.kt")
         public void testCapturedLocalVarNoInline() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegateProperty/capturedLocalVarNoInline.kt");
+            runTest("js/js.translator/testData/box/delegateProperty/capturedLocalVarNoInline.kt");
         }
 
         @TestMetadata("clashingNameInSubclass.kt")
         public void testClashingNameInSubclass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegateProperty/clashingNameInSubclass.kt");
+            runTest("js/js.translator/testData/box/delegateProperty/clashingNameInSubclass.kt");
         }
 
         @TestMetadata("delegateByExtensionProperty.kt")
         public void testDelegateByExtensionProperty() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegateProperty/delegateByExtensionProperty.kt");
+            runTest("js/js.translator/testData/box/delegateProperty/delegateByExtensionProperty.kt");
         }
 
         @TestMetadata("delegateByTopLevelFun.kt")
         public void testDelegateByTopLevelFun() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegateProperty/delegateByTopLevelFun.kt");
+            runTest("js/js.translator/testData/box/delegateProperty/delegateByTopLevelFun.kt");
         }
 
         @TestMetadata("delegateByTopLevelProperty.kt")
         public void testDelegateByTopLevelProperty() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegateProperty/delegateByTopLevelProperty.kt");
+            runTest("js/js.translator/testData/box/delegateProperty/delegateByTopLevelProperty.kt");
         }
 
         @TestMetadata("delegateWithPropertyAccess.kt")
         public void testDelegateWithPropertyAccess() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegateProperty/delegateWithPropertyAccess.kt");
+            runTest("js/js.translator/testData/box/delegateProperty/delegateWithPropertyAccess.kt");
         }
 
         @TestMetadata("getAsExtensionFun.kt")
         public void testGetAsExtensionFun() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegateProperty/getAsExtensionFun.kt");
+            runTest("js/js.translator/testData/box/delegateProperty/getAsExtensionFun.kt");
         }
 
         @TestMetadata("localVal.kt")
         public void testLocalVal() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegateProperty/localVal.kt");
+            runTest("js/js.translator/testData/box/delegateProperty/localVal.kt");
         }
 
         @TestMetadata("localVar.kt")
         public void testLocalVar() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegateProperty/localVar.kt");
+            runTest("js/js.translator/testData/box/delegateProperty/localVar.kt");
         }
 
         @TestMetadata("localVarInc.kt")
         public void testLocalVarInc() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegateProperty/localVarInc.kt");
+            runTest("js/js.translator/testData/box/delegateProperty/localVarInc.kt");
         }
 
         @TestMetadata("localVarPlusAssign.kt")
         public void testLocalVarPlusAssign() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegateProperty/localVarPlusAssign.kt");
+            runTest("js/js.translator/testData/box/delegateProperty/localVarPlusAssign.kt");
         }
 
         @TestMetadata("metadataReferentialEquality.kt")
         public void testMetadataReferentialEquality() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegateProperty/metadataReferentialEquality.kt");
+            runTest("js/js.translator/testData/box/delegateProperty/metadataReferentialEquality.kt");
         }
 
         @TestMetadata("peculiarName.kt")
         public void testPeculiarName() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegateProperty/peculiarName.kt");
+            runTest("js/js.translator/testData/box/delegateProperty/peculiarName.kt");
         }
 
         @TestMetadata("propertyMetadata.kt")
         public void testPropertyMetadata() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegateProperty/propertyMetadata.kt");
+            runTest("js/js.translator/testData/box/delegateProperty/propertyMetadata.kt");
         }
 
         @TestMetadata("setAsExtensionFun.kt")
         public void testSetAsExtensionFun() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegateProperty/setAsExtensionFun.kt");
+            runTest("js/js.translator/testData/box/delegateProperty/setAsExtensionFun.kt");
         }
 
         @TestMetadata("simple.kt")
         public void testSimple() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegateProperty/simple.kt");
+            runTest("js/js.translator/testData/box/delegateProperty/simple.kt");
         }
 
         @TestMetadata("topLevelVal.kt")
         public void testTopLevelVal() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegateProperty/topLevelVal.kt");
+            runTest("js/js.translator/testData/box/delegateProperty/topLevelVal.kt");
         }
 
         @TestMetadata("topLevelVar.kt")
         public void testTopLevelVar() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegateProperty/topLevelVar.kt");
+            runTest("js/js.translator/testData/box/delegateProperty/topLevelVar.kt");
         }
 
         @TestMetadata("unusedPropertyMetadata.kt")
         public void testUnusedPropertyMetadata() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegateProperty/unusedPropertyMetadata.kt");
+            runTest("js/js.translator/testData/box/delegateProperty/unusedPropertyMetadata.kt");
         }
 
         @TestMetadata("withGenerics.kt")
         public void testWithGenerics() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegateProperty/withGenerics.kt");
+            runTest("js/js.translator/testData/box/delegateProperty/withGenerics.kt");
         }
     }
 
@@ -1196,113 +1252,117 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Delegation extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInDelegation() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/delegation"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("complexDelegation.kt")
         public void testComplexDelegation() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegation/complexDelegation.kt");
+            runTest("js/js.translator/testData/box/delegation/complexDelegation.kt");
         }
 
         @TestMetadata("delegation2.kt")
         public void testDelegation2() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegation/delegation2.kt");
+            runTest("js/js.translator/testData/box/delegation/delegation2.kt");
         }
 
         @TestMetadata("delegation3.kt")
         public void testDelegation3() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegation/delegation3.kt");
+            runTest("js/js.translator/testData/box/delegation/delegation3.kt");
         }
 
         @TestMetadata("delegation4.kt")
         public void testDelegation4() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegation/delegation4.kt");
+            runTest("js/js.translator/testData/box/delegation/delegation4.kt");
         }
 
         @TestMetadata("delegationByArg.kt")
         public void testDelegationByArg() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegation/delegationByArg.kt");
+            runTest("js/js.translator/testData/box/delegation/delegationByArg.kt");
         }
 
         @TestMetadata("delegationByExprWithArgs.kt")
         public void testDelegationByExprWithArgs() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegation/delegationByExprWithArgs.kt");
+            runTest("js/js.translator/testData/box/delegation/delegationByExprWithArgs.kt");
         }
 
         @TestMetadata("delegationByFunExpr.kt")
         public void testDelegationByFunExpr() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegation/delegationByFunExpr.kt");
+            runTest("js/js.translator/testData/box/delegation/delegationByFunExpr.kt");
         }
 
         @TestMetadata("delegationByIfExpr.kt")
         public void testDelegationByIfExpr() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegation/delegationByIfExpr.kt");
+            runTest("js/js.translator/testData/box/delegation/delegationByIfExpr.kt");
         }
 
         @TestMetadata("delegationByInh.kt")
         public void testDelegationByInh() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegation/delegationByInh.kt");
+            runTest("js/js.translator/testData/box/delegation/delegationByInh.kt");
         }
 
         @TestMetadata("delegationByNewInstance.kt")
         public void testDelegationByNewInstance() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegation/delegationByNewInstance.kt");
+            runTest("js/js.translator/testData/box/delegation/delegationByNewInstance.kt");
         }
 
         @TestMetadata("delegationChain.kt")
         public void testDelegationChain() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegation/delegationChain.kt");
+            runTest("js/js.translator/testData/box/delegation/delegationChain.kt");
         }
 
         @TestMetadata("delegationEvaluationOrder1.kt")
         public void testDelegationEvaluationOrder1() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegation/delegationEvaluationOrder1.kt");
+            runTest("js/js.translator/testData/box/delegation/delegationEvaluationOrder1.kt");
         }
 
         @TestMetadata("delegationEvaluationOrder2.kt")
         public void testDelegationEvaluationOrder2() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegation/delegationEvaluationOrder2.kt");
+            runTest("js/js.translator/testData/box/delegation/delegationEvaluationOrder2.kt");
         }
 
         @TestMetadata("delegationExtFun1.kt")
         public void testDelegationExtFun1() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegation/delegationExtFun1.kt");
+            runTest("js/js.translator/testData/box/delegation/delegationExtFun1.kt");
         }
 
         @TestMetadata("delegationExtFun2.kt")
         public void testDelegationExtFun2() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegation/delegationExtFun2.kt");
+            runTest("js/js.translator/testData/box/delegation/delegationExtFun2.kt");
         }
 
         @TestMetadata("delegationExtProp.kt")
         public void testDelegationExtProp() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegation/delegationExtProp.kt");
+            runTest("js/js.translator/testData/box/delegation/delegationExtProp.kt");
         }
 
         @TestMetadata("delegationExtensionPropertyDelegated.kt")
         public void testDelegationExtensionPropertyDelegated() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegation/delegationExtensionPropertyDelegated.kt");
+            runTest("js/js.translator/testData/box/delegation/delegationExtensionPropertyDelegated.kt");
         }
 
         @TestMetadata("delegationGenericArg.kt")
         public void testDelegationGenericArg() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegation/delegationGenericArg.kt");
+            runTest("js/js.translator/testData/box/delegation/delegationGenericArg.kt");
         }
 
         @TestMetadata("delegationMethodsWithArgs.kt")
         public void testDelegationMethodsWithArgs() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegation/delegationMethodsWithArgs.kt");
+            runTest("js/js.translator/testData/box/delegation/delegationMethodsWithArgs.kt");
         }
 
         @TestMetadata("jsNamePropertyDelegation.kt")
         public void testJsNamePropertyDelegation() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegation/jsNamePropertyDelegation.kt");
+            runTest("js/js.translator/testData/box/delegation/jsNamePropertyDelegation.kt");
         }
 
         @TestMetadata("onObject.kt")
         public void testOnObject() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/delegation/onObject.kt");
+            runTest("js/js.translator/testData/box/delegation/onObject.kt");
         }
     }
 
@@ -1310,108 +1370,112 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Dynamic extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInDynamic() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/dynamic"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("binaryOperations.kt")
         public void testBinaryOperations() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/dynamic/binaryOperations.kt");
+            runTest("js/js.translator/testData/box/dynamic/binaryOperations.kt");
         }
 
         @TestMetadata("callGetMethod.kt")
         public void testCallGetMethod() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/dynamic/callGetMethod.kt");
+            runTest("js/js.translator/testData/box/dynamic/callGetMethod.kt");
         }
 
         @TestMetadata("callMethods.kt")
         public void testCallMethods() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/dynamic/callMethods.kt");
+            runTest("js/js.translator/testData/box/dynamic/callMethods.kt");
         }
 
         @TestMetadata("callSetMethod.kt")
         public void testCallSetMethod() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/dynamic/callSetMethod.kt");
+            runTest("js/js.translator/testData/box/dynamic/callSetMethod.kt");
         }
 
         @TestMetadata("compareTo.kt")
         public void testCompareTo() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/dynamic/compareTo.kt");
+            runTest("js/js.translator/testData/box/dynamic/compareTo.kt");
         }
 
         @TestMetadata("equals.kt")
         public void testEquals() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/dynamic/equals.kt");
+            runTest("js/js.translator/testData/box/dynamic/equals.kt");
         }
 
         @TestMetadata("getByBrackets.kt")
         public void testGetByBrackets() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/dynamic/getByBrackets.kt");
+            runTest("js/js.translator/testData/box/dynamic/getByBrackets.kt");
         }
 
         @TestMetadata("identityEquals.kt")
         public void testIdentityEquals() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/dynamic/identityEquals.kt");
+            runTest("js/js.translator/testData/box/dynamic/identityEquals.kt");
         }
 
         @TestMetadata("incrementAndDecrement.kt")
         public void testIncrementAndDecrement() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/dynamic/incrementAndDecrement.kt");
+            runTest("js/js.translator/testData/box/dynamic/incrementAndDecrement.kt");
         }
 
         @TestMetadata("infixCall.kt")
         public void testInfixCall() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/dynamic/infixCall.kt");
+            runTest("js/js.translator/testData/box/dynamic/infixCall.kt");
         }
 
         @TestMetadata("invoke.kt")
         public void testInvoke() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/dynamic/invoke.kt");
+            runTest("js/js.translator/testData/box/dynamic/invoke.kt");
         }
 
         @TestMetadata("is.kt")
         public void testIs() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/dynamic/is.kt");
+            runTest("js/js.translator/testData/box/dynamic/is.kt");
         }
 
         @TestMetadata("isJsPrimitiveType.kt")
         public void testIsJsPrimitiveType() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/dynamic/isJsPrimitiveType.kt");
+            runTest("js/js.translator/testData/box/dynamic/isJsPrimitiveType.kt");
         }
 
         @TestMetadata("iterator.kt")
         public void testIterator() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/dynamic/iterator.kt");
+            runTest("js/js.translator/testData/box/dynamic/iterator.kt");
         }
 
         @TestMetadata("nameClashing.kt")
         public void testNameClashing() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/dynamic/nameClashing.kt");
+            runTest("js/js.translator/testData/box/dynamic/nameClashing.kt");
         }
 
         @TestMetadata("operationsWithAssignment.kt")
         public void testOperationsWithAssignment() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/dynamic/operationsWithAssignment.kt");
+            runTest("js/js.translator/testData/box/dynamic/operationsWithAssignment.kt");
         }
 
         @TestMetadata("propertyAccess.kt")
         public void testPropertyAccess() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/dynamic/propertyAccess.kt");
+            runTest("js/js.translator/testData/box/dynamic/propertyAccess.kt");
         }
 
         @TestMetadata("propertySideEffect.kt")
         public void testPropertySideEffect() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/dynamic/propertySideEffect.kt");
+            runTest("js/js.translator/testData/box/dynamic/propertySideEffect.kt");
         }
 
         @TestMetadata("setByBrackets.kt")
         public void testSetByBrackets() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/dynamic/setByBrackets.kt");
+            runTest("js/js.translator/testData/box/dynamic/setByBrackets.kt");
         }
 
         @TestMetadata("unaryOperations.kt")
         public void testUnaryOperations() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/dynamic/unaryOperations.kt");
+            runTest("js/js.translator/testData/box/dynamic/unaryOperations.kt");
         }
     }
 
@@ -1419,9 +1483,13 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Enum extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         @TestMetadata("accessing.kt")
         public void testAccessing() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/enum/accessing.kt");
+            runTest("js/js.translator/testData/box/enum/accessing.kt");
         }
 
         public void testAllFilesPresentInEnum() throws Exception {
@@ -1430,57 +1498,57 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
 
         @TestMetadata("enumInheritedFromTrait.kt")
         public void testEnumInheritedFromTrait() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/enum/enumInheritedFromTrait.kt");
+            runTest("js/js.translator/testData/box/enum/enumInheritedFromTrait.kt");
         }
 
         @TestMetadata("enumIsComparable.kt")
         public void testEnumIsComparable() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/enum/enumIsComparable.kt");
+            runTest("js/js.translator/testData/box/enum/enumIsComparable.kt");
         }
 
         @TestMetadata("enumWithInheritance.kt")
         public void testEnumWithInheritance() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/enum/enumWithInheritance.kt");
+            runTest("js/js.translator/testData/box/enum/enumWithInheritance.kt");
         }
 
         @TestMetadata("equals.kt")
         public void testEquals() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/enum/equals.kt");
+            runTest("js/js.translator/testData/box/enum/equals.kt");
         }
 
         @TestMetadata("equalsNullUndefined.kt")
         public void testEqualsNullUndefined() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/enum/equalsNullUndefined.kt");
+            runTest("js/js.translator/testData/box/enum/equalsNullUndefined.kt");
         }
 
         @TestMetadata("implementsComparable.kt")
         public void testImplementsComparable() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/enum/implementsComparable.kt");
+            runTest("js/js.translator/testData/box/enum/implementsComparable.kt");
         }
 
         @TestMetadata("initializationOrder.kt")
         public void testInitializationOrder() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/enum/initializationOrder.kt");
+            runTest("js/js.translator/testData/box/enum/initializationOrder.kt");
         }
 
         @TestMetadata("nativeEnum.kt")
         public void testNativeEnum() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/enum/nativeEnum.kt");
+            runTest("js/js.translator/testData/box/enum/nativeEnum.kt");
         }
 
         @TestMetadata("simpleEnum.kt")
         public void testSimpleEnum() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/enum/simpleEnum.kt");
+            runTest("js/js.translator/testData/box/enum/simpleEnum.kt");
         }
 
         @TestMetadata("standardMethods.kt")
         public void testStandardMethods() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/enum/standardMethods.kt");
+            runTest("js/js.translator/testData/box/enum/standardMethods.kt");
         }
 
         @TestMetadata("superCallInEnumLiteral.kt")
         public void testSuperCallInEnumLiteral() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/enum/superCallInEnumLiteral.kt");
+            runTest("js/js.translator/testData/box/enum/superCallInEnumLiteral.kt");
         }
     }
 
@@ -1488,153 +1556,157 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Examples extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInExamples() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/examples"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("basicmethod.kt")
         public void testBasicmethod() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/examples/basicmethod.kt");
+            runTest("js/js.translator/testData/box/examples/basicmethod.kt");
         }
 
         @TestMetadata("basicproperty.kt")
         public void testBasicproperty() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/examples/basicproperty.kt");
+            runTest("js/js.translator/testData/box/examples/basicproperty.kt");
         }
 
         @TestMetadata("classObject.kt")
         public void testClassObject() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/examples/classObject.kt");
+            runTest("js/js.translator/testData/box/examples/classObject.kt");
         }
 
         @TestMetadata("closureWithParameter.kt")
         public void testClosureWithParameter() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/examples/closureWithParameter.kt");
+            runTest("js/js.translator/testData/box/examples/closureWithParameter.kt");
         }
 
         @TestMetadata("closureWithParameterAndBoxing.kt")
         public void testClosureWithParameterAndBoxing() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/examples/closureWithParameterAndBoxing.kt");
+            runTest("js/js.translator/testData/box/examples/closureWithParameterAndBoxing.kt");
         }
 
         @TestMetadata("doubleEnclosedLocalVariable.kt")
         public void testDoubleEnclosedLocalVariable() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/examples/doubleEnclosedLocalVariable.kt");
+            runTest("js/js.translator/testData/box/examples/doubleEnclosedLocalVariable.kt");
         }
 
         @TestMetadata("enclosed.kt")
         public void testEnclosed() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/examples/enclosed.kt");
+            runTest("js/js.translator/testData/box/examples/enclosed.kt");
         }
 
         @TestMetadata("enclosingLocalVariable.kt")
         public void testEnclosingLocalVariable() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/examples/enclosingLocalVariable.kt");
+            runTest("js/js.translator/testData/box/examples/enclosingLocalVariable.kt");
         }
 
         @TestMetadata("extensionClosure.kt")
         public void testExtensionClosure() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/examples/extensionClosure.kt");
+            runTest("js/js.translator/testData/box/examples/extensionClosure.kt");
         }
 
         @TestMetadata("funDelegation.kt")
         public void testFunDelegation() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/examples/funDelegation.kt");
+            runTest("js/js.translator/testData/box/examples/funDelegation.kt");
         }
 
         @TestMetadata("incrementProperty.kt")
         public void testIncrementProperty() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/examples/incrementProperty.kt");
+            runTest("js/js.translator/testData/box/examples/incrementProperty.kt");
         }
 
         @TestMetadata("inheritance.kt")
         public void testInheritance() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/examples/inheritance.kt");
+            runTest("js/js.translator/testData/box/examples/inheritance.kt");
         }
 
         @TestMetadata("inheritedInnerClass.kt")
         public void testInheritedInnerClass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/examples/inheritedInnerClass.kt");
+            runTest("js/js.translator/testData/box/examples/inheritedInnerClass.kt");
         }
 
         @TestMetadata("inheritedMethod.kt")
         public void testInheritedMethod() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/examples/inheritedMethod.kt");
+            runTest("js/js.translator/testData/box/examples/inheritedMethod.kt");
         }
 
         @TestMetadata("initializerBlock.kt")
         public void testInitializerBlock() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/examples/initializerBlock.kt");
+            runTest("js/js.translator/testData/box/examples/initializerBlock.kt");
         }
 
         @TestMetadata("initializerBlockDImpl.kt")
         public void testInitializerBlockDImpl() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/examples/initializerBlockDImpl.kt");
+            runTest("js/js.translator/testData/box/examples/initializerBlockDImpl.kt");
         }
 
         @TestMetadata("innerClass.kt")
         public void testInnerClass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/examples/innerClass.kt");
+            runTest("js/js.translator/testData/box/examples/innerClass.kt");
         }
 
         @TestMetadata("kt242.kt")
         public void testKt242() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/examples/kt242.kt");
+            runTest("js/js.translator/testData/box/examples/kt242.kt");
         }
 
         @TestMetadata("newInstanceDefaultConstructor.kt")
         public void testNewInstanceDefaultConstructor() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/examples/newInstanceDefaultConstructor.kt");
+            runTest("js/js.translator/testData/box/examples/newInstanceDefaultConstructor.kt");
         }
 
         @TestMetadata("overloadBinaryOperator.kt")
         public void testOverloadBinaryOperator() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/examples/overloadBinaryOperator.kt");
+            runTest("js/js.translator/testData/box/examples/overloadBinaryOperator.kt");
         }
 
         @TestMetadata("overloadPlusAssignReturn.kt")
         public void testOverloadPlusAssignReturn() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/examples/overloadPlusAssignReturn.kt");
+            runTest("js/js.translator/testData/box/examples/overloadPlusAssignReturn.kt");
         }
 
         @TestMetadata("overloadPlusToPlusAssign.kt")
         public void testOverloadPlusToPlusAssign() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/examples/overloadPlusToPlusAssign.kt");
+            runTest("js/js.translator/testData/box/examples/overloadPlusToPlusAssign.kt");
         }
 
         @TestMetadata("overloadUnaryOperator.kt")
         public void testOverloadUnaryOperator() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/examples/overloadUnaryOperator.kt");
+            runTest("js/js.translator/testData/box/examples/overloadUnaryOperator.kt");
         }
 
         @TestMetadata("propertyDelegation.kt")
         public void testPropertyDelegation() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/examples/propertyDelegation.kt");
+            runTest("js/js.translator/testData/box/examples/propertyDelegation.kt");
         }
 
         @TestMetadata("propertyInInitializer.kt")
         public void testPropertyInInitializer() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/examples/propertyInInitializer.kt");
+            runTest("js/js.translator/testData/box/examples/propertyInInitializer.kt");
         }
 
         @TestMetadata("rightHandOverride.kt")
         public void testRightHandOverride() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/examples/rightHandOverride.kt");
+            runTest("js/js.translator/testData/box/examples/rightHandOverride.kt");
         }
 
         @TestMetadata("simplestClosure.kt")
         public void testSimplestClosure() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/examples/simplestClosure.kt");
+            runTest("js/js.translator/testData/box/examples/simplestClosure.kt");
         }
 
         @TestMetadata("simplestClosureAndBoxing.kt")
         public void testSimplestClosureAndBoxing() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/examples/simplestClosureAndBoxing.kt");
+            runTest("js/js.translator/testData/box/examples/simplestClosureAndBoxing.kt");
         }
 
         @TestMetadata("traitproperty.kt")
         public void testTraitproperty() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/examples/traitproperty.kt");
+            runTest("js/js.translator/testData/box/examples/traitproperty.kt");
         }
     }
 
@@ -1642,6 +1714,10 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Expression extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInExpression() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/expression"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
@@ -1650,143 +1726,147 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Cast extends AbstractIrBoxJsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+            }
+
             public void testAllFilesPresentInCast() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/expression/cast"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
             }
 
             @TestMetadata("castExtensionToKMutableProperty.kt")
             public void testCastExtensionToKMutableProperty() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/cast/castExtensionToKMutableProperty.kt");
+                runTest("js/js.translator/testData/box/expression/cast/castExtensionToKMutableProperty.kt");
             }
 
             @TestMetadata("castExtensionToKProperty1.kt")
             public void testCastExtensionToKProperty1() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/cast/castExtensionToKProperty1.kt");
+                runTest("js/js.translator/testData/box/expression/cast/castExtensionToKProperty1.kt");
             }
 
             @TestMetadata("castToAny.kt")
             public void testCastToAny() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/cast/castToAny.kt");
+                runTest("js/js.translator/testData/box/expression/cast/castToAny.kt");
             }
 
             @TestMetadata("castToArray.kt")
             public void testCastToArray() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/cast/castToArray.kt");
+                runTest("js/js.translator/testData/box/expression/cast/castToArray.kt");
             }
 
             @TestMetadata("castToFunction.kt")
             public void testCastToFunction() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/cast/castToFunction.kt");
+                runTest("js/js.translator/testData/box/expression/cast/castToFunction.kt");
             }
 
             @TestMetadata("castToGenericType.kt")
             public void testCastToGenericType() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/cast/castToGenericType.kt");
+                runTest("js/js.translator/testData/box/expression/cast/castToGenericType.kt");
             }
 
             @TestMetadata("castToGenericTypeWithMultipleUpperBounds.kt")
             public void testCastToGenericTypeWithMultipleUpperBounds() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/cast/castToGenericTypeWithMultipleUpperBounds.kt");
+                runTest("js/js.translator/testData/box/expression/cast/castToGenericTypeWithMultipleUpperBounds.kt");
             }
 
             @TestMetadata("castToGenericTypeWithUpperBound.kt")
             public void testCastToGenericTypeWithUpperBound() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/cast/castToGenericTypeWithUpperBound.kt");
+                runTest("js/js.translator/testData/box/expression/cast/castToGenericTypeWithUpperBound.kt");
             }
 
             @TestMetadata("castToKMutableProperty0.kt")
             public void testCastToKMutableProperty0() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/cast/castToKMutableProperty0.kt");
+                runTest("js/js.translator/testData/box/expression/cast/castToKMutableProperty0.kt");
             }
 
             @TestMetadata("castToKMutableProperty1.kt")
             public void testCastToKMutableProperty1() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/cast/castToKMutableProperty1.kt");
+                runTest("js/js.translator/testData/box/expression/cast/castToKMutableProperty1.kt");
             }
 
             @TestMetadata("castToKProperty0.kt")
             public void testCastToKProperty0() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/cast/castToKProperty0.kt");
+                runTest("js/js.translator/testData/box/expression/cast/castToKProperty0.kt");
             }
 
             @TestMetadata("castToKProperty1.kt")
             public void testCastToKProperty1() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/cast/castToKProperty1.kt");
+                runTest("js/js.translator/testData/box/expression/cast/castToKProperty1.kt");
             }
 
             @TestMetadata("castToNotNull.kt")
             public void testCastToNotNull() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/cast/castToNotNull.kt");
+                runTest("js/js.translator/testData/box/expression/cast/castToNotNull.kt");
             }
 
             @TestMetadata("castToNullable.kt")
             public void testCastToNullable() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/cast/castToNullable.kt");
+                runTest("js/js.translator/testData/box/expression/cast/castToNullable.kt");
             }
 
             @TestMetadata("explicitUpcast.kt")
             public void testExplicitUpcast() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/cast/explicitUpcast.kt");
+                runTest("js/js.translator/testData/box/expression/cast/explicitUpcast.kt");
             }
 
             @TestMetadata("implicitCastToLong.kt")
             public void testImplicitCastToLong() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/cast/implicitCastToLong.kt");
+                runTest("js/js.translator/testData/box/expression/cast/implicitCastToLong.kt");
             }
 
             @TestMetadata("primitiveToClass.kt")
             public void testPrimitiveToClass() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/cast/primitiveToClass.kt");
+                runTest("js/js.translator/testData/box/expression/cast/primitiveToClass.kt");
             }
 
             @TestMetadata("reifiedToNotNull.kt")
             public void testReifiedToNotNull() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/cast/reifiedToNotNull.kt");
+                runTest("js/js.translator/testData/box/expression/cast/reifiedToNotNull.kt");
             }
 
             @TestMetadata("reifiedToNullable1.kt")
             public void testReifiedToNullable1() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/cast/reifiedToNullable1.kt");
+                runTest("js/js.translator/testData/box/expression/cast/reifiedToNullable1.kt");
             }
 
             @TestMetadata("reifiedToNullable2.kt")
             public void testReifiedToNullable2() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/cast/reifiedToNullable2.kt");
+                runTest("js/js.translator/testData/box/expression/cast/reifiedToNullable2.kt");
             }
 
             @TestMetadata("safeCastToGenericTypeWithUpperBound.kt")
             public void testSafeCastToGenericTypeWithUpperBound() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/cast/safeCastToGenericTypeWithUpperBound.kt");
+                runTest("js/js.translator/testData/box/expression/cast/safeCastToGenericTypeWithUpperBound.kt");
             }
 
             @TestMetadata("safeCastToNotNull.kt")
             public void testSafeCastToNotNull() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/cast/safeCastToNotNull.kt");
+                runTest("js/js.translator/testData/box/expression/cast/safeCastToNotNull.kt");
             }
 
             @TestMetadata("safeCastToNullable.kt")
             public void testSafeCastToNullable() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/cast/safeCastToNullable.kt");
+                runTest("js/js.translator/testData/box/expression/cast/safeCastToNullable.kt");
             }
 
             @TestMetadata("safeCastToReifiedNotNull.kt")
             public void testSafeCastToReifiedNotNull() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/cast/safeCastToReifiedNotNull.kt");
+                runTest("js/js.translator/testData/box/expression/cast/safeCastToReifiedNotNull.kt");
             }
 
             @TestMetadata("safeCastToReifiedNullable.kt")
             public void testSafeCastToReifiedNullable() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/cast/safeCastToReifiedNullable.kt");
+                runTest("js/js.translator/testData/box/expression/cast/safeCastToReifiedNullable.kt");
             }
 
             @TestMetadata("smartCastInExtensionFunction.kt")
             public void testSmartCastInExtensionFunction() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/cast/smartCastInExtensionFunction.kt");
+                runTest("js/js.translator/testData/box/expression/cast/smartCastInExtensionFunction.kt");
             }
 
             @TestMetadata("smartCastInFunction.kt")
             public void testSmartCastInFunction() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/cast/smartCastInFunction.kt");
+                runTest("js/js.translator/testData/box/expression/cast/smartCastInFunction.kt");
             }
         }
 
@@ -1794,18 +1874,22 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class CompareTo extends AbstractIrBoxJsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+            }
+
             public void testAllFilesPresentInCompareTo() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/expression/compareTo"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
             }
 
             @TestMetadata("booleanCompareTo.kt")
             public void testBooleanCompareTo() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/compareTo/booleanCompareTo.kt");
+                runTest("js/js.translator/testData/box/expression/compareTo/booleanCompareTo.kt");
             }
 
             @TestMetadata("customCompareToMethod.kt")
             public void testCustomCompareToMethod() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/compareTo/customCompareToMethod.kt");
+                runTest("js/js.translator/testData/box/expression/compareTo/customCompareToMethod.kt");
             }
         }
 
@@ -1813,13 +1897,17 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class DollarParameter extends AbstractIrBoxJsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+            }
+
             public void testAllFilesPresentInDollarParameter() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/expression/dollarParameter"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
             }
 
             @TestMetadata("dollarParameter.kt")
             public void testDollarParameter() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/dollarParameter/dollarParameter.kt");
+                runTest("js/js.translator/testData/box/expression/dollarParameter/dollarParameter.kt");
             }
         }
 
@@ -1827,73 +1915,77 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Equals extends AbstractIrBoxJsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+            }
+
             public void testAllFilesPresentInEquals() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/expression/equals"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
             }
 
             @TestMetadata("arrays.kt")
             public void testArrays() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/equals/arrays.kt");
+                runTest("js/js.translator/testData/box/expression/equals/arrays.kt");
             }
 
             @TestMetadata("compareNullableListWithNull.kt")
             public void testCompareNullableListWithNull() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/equals/compareNullableListWithNull.kt");
+                runTest("js/js.translator/testData/box/expression/equals/compareNullableListWithNull.kt");
             }
 
             @TestMetadata("compareNullablesWithCustomEquals.kt")
             public void testCompareNullablesWithCustomEquals() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/equals/compareNullablesWithCustomEquals.kt");
+                runTest("js/js.translator/testData/box/expression/equals/compareNullablesWithCustomEquals.kt");
             }
 
             @TestMetadata("compareToNullWithCustomEquals.kt")
             public void testCompareToNullWithCustomEquals() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/equals/compareToNullWithCustomEquals.kt");
+                runTest("js/js.translator/testData/box/expression/equals/compareToNullWithCustomEquals.kt");
             }
 
             @TestMetadata("customEqualsMethod.kt")
             public void testCustomEqualsMethod() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/equals/customEqualsMethod.kt");
+                runTest("js/js.translator/testData/box/expression/equals/customEqualsMethod.kt");
             }
 
             @TestMetadata("customEqualsMethodOnAny.kt")
             public void testCustomEqualsMethodOnAny() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/equals/customEqualsMethodOnAny.kt");
+                runTest("js/js.translator/testData/box/expression/equals/customEqualsMethodOnAny.kt");
             }
 
             @TestMetadata("equalsBehaviorOnNull.kt")
             public void testEqualsBehaviorOnNull() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/equals/equalsBehaviorOnNull.kt");
+                runTest("js/js.translator/testData/box/expression/equals/equalsBehaviorOnNull.kt");
             }
 
             @TestMetadata("equalsNullOrUndefined.kt")
             public void testEqualsNullOrUndefined() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/equals/equalsNullOrUndefined.kt");
+                runTest("js/js.translator/testData/box/expression/equals/equalsNullOrUndefined.kt");
             }
 
             @TestMetadata("explicitEqualsMethod.kt")
             public void testExplicitEqualsMethod() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/equals/explicitEqualsMethod.kt");
+                runTest("js/js.translator/testData/box/expression/equals/explicitEqualsMethod.kt");
             }
 
             @TestMetadata("explicitEqualsMethodForPrimitives.kt")
             public void testExplicitEqualsMethodForPrimitives() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/equals/explicitEqualsMethodForPrimitives.kt");
+                runTest("js/js.translator/testData/box/expression/equals/explicitEqualsMethodForPrimitives.kt");
             }
 
             @TestMetadata("kt2370.kt")
             public void testKt2370() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/equals/kt2370.kt");
+                runTest("js/js.translator/testData/box/expression/equals/kt2370.kt");
             }
 
             @TestMetadata("stringsEqual.kt")
             public void testStringsEqual() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/equals/stringsEqual.kt");
+                runTest("js/js.translator/testData/box/expression/equals/stringsEqual.kt");
             }
 
             @TestMetadata("superEquals.kt")
             public void testSuperEquals() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/equals/superEquals.kt");
+                runTest("js/js.translator/testData/box/expression/equals/superEquals.kt");
             }
         }
 
@@ -1901,9 +1993,13 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class EvaluationOrder extends AbstractIrBoxJsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+            }
+
             @TestMetadata("2dangerousInExpression.kt")
             public void test2dangerousInExpression() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/evaluationOrder/2dangerousInExpression.kt");
+                runTest("js/js.translator/testData/box/expression/evaluationOrder/2dangerousInExpression.kt");
             }
 
             public void testAllFilesPresentInEvaluationOrder() throws Exception {
@@ -1912,167 +2008,167 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
 
             @TestMetadata("andAndWithBreakContinueReturn.kt")
             public void testAndAndWithBreakContinueReturn() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/evaluationOrder/andAndWithBreakContinueReturn.kt");
+                runTest("js/js.translator/testData/box/expression/evaluationOrder/andAndWithBreakContinueReturn.kt");
             }
 
             @TestMetadata("andAndWithSideEffect.kt")
             public void testAndAndWithSideEffect() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/evaluationOrder/andAndWithSideEffect.kt");
+                runTest("js/js.translator/testData/box/expression/evaluationOrder/andAndWithSideEffect.kt");
             }
 
             @TestMetadata("andAndWithTmpVarRhs.kt")
             public void testAndAndWithTmpVarRhs() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/evaluationOrder/andAndWithTmpVarRhs.kt");
+                runTest("js/js.translator/testData/box/expression/evaluationOrder/andAndWithTmpVarRhs.kt");
             }
 
             @TestMetadata("assignToArrayElementWithSideEffect.kt")
             public void testAssignToArrayElementWithSideEffect() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/evaluationOrder/assignToArrayElementWithSideEffect.kt");
+                runTest("js/js.translator/testData/box/expression/evaluationOrder/assignToArrayElementWithSideEffect.kt");
             }
 
             @TestMetadata("assignToDotQualifiedWithSideEffect.kt")
             public void testAssignToDotQualifiedWithSideEffect() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/evaluationOrder/assignToDotQualifiedWithSideEffect.kt");
+                runTest("js/js.translator/testData/box/expression/evaluationOrder/assignToDotQualifiedWithSideEffect.kt");
             }
 
             @TestMetadata("booleanAndOr.kt")
             public void testBooleanAndOr() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/evaluationOrder/booleanAndOr.kt");
+                runTest("js/js.translator/testData/box/expression/evaluationOrder/booleanAndOr.kt");
             }
 
             @TestMetadata("callArgs.kt")
             public void testCallArgs() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/evaluationOrder/callArgs.kt");
+                runTest("js/js.translator/testData/box/expression/evaluationOrder/callArgs.kt");
             }
 
             @TestMetadata("callVarargs.kt")
             public void testCallVarargs() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/evaluationOrder/callVarargs.kt");
+                runTest("js/js.translator/testData/box/expression/evaluationOrder/callVarargs.kt");
             }
 
             @TestMetadata("callWithBreakContinueReturn.kt")
             public void testCallWithBreakContinueReturn() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/evaluationOrder/callWithBreakContinueReturn.kt");
+                runTest("js/js.translator/testData/box/expression/evaluationOrder/callWithBreakContinueReturn.kt");
             }
 
             @TestMetadata("castWithBreakContinueReturn.kt")
             public void testCastWithBreakContinueReturn() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/evaluationOrder/castWithBreakContinueReturn.kt");
+                runTest("js/js.translator/testData/box/expression/evaluationOrder/castWithBreakContinueReturn.kt");
             }
 
             @TestMetadata("compareToIntrinsicWithSideEffect.kt")
             public void testCompareToIntrinsicWithSideEffect() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/evaluationOrder/compareToIntrinsicWithSideEffect.kt");
+                runTest("js/js.translator/testData/box/expression/evaluationOrder/compareToIntrinsicWithSideEffect.kt");
             }
 
             @TestMetadata("dangerousInline.kt")
             public void testDangerousInline() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/evaluationOrder/dangerousInline.kt");
+                runTest("js/js.translator/testData/box/expression/evaluationOrder/dangerousInline.kt");
             }
 
             @TestMetadata("dangerousInsideDangerous.kt")
             public void testDangerousInsideDangerous() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/evaluationOrder/dangerousInsideDangerous.kt");
+                runTest("js/js.translator/testData/box/expression/evaluationOrder/dangerousInsideDangerous.kt");
             }
 
             @TestMetadata("elvisComplex.kt")
             public void testElvisComplex() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/evaluationOrder/elvisComplex.kt");
+                runTest("js/js.translator/testData/box/expression/evaluationOrder/elvisComplex.kt");
             }
 
             @TestMetadata("elvisWithBreakContinueReturn.kt")
             public void testElvisWithBreakContinueReturn() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/evaluationOrder/elvisWithBreakContinueReturn.kt");
+                runTest("js/js.translator/testData/box/expression/evaluationOrder/elvisWithBreakContinueReturn.kt");
             }
 
             @TestMetadata("equalsIntrinsicWithSideEffect.kt")
             public void testEqualsIntrinsicWithSideEffect() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/evaluationOrder/equalsIntrinsicWithSideEffect.kt");
+                runTest("js/js.translator/testData/box/expression/evaluationOrder/equalsIntrinsicWithSideEffect.kt");
             }
 
             @TestMetadata("evaluationOrder1.kt")
             public void testEvaluationOrder1() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/evaluationOrder/evaluationOrder1.kt");
+                runTest("js/js.translator/testData/box/expression/evaluationOrder/evaluationOrder1.kt");
             }
 
             @TestMetadata("evaluationOrder2.kt")
             public void testEvaluationOrder2() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/evaluationOrder/evaluationOrder2.kt");
+                runTest("js/js.translator/testData/box/expression/evaluationOrder/evaluationOrder2.kt");
             }
 
             @TestMetadata("ifAsFunArgument.kt")
             public void testIfAsFunArgument() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/evaluationOrder/ifAsFunArgument.kt");
+                runTest("js/js.translator/testData/box/expression/evaluationOrder/ifAsFunArgument.kt");
             }
 
             @TestMetadata("ifAsPlusArgument.kt")
             public void testIfAsPlusArgument() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/evaluationOrder/ifAsPlusArgument.kt");
+                runTest("js/js.translator/testData/box/expression/evaluationOrder/ifAsPlusArgument.kt");
             }
 
             @TestMetadata("ifWithComplex.kt")
             public void testIfWithComplex() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/evaluationOrder/ifWithComplex.kt");
+                runTest("js/js.translator/testData/box/expression/evaluationOrder/ifWithComplex.kt");
             }
 
             @TestMetadata("intrinsicComplex.kt")
             public void testIntrinsicComplex() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/evaluationOrder/intrinsicComplex.kt");
+                runTest("js/js.translator/testData/box/expression/evaluationOrder/intrinsicComplex.kt");
             }
 
             @TestMetadata("intrinsicWithBreakContinueReturn.kt")
             public void testIntrinsicWithBreakContinueReturn() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/evaluationOrder/intrinsicWithBreakContinueReturn.kt");
+                runTest("js/js.translator/testData/box/expression/evaluationOrder/intrinsicWithBreakContinueReturn.kt");
             }
 
             @TestMetadata("literalFunctionAsArgumentWithSideEffect.kt")
             public void testLiteralFunctionAsArgumentWithSideEffect() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/evaluationOrder/literalFunctionAsArgumentWithSideEffect.kt");
+                runTest("js/js.translator/testData/box/expression/evaluationOrder/literalFunctionAsArgumentWithSideEffect.kt");
             }
 
             @TestMetadata("loopWithBreakContinueReturnInCondition.kt")
             public void testLoopWithBreakContinueReturnInCondition() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/evaluationOrder/loopWithBreakContinueReturnInCondition.kt");
+                runTest("js/js.translator/testData/box/expression/evaluationOrder/loopWithBreakContinueReturnInCondition.kt");
             }
 
             @TestMetadata("orOrWithBreakContinueReturn.kt")
             public void testOrOrWithBreakContinueReturn() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/evaluationOrder/orOrWithBreakContinueReturn.kt");
+                runTest("js/js.translator/testData/box/expression/evaluationOrder/orOrWithBreakContinueReturn.kt");
             }
 
             @TestMetadata("orOrWithSideEffect.kt")
             public void testOrOrWithSideEffect() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/evaluationOrder/orOrWithSideEffect.kt");
+                runTest("js/js.translator/testData/box/expression/evaluationOrder/orOrWithSideEffect.kt");
             }
 
             @TestMetadata("reassignmentLhsCaching.kt")
             public void testReassignmentLhsCaching() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/evaluationOrder/reassignmentLhsCaching.kt");
+                runTest("js/js.translator/testData/box/expression/evaluationOrder/reassignmentLhsCaching.kt");
             }
 
             @TestMetadata("secondaryConstructorTemporaryVars.kt")
             public void testSecondaryConstructorTemporaryVars() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/evaluationOrder/secondaryConstructorTemporaryVars.kt");
+                runTest("js/js.translator/testData/box/expression/evaluationOrder/secondaryConstructorTemporaryVars.kt");
             }
 
             @TestMetadata("singleComponentDestructuring.kt")
             public void testSingleComponentDestructuring() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/evaluationOrder/singleComponentDestructuring.kt");
+                runTest("js/js.translator/testData/box/expression/evaluationOrder/singleComponentDestructuring.kt");
             }
 
             @TestMetadata("whenAsMinusArgument.kt")
             public void testWhenAsMinusArgument() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/evaluationOrder/whenAsMinusArgument.kt");
+                runTest("js/js.translator/testData/box/expression/evaluationOrder/whenAsMinusArgument.kt");
             }
 
             @TestMetadata("whenJsLiteralWithSideEffect.kt")
             public void testWhenJsLiteralWithSideEffect() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/evaluationOrder/whenJsLiteralWithSideEffect.kt");
+                runTest("js/js.translator/testData/box/expression/evaluationOrder/whenJsLiteralWithSideEffect.kt");
             }
 
             @TestMetadata("whenWithComplexConditions.kt")
             public void testWhenWithComplexConditions() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/evaluationOrder/whenWithComplexConditions.kt");
+                runTest("js/js.translator/testData/box/expression/evaluationOrder/whenWithComplexConditions.kt");
             }
         }
 
@@ -2080,83 +2176,87 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class For extends AbstractIrBoxJsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+            }
+
             public void testAllFilesPresentInFor() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/expression/for"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
             }
 
             @TestMetadata("forIteratesOverArray.kt")
             public void testForIteratesOverArray() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/for/forIteratesOverArray.kt");
+                runTest("js/js.translator/testData/box/expression/for/forIteratesOverArray.kt");
             }
 
             @TestMetadata("forIteratesOverLiteralRange.kt")
             public void testForIteratesOverLiteralRange() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/for/forIteratesOverLiteralRange.kt");
+                runTest("js/js.translator/testData/box/expression/for/forIteratesOverLiteralRange.kt");
             }
 
             @TestMetadata("forIteratesOverNonLiteralRange.kt")
             public void testForIteratesOverNonLiteralRange() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/for/forIteratesOverNonLiteralRange.kt");
+                runTest("js/js.translator/testData/box/expression/for/forIteratesOverNonLiteralRange.kt");
             }
 
             @TestMetadata("forIteratesOverSomethingWithIterator.kt")
             public void testForIteratesOverSomethingWithIterator() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/for/forIteratesOverSomethingWithIterator.kt");
+                runTest("js/js.translator/testData/box/expression/for/forIteratesOverSomethingWithIterator.kt");
             }
 
             @TestMetadata("forIteratesOverTypeParameter.kt")
             public void testForIteratesOverTypeParameter() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/for/forIteratesOverTypeParameter.kt");
+                runTest("js/js.translator/testData/box/expression/for/forIteratesOverTypeParameter.kt");
             }
 
             @TestMetadata("forOnEmptyArray.kt")
             public void testForOnEmptyArray() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/for/forOnEmptyArray.kt");
+                runTest("js/js.translator/testData/box/expression/for/forOnEmptyArray.kt");
             }
 
             @TestMetadata("forWithComplexOneStatement.kt")
             public void testForWithComplexOneStatement() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/for/forWithComplexOneStatement.kt");
+                runTest("js/js.translator/testData/box/expression/for/forWithComplexOneStatement.kt");
             }
 
             @TestMetadata("forWithEmptyBody.kt")
             public void testForWithEmptyBody() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/for/forWithEmptyBody.kt");
+                runTest("js/js.translator/testData/box/expression/for/forWithEmptyBody.kt");
             }
 
             @TestMetadata("forWithSideEffectImElementAccessAndWithEmptyBody.kt")
             public void testForWithSideEffectImElementAccessAndWithEmptyBody() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/for/forWithSideEffectImElementAccessAndWithEmptyBody.kt");
+                runTest("js/js.translator/testData/box/expression/for/forWithSideEffectImElementAccessAndWithEmptyBody.kt");
             }
 
             @TestMetadata("labeledFor.kt")
             public void testLabeledFor() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/for/labeledFor.kt");
+                runTest("js/js.translator/testData/box/expression/for/labeledFor.kt");
             }
 
             @TestMetadata("labeledForWithContinue.kt")
             public void testLabeledForWithContinue() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/for/labeledForWithContinue.kt");
+                runTest("js/js.translator/testData/box/expression/for/labeledForWithContinue.kt");
             }
 
             @TestMetadata("labeledForWithWhile.kt")
             public void testLabeledForWithWhile() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/for/labeledForWithWhile.kt");
+                runTest("js/js.translator/testData/box/expression/for/labeledForWithWhile.kt");
             }
 
             @TestMetadata("overArrayWithIndex.kt")
             public void testOverArrayWithIndex() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/for/overArrayWithIndex.kt");
+                runTest("js/js.translator/testData/box/expression/for/overArrayWithIndex.kt");
             }
 
             @TestMetadata("overCollectionWithIndex.kt")
             public void testOverCollectionWithIndex() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/for/overCollectionWithIndex.kt");
+                runTest("js/js.translator/testData/box/expression/for/overCollectionWithIndex.kt");
             }
 
             @TestMetadata("rangeOptimization.kt")
             public void testRangeOptimization() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/for/rangeOptimization.kt");
+                runTest("js/js.translator/testData/box/expression/for/rangeOptimization.kt");
             }
         }
 
@@ -2164,9 +2264,13 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Function extends AbstractIrBoxJsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+            }
+
             @TestMetadata("adderClosure.kt")
             public void testAdderClosure() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/function/adderClosure.kt");
+                runTest("js/js.translator/testData/box/expression/function/adderClosure.kt");
             }
 
             public void testAllFilesPresentInFunction() throws Exception {
@@ -2175,162 +2279,162 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
 
             @TestMetadata("anonymousWithLambda.kt")
             public void testAnonymousWithLambda() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/function/anonymousWithLambda.kt");
+                runTest("js/js.translator/testData/box/expression/function/anonymousWithLambda.kt");
             }
 
             @TestMetadata("callFunInInit.kt")
             public void testCallFunInInit() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/function/callFunInInit.kt");
+                runTest("js/js.translator/testData/box/expression/function/callFunInInit.kt");
             }
 
             @TestMetadata("closureWithParameter.kt")
             public void testClosureWithParameter() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/function/closureWithParameter.kt");
+                runTest("js/js.translator/testData/box/expression/function/closureWithParameter.kt");
             }
 
             @TestMetadata("closureWithParameterAndBoxing.kt")
             public void testClosureWithParameterAndBoxing() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/function/closureWithParameterAndBoxing.kt");
+                runTest("js/js.translator/testData/box/expression/function/closureWithParameterAndBoxing.kt");
             }
 
             @TestMetadata("defaultParameters.kt")
             public void testDefaultParameters() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/function/defaultParameters.kt");
+                runTest("js/js.translator/testData/box/expression/function/defaultParameters.kt");
             }
 
             @TestMetadata("enclosingThis.kt")
             public void testEnclosingThis() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/function/enclosingThis.kt");
+                runTest("js/js.translator/testData/box/expression/function/enclosingThis.kt");
             }
 
             @TestMetadata("expressionAsExtFunction.kt")
             public void testExpressionAsExtFunction() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/function/expressionAsExtFunction.kt");
+                runTest("js/js.translator/testData/box/expression/function/expressionAsExtFunction.kt");
             }
 
             @TestMetadata("expressionAsFunction.kt")
             public void testExpressionAsFunction() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/function/expressionAsFunction.kt");
+                runTest("js/js.translator/testData/box/expression/function/expressionAsFunction.kt");
             }
 
             @TestMetadata("functionExpression.kt")
             public void testFunctionExpression() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/function/functionExpression.kt");
+                runTest("js/js.translator/testData/box/expression/function/functionExpression.kt");
             }
 
             @TestMetadata("functionInsideFunction.kt")
             public void testFunctionInsideFunction() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/function/functionInsideFunction.kt");
+                runTest("js/js.translator/testData/box/expression/function/functionInsideFunction.kt");
             }
 
             @TestMetadata("functionLiteral.kt")
             public void testFunctionLiteral() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/function/functionLiteral.kt");
+                runTest("js/js.translator/testData/box/expression/function/functionLiteral.kt");
             }
 
             @TestMetadata("functionLiteralAsLastParameter.kt")
             public void testFunctionLiteralAsLastParameter() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/function/functionLiteralAsLastParameter.kt");
+                runTest("js/js.translator/testData/box/expression/function/functionLiteralAsLastParameter.kt");
             }
 
             @TestMetadata("functionLiteralAsParameter.kt")
             public void testFunctionLiteralAsParameter() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/function/functionLiteralAsParameter.kt");
+                runTest("js/js.translator/testData/box/expression/function/functionLiteralAsParameter.kt");
             }
 
             @TestMetadata("functionUsedBeforeDeclaration.kt")
             public void testFunctionUsedBeforeDeclaration() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/function/functionUsedBeforeDeclaration.kt");
+                runTest("js/js.translator/testData/box/expression/function/functionUsedBeforeDeclaration.kt");
             }
 
             @TestMetadata("functionWithTwoParametersCall.kt")
             public void testFunctionWithTwoParametersCall() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/function/functionWithTwoParametersCall.kt");
+                runTest("js/js.translator/testData/box/expression/function/functionWithTwoParametersCall.kt");
             }
 
             @TestMetadata("implicitItParameter.kt")
             public void testImplicitItParameter() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/function/implicitItParameter.kt");
+                runTest("js/js.translator/testData/box/expression/function/implicitItParameter.kt");
             }
 
             @TestMetadata("KT-921.kt")
             public void testKT_921() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/function/KT-921.kt");
+                runTest("js/js.translator/testData/box/expression/function/KT-921.kt");
             }
 
             @TestMetadata("lambdaOrLocalFunInsideEnumMethod.kt")
             public void testLambdaOrLocalFunInsideEnumMethod() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/function/lambdaOrLocalFunInsideEnumMethod.kt");
+                runTest("js/js.translator/testData/box/expression/function/lambdaOrLocalFunInsideEnumMethod.kt");
             }
 
             @TestMetadata("localExtFunction.kt")
             public void testLocalExtFunction() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/function/localExtFunction.kt");
+                runTest("js/js.translator/testData/box/expression/function/localExtFunction.kt");
             }
 
             @TestMetadata("localInInitBlock.kt")
             public void testLocalInInitBlock() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/function/localInInitBlock.kt");
+                runTest("js/js.translator/testData/box/expression/function/localInInitBlock.kt");
             }
 
             @TestMetadata("loopClosure.kt")
             public void testLoopClosure() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/function/loopClosure.kt");
+                runTest("js/js.translator/testData/box/expression/function/loopClosure.kt");
             }
 
             @TestMetadata("mangling.kt")
             public void testMangling() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/function/mangling.kt");
+                runTest("js/js.translator/testData/box/expression/function/mangling.kt");
             }
 
             @TestMetadata("manglingAnyMethods.kt")
             public void testManglingAnyMethods() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/function/manglingAnyMethods.kt");
+                runTest("js/js.translator/testData/box/expression/function/manglingAnyMethods.kt");
             }
 
             @TestMetadata("manglingClashFunctionsAndClasses.kt")
             public void testManglingClashFunctionsAndClasses() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/function/manglingClashFunctionsAndClasses.kt");
+                runTest("js/js.translator/testData/box/expression/function/manglingClashFunctionsAndClasses.kt");
             }
 
             @TestMetadata("manglingClashWithFunctionsWithoutParameters.kt")
             public void testManglingClashWithFunctionsWithoutParameters() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/function/manglingClashWithFunctionsWithoutParameters.kt");
+                runTest("js/js.translator/testData/box/expression/function/manglingClashWithFunctionsWithoutParameters.kt");
             }
 
             @TestMetadata("manglingStability.kt")
             public void testManglingStability() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/function/manglingStability.kt");
+                runTest("js/js.translator/testData/box/expression/function/manglingStability.kt");
             }
 
             @TestMetadata("namedArguments.kt")
             public void testNamedArguments() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/function/namedArguments.kt");
+                runTest("js/js.translator/testData/box/expression/function/namedArguments.kt");
             }
 
             @TestMetadata("overloadClassConstructorByFactoryMethod.kt")
             public void testOverloadClassConstructorByFactoryMethod() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/function/overloadClassConstructorByFactoryMethod.kt");
+                runTest("js/js.translator/testData/box/expression/function/overloadClassConstructorByFactoryMethod.kt");
             }
 
             @TestMetadata("overloadOverridenFun.kt")
             public void testOverloadOverridenFun() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/function/overloadOverridenFun.kt");
+                runTest("js/js.translator/testData/box/expression/function/overloadOverridenFun.kt");
             }
 
             @TestMetadata("overloadingWithInheritance.kt")
             public void testOverloadingWithInheritance() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/function/overloadingWithInheritance.kt");
+                runTest("js/js.translator/testData/box/expression/function/overloadingWithInheritance.kt");
             }
 
             @TestMetadata("vararg.kt")
             public void testVararg() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/function/vararg.kt");
+                runTest("js/js.translator/testData/box/expression/function/vararg.kt");
             }
 
             @TestMetadata("whenFunction.kt")
             public void testWhenFunction() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/function/whenFunction.kt");
+                runTest("js/js.translator/testData/box/expression/function/whenFunction.kt");
             }
         }
 
@@ -2338,23 +2442,27 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class IdentifierClash extends AbstractIrBoxJsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+            }
+
             public void testAllFilesPresentInIdentifierClash() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/expression/identifierClash"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
             }
 
             @TestMetadata("overloadedFun.kt")
             public void testOverloadedFun() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/identifierClash/overloadedFun.kt");
+                runTest("js/js.translator/testData/box/expression/identifierClash/overloadedFun.kt");
             }
 
             @TestMetadata("privateDeclarations.kt")
             public void testPrivateDeclarations() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/identifierClash/privateDeclarations.kt");
+                runTest("js/js.translator/testData/box/expression/identifierClash/privateDeclarations.kt");
             }
 
             @TestMetadata("useVariableOfNameOfFunction.kt")
             public void testUseVariableOfNameOfFunction() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/identifierClash/useVariableOfNameOfFunction.kt");
+                runTest("js/js.translator/testData/box/expression/identifierClash/useVariableOfNameOfFunction.kt");
             }
         }
 
@@ -2362,18 +2470,22 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class IdentityEquals extends AbstractIrBoxJsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+            }
+
             public void testAllFilesPresentInIdentityEquals() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/expression/identityEquals"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
             }
 
             @TestMetadata("identityEqualsMethod.kt")
             public void testIdentityEqualsMethod() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/identityEquals/identityEqualsMethod.kt");
+                runTest("js/js.translator/testData/box/expression/identityEquals/identityEqualsMethod.kt");
             }
 
             @TestMetadata("identityEqualsMethodForPrimitives.kt")
             public void testIdentityEqualsMethodForPrimitives() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/identityEquals/identityEqualsMethodForPrimitives.kt");
+                runTest("js/js.translator/testData/box/expression/identityEquals/identityEqualsMethodForPrimitives.kt");
             }
         }
 
@@ -2381,33 +2493,37 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class If extends AbstractIrBoxJsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+            }
+
             public void testAllFilesPresentInIf() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/expression/if"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
             }
 
             @TestMetadata("ifElseAsExpressionWithThrow.kt")
             public void testIfElseAsExpressionWithThrow() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/if/ifElseAsExpressionWithThrow.kt");
+                runTest("js/js.translator/testData/box/expression/if/ifElseAsExpressionWithThrow.kt");
             }
 
             @TestMetadata("ifElseCurlyBraces.kt")
             public void testIfElseCurlyBraces() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/if/ifElseCurlyBraces.kt");
+                runTest("js/js.translator/testData/box/expression/if/ifElseCurlyBraces.kt");
             }
 
             @TestMetadata("ifInsideLambda.kt")
             public void testIfInsideLambda() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/if/ifInsideLambda.kt");
+                runTest("js/js.translator/testData/box/expression/if/ifInsideLambda.kt");
             }
 
             @TestMetadata("nestedIf.kt")
             public void testNestedIf() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/if/nestedIf.kt");
+                runTest("js/js.translator/testData/box/expression/if/nestedIf.kt");
             }
 
             @TestMetadata("withEmptyBlocks.kt")
             public void testWithEmptyBlocks() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/if/withEmptyBlocks.kt");
+                runTest("js/js.translator/testData/box/expression/if/withEmptyBlocks.kt");
             }
         }
 
@@ -2415,68 +2531,72 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Invoke extends AbstractIrBoxJsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+            }
+
             public void testAllFilesPresentInInvoke() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/expression/invoke"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
             }
 
             @TestMetadata("explicitInvokeLambda.kt")
             public void testExplicitInvokeLambda() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/invoke/explicitInvokeLambda.kt");
+                runTest("js/js.translator/testData/box/expression/invoke/explicitInvokeLambda.kt");
             }
 
             @TestMetadata("extensionInvoke.kt")
             public void testExtensionInvoke() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/invoke/extensionInvoke.kt");
+                runTest("js/js.translator/testData/box/expression/invoke/extensionInvoke.kt");
             }
 
             @TestMetadata("inheritFromFunctionTraits.kt")
             public void testInheritFromFunctionTraits() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/invoke/inheritFromFunctionTraits.kt");
+                runTest("js/js.translator/testData/box/expression/invoke/inheritFromFunctionTraits.kt");
             }
 
             @TestMetadata("internalFunctionFromSuperclass.kt")
             public void testInternalFunctionFromSuperclass() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/invoke/internalFunctionFromSuperclass.kt");
+                runTest("js/js.translator/testData/box/expression/invoke/internalFunctionFromSuperclass.kt");
             }
 
             @TestMetadata("invokeInExtensionFunctionLiteral.kt")
             public void testInvokeInExtensionFunctionLiteral() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/invoke/invokeInExtensionFunctionLiteral.kt");
+                runTest("js/js.translator/testData/box/expression/invoke/invokeInExtensionFunctionLiteral.kt");
             }
 
             @TestMetadata("invokeInFunctionLiteral.kt")
             public void testInvokeInFunctionLiteral() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/invoke/invokeInFunctionLiteral.kt");
+                runTest("js/js.translator/testData/box/expression/invoke/invokeInFunctionLiteral.kt");
             }
 
             @TestMetadata("invokeMethod.kt")
             public void testInvokeMethod() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/invoke/invokeMethod.kt");
+                runTest("js/js.translator/testData/box/expression/invoke/invokeMethod.kt");
             }
 
             @TestMetadata("invokeOnExprByConvention.kt")
             public void testInvokeOnExprByConvention() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/invoke/invokeOnExprByConvention.kt");
+                runTest("js/js.translator/testData/box/expression/invoke/invokeOnExprByConvention.kt");
             }
 
             @TestMetadata("invokeWithDispatchAndExtensionReceivers.kt")
             public void testInvokeWithDispatchAndExtensionReceivers() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/invoke/invokeWithDispatchAndExtensionReceivers.kt");
+                runTest("js/js.translator/testData/box/expression/invoke/invokeWithDispatchAndExtensionReceivers.kt");
             }
 
             @TestMetadata("invokeWithDispatchReceiver.kt")
             public void testInvokeWithDispatchReceiver() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/invoke/invokeWithDispatchReceiver.kt");
+                runTest("js/js.translator/testData/box/expression/invoke/invokeWithDispatchReceiver.kt");
             }
 
             @TestMetadata("invokeWithExtensionReceiver.kt")
             public void testInvokeWithExtensionReceiver() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/invoke/invokeWithExtensionReceiver.kt");
+                runTest("js/js.translator/testData/box/expression/invoke/invokeWithExtensionReceiver.kt");
             }
 
             @TestMetadata("invokeWithImplicitDispatchReceiverAndExtensionReceiver.kt")
             public void testInvokeWithImplicitDispatchReceiverAndExtensionReceiver() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/invoke/invokeWithImplicitDispatchReceiverAndExtensionReceiver.kt");
+                runTest("js/js.translator/testData/box/expression/invoke/invokeWithImplicitDispatchReceiverAndExtensionReceiver.kt");
             }
         }
 
@@ -2484,213 +2604,217 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Misc extends AbstractIrBoxJsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+            }
+
             public void testAllFilesPresentInMisc() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/expression/misc"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
             }
 
             @TestMetadata("classWithoutPackage.kt")
             public void testClassWithoutPackage() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/classWithoutPackage.kt");
+                runTest("js/js.translator/testData/box/expression/misc/classWithoutPackage.kt");
             }
 
             @TestMetadata("elvis.kt")
             public void testElvis() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/elvis.kt");
+                runTest("js/js.translator/testData/box/expression/misc/elvis.kt");
             }
 
             @TestMetadata("elvisReturnNested.kt")
             public void testElvisReturnNested() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/elvisReturnNested.kt");
+                runTest("js/js.translator/testData/box/expression/misc/elvisReturnNested.kt");
             }
 
             @TestMetadata("elvisReturnSimple.kt")
             public void testElvisReturnSimple() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/elvisReturnSimple.kt");
+                runTest("js/js.translator/testData/box/expression/misc/elvisReturnSimple.kt");
             }
 
             @TestMetadata("elvisWithThrow.kt")
             public void testElvisWithThrow() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/elvisWithThrow.kt");
+                runTest("js/js.translator/testData/box/expression/misc/elvisWithThrow.kt");
             }
 
             @TestMetadata("exclExcl.kt")
             public void testExclExcl() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/exclExcl.kt");
+                runTest("js/js.translator/testData/box/expression/misc/exclExcl.kt");
             }
 
             @TestMetadata("exclExclResultIsComputedOnce.kt")
             public void testExclExclResultIsComputedOnce() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/exclExclResultIsComputedOnce.kt");
+                runTest("js/js.translator/testData/box/expression/misc/exclExclResultIsComputedOnce.kt");
             }
 
             @TestMetadata("exclExclThrows.kt")
             public void testExclExclThrows() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/exclExclThrows.kt");
+                runTest("js/js.translator/testData/box/expression/misc/exclExclThrows.kt");
             }
 
             @TestMetadata("extensionLiteralCalledInsideExtensionFunction.kt")
             public void testExtensionLiteralCalledInsideExtensionFunction() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/extensionLiteralCalledInsideExtensionFunction.kt");
+                runTest("js/js.translator/testData/box/expression/misc/extensionLiteralCalledInsideExtensionFunction.kt");
             }
 
             @TestMetadata("extensionLiteralCreatedAtPackageLevel.kt")
             public void testExtensionLiteralCreatedAtPackageLevel() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/extensionLiteralCreatedAtPackageLevel.kt");
+                runTest("js/js.translator/testData/box/expression/misc/extensionLiteralCreatedAtPackageLevel.kt");
             }
 
             @TestMetadata("funInConstructor.kt")
             public void testFunInConstructor() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/funInConstructor.kt");
+                runTest("js/js.translator/testData/box/expression/misc/funInConstructor.kt");
             }
 
             @TestMetadata("funInConstructorBlock.kt")
             public void testFunInConstructorBlock() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/funInConstructorBlock.kt");
+                runTest("js/js.translator/testData/box/expression/misc/funInConstructorBlock.kt");
             }
 
             @TestMetadata("inheritFromJetIterator.kt")
             public void testInheritFromJetIterator() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/inheritFromJetIterator.kt");
+                runTest("js/js.translator/testData/box/expression/misc/inheritFromJetIterator.kt");
             }
 
             @TestMetadata("intRange.kt")
             public void testIntRange() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/intRange.kt");
+                runTest("js/js.translator/testData/box/expression/misc/intRange.kt");
             }
 
             @TestMetadata("KT-1052.kt")
             public void testKT_1052() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/KT-1052.kt");
+                runTest("js/js.translator/testData/box/expression/misc/KT-1052.kt");
             }
 
             @TestMetadata("KT-1052-2.kt")
             public void testKT_1052_2() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/KT-1052-2.kt");
+                runTest("js/js.translator/testData/box/expression/misc/KT-1052-2.kt");
             }
 
             @TestMetadata("KT-1361-1.kt")
             public void testKT_1361_1() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/KT-1361-1.kt");
+                runTest("js/js.translator/testData/box/expression/misc/KT-1361-1.kt");
             }
 
             @TestMetadata("KT-1361-2.kt")
             public void testKT_1361_2() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/KT-1361-2.kt");
+                runTest("js/js.translator/testData/box/expression/misc/KT-1361-2.kt");
             }
 
             @TestMetadata("KT-1865.kt")
             public void testKT_1865() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/KT-1865.kt");
+                runTest("js/js.translator/testData/box/expression/misc/KT-1865.kt");
             }
 
             @TestMetadata("KT-2314.kt")
             public void testKT_2314() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/KT-2314.kt");
+                runTest("js/js.translator/testData/box/expression/misc/KT-2314.kt");
             }
 
             @TestMetadata("KT-5058.kt")
             public void testKT_5058() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/KT-5058.kt");
+                runTest("js/js.translator/testData/box/expression/misc/KT-5058.kt");
             }
 
             @TestMetadata("KT-740.kt")
             public void testKT_740() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/KT-740.kt");
+                runTest("js/js.translator/testData/box/expression/misc/KT-740.kt");
             }
 
             @TestMetadata("KT-740-2.kt")
             public void testKT_740_2() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/KT-740-2.kt");
+                runTest("js/js.translator/testData/box/expression/misc/KT-740-2.kt");
             }
 
             @TestMetadata("KT-740-3.kt")
             public void testKT_740_3() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/KT-740-3.kt");
+                runTest("js/js.translator/testData/box/expression/misc/KT-740-3.kt");
             }
 
             @TestMetadata("KT-817.kt")
             public void testKT_817() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/KT-817.kt");
+                runTest("js/js.translator/testData/box/expression/misc/KT-817.kt");
             }
 
             @TestMetadata("kt9443.kt")
             public void testKt9443() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/kt9443.kt");
+                runTest("js/js.translator/testData/box/expression/misc/kt9443.kt");
             }
 
             @TestMetadata("lazyProperty.kt")
             public void testLazyProperty() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/lazyProperty.kt");
+                runTest("js/js.translator/testData/box/expression/misc/lazyProperty.kt");
             }
 
             @TestMetadata("localProperty.kt")
             public void testLocalProperty() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/localProperty.kt");
+                runTest("js/js.translator/testData/box/expression/misc/localProperty.kt");
             }
 
             @TestMetadata("localVarAsFunction.kt")
             public void testLocalVarAsFunction() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/localVarAsFunction.kt");
+                runTest("js/js.translator/testData/box/expression/misc/localVarAsFunction.kt");
             }
 
             @TestMetadata("packageLevelVarInPackage.kt")
             public void testPackageLevelVarInPackage() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/packageLevelVarInPackage.kt");
+                runTest("js/js.translator/testData/box/expression/misc/packageLevelVarInPackage.kt");
             }
 
             @TestMetadata("packageLevelVarInRoot.kt")
             public void testPackageLevelVarInRoot() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/packageLevelVarInRoot.kt");
+                runTest("js/js.translator/testData/box/expression/misc/packageLevelVarInRoot.kt");
             }
 
             @TestMetadata("packagePropertyCalledAsFun.kt")
             public void testPackagePropertyCalledAsFun() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/packagePropertyCalledAsFun.kt");
+                runTest("js/js.translator/testData/box/expression/misc/packagePropertyCalledAsFun.kt");
             }
 
             @TestMetadata("propertiesWithExplicitlyDefinedAccessorsWithoutBodies.kt")
             public void testPropertiesWithExplicitlyDefinedAccessorsWithoutBodies() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/propertiesWithExplicitlyDefinedAccessorsWithoutBodies.kt");
+                runTest("js/js.translator/testData/box/expression/misc/propertiesWithExplicitlyDefinedAccessorsWithoutBodies.kt");
             }
 
             @TestMetadata("propertyAsFunCalledOnConstructor.kt")
             public void testPropertyAsFunCalledOnConstructor() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/propertyAsFunCalledOnConstructor.kt");
+                runTest("js/js.translator/testData/box/expression/misc/propertyAsFunCalledOnConstructor.kt");
             }
 
             @TestMetadata("rightAssocForGeneratedConditionalOperator.kt")
             public void testRightAssocForGeneratedConditionalOperator() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/rightAssocForGeneratedConditionalOperator.kt");
+                runTest("js/js.translator/testData/box/expression/misc/rightAssocForGeneratedConditionalOperator.kt");
             }
 
             @TestMetadata("safeCallComputesExpressionOnlyOnce.kt")
             public void testSafeCallComputesExpressionOnlyOnce() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/safeCallComputesExpressionOnlyOnce.kt");
+                runTest("js/js.translator/testData/box/expression/misc/safeCallComputesExpressionOnlyOnce.kt");
             }
 
             @TestMetadata("stringInterpolationEvaluationOrder.kt")
             public void testStringInterpolationEvaluationOrder() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/stringInterpolationEvaluationOrder.kt");
+                runTest("js/js.translator/testData/box/expression/misc/stringInterpolationEvaluationOrder.kt");
             }
 
             @TestMetadata("temporaryVariableCreatedInPackageInitializer.kt")
             public void testTemporaryVariableCreatedInPackageInitializer() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/temporaryVariableCreatedInPackageInitializer.kt");
+                runTest("js/js.translator/testData/box/expression/misc/temporaryVariableCreatedInPackageInitializer.kt");
             }
 
             @TestMetadata("throwThrow.kt")
             public void testThrowThrow() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/throwThrow.kt");
+                runTest("js/js.translator/testData/box/expression/misc/throwThrow.kt");
             }
 
             @TestMetadata("toGeneratorInStdlib.kt")
             public void testToGeneratorInStdlib() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/toGeneratorInStdlib.kt");
+                runTest("js/js.translator/testData/box/expression/misc/toGeneratorInStdlib.kt");
             }
 
             @TestMetadata("whenReturnedWithoutBlock.kt")
             public void testWhenReturnedWithoutBlock() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/misc/whenReturnedWithoutBlock.kt");
+                runTest("js/js.translator/testData/box/expression/misc/whenReturnedWithoutBlock.kt");
             }
         }
 
@@ -2698,73 +2822,77 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class StringClass extends AbstractIrBoxJsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+            }
+
             public void testAllFilesPresentInStringClass() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/expression/stringClass"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
             }
 
             @TestMetadata("extensionMethods.kt")
             public void testExtensionMethods() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/stringClass/extensionMethods.kt");
+                runTest("js/js.translator/testData/box/expression/stringClass/extensionMethods.kt");
             }
 
             @TestMetadata("intInTemplate.kt")
             public void testIntInTemplate() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/stringClass/intInTemplate.kt");
+                runTest("js/js.translator/testData/box/expression/stringClass/intInTemplate.kt");
             }
 
             @TestMetadata("kt2227.kt")
             public void testKt2227() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/stringClass/kt2227.kt");
+                runTest("js/js.translator/testData/box/expression/stringClass/kt2227.kt");
             }
 
             @TestMetadata("kt2227_2.kt")
             public void testKt2227_2() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/stringClass/kt2227_2.kt");
+                runTest("js/js.translator/testData/box/expression/stringClass/kt2227_2.kt");
             }
 
             @TestMetadata("multipleExpressionsInTemplate.kt")
             public void testMultipleExpressionsInTemplate() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/stringClass/multipleExpressionsInTemplate.kt");
+                runTest("js/js.translator/testData/box/expression/stringClass/multipleExpressionsInTemplate.kt");
             }
 
             @TestMetadata("nullableTypeInStringTemplate.kt")
             public void testNullableTypeInStringTemplate() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/stringClass/nullableTypeInStringTemplate.kt");
+                runTest("js/js.translator/testData/box/expression/stringClass/nullableTypeInStringTemplate.kt");
             }
 
             @TestMetadata("numbersInTemplate.kt")
             public void testNumbersInTemplate() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/stringClass/numbersInTemplate.kt");
+                runTest("js/js.translator/testData/box/expression/stringClass/numbersInTemplate.kt");
             }
 
             @TestMetadata("objectToStringCallInTemplate.kt")
             public void testObjectToStringCallInTemplate() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/stringClass/objectToStringCallInTemplate.kt");
+                runTest("js/js.translator/testData/box/expression/stringClass/objectToStringCallInTemplate.kt");
             }
 
             @TestMetadata("stringAssignment.kt")
             public void testStringAssignment() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/stringClass/stringAssignment.kt");
+                runTest("js/js.translator/testData/box/expression/stringClass/stringAssignment.kt");
             }
 
             @TestMetadata("stringConstant.kt")
             public void testStringConstant() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/stringClass/stringConstant.kt");
+                runTest("js/js.translator/testData/box/expression/stringClass/stringConstant.kt");
             }
 
             @TestMetadata("stringInTemplate.kt")
             public void testStringInTemplate() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/stringClass/stringInTemplate.kt");
+                runTest("js/js.translator/testData/box/expression/stringClass/stringInTemplate.kt");
             }
 
             @TestMetadata("stringNotEqualToNumber.kt")
             public void testStringNotEqualToNumber() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/stringClass/stringNotEqualToNumber.kt");
+                runTest("js/js.translator/testData/box/expression/stringClass/stringNotEqualToNumber.kt");
             }
 
             @TestMetadata("subSequence.kt")
             public void testSubSequence() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/stringClass/subSequence.kt");
+                runTest("js/js.translator/testData/box/expression/stringClass/subSequence.kt");
             }
         }
 
@@ -2772,23 +2900,27 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class StringTemplates extends AbstractIrBoxJsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+            }
+
             public void testAllFilesPresentInStringTemplates() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/expression/stringTemplates"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
             }
 
             @TestMetadata("nonStrings.kt")
             public void testNonStrings() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/stringTemplates/nonStrings.kt");
+                runTest("js/js.translator/testData/box/expression/stringTemplates/nonStrings.kt");
             }
 
             @TestMetadata("objectWithToString.kt")
             public void testObjectWithToString() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/stringTemplates/objectWithToString.kt");
+                runTest("js/js.translator/testData/box/expression/stringTemplates/objectWithToString.kt");
             }
 
             @TestMetadata("stringValues.kt")
             public void testStringValues() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/stringTemplates/stringValues.kt");
+                runTest("js/js.translator/testData/box/expression/stringTemplates/stringValues.kt");
             }
         }
 
@@ -2796,53 +2928,57 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Try extends AbstractIrBoxJsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+            }
+
             public void testAllFilesPresentInTry() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/expression/try"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
             }
 
             @TestMetadata("exceptionToString.kt")
             public void testExceptionToString() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/try/exceptionToString.kt");
+                runTest("js/js.translator/testData/box/expression/try/exceptionToString.kt");
             }
 
             @TestMetadata("multipleCatchBlocks.kt")
             public void testMultipleCatchBlocks() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/try/multipleCatchBlocks.kt");
+                runTest("js/js.translator/testData/box/expression/try/multipleCatchBlocks.kt");
             }
 
             @TestMetadata("rethrowExceptionIfNotCaught.kt")
             public void testRethrowExceptionIfNotCaught() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/try/rethrowExceptionIfNotCaught.kt");
+                runTest("js/js.translator/testData/box/expression/try/rethrowExceptionIfNotCaught.kt");
             }
 
             @TestMetadata("tryCatchCorrectForSubclasses.kt")
             public void testTryCatchCorrectForSubclasses() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/try/tryCatchCorrectForSubclasses.kt");
+                runTest("js/js.translator/testData/box/expression/try/tryCatchCorrectForSubclasses.kt");
             }
 
             @TestMetadata("tryCatchDynamic.kt")
             public void testTryCatchDynamic() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/try/tryCatchDynamic.kt");
+                runTest("js/js.translator/testData/box/expression/try/tryCatchDynamic.kt");
             }
 
             @TestMetadata("tryCatchExpr.kt")
             public void testTryCatchExpr() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/try/tryCatchExpr.kt");
+                runTest("js/js.translator/testData/box/expression/try/tryCatchExpr.kt");
             }
 
             @TestMetadata("tryCatchExpressionWithMessage.kt")
             public void testTryCatchExpressionWithMessage() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/try/tryCatchExpressionWithMessage.kt");
+                runTest("js/js.translator/testData/box/expression/try/tryCatchExpressionWithMessage.kt");
             }
 
             @TestMetadata("tryCatchThrowable.kt")
             public void testTryCatchThrowable() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/try/tryCatchThrowable.kt");
+                runTest("js/js.translator/testData/box/expression/try/tryCatchThrowable.kt");
             }
 
             @TestMetadata("tryCatchWithDifferentParameterNames.kt")
             public void testTryCatchWithDifferentParameterNames() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/try/tryCatchWithDifferentParameterNames.kt");
+                runTest("js/js.translator/testData/box/expression/try/tryCatchWithDifferentParameterNames.kt");
             }
         }
 
@@ -2850,168 +2986,172 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class When extends AbstractIrBoxJsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+            }
+
             public void testAllFilesPresentInWhen() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/expression/when"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
             }
 
             @TestMetadata("doWhileWithOneStmWhen.kt")
             public void testDoWhileWithOneStmWhen() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/when/doWhileWithOneStmWhen.kt");
+                runTest("js/js.translator/testData/box/expression/when/doWhileWithOneStmWhen.kt");
             }
 
             @TestMetadata("empty.kt")
             public void testEmpty() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/when/empty.kt");
+                runTest("js/js.translator/testData/box/expression/when/empty.kt");
             }
 
             @TestMetadata("exhaustiveCheckException.kt")
             public void testExhaustiveCheckException() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/when/exhaustiveCheckException.kt");
+                runTest("js/js.translator/testData/box/expression/when/exhaustiveCheckException.kt");
             }
 
             @TestMetadata("externalEnumSubject.kt")
             public void testExternalEnumSubject() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/when/externalEnumSubject.kt");
+                runTest("js/js.translator/testData/box/expression/when/externalEnumSubject.kt");
             }
 
             @TestMetadata("forWithOneStmWhen.kt")
             public void testForWithOneStmWhen() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/when/forWithOneStmWhen.kt");
+                runTest("js/js.translator/testData/box/expression/when/forWithOneStmWhen.kt");
             }
 
             @TestMetadata("ifInWhen.kt")
             public void testIfInWhen() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/when/ifInWhen.kt");
+                runTest("js/js.translator/testData/box/expression/when/ifInWhen.kt");
             }
 
             @TestMetadata("ifInWhenDanglingElseIssue.kt")
             public void testIfInWhenDanglingElseIssue() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/when/ifInWhenDanglingElseIssue.kt");
+                runTest("js/js.translator/testData/box/expression/when/ifInWhenDanglingElseIssue.kt");
             }
 
             @TestMetadata("ifWithOneStmWhen.kt")
             public void testIfWithOneStmWhen() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/when/ifWithOneStmWhen.kt");
+                runTest("js/js.translator/testData/box/expression/when/ifWithOneStmWhen.kt");
             }
 
             @TestMetadata("kt1665.kt")
             public void testKt1665() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/when/kt1665.kt");
+                runTest("js/js.translator/testData/box/expression/when/kt1665.kt");
             }
 
             @TestMetadata("matchNullableType.kt")
             public void testMatchNullableType() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/when/matchNullableType.kt");
+                runTest("js/js.translator/testData/box/expression/when/matchNullableType.kt");
             }
 
             @TestMetadata("multipleCases.kt")
             public void testMultipleCases() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/when/multipleCases.kt");
+                runTest("js/js.translator/testData/box/expression/when/multipleCases.kt");
             }
 
             @TestMetadata("whenAsExpression.kt")
             public void testWhenAsExpression() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/when/whenAsExpression.kt");
+                runTest("js/js.translator/testData/box/expression/when/whenAsExpression.kt");
             }
 
             @TestMetadata("whenAsExpressionWithThrow.kt")
             public void testWhenAsExpressionWithThrow() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/when/whenAsExpressionWithThrow.kt");
+                runTest("js/js.translator/testData/box/expression/when/whenAsExpressionWithThrow.kt");
             }
 
             @TestMetadata("whenConditionWithReturn.kt")
             public void testWhenConditionWithReturn() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/when/whenConditionWithReturn.kt");
+                runTest("js/js.translator/testData/box/expression/when/whenConditionWithReturn.kt");
             }
 
             @TestMetadata("whenEqualsPattern.kt")
             public void testWhenEqualsPattern() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/when/whenEqualsPattern.kt");
+                runTest("js/js.translator/testData/box/expression/when/whenEqualsPattern.kt");
             }
 
             @TestMetadata("whenEvaluatesArgumentOnlyOnce.kt")
             public void testWhenEvaluatesArgumentOnlyOnce() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/when/whenEvaluatesArgumentOnlyOnce.kt");
+                runTest("js/js.translator/testData/box/expression/when/whenEvaluatesArgumentOnlyOnce.kt");
             }
 
             @TestMetadata("whenExecutesOnlyOnce.kt")
             public void testWhenExecutesOnlyOnce() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/when/whenExecutesOnlyOnce.kt");
+                runTest("js/js.translator/testData/box/expression/when/whenExecutesOnlyOnce.kt");
             }
 
             @TestMetadata("whenNotType.kt")
             public void testWhenNotType() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/when/whenNotType.kt");
+                runTest("js/js.translator/testData/box/expression/when/whenNotType.kt");
             }
 
             @TestMetadata("whenStatementWithRangeClause.kt")
             public void testWhenStatementWithRangeClause() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/when/whenStatementWithRangeClause.kt");
+                runTest("js/js.translator/testData/box/expression/when/whenStatementWithRangeClause.kt");
             }
 
             @TestMetadata("whenType.kt")
             public void testWhenType() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/when/whenType.kt");
+                runTest("js/js.translator/testData/box/expression/when/whenType.kt");
             }
 
             @TestMetadata("whenValue.kt")
             public void testWhenValue() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/when/whenValue.kt");
+                runTest("js/js.translator/testData/box/expression/when/whenValue.kt");
             }
 
             @TestMetadata("whenValueOrType.kt")
             public void testWhenValueOrType() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/when/whenValueOrType.kt");
+                runTest("js/js.translator/testData/box/expression/when/whenValueOrType.kt");
             }
 
             @TestMetadata("whenWithCharRangeClause.kt")
             public void testWhenWithCharRangeClause() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/when/whenWithCharRangeClause.kt");
+                runTest("js/js.translator/testData/box/expression/when/whenWithCharRangeClause.kt");
             }
 
             @TestMetadata("whenWithCustomRangeClause.kt")
             public void testWhenWithCustomRangeClause() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/when/whenWithCustomRangeClause.kt");
+                runTest("js/js.translator/testData/box/expression/when/whenWithCustomRangeClause.kt");
             }
 
             @TestMetadata("whenWithIf.kt")
             public void testWhenWithIf() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/when/whenWithIf.kt");
+                runTest("js/js.translator/testData/box/expression/when/whenWithIf.kt");
             }
 
             @TestMetadata("whenWithIfConditionAndOnlyElse.kt")
             public void testWhenWithIfConditionAndOnlyElse() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/when/whenWithIfConditionAndOnlyElse.kt");
+                runTest("js/js.translator/testData/box/expression/when/whenWithIfConditionAndOnlyElse.kt");
             }
 
             @TestMetadata("whenWithLongRangeClause.kt")
             public void testWhenWithLongRangeClause() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/when/whenWithLongRangeClause.kt");
+                runTest("js/js.translator/testData/box/expression/when/whenWithLongRangeClause.kt");
             }
 
             @TestMetadata("whenWithOneStmWhen.kt")
             public void testWhenWithOneStmWhen() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/when/whenWithOneStmWhen.kt");
+                runTest("js/js.translator/testData/box/expression/when/whenWithOneStmWhen.kt");
             }
 
             @TestMetadata("whenWithOnlyElse.kt")
             public void testWhenWithOnlyElse() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/when/whenWithOnlyElse.kt");
+                runTest("js/js.translator/testData/box/expression/when/whenWithOnlyElse.kt");
             }
 
             @TestMetadata("whenWithRangeClause.kt")
             public void testWhenWithRangeClause() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/when/whenWithRangeClause.kt");
+                runTest("js/js.translator/testData/box/expression/when/whenWithRangeClause.kt");
             }
 
             @TestMetadata("whenWithoutExpression.kt")
             public void testWhenWithoutExpression() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/when/whenWithoutExpression.kt");
+                runTest("js/js.translator/testData/box/expression/when/whenWithoutExpression.kt");
             }
 
             @TestMetadata("whileWithOneStmWhen.kt")
             public void testWhileWithOneStmWhen() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/when/whileWithOneStmWhen.kt");
+                runTest("js/js.translator/testData/box/expression/when/whileWithOneStmWhen.kt");
             }
         }
 
@@ -3019,33 +3159,37 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class While extends AbstractIrBoxJsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+            }
+
             public void testAllFilesPresentInWhile() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/expression/while"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
             }
 
             @TestMetadata("doWhileWithComplexCondition.kt")
             public void testDoWhileWithComplexCondition() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/while/doWhileWithComplexCondition.kt");
+                runTest("js/js.translator/testData/box/expression/while/doWhileWithComplexCondition.kt");
             }
 
             @TestMetadata("doWhileWithComplexConditionAndContinue.kt")
             public void testDoWhileWithComplexConditionAndContinue() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/while/doWhileWithComplexConditionAndContinue.kt");
+                runTest("js/js.translator/testData/box/expression/while/doWhileWithComplexConditionAndContinue.kt");
             }
 
             @TestMetadata("whileWithComplexCondition.kt")
             public void testWhileWithComplexCondition() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/while/whileWithComplexCondition.kt");
+                runTest("js/js.translator/testData/box/expression/while/whileWithComplexCondition.kt");
             }
 
             @TestMetadata("whileWithComplexConditionAndContinue.kt")
             public void testWhileWithComplexConditionAndContinue() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/while/whileWithComplexConditionAndContinue.kt");
+                runTest("js/js.translator/testData/box/expression/while/whileWithComplexConditionAndContinue.kt");
             }
 
             @TestMetadata("whileWithComplexOneStatement.kt")
             public void testWhileWithComplexOneStatement() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/expression/while/whileWithComplexOneStatement.kt");
+                runTest("js/js.translator/testData/box/expression/while/whileWithComplexOneStatement.kt");
             }
         }
     }
@@ -3054,88 +3198,92 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class ExtensionFunction extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInExtensionFunction() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/extensionFunction"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("extensionForSuperclass.kt")
         public void testExtensionForSuperclass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/extensionFunction/extensionForSuperclass.kt");
+            runTest("js/js.translator/testData/box/extensionFunction/extensionForSuperclass.kt");
         }
 
         @TestMetadata("extensionFunctionCalledFromExtensionFunction.kt")
         public void testExtensionFunctionCalledFromExtensionFunction() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/extensionFunction/extensionFunctionCalledFromExtensionFunction.kt");
+            runTest("js/js.translator/testData/box/extensionFunction/extensionFunctionCalledFromExtensionFunction.kt");
         }
 
         @TestMetadata("extensionFunctionCalledFromFor.kt")
         public void testExtensionFunctionCalledFromFor() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/extensionFunction/extensionFunctionCalledFromFor.kt");
+            runTest("js/js.translator/testData/box/extensionFunction/extensionFunctionCalledFromFor.kt");
         }
 
         @TestMetadata("extensionFunctionOnExpression.kt")
         public void testExtensionFunctionOnExpression() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/extensionFunction/extensionFunctionOnExpression.kt");
+            runTest("js/js.translator/testData/box/extensionFunction/extensionFunctionOnExpression.kt");
         }
 
         @TestMetadata("extensionInsideFunctionLiteral.kt")
         public void testExtensionInsideFunctionLiteral() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/extensionFunction/extensionInsideFunctionLiteral.kt");
+            runTest("js/js.translator/testData/box/extensionFunction/extensionInsideFunctionLiteral.kt");
         }
 
         @TestMetadata("extensionLiteralPassedToFunction.kt")
         public void testExtensionLiteralPassedToFunction() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/extensionFunction/extensionLiteralPassedToFunction.kt");
+            runTest("js/js.translator/testData/box/extensionFunction/extensionLiteralPassedToFunction.kt");
         }
 
         @TestMetadata("extensionOnClassWithExplicitAndImplicitReceiver.kt")
         public void testExtensionOnClassWithExplicitAndImplicitReceiver() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/extensionFunction/extensionOnClassWithExplicitAndImplicitReceiver.kt");
+            runTest("js/js.translator/testData/box/extensionFunction/extensionOnClassWithExplicitAndImplicitReceiver.kt");
         }
 
         @TestMetadata("extensionPropertyOnClassWithExplicitAndImplicitReceiver.kt")
         public void testExtensionPropertyOnClassWithExplicitAndImplicitReceiver() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/extensionFunction/extensionPropertyOnClassWithExplicitAndImplicitReceiver.kt");
+            runTest("js/js.translator/testData/box/extensionFunction/extensionPropertyOnClassWithExplicitAndImplicitReceiver.kt");
         }
 
         @TestMetadata("extensionUsedInsideClass.kt")
         public void testExtensionUsedInsideClass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/extensionFunction/extensionUsedInsideClass.kt");
+            runTest("js/js.translator/testData/box/extensionFunction/extensionUsedInsideClass.kt");
         }
 
         @TestMetadata("extensionWithImplicitReceiver.kt")
         public void testExtensionWithImplicitReceiver() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/extensionFunction/extensionWithImplicitReceiver.kt");
+            runTest("js/js.translator/testData/box/extensionFunction/extensionWithImplicitReceiver.kt");
         }
 
         @TestMetadata("generic.kt")
         public void testGeneric() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/extensionFunction/generic.kt");
+            runTest("js/js.translator/testData/box/extensionFunction/generic.kt");
         }
 
         @TestMetadata("implicitReceiverInExtension.kt")
         public void testImplicitReceiverInExtension() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/extensionFunction/implicitReceiverInExtension.kt");
+            runTest("js/js.translator/testData/box/extensionFunction/implicitReceiverInExtension.kt");
         }
 
         @TestMetadata("intExtension.kt")
         public void testIntExtension() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/extensionFunction/intExtension.kt");
+            runTest("js/js.translator/testData/box/extensionFunction/intExtension.kt");
         }
 
         @TestMetadata("superClassMemberInExtension.kt")
         public void testSuperClassMemberInExtension() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/extensionFunction/superClassMemberInExtension.kt");
+            runTest("js/js.translator/testData/box/extensionFunction/superClassMemberInExtension.kt");
         }
 
         @TestMetadata("virtualExtension.kt")
         public void testVirtualExtension() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/extensionFunction/virtualExtension.kt");
+            runTest("js/js.translator/testData/box/extensionFunction/virtualExtension.kt");
         }
 
         @TestMetadata("virtualExtensionOverride.kt")
         public void testVirtualExtensionOverride() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/extensionFunction/virtualExtensionOverride.kt");
+            runTest("js/js.translator/testData/box/extensionFunction/virtualExtensionOverride.kt");
         }
     }
 
@@ -3143,9 +3291,13 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class ExtensionProperty extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         @TestMetadata("absExtension.kt")
         public void testAbsExtension() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/extensionProperty/absExtension.kt");
+            runTest("js/js.translator/testData/box/extensionProperty/absExtension.kt");
         }
 
         public void testAllFilesPresentInExtensionProperty() throws Exception {
@@ -3154,27 +3306,27 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
 
         @TestMetadata("externalExtensionProperty.kt")
         public void testExternalExtensionProperty() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/extensionProperty/externalExtensionProperty.kt");
+            runTest("js/js.translator/testData/box/extensionProperty/externalExtensionProperty.kt");
         }
 
         @TestMetadata("inClass.kt")
         public void testInClass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/extensionProperty/inClass.kt");
+            runTest("js/js.translator/testData/box/extensionProperty/inClass.kt");
         }
 
         @TestMetadata("privateExtensionProperty.kt")
         public void testPrivateExtensionProperty() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/extensionProperty/privateExtensionProperty.kt");
+            runTest("js/js.translator/testData/box/extensionProperty/privateExtensionProperty.kt");
         }
 
         @TestMetadata("propertyWithGetterAndSetter.kt")
         public void testPropertyWithGetterAndSetter() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/extensionProperty/propertyWithGetterAndSetter.kt");
+            runTest("js/js.translator/testData/box/extensionProperty/propertyWithGetterAndSetter.kt");
         }
 
         @TestMetadata("simplePropertyWithGetter.kt")
         public void testSimplePropertyWithGetter() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/extensionProperty/simplePropertyWithGetter.kt");
+            runTest("js/js.translator/testData/box/extensionProperty/simplePropertyWithGetter.kt");
         }
     }
 
@@ -3182,88 +3334,92 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Incremental extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInIncremental() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/incremental"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("catchScope.kt")
         public void testCatchScope() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/incremental/catchScope.kt");
+            runTest("js/js.translator/testData/box/incremental/catchScope.kt");
         }
 
         @TestMetadata("classReferencingClass.kt")
         public void testClassReferencingClass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/incremental/classReferencingClass.kt");
+            runTest("js/js.translator/testData/box/incremental/classReferencingClass.kt");
         }
 
         @TestMetadata("coroutines.kt")
         public void testCoroutines() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/incremental/coroutines.kt");
+            runTest("js/js.translator/testData/box/incremental/coroutines.kt");
         }
 
         @TestMetadata("defaultArguments.kt")
         public void testDefaultArguments() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/incremental/defaultArguments.kt");
+            runTest("js/js.translator/testData/box/incremental/defaultArguments.kt");
         }
 
         @TestMetadata("enumUsage.kt")
         public void testEnumUsage() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/incremental/enumUsage.kt");
+            runTest("js/js.translator/testData/box/incremental/enumUsage.kt");
         }
 
         @TestMetadata("exportedPackage.kt")
         public void testExportedPackage() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/incremental/exportedPackage.kt");
+            runTest("js/js.translator/testData/box/incremental/exportedPackage.kt");
         }
 
         @TestMetadata("functionReferencingClass.kt")
         public void testFunctionReferencingClass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/incremental/functionReferencingClass.kt");
+            runTest("js/js.translator/testData/box/incremental/functionReferencingClass.kt");
         }
 
         @TestMetadata("inline.kt")
         public void testInline() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/incremental/inline.kt");
+            runTest("js/js.translator/testData/box/incremental/inline.kt");
         }
 
         @TestMetadata("inlineLambda.kt")
         public void testInlineLambda() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/incremental/inlineLambda.kt");
+            runTest("js/js.translator/testData/box/incremental/inlineLambda.kt");
         }
 
         @TestMetadata("jsModule.kt")
         public void testJsModule() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/incremental/jsModule.kt");
+            runTest("js/js.translator/testData/box/incremental/jsModule.kt");
         }
 
         @TestMetadata("multipleExport.kt")
         public void testMultipleExport() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/incremental/multipleExport.kt");
+            runTest("js/js.translator/testData/box/incremental/multipleExport.kt");
         }
 
         @TestMetadata("multipleReimport.kt")
         public void testMultipleReimport() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/incremental/multipleReimport.kt");
+            runTest("js/js.translator/testData/box/incremental/multipleReimport.kt");
         }
 
         @TestMetadata("packagesWithSameName.kt")
         public void testPackagesWithSameName() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/incremental/packagesWithSameName.kt");
+            runTest("js/js.translator/testData/box/incremental/packagesWithSameName.kt");
         }
 
         @TestMetadata("simple.kt")
         public void testSimple() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/incremental/simple.kt");
+            runTest("js/js.translator/testData/box/incremental/simple.kt");
         }
 
         @TestMetadata("sourceMapSourceEmbedding.kt")
         public void testSourceMapSourceEmbedding() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/incremental/sourceMapSourceEmbedding.kt");
+            runTest("js/js.translator/testData/box/incremental/sourceMapSourceEmbedding.kt");
         }
 
         @TestMetadata("syntheticStatement.kt")
         public void testSyntheticStatement() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/incremental/syntheticStatement.kt");
+            runTest("js/js.translator/testData/box/incremental/syntheticStatement.kt");
         }
     }
 
@@ -3271,9 +3427,13 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Inheritance extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         @TestMetadata("abstractVarOverride.kt")
         public void testAbstractVarOverride() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inheritance/abstractVarOverride.kt");
+            runTest("js/js.translator/testData/box/inheritance/abstractVarOverride.kt");
         }
 
         public void testAllFilesPresentInInheritance() throws Exception {
@@ -3282,101 +3442,105 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
 
         @TestMetadata("baseCall.kt")
         public void testBaseCall() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inheritance/baseCall.kt");
+            runTest("js/js.translator/testData/box/inheritance/baseCall.kt");
         }
 
         @TestMetadata("baseCallOrder.kt")
         public void testBaseCallOrder() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inheritance/baseCallOrder.kt");
+            runTest("js/js.translator/testData/box/inheritance/baseCallOrder.kt");
         }
 
         @TestMetadata("baseClassDefinedAfterDerived.kt")
         public void testBaseClassDefinedAfterDerived() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inheritance/baseClassDefinedAfterDerived.kt");
+            runTest("js/js.translator/testData/box/inheritance/baseClassDefinedAfterDerived.kt");
         }
 
         @TestMetadata("complexInitializationOrder.kt")
         public void testComplexInitializationOrder() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inheritance/complexInitializationOrder.kt");
+            runTest("js/js.translator/testData/box/inheritance/complexInitializationOrder.kt");
         }
 
         @TestMetadata("definitionOrder.kt")
         public void testDefinitionOrder() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inheritance/definitionOrder.kt");
+            runTest("js/js.translator/testData/box/inheritance/definitionOrder.kt");
         }
 
         @TestMetadata("fromFakeClasses.kt")
         public void testFromFakeClasses() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inheritance/fromFakeClasses.kt");
+            runTest("js/js.translator/testData/box/inheritance/fromFakeClasses.kt");
         }
 
         @TestMetadata("fromNativeInterface.kt")
         public void testFromNativeInterface() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inheritance/fromNativeInterface.kt");
+            runTest("js/js.translator/testData/box/inheritance/fromNativeInterface.kt");
         }
 
         @TestMetadata("fromNestedNativeClass.kt")
         public void testFromNestedNativeClass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inheritance/fromNestedNativeClass.kt");
+            runTest("js/js.translator/testData/box/inheritance/fromNestedNativeClass.kt");
         }
 
         @TestMetadata("inheritFromCharIterator.kt")
         public void testInheritFromCharIterator() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inheritance/inheritFromCharIterator.kt");
+            runTest("js/js.translator/testData/box/inheritance/inheritFromCharIterator.kt");
         }
 
         @TestMetadata("initializationOrder.kt")
         public void testInitializationOrder() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inheritance/initializationOrder.kt");
+            runTest("js/js.translator/testData/box/inheritance/initializationOrder.kt");
         }
 
         @TestMetadata("initializersOfBasicClassExecute.kt")
         public void testInitializersOfBasicClassExecute() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inheritance/initializersOfBasicClassExecute.kt");
+            runTest("js/js.translator/testData/box/inheritance/initializersOfBasicClassExecute.kt");
         }
 
         @TestMetadata("kt3499.kt")
         public void testKt3499() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inheritance/kt3499.kt");
+            runTest("js/js.translator/testData/box/inheritance/kt3499.kt");
         }
 
         @TestMetadata("methodOverride.kt")
         public void testMethodOverride() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inheritance/methodOverride.kt");
+            runTest("js/js.translator/testData/box/inheritance/methodOverride.kt");
         }
 
         @TestMetadata("nativeNativeKotlin.kt")
         public void testNativeNativeKotlin() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inheritance/nativeNativeKotlin.kt");
+            runTest("js/js.translator/testData/box/inheritance/nativeNativeKotlin.kt");
         }
 
         @TestMetadata("overrideAnyMethods.kt")
         public void testOverrideAnyMethods() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inheritance/overrideAnyMethods.kt");
+            runTest("js/js.translator/testData/box/inheritance/overrideAnyMethods.kt");
         }
 
         @TestMetadata("valOverride.kt")
         public void testValOverride() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inheritance/valOverride.kt");
+            runTest("js/js.translator/testData/box/inheritance/valOverride.kt");
         }
 
         @TestMetadata("valuePassedToAncestorConstructor.kt")
         public void testValuePassedToAncestorConstructor() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inheritance/valuePassedToAncestorConstructor.kt");
+            runTest("js/js.translator/testData/box/inheritance/valuePassedToAncestorConstructor.kt");
         }
 
         @TestMetadata("withInitializeMethod.kt")
         public void testWithInitializeMethod() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inheritance/withInitializeMethod.kt");
+            runTest("js/js.translator/testData/box/inheritance/withInitializeMethod.kt");
         }
 
         @TestMetadata("js/js.translator/testData/box/inheritance/interfaces")
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Interfaces extends AbstractIrBoxJsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+            }
+
             @TestMetadata("abstractClassInheritingDefaultMethod.kt")
             public void testAbstractClassInheritingDefaultMethod() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inheritance/interfaces/abstractClassInheritingDefaultMethod.kt");
+                runTest("js/js.translator/testData/box/inheritance/interfaces/abstractClassInheritingDefaultMethod.kt");
             }
 
             public void testAllFilesPresentInInterfaces() throws Exception {
@@ -3385,17 +3549,17 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
 
             @TestMetadata("withDefaultMethod.kt")
             public void testWithDefaultMethod() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inheritance/interfaces/withDefaultMethod.kt");
+                runTest("js/js.translator/testData/box/inheritance/interfaces/withDefaultMethod.kt");
             }
 
             @TestMetadata("withDefaultMethodFromSuperInterface.kt")
             public void testWithDefaultMethodFromSuperInterface() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inheritance/interfaces/withDefaultMethodFromSuperInterface.kt");
+                runTest("js/js.translator/testData/box/inheritance/interfaces/withDefaultMethodFromSuperInterface.kt");
             }
 
             @TestMetadata("withDefaultProperty.kt")
             public void testWithDefaultProperty() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inheritance/interfaces/withDefaultProperty.kt");
+                runTest("js/js.translator/testData/box/inheritance/interfaces/withDefaultProperty.kt");
             }
         }
     }
@@ -3404,53 +3568,57 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Initialize extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInInitialize() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/initialize"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("classInitializer.kt")
         public void testClassInitializer() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/initialize/classInitializer.kt");
+            runTest("js/js.translator/testData/box/initialize/classInitializer.kt");
         }
 
         @TestMetadata("complexPropertyInitializer.kt")
         public void testComplexPropertyInitializer() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/initialize/complexPropertyInitializer.kt");
+            runTest("js/js.translator/testData/box/initialize/complexPropertyInitializer.kt");
         }
 
         @TestMetadata("complexTopLevelPropertyInitializer.kt")
         public void testComplexTopLevelPropertyInitializer() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/initialize/complexTopLevelPropertyInitializer.kt");
+            runTest("js/js.translator/testData/box/initialize/complexTopLevelPropertyInitializer.kt");
         }
 
         @TestMetadata("declarationInitializedWithThrow.kt")
         public void testDeclarationInitializedWithThrow() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/initialize/declarationInitializedWithThrow.kt");
+            runTest("js/js.translator/testData/box/initialize/declarationInitializedWithThrow.kt");
         }
 
         @TestMetadata("lateinit.kt")
         public void testLateinit() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/initialize/lateinit.kt");
+            runTest("js/js.translator/testData/box/initialize/lateinit.kt");
         }
 
         @TestMetadata("propertyInitializationOrder.kt")
         public void testPropertyInitializationOrder() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/initialize/propertyInitializationOrder.kt");
+            runTest("js/js.translator/testData/box/initialize/propertyInitializationOrder.kt");
         }
 
         @TestMetadata("rootPackageValInit.kt")
         public void testRootPackageValInit() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/initialize/rootPackageValInit.kt");
+            runTest("js/js.translator/testData/box/initialize/rootPackageValInit.kt");
         }
 
         @TestMetadata("rootValInit.kt")
         public void testRootValInit() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/initialize/rootValInit.kt");
+            runTest("js/js.translator/testData/box/initialize/rootValInit.kt");
         }
 
         @TestMetadata("uninitializedLateinit.kt")
         public void testUninitializedLateinit() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/initialize/uninitializedLateinit.kt");
+            runTest("js/js.translator/testData/box/initialize/uninitializedLateinit.kt");
         }
     }
 
@@ -3458,353 +3626,357 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Inline extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInInline() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/inline"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("anonymousFunction.kt")
         public void testAnonymousFunction() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/anonymousFunction.kt");
+            runTest("js/js.translator/testData/box/inline/anonymousFunction.kt");
         }
 
         @TestMetadata("anonymousObjectInlineMethod.kt")
         public void testAnonymousObjectInlineMethod() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/anonymousObjectInlineMethod.kt");
+            runTest("js/js.translator/testData/box/inline/anonymousObjectInlineMethod.kt");
         }
 
         @TestMetadata("arrayLiteralAliasing.kt")
         public void testArrayLiteralAliasing() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/arrayLiteralAliasing.kt");
+            runTest("js/js.translator/testData/box/inline/arrayLiteralAliasing.kt");
         }
 
         @TestMetadata("astCopy.kt")
         public void testAstCopy() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/astCopy.kt");
+            runTest("js/js.translator/testData/box/inline/astCopy.kt");
         }
 
         @TestMetadata("callFunction.kt")
         public void testCallFunction() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/callFunction.kt");
+            runTest("js/js.translator/testData/box/inline/callFunction.kt");
         }
 
         @TestMetadata("callInlineFunctionOnTopLevel.kt")
         public void testCallInlineFunctionOnTopLevel() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/callInlineFunctionOnTopLevel.kt");
+            runTest("js/js.translator/testData/box/inline/callInlineFunctionOnTopLevel.kt");
         }
 
         @TestMetadata("callInlineFunctionOnTopLevelSimple.kt")
         public void testCallInlineFunctionOnTopLevelSimple() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/callInlineFunctionOnTopLevelSimple.kt");
+            runTest("js/js.translator/testData/box/inline/callInlineFunctionOnTopLevelSimple.kt");
         }
 
         @TestMetadata("callableReference.kt")
         public void testCallableReference() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/callableReference.kt");
+            runTest("js/js.translator/testData/box/inline/callableReference.kt");
         }
 
         @TestMetadata("callableReferenceOfLocalInline.kt")
         public void testCallableReferenceOfLocalInline() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/callableReferenceOfLocalInline.kt");
+            runTest("js/js.translator/testData/box/inline/callableReferenceOfLocalInline.kt");
         }
 
         @TestMetadata("classObject.kt")
         public void testClassObject() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/classObject.kt");
+            runTest("js/js.translator/testData/box/inline/classObject.kt");
         }
 
         @TestMetadata("dontInlineFunctionCall.kt")
         public void testDontInlineFunctionCall() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/dontInlineFunctionCall.kt");
+            runTest("js/js.translator/testData/box/inline/dontInlineFunctionCall.kt");
         }
 
         @TestMetadata("expressionBodyWithLambdaCall.kt")
         public void testExpressionBodyWithLambdaCall() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/expressionBodyWithLambdaCall.kt");
+            runTest("js/js.translator/testData/box/inline/expressionBodyWithLambdaCall.kt");
         }
 
         @TestMetadata("extension.kt")
         public void testExtension() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/extension.kt");
+            runTest("js/js.translator/testData/box/inline/extension.kt");
         }
 
         @TestMetadata("extensionWithManyArguments.kt")
         public void testExtensionWithManyArguments() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/extensionWithManyArguments.kt");
+            runTest("js/js.translator/testData/box/inline/extensionWithManyArguments.kt");
         }
 
         @TestMetadata("identityEquals.kt")
         public void testIdentityEquals() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/identityEquals.kt");
+            runTest("js/js.translator/testData/box/inline/identityEquals.kt");
         }
 
         @TestMetadata("incrementProperty.kt")
         public void testIncrementProperty() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/incrementProperty.kt");
+            runTest("js/js.translator/testData/box/inline/incrementProperty.kt");
         }
 
         @TestMetadata("inlineCallInsideStringTemplate.kt")
         public void testInlineCallInsideStringTemplate() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/inlineCallInsideStringTemplate.kt");
+            runTest("js/js.translator/testData/box/inline/inlineCallInsideStringTemplate.kt");
         }
 
         @TestMetadata("inlineCallNoInline.kt")
         public void testInlineCallNoInline() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/inlineCallNoInline.kt");
+            runTest("js/js.translator/testData/box/inline/inlineCallNoInline.kt");
         }
 
         @TestMetadata("inlineCapturingThis.kt")
         public void testInlineCapturingThis() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/inlineCapturingThis.kt");
+            runTest("js/js.translator/testData/box/inline/inlineCapturingThis.kt");
         }
 
         @TestMetadata("inlineChain.kt")
         public void testInlineChain() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/inlineChain.kt");
+            runTest("js/js.translator/testData/box/inline/inlineChain.kt");
         }
 
         @TestMetadata("inlineChainWithFewStatements.kt")
         public void testInlineChainWithFewStatements() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/inlineChainWithFewStatements.kt");
+            runTest("js/js.translator/testData/box/inline/inlineChainWithFewStatements.kt");
         }
 
         @TestMetadata("inlineDefaultArgument.kt")
         public void testInlineDefaultArgument() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/inlineDefaultArgument.kt");
+            runTest("js/js.translator/testData/box/inline/inlineDefaultArgument.kt");
         }
 
         @TestMetadata("inlineFunctionInLambda.kt")
         public void testInlineFunctionInLambda() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/inlineFunctionInLambda.kt");
+            runTest("js/js.translator/testData/box/inline/inlineFunctionInLambda.kt");
         }
 
         @TestMetadata("inlineGenericSimple.kt")
         public void testInlineGenericSimple() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/inlineGenericSimple.kt");
+            runTest("js/js.translator/testData/box/inline/inlineGenericSimple.kt");
         }
 
         @TestMetadata("inlineIf.kt")
         public void testInlineIf() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/inlineIf.kt");
+            runTest("js/js.translator/testData/box/inline/inlineIf.kt");
         }
 
         @TestMetadata("inlineImportNameClash.kt")
         public void testInlineImportNameClash() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/inlineImportNameClash.kt");
+            runTest("js/js.translator/testData/box/inline/inlineImportNameClash.kt");
         }
 
         @TestMetadata("inlineInInlineWithLambda.kt")
         public void testInlineInInlineWithLambda() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/inlineInInlineWithLambda.kt");
+            runTest("js/js.translator/testData/box/inline/inlineInInlineWithLambda.kt");
         }
 
         @TestMetadata("inlineInInlineWithLambdaPrivate.kt")
         public void testInlineInInlineWithLambdaPrivate() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/inlineInInlineWithLambdaPrivate.kt");
+            runTest("js/js.translator/testData/box/inline/inlineInInlineWithLambdaPrivate.kt");
         }
 
         @TestMetadata("inlineInc.kt")
         public void testInlineInc() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/inlineInc.kt");
+            runTest("js/js.translator/testData/box/inline/inlineInc.kt");
         }
 
         @TestMetadata("inlineIntSimple.kt")
         public void testInlineIntSimple() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/inlineIntSimple.kt");
+            runTest("js/js.translator/testData/box/inline/inlineIntSimple.kt");
         }
 
         @TestMetadata("inlineLambdaNoCapture.kt")
         public void testInlineLambdaNoCapture() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/inlineLambdaNoCapture.kt");
+            runTest("js/js.translator/testData/box/inline/inlineLambdaNoCapture.kt");
         }
 
         @TestMetadata("inlineLambdaWithCapture.kt")
         public void testInlineLambdaWithCapture() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/inlineLambdaWithCapture.kt");
+            runTest("js/js.translator/testData/box/inline/inlineLambdaWithCapture.kt");
         }
 
         @TestMetadata("inlineMethod.kt")
         public void testInlineMethod() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/inlineMethod.kt");
+            runTest("js/js.translator/testData/box/inline/inlineMethod.kt");
         }
 
         @TestMetadata("inlineNoReturn.kt")
         public void testInlineNoReturn() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/inlineNoReturn.kt");
+            runTest("js/js.translator/testData/box/inline/inlineNoReturn.kt");
         }
 
         @TestMetadata("inlineOrder.kt")
         public void testInlineOrder() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/inlineOrder.kt");
+            runTest("js/js.translator/testData/box/inline/inlineOrder.kt");
         }
 
         @TestMetadata("inlineSimpleAssignment.kt")
         public void testInlineSimpleAssignment() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/inlineSimpleAssignment.kt");
+            runTest("js/js.translator/testData/box/inline/inlineSimpleAssignment.kt");
         }
 
         @TestMetadata("innerOuterThis.kt")
         public void testInnerOuterThis() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/innerOuterThis.kt");
+            runTest("js/js.translator/testData/box/inline/innerOuterThis.kt");
         }
 
         @TestMetadata("iteratorOnInlineFunctionResult.kt")
         public void testIteratorOnInlineFunctionResult() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/iteratorOnInlineFunctionResult.kt");
+            runTest("js/js.translator/testData/box/inline/iteratorOnInlineFunctionResult.kt");
         }
 
         @TestMetadata("jsCode.kt")
         public void testJsCode() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/jsCode.kt");
+            runTest("js/js.translator/testData/box/inline/jsCode.kt");
         }
 
         @TestMetadata("jsCodeVarDeclared.kt")
         public void testJsCodeVarDeclared() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/jsCodeVarDeclared.kt");
+            runTest("js/js.translator/testData/box/inline/jsCodeVarDeclared.kt");
         }
 
         @TestMetadata("lambdaInLambda.kt")
         public void testLambdaInLambda() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/lambdaInLambda.kt");
+            runTest("js/js.translator/testData/box/inline/lambdaInLambda.kt");
         }
 
         @TestMetadata("lambdaReassignment.kt")
         public void testLambdaReassignment() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/lambdaReassignment.kt");
+            runTest("js/js.translator/testData/box/inline/lambdaReassignment.kt");
         }
 
         @TestMetadata("lambdaReassignmentWithCapture.kt")
         public void testLambdaReassignmentWithCapture() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/lambdaReassignmentWithCapture.kt");
+            runTest("js/js.translator/testData/box/inline/lambdaReassignmentWithCapture.kt");
         }
 
         @TestMetadata("localInlineExtensionFunction.kt")
         public void testLocalInlineExtensionFunction() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/localInlineExtensionFunction.kt");
+            runTest("js/js.translator/testData/box/inline/localInlineExtensionFunction.kt");
         }
 
         @TestMetadata("localInlineFunction.kt")
         public void testLocalInlineFunction() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/localInlineFunction.kt");
+            runTest("js/js.translator/testData/box/inline/localInlineFunction.kt");
         }
 
         @TestMetadata("localInlineFunctionComplex.kt")
         public void testLocalInlineFunctionComplex() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/localInlineFunctionComplex.kt");
+            runTest("js/js.translator/testData/box/inline/localInlineFunctionComplex.kt");
         }
 
         @TestMetadata("localInlineFunctionDeclaredInLambda.kt")
         public void testLocalInlineFunctionDeclaredInLambda() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/localInlineFunctionDeclaredInLambda.kt");
+            runTest("js/js.translator/testData/box/inline/localInlineFunctionDeclaredInLambda.kt");
         }
 
         @TestMetadata("localInlineFunctionNameClash.kt")
         public void testLocalInlineFunctionNameClash() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/localInlineFunctionNameClash.kt");
+            runTest("js/js.translator/testData/box/inline/localInlineFunctionNameClash.kt");
         }
 
         @TestMetadata("localInlineFunctionReference.kt")
         public void testLocalInlineFunctionReference() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/localInlineFunctionReference.kt");
+            runTest("js/js.translator/testData/box/inline/localInlineFunctionReference.kt");
         }
 
         @TestMetadata("metadataForPublicFunction.kt")
         public void testMetadataForPublicFunction() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/metadataForPublicFunction.kt");
+            runTest("js/js.translator/testData/box/inline/metadataForPublicFunction.kt");
         }
 
         @TestMetadata("multiDeclaration.kt")
         public void testMultiDeclaration() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/multiDeclaration.kt");
+            runTest("js/js.translator/testData/box/inline/multiDeclaration.kt");
         }
 
         @TestMetadata("noInlineLambda.kt")
         public void testNoInlineLambda() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/noInlineLambda.kt");
+            runTest("js/js.translator/testData/box/inline/noInlineLambda.kt");
         }
 
         @TestMetadata("operators.kt")
         public void testOperators() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/operators.kt");
+            runTest("js/js.translator/testData/box/inline/operators.kt");
         }
 
         @TestMetadata("params.kt")
         public void testParams() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/params.kt");
+            runTest("js/js.translator/testData/box/inline/params.kt");
         }
 
         @TestMetadata("rootConstructor.kt")
         public void testRootConstructor() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/rootConstructor.kt");
+            runTest("js/js.translator/testData/box/inline/rootConstructor.kt");
         }
 
         @TestMetadata("safeCall.kt")
         public void testSafeCall() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/safeCall.kt");
+            runTest("js/js.translator/testData/box/inline/safeCall.kt");
         }
 
         @TestMetadata("sameNameOfDeclarationsInSameModule.kt")
         public void testSameNameOfDeclarationsInSameModule() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/sameNameOfDeclarationsInSameModule.kt");
+            runTest("js/js.translator/testData/box/inline/sameNameOfDeclarationsInSameModule.kt");
         }
 
         @TestMetadata("severalClosures.kt")
         public void testSeveralClosures() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/severalClosures.kt");
+            runTest("js/js.translator/testData/box/inline/severalClosures.kt");
         }
 
         @TestMetadata("severalUsage.kt")
         public void testSeveralUsage() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/severalUsage.kt");
+            runTest("js/js.translator/testData/box/inline/severalUsage.kt");
         }
 
         @TestMetadata("simpleDouble.kt")
         public void testSimpleDouble() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/simpleDouble.kt");
+            runTest("js/js.translator/testData/box/inline/simpleDouble.kt");
         }
 
         @TestMetadata("simpleEnum.kt")
         public void testSimpleEnum() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/simpleEnum.kt");
+            runTest("js/js.translator/testData/box/inline/simpleEnum.kt");
         }
 
         @TestMetadata("simpleInt.kt")
         public void testSimpleInt() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/simpleInt.kt");
+            runTest("js/js.translator/testData/box/inline/simpleInt.kt");
         }
 
         @TestMetadata("simpleLambda.kt")
         public void testSimpleLambda() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/simpleLambda.kt");
+            runTest("js/js.translator/testData/box/inline/simpleLambda.kt");
         }
 
         @TestMetadata("simpleObject.kt")
         public void testSimpleObject() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/simpleObject.kt");
+            runTest("js/js.translator/testData/box/inline/simpleObject.kt");
         }
 
         @TestMetadata("simpleReturnFunctionWithResultUnused.kt")
         public void testSimpleReturnFunctionWithResultUnused() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/simpleReturnFunctionWithResultUnused.kt");
+            runTest("js/js.translator/testData/box/inline/simpleReturnFunctionWithResultUnused.kt");
         }
 
         @TestMetadata("statementsAfterReturn.kt")
         public void testStatementsAfterReturn() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/statementsAfterReturn.kt");
+            runTest("js/js.translator/testData/box/inline/statementsAfterReturn.kt");
         }
 
         @TestMetadata("thisImplicitlyCaptured.kt")
         public void testThisImplicitlyCaptured() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/thisImplicitlyCaptured.kt");
+            runTest("js/js.translator/testData/box/inline/thisImplicitlyCaptured.kt");
         }
 
         @TestMetadata("thisLiteralAliasing.kt")
         public void testThisLiteralAliasing() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/thisLiteralAliasing.kt");
+            runTest("js/js.translator/testData/box/inline/thisLiteralAliasing.kt");
         }
 
         @TestMetadata("vararg.kt")
         public void testVararg() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inline/vararg.kt");
+            runTest("js/js.translator/testData/box/inline/vararg.kt");
         }
     }
 
@@ -3812,273 +3984,277 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class InlineEvaluationOrder extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInInlineEvaluationOrder() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/inlineEvaluationOrder"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("alsoWithReassingment.kt")
         public void testAlsoWithReassingment() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/alsoWithReassingment.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/alsoWithReassingment.kt");
         }
 
         @TestMetadata("argumentOfCall.kt")
         public void testArgumentOfCall() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/argumentOfCall.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/argumentOfCall.kt");
         }
 
         @TestMetadata("argumentOfCallMultipleInlineCalls.kt")
         public void testArgumentOfCallMultipleInlineCalls() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/argumentOfCallMultipleInlineCalls.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/argumentOfCallMultipleInlineCalls.kt");
         }
 
         @TestMetadata("argumentOfInlineCall.kt")
         public void testArgumentOfInlineCall() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/argumentOfInlineCall.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/argumentOfInlineCall.kt");
         }
 
         @TestMetadata("argumentOfNew.kt")
         public void testArgumentOfNew() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/argumentOfNew.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/argumentOfNew.kt");
         }
 
         @TestMetadata("arrayAccess1.kt")
         public void testArrayAccess1() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/arrayAccess1.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/arrayAccess1.kt");
         }
 
         @TestMetadata("arrayAccess2.kt")
         public void testArrayAccess2() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/arrayAccess2.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/arrayAccess2.kt");
         }
 
         @TestMetadata("arrayAccess3.kt")
         public void testArrayAccess3() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/arrayAccess3.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/arrayAccess3.kt");
         }
 
         @TestMetadata("arrayAccessLhsDecomposed.kt")
         public void testArrayAccessLhsDecomposed() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/arrayAccessLhsDecomposed.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/arrayAccessLhsDecomposed.kt");
         }
 
         @TestMetadata("arrayLiteral.kt")
         public void testArrayLiteral() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/arrayLiteral.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/arrayLiteral.kt");
         }
 
         @TestMetadata("arrayLiteralMultipleInlineCalls.kt")
         public void testArrayLiteralMultipleInlineCalls() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/arrayLiteralMultipleInlineCalls.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/arrayLiteralMultipleInlineCalls.kt");
         }
 
         @TestMetadata("arrayLiteralNested.kt")
         public void testArrayLiteralNested() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/arrayLiteralNested.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/arrayLiteralNested.kt");
         }
 
         @TestMetadata("assignment.kt")
         public void testAssignment() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/assignment.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/assignment.kt");
         }
 
         @TestMetadata("binaryOperator.kt")
         public void testBinaryOperator() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/binaryOperator.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/binaryOperator.kt");
         }
 
         @TestMetadata("binaryOperatorMultipleInlineCalls.kt")
         public void testBinaryOperatorMultipleInlineCalls() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/binaryOperatorMultipleInlineCalls.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/binaryOperatorMultipleInlineCalls.kt");
         }
 
         @TestMetadata("callQualifier.kt")
         public void testCallQualifier() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/callQualifier.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/callQualifier.kt");
         }
 
         @TestMetadata("callQualifierComplex.kt")
         public void testCallQualifierComplex() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/callQualifierComplex.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/callQualifierComplex.kt");
         }
 
         @TestMetadata("capturedVarAsArgument.kt")
         public void testCapturedVarAsArgument() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/capturedVarAsArgument.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/capturedVarAsArgument.kt");
         }
 
         @TestMetadata("conditional.kt")
         public void testConditional() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/conditional.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/conditional.kt");
         }
 
         @TestMetadata("conditionalElvis.kt")
         public void testConditionalElvis() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/conditionalElvis.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/conditionalElvis.kt");
         }
 
         @TestMetadata("conditionalNested.kt")
         public void testConditionalNested() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/conditionalNested.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/conditionalNested.kt");
         }
 
         @TestMetadata("conditionalTestExpression.kt")
         public void testConditionalTestExpression() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/conditionalTestExpression.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/conditionalTestExpression.kt");
         }
 
         @TestMetadata("conditionalTestExpressionElvis.kt")
         public void testConditionalTestExpressionElvis() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/conditionalTestExpressionElvis.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/conditionalTestExpressionElvis.kt");
         }
 
         @TestMetadata("continueInExtractedDoWhile.kt")
         public void testContinueInExtractedDoWhile() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/continueInExtractedDoWhile.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/continueInExtractedDoWhile.kt");
         }
 
         @TestMetadata("doWhile.kt")
         public void testDoWhile() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/doWhile.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/doWhile.kt");
         }
 
         @TestMetadata("doWhileComplex.kt")
         public void testDoWhileComplex() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/doWhileComplex.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/doWhileComplex.kt");
         }
 
         @TestMetadata("for.kt")
         public void testFor() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/for.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/for.kt");
         }
 
         @TestMetadata("if.kt")
         public void testIf() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/if.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/if.kt");
         }
 
         @TestMetadata("inlineFunctionAsParameterOfQualifiedCall.kt")
         public void testInlineFunctionAsParameterOfQualifiedCall() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/inlineFunctionAsParameterOfQualifiedCall.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/inlineFunctionAsParameterOfQualifiedCall.kt");
         }
 
         @TestMetadata("lambdaPropertyExtracted.kt")
         public void testLambdaPropertyExtracted() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/lambdaPropertyExtracted.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/lambdaPropertyExtracted.kt");
         }
 
         @TestMetadata("lambdaWithClosure.kt")
         public void testLambdaWithClosure() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/lambdaWithClosure.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/lambdaWithClosure.kt");
         }
 
         @TestMetadata("logicalAnd.kt")
         public void testLogicalAnd() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/logicalAnd.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/logicalAnd.kt");
         }
 
         @TestMetadata("logicalAndOrMultipleInlineCalls.kt")
         public void testLogicalAndOrMultipleInlineCalls() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/logicalAndOrMultipleInlineCalls.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/logicalAndOrMultipleInlineCalls.kt");
         }
 
         @TestMetadata("logicalOr.kt")
         public void testLogicalOr() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/logicalOr.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/logicalOr.kt");
         }
 
         @TestMetadata("methodCallQualifierWithSideEffect.kt")
         public void testMethodCallQualifierWithSideEffect() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/methodCallQualifierWithSideEffect.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/methodCallQualifierWithSideEffect.kt");
         }
 
         @TestMetadata("methodDecomposedWithBind.kt")
         public void testMethodDecomposedWithBind() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/methodDecomposedWithBind.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/methodDecomposedWithBind.kt");
         }
 
         @TestMetadata("methodInlineCallQualifierWithSideEffect.kt")
         public void testMethodInlineCallQualifierWithSideEffect() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/methodInlineCallQualifierWithSideEffect.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/methodInlineCallQualifierWithSideEffect.kt");
         }
 
         @TestMetadata("multiDeclaration.kt")
         public void testMultiDeclaration() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/multiDeclaration.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/multiDeclaration.kt");
         }
 
         @TestMetadata("multiDeclarationComplex.kt")
         public void testMultiDeclarationComplex() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/multiDeclarationComplex.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/multiDeclarationComplex.kt");
         }
 
         @TestMetadata("nestedContinueInExtractedDoWhile.kt")
         public void testNestedContinueInExtractedDoWhile() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/nestedContinueInExtractedDoWhile.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/nestedContinueInExtractedDoWhile.kt");
         }
 
         @TestMetadata("nestedInlineCall.kt")
         public void testNestedInlineCall() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/nestedInlineCall.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/nestedInlineCall.kt");
         }
 
         @TestMetadata("propertiesInitializationOrder.kt")
         public void testPropertiesInitializationOrder() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/propertiesInitializationOrder.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/propertiesInitializationOrder.kt");
         }
 
         @TestMetadata("propertiesInitializationOrderSimple.kt")
         public void testPropertiesInitializationOrderSimple() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/propertiesInitializationOrderSimple.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/propertiesInitializationOrderSimple.kt");
         }
 
         @TestMetadata("propertyAccessAfterModification.kt")
         public void testPropertyAccessAfterModification() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/propertyAccessAfterModification.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/propertyAccessAfterModification.kt");
         }
 
         @TestMetadata("propertyAccessAndInitializer.kt")
         public void testPropertyAccessAndInitializer() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/propertyAccessAndInitializer.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/propertyAccessAndInitializer.kt");
         }
 
         @TestMetadata("propertyAccessWithSideEffect.kt")
         public void testPropertyAccessWithSideEffect() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/propertyAccessWithSideEffect.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/propertyAccessWithSideEffect.kt");
         }
 
         @TestMetadata("propertyWithSideEffectExtracted.kt")
         public void testPropertyWithSideEffectExtracted() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/propertyWithSideEffectExtracted.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/propertyWithSideEffectExtracted.kt");
         }
 
         @TestMetadata("propertyWithSideEffectPassedToInlineFunction.kt")
         public void testPropertyWithSideEffectPassedToInlineFunction() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/propertyWithSideEffectPassedToInlineFunction.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/propertyWithSideEffectPassedToInlineFunction.kt");
         }
 
         @TestMetadata("temporaryVarNonTrivial.kt")
         public void testTemporaryVarNonTrivial() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/temporaryVarNonTrivial.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/temporaryVarNonTrivial.kt");
         }
 
         @TestMetadata("ternaryConditional.kt")
         public void testTernaryConditional() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/ternaryConditional.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/ternaryConditional.kt");
         }
 
         @TestMetadata("while.kt")
         public void testWhile() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/while.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/while.kt");
         }
 
         @TestMetadata("whileComplex.kt")
         public void testWhileComplex() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/whileComplex.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/whileComplex.kt");
         }
 
         @TestMetadata("whileConditionExtracted.kt")
         public void testWhileConditionExtracted() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineEvaluationOrder/whileConditionExtracted.kt");
+            runTest("js/js.translator/testData/box/inlineEvaluationOrder/whileConditionExtracted.kt");
         }
     }
 
@@ -4086,153 +4262,157 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class InlineMultiFile extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInInlineMultiFile() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/inlineMultiFile"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("anonymousObjectInSimilarFunctions.kt")
         public void testAnonymousObjectInSimilarFunctions() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiFile/anonymousObjectInSimilarFunctions.kt");
+            runTest("js/js.translator/testData/box/inlineMultiFile/anonymousObjectInSimilarFunctions.kt");
         }
 
         @TestMetadata("anonymousObjectOnCallSite.kt")
         public void testAnonymousObjectOnCallSite() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiFile/anonymousObjectOnCallSite.kt");
+            runTest("js/js.translator/testData/box/inlineMultiFile/anonymousObjectOnCallSite.kt");
         }
 
         @TestMetadata("anonymousObjectOnCallSiteSuperParams.kt")
         public void testAnonymousObjectOnCallSiteSuperParams() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiFile/anonymousObjectOnCallSiteSuperParams.kt");
+            runTest("js/js.translator/testData/box/inlineMultiFile/anonymousObjectOnCallSiteSuperParams.kt");
         }
 
         @TestMetadata("anonymousObjectOnDeclarationSite.kt")
         public void testAnonymousObjectOnDeclarationSite() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiFile/anonymousObjectOnDeclarationSite.kt");
+            runTest("js/js.translator/testData/box/inlineMultiFile/anonymousObjectOnDeclarationSite.kt");
         }
 
         @TestMetadata("anonymousObjectOnDeclarationSiteSuperParams.kt")
         public void testAnonymousObjectOnDeclarationSiteSuperParams() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiFile/anonymousObjectOnDeclarationSiteSuperParams.kt");
+            runTest("js/js.translator/testData/box/inlineMultiFile/anonymousObjectOnDeclarationSiteSuperParams.kt");
         }
 
         @TestMetadata("builders.kt")
         public void testBuilders() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiFile/builders.kt");
+            runTest("js/js.translator/testData/box/inlineMultiFile/builders.kt");
         }
 
         @TestMetadata("buildersAndLambdaCapturing.kt")
         public void testBuildersAndLambdaCapturing() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiFile/buildersAndLambdaCapturing.kt");
+            runTest("js/js.translator/testData/box/inlineMultiFile/buildersAndLambdaCapturing.kt");
         }
 
         @TestMetadata("captureInlinable.kt")
         public void testCaptureInlinable() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiFile/captureInlinable.kt");
+            runTest("js/js.translator/testData/box/inlineMultiFile/captureInlinable.kt");
         }
 
         @TestMetadata("captureInlinableAndOther.kt")
         public void testCaptureInlinableAndOther() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiFile/captureInlinableAndOther.kt");
+            runTest("js/js.translator/testData/box/inlineMultiFile/captureInlinableAndOther.kt");
         }
 
         @TestMetadata("captureThisAndReceiver.kt")
         public void testCaptureThisAndReceiver() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiFile/captureThisAndReceiver.kt");
+            runTest("js/js.translator/testData/box/inlineMultiFile/captureThisAndReceiver.kt");
         }
 
         @TestMetadata("closureChain.kt")
         public void testClosureChain() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiFile/closureChain.kt");
+            runTest("js/js.translator/testData/box/inlineMultiFile/closureChain.kt");
         }
 
         @TestMetadata("defaultMethod.kt")
         public void testDefaultMethod() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiFile/defaultMethod.kt");
+            runTest("js/js.translator/testData/box/inlineMultiFile/defaultMethod.kt");
         }
 
         @TestMetadata("generics.kt")
         public void testGenerics() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiFile/generics.kt");
+            runTest("js/js.translator/testData/box/inlineMultiFile/generics.kt");
         }
 
         @TestMetadata("inlineInDefaultParameter.kt")
         public void testInlineInDefaultParameter() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiFile/inlineInDefaultParameter.kt");
+            runTest("js/js.translator/testData/box/inlineMultiFile/inlineInDefaultParameter.kt");
         }
 
         @TestMetadata("inlineMultiFileSimple.kt")
         public void testInlineMultiFileSimple() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiFile/inlineMultiFileSimple.kt");
+            runTest("js/js.translator/testData/box/inlineMultiFile/inlineMultiFileSimple.kt");
         }
 
         @TestMetadata("lambdaCloning.kt")
         public void testLambdaCloning() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiFile/lambdaCloning.kt");
+            runTest("js/js.translator/testData/box/inlineMultiFile/lambdaCloning.kt");
         }
 
         @TestMetadata("lambdaInLambda2.kt")
         public void testLambdaInLambda2() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiFile/lambdaInLambda2.kt");
+            runTest("js/js.translator/testData/box/inlineMultiFile/lambdaInLambda2.kt");
         }
 
         @TestMetadata("lambdaInLambdaNoInline.kt")
         public void testLambdaInLambdaNoInline() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiFile/lambdaInLambdaNoInline.kt");
+            runTest("js/js.translator/testData/box/inlineMultiFile/lambdaInLambdaNoInline.kt");
         }
 
         @TestMetadata("regeneratedLambdaName.kt")
         public void testRegeneratedLambdaName() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiFile/regeneratedLambdaName.kt");
+            runTest("js/js.translator/testData/box/inlineMultiFile/regeneratedLambdaName.kt");
         }
 
         @TestMetadata("sameCaptured.kt")
         public void testSameCaptured() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiFile/sameCaptured.kt");
+            runTest("js/js.translator/testData/box/inlineMultiFile/sameCaptured.kt");
         }
 
         @TestMetadata("simpleCapturingInClass.kt")
         public void testSimpleCapturingInClass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiFile/simpleCapturingInClass.kt");
+            runTest("js/js.translator/testData/box/inlineMultiFile/simpleCapturingInClass.kt");
         }
 
         @TestMetadata("simpleCapturingInPackage.kt")
         public void testSimpleCapturingInPackage() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiFile/simpleCapturingInPackage.kt");
+            runTest("js/js.translator/testData/box/inlineMultiFile/simpleCapturingInPackage.kt");
         }
 
         @TestMetadata("simpleDefaultMethod.kt")
         public void testSimpleDefaultMethod() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiFile/simpleDefaultMethod.kt");
+            runTest("js/js.translator/testData/box/inlineMultiFile/simpleDefaultMethod.kt");
         }
 
         @TestMetadata("trait.kt")
         public void testTrait() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiFile/trait.kt");
+            runTest("js/js.translator/testData/box/inlineMultiFile/trait.kt");
         }
 
         @TestMetadata("tryCatch.kt")
         public void testTryCatch() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiFile/tryCatch.kt");
+            runTest("js/js.translator/testData/box/inlineMultiFile/tryCatch.kt");
         }
 
         @TestMetadata("tryCatch2.kt")
         public void testTryCatch2() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiFile/tryCatch2.kt");
+            runTest("js/js.translator/testData/box/inlineMultiFile/tryCatch2.kt");
         }
 
         @TestMetadata("tryCatchFinally.kt")
         public void testTryCatchFinally() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiFile/tryCatchFinally.kt");
+            runTest("js/js.translator/testData/box/inlineMultiFile/tryCatchFinally.kt");
         }
 
         @TestMetadata("use.kt")
         public void testUse() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiFile/use.kt");
+            runTest("js/js.translator/testData/box/inlineMultiFile/use.kt");
         }
 
         @TestMetadata("with.kt")
         public void testWith() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiFile/with.kt");
+            runTest("js/js.translator/testData/box/inlineMultiFile/with.kt");
         }
     }
 
@@ -4240,163 +4420,167 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class InlineMultiModule extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInInlineMultiModule() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/inlineMultiModule"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("anotherModuleValInClosure.kt")
         public void testAnotherModuleValInClosure() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiModule/anotherModuleValInClosure.kt");
+            runTest("js/js.translator/testData/box/inlineMultiModule/anotherModuleValInClosure.kt");
         }
 
         @TestMetadata("callFunction.kt")
         public void testCallFunction() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiModule/callFunction.kt");
+            runTest("js/js.translator/testData/box/inlineMultiModule/callFunction.kt");
         }
 
         @TestMetadata("callableReference.kt")
         public void testCallableReference() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiModule/callableReference.kt");
+            runTest("js/js.translator/testData/box/inlineMultiModule/callableReference.kt");
         }
 
         @TestMetadata("calledByFqName.kt")
         public void testCalledByFqName() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiModule/calledByFqName.kt");
+            runTest("js/js.translator/testData/box/inlineMultiModule/calledByFqName.kt");
         }
 
         @TestMetadata("extensionLambda.kt")
         public void testExtensionLambda() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiModule/extensionLambda.kt");
+            runTest("js/js.translator/testData/box/inlineMultiModule/extensionLambda.kt");
         }
 
         @TestMetadata("externalInlineCallDecomposed.kt")
         public void testExternalInlineCallDecomposed() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiModule/externalInlineCallDecomposed.kt");
+            runTest("js/js.translator/testData/box/inlineMultiModule/externalInlineCallDecomposed.kt");
         }
 
         @TestMetadata("externalInlineNewDecomposed.kt")
         public void testExternalInlineNewDecomposed() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiModule/externalInlineNewDecomposed.kt");
+            runTest("js/js.translator/testData/box/inlineMultiModule/externalInlineNewDecomposed.kt");
         }
 
         @TestMetadata("fakeFunctionInAnotherModule.kt")
         public void testFakeFunctionInAnotherModule() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiModule/fakeFunctionInAnotherModule.kt");
+            runTest("js/js.translator/testData/box/inlineMultiModule/fakeFunctionInAnotherModule.kt");
         }
 
         @TestMetadata("importObjectInstance.kt")
         public void testImportObjectInstance() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiModule/importObjectInstance.kt");
+            runTest("js/js.translator/testData/box/inlineMultiModule/importObjectInstance.kt");
         }
 
         @TestMetadata("inlineInInlineWithLambdaMultiModule.kt")
         public void testInlineInInlineWithLambdaMultiModule() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiModule/inlineInInlineWithLambdaMultiModule.kt");
+            runTest("js/js.translator/testData/box/inlineMultiModule/inlineInInlineWithLambdaMultiModule.kt");
         }
 
         @TestMetadata("inlineMemberFunWithLambda.kt")
         public void testInlineMemberFunWithLambda() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiModule/inlineMemberFunWithLambda.kt");
+            runTest("js/js.translator/testData/box/inlineMultiModule/inlineMemberFunWithLambda.kt");
         }
 
         @TestMetadata("inlineableAliasForExternalDeclaration.kt")
         public void testInlineableAliasForExternalDeclaration() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiModule/inlineableAliasForExternalDeclaration.kt");
+            runTest("js/js.translator/testData/box/inlineMultiModule/inlineableAliasForExternalDeclaration.kt");
         }
 
         @TestMetadata("internalFriend.kt")
         public void testInternalFriend() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiModule/internalFriend.kt");
+            runTest("js/js.translator/testData/box/inlineMultiModule/internalFriend.kt");
         }
 
         @TestMetadata("internalNameClash.kt")
         public void testInternalNameClash() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiModule/internalNameClash.kt");
+            runTest("js/js.translator/testData/box/inlineMultiModule/internalNameClash.kt");
         }
 
         @TestMetadata("keywordAsMemberName.kt")
         public void testKeywordAsMemberName() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiModule/keywordAsMemberName.kt");
+            runTest("js/js.translator/testData/box/inlineMultiModule/keywordAsMemberName.kt");
         }
 
         @TestMetadata("kt16144.kt")
         public void testKt16144() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiModule/kt16144.kt");
+            runTest("js/js.translator/testData/box/inlineMultiModule/kt16144.kt");
         }
 
         @TestMetadata("kt16160.kt")
         public void testKt16160() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiModule/kt16160.kt");
+            runTest("js/js.translator/testData/box/inlineMultiModule/kt16160.kt");
         }
 
         @TestMetadata("lambda.kt")
         public void testLambda() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiModule/lambda.kt");
+            runTest("js/js.translator/testData/box/inlineMultiModule/lambda.kt");
         }
 
         @TestMetadata("lambdaCalledInObjectLiteral.kt")
         public void testLambdaCalledInObjectLiteral() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiModule/lambdaCalledInObjectLiteral.kt");
+            runTest("js/js.translator/testData/box/inlineMultiModule/lambdaCalledInObjectLiteral.kt");
         }
 
         @TestMetadata("lambdaWithClosure.kt")
         public void testLambdaWithClosure() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiModule/lambdaWithClosure.kt");
+            runTest("js/js.translator/testData/box/inlineMultiModule/lambdaWithClosure.kt");
         }
 
         @TestMetadata("localNameClash.kt")
         public void testLocalNameClash() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiModule/localNameClash.kt");
+            runTest("js/js.translator/testData/box/inlineMultiModule/localNameClash.kt");
         }
 
         @TestMetadata("localObjectLiteralWithInheritance.kt")
         public void testLocalObjectLiteralWithInheritance() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiModule/localObjectLiteralWithInheritance.kt");
+            runTest("js/js.translator/testData/box/inlineMultiModule/localObjectLiteralWithInheritance.kt");
         }
 
         @TestMetadata("method.kt")
         public void testMethod() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiModule/method.kt");
+            runTest("js/js.translator/testData/box/inlineMultiModule/method.kt");
         }
 
         @TestMetadata("operators.kt")
         public void testOperators() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiModule/operators.kt");
+            runTest("js/js.translator/testData/box/inlineMultiModule/operators.kt");
         }
 
         @TestMetadata("parameterWithDefaultValue.kt")
         public void testParameterWithDefaultValue() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiModule/parameterWithDefaultValue.kt");
+            runTest("js/js.translator/testData/box/inlineMultiModule/parameterWithDefaultValue.kt");
         }
 
         @TestMetadata("property.kt")
         public void testProperty() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiModule/property.kt");
+            runTest("js/js.translator/testData/box/inlineMultiModule/property.kt");
         }
 
         @TestMetadata("reexportDuringInline.kt")
         public void testReexportDuringInline() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiModule/reexportDuringInline.kt");
+            runTest("js/js.translator/testData/box/inlineMultiModule/reexportDuringInline.kt");
         }
 
         @TestMetadata("repeatedImport.kt")
         public void testRepeatedImport() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiModule/repeatedImport.kt");
+            runTest("js/js.translator/testData/box/inlineMultiModule/repeatedImport.kt");
         }
 
         @TestMetadata("simple.kt")
         public void testSimple() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiModule/simple.kt");
+            runTest("js/js.translator/testData/box/inlineMultiModule/simple.kt");
         }
 
         @TestMetadata("topLevelNestedInline.kt")
         public void testTopLevelNestedInline() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiModule/topLevelNestedInline.kt");
+            runTest("js/js.translator/testData/box/inlineMultiModule/topLevelNestedInline.kt");
         }
 
         @TestMetadata("typealiases.kt")
         public void testTypealiases() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineMultiModule/typealiases.kt");
+            runTest("js/js.translator/testData/box/inlineMultiModule/typealiases.kt");
         }
     }
 
@@ -4404,93 +4588,97 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class InlineSizeReduction extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInInlineSizeReduction() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/inlineSizeReduction"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("inlineImportCleanup.kt")
         public void testInlineImportCleanup() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineSizeReduction/inlineImportCleanup.kt");
+            runTest("js/js.translator/testData/box/inlineSizeReduction/inlineImportCleanup.kt");
         }
 
         @TestMetadata("inlineLambdaCleanup.kt")
         public void testInlineLambdaCleanup() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineSizeReduction/inlineLambdaCleanup.kt");
+            runTest("js/js.translator/testData/box/inlineSizeReduction/inlineLambdaCleanup.kt");
         }
 
         @TestMetadata("inlineOrder.kt")
         public void testInlineOrder() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineSizeReduction/inlineOrder.kt");
+            runTest("js/js.translator/testData/box/inlineSizeReduction/inlineOrder.kt");
         }
 
         @TestMetadata("lastBreak.kt")
         public void testLastBreak() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineSizeReduction/lastBreak.kt");
+            runTest("js/js.translator/testData/box/inlineSizeReduction/lastBreak.kt");
         }
 
         @TestMetadata("multiModuleDefaultArgsCleanup.kt")
         public void testMultiModuleDefaultArgsCleanup() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineSizeReduction/multiModuleDefaultArgsCleanup.kt");
+            runTest("js/js.translator/testData/box/inlineSizeReduction/multiModuleDefaultArgsCleanup.kt");
         }
 
         @TestMetadata("noDuplicateVariableDeclaration.kt")
         public void testNoDuplicateVariableDeclaration() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineSizeReduction/noDuplicateVariableDeclaration.kt");
+            runTest("js/js.translator/testData/box/inlineSizeReduction/noDuplicateVariableDeclaration.kt");
         }
 
         @TestMetadata("oneTopLevelReturn.kt")
         public void testOneTopLevelReturn() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineSizeReduction/oneTopLevelReturn.kt");
+            runTest("js/js.translator/testData/box/inlineSizeReduction/oneTopLevelReturn.kt");
         }
 
         @TestMetadata("propertyAssignment.kt")
         public void testPropertyAssignment() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineSizeReduction/propertyAssignment.kt");
+            runTest("js/js.translator/testData/box/inlineSizeReduction/propertyAssignment.kt");
         }
 
         @TestMetadata("propertyReassignment.kt")
         public void testPropertyReassignment() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineSizeReduction/propertyReassignment.kt");
+            runTest("js/js.translator/testData/box/inlineSizeReduction/propertyReassignment.kt");
         }
 
         @TestMetadata("propertyReferenceDoesNotProduceSideEffect.kt")
         public void testPropertyReferenceDoesNotProduceSideEffect() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineSizeReduction/propertyReferenceDoesNotProduceSideEffect.kt");
+            runTest("js/js.translator/testData/box/inlineSizeReduction/propertyReferenceDoesNotProduceSideEffect.kt");
         }
 
         @TestMetadata("returnInlineCall.kt")
         public void testReturnInlineCall() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineSizeReduction/returnInlineCall.kt");
+            runTest("js/js.translator/testData/box/inlineSizeReduction/returnInlineCall.kt");
         }
 
         @TestMetadata("simpleReturnFunction.kt")
         public void testSimpleReturnFunction() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineSizeReduction/simpleReturnFunction.kt");
+            runTest("js/js.translator/testData/box/inlineSizeReduction/simpleReturnFunction.kt");
         }
 
         @TestMetadata("ternaryConditional.kt")
         public void testTernaryConditional() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineSizeReduction/ternaryConditional.kt");
+            runTest("js/js.translator/testData/box/inlineSizeReduction/ternaryConditional.kt");
         }
 
         @TestMetadata("this.kt")
         public void testThis() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineSizeReduction/this.kt");
+            runTest("js/js.translator/testData/box/inlineSizeReduction/this.kt");
         }
 
         @TestMetadata("valAssignment.kt")
         public void testValAssignment() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineSizeReduction/valAssignment.kt");
+            runTest("js/js.translator/testData/box/inlineSizeReduction/valAssignment.kt");
         }
 
         @TestMetadata("valDeclaration.kt")
         public void testValDeclaration() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineSizeReduction/valDeclaration.kt");
+            runTest("js/js.translator/testData/box/inlineSizeReduction/valDeclaration.kt");
         }
 
         @TestMetadata("varargTemporaryVar.kt")
         public void testVarargTemporaryVar() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineSizeReduction/varargTemporaryVar.kt");
+            runTest("js/js.translator/testData/box/inlineSizeReduction/varargTemporaryVar.kt");
         }
     }
 
@@ -4498,53 +4686,57 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class InlineStdlib extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInInlineStdlib() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/inlineStdlib"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("callNameClash.kt")
         public void testCallNameClash() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineStdlib/callNameClash.kt");
+            runTest("js/js.translator/testData/box/inlineStdlib/callNameClash.kt");
         }
 
         @TestMetadata("callableRefToFunInCurrentModule.kt")
         public void testCallableRefToFunInCurrentModule() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineStdlib/callableRefToFunInCurrentModule.kt");
+            runTest("js/js.translator/testData/box/inlineStdlib/callableRefToFunInCurrentModule.kt");
         }
 
         @TestMetadata("closure.kt")
         public void testClosure() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineStdlib/closure.kt");
+            runTest("js/js.translator/testData/box/inlineStdlib/closure.kt");
         }
 
         @TestMetadata("closureInObjectLiteral.kt")
         public void testClosureInObjectLiteral() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineStdlib/closureInObjectLiteral.kt");
+            runTest("js/js.translator/testData/box/inlineStdlib/closureInObjectLiteral.kt");
         }
 
         @TestMetadata("closureNested.kt")
         public void testClosureNested() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineStdlib/closureNested.kt");
+            runTest("js/js.translator/testData/box/inlineStdlib/closureNested.kt");
         }
 
         @TestMetadata("localNamesClash.kt")
         public void testLocalNamesClash() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineStdlib/localNamesClash.kt");
+            runTest("js/js.translator/testData/box/inlineStdlib/localNamesClash.kt");
         }
 
         @TestMetadata("simple.kt")
         public void testSimple() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineStdlib/simple.kt");
+            runTest("js/js.translator/testData/box/inlineStdlib/simple.kt");
         }
 
         @TestMetadata("thisInExtension.kt")
         public void testThisInExtension() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineStdlib/thisInExtension.kt");
+            runTest("js/js.translator/testData/box/inlineStdlib/thisInExtension.kt");
         }
 
         @TestMetadata("unsafeCast.kt")
         public void testUnsafeCast() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/inlineStdlib/unsafeCast.kt");
+            runTest("js/js.translator/testData/box/inlineStdlib/unsafeCast.kt");
         }
     }
 
@@ -4552,6 +4744,10 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Java extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInJava() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/java"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
@@ -4560,13 +4756,17 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class AbstractList extends AbstractIrBoxJsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+            }
+
             public void testAllFilesPresentInAbstractList() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/java/abstractList"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
             }
 
             @TestMetadata("iterator.kt")
             public void testIterator() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/java/abstractList/iterator.kt");
+                runTest("js/js.translator/testData/box/java/abstractList/iterator.kt");
             }
         }
 
@@ -4574,9 +4774,13 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class ArrayList extends AbstractIrBoxJsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+            }
+
             @TestMetadata("access.kt")
             public void testAccess() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/java/arrayList/access.kt");
+                runTest("js/js.translator/testData/box/java/arrayList/access.kt");
             }
 
             public void testAllFilesPresentInArrayList() throws Exception {
@@ -4585,77 +4789,77 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
 
             @TestMetadata("arrayAccess.kt")
             public void testArrayAccess() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/java/arrayList/arrayAccess.kt");
+                runTest("js/js.translator/testData/box/java/arrayList/arrayAccess.kt");
             }
 
             @TestMetadata("constructWithCapacity.kt")
             public void testConstructWithCapacity() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/java/arrayList/constructWithCapacity.kt");
+                runTest("js/js.translator/testData/box/java/arrayList/constructWithCapacity.kt");
             }
 
             @TestMetadata("constructWithSideEffectParam.kt")
             public void testConstructWithSideEffectParam() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/java/arrayList/constructWithSideEffectParam.kt");
+                runTest("js/js.translator/testData/box/java/arrayList/constructWithSideEffectParam.kt");
             }
 
             @TestMetadata("containsAll.kt")
             public void testContainsAll() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/java/arrayList/containsAll.kt");
+                runTest("js/js.translator/testData/box/java/arrayList/containsAll.kt");
             }
 
             @TestMetadata("emptyList.kt")
             public void testEmptyList() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/java/arrayList/emptyList.kt");
+                runTest("js/js.translator/testData/box/java/arrayList/emptyList.kt");
             }
 
             @TestMetadata("indexOOB.kt")
             public void testIndexOOB() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/java/arrayList/indexOOB.kt");
+                runTest("js/js.translator/testData/box/java/arrayList/indexOOB.kt");
             }
 
             @TestMetadata("indexOf.kt")
             public void testIndexOf() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/java/arrayList/indexOf.kt");
+                runTest("js/js.translator/testData/box/java/arrayList/indexOf.kt");
             }
 
             @TestMetadata("isEmpty.kt")
             public void testIsEmpty() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/java/arrayList/isEmpty.kt");
+                runTest("js/js.translator/testData/box/java/arrayList/isEmpty.kt");
             }
 
             @TestMetadata("iterate.kt")
             public void testIterate() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/java/arrayList/iterate.kt");
+                runTest("js/js.translator/testData/box/java/arrayList/iterate.kt");
             }
 
             @TestMetadata("misc.kt")
             public void testMisc() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/java/arrayList/misc.kt");
+                runTest("js/js.translator/testData/box/java/arrayList/misc.kt");
             }
 
             @TestMetadata("remove.kt")
             public void testRemove() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/java/arrayList/remove.kt");
+                runTest("js/js.translator/testData/box/java/arrayList/remove.kt");
             }
 
             @TestMetadata("removeAll.kt")
             public void testRemoveAll() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/java/arrayList/removeAll.kt");
+                runTest("js/js.translator/testData/box/java/arrayList/removeAll.kt");
             }
 
             @TestMetadata("removeWithIndexOutOfBounds.kt")
             public void testRemoveWithIndexOutOfBounds() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/java/arrayList/removeWithIndexOutOfBounds.kt");
+                runTest("js/js.translator/testData/box/java/arrayList/removeWithIndexOutOfBounds.kt");
             }
 
             @TestMetadata("retainAll.kt")
             public void testRetainAll() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/java/arrayList/retainAll.kt");
+                runTest("js/js.translator/testData/box/java/arrayList/retainAll.kt");
             }
 
             @TestMetadata("toArray.kt")
             public void testToArray() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/java/arrayList/toArray.kt");
+                runTest("js/js.translator/testData/box/java/arrayList/toArray.kt");
             }
         }
     }
@@ -4664,143 +4868,147 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class JsCode extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInJsCode() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/jsCode"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("break.kt")
         public void testBreak() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsCode/break.kt");
+            runTest("js/js.translator/testData/box/jsCode/break.kt");
         }
 
         @TestMetadata("catchScope.kt")
         public void testCatchScope() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsCode/catchScope.kt");
+            runTest("js/js.translator/testData/box/jsCode/catchScope.kt");
         }
 
         @TestMetadata("codeFromVariable.kt")
         public void testCodeFromVariable() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsCode/codeFromVariable.kt");
+            runTest("js/js.translator/testData/box/jsCode/codeFromVariable.kt");
         }
 
         @TestMetadata("continue.kt")
         public void testContinue() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsCode/continue.kt");
+            runTest("js/js.translator/testData/box/jsCode/continue.kt");
         }
 
         @TestMetadata("doWhile.kt")
         public void testDoWhile() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsCode/doWhile.kt");
+            runTest("js/js.translator/testData/box/jsCode/doWhile.kt");
         }
 
         @TestMetadata("for.kt")
         public void testFor() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsCode/for.kt");
+            runTest("js/js.translator/testData/box/jsCode/for.kt");
         }
 
         @TestMetadata("forIn.kt")
         public void testForIn() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsCode/forIn.kt");
+            runTest("js/js.translator/testData/box/jsCode/forIn.kt");
         }
 
         @TestMetadata("forWithoutInit.kt")
         public void testForWithoutInit() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsCode/forWithoutInit.kt");
+            runTest("js/js.translator/testData/box/jsCode/forWithoutInit.kt");
         }
 
         @TestMetadata("function.kt")
         public void testFunction() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsCode/function.kt");
+            runTest("js/js.translator/testData/box/jsCode/function.kt");
         }
 
         @TestMetadata("functionName.kt")
         public void testFunctionName() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsCode/functionName.kt");
+            runTest("js/js.translator/testData/box/jsCode/functionName.kt");
         }
 
         @TestMetadata("if.kt")
         public void testIf() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsCode/if.kt");
+            runTest("js/js.translator/testData/box/jsCode/if.kt");
         }
 
         @TestMetadata("invocation.kt")
         public void testInvocation() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsCode/invocation.kt");
+            runTest("js/js.translator/testData/box/jsCode/invocation.kt");
         }
 
         @TestMetadata("label.kt")
         public void testLabel() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsCode/label.kt");
+            runTest("js/js.translator/testData/box/jsCode/label.kt");
         }
 
         @TestMetadata("labelNestedClash.kt")
         public void testLabelNestedClash() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsCode/labelNestedClash.kt");
+            runTest("js/js.translator/testData/box/jsCode/labelNestedClash.kt");
         }
 
         @TestMetadata("labelNestedClashWithKotlin.kt")
         public void testLabelNestedClashWithKotlin() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsCode/labelNestedClashWithKotlin.kt");
+            runTest("js/js.translator/testData/box/jsCode/labelNestedClashWithKotlin.kt");
         }
 
         @TestMetadata("labelSiblingClash.kt")
         public void testLabelSiblingClash() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsCode/labelSiblingClash.kt");
+            runTest("js/js.translator/testData/box/jsCode/labelSiblingClash.kt");
         }
 
         @TestMetadata("literal.kt")
         public void testLiteral() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsCode/literal.kt");
+            runTest("js/js.translator/testData/box/jsCode/literal.kt");
         }
 
         @TestMetadata("numberLiteralOverflow.kt")
         public void testNumberLiteralOverflow() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsCode/numberLiteralOverflow.kt");
+            runTest("js/js.translator/testData/box/jsCode/numberLiteralOverflow.kt");
         }
 
         @TestMetadata("object.kt")
         public void testObject() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsCode/object.kt");
+            runTest("js/js.translator/testData/box/jsCode/object.kt");
         }
 
         @TestMetadata("objectExpression.kt")
         public void testObjectExpression() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsCode/objectExpression.kt");
+            runTest("js/js.translator/testData/box/jsCode/objectExpression.kt");
         }
 
         @TestMetadata("objectScopes.kt")
         public void testObjectScopes() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsCode/objectScopes.kt");
+            runTest("js/js.translator/testData/box/jsCode/objectScopes.kt");
         }
 
         @TestMetadata("operators.kt")
         public void testOperators() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsCode/operators.kt");
+            runTest("js/js.translator/testData/box/jsCode/operators.kt");
         }
 
         @TestMetadata("quotes.kt")
         public void testQuotes() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsCode/quotes.kt");
+            runTest("js/js.translator/testData/box/jsCode/quotes.kt");
         }
 
         @TestMetadata("referenceToKotlin.kt")
         public void testReferenceToKotlin() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsCode/referenceToKotlin.kt");
+            runTest("js/js.translator/testData/box/jsCode/referenceToKotlin.kt");
         }
 
         @TestMetadata("switch.kt")
         public void testSwitch() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsCode/switch.kt");
+            runTest("js/js.translator/testData/box/jsCode/switch.kt");
         }
 
         @TestMetadata("tryCatchFinally.kt")
         public void testTryCatchFinally() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsCode/tryCatchFinally.kt");
+            runTest("js/js.translator/testData/box/jsCode/tryCatchFinally.kt");
         }
 
         @TestMetadata("while.kt")
         public void testWhile() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsCode/while.kt");
+            runTest("js/js.translator/testData/box/jsCode/while.kt");
         }
     }
 
@@ -4808,78 +5016,82 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class JsModule extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInJsModule() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/jsModule"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("externalClass.kt")
         public void testExternalClass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsModule/externalClass.kt");
+            runTest("js/js.translator/testData/box/jsModule/externalClass.kt");
         }
 
         @TestMetadata("externalFunction.kt")
         public void testExternalFunction() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsModule/externalFunction.kt");
+            runTest("js/js.translator/testData/box/jsModule/externalFunction.kt");
         }
 
         @TestMetadata("externalFunctionPlain.kt")
         public void testExternalFunctionPlain() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsModule/externalFunctionPlain.kt");
+            runTest("js/js.translator/testData/box/jsModule/externalFunctionPlain.kt");
         }
 
         @TestMetadata("externalFunctionUmd.kt")
         public void testExternalFunctionUmd() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsModule/externalFunctionUmd.kt");
+            runTest("js/js.translator/testData/box/jsModule/externalFunctionUmd.kt");
         }
 
         @TestMetadata("externalFunctionUmdFallback.kt")
         public void testExternalFunctionUmdFallback() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsModule/externalFunctionUmdFallback.kt");
+            runTest("js/js.translator/testData/box/jsModule/externalFunctionUmdFallback.kt");
         }
 
         @TestMetadata("externalObject.kt")
         public void testExternalObject() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsModule/externalObject.kt");
+            runTest("js/js.translator/testData/box/jsModule/externalObject.kt");
         }
 
         @TestMetadata("externalPackage.kt")
         public void testExternalPackage() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsModule/externalPackage.kt");
+            runTest("js/js.translator/testData/box/jsModule/externalPackage.kt");
         }
 
         @TestMetadata("externalPackageInDifferentFile.kt")
         public void testExternalPackageInDifferentFile() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsModule/externalPackageInDifferentFile.kt");
+            runTest("js/js.translator/testData/box/jsModule/externalPackageInDifferentFile.kt");
         }
 
         @TestMetadata("externalPackagePlain.kt")
         public void testExternalPackagePlain() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsModule/externalPackagePlain.kt");
+            runTest("js/js.translator/testData/box/jsModule/externalPackagePlain.kt");
         }
 
         @TestMetadata("externalPackageUmdFallback.kt")
         public void testExternalPackageUmdFallback() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsModule/externalPackageUmdFallback.kt");
+            runTest("js/js.translator/testData/box/jsModule/externalPackageUmdFallback.kt");
         }
 
         @TestMetadata("externalProperty.kt")
         public void testExternalProperty() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsModule/externalProperty.kt");
+            runTest("js/js.translator/testData/box/jsModule/externalProperty.kt");
         }
 
         @TestMetadata("importCountCommonJS.kt")
         public void testImportCountCommonJS() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsModule/importCountCommonJS.kt");
+            runTest("js/js.translator/testData/box/jsModule/importCountCommonJS.kt");
         }
 
         @TestMetadata("importCountUmd.kt")
         public void testImportCountUmd() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsModule/importCountUmd.kt");
+            runTest("js/js.translator/testData/box/jsModule/importCountUmd.kt");
         }
 
         @TestMetadata("topLevelVarargFun.kt")
         public void testTopLevelVarargFun() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsModule/topLevelVarargFun.kt");
+            runTest("js/js.translator/testData/box/jsModule/topLevelVarargFun.kt");
         }
     }
 
@@ -4887,68 +5099,72 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class JsName extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInJsName() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/jsName"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("avoidNameClash.kt")
         public void testAvoidNameClash() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsName/avoidNameClash.kt");
+            runTest("js/js.translator/testData/box/jsName/avoidNameClash.kt");
         }
 
         @TestMetadata("classes.kt")
         public void testClasses() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsName/classes.kt");
+            runTest("js/js.translator/testData/box/jsName/classes.kt");
         }
 
         @TestMetadata("inheritFromRenamedNativeClass.kt")
         public void testInheritFromRenamedNativeClass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsName/inheritFromRenamedNativeClass.kt");
+            runTest("js/js.translator/testData/box/jsName/inheritFromRenamedNativeClass.kt");
         }
 
         @TestMetadata("inheritFromRenamedNativeClassMultimodule.kt")
         public void testInheritFromRenamedNativeClassMultimodule() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsName/inheritFromRenamedNativeClassMultimodule.kt");
+            runTest("js/js.translator/testData/box/jsName/inheritFromRenamedNativeClassMultimodule.kt");
         }
 
         @TestMetadata("jsName.kt")
         public void testJsName() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsName/jsName.kt");
+            runTest("js/js.translator/testData/box/jsName/jsName.kt");
         }
 
         @TestMetadata("jsNamePropertyAccessors.kt")
         public void testJsNamePropertyAccessors() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsName/jsNamePropertyAccessors.kt");
+            runTest("js/js.translator/testData/box/jsName/jsNamePropertyAccessors.kt");
         }
 
         @TestMetadata("overriddenMethod.kt")
         public void testOverriddenMethod() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsName/overriddenMethod.kt");
+            runTest("js/js.translator/testData/box/jsName/overriddenMethod.kt");
         }
 
         @TestMetadata("overridenFromInterface.kt")
         public void testOverridenFromInterface() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsName/overridenFromInterface.kt");
+            runTest("js/js.translator/testData/box/jsName/overridenFromInterface.kt");
         }
 
         @TestMetadata("peculiarIdentifiers.kt")
         public void testPeculiarIdentifiers() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsName/peculiarIdentifiers.kt");
+            runTest("js/js.translator/testData/box/jsName/peculiarIdentifiers.kt");
         }
 
         @TestMetadata("privateMethod.kt")
         public void testPrivateMethod() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsName/privateMethod.kt");
+            runTest("js/js.translator/testData/box/jsName/privateMethod.kt");
         }
 
         @TestMetadata("secondaryConstructor.kt")
         public void testSecondaryConstructor() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsName/secondaryConstructor.kt");
+            runTest("js/js.translator/testData/box/jsName/secondaryConstructor.kt");
         }
 
         @TestMetadata("simpleJsName.kt")
         public void testSimpleJsName() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsName/simpleJsName.kt");
+            runTest("js/js.translator/testData/box/jsName/simpleJsName.kt");
         }
     }
 
@@ -4956,28 +5172,32 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class JsQualifier extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInJsQualifier() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/jsQualifier"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("classes.kt")
         public void testClasses() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsQualifier/classes.kt");
+            runTest("js/js.translator/testData/box/jsQualifier/classes.kt");
         }
 
         @TestMetadata("simple.kt")
         public void testSimple() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsQualifier/simple.kt");
+            runTest("js/js.translator/testData/box/jsQualifier/simple.kt");
         }
 
         @TestMetadata("umdFallback.kt")
         public void testUmdFallback() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsQualifier/umdFallback.kt");
+            runTest("js/js.translator/testData/box/jsQualifier/umdFallback.kt");
         }
 
         @TestMetadata("withModule.kt")
         public void testWithModule() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/jsQualifier/withModule.kt");
+            runTest("js/js.translator/testData/box/jsQualifier/withModule.kt");
         }
     }
 
@@ -4985,43 +5205,47 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Kotlin_test extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInKotlin_test() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/kotlin.test"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("beforeAfter.kt")
         public void testBeforeAfter() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/kotlin.test/beforeAfter.kt");
+            runTest("js/js.translator/testData/box/kotlin.test/beforeAfter.kt");
         }
 
         @TestMetadata("ignore.kt")
         public void testIgnore() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/kotlin.test/ignore.kt");
+            runTest("js/js.translator/testData/box/kotlin.test/ignore.kt");
         }
 
         @TestMetadata("inherited.kt")
         public void testInherited() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/kotlin.test/inherited.kt");
+            runTest("js/js.translator/testData/box/kotlin.test/inherited.kt");
         }
 
         @TestMetadata("mpp.kt")
         public void testMpp() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/kotlin.test/mpp.kt");
+            runTest("js/js.translator/testData/box/kotlin.test/mpp.kt");
         }
 
         @TestMetadata("nested.kt")
         public void testNested() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/kotlin.test/nested.kt");
+            runTest("js/js.translator/testData/box/kotlin.test/nested.kt");
         }
 
         @TestMetadata("returnTestResult.kt")
         public void testReturnTestResult() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/kotlin.test/returnTestResult.kt");
+            runTest("js/js.translator/testData/box/kotlin.test/returnTestResult.kt");
         }
 
         @TestMetadata("simple.kt")
         public void testSimple() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/kotlin.test/simple.kt");
+            runTest("js/js.translator/testData/box/kotlin.test/simple.kt");
         }
     }
 
@@ -5029,68 +5253,72 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Labels extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInLabels() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/labels"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("labelOnExpression.kt")
         public void testLabelOnExpression() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/labels/labelOnExpression.kt");
+            runTest("js/js.translator/testData/box/labels/labelOnExpression.kt");
         }
 
         @TestMetadata("labelWithVariableClashing.kt")
         public void testLabelWithVariableClashing() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/labels/labelWithVariableClashing.kt");
+            runTest("js/js.translator/testData/box/labels/labelWithVariableClashing.kt");
         }
 
         @TestMetadata("nestedInlineLabels.kt")
         public void testNestedInlineLabels() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/labels/nestedInlineLabels.kt");
+            runTest("js/js.translator/testData/box/labels/nestedInlineLabels.kt");
         }
 
         @TestMetadata("nestedLabels.kt")
         public void testNestedLabels() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/labels/nestedLabels.kt");
+            runTest("js/js.translator/testData/box/labels/nestedLabels.kt");
         }
 
         @TestMetadata("nestedLabelsInlinedClashing.kt")
         public void testNestedLabelsInlinedClashing() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/labels/nestedLabelsInlinedClashing.kt");
+            runTest("js/js.translator/testData/box/labels/nestedLabelsInlinedClashing.kt");
         }
 
         @TestMetadata("nestedLabelsInlinedClashingAtFunctionsWithClosure.kt")
         public void testNestedLabelsInlinedClashingAtFunctionsWithClosure() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/labels/nestedLabelsInlinedClashingAtFunctionsWithClosure.kt");
+            runTest("js/js.translator/testData/box/labels/nestedLabelsInlinedClashingAtFunctionsWithClosure.kt");
         }
 
         @TestMetadata("peculiarNames.kt")
         public void testPeculiarNames() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/labels/peculiarNames.kt");
+            runTest("js/js.translator/testData/box/labels/peculiarNames.kt");
         }
 
         @TestMetadata("siblingLabels.kt")
         public void testSiblingLabels() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/labels/siblingLabels.kt");
+            runTest("js/js.translator/testData/box/labels/siblingLabels.kt");
         }
 
         @TestMetadata("siblingLabelsInlined.kt")
         public void testSiblingLabelsInlined() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/labels/siblingLabelsInlined.kt");
+            runTest("js/js.translator/testData/box/labels/siblingLabelsInlined.kt");
         }
 
         @TestMetadata("siblingLabelsInlinedClashing.kt")
         public void testSiblingLabelsInlinedClashing() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/labels/siblingLabelsInlinedClashing.kt");
+            runTest("js/js.translator/testData/box/labels/siblingLabelsInlinedClashing.kt");
         }
 
         @TestMetadata("simpleLabel.kt")
         public void testSimpleLabel() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/labels/simpleLabel.kt");
+            runTest("js/js.translator/testData/box/labels/simpleLabel.kt");
         }
 
         @TestMetadata("simpleLabelInlined.kt")
         public void testSimpleLabelInlined() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/labels/simpleLabelInlined.kt");
+            runTest("js/js.translator/testData/box/labels/simpleLabelInlined.kt");
         }
     }
 
@@ -5098,38 +5326,42 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class MultiFile extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInMultiFile() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/multiFile"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("classOfTheSameNameInAnotherPackage.kt")
         public void testClassOfTheSameNameInAnotherPackage() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multiFile/classOfTheSameNameInAnotherPackage.kt");
+            runTest("js/js.translator/testData/box/multiFile/classOfTheSameNameInAnotherPackage.kt");
         }
 
         @TestMetadata("classesInheritedFromOtherFile.kt")
         public void testClassesInheritedFromOtherFile() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multiFile/classesInheritedFromOtherFile.kt");
+            runTest("js/js.translator/testData/box/multiFile/classesInheritedFromOtherFile.kt");
         }
 
         @TestMetadata("functionsVisibleFromOtherFile.kt")
         public void testFunctionsVisibleFromOtherFile() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multiFile/functionsVisibleFromOtherFile.kt");
+            runTest("js/js.translator/testData/box/multiFile/functionsVisibleFromOtherFile.kt");
         }
 
         @TestMetadata("importedDeclarationMangling.kt")
         public void testImportedDeclarationMangling() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multiFile/importedDeclarationMangling.kt");
+            runTest("js/js.translator/testData/box/multiFile/importedDeclarationMangling.kt");
         }
 
         @TestMetadata("packageAndMangledMethodDoNotClash.kt")
         public void testPackageAndMangledMethodDoNotClash() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multiFile/packageAndMangledMethodDoNotClash.kt");
+            runTest("js/js.translator/testData/box/multiFile/packageAndMangledMethodDoNotClash.kt");
         }
 
         @TestMetadata("packageAndPrivateDeclarationDoNotClash.kt")
         public void testPackageAndPrivateDeclarationDoNotClash() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multiFile/packageAndPrivateDeclarationDoNotClash.kt");
+            runTest("js/js.translator/testData/box/multiFile/packageAndPrivateDeclarationDoNotClash.kt");
         }
     }
 
@@ -5137,48 +5369,52 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class MultiModule extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInMultiModule() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/multiModule"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("interfaceMethodWithDefaultParameter.kt")
         public void testInterfaceMethodWithDefaultParameter() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multiModule/interfaceMethodWithDefaultParameter.kt");
+            runTest("js/js.translator/testData/box/multiModule/interfaceMethodWithDefaultParameter.kt");
         }
 
         @TestMetadata("localClassMetadata.kt")
         public void testLocalClassMetadata() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multiModule/localClassMetadata.kt");
+            runTest("js/js.translator/testData/box/multiModule/localClassMetadata.kt");
         }
 
         @TestMetadata("moduleAndVariableNameClash.kt")
         public void testModuleAndVariableNameClash() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multiModule/moduleAndVariableNameClash.kt");
+            runTest("js/js.translator/testData/box/multiModule/moduleAndVariableNameClash.kt");
         }
 
         @TestMetadata("privateInterfaceNameClash.kt")
         public void testPrivateInterfaceNameClash() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multiModule/privateInterfaceNameClash.kt");
+            runTest("js/js.translator/testData/box/multiModule/privateInterfaceNameClash.kt");
         }
 
         @TestMetadata("privateNameClash.kt")
         public void testPrivateNameClash() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multiModule/privateNameClash.kt");
+            runTest("js/js.translator/testData/box/multiModule/privateNameClash.kt");
         }
 
         @TestMetadata("publishedApiMangling.kt")
         public void testPublishedApiMangling() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multiModule/publishedApiMangling.kt");
+            runTest("js/js.translator/testData/box/multiModule/publishedApiMangling.kt");
         }
 
         @TestMetadata("samePackageNames.kt")
         public void testSamePackageNames() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multiModule/samePackageNames.kt");
+            runTest("js/js.translator/testData/box/multiModule/samePackageNames.kt");
         }
 
         @TestMetadata("useElementsFromDefaultPackageInAnotherModule.kt")
         public void testUseElementsFromDefaultPackageInAnotherModule() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multiModule/useElementsFromDefaultPackageInAnotherModule.kt");
+            runTest("js/js.translator/testData/box/multiModule/useElementsFromDefaultPackageInAnotherModule.kt");
         }
     }
 
@@ -5186,6 +5422,10 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class MultiModuleWrappers extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInMultiModuleWrappers() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/multiModuleWrappers"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
@@ -5194,23 +5434,27 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Amd extends AbstractIrBoxJsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+            }
+
             public void testAllFilesPresentInAmd() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/multiModuleWrappers/amd"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
             }
 
             @TestMetadata("jsModuleOnPackage.kt")
             public void testJsModuleOnPackage() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multiModuleWrappers/amd/jsModuleOnPackage.kt");
+                runTest("js/js.translator/testData/box/multiModuleWrappers/amd/jsModuleOnPackage.kt");
             }
 
             @TestMetadata("moduleWithNonIdentifierName.kt")
             public void testModuleWithNonIdentifierName() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multiModuleWrappers/amd/moduleWithNonIdentifierName.kt");
+                runTest("js/js.translator/testData/box/multiModuleWrappers/amd/moduleWithNonIdentifierName.kt");
             }
 
             @TestMetadata("simple.kt")
             public void testSimple() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multiModuleWrappers/amd/simple.kt");
+                runTest("js/js.translator/testData/box/multiModuleWrappers/amd/simple.kt");
             }
         }
 
@@ -5218,23 +5462,27 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Common_js extends AbstractIrBoxJsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+            }
+
             public void testAllFilesPresentInCommon_js() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/multiModuleWrappers/common_js"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
             }
 
             @TestMetadata("inlineFromModuleWithNonIdentifierName.kt")
             public void testInlineFromModuleWithNonIdentifierName() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multiModuleWrappers/common_js/inlineFromModuleWithNonIdentifierName.kt");
+                runTest("js/js.translator/testData/box/multiModuleWrappers/common_js/inlineFromModuleWithNonIdentifierName.kt");
             }
 
             @TestMetadata("moduleWithNonIdentifierName.kt")
             public void testModuleWithNonIdentifierName() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multiModuleWrappers/common_js/moduleWithNonIdentifierName.kt");
+                runTest("js/js.translator/testData/box/multiModuleWrappers/common_js/moduleWithNonIdentifierName.kt");
             }
 
             @TestMetadata("simple.kt")
             public void testSimple() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multiModuleWrappers/common_js/simple.kt");
+                runTest("js/js.translator/testData/box/multiModuleWrappers/common_js/simple.kt");
             }
         }
 
@@ -5242,23 +5490,27 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Plain extends AbstractIrBoxJsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+            }
+
             public void testAllFilesPresentInPlain() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/multiModuleWrappers/plain"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
             }
 
             @TestMetadata("inlineFromModuleWithNonIdentifierName.kt")
             public void testInlineFromModuleWithNonIdentifierName() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multiModuleWrappers/plain/inlineFromModuleWithNonIdentifierName.kt");
+                runTest("js/js.translator/testData/box/multiModuleWrappers/plain/inlineFromModuleWithNonIdentifierName.kt");
             }
 
             @TestMetadata("moduleWithNonIdentifierName.kt")
             public void testModuleWithNonIdentifierName() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multiModuleWrappers/plain/moduleWithNonIdentifierName.kt");
+                runTest("js/js.translator/testData/box/multiModuleWrappers/plain/moduleWithNonIdentifierName.kt");
             }
 
             @TestMetadata("simple.kt")
             public void testSimple() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multiModuleWrappers/plain/simple.kt");
+                runTest("js/js.translator/testData/box/multiModuleWrappers/plain/simple.kt");
             }
         }
 
@@ -5266,18 +5518,22 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Umd extends AbstractIrBoxJsTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+            }
+
             public void testAllFilesPresentInUmd() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/multiModuleWrappers/umd"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
             }
 
             @TestMetadata("moduleWithNonIdentifierName.kt")
             public void testModuleWithNonIdentifierName() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multiModuleWrappers/umd/moduleWithNonIdentifierName.kt");
+                runTest("js/js.translator/testData/box/multiModuleWrappers/umd/moduleWithNonIdentifierName.kt");
             }
 
             @TestMetadata("simple.kt")
             public void testSimple() throws Exception {
-                KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multiModuleWrappers/umd/simple.kt");
+                runTest("js/js.translator/testData/box/multiModuleWrappers/umd/simple.kt");
             }
         }
     }
@@ -5286,53 +5542,57 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class MultiPackage extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInMultiPackage() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/multiPackage"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("classesInheritedFromOtherPackage.kt")
         public void testClassesInheritedFromOtherPackage() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multiPackage/classesInheritedFromOtherPackage.kt");
+            runTest("js/js.translator/testData/box/multiPackage/classesInheritedFromOtherPackage.kt");
         }
 
         @TestMetadata("createClassFromOtherPackage.kt")
         public void testCreateClassFromOtherPackage() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multiPackage/createClassFromOtherPackage.kt");
+            runTest("js/js.translator/testData/box/multiPackage/createClassFromOtherPackage.kt");
         }
 
         @TestMetadata("createClassFromOtherPackageUsingImport.kt")
         public void testCreateClassFromOtherPackageUsingImport() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multiPackage/createClassFromOtherPackageUsingImport.kt");
+            runTest("js/js.translator/testData/box/multiPackage/createClassFromOtherPackageUsingImport.kt");
         }
 
         @TestMetadata("functionsVisibleFromOtherPackage.kt")
         public void testFunctionsVisibleFromOtherPackage() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multiPackage/functionsVisibleFromOtherPackage.kt");
+            runTest("js/js.translator/testData/box/multiPackage/functionsVisibleFromOtherPackage.kt");
         }
 
         @TestMetadata("nestedPackageFunctionCalledFromOtherPackage.kt")
         public void testNestedPackageFunctionCalledFromOtherPackage() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multiPackage/nestedPackageFunctionCalledFromOtherPackage.kt");
+            runTest("js/js.translator/testData/box/multiPackage/nestedPackageFunctionCalledFromOtherPackage.kt");
         }
 
         @TestMetadata("packageVariableVisibleFromOtherPackage.kt")
         public void testPackageVariableVisibleFromOtherPackage() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multiPackage/packageVariableVisibleFromOtherPackage.kt");
+            runTest("js/js.translator/testData/box/multiPackage/packageVariableVisibleFromOtherPackage.kt");
         }
 
         @TestMetadata("reflectionFromOtherPackage.kt")
         public void testReflectionFromOtherPackage() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multiPackage/reflectionFromOtherPackage.kt");
+            runTest("js/js.translator/testData/box/multiPackage/reflectionFromOtherPackage.kt");
         }
 
         @TestMetadata("subpackagesWithClashingNames.kt")
         public void testSubpackagesWithClashingNames() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multiPackage/subpackagesWithClashingNames.kt");
+            runTest("js/js.translator/testData/box/multiPackage/subpackagesWithClashingNames.kt");
         }
 
         @TestMetadata("subpackagesWithClashingNamesUsingImport.kt")
         public void testSubpackagesWithClashingNamesUsingImport() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multiPackage/subpackagesWithClashingNamesUsingImport.kt");
+            runTest("js/js.translator/testData/box/multiPackage/subpackagesWithClashingNamesUsingImport.kt");
         }
     }
 
@@ -5340,43 +5600,47 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Multideclaration extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInMultideclaration() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/multideclaration"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("multiValForArray.kt")
         public void testMultiValForArray() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multideclaration/multiValForArray.kt");
+            runTest("js/js.translator/testData/box/multideclaration/multiValForArray.kt");
         }
 
         @TestMetadata("multiValForMap.kt")
         public void testMultiValForMap() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multideclaration/multiValForMap.kt");
+            runTest("js/js.translator/testData/box/multideclaration/multiValForMap.kt");
         }
 
         @TestMetadata("multiValForRange.kt")
         public void testMultiValForRange() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multideclaration/multiValForRange.kt");
+            runTest("js/js.translator/testData/box/multideclaration/multiValForRange.kt");
         }
 
         @TestMetadata("multiValInFor.kt")
         public void testMultiValInFor() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multideclaration/multiValInFor.kt");
+            runTest("js/js.translator/testData/box/multideclaration/multiValInFor.kt");
         }
 
         @TestMetadata("multiValInIntFor.kt")
         public void testMultiValInIntFor() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multideclaration/multiValInIntFor.kt");
+            runTest("js/js.translator/testData/box/multideclaration/multiValInIntFor.kt");
         }
 
         @TestMetadata("multiValInIntRangeFor.kt")
         public void testMultiValInIntRangeFor() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multideclaration/multiValInIntRangeFor.kt");
+            runTest("js/js.translator/testData/box/multideclaration/multiValInIntRangeFor.kt");
         }
 
         @TestMetadata("multiValOrVar.kt")
         public void testMultiValOrVar() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/multideclaration/multiValOrVar.kt");
+            runTest("js/js.translator/testData/box/multideclaration/multiValOrVar.kt");
         }
     }
 
@@ -5384,98 +5648,102 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class NameClashes extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInNameClashes() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/nameClashes"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("classAndCompanionObjectMembers.kt")
         public void testClassAndCompanionObjectMembers() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/nameClashes/classAndCompanionObjectMembers.kt");
+            runTest("js/js.translator/testData/box/nameClashes/classAndCompanionObjectMembers.kt");
         }
 
         @TestMetadata("constructorLocalVar.kt")
         public void testConstructorLocalVar() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/nameClashes/constructorLocalVar.kt");
+            runTest("js/js.translator/testData/box/nameClashes/constructorLocalVar.kt");
         }
 
         @TestMetadata("differenceInCapitalization.kt")
         public void testDifferenceInCapitalization() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/nameClashes/differenceInCapitalization.kt");
+            runTest("js/js.translator/testData/box/nameClashes/differenceInCapitalization.kt");
         }
 
         @TestMetadata("extensionFunctionAndProperty.kt")
         public void testExtensionFunctionAndProperty() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/nameClashes/extensionFunctionAndProperty.kt");
+            runTest("js/js.translator/testData/box/nameClashes/extensionFunctionAndProperty.kt");
         }
 
         @TestMetadata("extensionPropertiesWithDifferentReceivers.kt")
         public void testExtensionPropertiesWithDifferentReceivers() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/nameClashes/extensionPropertiesWithDifferentReceivers.kt");
+            runTest("js/js.translator/testData/box/nameClashes/extensionPropertiesWithDifferentReceivers.kt");
         }
 
         @TestMetadata("extensionPropertyAndMethod.kt")
         public void testExtensionPropertyAndMethod() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/nameClashes/extensionPropertyAndMethod.kt");
+            runTest("js/js.translator/testData/box/nameClashes/extensionPropertyAndMethod.kt");
         }
 
         @TestMetadata("jsNameAndPrivate.kt")
         public void testJsNameAndPrivate() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/nameClashes/jsNameAndPrivate.kt");
+            runTest("js/js.translator/testData/box/nameClashes/jsNameAndPrivate.kt");
         }
 
         @TestMetadata("localFunctionInLambda.kt")
         public void testLocalFunctionInLambda() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/nameClashes/localFunctionInLambda.kt");
+            runTest("js/js.translator/testData/box/nameClashes/localFunctionInLambda.kt");
         }
 
         @TestMetadata("localFunctions.kt")
         public void testLocalFunctions() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/nameClashes/localFunctions.kt");
+            runTest("js/js.translator/testData/box/nameClashes/localFunctions.kt");
         }
 
         @TestMetadata("methodAndPrivateProperty.kt")
         public void testMethodAndPrivateProperty() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/nameClashes/methodAndPrivateProperty.kt");
+            runTest("js/js.translator/testData/box/nameClashes/methodAndPrivateProperty.kt");
         }
 
         @TestMetadata("methodOverload.kt")
         public void testMethodOverload() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/nameClashes/methodOverload.kt");
+            runTest("js/js.translator/testData/box/nameClashes/methodOverload.kt");
         }
 
         @TestMetadata("methodOverloadInClassWithTwoUpperBounds.kt")
         public void testMethodOverloadInClassWithTwoUpperBounds() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/nameClashes/methodOverloadInClassWithTwoUpperBounds.kt");
+            runTest("js/js.translator/testData/box/nameClashes/methodOverloadInClassWithTwoUpperBounds.kt");
         }
 
         @TestMetadata("nativeAndTopLevelFunction.kt")
         public void testNativeAndTopLevelFunction() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/nameClashes/nativeAndTopLevelFunction.kt");
+            runTest("js/js.translator/testData/box/nameClashes/nativeAndTopLevelFunction.kt");
         }
 
         @TestMetadata("nativeDeclarationAndLocalVar.kt")
         public void testNativeDeclarationAndLocalVar() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/nameClashes/nativeDeclarationAndLocalVar.kt");
+            runTest("js/js.translator/testData/box/nameClashes/nativeDeclarationAndLocalVar.kt");
         }
 
         @TestMetadata("overloadExtension.kt")
         public void testOverloadExtension() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/nameClashes/overloadExtension.kt");
+            runTest("js/js.translator/testData/box/nameClashes/overloadExtension.kt");
         }
 
         @TestMetadata("propertyAndNativeMethod.kt")
         public void testPropertyAndNativeMethod() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/nameClashes/propertyAndNativeMethod.kt");
+            runTest("js/js.translator/testData/box/nameClashes/propertyAndNativeMethod.kt");
         }
 
         @TestMetadata("topLevelFunctionAndParameter.kt")
         public void testTopLevelFunctionAndParameter() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/nameClashes/topLevelFunctionAndParameter.kt");
+            runTest("js/js.translator/testData/box/nameClashes/topLevelFunctionAndParameter.kt");
         }
 
         @TestMetadata("withBuiltin.kt")
         public void testWithBuiltin() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/nameClashes/withBuiltin.kt");
+            runTest("js/js.translator/testData/box/nameClashes/withBuiltin.kt");
         }
     }
 
@@ -5483,9 +5751,13 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Native extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         @TestMetadata("accessToCompanionObjectFromInlineFun.kt")
         public void testAccessToCompanionObjectFromInlineFun() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/accessToCompanionObjectFromInlineFun.kt");
+            runTest("js/js.translator/testData/box/native/accessToCompanionObjectFromInlineFun.kt");
         }
 
         public void testAllFilesPresentInNative() throws Exception {
@@ -5494,192 +5766,192 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
 
         @TestMetadata("callbackOptionalParameter.kt")
         public void testCallbackOptionalParameter() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/callbackOptionalParameter.kt");
+            runTest("js/js.translator/testData/box/native/callbackOptionalParameter.kt");
         }
 
         @TestMetadata("castToNativeClassChecked.kt")
         public void testCastToNativeClassChecked() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/castToNativeClassChecked.kt");
+            runTest("js/js.translator/testData/box/native/castToNativeClassChecked.kt");
         }
 
         @TestMetadata("castToNativeInterface.kt")
         public void testCastToNativeInterface() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/castToNativeInterface.kt");
+            runTest("js/js.translator/testData/box/native/castToNativeInterface.kt");
         }
 
         @TestMetadata("castToNativeInterfaceChecked.kt")
         public void testCastToNativeInterfaceChecked() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/castToNativeInterfaceChecked.kt");
+            runTest("js/js.translator/testData/box/native/castToNativeInterfaceChecked.kt");
         }
 
         @TestMetadata("castToNullableNativeInterface.kt")
         public void testCastToNullableNativeInterface() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/castToNullableNativeInterface.kt");
+            runTest("js/js.translator/testData/box/native/castToNullableNativeInterface.kt");
         }
 
         @TestMetadata("castToTypeParamBoundedByNativeInterface.kt")
         public void testCastToTypeParamBoundedByNativeInterface() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/castToTypeParamBoundedByNativeInterface.kt");
+            runTest("js/js.translator/testData/box/native/castToTypeParamBoundedByNativeInterface.kt");
         }
 
         @TestMetadata("class.kt")
         public void testClass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/class.kt");
+            runTest("js/js.translator/testData/box/native/class.kt");
         }
 
         @TestMetadata("classObject.kt")
         public void testClassObject() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/classObject.kt");
+            runTest("js/js.translator/testData/box/native/classObject.kt");
         }
 
         @TestMetadata("equalsMangling.kt")
         public void testEqualsMangling() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/equalsMangling.kt");
+            runTest("js/js.translator/testData/box/native/equalsMangling.kt");
         }
 
         @TestMetadata("eval.kt")
         public void testEval() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/eval.kt");
+            runTest("js/js.translator/testData/box/native/eval.kt");
         }
 
         @TestMetadata("exception.kt")
         public void testException() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/exception.kt");
+            runTest("js/js.translator/testData/box/native/exception.kt");
         }
 
         @TestMetadata("inheritanceFromNativeClass.kt")
         public void testInheritanceFromNativeClass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/inheritanceFromNativeClass.kt");
+            runTest("js/js.translator/testData/box/native/inheritanceFromNativeClass.kt");
         }
 
         @TestMetadata("inheritanceFromNativeTrait.kt")
         public void testInheritanceFromNativeTrait() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/inheritanceFromNativeTrait.kt");
+            runTest("js/js.translator/testData/box/native/inheritanceFromNativeTrait.kt");
         }
 
         @TestMetadata("inheritanceInNativeClass.kt")
         public void testInheritanceInNativeClass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/inheritanceInNativeClass.kt");
+            runTest("js/js.translator/testData/box/native/inheritanceInNativeClass.kt");
         }
 
         @TestMetadata("kt2209.kt")
         public void testKt2209() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/kt2209.kt");
+            runTest("js/js.translator/testData/box/native/kt2209.kt");
         }
 
         @TestMetadata("library.kt")
         public void testLibrary() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/library.kt");
+            runTest("js/js.translator/testData/box/native/library.kt");
         }
 
         @TestMetadata("nativeClassAsReifiedTypeArgument.kt")
         public void testNativeClassAsReifiedTypeArgument() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/nativeClassAsReifiedTypeArgument.kt");
+            runTest("js/js.translator/testData/box/native/nativeClassAsReifiedTypeArgument.kt");
         }
 
         @TestMetadata("nativeGetterAndNativeSetter.kt")
         public void testNativeGetterAndNativeSetter() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/nativeGetterAndNativeSetter.kt");
+            runTest("js/js.translator/testData/box/native/nativeGetterAndNativeSetter.kt");
         }
 
         @TestMetadata("nativeInvoke.kt")
         public void testNativeInvoke() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/nativeInvoke.kt");
+            runTest("js/js.translator/testData/box/native/nativeInvoke.kt");
         }
 
         @TestMetadata("nestedElements.kt")
         public void testNestedElements() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/nestedElements.kt");
+            runTest("js/js.translator/testData/box/native/nestedElements.kt");
         }
 
         @TestMetadata("objectFunWithVararg.kt")
         public void testObjectFunWithVararg() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/objectFunWithVararg.kt");
+            runTest("js/js.translator/testData/box/native/objectFunWithVararg.kt");
         }
 
         @TestMetadata("overrideNativeOverloadedFunction.kt")
         public void testOverrideNativeOverloadedFunction() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/overrideNativeOverloadedFunction.kt");
+            runTest("js/js.translator/testData/box/native/overrideNativeOverloadedFunction.kt");
         }
 
         @TestMetadata("passExtLambdaFromNative.kt")
         public void testPassExtLambdaFromNative() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/passExtLambdaFromNative.kt");
+            runTest("js/js.translator/testData/box/native/passExtLambdaFromNative.kt");
         }
 
         @TestMetadata("passExtLambdaToNative.kt")
         public void testPassExtLambdaToNative() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/passExtLambdaToNative.kt");
+            runTest("js/js.translator/testData/box/native/passExtLambdaToNative.kt");
         }
 
         @TestMetadata("passMemberOrExtFromNative.kt")
         public void testPassMemberOrExtFromNative() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/passMemberOrExtFromNative.kt");
+            runTest("js/js.translator/testData/box/native/passMemberOrExtFromNative.kt");
         }
 
         @TestMetadata("passMemberOrExtToNative.kt")
         public void testPassMemberOrExtToNative() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/passMemberOrExtToNative.kt");
+            runTest("js/js.translator/testData/box/native/passMemberOrExtToNative.kt");
         }
 
         @TestMetadata("passTopLevelFunctionFromNative.kt")
         public void testPassTopLevelFunctionFromNative() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/passTopLevelFunctionFromNative.kt");
+            runTest("js/js.translator/testData/box/native/passTopLevelFunctionFromNative.kt");
         }
 
         @TestMetadata("passTopLevelOrLocalFunctionToNative.kt")
         public void testPassTopLevelOrLocalFunctionToNative() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/passTopLevelOrLocalFunctionToNative.kt");
+            runTest("js/js.translator/testData/box/native/passTopLevelOrLocalFunctionToNative.kt");
         }
 
         @TestMetadata("print.kt")
         public void testPrint() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/print.kt");
+            runTest("js/js.translator/testData/box/native/print.kt");
         }
 
         @TestMetadata("privateExternal.kt")
         public void testPrivateExternal() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/privateExternal.kt");
+            runTest("js/js.translator/testData/box/native/privateExternal.kt");
         }
 
         @TestMetadata("safeCastToNativeInterface.kt")
         public void testSafeCastToNativeInterface() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/safeCastToNativeInterface.kt");
+            runTest("js/js.translator/testData/box/native/safeCastToNativeInterface.kt");
         }
 
         @TestMetadata("secondaryConstructor.kt")
         public void testSecondaryConstructor() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/secondaryConstructor.kt");
+            runTest("js/js.translator/testData/box/native/secondaryConstructor.kt");
         }
 
         @TestMetadata("simple.kt")
         public void testSimple() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/simple.kt");
+            runTest("js/js.translator/testData/box/native/simple.kt");
         }
 
         @TestMetadata("simpleUndefined.kt")
         public void testSimpleUndefined() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/simpleUndefined.kt");
+            runTest("js/js.translator/testData/box/native/simpleUndefined.kt");
         }
 
         @TestMetadata("typeof.kt")
         public void testTypeof() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/typeof.kt");
+            runTest("js/js.translator/testData/box/native/typeof.kt");
         }
 
         @TestMetadata("undefined.kt")
         public void testUndefined() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/undefined.kt");
+            runTest("js/js.translator/testData/box/native/undefined.kt");
         }
 
         @TestMetadata("useClassFromInlineFun.kt")
         public void testUseClassFromInlineFun() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/useClassFromInlineFun.kt");
+            runTest("js/js.translator/testData/box/native/useClassFromInlineFun.kt");
         }
 
         @TestMetadata("vararg.kt")
         public void testVararg() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/native/vararg.kt");
+            runTest("js/js.translator/testData/box/native/vararg.kt");
         }
     }
 
@@ -5687,88 +5959,92 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class NestedTypes extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInNestedTypes() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/nestedTypes"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("implicitOuterThisFromLambda.kt")
         public void testImplicitOuterThisFromLambda() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/nestedTypes/implicitOuterThisFromLambda.kt");
+            runTest("js/js.translator/testData/box/nestedTypes/implicitOuterThisFromLambda.kt");
         }
 
         @TestMetadata("implicitOuterThisFromLocalClass.kt")
         public void testImplicitOuterThisFromLocalClass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/nestedTypes/implicitOuterThisFromLocalClass.kt");
+            runTest("js/js.translator/testData/box/nestedTypes/implicitOuterThisFromLocalClass.kt");
         }
 
         @TestMetadata("inheritanceFromNestedBuiltIn.kt")
         public void testInheritanceFromNestedBuiltIn() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/nestedTypes/inheritanceFromNestedBuiltIn.kt");
+            runTest("js/js.translator/testData/box/nestedTypes/inheritanceFromNestedBuiltIn.kt");
         }
 
         @TestMetadata("inner.kt")
         public void testInner() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/nestedTypes/inner.kt");
+            runTest("js/js.translator/testData/box/nestedTypes/inner.kt");
         }
 
         @TestMetadata("innerObjectRefFromConstructor.kt")
         public void testInnerObjectRefFromConstructor() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/nestedTypes/innerObjectRefFromConstructor.kt");
+            runTest("js/js.translator/testData/box/nestedTypes/innerObjectRefFromConstructor.kt");
         }
 
         @TestMetadata("innerReferenceFromChild.kt")
         public void testInnerReferenceFromChild() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/nestedTypes/innerReferenceFromChild.kt");
+            runTest("js/js.translator/testData/box/nestedTypes/innerReferenceFromChild.kt");
         }
 
         @TestMetadata("nested.kt")
         public void testNested() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/nestedTypes/nested.kt");
+            runTest("js/js.translator/testData/box/nestedTypes/nested.kt");
         }
 
         @TestMetadata("nestedInInterface.kt")
         public void testNestedInInterface() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/nestedTypes/nestedInInterface.kt");
+            runTest("js/js.translator/testData/box/nestedTypes/nestedInInterface.kt");
         }
 
         @TestMetadata("nestedObjectLazyInitialized.kt")
         public void testNestedObjectLazyInitialized() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/nestedTypes/nestedObjectLazyInitialized.kt");
+            runTest("js/js.translator/testData/box/nestedTypes/nestedObjectLazyInitialized.kt");
         }
 
         @TestMetadata("outerClassReferenceFromSecondaryConstructor.kt")
         public void testOuterClassReferenceFromSecondaryConstructor() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/nestedTypes/outerClassReferenceFromSecondaryConstructor.kt");
+            runTest("js/js.translator/testData/box/nestedTypes/outerClassReferenceFromSecondaryConstructor.kt");
         }
 
         @TestMetadata("outerCompanion.kt")
         public void testOuterCompanion() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/nestedTypes/outerCompanion.kt");
+            runTest("js/js.translator/testData/box/nestedTypes/outerCompanion.kt");
         }
 
         @TestMetadata("outerNative.kt")
         public void testOuterNative() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/nestedTypes/outerNative.kt");
+            runTest("js/js.translator/testData/box/nestedTypes/outerNative.kt");
         }
 
         @TestMetadata("outerObject.kt")
         public void testOuterObject() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/nestedTypes/outerObject.kt");
+            runTest("js/js.translator/testData/box/nestedTypes/outerObject.kt");
         }
 
         @TestMetadata("outerThis.kt")
         public void testOuterThis() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/nestedTypes/outerThis.kt");
+            runTest("js/js.translator/testData/box/nestedTypes/outerThis.kt");
         }
 
         @TestMetadata("privateFieldNotOverridenInNestedSubclass.kt")
         public void testPrivateFieldNotOverridenInNestedSubclass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/nestedTypes/privateFieldNotOverridenInNestedSubclass.kt");
+            runTest("js/js.translator/testData/box/nestedTypes/privateFieldNotOverridenInNestedSubclass.kt");
         }
 
         @TestMetadata("receivers.kt")
         public void testReceivers() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/nestedTypes/receivers.kt");
+            runTest("js/js.translator/testData/box/nestedTypes/receivers.kt");
         }
     }
 
@@ -5776,143 +6052,147 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Number extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInNumber() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/number"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("assignmentIntOverflow.kt")
         public void testAssignmentIntOverflow() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/number/assignmentIntOverflow.kt");
+            runTest("js/js.translator/testData/box/number/assignmentIntOverflow.kt");
         }
 
         @TestMetadata("byteAndShortConversions.kt")
         public void testByteAndShortConversions() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/number/byteAndShortConversions.kt");
+            runTest("js/js.translator/testData/box/number/byteAndShortConversions.kt");
         }
 
         @TestMetadata("constantPropagation.kt")
         public void testConstantPropagation() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/number/constantPropagation.kt");
+            runTest("js/js.translator/testData/box/number/constantPropagation.kt");
         }
 
         @TestMetadata("conversionsWithTruncation.kt")
         public void testConversionsWithTruncation() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/number/conversionsWithTruncation.kt");
+            runTest("js/js.translator/testData/box/number/conversionsWithTruncation.kt");
         }
 
         @TestMetadata("conversionsWithoutTruncation.kt")
         public void testConversionsWithoutTruncation() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/number/conversionsWithoutTruncation.kt");
+            runTest("js/js.translator/testData/box/number/conversionsWithoutTruncation.kt");
         }
 
         @TestMetadata("division.kt")
         public void testDivision() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/number/division.kt");
+            runTest("js/js.translator/testData/box/number/division.kt");
         }
 
         @TestMetadata("doubleConversions.kt")
         public void testDoubleConversions() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/number/doubleConversions.kt");
+            runTest("js/js.translator/testData/box/number/doubleConversions.kt");
         }
 
         @TestMetadata("hashCode.kt")
         public void testHashCode() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/number/hashCode.kt");
+            runTest("js/js.translator/testData/box/number/hashCode.kt");
         }
 
         @TestMetadata("hexadecimalConstant.kt")
         public void testHexadecimalConstant() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/number/hexadecimalConstant.kt");
+            runTest("js/js.translator/testData/box/number/hexadecimalConstant.kt");
         }
 
         @TestMetadata("incDecOptimization.kt")
         public void testIncDecOptimization() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/number/incDecOptimization.kt");
+            runTest("js/js.translator/testData/box/number/incDecOptimization.kt");
         }
 
         @TestMetadata("intConversions.kt")
         public void testIntConversions() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/number/intConversions.kt");
+            runTest("js/js.translator/testData/box/number/intConversions.kt");
         }
 
         @TestMetadata("intDivFloat.kt")
         public void testIntDivFloat() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/number/intDivFloat.kt");
+            runTest("js/js.translator/testData/box/number/intDivFloat.kt");
         }
 
         @TestMetadata("intIncDecOverflow.kt")
         public void testIntIncDecOverflow() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/number/intIncDecOverflow.kt");
+            runTest("js/js.translator/testData/box/number/intIncDecOverflow.kt");
         }
 
         @TestMetadata("intOverflow.kt")
         public void testIntOverflow() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/number/intOverflow.kt");
+            runTest("js/js.translator/testData/box/number/intOverflow.kt");
         }
 
         @TestMetadata("kt2342.kt")
         public void testKt2342() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/number/kt2342.kt");
+            runTest("js/js.translator/testData/box/number/kt2342.kt");
         }
 
         @TestMetadata("longArray.kt")
         public void testLongArray() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/number/longArray.kt");
+            runTest("js/js.translator/testData/box/number/longArray.kt");
         }
 
         @TestMetadata("longBinaryOperations.kt")
         public void testLongBinaryOperations() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/number/longBinaryOperations.kt");
+            runTest("js/js.translator/testData/box/number/longBinaryOperations.kt");
         }
 
         @TestMetadata("longBitOperations.kt")
         public void testLongBitOperations() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/number/longBitOperations.kt");
+            runTest("js/js.translator/testData/box/number/longBitOperations.kt");
         }
 
         @TestMetadata("longCompareToIntrinsic.kt")
         public void testLongCompareToIntrinsic() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/number/longCompareToIntrinsic.kt");
+            runTest("js/js.translator/testData/box/number/longCompareToIntrinsic.kt");
         }
 
         @TestMetadata("longEqualsIntrinsic.kt")
         public void testLongEqualsIntrinsic() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/number/longEqualsIntrinsic.kt");
+            runTest("js/js.translator/testData/box/number/longEqualsIntrinsic.kt");
         }
 
         @TestMetadata("longHashCode.kt")
         public void testLongHashCode() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/number/longHashCode.kt");
+            runTest("js/js.translator/testData/box/number/longHashCode.kt");
         }
 
         @TestMetadata("longUnaryOperations.kt")
         public void testLongUnaryOperations() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/number/longUnaryOperations.kt");
+            runTest("js/js.translator/testData/box/number/longUnaryOperations.kt");
         }
 
         @TestMetadata("mulInt32.kt")
         public void testMulInt32() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/number/mulInt32.kt");
+            runTest("js/js.translator/testData/box/number/mulInt32.kt");
         }
 
         @TestMetadata("numberCompareTo.kt")
         public void testNumberCompareTo() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/number/numberCompareTo.kt");
+            runTest("js/js.translator/testData/box/number/numberCompareTo.kt");
         }
 
         @TestMetadata("numberConversions.kt")
         public void testNumberConversions() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/number/numberConversions.kt");
+            runTest("js/js.translator/testData/box/number/numberConversions.kt");
         }
 
         @TestMetadata("numberIncDec.kt")
         public void testNumberIncDec() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/number/numberIncDec.kt");
+            runTest("js/js.translator/testData/box/number/numberIncDec.kt");
         }
 
         @TestMetadata("numberIsCheck.kt")
         public void testNumberIsCheck() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/number/numberIsCheck.kt");
+            runTest("js/js.translator/testData/box/number/numberIsCheck.kt");
         }
     }
 
@@ -5920,63 +6200,67 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class ObjectDeclaration extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInObjectDeclaration() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/objectDeclaration"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("dontPolluteObject.kt")
         public void testDontPolluteObject() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/objectDeclaration/dontPolluteObject.kt");
+            runTest("js/js.translator/testData/box/objectDeclaration/dontPolluteObject.kt");
         }
 
         @TestMetadata("kt3684.kt")
         public void testKt3684() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/objectDeclaration/kt3684.kt");
+            runTest("js/js.translator/testData/box/objectDeclaration/kt3684.kt");
         }
 
         @TestMetadata("lambdaInObjectInsideObject.kt")
         public void testLambdaInObjectInsideObject() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/objectDeclaration/lambdaInObjectInsideObject.kt");
+            runTest("js/js.translator/testData/box/objectDeclaration/lambdaInObjectInsideObject.kt");
         }
 
         @TestMetadata("objectDeclaration.kt")
         public void testObjectDeclaration() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/objectDeclaration/objectDeclaration.kt");
+            runTest("js/js.translator/testData/box/objectDeclaration/objectDeclaration.kt");
         }
 
         @TestMetadata("objectDeclarationWithVars.kt")
         public void testObjectDeclarationWithVars() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/objectDeclaration/objectDeclarationWithVars.kt");
+            runTest("js/js.translator/testData/box/objectDeclaration/objectDeclarationWithVars.kt");
         }
 
         @TestMetadata("objectInMethod.kt")
         public void testObjectInMethod() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/objectDeclaration/objectInMethod.kt");
+            runTest("js/js.translator/testData/box/objectDeclaration/objectInMethod.kt");
         }
 
         @TestMetadata("objectInObject.kt")
         public void testObjectInObject() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/objectDeclaration/objectInObject.kt");
+            runTest("js/js.translator/testData/box/objectDeclaration/objectInObject.kt");
         }
 
         @TestMetadata("objectInObjectWithClosure.kt")
         public void testObjectInObjectWithClosure() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/objectDeclaration/objectInObjectWithClosure.kt");
+            runTest("js/js.translator/testData/box/objectDeclaration/objectInObjectWithClosure.kt");
         }
 
         @TestMetadata("objectInheritingFromATrait.kt")
         public void testObjectInheritingFromATrait() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/objectDeclaration/objectInheritingFromATrait.kt");
+            runTest("js/js.translator/testData/box/objectDeclaration/objectInheritingFromATrait.kt");
         }
 
         @TestMetadata("objectInheritingFromClass.kt")
         public void testObjectInheritingFromClass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/objectDeclaration/objectInheritingFromClass.kt");
+            runTest("js/js.translator/testData/box/objectDeclaration/objectInheritingFromClass.kt");
         }
 
         @TestMetadata("objectWithMethods.kt")
         public void testObjectWithMethods() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/objectDeclaration/objectWithMethods.kt");
+            runTest("js/js.translator/testData/box/objectDeclaration/objectWithMethods.kt");
         }
     }
 
@@ -5984,123 +6268,127 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class OperatorOverloading extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInOperatorOverloading() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/operatorOverloading"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("augmentedAssignmentLhs.kt")
         public void testAugmentedAssignmentLhs() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/operatorOverloading/augmentedAssignmentLhs.kt");
+            runTest("js/js.translator/testData/box/operatorOverloading/augmentedAssignmentLhs.kt");
         }
 
         @TestMetadata("binaryDivOverload.kt")
         public void testBinaryDivOverload() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/operatorOverloading/binaryDivOverload.kt");
+            runTest("js/js.translator/testData/box/operatorOverloading/binaryDivOverload.kt");
         }
 
         @TestMetadata("compareTo.kt")
         public void testCompareTo() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/operatorOverloading/compareTo.kt");
+            runTest("js/js.translator/testData/box/operatorOverloading/compareTo.kt");
         }
 
         @TestMetadata("compareToByName.kt")
         public void testCompareToByName() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/operatorOverloading/compareToByName.kt");
+            runTest("js/js.translator/testData/box/operatorOverloading/compareToByName.kt");
         }
 
         @TestMetadata("lambdaRhs.kt")
         public void testLambdaRhs() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/operatorOverloading/lambdaRhs.kt");
+            runTest("js/js.translator/testData/box/operatorOverloading/lambdaRhs.kt");
         }
 
         @TestMetadata("notOverload.kt")
         public void testNotOverload() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/operatorOverloading/notOverload.kt");
+            runTest("js/js.translator/testData/box/operatorOverloading/notOverload.kt");
         }
 
         @TestMetadata("operatorOverloadOnPropertyCallGetterAndSetterOnlyOnce.kt")
         public void testOperatorOverloadOnPropertyCallGetterAndSetterOnlyOnce() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/operatorOverloading/operatorOverloadOnPropertyCallGetterAndSetterOnlyOnce.kt");
+            runTest("js/js.translator/testData/box/operatorOverloading/operatorOverloadOnPropertyCallGetterAndSetterOnlyOnce.kt");
         }
 
         @TestMetadata("overloadPlusAssignArrayList.kt")
         public void testOverloadPlusAssignArrayList() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/operatorOverloading/overloadPlusAssignArrayList.kt");
+            runTest("js/js.translator/testData/box/operatorOverloading/overloadPlusAssignArrayList.kt");
         }
 
         @TestMetadata("overloadPlusAssignViaExtensionFunction.kt")
         public void testOverloadPlusAssignViaExtensionFunction() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/operatorOverloading/overloadPlusAssignViaExtensionFunction.kt");
+            runTest("js/js.translator/testData/box/operatorOverloading/overloadPlusAssignViaExtensionFunction.kt");
         }
 
         @TestMetadata("overloadPlusAssignViaPlusExtensionFunction.kt")
         public void testOverloadPlusAssignViaPlusExtensionFunction() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/operatorOverloading/overloadPlusAssignViaPlusExtensionFunction.kt");
+            runTest("js/js.translator/testData/box/operatorOverloading/overloadPlusAssignViaPlusExtensionFunction.kt");
         }
 
         @TestMetadata("overloadPlusViaExtensionFunction.kt")
         public void testOverloadPlusViaExtensionFunction() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/operatorOverloading/overloadPlusViaExtensionFunction.kt");
+            runTest("js/js.translator/testData/box/operatorOverloading/overloadPlusViaExtensionFunction.kt");
         }
 
         @TestMetadata("overloadUnaryOperationsViaExtensionFunctions.kt")
         public void testOverloadUnaryOperationsViaExtensionFunctions() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/operatorOverloading/overloadUnaryOperationsViaExtensionFunctions.kt");
+            runTest("js/js.translator/testData/box/operatorOverloading/overloadUnaryOperationsViaExtensionFunctions.kt");
         }
 
         @TestMetadata("overloadedCallOnProperty.kt")
         public void testOverloadedCallOnProperty() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/operatorOverloading/overloadedCallOnProperty.kt");
+            runTest("js/js.translator/testData/box/operatorOverloading/overloadedCallOnProperty.kt");
         }
 
         @TestMetadata("plusAndMinusAsAnExpression.kt")
         public void testPlusAndMinusAsAnExpression() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/operatorOverloading/plusAndMinusAsAnExpression.kt");
+            runTest("js/js.translator/testData/box/operatorOverloading/plusAndMinusAsAnExpression.kt");
         }
 
         @TestMetadata("plusAssignNoReassign.kt")
         public void testPlusAssignNoReassign() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/operatorOverloading/plusAssignNoReassign.kt");
+            runTest("js/js.translator/testData/box/operatorOverloading/plusAssignNoReassign.kt");
         }
 
         @TestMetadata("plusOverload.kt")
         public void testPlusOverload() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/operatorOverloading/plusOverload.kt");
+            runTest("js/js.translator/testData/box/operatorOverloading/plusOverload.kt");
         }
 
         @TestMetadata("postfixInc.kt")
         public void testPostfixInc() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/operatorOverloading/postfixInc.kt");
+            runTest("js/js.translator/testData/box/operatorOverloading/postfixInc.kt");
         }
 
         @TestMetadata("postfixOnProperty.kt")
         public void testPostfixOnProperty() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/operatorOverloading/postfixOnProperty.kt");
+            runTest("js/js.translator/testData/box/operatorOverloading/postfixOnProperty.kt");
         }
 
         @TestMetadata("prefixDecOverload.kt")
         public void testPrefixDecOverload() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/operatorOverloading/prefixDecOverload.kt");
+            runTest("js/js.translator/testData/box/operatorOverloading/prefixDecOverload.kt");
         }
 
         @TestMetadata("prefixIncReturnsCorrectValue.kt")
         public void testPrefixIncReturnsCorrectValue() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/operatorOverloading/prefixIncReturnsCorrectValue.kt");
+            runTest("js/js.translator/testData/box/operatorOverloading/prefixIncReturnsCorrectValue.kt");
         }
 
         @TestMetadata("unaryOnIntProperty.kt")
         public void testUnaryOnIntProperty() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/operatorOverloading/unaryOnIntProperty.kt");
+            runTest("js/js.translator/testData/box/operatorOverloading/unaryOnIntProperty.kt");
         }
 
         @TestMetadata("unaryOnIntPropertyAsStatement.kt")
         public void testUnaryOnIntPropertyAsStatement() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/operatorOverloading/unaryOnIntPropertyAsStatement.kt");
+            runTest("js/js.translator/testData/box/operatorOverloading/unaryOnIntPropertyAsStatement.kt");
         }
 
         @TestMetadata("usingModInCaseModAssignNotAvailable.kt")
         public void testUsingModInCaseModAssignNotAvailable() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/operatorOverloading/usingModInCaseModAssignNotAvailable.kt");
+            runTest("js/js.translator/testData/box/operatorOverloading/usingModInCaseModAssignNotAvailable.kt");
         }
     }
 
@@ -6108,33 +6396,37 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Package extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInPackage() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/package"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("classCreatedInDeeplyNestedPackage.kt")
         public void testClassCreatedInDeeplyNestedPackage() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/package/classCreatedInDeeplyNestedPackage.kt");
+            runTest("js/js.translator/testData/box/package/classCreatedInDeeplyNestedPackage.kt");
         }
 
         @TestMetadata("deeplyNestedPackage.kt")
         public void testDeeplyNestedPackage() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/package/deeplyNestedPackage.kt");
+            runTest("js/js.translator/testData/box/package/deeplyNestedPackage.kt");
         }
 
         @TestMetadata("deeplyNestedPackageFunctionCalled.kt")
         public void testDeeplyNestedPackageFunctionCalled() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/package/deeplyNestedPackageFunctionCalled.kt");
+            runTest("js/js.translator/testData/box/package/deeplyNestedPackageFunctionCalled.kt");
         }
 
         @TestMetadata("initializersOfNestedPackagesExecute.kt")
         public void testInitializersOfNestedPackagesExecute() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/package/initializersOfNestedPackagesExecute.kt");
+            runTest("js/js.translator/testData/box/package/initializersOfNestedPackagesExecute.kt");
         }
 
         @TestMetadata("nestedPackage.kt")
         public void testNestedPackage() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/package/nestedPackage.kt");
+            runTest("js/js.translator/testData/box/package/nestedPackage.kt");
         }
     }
 
@@ -6142,14 +6434,18 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class PropertyAccess extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         @TestMetadata("accessToInstanceProperty.kt")
         public void testAccessToInstanceProperty() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/propertyAccess/accessToInstanceProperty.kt");
+            runTest("js/js.translator/testData/box/propertyAccess/accessToInstanceProperty.kt");
         }
 
         @TestMetadata("accessorsWithJsName.kt")
         public void testAccessorsWithJsName() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/propertyAccess/accessorsWithJsName.kt");
+            runTest("js/js.translator/testData/box/propertyAccess/accessorsWithJsName.kt");
         }
 
         public void testAllFilesPresentInPropertyAccess() throws Exception {
@@ -6158,102 +6454,102 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
 
         @TestMetadata("classUsesPackageProperties.kt")
         public void testClassUsesPackageProperties() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/propertyAccess/classUsesPackageProperties.kt");
+            runTest("js/js.translator/testData/box/propertyAccess/classUsesPackageProperties.kt");
         }
 
         @TestMetadata("customGetter.kt")
         public void testCustomGetter() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/propertyAccess/customGetter.kt");
+            runTest("js/js.translator/testData/box/propertyAccess/customGetter.kt");
         }
 
         @TestMetadata("customSetter.kt")
         public void testCustomSetter() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/propertyAccess/customSetter.kt");
+            runTest("js/js.translator/testData/box/propertyAccess/customSetter.kt");
         }
 
         @TestMetadata("defaultAccessorsWithJsName.kt")
         public void testDefaultAccessorsWithJsName() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/propertyAccess/defaultAccessorsWithJsName.kt");
+            runTest("js/js.translator/testData/box/propertyAccess/defaultAccessorsWithJsName.kt");
         }
 
         @TestMetadata("enumerable.kt")
         public void testEnumerable() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/propertyAccess/enumerable.kt");
+            runTest("js/js.translator/testData/box/propertyAccess/enumerable.kt");
         }
 
         @TestMetadata("extensionLiteralSafeCall.kt")
         public void testExtensionLiteralSafeCall() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/propertyAccess/extensionLiteralSafeCall.kt");
+            runTest("js/js.translator/testData/box/propertyAccess/extensionLiteralSafeCall.kt");
         }
 
         @TestMetadata("field.kt")
         public void testField() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/propertyAccess/field.kt");
+            runTest("js/js.translator/testData/box/propertyAccess/field.kt");
         }
 
         @TestMetadata("initInstanceProperties.kt")
         public void testInitInstanceProperties() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/propertyAccess/initInstanceProperties.kt");
+            runTest("js/js.translator/testData/box/propertyAccess/initInstanceProperties.kt");
         }
 
         @TestMetadata("initValInConstructor.kt")
         public void testInitValInConstructor() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/propertyAccess/initValInConstructor.kt");
+            runTest("js/js.translator/testData/box/propertyAccess/initValInConstructor.kt");
         }
 
         @TestMetadata("overloadedOverriddenFunctionPropertyName.kt")
         public void testOverloadedOverriddenFunctionPropertyName() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/propertyAccess/overloadedOverriddenFunctionPropertyName.kt");
+            runTest("js/js.translator/testData/box/propertyAccess/overloadedOverriddenFunctionPropertyName.kt");
         }
 
         @TestMetadata("packageCustomAccessors.kt")
         public void testPackageCustomAccessors() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/propertyAccess/packageCustomAccessors.kt");
+            runTest("js/js.translator/testData/box/propertyAccess/packageCustomAccessors.kt");
         }
 
         @TestMetadata("packagePropertyInitializer.kt")
         public void testPackagePropertyInitializer() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/propertyAccess/packagePropertyInitializer.kt");
+            runTest("js/js.translator/testData/box/propertyAccess/packagePropertyInitializer.kt");
         }
 
         @TestMetadata("packagePropertySet.kt")
         public void testPackagePropertySet() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/propertyAccess/packagePropertySet.kt");
+            runTest("js/js.translator/testData/box/propertyAccess/packagePropertySet.kt");
         }
 
         @TestMetadata("privatePropertyAccessFromMethod.kt")
         public void testPrivatePropertyAccessFromMethod() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/propertyAccess/privatePropertyAccessFromMethod.kt");
+            runTest("js/js.translator/testData/box/propertyAccess/privatePropertyAccessFromMethod.kt");
         }
 
         @TestMetadata("propertyAssignment.kt")
         public void testPropertyAssignment() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/propertyAccess/propertyAssignment.kt");
+            runTest("js/js.translator/testData/box/propertyAccess/propertyAssignment.kt");
         }
 
         @TestMetadata("setter.kt")
         public void testSetter() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/propertyAccess/setter.kt");
+            runTest("js/js.translator/testData/box/propertyAccess/setter.kt");
         }
 
         @TestMetadata("simpleLateInitIsInitialized.kt")
         public void testSimpleLateInitIsInitialized() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/propertyAccess/simpleLateInitIsInitialized.kt");
+            runTest("js/js.translator/testData/box/propertyAccess/simpleLateInitIsInitialized.kt");
         }
 
         @TestMetadata("staticAccessorsWithJsName.kt")
         public void testStaticAccessorsWithJsName() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/propertyAccess/staticAccessorsWithJsName.kt");
+            runTest("js/js.translator/testData/box/propertyAccess/staticAccessorsWithJsName.kt");
         }
 
         @TestMetadata("subclassAccessorsWithJsNameInSuper.kt")
         public void testSubclassAccessorsWithJsNameInSuper() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/propertyAccess/subclassAccessorsWithJsNameInSuper.kt");
+            runTest("js/js.translator/testData/box/propertyAccess/subclassAccessorsWithJsNameInSuper.kt");
         }
 
         @TestMetadata("twoClassesWithProperties.kt")
         public void testTwoClassesWithProperties() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/propertyAccess/twoClassesWithProperties.kt");
+            runTest("js/js.translator/testData/box/propertyAccess/twoClassesWithProperties.kt");
         }
     }
 
@@ -6261,63 +6557,67 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class PropertyOverride extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInPropertyOverride() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/propertyOverride"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("checkSupertypeOrder.kt")
         public void testCheckSupertypeOrder() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/propertyOverride/checkSupertypeOrder.kt");
+            runTest("js/js.translator/testData/box/propertyOverride/checkSupertypeOrder.kt");
         }
 
         @TestMetadata("initOverrideInConstructor.kt")
         public void testInitOverrideInConstructor() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/propertyOverride/initOverrideInConstructor.kt");
+            runTest("js/js.translator/testData/box/propertyOverride/initOverrideInConstructor.kt");
         }
 
         @TestMetadata("initOverrideInConstructorComplex.kt")
         public void testInitOverrideInConstructorComplex() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/propertyOverride/initOverrideInConstructorComplex.kt");
+            runTest("js/js.translator/testData/box/propertyOverride/initOverrideInConstructorComplex.kt");
         }
 
         @TestMetadata("initOverrideInConstructorExplicitThis.kt")
         public void testInitOverrideInConstructorExplicitThis() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/propertyOverride/initOverrideInConstructorExplicitThis.kt");
+            runTest("js/js.translator/testData/box/propertyOverride/initOverrideInConstructorExplicitThis.kt");
         }
 
         @TestMetadata("initOverrideVarInConstructor.kt")
         public void testInitOverrideVarInConstructor() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/propertyOverride/initOverrideVarInConstructor.kt");
+            runTest("js/js.translator/testData/box/propertyOverride/initOverrideVarInConstructor.kt");
         }
 
         @TestMetadata("overloadPrivateVal.kt")
         public void testOverloadPrivateVal() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/propertyOverride/overloadPrivateVal.kt");
+            runTest("js/js.translator/testData/box/propertyOverride/overloadPrivateVal.kt");
         }
 
         @TestMetadata("overrideExtensionProperty.kt")
         public void testOverrideExtensionProperty() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/propertyOverride/overrideExtensionProperty.kt");
+            runTest("js/js.translator/testData/box/propertyOverride/overrideExtensionProperty.kt");
         }
 
         @TestMetadata("overrideNotDirectlySuper.kt")
         public void testOverrideNotDirectlySuper() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/propertyOverride/overrideNotDirectlySuper.kt");
+            runTest("js/js.translator/testData/box/propertyOverride/overrideNotDirectlySuper.kt");
         }
 
         @TestMetadata("overrideValFromTraits.kt")
         public void testOverrideValFromTraits() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/propertyOverride/overrideValFromTraits.kt");
+            runTest("js/js.translator/testData/box/propertyOverride/overrideValFromTraits.kt");
         }
 
         @TestMetadata("overrideValWithBackendFiled.kt")
         public void testOverrideValWithBackendFiled() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/propertyOverride/overrideValWithBackendFiled.kt");
+            runTest("js/js.translator/testData/box/propertyOverride/overrideValWithBackendFiled.kt");
         }
 
         @TestMetadata("simpleOverride.kt")
         public void testSimpleOverride() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/propertyOverride/simpleOverride.kt");
+            runTest("js/js.translator/testData/box/propertyOverride/simpleOverride.kt");
         }
     }
 
@@ -6325,63 +6625,67 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Range extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInRange() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/range"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("creatingProgressions.kt")
         public void testCreatingProgressions() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/range/creatingProgressions.kt");
+            runTest("js/js.translator/testData/box/range/creatingProgressions.kt");
         }
 
         @TestMetadata("explicitRange.kt")
         public void testExplicitRange() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/range/explicitRange.kt");
+            runTest("js/js.translator/testData/box/range/explicitRange.kt");
         }
 
         @TestMetadata("intDownTo.kt")
         public void testIntDownTo() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/range/intDownTo.kt");
+            runTest("js/js.translator/testData/box/range/intDownTo.kt");
         }
 
         @TestMetadata("intInRange.kt")
         public void testIntInRange() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/range/intInRange.kt");
+            runTest("js/js.translator/testData/box/range/intInRange.kt");
         }
 
         @TestMetadata("intUpTo.kt")
         public void testIntUpTo() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/range/intUpTo.kt");
+            runTest("js/js.translator/testData/box/range/intUpTo.kt");
         }
 
         @TestMetadata("iteratingOverRanges.kt")
         public void testIteratingOverRanges() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/range/iteratingOverRanges.kt");
+            runTest("js/js.translator/testData/box/range/iteratingOverRanges.kt");
         }
 
         @TestMetadata("numberRangesOptimized.kt")
         public void testNumberRangesOptimized() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/range/numberRangesOptimized.kt");
+            runTest("js/js.translator/testData/box/range/numberRangesOptimized.kt");
         }
 
         @TestMetadata("rangeEquals.kt")
         public void testRangeEquals() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/range/rangeEquals.kt");
+            runTest("js/js.translator/testData/box/range/rangeEquals.kt");
         }
 
         @TestMetadata("rangeSugarSyntax.kt")
         public void testRangeSugarSyntax() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/range/rangeSugarSyntax.kt");
+            runTest("js/js.translator/testData/box/range/rangeSugarSyntax.kt");
         }
 
         @TestMetadata("rangeToDoesNotIterate.kt")
         public void testRangeToDoesNotIterate() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/range/rangeToDoesNotIterate.kt");
+            runTest("js/js.translator/testData/box/range/rangeToDoesNotIterate.kt");
         }
 
         @TestMetadata("reverse.kt")
         public void testReverse() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/range/reverse.kt");
+            runTest("js/js.translator/testData/box/range/reverse.kt");
         }
     }
 
@@ -6389,78 +6693,82 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Reflection extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInReflection() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/reflection"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("external.kt")
         public void testExternal() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/reflection/external.kt");
+            runTest("js/js.translator/testData/box/reflection/external.kt");
         }
 
         @TestMetadata("jsClass.kt")
         public void testJsClass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/reflection/jsClass.kt");
+            runTest("js/js.translator/testData/box/reflection/jsClass.kt");
         }
 
         @TestMetadata("jsClassName.kt")
         public void testJsClassName() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/reflection/jsClassName.kt");
+            runTest("js/js.translator/testData/box/reflection/jsClassName.kt");
         }
 
         @TestMetadata("jsClassOnReifiedType.kt")
         public void testJsClassOnReifiedType() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/reflection/jsClassOnReifiedType.kt");
+            runTest("js/js.translator/testData/box/reflection/jsClassOnReifiedType.kt");
         }
 
         @TestMetadata("jsClassOnReifiedTypeInLambda.kt")
         public void testJsClassOnReifiedTypeInLambda() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/reflection/jsClassOnReifiedTypeInLambda.kt");
+            runTest("js/js.translator/testData/box/reflection/jsClassOnReifiedTypeInLambda.kt");
         }
 
         @TestMetadata("jsClassSimpleName.kt")
         public void testJsClassSimpleName() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/reflection/jsClassSimpleName.kt");
+            runTest("js/js.translator/testData/box/reflection/jsClassSimpleName.kt");
         }
 
         @TestMetadata("kClass.kt")
         public void testKClass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/reflection/kClass.kt");
+            runTest("js/js.translator/testData/box/reflection/kClass.kt");
         }
 
         @TestMetadata("kClassIsInstance.kt")
         public void testKClassIsInstance() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/reflection/kClassIsInstance.kt");
+            runTest("js/js.translator/testData/box/reflection/kClassIsInstance.kt");
         }
 
         @TestMetadata("kClassOnReifiedType.kt")
         public void testKClassOnReifiedType() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/reflection/kClassOnReifiedType.kt");
+            runTest("js/js.translator/testData/box/reflection/kClassOnReifiedType.kt");
         }
 
         @TestMetadata("kClassOnReifiedTypeInLambda.kt")
         public void testKClassOnReifiedTypeInLambda() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/reflection/kClassOnReifiedTypeInLambda.kt");
+            runTest("js/js.translator/testData/box/reflection/kClassOnReifiedTypeInLambda.kt");
         }
 
         @TestMetadata("kClassSimpleName.kt")
         public void testKClassSimpleName() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/reflection/kClassSimpleName.kt");
+            runTest("js/js.translator/testData/box/reflection/kClassSimpleName.kt");
         }
 
         @TestMetadata("kClassToAndFromJsClass.kt")
         public void testKClassToAndFromJsClass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/reflection/kClassToAndFromJsClass.kt");
+            runTest("js/js.translator/testData/box/reflection/kClassToAndFromJsClass.kt");
         }
 
         @TestMetadata("primitives.kt")
         public void testPrimitives() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/reflection/primitives.kt");
+            runTest("js/js.translator/testData/box/reflection/primitives.kt");
         }
 
         @TestMetadata("primitives-12.kt")
         public void testPrimitives_12() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/reflection/primitives-12.kt");
+            runTest("js/js.translator/testData/box/reflection/primitives-12.kt");
         }
     }
 
@@ -6468,18 +6776,22 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Regression extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInRegression() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/regression"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("kt2470.kt")
         public void testKt2470() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/regression/kt2470.kt");
+            runTest("js/js.translator/testData/box/regression/kt2470.kt");
         }
 
         @TestMetadata("tmpInsidePrimaryConstructor.kt")
         public void testTmpInsidePrimaryConstructor() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/regression/tmpInsidePrimaryConstructor.kt");
+            runTest("js/js.translator/testData/box/regression/tmpInsidePrimaryConstructor.kt");
         }
     }
 
@@ -6487,108 +6799,112 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Reified extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInReified() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/reified"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("callChain.kt")
         public void testCallChain() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/reified/callChain.kt");
+            runTest("js/js.translator/testData/box/reified/callChain.kt");
         }
 
         @TestMetadata("capture.kt")
         public void testCapture() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/reified/capture.kt");
+            runTest("js/js.translator/testData/box/reified/capture.kt");
         }
 
         @TestMetadata("extensionFun.kt")
         public void testExtensionFun() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/reified/extensionFun.kt");
+            runTest("js/js.translator/testData/box/reified/extensionFun.kt");
         }
 
         @TestMetadata("extensionLambda.kt")
         public void testExtensionLambda() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/reified/extensionLambda.kt");
+            runTest("js/js.translator/testData/box/reified/extensionLambda.kt");
         }
 
         @TestMetadata("extensionMethod.kt")
         public void testExtensionMethod() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/reified/extensionMethod.kt");
+            runTest("js/js.translator/testData/box/reified/extensionMethod.kt");
         }
 
         @TestMetadata("innerObject.kt")
         public void testInnerObject() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/reified/innerObject.kt");
+            runTest("js/js.translator/testData/box/reified/innerObject.kt");
         }
 
         @TestMetadata("isBool.kt")
         public void testIsBool() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/reified/isBool.kt");
+            runTest("js/js.translator/testData/box/reified/isBool.kt");
         }
 
         @TestMetadata("isChar.kt")
         public void testIsChar() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/reified/isChar.kt");
+            runTest("js/js.translator/testData/box/reified/isChar.kt");
         }
 
         @TestMetadata("isClass.kt")
         public void testIsClass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/reified/isClass.kt");
+            runTest("js/js.translator/testData/box/reified/isClass.kt");
         }
 
         @TestMetadata("isNumber.kt")
         public void testIsNumber() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/reified/isNumber.kt");
+            runTest("js/js.translator/testData/box/reified/isNumber.kt");
         }
 
         @TestMetadata("isString.kt")
         public void testIsString() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/reified/isString.kt");
+            runTest("js/js.translator/testData/box/reified/isString.kt");
         }
 
         @TestMetadata("isTNullable.kt")
         public void testIsTNullable() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/reified/isTNullable.kt");
+            runTest("js/js.translator/testData/box/reified/isTNullable.kt");
         }
 
         @TestMetadata("lambda.kt")
         public void testLambda() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/reified/lambda.kt");
+            runTest("js/js.translator/testData/box/reified/lambda.kt");
         }
 
         @TestMetadata("lambdaNameClash.kt")
         public void testLambdaNameClash() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/reified/lambdaNameClash.kt");
+            runTest("js/js.translator/testData/box/reified/lambdaNameClash.kt");
         }
 
         @TestMetadata("method.kt")
         public void testMethod() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/reified/method.kt");
+            runTest("js/js.translator/testData/box/reified/method.kt");
         }
 
         @TestMetadata("multipleTypeParameters.kt")
         public void testMultipleTypeParameters() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/reified/multipleTypeParameters.kt");
+            runTest("js/js.translator/testData/box/reified/multipleTypeParameters.kt");
         }
 
         @TestMetadata("noValueParameters.kt")
         public void testNoValueParameters() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/reified/noValueParameters.kt");
+            runTest("js/js.translator/testData/box/reified/noValueParameters.kt");
         }
 
         @TestMetadata("parameterSwap.kt")
         public void testParameterSwap() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/reified/parameterSwap.kt");
+            runTest("js/js.translator/testData/box/reified/parameterSwap.kt");
         }
 
         @TestMetadata("vararg.kt")
         public void testVararg() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/reified/vararg.kt");
+            runTest("js/js.translator/testData/box/reified/vararg.kt");
         }
 
         @TestMetadata("withInlineTurnedOff.kt")
         public void testWithInlineTurnedOff() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/reified/withInlineTurnedOff.kt");
+            runTest("js/js.translator/testData/box/reified/withInlineTurnedOff.kt");
         }
     }
 
@@ -6596,98 +6912,102 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Rtti extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInRtti() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/rtti"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("collectionClassesIsCheck.kt")
         public void testCollectionClassesIsCheck() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/rtti/collectionClassesIsCheck.kt");
+            runTest("js/js.translator/testData/box/rtti/collectionClassesIsCheck.kt");
         }
 
         @TestMetadata("exceptionIsInterface.kt")
         public void testExceptionIsInterface() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/rtti/exceptionIsInterface.kt");
+            runTest("js/js.translator/testData/box/rtti/exceptionIsInterface.kt");
         }
 
         @TestMetadata("isComparable.kt")
         public void testIsComparable() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/rtti/isComparable.kt");
+            runTest("js/js.translator/testData/box/rtti/isComparable.kt");
         }
 
         @TestMetadata("isJsPrimitiveType.kt")
         public void testIsJsPrimitiveType() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/rtti/isJsPrimitiveType.kt");
+            runTest("js/js.translator/testData/box/rtti/isJsPrimitiveType.kt");
         }
 
         @TestMetadata("isObject.kt")
         public void testIsObject() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/rtti/isObject.kt");
+            runTest("js/js.translator/testData/box/rtti/isObject.kt");
         }
 
         @TestMetadata("isReifiedObject.kt")
         public void testIsReifiedObject() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/rtti/isReifiedObject.kt");
+            runTest("js/js.translator/testData/box/rtti/isReifiedObject.kt");
         }
 
         @TestMetadata("isSameClass.kt")
         public void testIsSameClass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/rtti/isSameClass.kt");
+            runTest("js/js.translator/testData/box/rtti/isSameClass.kt");
         }
 
         @TestMetadata("notIsOtherClass.kt")
         public void testNotIsOtherClass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/rtti/notIsOtherClass.kt");
+            runTest("js/js.translator/testData/box/rtti/notIsOtherClass.kt");
         }
 
         @TestMetadata("objectExpression.kt")
         public void testObjectExpression() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/rtti/objectExpression.kt");
+            runTest("js/js.translator/testData/box/rtti/objectExpression.kt");
         }
 
         @TestMetadata("onNativeObject.kt")
         public void testOnNativeObject() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/rtti/onNativeObject.kt");
+            runTest("js/js.translator/testData/box/rtti/onNativeObject.kt");
         }
 
         @TestMetadata("prototypeUsedToFindInterface.kt")
         public void testPrototypeUsedToFindInterface() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/rtti/prototypeUsedToFindInterface.kt");
+            runTest("js/js.translator/testData/box/rtti/prototypeUsedToFindInterface.kt");
         }
 
         @TestMetadata("rttiForClass.kt")
         public void testRttiForClass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/rtti/rttiForClass.kt");
+            runTest("js/js.translator/testData/box/rtti/rttiForClass.kt");
         }
 
         @TestMetadata("rttiForTrait.kt")
         public void testRttiForTrait() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/rtti/rttiForTrait.kt");
+            runTest("js/js.translator/testData/box/rtti/rttiForTrait.kt");
         }
 
         @TestMetadata("rttiForTrait2.kt")
         public void testRttiForTrait2() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/rtti/rttiForTrait2.kt");
+            runTest("js/js.translator/testData/box/rtti/rttiForTrait2.kt");
         }
 
         @TestMetadata("sideEffectMethod.kt")
         public void testSideEffectMethod() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/rtti/sideEffectMethod.kt");
+            runTest("js/js.translator/testData/box/rtti/sideEffectMethod.kt");
         }
 
         @TestMetadata("sideEffectProperty.kt")
         public void testSideEffectProperty() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/rtti/sideEffectProperty.kt");
+            runTest("js/js.translator/testData/box/rtti/sideEffectProperty.kt");
         }
 
         @TestMetadata("stdlibEmptyListClass.kt")
         public void testStdlibEmptyListClass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/rtti/stdlibEmptyListClass.kt");
+            runTest("js/js.translator/testData/box/rtti/stdlibEmptyListClass.kt");
         }
 
         @TestMetadata("subclassOfNativeIsInterface.kt")
         public void testSubclassOfNativeIsInterface() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/rtti/subclassOfNativeIsInterface.kt");
+            runTest("js/js.translator/testData/box/rtti/subclassOfNativeIsInterface.kt");
         }
     }
 
@@ -6695,43 +7015,47 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class SafeCall extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInSafeCall() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/safeCall"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("redundantSafeAccess.kt")
         public void testRedundantSafeAccess() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/safeCall/redundantSafeAccess.kt");
+            runTest("js/js.translator/testData/box/safeCall/redundantSafeAccess.kt");
         }
 
         @TestMetadata("safeAccess.kt")
         public void testSafeAccess() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/safeCall/safeAccess.kt");
+            runTest("js/js.translator/testData/box/safeCall/safeAccess.kt");
         }
 
         @TestMetadata("safeCall.kt")
         public void testSafeCall() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/safeCall/safeCall.kt");
+            runTest("js/js.translator/testData/box/safeCall/safeCall.kt");
         }
 
         @TestMetadata("safeCallAndIntrinsic.kt")
         public void testSafeCallAndIntrinsic() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/safeCall/safeCallAndIntrinsic.kt");
+            runTest("js/js.translator/testData/box/safeCall/safeCallAndIntrinsic.kt");
         }
 
         @TestMetadata("safeCallAndSideEffect.kt")
         public void testSafeCallAndSideEffect() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/safeCall/safeCallAndSideEffect.kt");
+            runTest("js/js.translator/testData/box/safeCall/safeCallAndSideEffect.kt");
         }
 
         @TestMetadata("safeCallReturnsNullIfFails.kt")
         public void testSafeCallReturnsNullIfFails() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/safeCall/safeCallReturnsNullIfFails.kt");
+            runTest("js/js.translator/testData/box/safeCall/safeCallReturnsNullIfFails.kt");
         }
 
         @TestMetadata("safeExtensionFunctionCall.kt")
         public void testSafeExtensionFunctionCall() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/safeCall/safeExtensionFunctionCall.kt");
+            runTest("js/js.translator/testData/box/safeCall/safeExtensionFunctionCall.kt");
         }
     }
 
@@ -6739,168 +7063,172 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Simple extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInSimple() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/simple"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("assign.kt")
         public void testAssign() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/simple/assign.kt");
+            runTest("js/js.translator/testData/box/simple/assign.kt");
         }
 
         @TestMetadata("breakDoWhile.kt")
         public void testBreakDoWhile() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/simple/breakDoWhile.kt");
+            runTest("js/js.translator/testData/box/simple/breakDoWhile.kt");
         }
 
         @TestMetadata("breakWhile.kt")
         public void testBreakWhile() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/simple/breakWhile.kt");
+            runTest("js/js.translator/testData/box/simple/breakWhile.kt");
         }
 
         @TestMetadata("classInstantiation.kt")
         public void testClassInstantiation() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/simple/classInstantiation.kt");
+            runTest("js/js.translator/testData/box/simple/classInstantiation.kt");
         }
 
         @TestMetadata("comparison.kt")
         public void testComparison() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/simple/comparison.kt");
+            runTest("js/js.translator/testData/box/simple/comparison.kt");
         }
 
         @TestMetadata("complexExpressionAsConstructorParameter.kt")
         public void testComplexExpressionAsConstructorParameter() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/simple/complexExpressionAsConstructorParameter.kt");
+            runTest("js/js.translator/testData/box/simple/complexExpressionAsConstructorParameter.kt");
         }
 
         @TestMetadata("constructorWithParameter.kt")
         public void testConstructorWithParameter() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/simple/constructorWithParameter.kt");
+            runTest("js/js.translator/testData/box/simple/constructorWithParameter.kt");
         }
 
         @TestMetadata("constructorWithPropertiesAsParameters.kt")
         public void testConstructorWithPropertiesAsParameters() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/simple/constructorWithPropertiesAsParameters.kt");
+            runTest("js/js.translator/testData/box/simple/constructorWithPropertiesAsParameters.kt");
         }
 
         @TestMetadata("continueDoWhile.kt")
         public void testContinueDoWhile() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/simple/continueDoWhile.kt");
+            runTest("js/js.translator/testData/box/simple/continueDoWhile.kt");
         }
 
         @TestMetadata("continueWhile.kt")
         public void testContinueWhile() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/simple/continueWhile.kt");
+            runTest("js/js.translator/testData/box/simple/continueWhile.kt");
         }
 
         @TestMetadata("doWhile.kt")
         public void testDoWhile() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/simple/doWhile.kt");
+            runTest("js/js.translator/testData/box/simple/doWhile.kt");
         }
 
         @TestMetadata("doWhile2.kt")
         public void testDoWhile2() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/simple/doWhile2.kt");
+            runTest("js/js.translator/testData/box/simple/doWhile2.kt");
         }
 
         @TestMetadata("elseif.kt")
         public void testElseif() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/simple/elseif.kt");
+            runTest("js/js.translator/testData/box/simple/elseif.kt");
         }
 
         @TestMetadata("if.kt")
         public void testIf() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/simple/if.kt");
+            runTest("js/js.translator/testData/box/simple/if.kt");
         }
 
         @TestMetadata("ifElseAsExpression.kt")
         public void testIfElseAsExpression() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/simple/ifElseAsExpression.kt");
+            runTest("js/js.translator/testData/box/simple/ifElseAsExpression.kt");
         }
 
         @TestMetadata("methodDeclarationAndCall.kt")
         public void testMethodDeclarationAndCall() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/simple/methodDeclarationAndCall.kt");
+            runTest("js/js.translator/testData/box/simple/methodDeclarationAndCall.kt");
         }
 
         @TestMetadata("minusAssignOnProperty.kt")
         public void testMinusAssignOnProperty() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/simple/minusAssignOnProperty.kt");
+            runTest("js/js.translator/testData/box/simple/minusAssignOnProperty.kt");
         }
 
         @TestMetadata("notBoolean.kt")
         public void testNotBoolean() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/simple/notBoolean.kt");
+            runTest("js/js.translator/testData/box/simple/notBoolean.kt");
         }
 
         @TestMetadata("plusAssign.kt")
         public void testPlusAssign() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/simple/plusAssign.kt");
+            runTest("js/js.translator/testData/box/simple/plusAssign.kt");
         }
 
         @TestMetadata("positiveAndNegativeNumbers.kt")
         public void testPositiveAndNegativeNumbers() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/simple/positiveAndNegativeNumbers.kt");
+            runTest("js/js.translator/testData/box/simple/positiveAndNegativeNumbers.kt");
         }
 
         @TestMetadata("postfixIntOperations.kt")
         public void testPostfixIntOperations() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/simple/postfixIntOperations.kt");
+            runTest("js/js.translator/testData/box/simple/postfixIntOperations.kt");
         }
 
         @TestMetadata("prefixIntOperations.kt")
         public void testPrefixIntOperations() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/simple/prefixIntOperations.kt");
+            runTest("js/js.translator/testData/box/simple/prefixIntOperations.kt");
         }
 
         @TestMetadata("primCtorDelegation1.kt")
         public void testPrimCtorDelegation1() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/simple/primCtorDelegation1.kt");
+            runTest("js/js.translator/testData/box/simple/primCtorDelegation1.kt");
         }
 
         @TestMetadata("propertiesAsParametersInitialized.kt")
         public void testPropertiesAsParametersInitialized() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/simple/propertiesAsParametersInitialized.kt");
+            runTest("js/js.translator/testData/box/simple/propertiesAsParametersInitialized.kt");
         }
 
         @TestMetadata("propertyAccess.kt")
         public void testPropertyAccess() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/simple/propertyAccess.kt");
+            runTest("js/js.translator/testData/box/simple/propertyAccess.kt");
         }
 
         @TestMetadata("secCtorDelegation1.kt")
         public void testSecCtorDelegation1() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/simple/secCtorDelegation1.kt");
+            runTest("js/js.translator/testData/box/simple/secCtorDelegation1.kt");
         }
 
         @TestMetadata("secCtorDelegation2.kt")
         public void testSecCtorDelegation2() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/simple/secCtorDelegation2.kt");
+            runTest("js/js.translator/testData/box/simple/secCtorDelegation2.kt");
         }
 
         @TestMetadata("secCtorDelegation3.kt")
         public void testSecCtorDelegation3() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/simple/secCtorDelegation3.kt");
+            runTest("js/js.translator/testData/box/simple/secCtorDelegation3.kt");
         }
 
         @TestMetadata("secCtorDelegation4.kt")
         public void testSecCtorDelegation4() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/simple/secCtorDelegation4.kt");
+            runTest("js/js.translator/testData/box/simple/secCtorDelegation4.kt");
         }
 
         @TestMetadata("simpleInitializer.kt")
         public void testSimpleInitializer() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/simple/simpleInitializer.kt");
+            runTest("js/js.translator/testData/box/simple/simpleInitializer.kt");
         }
 
         @TestMetadata("while.kt")
         public void testWhile() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/simple/while.kt");
+            runTest("js/js.translator/testData/box/simple/while.kt");
         }
 
         @TestMetadata("while2.kt")
         public void testWhile2() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/simple/while2.kt");
+            runTest("js/js.translator/testData/box/simple/while2.kt");
         }
     }
 
@@ -6908,83 +7236,87 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class StandardClasses extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInStandardClasses() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/standardClasses"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("any.kt")
         public void testAny() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/standardClasses/any.kt");
+            runTest("js/js.translator/testData/box/standardClasses/any.kt");
         }
 
         @TestMetadata("array.kt")
         public void testArray() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/standardClasses/array.kt");
+            runTest("js/js.translator/testData/box/standardClasses/array.kt");
         }
 
         @TestMetadata("arrayAccess.kt")
         public void testArrayAccess() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/standardClasses/arrayAccess.kt");
+            runTest("js/js.translator/testData/box/standardClasses/arrayAccess.kt");
         }
 
         @TestMetadata("arrayConstructorsWithLambda.kt")
         public void testArrayConstructorsWithLambda() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/standardClasses/arrayConstructorsWithLambda.kt");
+            runTest("js/js.translator/testData/box/standardClasses/arrayConstructorsWithLambda.kt");
         }
 
         @TestMetadata("arrayFactoryMethods.kt")
         public void testArrayFactoryMethods() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/standardClasses/arrayFactoryMethods.kt");
+            runTest("js/js.translator/testData/box/standardClasses/arrayFactoryMethods.kt");
         }
 
         @TestMetadata("arrayFunctionConstructor.kt")
         public void testArrayFunctionConstructor() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/standardClasses/arrayFunctionConstructor.kt");
+            runTest("js/js.translator/testData/box/standardClasses/arrayFunctionConstructor.kt");
         }
 
         @TestMetadata("arrayIsFilledWithNulls.kt")
         public void testArrayIsFilledWithNulls() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/standardClasses/arrayIsFilledWithNulls.kt");
+            runTest("js/js.translator/testData/box/standardClasses/arrayIsFilledWithNulls.kt");
         }
 
         @TestMetadata("arraySize.kt")
         public void testArraySize() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/standardClasses/arraySize.kt");
+            runTest("js/js.translator/testData/box/standardClasses/arraySize.kt");
         }
 
         @TestMetadata("arraysIterator.kt")
         public void testArraysIterator() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/standardClasses/arraysIterator.kt");
+            runTest("js/js.translator/testData/box/standardClasses/arraysIterator.kt");
         }
 
         @TestMetadata("charArrayGetSet.kt")
         public void testCharArrayGetSet() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/standardClasses/charArrayGetSet.kt");
+            runTest("js/js.translator/testData/box/standardClasses/charArrayGetSet.kt");
         }
 
         @TestMetadata("hashMapTypeOfElement.kt")
         public void testHashMapTypeOfElement() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/standardClasses/hashMapTypeOfElement.kt");
+            runTest("js/js.translator/testData/box/standardClasses/hashMapTypeOfElement.kt");
         }
 
         @TestMetadata("hashSetTypeOfElement.kt")
         public void testHashSetTypeOfElement() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/standardClasses/hashSetTypeOfElement.kt");
+            runTest("js/js.translator/testData/box/standardClasses/hashSetTypeOfElement.kt");
         }
 
         @TestMetadata("mutableMapRemoveWithCollision.kt")
         public void testMutableMapRemoveWithCollision() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/standardClasses/mutableMapRemoveWithCollision.kt");
+            runTest("js/js.translator/testData/box/standardClasses/mutableMapRemoveWithCollision.kt");
         }
 
         @TestMetadata("stringBuilder.kt")
         public void testStringBuilder() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/standardClasses/stringBuilder.kt");
+            runTest("js/js.translator/testData/box/standardClasses/stringBuilder.kt");
         }
 
         @TestMetadata("stringPlus.kt")
         public void testStringPlus() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/standardClasses/stringPlus.kt");
+            runTest("js/js.translator/testData/box/standardClasses/stringPlus.kt");
         }
     }
 
@@ -6992,33 +7324,37 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class SuperCall extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInSuperCall() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/superCall"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("classSuperCall.kt")
         public void testClassSuperCall() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/superCall/classSuperCall.kt");
+            runTest("js/js.translator/testData/box/superCall/classSuperCall.kt");
         }
 
         @TestMetadata("intrinsic.kt")
         public void testIntrinsic() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/superCall/intrinsic.kt");
+            runTest("js/js.translator/testData/box/superCall/intrinsic.kt");
         }
 
         @TestMetadata("nativeSuperClass.kt")
         public void testNativeSuperClass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/superCall/nativeSuperClass.kt");
+            runTest("js/js.translator/testData/box/superCall/nativeSuperClass.kt");
         }
 
         @TestMetadata("propertySuperAccess.kt")
         public void testPropertySuperAccess() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/superCall/propertySuperAccess.kt");
+            runTest("js/js.translator/testData/box/superCall/propertySuperAccess.kt");
         }
 
         @TestMetadata("traitSuperCall.kt")
         public void testTraitSuperCall() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/superCall/traitSuperCall.kt");
+            runTest("js/js.translator/testData/box/superCall/traitSuperCall.kt");
         }
     }
 
@@ -7026,53 +7362,57 @@ public class IrBoxJsTestGenerated extends AbstractIrBoxJsTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Trait extends AbstractIrBoxJsTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest0(this::doTest, TargetBackend.JS_IR, testDataFilePath);
+        }
+
         public void testAllFilesPresentInTrait() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("js/js.translator/testData/box/trait"), Pattern.compile("^([^_](.+))\\.kt$"), TargetBackend.JS_IR, true);
         }
 
         @TestMetadata("checkImplementationCharacteristics.kt")
         public void testCheckImplementationCharacteristics() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/trait/checkImplementationCharacteristics.kt");
+            runTest("js/js.translator/testData/box/trait/checkImplementationCharacteristics.kt");
         }
 
         @TestMetadata("classDerivesFromClassAndTrait.kt")
         public void testClassDerivesFromClassAndTrait() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/trait/classDerivesFromClassAndTrait.kt");
+            runTest("js/js.translator/testData/box/trait/classDerivesFromClassAndTrait.kt");
         }
 
         @TestMetadata("classDerivesFromTraitAndClass.kt")
         public void testClassDerivesFromTraitAndClass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/trait/classDerivesFromTraitAndClass.kt");
+            runTest("js/js.translator/testData/box/trait/classDerivesFromTraitAndClass.kt");
         }
 
         @TestMetadata("definitionOrder.kt")
         public void testDefinitionOrder() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/trait/definitionOrder.kt");
+            runTest("js/js.translator/testData/box/trait/definitionOrder.kt");
         }
 
         @TestMetadata("example.kt")
         public void testExample() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/trait/example.kt");
+            runTest("js/js.translator/testData/box/trait/example.kt");
         }
 
         @TestMetadata("funDelegation.kt")
         public void testFunDelegation() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/trait/funDelegation.kt");
+            runTest("js/js.translator/testData/box/trait/funDelegation.kt");
         }
 
         @TestMetadata("traitAddsFunctionsToClass.kt")
         public void testTraitAddsFunctionsToClass() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/trait/traitAddsFunctionsToClass.kt");
+            runTest("js/js.translator/testData/box/trait/traitAddsFunctionsToClass.kt");
         }
 
         @TestMetadata("traitExtendsTrait.kt")
         public void testTraitExtendsTrait() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/trait/traitExtendsTrait.kt");
+            runTest("js/js.translator/testData/box/trait/traitExtendsTrait.kt");
         }
 
         @TestMetadata("traitExtendsTwoTraits.kt")
         public void testTraitExtendsTwoTraits() throws Exception {
-            KotlinTestUtils.runTest0(this::doTest,TargetBackend.JS_IR, "js/js.translator/testData/box/trait/traitExtendsTwoTraits.kt");
+            runTest("js/js.translator/testData/box/trait/traitExtendsTwoTraits.kt");
         }
     }
 }

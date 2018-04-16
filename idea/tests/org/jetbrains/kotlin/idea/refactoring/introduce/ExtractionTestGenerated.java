@@ -23,462 +23,469 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class IntroduceVariable extends AbstractExtractionTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doIntroduceVariableTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInIntroduceVariable() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/introduceVariable"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("AnonymousType.kt")
         public void testAnonymousType() throws Exception {
-            String fileName = KotlinTestUtils.navigationMetadata("idea/testData/refactoring/introduceVariable/AnonymousType.kt");
-            doIntroduceVariableTest(fileName);
+            runTest("idea/testData/refactoring/introduceVariable/AnonymousType.kt");
         }
 
         @TestMetadata("ArrayAccessExpr.kt")
         public void testArrayAccessExpr() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/ArrayAccessExpr.kt");
+            runTest("idea/testData/refactoring/introduceVariable/ArrayAccessExpr.kt");
         }
 
         @TestMetadata("arrayAssignment.kt")
         public void testArrayAssignment() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/arrayAssignment.kt");
+            runTest("idea/testData/refactoring/introduceVariable/arrayAssignment.kt");
         }
 
         @TestMetadata("callUnderSmartCast.kt")
         public void testCallUnderSmartCast() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/callUnderSmartCast.kt");
+            runTest("idea/testData/refactoring/introduceVariable/callUnderSmartCast.kt");
         }
 
         @TestMetadata("commentSkipping.kt")
         public void testCommentSkipping() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/commentSkipping.kt");
+            runTest("idea/testData/refactoring/introduceVariable/commentSkipping.kt");
         }
 
         @TestMetadata("ComplexCallee.kt")
         public void testComplexCallee() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/ComplexCallee.kt");
+            runTest("idea/testData/refactoring/introduceVariable/ComplexCallee.kt");
         }
 
         @TestMetadata("ConstructorDelegationCall.kt")
         public void testConstructorDelegationCall() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/ConstructorDelegationCall.kt");
+            runTest("idea/testData/refactoring/introduceVariable/ConstructorDelegationCall.kt");
         }
 
         @TestMetadata("DelegatorByExpressionInDelegate.kt")
         public void testDelegatorByExpressionInDelegate() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/DelegatorByExpressionInDelegate.kt");
+            runTest("idea/testData/refactoring/introduceVariable/DelegatorByExpressionInDelegate.kt");
         }
 
         @TestMetadata("DelegatorByExpressionInType.kt")
         public void testDelegatorByExpressionInType() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/DelegatorByExpressionInType.kt");
+            runTest("idea/testData/refactoring/introduceVariable/DelegatorByExpressionInType.kt");
         }
 
         @TestMetadata("DelegatorToSuperCallInArgument.kt")
         public void testDelegatorToSuperCallInArgument() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/DelegatorToSuperCallInArgument.kt");
+            runTest("idea/testData/refactoring/introduceVariable/DelegatorToSuperCallInArgument.kt");
         }
 
         @TestMetadata("DelegatorToSuperCallInType.kt")
         public void testDelegatorToSuperCallInType() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/DelegatorToSuperCallInType.kt");
+            runTest("idea/testData/refactoring/introduceVariable/DelegatorToSuperCallInType.kt");
         }
 
         @TestMetadata("DelegatorToSuperClass.kt")
         public void testDelegatorToSuperClass() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/DelegatorToSuperClass.kt");
+            runTest("idea/testData/refactoring/introduceVariable/DelegatorToSuperClass.kt");
         }
 
         @TestMetadata("DoWhileAddBlock.kt")
         public void testDoWhileAddBlock() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/DoWhileAddBlock.kt");
+            runTest("idea/testData/refactoring/introduceVariable/DoWhileAddBlock.kt");
         }
 
         @TestMetadata("DoWhileAddBlockInner.kt")
         public void testDoWhileAddBlockInner() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/DoWhileAddBlockInner.kt");
+            runTest("idea/testData/refactoring/introduceVariable/DoWhileAddBlockInner.kt");
         }
 
         @TestMetadata("dynamicType.kt")
         public void testDynamicType() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/dynamicType.kt");
+            runTest("idea/testData/refactoring/introduceVariable/dynamicType.kt");
         }
 
         @TestMetadata("FewOccurrences.kt")
         public void testFewOccurrences() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/FewOccurrences.kt");
+            runTest("idea/testData/refactoring/introduceVariable/FewOccurrences.kt");
         }
 
         @TestMetadata("FunctionAddBlock.kt")
         public void testFunctionAddBlock() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/FunctionAddBlock.kt");
+            runTest("idea/testData/refactoring/introduceVariable/FunctionAddBlock.kt");
         }
 
         @TestMetadata("FunctionAddBlockInner.kt")
         public void testFunctionAddBlockInner() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/FunctionAddBlockInner.kt");
+            runTest("idea/testData/refactoring/introduceVariable/FunctionAddBlockInner.kt");
         }
 
         @TestMetadata("FunctionLiteral.kt")
         public void testFunctionLiteral() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/FunctionLiteral.kt");
+            runTest("idea/testData/refactoring/introduceVariable/FunctionLiteral.kt");
         }
 
         @TestMetadata("FunctionLiteralFromExpected.kt")
         public void testFunctionLiteralFromExpected() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/FunctionLiteralFromExpected.kt");
+            runTest("idea/testData/refactoring/introduceVariable/FunctionLiteralFromExpected.kt");
         }
 
         @TestMetadata("FunctionLiteralWithExtraArgs.kt")
         public void testFunctionLiteralWithExtraArgs() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/FunctionLiteralWithExtraArgs.kt");
+            runTest("idea/testData/refactoring/introduceVariable/FunctionLiteralWithExtraArgs.kt");
         }
 
         @TestMetadata("IfCondition.kt")
         public void testIfCondition() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/IfCondition.kt");
+            runTest("idea/testData/refactoring/introduceVariable/IfCondition.kt");
         }
 
         @TestMetadata("IfElseAddBlock.kt")
         public void testIfElseAddBlock() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/IfElseAddBlock.kt");
+            runTest("idea/testData/refactoring/introduceVariable/IfElseAddBlock.kt");
         }
 
         @TestMetadata("IfElseAddBlockInner.kt")
         public void testIfElseAddBlockInner() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/IfElseAddBlockInner.kt");
+            runTest("idea/testData/refactoring/introduceVariable/IfElseAddBlockInner.kt");
         }
 
         @TestMetadata("IfThenAddBlock.kt")
         public void testIfThenAddBlock() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/IfThenAddBlock.kt");
+            runTest("idea/testData/refactoring/introduceVariable/IfThenAddBlock.kt");
         }
 
         @TestMetadata("IfThenAddBlockInner.kt")
         public void testIfThenAddBlockInner() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/IfThenAddBlockInner.kt");
+            runTest("idea/testData/refactoring/introduceVariable/IfThenAddBlockInner.kt");
         }
 
         @TestMetadata("IfThenValuedAddBlock.kt")
         public void testIfThenValuedAddBlock() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/IfThenValuedAddBlock.kt");
+            runTest("idea/testData/refactoring/introduceVariable/IfThenValuedAddBlock.kt");
         }
 
         @TestMetadata("InsideOfInitializerAnnotation.kt")
         public void testInsideOfInitializerAnnotation() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/InsideOfInitializerAnnotation.kt");
+            runTest("idea/testData/refactoring/introduceVariable/InsideOfInitializerAnnotation.kt");
         }
 
         @TestMetadata("IntroduceAndCreateBlock.kt")
         public void testIntroduceAndCreateBlock() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/IntroduceAndCreateBlock.kt");
+            runTest("idea/testData/refactoring/introduceVariable/IntroduceAndCreateBlock.kt");
         }
 
         @TestMetadata("IntroduceLambdaAndCreateBlock.kt")
         public void testIntroduceLambdaAndCreateBlock() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/IntroduceLambdaAndCreateBlock.kt");
+            runTest("idea/testData/refactoring/introduceVariable/IntroduceLambdaAndCreateBlock.kt");
         }
 
         @TestMetadata("introduceToClass.kt")
         public void testIntroduceToClass() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/introduceToClass.kt");
+            runTest("idea/testData/refactoring/introduceVariable/introduceToClass.kt");
         }
 
         @TestMetadata("introduceToFile.kt")
         public void testIntroduceToFile() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/introduceToFile.kt");
+            runTest("idea/testData/refactoring/introduceVariable/introduceToFile.kt");
         }
 
         @TestMetadata("It.kt")
         public void testIt() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/It.kt");
+            runTest("idea/testData/refactoring/introduceVariable/It.kt");
         }
 
         @TestMetadata("kt10808.kt")
         public void testKt10808() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/kt10808.kt");
+            runTest("idea/testData/refactoring/introduceVariable/kt10808.kt");
         }
 
         @TestMetadata("kt21530_withConstructorParam.kt")
         public void testKt21530_withConstructorParam() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/kt21530_withConstructorParam.kt");
+            runTest("idea/testData/refactoring/introduceVariable/kt21530_withConstructorParam.kt");
         }
 
         @TestMetadata("kt21530_withGlobal.kt")
         public void testKt21530_withGlobal() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/kt21530_withGlobal.kt");
+            runTest("idea/testData/refactoring/introduceVariable/kt21530_withGlobal.kt");
         }
 
         @TestMetadata("kt21530_withParam.kt")
         public void testKt21530_withParam() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/kt21530_withParam.kt");
+            runTest("idea/testData/refactoring/introduceVariable/kt21530_withParam.kt");
         }
 
         @TestMetadata("LoopRange.kt")
         public void testLoopRange() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/LoopRange.kt");
+            runTest("idea/testData/refactoring/introduceVariable/LoopRange.kt");
         }
 
         @TestMetadata("ManyInnerOccurences.kt")
         public void testManyInnerOccurences() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/ManyInnerOccurences.kt");
+            runTest("idea/testData/refactoring/introduceVariable/ManyInnerOccurences.kt");
         }
 
         @TestMetadata("ManyOccurrences.kt")
         public void testManyOccurrences() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/ManyOccurrences.kt");
+            runTest("idea/testData/refactoring/introduceVariable/ManyOccurrences.kt");
         }
 
         @TestMetadata("multilineBinaryExpression.kt")
         public void testMultilineBinaryExpression() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/multilineBinaryExpression.kt");
+            runTest("idea/testData/refactoring/introduceVariable/multilineBinaryExpression.kt");
         }
 
         @TestMetadata("multilineBinaryExpressionWithComments.kt")
         public void testMultilineBinaryExpressionWithComments() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/multilineBinaryExpressionWithComments.kt");
+            runTest("idea/testData/refactoring/introduceVariable/multilineBinaryExpressionWithComments.kt");
         }
 
         @TestMetadata("multilineNestedBinaryExpression1.kt")
         public void testMultilineNestedBinaryExpression1() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/multilineNestedBinaryExpression1.kt");
+            runTest("idea/testData/refactoring/introduceVariable/multilineNestedBinaryExpression1.kt");
         }
 
         @TestMetadata("multilineNestedBinaryExpression2.kt")
         public void testMultilineNestedBinaryExpression2() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/multilineNestedBinaryExpression2.kt");
+            runTest("idea/testData/refactoring/introduceVariable/multilineNestedBinaryExpression2.kt");
         }
 
         @TestMetadata("NameSuggestionBug1.kt")
         public void testNameSuggestionBug1() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/NameSuggestionBug1.kt");
+            runTest("idea/testData/refactoring/introduceVariable/NameSuggestionBug1.kt");
         }
 
         @TestMetadata("NameSuggestionBug2.kt")
         public void testNameSuggestionBug2() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/NameSuggestionBug2.kt");
+            runTest("idea/testData/refactoring/introduceVariable/NameSuggestionBug2.kt");
         }
 
         @TestMetadata("NameSuggestionCheckVisibility.kt")
         public void testNameSuggestionCheckVisibility() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/NameSuggestionCheckVisibility.kt");
+            runTest("idea/testData/refactoring/introduceVariable/NameSuggestionCheckVisibility.kt");
         }
 
         @TestMetadata("noConflictWithInnerVariable.kt")
         public void testNoConflictWithInnerVariable() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/noConflictWithInnerVariable.kt");
+            runTest("idea/testData/refactoring/introduceVariable/noConflictWithInnerVariable.kt");
         }
 
         @TestMetadata("NoExplicitReceivers.kt")
         public void testNoExplicitReceivers() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/NoExplicitReceivers.kt");
+            runTest("idea/testData/refactoring/introduceVariable/NoExplicitReceivers.kt");
         }
 
         @TestMetadata("NoExplicitReceiversUnresolved.kt")
         public void testNoExplicitReceiversUnresolved() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/NoExplicitReceiversUnresolved.kt");
+            runTest("idea/testData/refactoring/introduceVariable/NoExplicitReceiversUnresolved.kt");
         }
 
         @TestMetadata("NoNewLinesInBetween.kt")
         public void testNoNewLinesInBetween() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/NoNewLinesInBetween.kt");
+            runTest("idea/testData/refactoring/introduceVariable/NoNewLinesInBetween.kt");
         }
 
         @TestMetadata("NoNewLinesInBetweenNoBraces.kt")
         public void testNoNewLinesInBetweenNoBraces() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/NoNewLinesInBetweenNoBraces.kt");
+            runTest("idea/testData/refactoring/introduceVariable/NoNewLinesInBetweenNoBraces.kt");
         }
 
         @TestMetadata("nonEquivalentReceivers.kt")
         public void testNonEquivalentReceivers() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/nonEquivalentReceivers.kt");
+            runTest("idea/testData/refactoring/introduceVariable/nonEquivalentReceivers.kt");
         }
 
         @TestMetadata("notNullAssertion.kt")
         public void testNotNullAssertion() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/notNullAssertion.kt");
+            runTest("idea/testData/refactoring/introduceVariable/notNullAssertion.kt");
         }
 
         @TestMetadata("OccurrencesInStringTemplate.kt")
         public void testOccurrencesInStringTemplate() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/OccurrencesInStringTemplate.kt");
+            runTest("idea/testData/refactoring/introduceVariable/OccurrencesInStringTemplate.kt");
         }
 
         @TestMetadata("onAssignmentLHS.kt")
         public void testOnAssignmentLHS() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/onAssignmentLHS.kt");
+            runTest("idea/testData/refactoring/introduceVariable/onAssignmentLHS.kt");
         }
 
         @TestMetadata("OneExplicitReceiver.kt")
         public void testOneExplicitReceiver() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/OneExplicitReceiver.kt");
+            runTest("idea/testData/refactoring/introduceVariable/OneExplicitReceiver.kt");
         }
 
         @TestMetadata("PropertyAccessorAddBlock.kt")
         public void testPropertyAccessorAddBlock() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/PropertyAccessorAddBlock.kt");
+            runTest("idea/testData/refactoring/introduceVariable/PropertyAccessorAddBlock.kt");
         }
 
         @TestMetadata("PropertyAccessorAddBlockInner.kt")
         public void testPropertyAccessorAddBlockInner() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/PropertyAccessorAddBlockInner.kt");
+            runTest("idea/testData/refactoring/introduceVariable/PropertyAccessorAddBlockInner.kt");
         }
 
         @TestMetadata("qualifier.kt")
         public void testQualifier() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/qualifier.kt");
+            runTest("idea/testData/refactoring/introduceVariable/qualifier.kt");
         }
 
         @TestMetadata("ReplaceOccurence.kt")
         public void testReplaceOccurence() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/ReplaceOccurence.kt");
+            runTest("idea/testData/refactoring/introduceVariable/ReplaceOccurence.kt");
         }
 
         @TestMetadata("selectorAssignment.kt")
         public void testSelectorAssignment() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/selectorAssignment.kt");
+            runTest("idea/testData/refactoring/introduceVariable/selectorAssignment.kt");
         }
 
         @TestMetadata("Simple.kt")
         public void testSimple() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/Simple.kt");
+            runTest("idea/testData/refactoring/introduceVariable/Simple.kt");
         }
 
         @TestMetadata("SimpleCreateValue.kt")
         public void testSimpleCreateValue() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/SimpleCreateValue.kt");
+            runTest("idea/testData/refactoring/introduceVariable/SimpleCreateValue.kt");
         }
 
         @TestMetadata("skipClassReference.kt")
         public void testSkipClassReference() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/skipClassReference.kt");
+            runTest("idea/testData/refactoring/introduceVariable/skipClassReference.kt");
         }
 
         @TestMetadata("skipUsageInAssignmentLHS.kt")
         public void testSkipUsageInAssignmentLHS() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/skipUsageInAssignmentLHS.kt");
+            runTest("idea/testData/refactoring/introduceVariable/skipUsageInAssignmentLHS.kt");
         }
 
         @TestMetadata("StringInjection.kt")
         public void testStringInjection() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/StringInjection.kt");
+            runTest("idea/testData/refactoring/introduceVariable/StringInjection.kt");
         }
 
         @TestMetadata("SuperReference.kt")
         public void testSuperReference() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/SuperReference.kt");
+            runTest("idea/testData/refactoring/introduceVariable/SuperReference.kt");
         }
 
         @TestMetadata("thisAsCallee.kt")
         public void testThisAsCallee() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/thisAsCallee.kt");
+            runTest("idea/testData/refactoring/introduceVariable/thisAsCallee.kt");
         }
 
         @TestMetadata("ThisReference.kt")
         public void testThisReference() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/ThisReference.kt");
+            runTest("idea/testData/refactoring/introduceVariable/ThisReference.kt");
         }
 
         @TestMetadata("TwoExplicitReceivers.kt")
         public void testTwoExplicitReceivers() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/TwoExplicitReceivers.kt");
+            runTest("idea/testData/refactoring/introduceVariable/TwoExplicitReceivers.kt");
         }
 
         @TestMetadata("TypeElement.kt")
         public void testTypeElement() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/TypeElement.kt");
+            runTest("idea/testData/refactoring/introduceVariable/TypeElement.kt");
         }
 
         @TestMetadata("UnresolvedOccurrences.kt")
         public void testUnresolvedOccurrences() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/UnresolvedOccurrences.kt");
+            runTest("idea/testData/refactoring/introduceVariable/UnresolvedOccurrences.kt");
         }
 
         @TestMetadata("UsedAndUnusedExpressions1.kt")
         public void testUsedAndUnusedExpressions1() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/UsedAndUnusedExpressions1.kt");
+            runTest("idea/testData/refactoring/introduceVariable/UsedAndUnusedExpressions1.kt");
         }
 
         @TestMetadata("UsedAndUnusedExpressions2.kt")
         public void testUsedAndUnusedExpressions2() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/UsedAndUnusedExpressions2.kt");
+            runTest("idea/testData/refactoring/introduceVariable/UsedAndUnusedExpressions2.kt");
         }
 
         @TestMetadata("WhenAddBlock.kt")
         public void testWhenAddBlock() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/WhenAddBlock.kt");
+            runTest("idea/testData/refactoring/introduceVariable/WhenAddBlock.kt");
         }
 
         @TestMetadata("WhenAddBlockInner.kt")
         public void testWhenAddBlockInner() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/WhenAddBlockInner.kt");
+            runTest("idea/testData/refactoring/introduceVariable/WhenAddBlockInner.kt");
         }
 
         @TestMetadata("WhenEntryCondition.kt")
         public void testWhenEntryCondition() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/WhenEntryCondition.kt");
+            runTest("idea/testData/refactoring/introduceVariable/WhenEntryCondition.kt");
         }
 
         @TestMetadata("WhenParts.kt")
         public void testWhenParts() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/WhenParts.kt");
+            runTest("idea/testData/refactoring/introduceVariable/WhenParts.kt");
         }
 
         @TestMetadata("WhenValuedAddBlock.kt")
         public void testWhenValuedAddBlock() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/WhenValuedAddBlock.kt");
+            runTest("idea/testData/refactoring/introduceVariable/WhenValuedAddBlock.kt");
         }
 
         @TestMetadata("WhileAddBlock.kt")
         public void testWhileAddBlock() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/WhileAddBlock.kt");
+            runTest("idea/testData/refactoring/introduceVariable/WhileAddBlock.kt");
         }
 
         @TestMetadata("WhileAddBlockInner.kt")
         public void testWhileAddBlockInner() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/WhileAddBlockInner.kt");
+            runTest("idea/testData/refactoring/introduceVariable/WhileAddBlockInner.kt");
         }
 
         @TestMetadata("WhileCondition.kt")
         public void testWhileCondition() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/WhileCondition.kt");
+            runTest("idea/testData/refactoring/introduceVariable/WhileCondition.kt");
         }
 
         @TestMetadata("idea/testData/refactoring/introduceVariable/explicateTypeArguments")
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class ExplicateTypeArguments extends AbstractExtractionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doIntroduceVariableTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInExplicateTypeArguments() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/introduceVariable/explicateTypeArguments"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("DeeperNestedCall.kt")
             public void testDeeperNestedCall() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/explicateTypeArguments/DeeperNestedCall.kt");
+                runTest("idea/testData/refactoring/introduceVariable/explicateTypeArguments/DeeperNestedCall.kt");
             }
 
             @TestMetadata("NestedCall.kt")
             public void testNestedCall() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/explicateTypeArguments/NestedCall.kt");
+                runTest("idea/testData/refactoring/introduceVariable/explicateTypeArguments/NestedCall.kt");
             }
 
             @TestMetadata("Parenthesized.kt")
             public void testParenthesized() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/explicateTypeArguments/Parenthesized.kt");
+                runTest("idea/testData/refactoring/introduceVariable/explicateTypeArguments/Parenthesized.kt");
             }
 
             @TestMetadata("Qualified.kt")
             public void testQualified() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/explicateTypeArguments/Qualified.kt");
+                runTest("idea/testData/refactoring/introduceVariable/explicateTypeArguments/Qualified.kt");
             }
 
             @TestMetadata("Simple.kt")
             public void testSimple() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/explicateTypeArguments/Simple.kt");
+                runTest("idea/testData/refactoring/introduceVariable/explicateTypeArguments/Simple.kt");
             }
 
             @TestMetadata("UnmatchedOccurrences.kt")
             public void testUnmatchedOccurrences() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/explicateTypeArguments/UnmatchedOccurrences.kt");
+                runTest("idea/testData/refactoring/introduceVariable/explicateTypeArguments/UnmatchedOccurrences.kt");
             }
         }
 
@@ -486,63 +493,67 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class ExtractToScope extends AbstractExtractionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doIntroduceVariableTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInExtractToScope() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/introduceVariable/extractToScope"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("implicitOuterThisInsideNestedLamba.kt")
             public void testImplicitOuterThisInsideNestedLamba() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/extractToScope/implicitOuterThisInsideNestedLamba.kt");
+                runTest("idea/testData/refactoring/introduceVariable/extractToScope/implicitOuterThisInsideNestedLamba.kt");
             }
 
             @TestMetadata("implicitThisInsideNestedLamba.kt")
             public void testImplicitThisInsideNestedLamba() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/extractToScope/implicitThisInsideNestedLamba.kt");
+                runTest("idea/testData/refactoring/introduceVariable/extractToScope/implicitThisInsideNestedLamba.kt");
             }
 
             @TestMetadata("insideFunExpression.kt")
             public void testInsideFunExpression() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/extractToScope/insideFunExpression.kt");
+                runTest("idea/testData/refactoring/introduceVariable/extractToScope/insideFunExpression.kt");
             }
 
             @TestMetadata("insideFunExpressionWithBlock.kt")
             public void testInsideFunExpressionWithBlock() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/extractToScope/insideFunExpressionWithBlock.kt");
+                runTest("idea/testData/refactoring/introduceVariable/extractToScope/insideFunExpressionWithBlock.kt");
             }
 
             @TestMetadata("insideLamba.kt")
             public void testInsideLamba() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/extractToScope/insideLamba.kt");
+                runTest("idea/testData/refactoring/introduceVariable/extractToScope/insideLamba.kt");
             }
 
             @TestMetadata("insideNestedFunExpression.kt")
             public void testInsideNestedFunExpression() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/extractToScope/insideNestedFunExpression.kt");
+                runTest("idea/testData/refactoring/introduceVariable/extractToScope/insideNestedFunExpression.kt");
             }
 
             @TestMetadata("insideNestedFunExpressionInLambda.kt")
             public void testInsideNestedFunExpressionInLambda() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/extractToScope/insideNestedFunExpressionInLambda.kt");
+                runTest("idea/testData/refactoring/introduceVariable/extractToScope/insideNestedFunExpressionInLambda.kt");
             }
 
             @TestMetadata("insideNestedLamba.kt")
             public void testInsideNestedLamba() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/extractToScope/insideNestedLamba.kt");
+                runTest("idea/testData/refactoring/introduceVariable/extractToScope/insideNestedLamba.kt");
             }
 
             @TestMetadata("insideNestedLambdaInFunExpression.kt")
             public void testInsideNestedLambdaInFunExpression() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/extractToScope/insideNestedLambdaInFunExpression.kt");
+                runTest("idea/testData/refactoring/introduceVariable/extractToScope/insideNestedLambdaInFunExpression.kt");
             }
 
             @TestMetadata("itInsideNestedLamba.kt")
             public void testItInsideNestedLamba() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/extractToScope/itInsideNestedLamba.kt");
+                runTest("idea/testData/refactoring/introduceVariable/extractToScope/itInsideNestedLamba.kt");
             }
 
             @TestMetadata("outerItInsideNestedLamba.kt")
             public void testOuterItInsideNestedLamba() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/extractToScope/outerItInsideNestedLamba.kt");
+                runTest("idea/testData/refactoring/introduceVariable/extractToScope/outerItInsideNestedLamba.kt");
             }
         }
 
@@ -550,53 +561,57 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class MultiDeclarations extends AbstractExtractionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doIntroduceVariableTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInMultiDeclarations() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/introduceVariable/multiDeclarations"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("array.kt")
             public void testArray() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/multiDeclarations/array.kt");
+                runTest("idea/testData/refactoring/introduceVariable/multiDeclarations/array.kt");
             }
 
             @TestMetadata("intArray.kt")
             public void testIntArray() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/multiDeclarations/intArray.kt");
+                runTest("idea/testData/refactoring/introduceVariable/multiDeclarations/intArray.kt");
             }
 
             @TestMetadata("list.kt")
             public void testList() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/multiDeclarations/list.kt");
+                runTest("idea/testData/refactoring/introduceVariable/multiDeclarations/list.kt");
             }
 
             @TestMetadata("notOperators.kt")
             public void testNotOperators() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/multiDeclarations/notOperators.kt");
+                runTest("idea/testData/refactoring/introduceVariable/multiDeclarations/notOperators.kt");
             }
 
             @TestMetadata("singleComponent.kt")
             public void testSingleComponent() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/multiDeclarations/singleComponent.kt");
+                runTest("idea/testData/refactoring/introduceVariable/multiDeclarations/singleComponent.kt");
             }
 
             @TestMetadata("unresolvedComponent3.kt")
             public void testUnresolvedComponent3() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/multiDeclarations/unresolvedComponent3.kt");
+                runTest("idea/testData/refactoring/introduceVariable/multiDeclarations/unresolvedComponent3.kt");
             }
 
             @TestMetadata("unusedExpr.kt")
             public void testUnusedExpr() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/multiDeclarations/unusedExpr.kt");
+                runTest("idea/testData/refactoring/introduceVariable/multiDeclarations/unusedExpr.kt");
             }
 
             @TestMetadata("usedExpr.kt")
             public void testUsedExpr() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/multiDeclarations/usedExpr.kt");
+                runTest("idea/testData/refactoring/introduceVariable/multiDeclarations/usedExpr.kt");
             }
 
             @TestMetadata("userDataClass.kt")
             public void testUserDataClass() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/multiDeclarations/userDataClass.kt");
+                runTest("idea/testData/refactoring/introduceVariable/multiDeclarations/userDataClass.kt");
             }
         }
 
@@ -604,23 +619,27 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Script extends AbstractExtractionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doIntroduceVariableTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInScript() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/introduceVariable/script"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("ExpressionPart.kts")
             public void testExpressionPart() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/script/ExpressionPart.kts");
+                runTest("idea/testData/refactoring/introduceVariable/script/ExpressionPart.kts");
             }
 
             @TestMetadata("NotExpression.kts")
             public void testNotExpression() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/script/NotExpression.kts");
+                runTest("idea/testData/refactoring/introduceVariable/script/NotExpression.kts");
             }
 
             @TestMetadata("TopLevelExpression.kts")
             public void testTopLevelExpression() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/script/TopLevelExpression.kts");
+                runTest("idea/testData/refactoring/introduceVariable/script/TopLevelExpression.kts");
             }
         }
 
@@ -628,93 +647,97 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class StringTemplates extends AbstractExtractionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doIntroduceVariableTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInStringTemplates() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/introduceVariable/stringTemplates"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("brokenEntryWithBlockExpr.kt")
             public void testBrokenEntryWithBlockExpr() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/stringTemplates/brokenEntryWithBlockExpr.kt");
+                runTest("idea/testData/refactoring/introduceVariable/stringTemplates/brokenEntryWithBlockExpr.kt");
             }
 
             @TestMetadata("brokenEntryWithExpr.kt")
             public void testBrokenEntryWithExpr() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/stringTemplates/brokenEntryWithExpr.kt");
+                runTest("idea/testData/refactoring/introduceVariable/stringTemplates/brokenEntryWithExpr.kt");
             }
 
             @TestMetadata("brokenEscapeEntry.kt")
             public void testBrokenEscapeEntry() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/stringTemplates/brokenEscapeEntry.kt");
+                runTest("idea/testData/refactoring/introduceVariable/stringTemplates/brokenEscapeEntry.kt");
             }
 
             @TestMetadata("extractFalse.kt")
             public void testExtractFalse() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/stringTemplates/extractFalse.kt");
+                runTest("idea/testData/refactoring/introduceVariable/stringTemplates/extractFalse.kt");
             }
 
             @TestMetadata("extractIntegerLiteral.kt")
             public void testExtractIntegerLiteral() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/stringTemplates/extractIntegerLiteral.kt");
+                runTest("idea/testData/refactoring/introduceVariable/stringTemplates/extractIntegerLiteral.kt");
             }
 
             @TestMetadata("extractTrue.kt")
             public void testExtractTrue() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/stringTemplates/extractTrue.kt");
+                runTest("idea/testData/refactoring/introduceVariable/stringTemplates/extractTrue.kt");
             }
 
             @TestMetadata("extractTrueWithSpaces.kt")
             public void testExtractTrueWithSpaces() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/stringTemplates/extractTrueWithSpaces.kt");
+                runTest("idea/testData/refactoring/introduceVariable/stringTemplates/extractTrueWithSpaces.kt");
             }
 
             @TestMetadata("fullContent.kt")
             public void testFullContent() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/stringTemplates/fullContent.kt");
+                runTest("idea/testData/refactoring/introduceVariable/stringTemplates/fullContent.kt");
             }
 
             @TestMetadata("fullEntryWithBlockExpr.kt")
             public void testFullEntryWithBlockExpr() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/stringTemplates/fullEntryWithBlockExpr.kt");
+                runTest("idea/testData/refactoring/introduceVariable/stringTemplates/fullEntryWithBlockExpr.kt");
             }
 
             @TestMetadata("fullEntryWithSimpleName.kt")
             public void testFullEntryWithSimpleName() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/stringTemplates/fullEntryWithSimpleName.kt");
+                runTest("idea/testData/refactoring/introduceVariable/stringTemplates/fullEntryWithSimpleName.kt");
             }
 
             @TestMetadata("multipleEntriesWithPrefix.kt")
             public void testMultipleEntriesWithPrefix() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/stringTemplates/multipleEntriesWithPrefix.kt");
+                runTest("idea/testData/refactoring/introduceVariable/stringTemplates/multipleEntriesWithPrefix.kt");
             }
 
             @TestMetadata("multipleEntriesWithSubstring.kt")
             public void testMultipleEntriesWithSubstring() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/stringTemplates/multipleEntriesWithSubstring.kt");
+                runTest("idea/testData/refactoring/introduceVariable/stringTemplates/multipleEntriesWithSubstring.kt");
             }
 
             @TestMetadata("multipleEntriesWithSuffix.kt")
             public void testMultipleEntriesWithSuffix() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/stringTemplates/multipleEntriesWithSuffix.kt");
+                runTest("idea/testData/refactoring/introduceVariable/stringTemplates/multipleEntriesWithSuffix.kt");
             }
 
             @TestMetadata("rawTemplateWithSubstring.kt")
             public void testRawTemplateWithSubstring() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/stringTemplates/rawTemplateWithSubstring.kt");
+                runTest("idea/testData/refactoring/introduceVariable/stringTemplates/rawTemplateWithSubstring.kt");
             }
 
             @TestMetadata("singleEntryPrefix.kt")
             public void testSingleEntryPrefix() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/stringTemplates/singleEntryPrefix.kt");
+                runTest("idea/testData/refactoring/introduceVariable/stringTemplates/singleEntryPrefix.kt");
             }
 
             @TestMetadata("singleEntrySubstring.kt")
             public void testSingleEntrySubstring() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/stringTemplates/singleEntrySubstring.kt");
+                runTest("idea/testData/refactoring/introduceVariable/stringTemplates/singleEntrySubstring.kt");
             }
 
             @TestMetadata("singleEntrySuffix.kt")
             public void testSingleEntrySuffix() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceVariableTest,TargetBackend.ANY, "idea/testData/refactoring/introduceVariable/stringTemplates/singleEntrySuffix.kt");
+                runTest("idea/testData/refactoring/introduceVariable/stringTemplates/singleEntrySuffix.kt");
             }
         }
     }
@@ -723,6 +746,10 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class ExtractFunction extends AbstractExtractionTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doExtractFunctionTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInExtractFunction() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/extractFunction"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
         }
@@ -731,253 +758,257 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Basic extends AbstractExtractionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doExtractFunctionTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInBasic() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/extractFunction/basic"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("callWithPlatformTypeReceiver.kt")
             public void testCallWithPlatformTypeReceiver() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/callWithPlatformTypeReceiver.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/callWithPlatformTypeReceiver.kt");
             }
 
             @TestMetadata("callableReferenceSelector.kt")
             public void testCallableReferenceSelector() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/callableReferenceSelector.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/callableReferenceSelector.kt");
             }
 
             @TestMetadata("calleeExpression.kt")
             public void testCalleeExpression() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/calleeExpression.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/calleeExpression.kt");
             }
 
             @TestMetadata("classQualifier.kt")
             public void testClassQualifier() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/classQualifier.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/classQualifier.kt");
             }
 
             @TestMetadata("companionObjectMemberRef.kt")
             public void testCompanionObjectMemberRef() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/companionObjectMemberRef.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/companionObjectMemberRef.kt");
             }
 
             @TestMetadata("convertBinaryExpression.kt")
             public void testConvertBinaryExpression() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/convertBinaryExpression.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/convertBinaryExpression.kt");
             }
 
             @TestMetadata("convertInfixExpression.kt")
             public void testConvertInfixExpression() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/convertInfixExpression.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/convertInfixExpression.kt");
             }
 
             @TestMetadata("delegatingFunction.kt")
             public void testDelegatingFunction() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/delegatingFunction.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/delegatingFunction.kt");
             }
 
             @TestMetadata("enumQualifier.kt")
             public void testEnumQualifier() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/enumQualifier.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/enumQualifier.kt");
             }
 
             @TestMetadata("extensionFunForArray.kt")
             public void testExtensionFunForArray() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/extensionFunForArray.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/extensionFunForArray.kt");
             }
 
             @TestMetadata("extractBlockContent.kt")
             public void testExtractBlockContent() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/extractBlockContent.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/extractBlockContent.kt");
             }
 
             @TestMetadata("extractFromPrivateInlineFun.kt")
             public void testExtractFromPrivateInlineFun() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/extractFromPrivateInlineFun.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/extractFromPrivateInlineFun.kt");
             }
 
             @TestMetadata("extractFromPublicInlineFun.kt")
             public void testExtractFromPublicInlineFun() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/extractFromPublicInlineFun.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/extractFromPublicInlineFun.kt");
             }
 
             @TestMetadata("extractSuspend.kt")
             public void testExtractSuspend() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/extractSuspend.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/extractSuspend.kt");
             }
 
             @TestMetadata("extractToEnumClassBody.kt")
             public void testExtractToEnumClassBody() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/extractToEnumClassBody.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/extractToEnumClassBody.kt");
             }
 
             @TestMetadata("fakeOverride.kt")
             public void testFakeOverride() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/fakeOverride.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/fakeOverride.kt");
             }
 
             @TestMetadata("fragmentWithComment.kt")
             public void testFragmentWithComment() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/fragmentWithComment.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/fragmentWithComment.kt");
             }
 
             @TestMetadata("fragmentWithMultilineComment.kt")
             public void testFragmentWithMultilineComment() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/fragmentWithMultilineComment.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/fragmentWithMultilineComment.kt");
             }
 
             @TestMetadata("identityEquals.kt")
             public void testIdentityEquals() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/identityEquals.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/identityEquals.kt");
             }
 
             @TestMetadata("invisibleType.kt")
             public void testInvisibleType() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/invisibleType.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/invisibleType.kt");
             }
 
             @TestMetadata("lineWithSemicolon.kt")
             public void testLineWithSemicolon() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/lineWithSemicolon.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/lineWithSemicolon.kt");
             }
 
             @TestMetadata("localClassExtraction.kt")
             public void testLocalClassExtraction() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/localClassExtraction.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/localClassExtraction.kt");
             }
 
             @TestMetadata("localClassFunctionRef.kt")
             public void testLocalClassFunctionRef() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/localClassFunctionRef.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/localClassFunctionRef.kt");
             }
 
             @TestMetadata("localClassPropertyRef.kt")
             public void testLocalClassPropertyRef() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/localClassPropertyRef.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/localClassPropertyRef.kt");
             }
 
             @TestMetadata("localExtraction.kt")
             public void testLocalExtraction() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/localExtraction.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/localExtraction.kt");
             }
 
             @TestMetadata("localFunExtraction.kt")
             public void testLocalFunExtraction() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/localFunExtraction.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/localFunExtraction.kt");
             }
 
             @TestMetadata("localFunctionInTheMiddleSimpleControlFlow.kt")
             public void testLocalFunctionInTheMiddleSimpleControlFlow() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/localFunctionInTheMiddleSimpleControlFlow.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/localFunctionInTheMiddleSimpleControlFlow.kt");
             }
 
             @TestMetadata("localFunctionInTheMiddleUnusedVar.kt")
             public void testLocalFunctionInTheMiddleUnusedVar() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/localFunctionInTheMiddleUnusedVar.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/localFunctionInTheMiddleUnusedVar.kt");
             }
 
             @TestMetadata("localFunctionInTheMiddleUsedVar.kt")
             public void testLocalFunctionInTheMiddleUsedVar() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/localFunctionInTheMiddleUsedVar.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/localFunctionInTheMiddleUsedVar.kt");
             }
 
             @TestMetadata("localFunctionRef.kt")
             public void testLocalFunctionRef() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/localFunctionRef.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/localFunctionRef.kt");
             }
 
             @TestMetadata("localObjectRef.kt")
             public void testLocalObjectRef() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/localObjectRef.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/localObjectRef.kt");
             }
 
             @TestMetadata("malformedExpression.kt")
             public void testMalformedExpression() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/malformedExpression.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/malformedExpression.kt");
             }
 
             @TestMetadata("malformedStatements.kt")
             public void testMalformedStatements() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/malformedStatements.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/malformedStatements.kt");
             }
 
             @TestMetadata("memberValUnderSmartCast.kt")
             public void testMemberValUnderSmartCast() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/memberValUnderSmartCast.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/memberValUnderSmartCast.kt");
             }
 
             @TestMetadata("memberValUnderSmartCastAndImplicitReceiver.kt")
             public void testMemberValUnderSmartCastAndImplicitReceiver() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/memberValUnderSmartCastAndImplicitReceiver.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/memberValUnderSmartCastAndImplicitReceiver.kt");
             }
 
             @TestMetadata("misdirectedRef.kt")
             public void testMisdirectedRef() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/misdirectedRef.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/misdirectedRef.kt");
             }
 
             @TestMetadata("noConflictWithInnerFunction.kt")
             public void testNoConflictWithInnerFunction() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/noConflictWithInnerFunction.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/noConflictWithInnerFunction.kt");
             }
 
             @TestMetadata("objectQualifier.kt")
             public void testObjectQualifier() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/objectQualifier.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/objectQualifier.kt");
             }
 
             @TestMetadata("packageQualifier.kt")
             public void testPackageQualifier() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/packageQualifier.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/packageQualifier.kt");
             }
 
             @TestMetadata("privateMemberInClassObject.kt")
             public void testPrivateMemberInClassObject() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/privateMemberInClassObject.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/privateMemberInClassObject.kt");
             }
 
             @TestMetadata("privateMemberRef.kt")
             public void testPrivateMemberRef() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/privateMemberRef.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/privateMemberRef.kt");
             }
 
             @TestMetadata("privateNestedClass.kt")
             public void testPrivateNestedClass() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/privateNestedClass.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/privateNestedClass.kt");
             }
 
             @TestMetadata("privateSetter.kt")
             public void testPrivateSetter() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/privateSetter.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/privateSetter.kt");
             }
 
             @TestMetadata("refInReturn.kt")
             public void testRefInReturn() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/refInReturn.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/refInReturn.kt");
             }
 
             @TestMetadata("suspendCall.kt")
             public void testSuspendCall() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/suspendCall.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/suspendCall.kt");
             }
 
             @TestMetadata("suspendCallWithExtractedParameter.kt")
             public void testSuspendCallWithExtractedParameter() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/suspendCallWithExtractedParameter.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/suspendCallWithExtractedParameter.kt");
             }
 
             @TestMetadata("topLevelValUnderSmartCast.kt")
             public void testTopLevelValUnderSmartCast() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/topLevelValUnderSmartCast.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/topLevelValUnderSmartCast.kt");
             }
 
             @TestMetadata("traitFunction.kt")
             public void testTraitFunction() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/traitFunction.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/traitFunction.kt");
             }
 
             @TestMetadata("unresolvedWrongReceiver.kt")
             public void testUnresolvedWrongReceiver() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/basic/unresolvedWrongReceiver.kt");
+                runTest("idea/testData/refactoring/extractFunction/basic/unresolvedWrongReceiver.kt");
             }
         }
 
@@ -985,6 +1016,10 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class ControlFlow extends AbstractExtractionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doExtractFunctionTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInControlFlow() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/extractFunction/controlFlow"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
             }
@@ -993,58 +1028,62 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class ConditionalJumps extends AbstractExtractionTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doExtractFunctionTest, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInConditionalJumps() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/extractFunction/controlFlow/conditionalJumps"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("conditionalBreakWithIf.kt")
                 public void testConditionalBreakWithIf() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/conditionalJumps/conditionalBreakWithIf.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/conditionalJumps/conditionalBreakWithIf.kt");
                 }
 
                 @TestMetadata("conditionalBreakWithIfAndExtraVars.kt")
                 public void testConditionalBreakWithIfAndExtraVars() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/conditionalJumps/conditionalBreakWithIfAndExtraVars.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/conditionalJumps/conditionalBreakWithIfAndExtraVars.kt");
                 }
 
                 @TestMetadata("conditionalBreakWithIfElse.kt")
                 public void testConditionalBreakWithIfElse() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/conditionalJumps/conditionalBreakWithIfElse.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/conditionalJumps/conditionalBreakWithIfElse.kt");
                 }
 
                 @TestMetadata("conditionalBreakWithWhen.kt")
                 public void testConditionalBreakWithWhen() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/conditionalJumps/conditionalBreakWithWhen.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/conditionalJumps/conditionalBreakWithWhen.kt");
                 }
 
                 @TestMetadata("conditionalReturnWithIf.kt")
                 public void testConditionalReturnWithIf() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/conditionalJumps/conditionalReturnWithIf.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/conditionalJumps/conditionalReturnWithIf.kt");
                 }
 
                 @TestMetadata("conditionalReturnWithIfElse.kt")
                 public void testConditionalReturnWithIfElse() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/conditionalJumps/conditionalReturnWithIfElse.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/conditionalJumps/conditionalReturnWithIfElse.kt");
                 }
 
                 @TestMetadata("conditionalReturnWithWhen.kt")
                 public void testConditionalReturnWithWhen() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/conditionalJumps/conditionalReturnWithWhen.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/conditionalJumps/conditionalReturnWithWhen.kt");
                 }
 
                 @TestMetadata("unconditionalBreakWithIf.kt")
                 public void testUnconditionalBreakWithIf() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/conditionalJumps/unconditionalBreakWithIf.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/conditionalJumps/unconditionalBreakWithIf.kt");
                 }
 
                 @TestMetadata("unconditionalBreakWithIfElse.kt")
                 public void testUnconditionalBreakWithIfElse() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/conditionalJumps/unconditionalBreakWithIfElse.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/conditionalJumps/unconditionalBreakWithIfElse.kt");
                 }
 
                 @TestMetadata("unconditionalBreakWithWhen.kt")
                 public void testUnconditionalBreakWithWhen() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/conditionalJumps/unconditionalBreakWithWhen.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/conditionalJumps/unconditionalBreakWithWhen.kt");
                 }
             }
 
@@ -1052,43 +1091,47 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class Default extends AbstractExtractionTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doExtractFunctionTest, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInDefault() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/extractFunction/controlFlow/default"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("defaultCF.kt")
                 public void testDefaultCF() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/default/defaultCF.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/default/defaultCF.kt");
                 }
 
                 @TestMetadata("defaultCFWithExtraVars.kt")
                 public void testDefaultCFWithExtraVars() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/default/defaultCFWithExtraVars.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/default/defaultCFWithExtraVars.kt");
                 }
 
                 @TestMetadata("defaultCFWithJumps.kt")
                 public void testDefaultCFWithJumps() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/default/defaultCFWithJumps.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/default/defaultCFWithJumps.kt");
                 }
 
                 @TestMetadata("ignoredReturnValueWithIf.kt")
                 public void testIgnoredReturnValueWithIf() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/default/ignoredReturnValueWithIf.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/default/ignoredReturnValueWithIf.kt");
                 }
 
                 @TestMetadata("ignoredReturnValueWithIfNoBlocks.kt")
                 public void testIgnoredReturnValueWithIfNoBlocks() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/default/ignoredReturnValueWithIfNoBlocks.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/default/ignoredReturnValueWithIfNoBlocks.kt");
                 }
 
                 @TestMetadata("ignoredReturnValueWithWhen.kt")
                 public void testIgnoredReturnValueWithWhen() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/default/ignoredReturnValueWithWhen.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/default/ignoredReturnValueWithWhen.kt");
                 }
 
                 @TestMetadata("ignoredReturnValueWithWhenNoBlocks.kt")
                 public void testIgnoredReturnValueWithWhenNoBlocks() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/default/ignoredReturnValueWithWhenNoBlocks.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/default/ignoredReturnValueWithWhenNoBlocks.kt");
                 }
             }
 
@@ -1096,48 +1139,52 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class DefiniteReturns extends AbstractExtractionTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doExtractFunctionTest, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInDefiniteReturns() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/extractFunction/controlFlow/definiteReturns"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("definiteReturnWithIf.kt")
                 public void testDefiniteReturnWithIf() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/definiteReturns/definiteReturnWithIf.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/definiteReturns/definiteReturnWithIf.kt");
                 }
 
                 @TestMetadata("definiteReturnWithWhen.kt")
                 public void testDefiniteReturnWithWhen() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/definiteReturns/definiteReturnWithWhen.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/definiteReturns/definiteReturnWithWhen.kt");
                 }
 
                 @TestMetadata("labeledAndUnlabeledReturn1.kt")
                 public void testLabeledAndUnlabeledReturn1() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/definiteReturns/labeledAndUnlabeledReturn1.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/definiteReturns/labeledAndUnlabeledReturn1.kt");
                 }
 
                 @TestMetadata("labeledAndUnlabeledReturn2.kt")
                 public void testLabeledAndUnlabeledReturn2() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/definiteReturns/labeledAndUnlabeledReturn2.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/definiteReturns/labeledAndUnlabeledReturn2.kt");
                 }
 
                 @TestMetadata("nonLocalReturn.kt")
                 public void testNonLocalReturn() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/definiteReturns/nonLocalReturn.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/definiteReturns/nonLocalReturn.kt");
                 }
 
                 @TestMetadata("nonLocalReturnWithLabel.kt")
                 public void testNonLocalReturnWithLabel() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/definiteReturns/nonLocalReturnWithLabel.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/definiteReturns/nonLocalReturnWithLabel.kt");
                 }
 
                 @TestMetadata("returnWithLabel.kt")
                 public void testReturnWithLabel() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/definiteReturns/returnWithLabel.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/definiteReturns/returnWithLabel.kt");
                 }
 
                 @TestMetadata("singleDefiniteReturn.kt")
                 public void testSingleDefiniteReturn() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/definiteReturns/singleDefiniteReturn.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/definiteReturns/singleDefiniteReturn.kt");
                 }
             }
 
@@ -1145,78 +1192,82 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class EvaluateExpression extends AbstractExtractionTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doExtractFunctionTest, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInEvaluateExpression() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/extractFunction/controlFlow/evaluateExpression"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("evalExprInIfCondition.kt")
                 public void testEvalExprInIfCondition() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/evaluateExpression/evalExprInIfCondition.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/evaluateExpression/evalExprInIfCondition.kt");
                 }
 
                 @TestMetadata("evalExprInIfElse.kt")
                 public void testEvalExprInIfElse() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/evaluateExpression/evalExprInIfElse.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/evaluateExpression/evalExprInIfElse.kt");
                 }
 
                 @TestMetadata("evalExprInIfThen.kt")
                 public void testEvalExprInIfThen() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/evaluateExpression/evalExprInIfThen.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/evaluateExpression/evalExprInIfThen.kt");
                 }
 
                 @TestMetadata("evalExprInWhenBranch.kt")
                 public void testEvalExprInWhenBranch() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/evaluateExpression/evalExprInWhenBranch.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/evaluateExpression/evalExprInWhenBranch.kt");
                 }
 
                 @TestMetadata("evalExprInWhenCondition.kt")
                 public void testEvalExprInWhenCondition() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/evaluateExpression/evalExprInWhenCondition.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/evaluateExpression/evalExprInWhenCondition.kt");
                 }
 
                 @TestMetadata("evalExprInWhenSubject.kt")
                 public void testEvalExprInWhenSubject() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/evaluateExpression/evalExprInWhenSubject.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/evaluateExpression/evalExprInWhenSubject.kt");
                 }
 
                 @TestMetadata("evalExpressionBodyFunction.kt")
                 public void testEvalExpressionBodyFunction() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/evaluateExpression/evalExpressionBodyFunction.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/evaluateExpression/evalExpressionBodyFunction.kt");
                 }
 
                 @TestMetadata("evalIfExpr.kt")
                 public void testEvalIfExpr() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/evaluateExpression/evalIfExpr.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/evaluateExpression/evalIfExpr.kt");
                 }
 
                 @TestMetadata("evalWhenExpr.kt")
                 public void testEvalWhenExpr() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/evaluateExpression/evalWhenExpr.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/evaluateExpression/evalWhenExpr.kt");
                 }
 
                 @TestMetadata("simpleEvalExpr.kt")
                 public void testSimpleEvalExpr() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/evaluateExpression/simpleEvalExpr.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/evaluateExpression/simpleEvalExpr.kt");
                 }
 
                 @TestMetadata("trailingLambdaEmptyArgList.kt")
                 public void testTrailingLambdaEmptyArgList() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/evaluateExpression/trailingLambdaEmptyArgList.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/evaluateExpression/trailingLambdaEmptyArgList.kt");
                 }
 
                 @TestMetadata("trailingLambdaNoArgList.kt")
                 public void testTrailingLambdaNoArgList() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/evaluateExpression/trailingLambdaNoArgList.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/evaluateExpression/trailingLambdaNoArgList.kt");
                 }
 
                 @TestMetadata("trailingLambdaNonEmptyArgList.kt")
                 public void testTrailingLambdaNonEmptyArgList() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/evaluateExpression/trailingLambdaNonEmptyArgList.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/evaluateExpression/trailingLambdaNonEmptyArgList.kt");
                 }
 
                 @TestMetadata("trailingLambdaNonEmptyArgListWithNamedArgs.kt")
                 public void testTrailingLambdaNonEmptyArgListWithNamedArgs() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/evaluateExpression/trailingLambdaNonEmptyArgListWithNamedArgs.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/evaluateExpression/trailingLambdaNonEmptyArgListWithNamedArgs.kt");
                 }
             }
 
@@ -1224,48 +1275,52 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class ExitPointEquivalence extends AbstractExtractionTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doExtractFunctionTest, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInExitPointEquivalence() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/extractFunction/controlFlow/exitPointEquivalence"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("breakAndReturn.kt")
                 public void testBreakAndReturn() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/exitPointEquivalence/breakAndReturn.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/exitPointEquivalence/breakAndReturn.kt");
                 }
 
                 @TestMetadata("breakContinueAndDefault.kt")
                 public void testBreakContinueAndDefault() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/exitPointEquivalence/breakContinueAndDefault.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/exitPointEquivalence/breakContinueAndDefault.kt");
                 }
 
                 @TestMetadata("continueAndReturn.kt")
                 public void testContinueAndReturn() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/exitPointEquivalence/continueAndReturn.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/exitPointEquivalence/continueAndReturn.kt");
                 }
 
                 @TestMetadata("defaultAndBreak.kt")
                 public void testDefaultAndBreak() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/exitPointEquivalence/defaultAndBreak.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/exitPointEquivalence/defaultAndBreak.kt");
                 }
 
                 @TestMetadata("defaultAndContinue.kt")
                 public void testDefaultAndContinue() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/exitPointEquivalence/defaultAndContinue.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/exitPointEquivalence/defaultAndContinue.kt");
                 }
 
                 @TestMetadata("defaultAndReturn.kt")
                 public void testDefaultAndReturn() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/exitPointEquivalence/defaultAndReturn.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/exitPointEquivalence/defaultAndReturn.kt");
                 }
 
                 @TestMetadata("defaultAndReturnInWhen.kt")
                 public void testDefaultAndReturnInWhen() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/exitPointEquivalence/defaultAndReturnInWhen.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/exitPointEquivalence/defaultAndReturnInWhen.kt");
                 }
 
                 @TestMetadata("multipleBreaks.kt")
                 public void testMultipleBreaks() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/exitPointEquivalence/multipleBreaks.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/exitPointEquivalence/multipleBreaks.kt");
                 }
             }
 
@@ -1273,43 +1328,47 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class Initializer extends AbstractExtractionTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doExtractFunctionTest, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInInitializer() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/extractFunction/controlFlow/initializer"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("propertyWithInitializer.kt")
                 public void testPropertyWithInitializer() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/initializer/propertyWithInitializer.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/initializer/propertyWithInitializer.kt");
                 }
 
                 @TestMetadata("propertyWithInitializerAndExtraVars.kt")
                 public void testPropertyWithInitializerAndExtraVars() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/initializer/propertyWithInitializerAndExtraVars.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/initializer/propertyWithInitializerAndExtraVars.kt");
                 }
 
                 @TestMetadata("propertyWithInitializerAndUnusedVars.kt")
                 public void testPropertyWithInitializerAndUnusedVars() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/initializer/propertyWithInitializerAndUnusedVars.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/initializer/propertyWithInitializerAndUnusedVars.kt");
                 }
 
                 @TestMetadata("propertyWithSeparateInitializer.kt")
                 public void testPropertyWithSeparateInitializer() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/initializer/propertyWithSeparateInitializer.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/initializer/propertyWithSeparateInitializer.kt");
                 }
 
                 @TestMetadata("valueUsedInAnonymousObject.kt")
                 public void testValueUsedInAnonymousObject() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/initializer/valueUsedInAnonymousObject.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/initializer/valueUsedInAnonymousObject.kt");
                 }
 
                 @TestMetadata("valueUsedInLambda.kt")
                 public void testValueUsedInLambda() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/initializer/valueUsedInLambda.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/initializer/valueUsedInLambda.kt");
                 }
 
                 @TestMetadata("valueUsedInLocalFunction.kt")
                 public void testValueUsedInLocalFunction() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/initializer/valueUsedInLocalFunction.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/initializer/valueUsedInLocalFunction.kt");
                 }
             }
 
@@ -1317,133 +1376,137 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class OutputValues extends AbstractExtractionTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doExtractFunctionTest, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInOutputValues() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/extractFunction/controlFlow/outputValues"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("genericPair.kt")
                 public void testGenericPair() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/outputValues/genericPair.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/outputValues/genericPair.kt");
                 }
 
                 @TestMetadata("initializersAndUpdate.kt")
                 public void testInitializersAndUpdate() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/outputValues/initializersAndUpdate.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/outputValues/initializersAndUpdate.kt");
                 }
 
                 @TestMetadata("nestedNonInlinableCall.kt")
                 public void testNestedNonInlinableCall() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/outputValues/nestedNonInlinableCall.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/outputValues/nestedNonInlinableCall.kt");
                 }
 
                 @TestMetadata("outputValueWithExpression.kt")
                 public void testOutputValueWithExpression() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/outputValues/outputValueWithExpression.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/outputValues/outputValueWithExpression.kt");
                 }
 
                 @TestMetadata("outputValueWithReturn.kt")
                 public void testOutputValueWithReturn() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/outputValues/outputValueWithReturn.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/outputValues/outputValueWithReturn.kt");
                 }
 
                 @TestMetadata("outputValueWithSingleLineExpression.kt")
                 public void testOutputValueWithSingleLineExpression() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/outputValues/outputValueWithSingleLineExpression.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/outputValues/outputValueWithSingleLineExpression.kt");
                 }
 
                 @TestMetadata("outputValuesWithExpression.kt")
                 public void testOutputValuesWithExpression() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/outputValues/outputValuesWithExpression.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/outputValues/outputValuesWithExpression.kt");
                 }
 
                 @TestMetadata("pair.kt")
                 public void testPair() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/outputValues/pair.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/outputValues/pair.kt");
                 }
 
                 @TestMetadata("pairOfInitalizersWithNonLocalUsages.kt")
                 public void testPairOfInitalizersWithNonLocalUsages() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/outputValues/pairOfInitalizersWithNonLocalUsages.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/outputValues/pairOfInitalizersWithNonLocalUsages.kt");
                 }
 
                 @TestMetadata("pairOfVarInitalizersWithNonLocalUsages.kt")
                 public void testPairOfVarInitalizersWithNonLocalUsages() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/outputValues/pairOfVarInitalizersWithNonLocalUsages.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/outputValues/pairOfVarInitalizersWithNonLocalUsages.kt");
                 }
 
                 @TestMetadata("pairWithIf.kt")
                 public void testPairWithIf() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/outputValues/pairWithIf.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/outputValues/pairWithIf.kt");
                 }
 
                 @TestMetadata("pairWithNameClash.kt")
                 public void testPairWithNameClash() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/outputValues/pairWithNameClash.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/outputValues/pairWithNameClash.kt");
                 }
 
                 @TestMetadata("pairWithWhen.kt")
                 public void testPairWithWhen() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/outputValues/pairWithWhen.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/outputValues/pairWithWhen.kt");
                 }
 
                 @TestMetadata("singleOutputValue.kt")
                 public void testSingleOutputValue() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/outputValues/singleOutputValue.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/outputValues/singleOutputValue.kt");
                 }
 
                 @TestMetadata("singleOutputValueWithIf.kt")
                 public void testSingleOutputValueWithIf() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/outputValues/singleOutputValueWithIf.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/outputValues/singleOutputValueWithIf.kt");
                 }
 
                 @TestMetadata("singleOutputValueWithIfElse.kt")
                 public void testSingleOutputValueWithIfElse() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/outputValues/singleOutputValueWithIfElse.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/outputValues/singleOutputValueWithIfElse.kt");
                 }
 
                 @TestMetadata("singleOutputValueWithWhen.kt")
                 public void testSingleOutputValueWithWhen() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/outputValues/singleOutputValueWithWhen.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/outputValues/singleOutputValueWithWhen.kt");
                 }
 
                 @TestMetadata("singleOutputValueWithWhenElse.kt")
                 public void testSingleOutputValueWithWhenElse() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/outputValues/singleOutputValueWithWhenElse.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/outputValues/singleOutputValueWithWhenElse.kt");
                 }
 
                 @TestMetadata("tooManyOutputValues.kt")
                 public void testTooManyOutputValues() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/outputValues/tooManyOutputValues.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/outputValues/tooManyOutputValues.kt");
                 }
 
                 @TestMetadata("tooManyOutputValuesAsList.kt")
                 public void testTooManyOutputValuesAsList() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/outputValues/tooManyOutputValuesAsList.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/outputValues/tooManyOutputValuesAsList.kt");
                 }
 
                 @TestMetadata("triple.kt")
                 public void testTriple() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/outputValues/triple.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/outputValues/triple.kt");
                 }
 
                 @TestMetadata("usedAndUnusedOutputValues.kt")
                 public void testUsedAndUnusedOutputValues() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/outputValues/usedAndUnusedOutputValues.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/outputValues/usedAndUnusedOutputValues.kt");
                 }
 
                 @TestMetadata("valAndVarInitalizersWithNonLocalUsages.kt")
                 public void testValAndVarInitalizersWithNonLocalUsages() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/outputValues/valAndVarInitalizersWithNonLocalUsages.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/outputValues/valAndVarInitalizersWithNonLocalUsages.kt");
                 }
 
                 @TestMetadata("valuesUsedInLambdaOnly.kt")
                 public void testValuesUsedInLambdaOnly() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/outputValues/valuesUsedInLambdaOnly.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/outputValues/valuesUsedInLambdaOnly.kt");
                 }
 
                 @TestMetadata("valuesUsedInNestedBlock.kt")
                 public void testValuesUsedInNestedBlock() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/outputValues/valuesUsedInNestedBlock.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/outputValues/valuesUsedInNestedBlock.kt");
                 }
             }
 
@@ -1451,23 +1514,27 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class ReturnTypeCandidates extends AbstractExtractionTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doExtractFunctionTest, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInReturnTypeCandidates() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/extractFunction/controlFlow/returnTypeCandidates"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("javaAnnotatedNotNull.kt")
                 public void testJavaAnnotatedNotNull() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/returnTypeCandidates/javaAnnotatedNotNull.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/returnTypeCandidates/javaAnnotatedNotNull.kt");
                 }
 
                 @TestMetadata("javaAnnotatedNullable.kt")
                 public void testJavaAnnotatedNullable() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/returnTypeCandidates/javaAnnotatedNullable.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/returnTypeCandidates/javaAnnotatedNullable.kt");
                 }
 
                 @TestMetadata("javaNoNullabilityAnnotation.kt")
                 public void testJavaNoNullabilityAnnotation() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/returnTypeCandidates/javaNoNullabilityAnnotation.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/returnTypeCandidates/javaNoNullabilityAnnotation.kt");
                 }
             }
 
@@ -1475,43 +1542,47 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class Throws extends AbstractExtractionTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doExtractFunctionTest, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInThrows() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/extractFunction/controlFlow/throws"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("breakWithThrow.kt")
                 public void testBreakWithThrow() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/throws/breakWithThrow.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/throws/breakWithThrow.kt");
                 }
 
                 @TestMetadata("continueWithThrow.kt")
                 public void testContinueWithThrow() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/throws/continueWithThrow.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/throws/continueWithThrow.kt");
                 }
 
                 @TestMetadata("evalExpressionWithThrow.kt")
                 public void testEvalExpressionWithThrow() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/throws/evalExpressionWithThrow.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/throws/evalExpressionWithThrow.kt");
                 }
 
                 @TestMetadata("implicitThrow.kt")
                 public void testImplicitThrow() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/throws/implicitThrow.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/throws/implicitThrow.kt");
                 }
 
                 @TestMetadata("nonValuedReturnWithThrow.kt")
                 public void testNonValuedReturnWithThrow() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/throws/nonValuedReturnWithThrow.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/throws/nonValuedReturnWithThrow.kt");
                 }
 
                 @TestMetadata("outputValueWithThrow.kt")
                 public void testOutputValueWithThrow() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/throws/outputValueWithThrow.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/throws/outputValueWithThrow.kt");
                 }
 
                 @TestMetadata("returnWithThrow.kt")
                 public void testReturnWithThrow() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/throws/returnWithThrow.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/throws/returnWithThrow.kt");
                 }
             }
 
@@ -1519,43 +1590,47 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class Unextractable extends AbstractExtractionTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doExtractFunctionTest, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInUnextractable() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/extractFunction/controlFlow/unextractable"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("anonymousObject.kt")
                 public void testAnonymousObject() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/unextractable/anonymousObject.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/unextractable/anonymousObject.kt");
                 }
 
                 @TestMetadata("evalExpressionWithReturn.kt")
                 public void testEvalExpressionWithReturn() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/unextractable/evalExpressionWithReturn.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/unextractable/evalExpressionWithReturn.kt");
                 }
 
                 @TestMetadata("jumpsAndReturns.kt")
                 public void testJumpsAndReturns() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/unextractable/jumpsAndReturns.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/unextractable/jumpsAndReturns.kt");
                 }
 
                 @TestMetadata("multipleJumps.kt")
                 public void testMultipleJumps() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/unextractable/multipleJumps.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/unextractable/multipleJumps.kt");
                 }
 
                 @TestMetadata("multipleReturnsWithDefault.kt")
                 public void testMultipleReturnsWithDefault() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/unextractable/multipleReturnsWithDefault.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/unextractable/multipleReturnsWithDefault.kt");
                 }
 
                 @TestMetadata("unmatchedReturnTargets.kt")
                 public void testUnmatchedReturnTargets() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/unextractable/unmatchedReturnTargets.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/unextractable/unmatchedReturnTargets.kt");
                 }
 
                 @TestMetadata("variablesOutOfScope.kt")
                 public void testVariablesOutOfScope() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/controlFlow/unextractable/variablesOutOfScope.kt");
+                    runTest("idea/testData/refactoring/extractFunction/controlFlow/unextractable/variablesOutOfScope.kt");
                 }
             }
         }
@@ -1564,43 +1639,47 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class DefaultContainer extends AbstractExtractionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doExtractFunctionTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInDefaultContainer() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/extractFunction/defaultContainer"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("anonymousObject.kt")
             public void testAnonymousObject() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/defaultContainer/anonymousObject.kt");
+                runTest("idea/testData/refactoring/extractFunction/defaultContainer/anonymousObject.kt");
             }
 
             @TestMetadata("classFunction.kt")
             public void testClassFunction() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/defaultContainer/classFunction.kt");
+                runTest("idea/testData/refactoring/extractFunction/defaultContainer/classFunction.kt");
             }
 
             @TestMetadata("lambda.kt")
             public void testLambda() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/defaultContainer/lambda.kt");
+                runTest("idea/testData/refactoring/extractFunction/defaultContainer/lambda.kt");
             }
 
             @TestMetadata("localClass.kt")
             public void testLocalClass() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/defaultContainer/localClass.kt");
+                runTest("idea/testData/refactoring/extractFunction/defaultContainer/localClass.kt");
             }
 
             @TestMetadata("localFunction.kt")
             public void testLocalFunction() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/defaultContainer/localFunction.kt");
+                runTest("idea/testData/refactoring/extractFunction/defaultContainer/localFunction.kt");
             }
 
             @TestMetadata("nestedLambda.kt")
             public void testNestedLambda() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/defaultContainer/nestedLambda.kt");
+                runTest("idea/testData/refactoring/extractFunction/defaultContainer/nestedLambda.kt");
             }
 
             @TestMetadata("topLevelFunction.kt")
             public void testTopLevelFunction() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/defaultContainer/topLevelFunction.kt");
+                runTest("idea/testData/refactoring/extractFunction/defaultContainer/topLevelFunction.kt");
             }
         }
 
@@ -1608,23 +1687,27 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Delegation extends AbstractExtractionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doExtractFunctionTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInDelegation() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/extractFunction/delegation"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("delegationByExpression.kt")
             public void testDelegationByExpression() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/delegation/delegationByExpression.kt");
+                runTest("idea/testData/refactoring/extractFunction/delegation/delegationByExpression.kt");
             }
 
             @TestMetadata("delegationByExpressionFull.kt")
             public void testDelegationByExpressionFull() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/delegation/delegationByExpressionFull.kt");
+                runTest("idea/testData/refactoring/extractFunction/delegation/delegationByExpressionFull.kt");
             }
 
             @TestMetadata("delegationBySuperCall.kt")
             public void testDelegationBySuperCall() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/delegation/delegationBySuperCall.kt");
+                runTest("idea/testData/refactoring/extractFunction/delegation/delegationBySuperCall.kt");
             }
         }
 
@@ -1632,63 +1715,67 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Duplicates extends AbstractExtractionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doExtractFunctionTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInDuplicates() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/extractFunction/duplicates"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("branchingMatch1.kt")
             public void testBranchingMatch1() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/duplicates/branchingMatch1.kt");
+                runTest("idea/testData/refactoring/extractFunction/duplicates/branchingMatch1.kt");
             }
 
             @TestMetadata("branchingMatch2.kt")
             public void testBranchingMatch2() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/duplicates/branchingMatch2.kt");
+                runTest("idea/testData/refactoring/extractFunction/duplicates/branchingMatch2.kt");
             }
 
             @TestMetadata("defaultCF.kt")
             public void testDefaultCF() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/duplicates/defaultCF.kt");
+                runTest("idea/testData/refactoring/extractFunction/duplicates/defaultCF.kt");
             }
 
             @TestMetadata("insertAfterDuplicates.kt")
             public void testInsertAfterDuplicates() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/duplicates/insertAfterDuplicates.kt");
+                runTest("idea/testData/refactoring/extractFunction/duplicates/insertAfterDuplicates.kt");
             }
 
             @TestMetadata("insertBeforeDuplicates.kt")
             public void testInsertBeforeDuplicates() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/duplicates/insertBeforeDuplicates.kt");
+                runTest("idea/testData/refactoring/extractFunction/duplicates/insertBeforeDuplicates.kt");
             }
 
             @TestMetadata("multipleOutputValuesMatching.kt")
             public void testMultipleOutputValuesMatching() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/duplicates/multipleOutputValuesMatching.kt");
+                runTest("idea/testData/refactoring/extractFunction/duplicates/multipleOutputValuesMatching.kt");
             }
 
             @TestMetadata("nestedStrongMatch.kt")
             public void testNestedStrongMatch() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/duplicates/nestedStrongMatch.kt");
+                runTest("idea/testData/refactoring/extractFunction/duplicates/nestedStrongMatch.kt");
             }
 
             @TestMetadata("notNullAssertion.kt")
             public void testNotNullAssertion() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/duplicates/notNullAssertion.kt");
+                runTest("idea/testData/refactoring/extractFunction/duplicates/notNullAssertion.kt");
             }
 
             @TestMetadata("outputValueAndUnitMatching.kt")
             public void testOutputValueAndUnitMatching() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/duplicates/outputValueAndUnitMatching.kt");
+                runTest("idea/testData/refactoring/extractFunction/duplicates/outputValueAndUnitMatching.kt");
             }
 
             @TestMetadata("outputValueMatching.kt")
             public void testOutputValueMatching() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/duplicates/outputValueMatching.kt");
+                runTest("idea/testData/refactoring/extractFunction/duplicates/outputValueMatching.kt");
             }
 
             @TestMetadata("singleExpression.kt")
             public void testSingleExpression() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/duplicates/singleExpression.kt");
+                runTest("idea/testData/refactoring/extractFunction/duplicates/singleExpression.kt");
             }
         }
 
@@ -1696,6 +1783,10 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Initializers extends AbstractExtractionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doExtractFunctionTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInInitializers() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/extractFunction/initializers"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
             }
@@ -1704,28 +1795,32 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class Accessors extends AbstractExtractionTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doExtractFunctionTest, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInAccessors() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/extractFunction/initializers/accessors"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("memberProperty.kt")
                 public void testMemberProperty() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/initializers/accessors/memberProperty.kt");
+                    runTest("idea/testData/refactoring/extractFunction/initializers/accessors/memberProperty.kt");
                 }
 
                 @TestMetadata("memberPropertyWithLambda.kt")
                 public void testMemberPropertyWithLambda() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/initializers/accessors/memberPropertyWithLambda.kt");
+                    runTest("idea/testData/refactoring/extractFunction/initializers/accessors/memberPropertyWithLambda.kt");
                 }
 
                 @TestMetadata("topLevelProperty.kt")
                 public void testTopLevelProperty() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/initializers/accessors/topLevelProperty.kt");
+                    runTest("idea/testData/refactoring/extractFunction/initializers/accessors/topLevelProperty.kt");
                 }
 
                 @TestMetadata("topLevelPropertyWithLambda.kt")
                 public void testTopLevelPropertyWithLambda() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/initializers/accessors/topLevelPropertyWithLambda.kt");
+                    runTest("idea/testData/refactoring/extractFunction/initializers/accessors/topLevelPropertyWithLambda.kt");
                 }
             }
 
@@ -1733,28 +1828,32 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class Classes extends AbstractExtractionTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doExtractFunctionTest, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInClasses() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/extractFunction/initializers/classes"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("classInitializer.kt")
                 public void testClassInitializer() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/initializers/classes/classInitializer.kt");
+                    runTest("idea/testData/refactoring/extractFunction/initializers/classes/classInitializer.kt");
                 }
 
                 @TestMetadata("classInitializerWithLambda.kt")
                 public void testClassInitializerWithLambda() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/initializers/classes/classInitializerWithLambda.kt");
+                    runTest("idea/testData/refactoring/extractFunction/initializers/classes/classInitializerWithLambda.kt");
                 }
 
                 @TestMetadata("classParameters.kt")
                 public void testClassParameters() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/initializers/classes/classParameters.kt");
+                    runTest("idea/testData/refactoring/extractFunction/initializers/classes/classParameters.kt");
                 }
 
                 @TestMetadata("classParametersWithLambda.kt")
                 public void testClassParametersWithLambda() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/initializers/classes/classParametersWithLambda.kt");
+                    runTest("idea/testData/refactoring/extractFunction/initializers/classes/classParametersWithLambda.kt");
                 }
             }
 
@@ -1762,68 +1861,72 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class Functions extends AbstractExtractionTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doExtractFunctionTest, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInFunctions() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/extractFunction/initializers/functions"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("localFunction.kt")
                 public void testLocalFunction() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/initializers/functions/localFunction.kt");
+                    runTest("idea/testData/refactoring/extractFunction/initializers/functions/localFunction.kt");
                 }
 
                 @TestMetadata("localFunctionParameters.kt")
                 public void testLocalFunctionParameters() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/initializers/functions/localFunctionParameters.kt");
+                    runTest("idea/testData/refactoring/extractFunction/initializers/functions/localFunctionParameters.kt");
                 }
 
                 @TestMetadata("localFunctionParametersWithLambda.kt")
                 public void testLocalFunctionParametersWithLambda() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/initializers/functions/localFunctionParametersWithLambda.kt");
+                    runTest("idea/testData/refactoring/extractFunction/initializers/functions/localFunctionParametersWithLambda.kt");
                 }
 
                 @TestMetadata("localFunctionWithLambda.kt")
                 public void testLocalFunctionWithLambda() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/initializers/functions/localFunctionWithLambda.kt");
+                    runTest("idea/testData/refactoring/extractFunction/initializers/functions/localFunctionWithLambda.kt");
                 }
 
                 @TestMetadata("memberFunction.kt")
                 public void testMemberFunction() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/initializers/functions/memberFunction.kt");
+                    runTest("idea/testData/refactoring/extractFunction/initializers/functions/memberFunction.kt");
                 }
 
                 @TestMetadata("memberFunctionParameters.kt")
                 public void testMemberFunctionParameters() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/initializers/functions/memberFunctionParameters.kt");
+                    runTest("idea/testData/refactoring/extractFunction/initializers/functions/memberFunctionParameters.kt");
                 }
 
                 @TestMetadata("memberFunctionParametersWithLambda.kt")
                 public void testMemberFunctionParametersWithLambda() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/initializers/functions/memberFunctionParametersWithLambda.kt");
+                    runTest("idea/testData/refactoring/extractFunction/initializers/functions/memberFunctionParametersWithLambda.kt");
                 }
 
                 @TestMetadata("memberFunctionWithLambda.kt")
                 public void testMemberFunctionWithLambda() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/initializers/functions/memberFunctionWithLambda.kt");
+                    runTest("idea/testData/refactoring/extractFunction/initializers/functions/memberFunctionWithLambda.kt");
                 }
 
                 @TestMetadata("topLevelFunction.kt")
                 public void testTopLevelFunction() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/initializers/functions/topLevelFunction.kt");
+                    runTest("idea/testData/refactoring/extractFunction/initializers/functions/topLevelFunction.kt");
                 }
 
                 @TestMetadata("topLevelFunctionParameters.kt")
                 public void testTopLevelFunctionParameters() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/initializers/functions/topLevelFunctionParameters.kt");
+                    runTest("idea/testData/refactoring/extractFunction/initializers/functions/topLevelFunctionParameters.kt");
                 }
 
                 @TestMetadata("topLevelFunctionParametersWithLambda.kt")
                 public void testTopLevelFunctionParametersWithLambda() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/initializers/functions/topLevelFunctionParametersWithLambda.kt");
+                    runTest("idea/testData/refactoring/extractFunction/initializers/functions/topLevelFunctionParametersWithLambda.kt");
                 }
 
                 @TestMetadata("topLevelFunctionWithLambda.kt")
                 public void testTopLevelFunctionWithLambda() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/initializers/functions/topLevelFunctionWithLambda.kt");
+                    runTest("idea/testData/refactoring/extractFunction/initializers/functions/topLevelFunctionWithLambda.kt");
                 }
             }
 
@@ -1831,48 +1934,52 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class Properties extends AbstractExtractionTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doExtractFunctionTest, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInProperties() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/extractFunction/initializers/properties"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("localProperty.kt")
                 public void testLocalProperty() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/initializers/properties/localProperty.kt");
+                    runTest("idea/testData/refactoring/extractFunction/initializers/properties/localProperty.kt");
                 }
 
                 @TestMetadata("localPropertyWithLambda.kt")
                 public void testLocalPropertyWithLambda() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/initializers/properties/localPropertyWithLambda.kt");
+                    runTest("idea/testData/refactoring/extractFunction/initializers/properties/localPropertyWithLambda.kt");
                 }
 
                 @TestMetadata("memberProperty.kt")
                 public void testMemberProperty() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/initializers/properties/memberProperty.kt");
+                    runTest("idea/testData/refactoring/extractFunction/initializers/properties/memberProperty.kt");
                 }
 
                 @TestMetadata("memberPropertyWithLambda.kt")
                 public void testMemberPropertyWithLambda() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/initializers/properties/memberPropertyWithLambda.kt");
+                    runTest("idea/testData/refactoring/extractFunction/initializers/properties/memberPropertyWithLambda.kt");
                 }
 
                 @TestMetadata("multiDeclaration.kt")
                 public void testMultiDeclaration() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/initializers/properties/multiDeclaration.kt");
+                    runTest("idea/testData/refactoring/extractFunction/initializers/properties/multiDeclaration.kt");
                 }
 
                 @TestMetadata("nestedInMultiDeclaration.kt")
                 public void testNestedInMultiDeclaration() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/initializers/properties/nestedInMultiDeclaration.kt");
+                    runTest("idea/testData/refactoring/extractFunction/initializers/properties/nestedInMultiDeclaration.kt");
                 }
 
                 @TestMetadata("topLevelProperty.kt")
                 public void testTopLevelProperty() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/initializers/properties/topLevelProperty.kt");
+                    runTest("idea/testData/refactoring/extractFunction/initializers/properties/topLevelProperty.kt");
                 }
 
                 @TestMetadata("topLevelPropertyWithLambda.kt")
                 public void testTopLevelPropertyWithLambda() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/initializers/properties/topLevelPropertyWithLambda.kt");
+                    runTest("idea/testData/refactoring/extractFunction/initializers/properties/topLevelPropertyWithLambda.kt");
                 }
             }
         }
@@ -1881,28 +1988,32 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Multiline extends AbstractExtractionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doExtractFunctionTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInMultiline() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/extractFunction/multiline"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("multilineBinaryExpression.kt")
             public void testMultilineBinaryExpression() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/multiline/multilineBinaryExpression.kt");
+                runTest("idea/testData/refactoring/extractFunction/multiline/multilineBinaryExpression.kt");
             }
 
             @TestMetadata("multilineBinaryExpressionWithComments.kt")
             public void testMultilineBinaryExpressionWithComments() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/multiline/multilineBinaryExpressionWithComments.kt");
+                runTest("idea/testData/refactoring/extractFunction/multiline/multilineBinaryExpressionWithComments.kt");
             }
 
             @TestMetadata("multilineNestedBinaryExpression1.kt")
             public void testMultilineNestedBinaryExpression1() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/multiline/multilineNestedBinaryExpression1.kt");
+                runTest("idea/testData/refactoring/extractFunction/multiline/multilineNestedBinaryExpression1.kt");
             }
 
             @TestMetadata("multilineNestedBinaryExpression2.kt")
             public void testMultilineNestedBinaryExpression2() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/multiline/multilineNestedBinaryExpression2.kt");
+                runTest("idea/testData/refactoring/extractFunction/multiline/multilineNestedBinaryExpression2.kt");
             }
         }
 
@@ -1910,6 +2021,10 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Parameters extends AbstractExtractionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doExtractFunctionTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInParameters() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/extractFunction/parameters"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
             }
@@ -1918,93 +2033,97 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class CandidateTypes extends AbstractExtractionTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doExtractFunctionTest, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInCandidateTypes() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/extractFunction/parameters/candidateTypes"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("cantLiftAnonymousToSupertype.kt")
                 public void testCantLiftAnonymousToSupertype() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/candidateTypes/cantLiftAnonymousToSupertype.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/candidateTypes/cantLiftAnonymousToSupertype.kt");
                 }
 
                 @TestMetadata("flexibleTypesWithNull.kt")
                 public void testFlexibleTypesWithNull() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/candidateTypes/flexibleTypesWithNull.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/candidateTypes/flexibleTypesWithNull.kt");
                 }
 
                 @TestMetadata("flexibleTypesWithoutNull.kt")
                 public void testFlexibleTypesWithoutNull() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/candidateTypes/flexibleTypesWithoutNull.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/candidateTypes/flexibleTypesWithoutNull.kt");
                 }
 
                 @TestMetadata("liftAnonymousToSupertype1.kt")
                 public void testLiftAnonymousToSupertype1() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/candidateTypes/liftAnonymousToSupertype1.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/candidateTypes/liftAnonymousToSupertype1.kt");
                 }
 
                 @TestMetadata("liftAnonymousToSupertype2.kt")
                 public void testLiftAnonymousToSupertype2() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/candidateTypes/liftAnonymousToSupertype2.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/candidateTypes/liftAnonymousToSupertype2.kt");
                 }
 
                 @TestMetadata("multipleTypes.kt")
                 public void testMultipleTypes() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/candidateTypes/multipleTypes.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/candidateTypes/multipleTypes.kt");
                 }
 
                 @TestMetadata("multipleTypes2.kt")
                 public void testMultipleTypes2() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/candidateTypes/multipleTypes2.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/candidateTypes/multipleTypes2.kt");
                 }
 
                 @TestMetadata("multipleTypes3.kt")
                 public void testMultipleTypes3() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/candidateTypes/multipleTypes3.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/candidateTypes/multipleTypes3.kt");
                 }
 
                 @TestMetadata("multipleTypes4.kt")
                 public void testMultipleTypes4() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/candidateTypes/multipleTypes4.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/candidateTypes/multipleTypes4.kt");
                 }
 
                 @TestMetadata("mutablyFlexibleType.kt")
                 public void testMutablyFlexibleType() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/candidateTypes/mutablyFlexibleType.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/candidateTypes/mutablyFlexibleType.kt");
                 }
 
                 @TestMetadata("nonNullableTypes.kt")
                 public void testNonNullableTypes() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/candidateTypes/nonNullableTypes.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/candidateTypes/nonNullableTypes.kt");
                 }
 
                 @TestMetadata("nullableTypes.kt")
                 public void testNullableTypes() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/candidateTypes/nullableTypes.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/candidateTypes/nullableTypes.kt");
                 }
 
                 @TestMetadata("receiverCandidateTypes.kt")
                 public void testReceiverCandidateTypes() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/candidateTypes/receiverCandidateTypes.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/candidateTypes/receiverCandidateTypes.kt");
                 }
 
                 @TestMetadata("typeHierarchy1.kt")
                 public void testTypeHierarchy1() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/candidateTypes/typeHierarchy1.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/candidateTypes/typeHierarchy1.kt");
                 }
 
                 @TestMetadata("typeHierarchy2.kt")
                 public void testTypeHierarchy2() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/candidateTypes/typeHierarchy2.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/candidateTypes/typeHierarchy2.kt");
                 }
 
                 @TestMetadata("typeHierarchy3.kt")
                 public void testTypeHierarchy3() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/candidateTypes/typeHierarchy3.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/candidateTypes/typeHierarchy3.kt");
                 }
 
                 @TestMetadata("typeHierarchy4.kt")
                 public void testTypeHierarchy4() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/candidateTypes/typeHierarchy4.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/candidateTypes/typeHierarchy4.kt");
                 }
             }
 
@@ -2012,33 +2131,37 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class CapturedFunctions extends AbstractExtractionTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doExtractFunctionTest, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInCapturedFunctions() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/extractFunction/parameters/capturedFunctions"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("deeplyLocalFun.kt")
                 public void testDeeplyLocalFun() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/capturedFunctions/deeplyLocalFun.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/capturedFunctions/deeplyLocalFun.kt");
                 }
 
                 @TestMetadata("localExtensionFun.kt")
                 public void testLocalExtensionFun() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/capturedFunctions/localExtensionFun.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/capturedFunctions/localExtensionFun.kt");
                 }
 
                 @TestMetadata("localExtensionFunChainedCalls.kt")
                 public void testLocalExtensionFunChainedCalls() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/capturedFunctions/localExtensionFunChainedCalls.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/capturedFunctions/localExtensionFunChainedCalls.kt");
                 }
 
                 @TestMetadata("localExtensionFunInfixCall.kt")
                 public void testLocalExtensionFunInfixCall() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/capturedFunctions/localExtensionFunInfixCall.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/capturedFunctions/localExtensionFunInfixCall.kt");
                 }
 
                 @TestMetadata("localFun.kt")
                 public void testLocalFun() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/capturedFunctions/localFun.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/capturedFunctions/localFun.kt");
                 }
             }
 
@@ -2046,28 +2169,32 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class ExtractSuper extends AbstractExtractionTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doExtractFunctionTest, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInExtractSuper() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/extractFunction/parameters/extractSuper"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("labeledSuperPropertyCall.kt")
                 public void testLabeledSuperPropertyCall() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/extractSuper/labeledSuperPropertyCall.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/extractSuper/labeledSuperPropertyCall.kt");
                 }
 
                 @TestMetadata("superFunctionCall.kt")
                 public void testSuperFunctionCall() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/extractSuper/superFunctionCall.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/extractSuper/superFunctionCall.kt");
                 }
 
                 @TestMetadata("superLabeledFunctionCall.kt")
                 public void testSuperLabeledFunctionCall() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/extractSuper/superLabeledFunctionCall.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/extractSuper/superLabeledFunctionCall.kt");
                 }
 
                 @TestMetadata("superPropertyCall.kt")
                 public void testSuperPropertyCall() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/extractSuper/superPropertyCall.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/extractSuper/superPropertyCall.kt");
                 }
             }
 
@@ -2075,103 +2202,107 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class ExtractThis extends AbstractExtractionTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doExtractFunctionTest, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInExtractThis() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/extractFunction/parameters/extractThis"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("explicitLabeledThisInMember.kt")
                 public void testExplicitLabeledThisInMember() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/extractThis/explicitLabeledThisInMember.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/extractThis/explicitLabeledThisInMember.kt");
                 }
 
                 @TestMetadata("explicitThisInExtension.kt")
                 public void testExplicitThisInExtension() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/extractThis/explicitThisInExtension.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/extractThis/explicitThisInExtension.kt");
                 }
 
                 @TestMetadata("explicitThisInMember.kt")
                 public void testExplicitThisInMember() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/extractThis/explicitThisInMember.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/extractThis/explicitThisInMember.kt");
                 }
 
                 @TestMetadata("explicitThisWithSmartCast.kt")
                 public void testExplicitThisWithSmartCast() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/extractThis/explicitThisWithSmartCast.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/extractThis/explicitThisWithSmartCast.kt");
                 }
 
                 @TestMetadata("implicitAndExplicitLabeledThisInMember.kt")
                 public void testImplicitAndExplicitLabeledThisInMember() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/extractThis/implicitAndExplicitLabeledThisInMember.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/extractThis/implicitAndExplicitLabeledThisInMember.kt");
                 }
 
                 @TestMetadata("implicitAndExplicitThisInExtension.kt")
                 public void testImplicitAndExplicitThisInExtension() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/extractThis/implicitAndExplicitThisInExtension.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/extractThis/implicitAndExplicitThisInExtension.kt");
                 }
 
                 @TestMetadata("implicitThisInExtension.kt")
                 public void testImplicitThisInExtension() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/extractThis/implicitThisInExtension.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/extractThis/implicitThisInExtension.kt");
                 }
 
                 @TestMetadata("implicitThisInMember.kt")
                 public void testImplicitThisInMember() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/extractThis/implicitThisInMember.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/extractThis/implicitThisInMember.kt");
                 }
 
                 @TestMetadata("implicitThisWithSmartCast.kt")
                 public void testImplicitThisWithSmartCast() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/extractThis/implicitThisWithSmartCast.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/extractThis/implicitThisWithSmartCast.kt");
                 }
 
                 @TestMetadata("javaSyntheticProperty.kt")
                 public void testJavaSyntheticProperty() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/extractThis/javaSyntheticProperty.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/extractThis/javaSyntheticProperty.kt");
                 }
 
                 @TestMetadata("javaSyntheticPropertyWithDelegation.kt")
                 public void testJavaSyntheticPropertyWithDelegation() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/extractThis/javaSyntheticPropertyWithDelegation.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/extractThis/javaSyntheticPropertyWithDelegation.kt");
                 }
 
                 @TestMetadata("javaSyntheticPropertyWithOverride.kt")
                 public void testJavaSyntheticPropertyWithOverride() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/extractThis/javaSyntheticPropertyWithOverride.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/extractThis/javaSyntheticPropertyWithOverride.kt");
                 }
 
                 @TestMetadata("missingReceiver.kt")
                 public void testMissingReceiver() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/extractThis/missingReceiver.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/extractThis/missingReceiver.kt");
                 }
 
                 @TestMetadata("paramAsExplicitInvoke.kt")
                 public void testParamAsExplicitInvoke() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/extractThis/paramAsExplicitInvoke.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/extractThis/paramAsExplicitInvoke.kt");
                 }
 
                 @TestMetadata("paramWithExtensionInvoke.kt")
                 public void testParamWithExtensionInvoke() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/extractThis/paramWithExtensionInvoke.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/extractThis/paramWithExtensionInvoke.kt");
                 }
 
                 @TestMetadata("propertyWithExplicitInvoke.kt")
                 public void testPropertyWithExplicitInvoke() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/extractThis/propertyWithExplicitInvoke.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/extractThis/propertyWithExplicitInvoke.kt");
                 }
 
                 @TestMetadata("propertyWithImplicitInvoke.kt")
                 public void testPropertyWithImplicitInvoke() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/extractThis/propertyWithImplicitInvoke.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/extractThis/propertyWithImplicitInvoke.kt");
                 }
 
                 @TestMetadata("qualifiedThis.kt")
                 public void testQualifiedThis() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/extractThis/qualifiedThis.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/extractThis/qualifiedThis.kt");
                 }
 
                 @TestMetadata("qualifiedThisAsArgument.kt")
                 public void testQualifiedThisAsArgument() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/extractThis/qualifiedThisAsArgument.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/extractThis/qualifiedThisAsArgument.kt");
                 }
             }
 
@@ -2179,28 +2310,32 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class It extends AbstractExtractionTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doExtractFunctionTest, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInIt() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/extractFunction/parameters/it"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("innerIt.kt")
                 public void testInnerIt() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/it/innerIt.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/it/innerIt.kt");
                 }
 
                 @TestMetadata("lambdaWithIt.kt")
                 public void testLambdaWithIt() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/it/lambdaWithIt.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/it/lambdaWithIt.kt");
                 }
 
                 @TestMetadata("outerIt.kt")
                 public void testOuterIt() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/it/outerIt.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/it/outerIt.kt");
                 }
 
                 @TestMetadata("simpleIt.kt")
                 public void testSimpleIt() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/it/simpleIt.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/it/simpleIt.kt");
                 }
             }
 
@@ -2208,9 +2343,13 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class Misc extends AbstractExtractionTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doExtractFunctionTest, TargetBackend.ANY, testDataFilePath);
+                }
+
                 @TestMetadata("addPrefixToBackticks.kt")
                 public void testAddPrefixToBackticks() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/misc/addPrefixToBackticks.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/misc/addPrefixToBackticks.kt");
                 }
 
                 public void testAllFilesPresentInMisc() throws Exception {
@@ -2219,127 +2358,127 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
 
                 @TestMetadata("classObject.kt")
                 public void testClassObject() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/misc/classObject.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/misc/classObject.kt");
                 }
 
                 @TestMetadata("extensionLambda.kt")
                 public void testExtensionLambda() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/misc/extensionLambda.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/misc/extensionLambda.kt");
                 }
 
                 @TestMetadata("extensionLambdaAsParameter.kt")
                 public void testExtensionLambdaAsParameter() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/misc/extensionLambdaAsParameter.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/misc/extensionLambdaAsParameter.kt");
                 }
 
                 @TestMetadata("idWithBackticks.kt")
                 public void testIdWithBackticks() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/misc/idWithBackticks.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/misc/idWithBackticks.kt");
                 }
 
                 @TestMetadata("idWithRequiredBackticks.kt")
                 public void testIdWithRequiredBackticks() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/misc/idWithRequiredBackticks.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/misc/idWithRequiredBackticks.kt");
                 }
 
                 @TestMetadata("innerClassObject.kt")
                 public void testInnerClassObject() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/misc/innerClassObject.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/misc/innerClassObject.kt");
                 }
 
                 @TestMetadata("kt5001.kt")
                 public void testKt5001() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/misc/kt5001.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/misc/kt5001.kt");
                 }
 
                 @TestMetadata("multiDeclaration.kt")
                 public void testMultiDeclaration() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/misc/multiDeclaration.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/misc/multiDeclaration.kt");
                 }
 
                 @TestMetadata("multipleOccurrences.kt")
                 public void testMultipleOccurrences() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/misc/multipleOccurrences.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/misc/multipleOccurrences.kt");
                 }
 
                 @TestMetadata("namedArguments.kt")
                 public void testNamedArguments() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/misc/namedArguments.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/misc/namedArguments.kt");
                 }
 
                 @TestMetadata("qualifiedAnnotation.kt")
                 public void testQualifiedAnnotation() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/misc/qualifiedAnnotation.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/misc/qualifiedAnnotation.kt");
                 }
 
                 @TestMetadata("qualifiedClassObject.kt")
                 public void testQualifiedClassObject() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/misc/qualifiedClassObject.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/misc/qualifiedClassObject.kt");
                 }
 
                 @TestMetadata("qualifiedEnum.kt")
                 public void testQualifiedEnum() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/misc/qualifiedEnum.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/misc/qualifiedEnum.kt");
                 }
 
                 @TestMetadata("qualifiedObject.kt")
                 public void testQualifiedObject() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/misc/qualifiedObject.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/misc/qualifiedObject.kt");
                 }
 
                 @TestMetadata("qualifiedPackage.kt")
                 public void testQualifiedPackage() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/misc/qualifiedPackage.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/misc/qualifiedPackage.kt");
                 }
 
                 @TestMetadata("qualifiedTypeArg.kt")
                 public void testQualifiedTypeArg() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/misc/qualifiedTypeArg.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/misc/qualifiedTypeArg.kt");
                 }
 
                 @TestMetadata("qualifiedTypeInValueArg.kt")
                 public void testQualifiedTypeInValueArg() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/misc/qualifiedTypeInValueArg.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/misc/qualifiedTypeInValueArg.kt");
                 }
 
                 @TestMetadata("qualifiedTypeRef.kt")
                 public void testQualifiedTypeRef() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/misc/qualifiedTypeRef.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/misc/qualifiedTypeRef.kt");
                 }
 
                 @TestMetadata("reducedParameterList.kt")
                 public void testReducedParameterList() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/misc/reducedParameterList.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/misc/reducedParameterList.kt");
                 }
 
                 @TestMetadata("replaceWithBackticks.kt")
                 public void testReplaceWithBackticks() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/misc/replaceWithBackticks.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/misc/replaceWithBackticks.kt");
                 }
 
                 @TestMetadata("replaceWithBackticks2.kt")
                 public void testReplaceWithBackticks2() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/misc/replaceWithBackticks2.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/misc/replaceWithBackticks2.kt");
                 }
 
                 @TestMetadata("thisInObject.kt")
                 public void testThisInObject() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/misc/thisInObject.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/misc/thisInObject.kt");
                 }
 
                 @TestMetadata("typeRef.kt")
                 public void testTypeRef() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/misc/typeRef.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/misc/typeRef.kt");
                 }
 
                 @TestMetadata("usagesInCallArgs.kt")
                 public void testUsagesInCallArgs() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/misc/usagesInCallArgs.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/misc/usagesInCallArgs.kt");
                 }
 
                 @TestMetadata("variableAsFunction.kt")
                 public void testVariableAsFunction() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/misc/variableAsFunction.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/misc/variableAsFunction.kt");
                 }
             }
 
@@ -2347,43 +2486,47 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
             @TestDataPath("$PROJECT_ROOT")
             @RunWith(JUnit3RunnerWithInners.class)
             public static class NonDenotableTypes extends AbstractExtractionTest {
+                private void runTest(String testDataFilePath) throws Exception {
+                    KotlinTestUtils.runTest(this::doExtractFunctionTest, TargetBackend.ANY, testDataFilePath);
+                }
+
                 public void testAllFilesPresentInNonDenotableTypes() throws Exception {
                     KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/extractFunction/parameters/nonDenotableTypes"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
                 }
 
                 @TestMetadata("anonymousObject.kt")
                 public void testAnonymousObject() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/nonDenotableTypes/anonymousObject.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/nonDenotableTypes/anonymousObject.kt");
                 }
 
                 @TestMetadata("anonymousObjectWithCall.kt")
                 public void testAnonymousObjectWithCall() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/nonDenotableTypes/anonymousObjectWithCall.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/nonDenotableTypes/anonymousObjectWithCall.kt");
                 }
 
                 @TestMetadata("localClass.kt")
                 public void testLocalClass() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/nonDenotableTypes/localClass.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/nonDenotableTypes/localClass.kt");
                 }
 
                 @TestMetadata("localClassWithSuperclass.kt")
                 public void testLocalClassWithSuperclass() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/nonDenotableTypes/localClassWithSuperclass.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/nonDenotableTypes/localClassWithSuperclass.kt");
                 }
 
                 @TestMetadata("localClassWithSuperclassParameter.kt")
                 public void testLocalClassWithSuperclassParameter() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/nonDenotableTypes/localClassWithSuperclassParameter.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/nonDenotableTypes/localClassWithSuperclassParameter.kt");
                 }
 
                 @TestMetadata("localClassWithSuperclassParameterInLocalFun.kt")
                 public void testLocalClassWithSuperclassParameterInLocalFun() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/nonDenotableTypes/localClassWithSuperclassParameterInLocalFun.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/nonDenotableTypes/localClassWithSuperclassParameterInLocalFun.kt");
                 }
 
                 @TestMetadata("localClassWithSuperclassParameterNoApproximation.kt")
                 public void testLocalClassWithSuperclassParameterNoApproximation() throws Exception {
-                    KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/parameters/nonDenotableTypes/localClassWithSuperclassParameterNoApproximation.kt");
+                    runTest("idea/testData/refactoring/extractFunction/parameters/nonDenotableTypes/localClassWithSuperclassParameterNoApproximation.kt");
                 }
             }
         }
@@ -2392,18 +2535,22 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Script extends AbstractExtractionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doExtractFunctionTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInScript() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/extractFunction/script"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("NotExpression.kts")
             public void testNotExpression() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/script/NotExpression.kts");
+                runTest("idea/testData/refactoring/extractFunction/script/NotExpression.kts");
             }
 
             @TestMetadata("TopLevelExpression.kts")
             public void testTopLevelExpression() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/script/TopLevelExpression.kts");
+                runTest("idea/testData/refactoring/extractFunction/script/TopLevelExpression.kts");
             }
         }
 
@@ -2411,88 +2558,92 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class StringTemplates extends AbstractExtractionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doExtractFunctionTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInStringTemplates() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/extractFunction/stringTemplates"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("brokenEntryWithBlockExpr.kt")
             public void testBrokenEntryWithBlockExpr() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/stringTemplates/brokenEntryWithBlockExpr.kt");
+                runTest("idea/testData/refactoring/extractFunction/stringTemplates/brokenEntryWithBlockExpr.kt");
             }
 
             @TestMetadata("brokenEntryWithExpr.kt")
             public void testBrokenEntryWithExpr() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/stringTemplates/brokenEntryWithExpr.kt");
+                runTest("idea/testData/refactoring/extractFunction/stringTemplates/brokenEntryWithExpr.kt");
             }
 
             @TestMetadata("brokenEscapeEntry.kt")
             public void testBrokenEscapeEntry() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/stringTemplates/brokenEscapeEntry.kt");
+                runTest("idea/testData/refactoring/extractFunction/stringTemplates/brokenEscapeEntry.kt");
             }
 
             @TestMetadata("extractFalse.kt")
             public void testExtractFalse() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/stringTemplates/extractFalse.kt");
+                runTest("idea/testData/refactoring/extractFunction/stringTemplates/extractFalse.kt");
             }
 
             @TestMetadata("extractIntegerLiteral.kt")
             public void testExtractIntegerLiteral() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/stringTemplates/extractIntegerLiteral.kt");
+                runTest("idea/testData/refactoring/extractFunction/stringTemplates/extractIntegerLiteral.kt");
             }
 
             @TestMetadata("extractTrue.kt")
             public void testExtractTrue() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/stringTemplates/extractTrue.kt");
+                runTest("idea/testData/refactoring/extractFunction/stringTemplates/extractTrue.kt");
             }
 
             @TestMetadata("fullContent.kt")
             public void testFullContent() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/stringTemplates/fullContent.kt");
+                runTest("idea/testData/refactoring/extractFunction/stringTemplates/fullContent.kt");
             }
 
             @TestMetadata("fullEntryWithBlockExpr.kt")
             public void testFullEntryWithBlockExpr() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/stringTemplates/fullEntryWithBlockExpr.kt");
+                runTest("idea/testData/refactoring/extractFunction/stringTemplates/fullEntryWithBlockExpr.kt");
             }
 
             @TestMetadata("fullEntryWithSimpleName.kt")
             public void testFullEntryWithSimpleName() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/stringTemplates/fullEntryWithSimpleName.kt");
+                runTest("idea/testData/refactoring/extractFunction/stringTemplates/fullEntryWithSimpleName.kt");
             }
 
             @TestMetadata("multipleEntriesWithPrefix.kt")
             public void testMultipleEntriesWithPrefix() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/stringTemplates/multipleEntriesWithPrefix.kt");
+                runTest("idea/testData/refactoring/extractFunction/stringTemplates/multipleEntriesWithPrefix.kt");
             }
 
             @TestMetadata("multipleEntriesWithSubstring.kt")
             public void testMultipleEntriesWithSubstring() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/stringTemplates/multipleEntriesWithSubstring.kt");
+                runTest("idea/testData/refactoring/extractFunction/stringTemplates/multipleEntriesWithSubstring.kt");
             }
 
             @TestMetadata("multipleEntriesWithSuffix.kt")
             public void testMultipleEntriesWithSuffix() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/stringTemplates/multipleEntriesWithSuffix.kt");
+                runTest("idea/testData/refactoring/extractFunction/stringTemplates/multipleEntriesWithSuffix.kt");
             }
 
             @TestMetadata("rawTemplateWithSubstring.kt")
             public void testRawTemplateWithSubstring() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/stringTemplates/rawTemplateWithSubstring.kt");
+                runTest("idea/testData/refactoring/extractFunction/stringTemplates/rawTemplateWithSubstring.kt");
             }
 
             @TestMetadata("singleEntryPrefix.kt")
             public void testSingleEntryPrefix() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/stringTemplates/singleEntryPrefix.kt");
+                runTest("idea/testData/refactoring/extractFunction/stringTemplates/singleEntryPrefix.kt");
             }
 
             @TestMetadata("singleEntrySubstring.kt")
             public void testSingleEntrySubstring() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/stringTemplates/singleEntrySubstring.kt");
+                runTest("idea/testData/refactoring/extractFunction/stringTemplates/singleEntrySubstring.kt");
             }
 
             @TestMetadata("singleEntrySuffix.kt")
             public void testSingleEntrySuffix() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/stringTemplates/singleEntrySuffix.kt");
+                runTest("idea/testData/refactoring/extractFunction/stringTemplates/singleEntrySuffix.kt");
             }
         }
 
@@ -2500,93 +2651,97 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class TypeParameters extends AbstractExtractionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doExtractFunctionTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInTypeParameters() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/extractFunction/typeParameters"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("localClassInBound.kt")
             public void testLocalClassInBound() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/typeParameters/localClassInBound.kt");
+                runTest("idea/testData/refactoring/extractFunction/typeParameters/localClassInBound.kt");
             }
 
             @TestMetadata("localClassInTypeConstraint.kt")
             public void testLocalClassInTypeConstraint() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/typeParameters/localClassInTypeConstraint.kt");
+                runTest("idea/testData/refactoring/extractFunction/typeParameters/localClassInTypeConstraint.kt");
             }
 
             @TestMetadata("noVarianceInFun.kt")
             public void testNoVarianceInFun() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/typeParameters/noVarianceInFun.kt");
+                runTest("idea/testData/refactoring/extractFunction/typeParameters/noVarianceInFun.kt");
             }
 
             @TestMetadata("simpleTypeParameter.kt")
             public void testSimpleTypeParameter() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/typeParameters/simpleTypeParameter.kt");
+                runTest("idea/testData/refactoring/extractFunction/typeParameters/simpleTypeParameter.kt");
             }
 
             @TestMetadata("simpleTypeParameterWithConstraint.kt")
             public void testSimpleTypeParameterWithConstraint() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/typeParameters/simpleTypeParameterWithConstraint.kt");
+                runTest("idea/testData/refactoring/extractFunction/typeParameters/simpleTypeParameterWithConstraint.kt");
             }
 
             @TestMetadata("typeParamInArgument.kt")
             public void testTypeParamInArgument() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/typeParameters/typeParamInArgument.kt");
+                runTest("idea/testData/refactoring/extractFunction/typeParameters/typeParamInArgument.kt");
             }
 
             @TestMetadata("typeParameterNotResolvableInTargetScope.kt")
             public void testTypeParameterNotResolvableInTargetScope() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/typeParameters/typeParameterNotResolvableInTargetScope.kt");
+                runTest("idea/testData/refactoring/extractFunction/typeParameters/typeParameterNotResolvableInTargetScope.kt");
             }
 
             @TestMetadata("typeParameterRef.kt")
             public void testTypeParameterRef() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/typeParameters/typeParameterRef.kt");
+                runTest("idea/testData/refactoring/extractFunction/typeParameters/typeParameterRef.kt");
             }
 
             @TestMetadata("typeParameterRefCanOmit.kt")
             public void testTypeParameterRefCanOmit() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/typeParameters/typeParameterRefCanOmit.kt");
+                runTest("idea/testData/refactoring/extractFunction/typeParameters/typeParameterRefCanOmit.kt");
             }
 
             @TestMetadata("typeParameterResolvableInTargetScope.kt")
             public void testTypeParameterResolvableInTargetScope() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/typeParameters/typeParameterResolvableInTargetScope.kt");
+                runTest("idea/testData/refactoring/extractFunction/typeParameters/typeParameterResolvableInTargetScope.kt");
             }
 
             @TestMetadata("typeParametersAndConstraintsCombined1.kt")
             public void testTypeParametersAndConstraintsCombined1() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/typeParameters/typeParametersAndConstraintsCombined1.kt");
+                runTest("idea/testData/refactoring/extractFunction/typeParameters/typeParametersAndConstraintsCombined1.kt");
             }
 
             @TestMetadata("typeParametersAndConstraintsCombined2.kt")
             public void testTypeParametersAndConstraintsCombined2() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/typeParameters/typeParametersAndConstraintsCombined2.kt");
+                runTest("idea/testData/refactoring/extractFunction/typeParameters/typeParametersAndConstraintsCombined2.kt");
             }
 
             @TestMetadata("typeParametersAndConstraintsCombined3.kt")
             public void testTypeParametersAndConstraintsCombined3() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/typeParameters/typeParametersAndConstraintsCombined3.kt");
+                runTest("idea/testData/refactoring/extractFunction/typeParameters/typeParametersAndConstraintsCombined3.kt");
             }
 
             @TestMetadata("typeParametersCombined1.kt")
             public void testTypeParametersCombined1() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/typeParameters/typeParametersCombined1.kt");
+                runTest("idea/testData/refactoring/extractFunction/typeParameters/typeParametersCombined1.kt");
             }
 
             @TestMetadata("typeParametersCombined2.kt")
             public void testTypeParametersCombined2() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/typeParameters/typeParametersCombined2.kt");
+                runTest("idea/testData/refactoring/extractFunction/typeParameters/typeParametersCombined2.kt");
             }
 
             @TestMetadata("typeParametersCombined3.kt")
             public void testTypeParametersCombined3() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/typeParameters/typeParametersCombined3.kt");
+                runTest("idea/testData/refactoring/extractFunction/typeParameters/typeParametersCombined3.kt");
             }
 
             @TestMetadata("typeParametersCombinedAndThis.kt")
             public void testTypeParametersCombinedAndThis() throws Exception {
-                KotlinTestUtils.runTest(this::doExtractFunctionTest,TargetBackend.ANY, "idea/testData/refactoring/extractFunction/typeParameters/typeParametersCombinedAndThis.kt");
+                runTest("idea/testData/refactoring/extractFunction/typeParameters/typeParametersCombinedAndThis.kt");
             }
         }
     }
@@ -2595,196 +2750,204 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class IntroduceProperty extends AbstractExtractionTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doIntroducePropertyTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInIntroduceProperty() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/introduceProperty"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("extractExtensionWithInitializer.kt")
         public void testExtractExtensionWithInitializer() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/extractExtensionWithInitializer.kt");
+            runTest("idea/testData/refactoring/introduceProperty/extractExtensionWithInitializer.kt");
         }
 
         @TestMetadata("extractFromDefaultValueInConstructor.kt")
         public void testExtractFromDefaultValueInConstructor() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/extractFromDefaultValueInConstructor.kt");
+            runTest("idea/testData/refactoring/introduceProperty/extractFromDefaultValueInConstructor.kt");
         }
 
         @TestMetadata("extractFromDefaultValueInFun.kt")
         public void testExtractFromDefaultValueInFun() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/extractFromDefaultValueInFun.kt");
+            runTest("idea/testData/refactoring/introduceProperty/extractFromDefaultValueInFun.kt");
         }
 
         @TestMetadata("extractLazyExtension.kt")
         public void testExtractLazyExtension() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/extractLazyExtension.kt");
+            runTest("idea/testData/refactoring/introduceProperty/extractLazyExtension.kt");
         }
 
         @TestMetadata("extractLazyMultipleExpressions.kt")
         public void testExtractLazyMultipleExpressions() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/extractLazyMultipleExpressions.kt");
+            runTest("idea/testData/refactoring/introduceProperty/extractLazyMultipleExpressions.kt");
         }
 
         @TestMetadata("extractLazyToClass.kt")
         public void testExtractLazyToClass() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/extractLazyToClass.kt");
+            runTest("idea/testData/refactoring/introduceProperty/extractLazyToClass.kt");
         }
 
         @TestMetadata("extractLazyToFile.kt")
         public void testExtractLazyToFile() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/extractLazyToFile.kt");
+            runTest("idea/testData/refactoring/introduceProperty/extractLazyToFile.kt");
         }
 
         @TestMetadata("extractLazyToTrait.kt")
         public void testExtractLazyToTrait() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/extractLazyToTrait.kt");
+            runTest("idea/testData/refactoring/introduceProperty/extractLazyToTrait.kt");
         }
 
         @TestMetadata("extractLazyWithBlock.kt")
         public void testExtractLazyWithBlock() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/extractLazyWithBlock.kt");
+            runTest("idea/testData/refactoring/introduceProperty/extractLazyWithBlock.kt");
         }
 
         @TestMetadata("extractLazyWithCallSiteReturn.kt")
         public void testExtractLazyWithCallSiteReturn() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/extractLazyWithCallSiteReturn.kt");
+            runTest("idea/testData/refactoring/introduceProperty/extractLazyWithCallSiteReturn.kt");
         }
 
         @TestMetadata("extractToClassWithNameClash.kt")
         public void testExtractToClassWithNameClash() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/extractToClassWithNameClash.kt");
+            runTest("idea/testData/refactoring/introduceProperty/extractToClassWithNameClash.kt");
         }
 
         @TestMetadata("extractToClassWithNameClashAndAnonymousInitializer.kt")
         public void testExtractToClassWithNameClashAndAnonymousInitializer() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/extractToClassWithNameClashAndAnonymousInitializer.kt");
+            runTest("idea/testData/refactoring/introduceProperty/extractToClassWithNameClashAndAnonymousInitializer.kt");
         }
 
         @TestMetadata("extractToFileWithNameClash.kt")
         public void testExtractToFileWithNameClash() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/extractToFileWithNameClash.kt");
+            runTest("idea/testData/refactoring/introduceProperty/extractToFileWithNameClash.kt");
         }
 
         @TestMetadata("extractToFunction.kt")
         public void testExtractToFunction() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/extractToFunction.kt");
+            runTest("idea/testData/refactoring/introduceProperty/extractToFunction.kt");
         }
 
         @TestMetadata("extractUnit.kt")
         public void testExtractUnit() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/extractUnit.kt");
+            runTest("idea/testData/refactoring/introduceProperty/extractUnit.kt");
         }
 
         @TestMetadata("extractWithGetterMultipleExpressions.kt")
         public void testExtractWithGetterMultipleExpressions() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/extractWithGetterMultipleExpressions.kt");
+            runTest("idea/testData/refactoring/introduceProperty/extractWithGetterMultipleExpressions.kt");
         }
 
         @TestMetadata("extractWithGetterToClass.kt")
         public void testExtractWithGetterToClass() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/extractWithGetterToClass.kt");
+            runTest("idea/testData/refactoring/introduceProperty/extractWithGetterToClass.kt");
         }
 
         @TestMetadata("extractWithGetterToFile.kt")
         public void testExtractWithGetterToFile() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/extractWithGetterToFile.kt");
+            runTest("idea/testData/refactoring/introduceProperty/extractWithGetterToFile.kt");
         }
 
         @TestMetadata("extractWithGetterToTrait.kt")
         public void testExtractWithGetterToTrait() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/extractWithGetterToTrait.kt");
+            runTest("idea/testData/refactoring/introduceProperty/extractWithGetterToTrait.kt");
         }
 
         @TestMetadata("extractWithInitializerAndBlock.kt")
         public void testExtractWithInitializerAndBlock() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/extractWithInitializerAndBlock.kt");
+            runTest("idea/testData/refactoring/introduceProperty/extractWithInitializerAndBlock.kt");
         }
 
         @TestMetadata("extractWithInitializerAndCallSiteReturn.kt")
         public void testExtractWithInitializerAndCallSiteReturn() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/extractWithInitializerAndCallSiteReturn.kt");
+            runTest("idea/testData/refactoring/introduceProperty/extractWithInitializerAndCallSiteReturn.kt");
         }
 
         @TestMetadata("extractWithInitializerAndSingleElementBlock.kt")
         public void testExtractWithInitializerAndSingleElementBlock() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/extractWithInitializerAndSingleElementBlock.kt");
+            runTest("idea/testData/refactoring/introduceProperty/extractWithInitializerAndSingleElementBlock.kt");
         }
 
         @TestMetadata("extractWithInitializerMultipleExpressions.kt")
         public void testExtractWithInitializerMultipleExpressions() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/extractWithInitializerMultipleExpressions.kt");
+            runTest("idea/testData/refactoring/introduceProperty/extractWithInitializerMultipleExpressions.kt");
         }
 
         @TestMetadata("extractWithInitializerToClass.kt")
         public void testExtractWithInitializerToClass() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/extractWithInitializerToClass.kt");
+            runTest("idea/testData/refactoring/introduceProperty/extractWithInitializerToClass.kt");
         }
 
         @TestMetadata("extractWithInitializerToFile.kt")
         public void testExtractWithInitializerToFile() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/extractWithInitializerToFile.kt");
+            runTest("idea/testData/refactoring/introduceProperty/extractWithInitializerToFile.kt");
         }
 
         @TestMetadata("extractWithInitializerToTrait.kt")
         public void testExtractWithInitializerToTrait() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/extractWithInitializerToTrait.kt");
+            runTest("idea/testData/refactoring/introduceProperty/extractWithInitializerToTrait.kt");
         }
 
         @TestMetadata("extractWithParams.kt")
         public void testExtractWithParams() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/extractWithParams.kt");
+            runTest("idea/testData/refactoring/introduceProperty/extractWithParams.kt");
         }
 
         @TestMetadata("kt21530.kt")
         public void testKt21530() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/kt21530.kt");
+            runTest("idea/testData/refactoring/introduceProperty/kt21530.kt");
         }
 
         @TestMetadata("primaryConstructorParameterReference.kt")
         public void testPrimaryConstructorParameterReference() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/primaryConstructorParameterReference.kt");
+            runTest("idea/testData/refactoring/introduceProperty/primaryConstructorParameterReference.kt");
         }
 
         @TestMetadata("replaceDuplicates.kt")
         public void testReplaceDuplicates() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/replaceDuplicates.kt");
+            runTest("idea/testData/refactoring/introduceProperty/replaceDuplicates.kt");
         }
 
         @TestMetadata("syntaxErrors.kt")
         public void testSyntaxErrors() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/syntaxErrors.kt");
+            runTest("idea/testData/refactoring/introduceProperty/syntaxErrors.kt");
         }
 
         @TestMetadata("typeParameterNotResolvableInTargetScope.kt")
         public void testTypeParameterNotResolvableInTargetScope() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/typeParameterNotResolvableInTargetScope.kt");
+            runTest("idea/testData/refactoring/introduceProperty/typeParameterNotResolvableInTargetScope.kt");
         }
 
         @TestMetadata("typeParameterResolvableInTargetScope.kt")
         public void testTypeParameterResolvableInTargetScope() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/typeParameterResolvableInTargetScope.kt");
+            runTest("idea/testData/refactoring/introduceProperty/typeParameterResolvableInTargetScope.kt");
         }
 
         @TestMetadata("idea/testData/refactoring/introduceProperty/script")
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Script extends AbstractExtractionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doIntroducePropertyTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInScript() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/introduceProperty/script"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("ClassInScript.kts")
             public void testClassInScript() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/script/ClassInScript.kts");
+                runTest("idea/testData/refactoring/introduceProperty/script/ClassInScript.kts");
             }
 
             @TestMetadata("ExpressionPart.kts")
             public void testExpressionPart() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/script/ExpressionPart.kts");
+                runTest("idea/testData/refactoring/introduceProperty/script/ExpressionPart.kts");
             }
 
             @TestMetadata("TopLevelExpression.kts")
             public void testTopLevelExpression() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/script/TopLevelExpression.kts");
+                runTest("idea/testData/refactoring/introduceProperty/script/TopLevelExpression.kts");
             }
         }
 
@@ -2792,88 +2955,92 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class StringTemplates extends AbstractExtractionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doIntroducePropertyTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInStringTemplates() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/introduceProperty/stringTemplates"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("brokenEntryWithBlockExpr.kt")
             public void testBrokenEntryWithBlockExpr() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/stringTemplates/brokenEntryWithBlockExpr.kt");
+                runTest("idea/testData/refactoring/introduceProperty/stringTemplates/brokenEntryWithBlockExpr.kt");
             }
 
             @TestMetadata("brokenEntryWithExpr.kt")
             public void testBrokenEntryWithExpr() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/stringTemplates/brokenEntryWithExpr.kt");
+                runTest("idea/testData/refactoring/introduceProperty/stringTemplates/brokenEntryWithExpr.kt");
             }
 
             @TestMetadata("brokenEscapeEntry.kt")
             public void testBrokenEscapeEntry() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/stringTemplates/brokenEscapeEntry.kt");
+                runTest("idea/testData/refactoring/introduceProperty/stringTemplates/brokenEscapeEntry.kt");
             }
 
             @TestMetadata("extractFalse.kt")
             public void testExtractFalse() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/stringTemplates/extractFalse.kt");
+                runTest("idea/testData/refactoring/introduceProperty/stringTemplates/extractFalse.kt");
             }
 
             @TestMetadata("extractIntegerLiteral.kt")
             public void testExtractIntegerLiteral() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/stringTemplates/extractIntegerLiteral.kt");
+                runTest("idea/testData/refactoring/introduceProperty/stringTemplates/extractIntegerLiteral.kt");
             }
 
             @TestMetadata("extractTrue.kt")
             public void testExtractTrue() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/stringTemplates/extractTrue.kt");
+                runTest("idea/testData/refactoring/introduceProperty/stringTemplates/extractTrue.kt");
             }
 
             @TestMetadata("fullContent.kt")
             public void testFullContent() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/stringTemplates/fullContent.kt");
+                runTest("idea/testData/refactoring/introduceProperty/stringTemplates/fullContent.kt");
             }
 
             @TestMetadata("fullEntryWithBlockExpr.kt")
             public void testFullEntryWithBlockExpr() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/stringTemplates/fullEntryWithBlockExpr.kt");
+                runTest("idea/testData/refactoring/introduceProperty/stringTemplates/fullEntryWithBlockExpr.kt");
             }
 
             @TestMetadata("fullEntryWithSimpleName.kt")
             public void testFullEntryWithSimpleName() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/stringTemplates/fullEntryWithSimpleName.kt");
+                runTest("idea/testData/refactoring/introduceProperty/stringTemplates/fullEntryWithSimpleName.kt");
             }
 
             @TestMetadata("multipleEntriesWithPrefix.kt")
             public void testMultipleEntriesWithPrefix() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/stringTemplates/multipleEntriesWithPrefix.kt");
+                runTest("idea/testData/refactoring/introduceProperty/stringTemplates/multipleEntriesWithPrefix.kt");
             }
 
             @TestMetadata("multipleEntriesWithSubstring.kt")
             public void testMultipleEntriesWithSubstring() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/stringTemplates/multipleEntriesWithSubstring.kt");
+                runTest("idea/testData/refactoring/introduceProperty/stringTemplates/multipleEntriesWithSubstring.kt");
             }
 
             @TestMetadata("multipleEntriesWithSuffix.kt")
             public void testMultipleEntriesWithSuffix() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/stringTemplates/multipleEntriesWithSuffix.kt");
+                runTest("idea/testData/refactoring/introduceProperty/stringTemplates/multipleEntriesWithSuffix.kt");
             }
 
             @TestMetadata("rawTemplateWithSubstring.kt")
             public void testRawTemplateWithSubstring() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/stringTemplates/rawTemplateWithSubstring.kt");
+                runTest("idea/testData/refactoring/introduceProperty/stringTemplates/rawTemplateWithSubstring.kt");
             }
 
             @TestMetadata("singleEntryPrefix.kt")
             public void testSingleEntryPrefix() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/stringTemplates/singleEntryPrefix.kt");
+                runTest("idea/testData/refactoring/introduceProperty/stringTemplates/singleEntryPrefix.kt");
             }
 
             @TestMetadata("singleEntrySubstring.kt")
             public void testSingleEntrySubstring() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/stringTemplates/singleEntrySubstring.kt");
+                runTest("idea/testData/refactoring/introduceProperty/stringTemplates/singleEntrySubstring.kt");
             }
 
             @TestMetadata("singleEntrySuffix.kt")
             public void testSingleEntrySuffix() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroducePropertyTest,TargetBackend.ANY, "idea/testData/refactoring/introduceProperty/stringTemplates/singleEntrySuffix.kt");
+                runTest("idea/testData/refactoring/introduceProperty/stringTemplates/singleEntrySuffix.kt");
             }
         }
     }
@@ -2882,301 +3049,309 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class IntroduceParameter extends AbstractExtractionTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInIntroduceParameter() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/introduceParameter"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("annotationArgument.kt")
         public void testAnnotationArgument() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/annotationArgument.kt");
+            runTest("idea/testData/refactoring/introduceParameter/annotationArgument.kt");
         }
 
         @TestMetadata("assignment.kt")
         public void testAssignment() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/assignment.kt");
+            runTest("idea/testData/refactoring/introduceParameter/assignment.kt");
         }
 
         @TestMetadata("avoidClassDuplicatingParameters.kt")
         public void testAvoidClassDuplicatingParameters() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/avoidClassDuplicatingParameters.kt");
+            runTest("idea/testData/refactoring/introduceParameter/avoidClassDuplicatingParameters.kt");
         }
 
         @TestMetadata("avoidFunDuplicatingParameters.kt")
         public void testAvoidFunDuplicatingParameters() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/avoidFunDuplicatingParameters.kt");
+            runTest("idea/testData/refactoring/introduceParameter/avoidFunDuplicatingParameters.kt");
         }
 
         @TestMetadata("classInAnonymousInitializer.kt")
         public void testClassInAnonymousInitializer() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/classInAnonymousInitializer.kt");
+            runTest("idea/testData/refactoring/introduceParameter/classInAnonymousInitializer.kt");
         }
 
         @TestMetadata("classInPropertyInitializer.kt")
         public void testClassInPropertyInitializer() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/classInPropertyInitializer.kt");
+            runTest("idea/testData/refactoring/introduceParameter/classInPropertyInitializer.kt");
         }
 
         @TestMetadata("classMultipleUsages1.kt")
         public void testClassMultipleUsages1() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/classMultipleUsages1.kt");
+            runTest("idea/testData/refactoring/introduceParameter/classMultipleUsages1.kt");
         }
 
         @TestMetadata("classMultipleUsages2.kt")
         public void testClassMultipleUsages2() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/classMultipleUsages2.kt");
+            runTest("idea/testData/refactoring/introduceParameter/classMultipleUsages2.kt");
         }
 
         @TestMetadata("classMultipleUsagesOutsideScope.kt")
         public void testClassMultipleUsagesOutsideScope() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/classMultipleUsagesOutsideScope.kt");
+            runTest("idea/testData/refactoring/introduceParameter/classMultipleUsagesOutsideScope.kt");
         }
 
         @TestMetadata("classMultipleUsagesSingleReplace1.kt")
         public void testClassMultipleUsagesSingleReplace1() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/classMultipleUsagesSingleReplace1.kt");
+            runTest("idea/testData/refactoring/introduceParameter/classMultipleUsagesSingleReplace1.kt");
         }
 
         @TestMetadata("classMultipleUsagesSingleReplace2.kt")
         public void testClassMultipleUsagesSingleReplace2() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/classMultipleUsagesSingleReplace2.kt");
+            runTest("idea/testData/refactoring/introduceParameter/classMultipleUsagesSingleReplace2.kt");
         }
 
         @TestMetadata("classNoParams.kt")
         public void testClassNoParams() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/classNoParams.kt");
+            runTest("idea/testData/refactoring/introduceParameter/classNoParams.kt");
         }
 
         @TestMetadata("classParameterInFunctionBody.kt")
         public void testClassParameterInFunctionBody() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/classParameterInFunctionBody.kt");
+            runTest("idea/testData/refactoring/introduceParameter/classParameterInFunctionBody.kt");
         }
 
         @TestMetadata("classParameterUsedOutside.kt")
         public void testClassParameterUsedOutside() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/classParameterUsedOutside.kt");
+            runTest("idea/testData/refactoring/introduceParameter/classParameterUsedOutside.kt");
         }
 
         @TestMetadata("classUnusedParameter.kt")
         public void testClassUnusedParameter() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/classUnusedParameter.kt");
+            runTest("idea/testData/refactoring/introduceParameter/classUnusedParameter.kt");
         }
 
         @TestMetadata("classUsedParameter.kt")
         public void testClassUsedParameter() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/classUsedParameter.kt");
+            runTest("idea/testData/refactoring/introduceParameter/classUsedParameter.kt");
         }
 
         @TestMetadata("defaultValueInParens.kt")
         public void testDefaultValueInParens() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/defaultValueInParens.kt");
+            runTest("idea/testData/refactoring/introduceParameter/defaultValueInParens.kt");
         }
 
         @TestMetadata("defaultValueNoTempVar.kt")
         public void testDefaultValueNoTempVar() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/defaultValueNoTempVar.kt");
+            runTest("idea/testData/refactoring/introduceParameter/defaultValueNoTempVar.kt");
         }
 
         @TestMetadata("forbiddenUsages.kt")
         public void testForbiddenUsages() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/forbiddenUsages.kt");
+            runTest("idea/testData/refactoring/introduceParameter/forbiddenUsages.kt");
         }
 
         @TestMetadata("foreignParameterRef.kt")
         public void testForeignParameterRef() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/foreignParameterRef.kt");
+            runTest("idea/testData/refactoring/introduceParameter/foreignParameterRef.kt");
         }
 
         @TestMetadata("fun.kt")
         public void testFun() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/fun.kt");
+            runTest("idea/testData/refactoring/introduceParameter/fun.kt");
         }
 
         @TestMetadata("functionMultipleUnusedParameters.kt")
         public void testFunctionMultipleUnusedParameters() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/functionMultipleUnusedParameters.kt");
+            runTest("idea/testData/refactoring/introduceParameter/functionMultipleUnusedParameters.kt");
         }
 
         @TestMetadata("functionMultipleUsages.kt")
         public void testFunctionMultipleUsages() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/functionMultipleUsages.kt");
+            runTest("idea/testData/refactoring/introduceParameter/functionMultipleUsages.kt");
         }
 
         @TestMetadata("functionMultipleUsagesSingleReplace.kt")
         public void testFunctionMultipleUsagesSingleReplace() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/functionMultipleUsagesSingleReplace.kt");
+            runTest("idea/testData/refactoring/introduceParameter/functionMultipleUsagesSingleReplace.kt");
         }
 
         @TestMetadata("functionUnusedParameter.kt")
         public void testFunctionUnusedParameter() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/functionUnusedParameter.kt");
+            runTest("idea/testData/refactoring/introduceParameter/functionUnusedParameter.kt");
         }
 
         @TestMetadata("functionUsedParameter.kt")
         public void testFunctionUsedParameter() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/functionUsedParameter.kt");
+            runTest("idea/testData/refactoring/introduceParameter/functionUsedParameter.kt");
         }
 
         @TestMetadata("functionWithApproximatedType.kt")
         public void testFunctionWithApproximatedType() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/functionWithApproximatedType.kt");
+            runTest("idea/testData/refactoring/introduceParameter/functionWithApproximatedType.kt");
         }
 
         @TestMetadata("functionWithDefaultValue.kt")
         public void testFunctionWithDefaultValue() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/functionWithDefaultValue.kt");
+            runTest("idea/testData/refactoring/introduceParameter/functionWithDefaultValue.kt");
         }
 
         @TestMetadata("inDefaultValue.kt")
         public void testInDefaultValue() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/inDefaultValue.kt");
+            runTest("idea/testData/refactoring/introduceParameter/inDefaultValue.kt");
         }
 
         @TestMetadata("lambdaArgument.kt")
         public void testLambdaArgument() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/lambdaArgument.kt");
+            runTest("idea/testData/refactoring/introduceParameter/lambdaArgument.kt");
         }
 
         @TestMetadata("partialSubstitution.kt")
         public void testPartialSubstitution() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/partialSubstitution.kt");
+            runTest("idea/testData/refactoring/introduceParameter/partialSubstitution.kt");
         }
 
         @TestMetadata("propertyAccessor.kt")
         public void testPropertyAccessor() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/propertyAccessor.kt");
+            runTest("idea/testData/refactoring/introduceParameter/propertyAccessor.kt");
         }
 
         @TestMetadata("return.kt")
         public void testReturn() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/return.kt");
+            runTest("idea/testData/refactoring/introduceParameter/return.kt");
         }
 
         @TestMetadata("secondaryConstructorWithDefaultValue.kt")
         public void testSecondaryConstructorWithDefaultValue() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/secondaryConstructorWithDefaultValue.kt");
+            runTest("idea/testData/refactoring/introduceParameter/secondaryConstructorWithDefaultValue.kt");
         }
 
         @TestMetadata("simpleNameWithDefaultValueSubstitution.kt")
         public void testSimpleNameWithDefaultValueSubstitution() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/simpleNameWithDefaultValueSubstitution.kt");
+            runTest("idea/testData/refactoring/introduceParameter/simpleNameWithDefaultValueSubstitution.kt");
         }
 
         @TestMetadata("substituteBinaryExpressions.kt")
         public void testSubstituteBinaryExpressions() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/substituteBinaryExpressions.kt");
+            runTest("idea/testData/refactoring/introduceParameter/substituteBinaryExpressions.kt");
         }
 
         @TestMetadata("substituteCallExpressions.kt")
         public void testSubstituteCallExpressions() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/substituteCallExpressions.kt");
+            runTest("idea/testData/refactoring/introduceParameter/substituteCallExpressions.kt");
         }
 
         @TestMetadata("substituteDelegationCallsNoTempVar.kt")
         public void testSubstituteDelegationCallsNoTempVar() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/substituteDelegationCallsNoTempVar.kt");
+            runTest("idea/testData/refactoring/introduceParameter/substituteDelegationCallsNoTempVar.kt");
         }
 
         @TestMetadata("substituteDoubleReceiver.kt")
         public void testSubstituteDoubleReceiver() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/substituteDoubleReceiver.kt");
+            runTest("idea/testData/refactoring/introduceParameter/substituteDoubleReceiver.kt");
         }
 
         @TestMetadata("substituteExplicitThisInMember.kt")
         public void testSubstituteExplicitThisInMember() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/substituteExplicitThisInMember.kt");
+            runTest("idea/testData/refactoring/introduceParameter/substituteExplicitThisInMember.kt");
         }
 
         @TestMetadata("substituteImplicitThisInMember.kt")
         public void testSubstituteImplicitThisInMember() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/substituteImplicitThisInMember.kt");
+            runTest("idea/testData/refactoring/introduceParameter/substituteImplicitThisInMember.kt");
         }
 
         @TestMetadata("substituteInPrimaryConstructorCall.kt")
         public void testSubstituteInPrimaryConstructorCall() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/substituteInPrimaryConstructorCall.kt");
+            runTest("idea/testData/refactoring/introduceParameter/substituteInPrimaryConstructorCall.kt");
         }
 
         @TestMetadata("substituteInSecondaryConstructorCall.kt")
         public void testSubstituteInSecondaryConstructorCall() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/substituteInSecondaryConstructorCall.kt");
+            runTest("idea/testData/refactoring/introduceParameter/substituteInSecondaryConstructorCall.kt");
         }
 
         @TestMetadata("substituteIncrement.kt")
         public void testSubstituteIncrement() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/substituteIncrement.kt");
+            runTest("idea/testData/refactoring/introduceParameter/substituteIncrement.kt");
         }
 
         @TestMetadata("substituteInfixCall.kt")
         public void testSubstituteInfixCall() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/substituteInfixCall.kt");
+            runTest("idea/testData/refactoring/introduceParameter/substituteInfixCall.kt");
         }
 
         @TestMetadata("superCallArgument.kt")
         public void testSuperCallArgument() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/superCallArgument.kt");
+            runTest("idea/testData/refactoring/introduceParameter/superCallArgument.kt");
         }
 
         @TestMetadata("throw.kt")
         public void testThrow() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/throw.kt");
+            runTest("idea/testData/refactoring/introduceParameter/throw.kt");
         }
 
         @TestMetadata("unusedDispatchReceiver.kt")
         public void testUnusedDispatchReceiver() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/unusedDispatchReceiver.kt");
+            runTest("idea/testData/refactoring/introduceParameter/unusedDispatchReceiver.kt");
         }
 
         @TestMetadata("unusedExtensionReceiver.kt")
         public void testUnusedExtensionReceiver() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/unusedExtensionReceiver.kt");
+            runTest("idea/testData/refactoring/introduceParameter/unusedExtensionReceiver.kt");
         }
 
         @TestMetadata("valueAtCallSite.kt")
         public void testValueAtCallSite() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/valueAtCallSite.kt");
+            runTest("idea/testData/refactoring/introduceParameter/valueAtCallSite.kt");
         }
 
         @TestMetadata("valueAtCallSiteMultipleUsages.kt")
         public void testValueAtCallSiteMultipleUsages() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/valueAtCallSiteMultipleUsages.kt");
+            runTest("idea/testData/refactoring/introduceParameter/valueAtCallSiteMultipleUsages.kt");
         }
 
         @TestMetadata("varargs.kt")
         public void testVarargs() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/varargs.kt");
+            runTest("idea/testData/refactoring/introduceParameter/varargs.kt");
         }
 
         @TestMetadata("while.kt")
         public void testWhile() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/while.kt");
+            runTest("idea/testData/refactoring/introduceParameter/while.kt");
         }
 
         @TestMetadata("idea/testData/refactoring/introduceParameter/multiline")
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Multiline extends AbstractExtractionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInMultiline() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/introduceParameter/multiline"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("multilineBinaryExpression.kt")
             public void testMultilineBinaryExpression() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/multiline/multilineBinaryExpression.kt");
+                runTest("idea/testData/refactoring/introduceParameter/multiline/multilineBinaryExpression.kt");
             }
 
             @TestMetadata("multilineBinaryExpressionWithComments.kt")
             public void testMultilineBinaryExpressionWithComments() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/multiline/multilineBinaryExpressionWithComments.kt");
+                runTest("idea/testData/refactoring/introduceParameter/multiline/multilineBinaryExpressionWithComments.kt");
             }
 
             @TestMetadata("multilineNestedBinaryExpression1.kt")
             public void testMultilineNestedBinaryExpression1() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/multiline/multilineNestedBinaryExpression1.kt");
+                runTest("idea/testData/refactoring/introduceParameter/multiline/multilineNestedBinaryExpression1.kt");
             }
 
             @TestMetadata("multilineNestedBinaryExpression2.kt")
             public void testMultilineNestedBinaryExpression2() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/multiline/multilineNestedBinaryExpression2.kt");
+                runTest("idea/testData/refactoring/introduceParameter/multiline/multilineNestedBinaryExpression2.kt");
             }
         }
 
@@ -3184,23 +3359,27 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Script extends AbstractExtractionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInScript() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/introduceParameter/script"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("ExpressionPart.kts")
             public void testExpressionPart() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/script/ExpressionPart.kts");
+                runTest("idea/testData/refactoring/introduceParameter/script/ExpressionPart.kts");
             }
 
             @TestMetadata("FunInScript.kts")
             public void testFunInScript() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/script/FunInScript.kts");
+                runTest("idea/testData/refactoring/introduceParameter/script/FunInScript.kts");
             }
 
             @TestMetadata("TopLevelExpression.kts")
             public void testTopLevelExpression() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/script/TopLevelExpression.kts");
+                runTest("idea/testData/refactoring/introduceParameter/script/TopLevelExpression.kts");
             }
         }
 
@@ -3208,88 +3387,92 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class StringTemplates extends AbstractExtractionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInStringTemplates() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/introduceParameter/stringTemplates"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("brokenEntryWithBlockExpr.kt")
             public void testBrokenEntryWithBlockExpr() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/stringTemplates/brokenEntryWithBlockExpr.kt");
+                runTest("idea/testData/refactoring/introduceParameter/stringTemplates/brokenEntryWithBlockExpr.kt");
             }
 
             @TestMetadata("brokenEntryWithExpr.kt")
             public void testBrokenEntryWithExpr() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/stringTemplates/brokenEntryWithExpr.kt");
+                runTest("idea/testData/refactoring/introduceParameter/stringTemplates/brokenEntryWithExpr.kt");
             }
 
             @TestMetadata("brokenEscapeEntry.kt")
             public void testBrokenEscapeEntry() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/stringTemplates/brokenEscapeEntry.kt");
+                runTest("idea/testData/refactoring/introduceParameter/stringTemplates/brokenEscapeEntry.kt");
             }
 
             @TestMetadata("extractFalse.kt")
             public void testExtractFalse() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/stringTemplates/extractFalse.kt");
+                runTest("idea/testData/refactoring/introduceParameter/stringTemplates/extractFalse.kt");
             }
 
             @TestMetadata("extractIntegerLiteral.kt")
             public void testExtractIntegerLiteral() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/stringTemplates/extractIntegerLiteral.kt");
+                runTest("idea/testData/refactoring/introduceParameter/stringTemplates/extractIntegerLiteral.kt");
             }
 
             @TestMetadata("extractTrue.kt")
             public void testExtractTrue() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/stringTemplates/extractTrue.kt");
+                runTest("idea/testData/refactoring/introduceParameter/stringTemplates/extractTrue.kt");
             }
 
             @TestMetadata("fullContent.kt")
             public void testFullContent() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/stringTemplates/fullContent.kt");
+                runTest("idea/testData/refactoring/introduceParameter/stringTemplates/fullContent.kt");
             }
 
             @TestMetadata("fullEntryWithBlockExpr.kt")
             public void testFullEntryWithBlockExpr() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/stringTemplates/fullEntryWithBlockExpr.kt");
+                runTest("idea/testData/refactoring/introduceParameter/stringTemplates/fullEntryWithBlockExpr.kt");
             }
 
             @TestMetadata("fullEntryWithSimpleName.kt")
             public void testFullEntryWithSimpleName() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/stringTemplates/fullEntryWithSimpleName.kt");
+                runTest("idea/testData/refactoring/introduceParameter/stringTemplates/fullEntryWithSimpleName.kt");
             }
 
             @TestMetadata("multipleEntriesWithPrefix.kt")
             public void testMultipleEntriesWithPrefix() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/stringTemplates/multipleEntriesWithPrefix.kt");
+                runTest("idea/testData/refactoring/introduceParameter/stringTemplates/multipleEntriesWithPrefix.kt");
             }
 
             @TestMetadata("multipleEntriesWithSubstring.kt")
             public void testMultipleEntriesWithSubstring() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/stringTemplates/multipleEntriesWithSubstring.kt");
+                runTest("idea/testData/refactoring/introduceParameter/stringTemplates/multipleEntriesWithSubstring.kt");
             }
 
             @TestMetadata("multipleEntriesWithSuffix.kt")
             public void testMultipleEntriesWithSuffix() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/stringTemplates/multipleEntriesWithSuffix.kt");
+                runTest("idea/testData/refactoring/introduceParameter/stringTemplates/multipleEntriesWithSuffix.kt");
             }
 
             @TestMetadata("rawTemplateWithSubstring.kt")
             public void testRawTemplateWithSubstring() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/stringTemplates/rawTemplateWithSubstring.kt");
+                runTest("idea/testData/refactoring/introduceParameter/stringTemplates/rawTemplateWithSubstring.kt");
             }
 
             @TestMetadata("singleEntryPrefix.kt")
             public void testSingleEntryPrefix() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/stringTemplates/singleEntryPrefix.kt");
+                runTest("idea/testData/refactoring/introduceParameter/stringTemplates/singleEntryPrefix.kt");
             }
 
             @TestMetadata("singleEntrySubstring.kt")
             public void testSingleEntrySubstring() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/stringTemplates/singleEntrySubstring.kt");
+                runTest("idea/testData/refactoring/introduceParameter/stringTemplates/singleEntrySubstring.kt");
             }
 
             @TestMetadata("singleEntrySuffix.kt")
             public void testSingleEntrySuffix() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/stringTemplates/singleEntrySuffix.kt");
+                runTest("idea/testData/refactoring/introduceParameter/stringTemplates/singleEntrySuffix.kt");
             }
         }
 
@@ -3297,18 +3480,22 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class VariableConversion extends AbstractExtractionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInVariableConversion() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/introduceParameter/variableConversion"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("caretAtIdentifier.kt")
             public void testCaretAtIdentifier() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/variableConversion/caretAtIdentifier.kt");
+                runTest("idea/testData/refactoring/introduceParameter/variableConversion/caretAtIdentifier.kt");
             }
 
             @TestMetadata("fullSelection.kt")
             public void testFullSelection() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceSimpleParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceParameter/variableConversion/fullSelection.kt");
+                runTest("idea/testData/refactoring/introduceParameter/variableConversion/fullSelection.kt");
             }
         }
     }
@@ -3317,81 +3504,89 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class IntroduceLambdaParameter extends AbstractExtractionTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doIntroduceLambdaParameterTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInIntroduceLambdaParameter() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/introduceLambdaParameter"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("lambdaArgument.kt")
         public void testLambdaArgument() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceLambdaParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceLambdaParameter/lambdaArgument.kt");
+            runTest("idea/testData/refactoring/introduceLambdaParameter/lambdaArgument.kt");
         }
 
         @TestMetadata("lambdaParamInPrimaryConstructor.kt")
         public void testLambdaParamInPrimaryConstructor() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceLambdaParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceLambdaParameter/lambdaParamInPrimaryConstructor.kt");
+            runTest("idea/testData/refactoring/introduceLambdaParameter/lambdaParamInPrimaryConstructor.kt");
         }
 
         @TestMetadata("lambdaParamMultiline.kt")
         public void testLambdaParamMultiline() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceLambdaParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceLambdaParameter/lambdaParamMultiline.kt");
+            runTest("idea/testData/refactoring/introduceLambdaParameter/lambdaParamMultiline.kt");
         }
 
         @TestMetadata("lambdaParamNoDefaultValue.kt")
         public void testLambdaParamNoDefaultValue() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceLambdaParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceLambdaParameter/lambdaParamNoDefaultValue.kt");
+            runTest("idea/testData/refactoring/introduceLambdaParameter/lambdaParamNoDefaultValue.kt");
         }
 
         @TestMetadata("lambdaParamNoDefaultValueSecondLambda.kt")
         public void testLambdaParamNoDefaultValueSecondLambda() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceLambdaParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceLambdaParameter/lambdaParamNoDefaultValueSecondLambda.kt");
+            runTest("idea/testData/refactoring/introduceLambdaParameter/lambdaParamNoDefaultValueSecondLambda.kt");
         }
 
         @TestMetadata("lambdaParamNoParams.kt")
         public void testLambdaParamNoParams() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceLambdaParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceLambdaParameter/lambdaParamNoParams.kt");
+            runTest("idea/testData/refactoring/introduceLambdaParameter/lambdaParamNoParams.kt");
         }
 
         @TestMetadata("lambdaParamOfNothing.kt")
         public void testLambdaParamOfNothing() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceLambdaParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceLambdaParameter/lambdaParamOfNothing.kt");
+            runTest("idea/testData/refactoring/introduceLambdaParameter/lambdaParamOfNothing.kt");
         }
 
         @TestMetadata("lambdaParamOfUnit.kt")
         public void testLambdaParamOfUnit() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceLambdaParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceLambdaParameter/lambdaParamOfUnit.kt");
+            runTest("idea/testData/refactoring/introduceLambdaParameter/lambdaParamOfUnit.kt");
         }
 
         @TestMetadata("lambdaParamWithDefaultValue.kt")
         public void testLambdaParamWithDefaultValue() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceLambdaParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceLambdaParameter/lambdaParamWithDefaultValue.kt");
+            runTest("idea/testData/refactoring/introduceLambdaParameter/lambdaParamWithDefaultValue.kt");
         }
 
         @TestMetadata("idea/testData/refactoring/introduceLambdaParameter/multiline")
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Multiline extends AbstractExtractionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doIntroduceLambdaParameterTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInMultiline() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/introduceLambdaParameter/multiline"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("multilineBinaryExpression.kt")
             public void testMultilineBinaryExpression() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceLambdaParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceLambdaParameter/multiline/multilineBinaryExpression.kt");
+                runTest("idea/testData/refactoring/introduceLambdaParameter/multiline/multilineBinaryExpression.kt");
             }
 
             @TestMetadata("multilineBinaryExpressionWithComments.kt")
             public void testMultilineBinaryExpressionWithComments() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceLambdaParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceLambdaParameter/multiline/multilineBinaryExpressionWithComments.kt");
+                runTest("idea/testData/refactoring/introduceLambdaParameter/multiline/multilineBinaryExpressionWithComments.kt");
             }
 
             @TestMetadata("multilineNestedBinaryExpression1.kt")
             public void testMultilineNestedBinaryExpression1() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceLambdaParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceLambdaParameter/multiline/multilineNestedBinaryExpression1.kt");
+                runTest("idea/testData/refactoring/introduceLambdaParameter/multiline/multilineNestedBinaryExpression1.kt");
             }
 
             @TestMetadata("multilineNestedBinaryExpression2.kt")
             public void testMultilineNestedBinaryExpression2() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceLambdaParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceLambdaParameter/multiline/multilineNestedBinaryExpression2.kt");
+                runTest("idea/testData/refactoring/introduceLambdaParameter/multiline/multilineNestedBinaryExpression2.kt");
             }
         }
 
@@ -3399,88 +3594,92 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class StringTemplates extends AbstractExtractionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doIntroduceLambdaParameterTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInStringTemplates() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/introduceLambdaParameter/stringTemplates"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("brokenEntryWithBlockExpr.kt")
             public void testBrokenEntryWithBlockExpr() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceLambdaParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceLambdaParameter/stringTemplates/brokenEntryWithBlockExpr.kt");
+                runTest("idea/testData/refactoring/introduceLambdaParameter/stringTemplates/brokenEntryWithBlockExpr.kt");
             }
 
             @TestMetadata("brokenEntryWithExpr.kt")
             public void testBrokenEntryWithExpr() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceLambdaParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceLambdaParameter/stringTemplates/brokenEntryWithExpr.kt");
+                runTest("idea/testData/refactoring/introduceLambdaParameter/stringTemplates/brokenEntryWithExpr.kt");
             }
 
             @TestMetadata("brokenEscapeEntry.kt")
             public void testBrokenEscapeEntry() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceLambdaParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceLambdaParameter/stringTemplates/brokenEscapeEntry.kt");
+                runTest("idea/testData/refactoring/introduceLambdaParameter/stringTemplates/brokenEscapeEntry.kt");
             }
 
             @TestMetadata("extractFalse.kt")
             public void testExtractFalse() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceLambdaParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceLambdaParameter/stringTemplates/extractFalse.kt");
+                runTest("idea/testData/refactoring/introduceLambdaParameter/stringTemplates/extractFalse.kt");
             }
 
             @TestMetadata("extractIntegerLiteral.kt")
             public void testExtractIntegerLiteral() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceLambdaParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceLambdaParameter/stringTemplates/extractIntegerLiteral.kt");
+                runTest("idea/testData/refactoring/introduceLambdaParameter/stringTemplates/extractIntegerLiteral.kt");
             }
 
             @TestMetadata("extractTrue.kt")
             public void testExtractTrue() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceLambdaParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceLambdaParameter/stringTemplates/extractTrue.kt");
+                runTest("idea/testData/refactoring/introduceLambdaParameter/stringTemplates/extractTrue.kt");
             }
 
             @TestMetadata("fullContent.kt")
             public void testFullContent() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceLambdaParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceLambdaParameter/stringTemplates/fullContent.kt");
+                runTest("idea/testData/refactoring/introduceLambdaParameter/stringTemplates/fullContent.kt");
             }
 
             @TestMetadata("fullEntryWithBlockExpr.kt")
             public void testFullEntryWithBlockExpr() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceLambdaParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceLambdaParameter/stringTemplates/fullEntryWithBlockExpr.kt");
+                runTest("idea/testData/refactoring/introduceLambdaParameter/stringTemplates/fullEntryWithBlockExpr.kt");
             }
 
             @TestMetadata("fullEntryWithSimpleName.kt")
             public void testFullEntryWithSimpleName() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceLambdaParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceLambdaParameter/stringTemplates/fullEntryWithSimpleName.kt");
+                runTest("idea/testData/refactoring/introduceLambdaParameter/stringTemplates/fullEntryWithSimpleName.kt");
             }
 
             @TestMetadata("multipleEntriesWithPrefix.kt")
             public void testMultipleEntriesWithPrefix() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceLambdaParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceLambdaParameter/stringTemplates/multipleEntriesWithPrefix.kt");
+                runTest("idea/testData/refactoring/introduceLambdaParameter/stringTemplates/multipleEntriesWithPrefix.kt");
             }
 
             @TestMetadata("multipleEntriesWithSubstring.kt")
             public void testMultipleEntriesWithSubstring() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceLambdaParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceLambdaParameter/stringTemplates/multipleEntriesWithSubstring.kt");
+                runTest("idea/testData/refactoring/introduceLambdaParameter/stringTemplates/multipleEntriesWithSubstring.kt");
             }
 
             @TestMetadata("multipleEntriesWithSuffix.kt")
             public void testMultipleEntriesWithSuffix() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceLambdaParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceLambdaParameter/stringTemplates/multipleEntriesWithSuffix.kt");
+                runTest("idea/testData/refactoring/introduceLambdaParameter/stringTemplates/multipleEntriesWithSuffix.kt");
             }
 
             @TestMetadata("rawTemplateWithSubstring.kt")
             public void testRawTemplateWithSubstring() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceLambdaParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceLambdaParameter/stringTemplates/rawTemplateWithSubstring.kt");
+                runTest("idea/testData/refactoring/introduceLambdaParameter/stringTemplates/rawTemplateWithSubstring.kt");
             }
 
             @TestMetadata("singleEntryPrefix.kt")
             public void testSingleEntryPrefix() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceLambdaParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceLambdaParameter/stringTemplates/singleEntryPrefix.kt");
+                runTest("idea/testData/refactoring/introduceLambdaParameter/stringTemplates/singleEntryPrefix.kt");
             }
 
             @TestMetadata("singleEntrySubstring.kt")
             public void testSingleEntrySubstring() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceLambdaParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceLambdaParameter/stringTemplates/singleEntrySubstring.kt");
+                runTest("idea/testData/refactoring/introduceLambdaParameter/stringTemplates/singleEntrySubstring.kt");
             }
 
             @TestMetadata("singleEntrySuffix.kt")
             public void testSingleEntrySuffix() throws Exception {
-                KotlinTestUtils.runTest(this::doIntroduceLambdaParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceLambdaParameter/stringTemplates/singleEntrySuffix.kt");
+                runTest("idea/testData/refactoring/introduceLambdaParameter/stringTemplates/singleEntrySuffix.kt");
             }
         }
     }
@@ -3489,18 +3688,22 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class IntroduceJavaParameter extends AbstractExtractionTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doIntroduceJavaParameterTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInIntroduceJavaParameter() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/introduceJavaParameter"), Pattern.compile("^(.+)\\.java$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("javaMethod.java")
         public void testJavaMethod() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceJavaParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceJavaParameter/javaMethod.java");
+            runTest("idea/testData/refactoring/introduceJavaParameter/javaMethod.java");
         }
 
         @TestMetadata("javaMethodOverridingKotlinFunctionWithUsages.java")
         public void testJavaMethodOverridingKotlinFunctionWithUsages() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceJavaParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceJavaParameter/javaMethodOverridingKotlinFunctionWithUsages.java");
+            runTest("idea/testData/refactoring/introduceJavaParameter/javaMethodOverridingKotlinFunctionWithUsages.java");
         }
     }
 
@@ -3508,38 +3711,42 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class IntroduceTypeParameter extends AbstractExtractionTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doIntroduceTypeParameterTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInIntroduceTypeParameter() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/introduceTypeParameter"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("duplicates.kt")
         public void testDuplicates() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceTypeParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceTypeParameter/duplicates.kt");
+            runTest("idea/testData/refactoring/introduceTypeParameter/duplicates.kt");
         }
 
         @TestMetadata("functionType.kt")
         public void testFunctionType() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceTypeParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceTypeParameter/functionType.kt");
+            runTest("idea/testData/refactoring/introduceTypeParameter/functionType.kt");
         }
 
         @TestMetadata("inClass.kt")
         public void testInClass() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceTypeParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceTypeParameter/inClass.kt");
+            runTest("idea/testData/refactoring/introduceTypeParameter/inClass.kt");
         }
 
         @TestMetadata("inProperty.kt")
         public void testInProperty() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceTypeParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceTypeParameter/inProperty.kt");
+            runTest("idea/testData/refactoring/introduceTypeParameter/inProperty.kt");
         }
 
         @TestMetadata("nullableType.kt")
         public void testNullableType() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceTypeParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceTypeParameter/nullableType.kt");
+            runTest("idea/testData/refactoring/introduceTypeParameter/nullableType.kt");
         }
 
         @TestMetadata("userType.kt")
         public void testUserType() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceTypeParameterTest,TargetBackend.ANY, "idea/testData/refactoring/introduceTypeParameter/userType.kt");
+            runTest("idea/testData/refactoring/introduceTypeParameter/userType.kt");
         }
     }
 
@@ -3547,143 +3754,147 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class IntroduceTypeAlias extends AbstractExtractionTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doIntroduceTypeAliasTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInIntroduceTypeAlias() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/refactoring/introduceTypeAlias"), Pattern.compile("^(.+)\\.(kt|kts)$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("callableReference.kt")
         public void testCallableReference() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceTypeAliasTest,TargetBackend.ANY, "idea/testData/refactoring/introduceTypeAlias/callableReference.kt");
+            runTest("idea/testData/refactoring/introduceTypeAlias/callableReference.kt");
         }
 
         @TestMetadata("callableReferenceSelector.kt")
         public void testCallableReferenceSelector() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceTypeAliasTest,TargetBackend.ANY, "idea/testData/refactoring/introduceTypeAlias/callableReferenceSelector.kt");
+            runTest("idea/testData/refactoring/introduceTypeAlias/callableReferenceSelector.kt");
         }
 
         @TestMetadata("classLiteral.kt")
         public void testClassLiteral() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceTypeAliasTest,TargetBackend.ANY, "idea/testData/refactoring/introduceTypeAlias/classLiteral.kt");
+            runTest("idea/testData/refactoring/introduceTypeAlias/classLiteral.kt");
         }
 
         @TestMetadata("constructorCalls.kt")
         public void testConstructorCalls() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceTypeAliasTest,TargetBackend.ANY, "idea/testData/refactoring/introduceTypeAlias/constructorCalls.kt");
+            runTest("idea/testData/refactoring/introduceTypeAlias/constructorCalls.kt");
         }
 
         @TestMetadata("emptyName.kt")
         public void testEmptyName() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceTypeAliasTest,TargetBackend.ANY, "idea/testData/refactoring/introduceTypeAlias/emptyName.kt");
+            runTest("idea/testData/refactoring/introduceTypeAlias/emptyName.kt");
         }
 
         @TestMetadata("entireTypeExtracted.kt")
         public void testEntireTypeExtracted() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceTypeAliasTest,TargetBackend.ANY, "idea/testData/refactoring/introduceTypeAlias/entireTypeExtracted.kt");
+            runTest("idea/testData/refactoring/introduceTypeAlias/entireTypeExtracted.kt");
         }
 
         @TestMetadata("equivalentNestedTypeElements.kt")
         public void testEquivalentNestedTypeElements() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceTypeAliasTest,TargetBackend.ANY, "idea/testData/refactoring/introduceTypeAlias/equivalentNestedTypeElements.kt");
+            runTest("idea/testData/refactoring/introduceTypeAlias/equivalentNestedTypeElements.kt");
         }
 
         @TestMetadata("existingTypeClash.kt")
         public void testExistingTypeClash() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceTypeAliasTest,TargetBackend.ANY, "idea/testData/refactoring/introduceTypeAlias/existingTypeClash.kt");
+            runTest("idea/testData/refactoring/introduceTypeAlias/existingTypeClash.kt");
         }
 
         @TestMetadata("functionTypeDuplicatesNoTypeParameters.kt")
         public void testFunctionTypeDuplicatesNoTypeParameters() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceTypeAliasTest,TargetBackend.ANY, "idea/testData/refactoring/introduceTypeAlias/functionTypeDuplicatesNoTypeParameters.kt");
+            runTest("idea/testData/refactoring/introduceTypeAlias/functionTypeDuplicatesNoTypeParameters.kt");
         }
 
         @TestMetadata("functionTypeDuplicatesWithTypeParameters.kt")
         public void testFunctionTypeDuplicatesWithTypeParameters() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceTypeAliasTest,TargetBackend.ANY, "idea/testData/refactoring/introduceTypeAlias/functionTypeDuplicatesWithTypeParameters.kt");
+            runTest("idea/testData/refactoring/introduceTypeAlias/functionTypeDuplicatesWithTypeParameters.kt");
         }
 
         @TestMetadata("functionalType.kt")
         public void testFunctionalType() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceTypeAliasTest,TargetBackend.ANY, "idea/testData/refactoring/introduceTypeAlias/functionalType.kt");
+            runTest("idea/testData/refactoring/introduceTypeAlias/functionalType.kt");
         }
 
         @TestMetadata("localTypeExtracted.kt")
         public void testLocalTypeExtracted() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceTypeAliasTest,TargetBackend.ANY, "idea/testData/refactoring/introduceTypeAlias/localTypeExtracted.kt");
+            runTest("idea/testData/refactoring/introduceTypeAlias/localTypeExtracted.kt");
         }
 
         @TestMetadata("localWithVisibility.kt")
         public void testLocalWithVisibility() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceTypeAliasTest,TargetBackend.ANY, "idea/testData/refactoring/introduceTypeAlias/localWithVisibility.kt");
+            runTest("idea/testData/refactoring/introduceTypeAlias/localWithVisibility.kt");
         }
 
         @TestMetadata("nestedTypesExtracted.kt")
         public void testNestedTypesExtracted() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceTypeAliasTest,TargetBackend.ANY, "idea/testData/refactoring/introduceTypeAlias/nestedTypesExtracted.kt");
+            runTest("idea/testData/refactoring/introduceTypeAlias/nestedTypesExtracted.kt");
         }
 
         @TestMetadata("noTypeElement.kt")
         public void testNoTypeElement() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceTypeAliasTest,TargetBackend.ANY, "idea/testData/refactoring/introduceTypeAlias/noTypeElement.kt");
+            runTest("idea/testData/refactoring/introduceTypeAlias/noTypeElement.kt");
         }
 
         @TestMetadata("nonIdentifierName.kt")
         public void testNonIdentifierName() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceTypeAliasTest,TargetBackend.ANY, "idea/testData/refactoring/introduceTypeAlias/nonIdentifierName.kt");
+            runTest("idea/testData/refactoring/introduceTypeAlias/nonIdentifierName.kt");
         }
 
         @TestMetadata("nullableType.kt")
         public void testNullableType() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceTypeAliasTest,TargetBackend.ANY, "idea/testData/refactoring/introduceTypeAlias/nullableType.kt");
+            runTest("idea/testData/refactoring/introduceTypeAlias/nullableType.kt");
         }
 
         @TestMetadata("privateTypeAlias.kt")
         public void testPrivateTypeAlias() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceTypeAliasTest,TargetBackend.ANY, "idea/testData/refactoring/introduceTypeAlias/privateTypeAlias.kt");
+            runTest("idea/testData/refactoring/introduceTypeAlias/privateTypeAlias.kt");
         }
 
         @TestMetadata("protectedInFile.kt")
         public void testProtectedInFile() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceTypeAliasTest,TargetBackend.ANY, "idea/testData/refactoring/introduceTypeAlias/protectedInFile.kt");
+            runTest("idea/testData/refactoring/introduceTypeAlias/protectedInFile.kt");
         }
 
         @TestMetadata("skipQualifiers.kt")
         public void testSkipQualifiers() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceTypeAliasTest,TargetBackend.ANY, "idea/testData/refactoring/introduceTypeAlias/skipQualifiers.kt");
+            runTest("idea/testData/refactoring/introduceTypeAlias/skipQualifiers.kt");
         }
 
         @TestMetadata("suggestedName.kt")
         public void testSuggestedName() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceTypeAliasTest,TargetBackend.ANY, "idea/testData/refactoring/introduceTypeAlias/suggestedName.kt");
+            runTest("idea/testData/refactoring/introduceTypeAlias/suggestedName.kt");
         }
 
         @TestMetadata("topLevelTypeAlias.kt")
         public void testTopLevelTypeAlias() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceTypeAliasTest,TargetBackend.ANY, "idea/testData/refactoring/introduceTypeAlias/topLevelTypeAlias.kt");
+            runTest("idea/testData/refactoring/introduceTypeAlias/topLevelTypeAlias.kt");
         }
 
         @TestMetadata("typeConstructor.kt")
         public void testTypeConstructor() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceTypeAliasTest,TargetBackend.ANY, "idea/testData/refactoring/introduceTypeAlias/typeConstructor.kt");
+            runTest("idea/testData/refactoring/introduceTypeAlias/typeConstructor.kt");
         }
 
         @TestMetadata("typesExtractedWithFunctionalType.kt")
         public void testTypesExtractedWithFunctionalType() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceTypeAliasTest,TargetBackend.ANY, "idea/testData/refactoring/introduceTypeAlias/typesExtractedWithFunctionalType.kt");
+            runTest("idea/testData/refactoring/introduceTypeAlias/typesExtractedWithFunctionalType.kt");
         }
 
         @TestMetadata("unmatchedNullability.kt")
         public void testUnmatchedNullability() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceTypeAliasTest,TargetBackend.ANY, "idea/testData/refactoring/introduceTypeAlias/unmatchedNullability.kt");
+            runTest("idea/testData/refactoring/introduceTypeAlias/unmatchedNullability.kt");
         }
 
         @TestMetadata("userTypeDuplicatesNoTypeParameters.kt")
         public void testUserTypeDuplicatesNoTypeParameters() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceTypeAliasTest,TargetBackend.ANY, "idea/testData/refactoring/introduceTypeAlias/userTypeDuplicatesNoTypeParameters.kt");
+            runTest("idea/testData/refactoring/introduceTypeAlias/userTypeDuplicatesNoTypeParameters.kt");
         }
 
         @TestMetadata("userTypeDuplicatesWithTypeParameters.kt")
         public void testUserTypeDuplicatesWithTypeParameters() throws Exception {
-            KotlinTestUtils.runTest(this::doIntroduceTypeAliasTest,TargetBackend.ANY, "idea/testData/refactoring/introduceTypeAlias/userTypeDuplicatesWithTypeParameters.kt");
+            runTest("idea/testData/refactoring/introduceTypeAlias/userTypeDuplicatesWithTypeParameters.kt");
         }
     }
 
@@ -3691,29 +3902,33 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class ExtractSuperclass extends AbstractExtractionTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doExtractSuperclassTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         @TestMetadata("addSuperclassNoSecondaryConstructors.kt")
         public void testAddSuperclassNoSecondaryConstructors() throws Exception {
-            KotlinTestUtils.runTest(this::doExtractSuperclassTest,TargetBackend.ANY, "idea/testData/refactoring/extractSuperclass/addSuperclassNoSecondaryConstructors.kt");
+            runTest("idea/testData/refactoring/extractSuperclass/addSuperclassNoSecondaryConstructors.kt");
         }
 
         @TestMetadata("addSuperclassOnlySecondaryConstructors.kt")
         public void testAddSuperclassOnlySecondaryConstructors() throws Exception {
-            KotlinTestUtils.runTest(this::doExtractSuperclassTest,TargetBackend.ANY, "idea/testData/refactoring/extractSuperclass/addSuperclassOnlySecondaryConstructors.kt");
+            runTest("idea/testData/refactoring/extractSuperclass/addSuperclassOnlySecondaryConstructors.kt");
         }
 
         @TestMetadata("addSuperclassPrimaryConstructor.kt")
         public void testAddSuperclassPrimaryConstructor() throws Exception {
-            KotlinTestUtils.runTest(this::doExtractSuperclassTest,TargetBackend.ANY, "idea/testData/refactoring/extractSuperclass/addSuperclassPrimaryConstructor.kt");
+            runTest("idea/testData/refactoring/extractSuperclass/addSuperclassPrimaryConstructor.kt");
         }
 
         @TestMetadata("addTypeParameters.kt")
         public void testAddTypeParameters() throws Exception {
-            KotlinTestUtils.runTest(this::doExtractSuperclassTest,TargetBackend.ANY, "idea/testData/refactoring/extractSuperclass/addTypeParameters.kt");
+            runTest("idea/testData/refactoring/extractSuperclass/addTypeParameters.kt");
         }
 
         @TestMetadata("addTypeParametersWithAbstract.kt")
         public void testAddTypeParametersWithAbstract() throws Exception {
-            KotlinTestUtils.runTest(this::doExtractSuperclassTest,TargetBackend.ANY, "idea/testData/refactoring/extractSuperclass/addTypeParametersWithAbstract.kt");
+            runTest("idea/testData/refactoring/extractSuperclass/addTypeParametersWithAbstract.kt");
         }
 
         public void testAllFilesPresentInExtractSuperclass() throws Exception {
@@ -3722,57 +3937,57 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
 
         @TestMetadata("annotation.kt")
         public void testAnnotation() throws Exception {
-            KotlinTestUtils.runTest(this::doExtractSuperclassTest,TargetBackend.ANY, "idea/testData/refactoring/extractSuperclass/annotation.kt");
+            runTest("idea/testData/refactoring/extractSuperclass/annotation.kt");
         }
 
         @TestMetadata("dropPropertyParameterModifiers.kt")
         public void testDropPropertyParameterModifiers() throws Exception {
-            KotlinTestUtils.runTest(this::doExtractSuperclassTest,TargetBackend.ANY, "idea/testData/refactoring/extractSuperclass/dropPropertyParameterModifiers.kt");
+            runTest("idea/testData/refactoring/extractSuperclass/dropPropertyParameterModifiers.kt");
         }
 
         @TestMetadata("enum.kt")
         public void testEnum() throws Exception {
-            KotlinTestUtils.runTest(this::doExtractSuperclassTest,TargetBackend.ANY, "idea/testData/refactoring/extractSuperclass/enum.kt");
+            runTest("idea/testData/refactoring/extractSuperclass/enum.kt");
         }
 
         @TestMetadata("interface.kt")
         public void testInterface() throws Exception {
-            KotlinTestUtils.runTest(this::doExtractSuperclassTest,TargetBackend.ANY, "idea/testData/refactoring/extractSuperclass/interface.kt");
+            runTest("idea/testData/refactoring/extractSuperclass/interface.kt");
         }
 
         @TestMetadata("noWarningOnVisibilityInsideAbstractedMember.kt")
         public void testNoWarningOnVisibilityInsideAbstractedMember() throws Exception {
-            KotlinTestUtils.runTest(this::doExtractSuperclassTest,TargetBackend.ANY, "idea/testData/refactoring/extractSuperclass/noWarningOnVisibilityInsideAbstractedMember.kt");
+            runTest("idea/testData/refactoring/extractSuperclass/noWarningOnVisibilityInsideAbstractedMember.kt");
         }
 
         @TestMetadata("privateClass.kt")
         public void testPrivateClass() throws Exception {
-            KotlinTestUtils.runTest(this::doExtractSuperclassTest,TargetBackend.ANY, "idea/testData/refactoring/extractSuperclass/privateClass.kt");
+            runTest("idea/testData/refactoring/extractSuperclass/privateClass.kt");
         }
 
         @TestMetadata("privateMember.kt")
         public void testPrivateMember() throws Exception {
-            KotlinTestUtils.runTest(this::doExtractSuperclassTest,TargetBackend.ANY, "idea/testData/refactoring/extractSuperclass/privateMember.kt");
+            runTest("idea/testData/refactoring/extractSuperclass/privateMember.kt");
         }
 
         @TestMetadata("privateMemberWithUsages.kt")
         public void testPrivateMemberWithUsages() throws Exception {
-            KotlinTestUtils.runTest(this::doExtractSuperclassTest,TargetBackend.ANY, "idea/testData/refactoring/extractSuperclass/privateMemberWithUsages.kt");
+            runTest("idea/testData/refactoring/extractSuperclass/privateMemberWithUsages.kt");
         }
 
         @TestMetadata("reformatModifierList.kt")
         public void testReformatModifierList() throws Exception {
-            KotlinTestUtils.runTest(this::doExtractSuperclassTest,TargetBackend.ANY, "idea/testData/refactoring/extractSuperclass/reformatModifierList.kt");
+            runTest("idea/testData/refactoring/extractSuperclass/reformatModifierList.kt");
         }
 
         @TestMetadata("replaceSuperclass.kt")
         public void testReplaceSuperclass() throws Exception {
-            KotlinTestUtils.runTest(this::doExtractSuperclassTest,TargetBackend.ANY, "idea/testData/refactoring/extractSuperclass/replaceSuperclass.kt");
+            runTest("idea/testData/refactoring/extractSuperclass/replaceSuperclass.kt");
         }
 
         @TestMetadata("specialName.kt")
         public void testSpecialName() throws Exception {
-            KotlinTestUtils.runTest(this::doExtractSuperclassTest,TargetBackend.ANY, "idea/testData/refactoring/extractSuperclass/specialName.kt");
+            runTest("idea/testData/refactoring/extractSuperclass/specialName.kt");
         }
     }
 
@@ -3780,24 +3995,28 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class ExtractInterface extends AbstractExtractionTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doExtractInterfaceTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         @TestMetadata("addInterface.kt")
         public void testAddInterface() throws Exception {
-            KotlinTestUtils.runTest(this::doExtractInterfaceTest,TargetBackend.ANY, "idea/testData/refactoring/extractInterface/addInterface.kt");
+            runTest("idea/testData/refactoring/extractInterface/addInterface.kt");
         }
 
         @TestMetadata("addInterfaceWithAbstract.kt")
         public void testAddInterfaceWithAbstract() throws Exception {
-            KotlinTestUtils.runTest(this::doExtractInterfaceTest,TargetBackend.ANY, "idea/testData/refactoring/extractInterface/addInterfaceWithAbstract.kt");
+            runTest("idea/testData/refactoring/extractInterface/addInterfaceWithAbstract.kt");
         }
 
         @TestMetadata("addTypeParameters.kt")
         public void testAddTypeParameters() throws Exception {
-            KotlinTestUtils.runTest(this::doExtractInterfaceTest,TargetBackend.ANY, "idea/testData/refactoring/extractInterface/addTypeParameters.kt");
+            runTest("idea/testData/refactoring/extractInterface/addTypeParameters.kt");
         }
 
         @TestMetadata("addTypeParametersWithAbstract.kt")
         public void testAddTypeParametersWithAbstract() throws Exception {
-            KotlinTestUtils.runTest(this::doExtractInterfaceTest,TargetBackend.ANY, "idea/testData/refactoring/extractInterface/addTypeParametersWithAbstract.kt");
+            runTest("idea/testData/refactoring/extractInterface/addTypeParametersWithAbstract.kt");
         }
 
         public void testAllFilesPresentInExtractInterface() throws Exception {
@@ -3806,27 +4025,27 @@ public class ExtractionTestGenerated extends AbstractExtractionTest {
 
         @TestMetadata("annotation.kt")
         public void testAnnotation() throws Exception {
-            KotlinTestUtils.runTest(this::doExtractInterfaceTest,TargetBackend.ANY, "idea/testData/refactoring/extractInterface/annotation.kt");
+            runTest("idea/testData/refactoring/extractInterface/annotation.kt");
         }
 
         @TestMetadata("dropFinal.kt")
         public void testDropFinal() throws Exception {
-            KotlinTestUtils.runTest(this::doExtractInterfaceTest,TargetBackend.ANY, "idea/testData/refactoring/extractInterface/dropFinal.kt");
+            runTest("idea/testData/refactoring/extractInterface/dropFinal.kt");
         }
 
         @TestMetadata("noWarningOnVisibilityInsideAbstractedMember.kt")
         public void testNoWarningOnVisibilityInsideAbstractedMember() throws Exception {
-            KotlinTestUtils.runTest(this::doExtractInterfaceTest,TargetBackend.ANY, "idea/testData/refactoring/extractInterface/noWarningOnVisibilityInsideAbstractedMember.kt");
+            runTest("idea/testData/refactoring/extractInterface/noWarningOnVisibilityInsideAbstractedMember.kt");
         }
 
         @TestMetadata("privateMemberWithUsages.kt")
         public void testPrivateMemberWithUsages() throws Exception {
-            KotlinTestUtils.runTest(this::doExtractInterfaceTest,TargetBackend.ANY, "idea/testData/refactoring/extractInterface/privateMemberWithUsages.kt");
+            runTest("idea/testData/refactoring/extractInterface/privateMemberWithUsages.kt");
         }
 
         @TestMetadata("specialName.kt")
         public void testSpecialName() throws Exception {
-            KotlinTestUtils.runTest(this::doExtractInterfaceTest,TargetBackend.ANY, "idea/testData/refactoring/extractInterface/specialName.kt");
+            runTest("idea/testData/refactoring/extractInterface/specialName.kt");
         }
     }
 }

@@ -23,14 +23,18 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Common extends AbstractJSBasicCompletionTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         @TestMetadata("AfterFloatOnNewLine.kt")
         public void testAfterFloatOnNewLine() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/AfterFloatOnNewLine.kt");
+            runTest("idea/idea-completion/testData/basic/common/AfterFloatOnNewLine.kt");
         }
 
         @TestMetadata("AfterIntSeparatedWithComments.kt")
         public void testAfterIntSeparatedWithComments() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/AfterIntSeparatedWithComments.kt");
+            runTest("idea/idea-completion/testData/basic/common/AfterIntSeparatedWithComments.kt");
         }
 
         public void testAllFilesPresentInCommon() throws Exception {
@@ -39,686 +43,690 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
 
         @TestMetadata("BasicAny.kt")
         public void testBasicAny() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/BasicAny.kt");
+            runTest("idea/idea-completion/testData/basic/common/BasicAny.kt");
         }
 
         @TestMetadata("BasicInt.kt")
         public void testBasicInt() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/BasicInt.kt");
+            runTest("idea/idea-completion/testData/basic/common/BasicInt.kt");
         }
 
         @TestMetadata("BeforeDotInCall.kt")
         public void testBeforeDotInCall() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/BeforeDotInCall.kt");
+            runTest("idea/idea-completion/testData/basic/common/BeforeDotInCall.kt");
         }
 
         @TestMetadata("CallLocalLambda.kt")
         public void testCallLocalLambda() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/CallLocalLambda.kt");
+            runTest("idea/idea-completion/testData/basic/common/CallLocalLambda.kt");
         }
 
         @TestMetadata("classObjectElementsInClass.kt")
         public void testClassObjectElementsInClass() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/classObjectElementsInClass.kt");
+            runTest("idea/idea-completion/testData/basic/common/classObjectElementsInClass.kt");
         }
 
         @TestMetadata("ClassRedeclaration1.kt")
         public void testClassRedeclaration1() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/ClassRedeclaration1.kt");
+            runTest("idea/idea-completion/testData/basic/common/ClassRedeclaration1.kt");
         }
 
         @TestMetadata("ClassRedeclaration2.kt")
         public void testClassRedeclaration2() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/ClassRedeclaration2.kt");
+            runTest("idea/idea-completion/testData/basic/common/ClassRedeclaration2.kt");
         }
 
         @TestMetadata("CompletionInSetter.kt")
         public void testCompletionInSetter() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/CompletionInSetter.kt");
+            runTest("idea/idea-completion/testData/basic/common/CompletionInSetter.kt");
         }
 
         @TestMetadata("ComponentFunction.kt")
         public void testComponentFunction() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/ComponentFunction.kt");
+            runTest("idea/idea-completion/testData/basic/common/ComponentFunction.kt");
         }
 
         @TestMetadata("CoroutineContext.kt")
         public void testCoroutineContext() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/CoroutineContext.kt");
+            runTest("idea/idea-completion/testData/basic/common/CoroutineContext.kt");
         }
 
         @TestMetadata("DataClassMembers.kt")
         public void testDataClassMembers() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/DataClassMembers.kt");
+            runTest("idea/idea-completion/testData/basic/common/DataClassMembers.kt");
         }
 
         @TestMetadata("DataClassMembers2.kt")
         public void testDataClassMembers2() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/DataClassMembers2.kt");
+            runTest("idea/idea-completion/testData/basic/common/DataClassMembers2.kt");
         }
 
         @TestMetadata("ExtendClassName.kt")
         public void testExtendClassName() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/ExtendClassName.kt");
+            runTest("idea/idea-completion/testData/basic/common/ExtendClassName.kt");
         }
 
         @TestMetadata("ExtendQualifiedClassName.kt")
         public void testExtendQualifiedClassName() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/ExtendQualifiedClassName.kt");
+            runTest("idea/idea-completion/testData/basic/common/ExtendQualifiedClassName.kt");
         }
 
         @TestMetadata("ExtensionForProperty.kt")
         public void testExtensionForProperty() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/ExtensionForProperty.kt");
+            runTest("idea/idea-completion/testData/basic/common/ExtensionForProperty.kt");
         }
 
         @TestMetadata("ExtensionFunReceiver.kt")
         public void testExtensionFunReceiver() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/ExtensionFunReceiver.kt");
+            runTest("idea/idea-completion/testData/basic/common/ExtensionFunReceiver.kt");
         }
 
         @TestMetadata("ExtensionFunReceiverForce.kt")
         public void testExtensionFunReceiverForce() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/ExtensionFunReceiverForce.kt");
+            runTest("idea/idea-completion/testData/basic/common/ExtensionFunReceiverForce.kt");
         }
 
         @TestMetadata("ExtensionFunctionInClassObject.kt")
         public void testExtensionFunctionInClassObject() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/ExtensionFunctionInClassObject.kt");
+            runTest("idea/idea-completion/testData/basic/common/ExtensionFunctionInClassObject.kt");
         }
 
         @TestMetadata("ExtensionInsideFunction.kt")
         public void testExtensionInsideFunction() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/ExtensionInsideFunction.kt");
+            runTest("idea/idea-completion/testData/basic/common/ExtensionInsideFunction.kt");
         }
 
         @TestMetadata("ExtensionOnTypeAliasFromOtherTypeAlias.kt")
         public void testExtensionOnTypeAliasFromOtherTypeAlias() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/ExtensionOnTypeAliasFromOtherTypeAlias.kt");
+            runTest("idea/idea-completion/testData/basic/common/ExtensionOnTypeAliasFromOtherTypeAlias.kt");
         }
 
         @TestMetadata("ExtensionToIntInFloatStyle.kt")
         public void testExtensionToIntInFloatStyle() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/ExtensionToIntInFloatStyle.kt");
+            runTest("idea/idea-completion/testData/basic/common/ExtensionToIntInFloatStyle.kt");
         }
 
         @TestMetadata("ExtensionWithAdditionalTypeParameters.kt")
         public void testExtensionWithAdditionalTypeParameters() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/ExtensionWithAdditionalTypeParameters.kt");
+            runTest("idea/idea-completion/testData/basic/common/ExtensionWithAdditionalTypeParameters.kt");
         }
 
         @TestMetadata("ExtensionWithGenericParamInReceiver.kt")
         public void testExtensionWithGenericParamInReceiver() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/ExtensionWithGenericParamInReceiver.kt");
+            runTest("idea/idea-completion/testData/basic/common/ExtensionWithGenericParamInReceiver.kt");
         }
 
         @TestMetadata("ExtensionWithGenericReceiver.kt")
         public void testExtensionWithGenericReceiver() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/ExtensionWithGenericReceiver.kt");
+            runTest("idea/idea-completion/testData/basic/common/ExtensionWithGenericReceiver.kt");
         }
 
         @TestMetadata("ExtensionWithInternalGenericParameters.kt")
         public void testExtensionWithInternalGenericParameters() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/ExtensionWithInternalGenericParameters.kt");
+            runTest("idea/idea-completion/testData/basic/common/ExtensionWithInternalGenericParameters.kt");
         }
 
         @TestMetadata("ExtensionWithManyTypeParamsInReceiver.kt")
         public void testExtensionWithManyTypeParamsInReceiver() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/ExtensionWithManyTypeParamsInReceiver.kt");
+            runTest("idea/idea-completion/testData/basic/common/ExtensionWithManyTypeParamsInReceiver.kt");
         }
 
         @TestMetadata("FromImports.kt")
         public void testFromImports() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/FromImports.kt");
+            runTest("idea/idea-completion/testData/basic/common/FromImports.kt");
         }
 
         @TestMetadata("FunctionCompletionFormatting.kt")
         public void testFunctionCompletionFormatting() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/FunctionCompletionFormatting.kt");
+            runTest("idea/idea-completion/testData/basic/common/FunctionCompletionFormatting.kt");
         }
 
         @TestMetadata("FunctionVariableCallArgument.kt")
         public void testFunctionVariableCallArgument() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/FunctionVariableCallArgument.kt");
+            runTest("idea/idea-completion/testData/basic/common/FunctionVariableCallArgument.kt");
         }
 
         @TestMetadata("GenericExtensionFunReceiver1.kt")
         public void testGenericExtensionFunReceiver1() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/GenericExtensionFunReceiver1.kt");
+            runTest("idea/idea-completion/testData/basic/common/GenericExtensionFunReceiver1.kt");
         }
 
         @TestMetadata("GenericExtensionFunReceiver2.kt")
         public void testGenericExtensionFunReceiver2() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/GenericExtensionFunReceiver2.kt");
+            runTest("idea/idea-completion/testData/basic/common/GenericExtensionFunReceiver2.kt");
         }
 
         @TestMetadata("GenericKotlinClass.kt")
         public void testGenericKotlinClass() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/GenericKotlinClass.kt");
+            runTest("idea/idea-completion/testData/basic/common/GenericKotlinClass.kt");
         }
 
         @TestMetadata("GetPrefixForProperties.kt")
         public void testGetPrefixForProperties() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/GetPrefixForProperties.kt");
+            runTest("idea/idea-completion/testData/basic/common/GetPrefixForProperties.kt");
         }
 
         @TestMetadata("ImportedEnumMembers.kt")
         public void testImportedEnumMembers() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/ImportedEnumMembers.kt");
+            runTest("idea/idea-completion/testData/basic/common/ImportedEnumMembers.kt");
         }
 
         @TestMetadata("ImportedMemberFromObject.kt")
         public void testImportedMemberFromObject() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/ImportedMemberFromObject.kt");
+            runTest("idea/idea-completion/testData/basic/common/ImportedMemberFromObject.kt");
         }
 
         @TestMetadata("InCallExpression.kt")
         public void testInCallExpression() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InCallExpression.kt");
+            runTest("idea/idea-completion/testData/basic/common/InCallExpression.kt");
         }
 
         @TestMetadata("InClassInitializer.kt")
         public void testInClassInitializer() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InClassInitializer.kt");
+            runTest("idea/idea-completion/testData/basic/common/InClassInitializer.kt");
         }
 
         @TestMetadata("InClassObject.kt")
         public void testInClassObject() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InClassObject.kt");
+            runTest("idea/idea-completion/testData/basic/common/InClassObject.kt");
         }
 
         @TestMetadata("InClassPropertyAccessor.kt")
         public void testInClassPropertyAccessor() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InClassPropertyAccessor.kt");
+            runTest("idea/idea-completion/testData/basic/common/InClassPropertyAccessor.kt");
         }
 
         @TestMetadata("InEmptyImport.kt")
         public void testInEmptyImport() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InEmptyImport.kt");
+            runTest("idea/idea-completion/testData/basic/common/InEmptyImport.kt");
         }
 
         @TestMetadata("InEmptyPackage.kt")
         public void testInEmptyPackage() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InEmptyPackage.kt");
+            runTest("idea/idea-completion/testData/basic/common/InEmptyPackage.kt");
         }
 
         @TestMetadata("InExpressionNoPrefix.kt")
         public void testInExpressionNoPrefix() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InExpressionNoPrefix.kt");
+            runTest("idea/idea-completion/testData/basic/common/InExpressionNoPrefix.kt");
         }
 
         @TestMetadata("InExtendTypeAnnotation.kt")
         public void testInExtendTypeAnnotation() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InExtendTypeAnnotation.kt");
+            runTest("idea/idea-completion/testData/basic/common/InExtendTypeAnnotation.kt");
         }
 
         @TestMetadata("InFileWithMultiDeclaration.kt")
         public void testInFileWithMultiDeclaration() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InFileWithMultiDeclaration.kt");
+            runTest("idea/idea-completion/testData/basic/common/InFileWithMultiDeclaration.kt");
         }
 
         @TestMetadata("InFileWithTypedef.kt")
         public void testInFileWithTypedef() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InFileWithTypedef.kt");
+            runTest("idea/idea-completion/testData/basic/common/InFileWithTypedef.kt");
         }
 
         @TestMetadata("InFunInClassInitializer.kt")
         public void testInFunInClassInitializer() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InFunInClassInitializer.kt");
+            runTest("idea/idea-completion/testData/basic/common/InFunInClassInitializer.kt");
         }
 
         @TestMetadata("InFunctionArguments.kt")
         public void testInFunctionArguments() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InFunctionArguments.kt");
+            runTest("idea/idea-completion/testData/basic/common/InFunctionArguments.kt");
         }
 
         @TestMetadata("InGlobalPropertyInitializer.kt")
         public void testInGlobalPropertyInitializer() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InGlobalPropertyInitializer.kt");
+            runTest("idea/idea-completion/testData/basic/common/InGlobalPropertyInitializer.kt");
         }
 
         @TestMetadata("InImport.kt")
         public void testInImport() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InImport.kt");
+            runTest("idea/idea-completion/testData/basic/common/InImport.kt");
         }
 
         @TestMetadata("InInitializerInPropertyAccessor.kt")
         public void testInInitializerInPropertyAccessor() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InInitializerInPropertyAccessor.kt");
+            runTest("idea/idea-completion/testData/basic/common/InInitializerInPropertyAccessor.kt");
         }
 
         @TestMetadata("InInnerClass.kt")
         public void testInInnerClass() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InInnerClass.kt");
+            runTest("idea/idea-completion/testData/basic/common/InInnerClass.kt");
         }
 
         @TestMetadata("InLambda.kt")
         public void testInLambda() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InLambda.kt");
+            runTest("idea/idea-completion/testData/basic/common/InLambda.kt");
         }
 
         @TestMetadata("InLocalObjectDeclaration.kt")
         public void testInLocalObjectDeclaration() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InLocalObjectDeclaration.kt");
+            runTest("idea/idea-completion/testData/basic/common/InLocalObjectDeclaration.kt");
         }
 
         @TestMetadata("InLongDotQualifiedExpression.kt")
         public void testInLongDotQualifiedExpression() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InLongDotQualifiedExpression.kt");
+            runTest("idea/idea-completion/testData/basic/common/InLongDotQualifiedExpression.kt");
         }
 
         @TestMetadata("InMiddleOfPackage.kt")
         public void testInMiddleOfPackage() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InMiddleOfPackage.kt");
+            runTest("idea/idea-completion/testData/basic/common/InMiddleOfPackage.kt");
         }
 
         @TestMetadata("InMiddleOfPackageDirective.kt")
         public void testInMiddleOfPackageDirective() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InMiddleOfPackageDirective.kt");
+            runTest("idea/idea-completion/testData/basic/common/InMiddleOfPackageDirective.kt");
         }
 
         @TestMetadata("InNestedClass.kt")
         public void testInNestedClass() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InNestedClass.kt");
+            runTest("idea/idea-completion/testData/basic/common/InNestedClass.kt");
         }
 
         @TestMetadata("InObjectInDelegationSpecifier.kt")
         public void testInObjectInDelegationSpecifier() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InObjectInDelegationSpecifier.kt");
+            runTest("idea/idea-completion/testData/basic/common/InObjectInDelegationSpecifier.kt");
         }
 
         @TestMetadata("InPackage.kt")
         public void testInPackage() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InPackage.kt");
+            runTest("idea/idea-completion/testData/basic/common/InPackage.kt");
         }
 
         @TestMetadata("InParametersTypes.kt")
         public void testInParametersTypes() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InParametersTypes.kt");
+            runTest("idea/idea-completion/testData/basic/common/InParametersTypes.kt");
         }
 
         @TestMetadata("InParametersTypesForce.kt")
         public void testInParametersTypesForce() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InParametersTypesForce.kt");
+            runTest("idea/idea-completion/testData/basic/common/InParametersTypesForce.kt");
         }
 
         @TestMetadata("InPropertyAccessor.kt")
         public void testInPropertyAccessor() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InPropertyAccessor.kt");
+            runTest("idea/idea-completion/testData/basic/common/InPropertyAccessor.kt");
         }
 
         @TestMetadata("InPropertyInitializer.kt")
         public void testInPropertyInitializer() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InPropertyInitializer.kt");
+            runTest("idea/idea-completion/testData/basic/common/InPropertyInitializer.kt");
         }
 
         @TestMetadata("InSecondaryConstructorBody.kt")
         public void testInSecondaryConstructorBody() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InSecondaryConstructorBody.kt");
+            runTest("idea/idea-completion/testData/basic/common/InSecondaryConstructorBody.kt");
         }
 
         @TestMetadata("InSecondaryConstructorDefaultParameter.kt")
         public void testInSecondaryConstructorDefaultParameter() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InSecondaryConstructorDefaultParameter.kt");
+            runTest("idea/idea-completion/testData/basic/common/InSecondaryConstructorDefaultParameter.kt");
         }
 
         @TestMetadata("InSecondaryConstructorDelegationCall.kt")
         public void testInSecondaryConstructorDelegationCall() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InSecondaryConstructorDelegationCall.kt");
+            runTest("idea/idea-completion/testData/basic/common/InSecondaryConstructorDelegationCall.kt");
         }
 
         @TestMetadata("InSecondaryConstructorFirstDefaultParameter.kt")
         public void testInSecondaryConstructorFirstDefaultParameter() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InSecondaryConstructorFirstDefaultParameter.kt");
+            runTest("idea/idea-completion/testData/basic/common/InSecondaryConstructorFirstDefaultParameter.kt");
         }
 
         @TestMetadata("InTypeAnnotation.kt")
         public void testInTypeAnnotation() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InTypeAnnotation.kt");
+            runTest("idea/idea-completion/testData/basic/common/InTypeAnnotation.kt");
         }
 
         @TestMetadata("InfixCall.kt")
         public void testInfixCall() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InfixCall.kt");
+            runTest("idea/idea-completion/testData/basic/common/InfixCall.kt");
         }
 
         @TestMetadata("InfixCallNoSpecialLambdaArgumentItem.kt")
         public void testInfixCallNoSpecialLambdaArgumentItem() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InfixCallNoSpecialLambdaArgumentItem.kt");
+            runTest("idea/idea-completion/testData/basic/common/InfixCallNoSpecialLambdaArgumentItem.kt");
         }
 
         @TestMetadata("InnerClass.kt")
         public void testInnerClass() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InnerClass.kt");
+            runTest("idea/idea-completion/testData/basic/common/InnerClass.kt");
         }
 
         @TestMetadata("InnerInBaseClass.kt")
         public void testInnerInBaseClass() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InnerInBaseClass.kt");
+            runTest("idea/idea-completion/testData/basic/common/InnerInBaseClass.kt");
         }
 
         @TestMetadata("InsideAnonymousClass.kt")
         public void testInsideAnonymousClass() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InsideAnonymousClass.kt");
+            runTest("idea/idea-completion/testData/basic/common/InsideAnonymousClass.kt");
         }
 
         @TestMetadata("InterfaceNameBeforeRunBug.kt")
         public void testInterfaceNameBeforeRunBug() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/InterfaceNameBeforeRunBug.kt");
+            runTest("idea/idea-completion/testData/basic/common/InterfaceNameBeforeRunBug.kt");
         }
 
         @TestMetadata("KT10664.kt")
         public void testKT10664() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/KT10664.kt");
+            runTest("idea/idea-completion/testData/basic/common/KT10664.kt");
         }
 
         @TestMetadata("KT12033.kt")
         public void testKT12033() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/KT12033.kt");
+            runTest("idea/idea-completion/testData/basic/common/KT12033.kt");
         }
 
         @TestMetadata("KT13780.kt")
         public void testKT13780() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/KT13780.kt");
+            runTest("idea/idea-completion/testData/basic/common/KT13780.kt");
         }
 
         @TestMetadata("KT13780_1.kt")
         public void testKT13780_1() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/KT13780_1.kt");
+            runTest("idea/idea-completion/testData/basic/common/KT13780_1.kt");
         }
 
         @TestMetadata("LocalMultideclarationValues.kt")
         public void testLocalMultideclarationValues() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/LocalMultideclarationValues.kt");
+            runTest("idea/idea-completion/testData/basic/common/LocalMultideclarationValues.kt");
         }
 
         @TestMetadata("NameWithDollars.kt")
         public void testNameWithDollars() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/NameWithDollars.kt");
+            runTest("idea/idea-completion/testData/basic/common/NameWithDollars.kt");
         }
 
         @TestMetadata("NamedObject.kt")
         public void testNamedObject() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/NamedObject.kt");
+            runTest("idea/idea-completion/testData/basic/common/NamedObject.kt");
         }
 
         @TestMetadata("NestedBuiltInClass.kt")
         public void testNestedBuiltInClass() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/NestedBuiltInClass.kt");
+            runTest("idea/idea-completion/testData/basic/common/NestedBuiltInClass.kt");
         }
 
         @TestMetadata("NestedClassBug.kt")
         public void testNestedClassBug() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/NestedClassBug.kt");
+            runTest("idea/idea-completion/testData/basic/common/NestedClassBug.kt");
         }
 
         @TestMetadata("NestedClassNameForExtension.kt")
         public void testNestedClassNameForExtension() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/NestedClassNameForExtension.kt");
+            runTest("idea/idea-completion/testData/basic/common/NestedClassNameForExtension.kt");
         }
 
         @TestMetadata("NestedClassNameForExtension2.kt")
         public void testNestedClassNameForExtension2() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/NestedClassNameForExtension2.kt");
+            runTest("idea/idea-completion/testData/basic/common/NestedClassNameForExtension2.kt");
         }
 
         @TestMetadata("NestedClassesOnClassWithDefaultObject.kt")
         public void testNestedClassesOnClassWithDefaultObject() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/NestedClassesOnClassWithDefaultObject.kt");
+            runTest("idea/idea-completion/testData/basic/common/NestedClassesOnClassWithDefaultObject.kt");
         }
 
         @TestMetadata("NestedClassesOnClassWithNamedDefaultObject.kt")
         public void testNestedClassesOnClassWithNamedDefaultObject() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/NestedClassesOnClassWithNamedDefaultObject.kt");
+            runTest("idea/idea-completion/testData/basic/common/NestedClassesOnClassWithNamedDefaultObject.kt");
         }
 
         @TestMetadata("NestedClassesOnDefaultObjectLiteral.kt")
         public void testNestedClassesOnDefaultObjectLiteral() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/NestedClassesOnDefaultObjectLiteral.kt");
+            runTest("idea/idea-completion/testData/basic/common/NestedClassesOnDefaultObjectLiteral.kt");
         }
 
         @TestMetadata("NoAutoInsertionOfNotImported.kt")
         public void testNoAutoInsertionOfNotImported() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/NoAutoInsertionOfNotImported.kt");
+            runTest("idea/idea-completion/testData/basic/common/NoAutoInsertionOfNotImported.kt");
         }
 
         @TestMetadata("NoClassNameDuplication.kt")
         public void testNoClassNameDuplication() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/NoClassNameDuplication.kt");
+            runTest("idea/idea-completion/testData/basic/common/NoClassNameDuplication.kt");
         }
 
         @TestMetadata("NoCompletionForCoroutinesIntinsics.kt")
         public void testNoCompletionForCoroutinesIntinsics() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/NoCompletionForCoroutinesIntinsics.kt");
+            runTest("idea/idea-completion/testData/basic/common/NoCompletionForCoroutinesIntinsics.kt");
         }
 
         @TestMetadata("NoCompletionForCoroutinesJvmInternal.kt")
         public void testNoCompletionForCoroutinesJvmInternal() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/NoCompletionForCoroutinesJvmInternal.kt");
+            runTest("idea/idea-completion/testData/basic/common/NoCompletionForCoroutinesJvmInternal.kt");
         }
 
         @TestMetadata("NoCompletionForExcluded.kt")
         public void testNoCompletionForExcluded() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/NoCompletionForExcluded.kt");
+            runTest("idea/idea-completion/testData/basic/common/NoCompletionForExcluded.kt");
         }
 
         @TestMetadata("NoEmptyPackage.kt")
         public void testNoEmptyPackage() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/NoEmptyPackage.kt");
+            runTest("idea/idea-completion/testData/basic/common/NoEmptyPackage.kt");
         }
 
         @TestMetadata("NoEnumEntryType.kt")
         public void testNoEnumEntryType() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/NoEnumEntryType.kt");
+            runTest("idea/idea-completion/testData/basic/common/NoEnumEntryType.kt");
         }
 
         @TestMetadata("NoEnumMembersFromImplicitQualifier.kt")
         public void testNoEnumMembersFromImplicitQualifier() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/NoEnumMembersFromImplicitQualifier.kt");
+            runTest("idea/idea-completion/testData/basic/common/NoEnumMembersFromImplicitQualifier.kt");
         }
 
         @TestMetadata("NoExtensionsAfterQualifier.kt")
         public void testNoExtensionsAfterQualifier() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/NoExtensionsAfterQualifier.kt");
+            runTest("idea/idea-completion/testData/basic/common/NoExtensionsAfterQualifier.kt");
         }
 
         @TestMetadata("NoLocalsDeclaredAhead.kt")
         public void testNoLocalsDeclaredAhead() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/NoLocalsDeclaredAhead.kt");
+            runTest("idea/idea-completion/testData/basic/common/NoLocalsDeclaredAhead.kt");
         }
 
         @TestMetadata("NoNestedClassAfterReceiver.kt")
         public void testNoNestedClassAfterReceiver() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/NoNestedClassAfterReceiver.kt");
+            runTest("idea/idea-completion/testData/basic/common/NoNestedClassAfterReceiver.kt");
         }
 
         @TestMetadata("NoNestedClassesFromImplicitQualifier.kt")
         public void testNoNestedClassesFromImplicitQualifier() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/NoNestedClassesFromImplicitQualifier.kt");
+            runTest("idea/idea-completion/testData/basic/common/NoNestedClassesFromImplicitQualifier.kt");
         }
 
         @TestMetadata("NoPackageFacadeClasses.kt")
         public void testNoPackageFacadeClasses() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/NoPackageFacadeClasses.kt");
+            runTest("idea/idea-completion/testData/basic/common/NoPackageFacadeClasses.kt");
         }
 
         @TestMetadata("NoParameterAnnotationInPresentation.kt")
         public void testNoParameterAnnotationInPresentation() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/NoParameterAnnotationInPresentation.kt");
+            runTest("idea/idea-completion/testData/basic/common/NoParameterAnnotationInPresentation.kt");
         }
 
         @TestMetadata("NoTopLevelCompletionInQualifiedUserTypes.kt")
         public void testNoTopLevelCompletionInQualifiedUserTypes() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/NoTopLevelCompletionInQualifiedUserTypes.kt");
+            runTest("idea/idea-completion/testData/basic/common/NoTopLevelCompletionInQualifiedUserTypes.kt");
         }
 
         @TestMetadata("ObjectInTypePosition.kt")
         public void testObjectInTypePosition() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/ObjectInTypePosition.kt");
+            runTest("idea/idea-completion/testData/basic/common/ObjectInTypePosition.kt");
         }
 
         @TestMetadata("ObjectMembersFromNested.kt")
         public void testObjectMembersFromNested() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/ObjectMembersFromNested.kt");
+            runTest("idea/idea-completion/testData/basic/common/ObjectMembersFromNested.kt");
         }
 
         @TestMetadata("ObjectRedeclaration1.kt")
         public void testObjectRedeclaration1() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/ObjectRedeclaration1.kt");
+            runTest("idea/idea-completion/testData/basic/common/ObjectRedeclaration1.kt");
         }
 
         @TestMetadata("ObjectRedeclaration2.kt")
         public void testObjectRedeclaration2() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/ObjectRedeclaration2.kt");
+            runTest("idea/idea-completion/testData/basic/common/ObjectRedeclaration2.kt");
         }
 
         @TestMetadata("OverloadFunctions.kt")
         public void testOverloadFunctions() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/OverloadFunctions.kt");
+            runTest("idea/idea-completion/testData/basic/common/OverloadFunctions.kt");
         }
 
         @TestMetadata("PreferLessParameters.kt")
         public void testPreferLessParameters() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/PreferLessParameters.kt");
+            runTest("idea/idea-completion/testData/basic/common/PreferLessParameters.kt");
         }
 
         @TestMetadata("PrivatesInSecondPressCompletion.kt")
         public void testPrivatesInSecondPressCompletion() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/PrivatesInSecondPressCompletion.kt");
+            runTest("idea/idea-completion/testData/basic/common/PrivatesInSecondPressCompletion.kt");
         }
 
         @TestMetadata("ProtectedExtensionMethod.kt")
         public void testProtectedExtensionMethod() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/ProtectedExtensionMethod.kt");
+            runTest("idea/idea-completion/testData/basic/common/ProtectedExtensionMethod.kt");
         }
 
         @TestMetadata("QualifiedSuperMembers.kt")
         public void testQualifiedSuperMembers() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/QualifiedSuperMembers.kt");
+            runTest("idea/idea-completion/testData/basic/common/QualifiedSuperMembers.kt");
         }
 
         @TestMetadata("RecieverMembersFromExtAccessor.kt")
         public void testRecieverMembersFromExtAccessor() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/RecieverMembersFromExtAccessor.kt");
+            runTest("idea/idea-completion/testData/basic/common/RecieverMembersFromExtAccessor.kt");
         }
 
         @TestMetadata("RecieverMembersFromExtFun.kt")
         public void testRecieverMembersFromExtFun() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/RecieverMembersFromExtFun.kt");
+            runTest("idea/idea-completion/testData/basic/common/RecieverMembersFromExtFun.kt");
         }
 
         @TestMetadata("SetPrefixForProperties.kt")
         public void testSetPrefixForProperties() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/SetPrefixForProperties.kt");
+            runTest("idea/idea-completion/testData/basic/common/SetPrefixForProperties.kt");
         }
 
         @TestMetadata("ShortClassNamesInTypePosition.kt")
         public void testShortClassNamesInTypePosition() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/ShortClassNamesInTypePosition.kt");
+            runTest("idea/idea-completion/testData/basic/common/ShortClassNamesInTypePosition.kt");
         }
 
         @TestMetadata("StandardJetArrayFirst.kt")
         public void testStandardJetArrayFirst() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/StandardJetArrayFirst.kt");
+            runTest("idea/idea-completion/testData/basic/common/StandardJetArrayFirst.kt");
         }
 
         @TestMetadata("StandardJetDoubleFirst.kt")
         public void testStandardJetDoubleFirst() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/StandardJetDoubleFirst.kt");
+            runTest("idea/idea-completion/testData/basic/common/StandardJetDoubleFirst.kt");
         }
 
         @TestMetadata("SubpackageInFun.kt")
         public void testSubpackageInFun() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/SubpackageInFun.kt");
+            runTest("idea/idea-completion/testData/basic/common/SubpackageInFun.kt");
         }
 
         @TestMetadata("SuperMembers.kt")
         public void testSuperMembers() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/SuperMembers.kt");
+            runTest("idea/idea-completion/testData/basic/common/SuperMembers.kt");
         }
 
         @TestMetadata("SuperMembers2.kt")
         public void testSuperMembers2() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/SuperMembers2.kt");
+            runTest("idea/idea-completion/testData/basic/common/SuperMembers2.kt");
         }
 
         @TestMetadata("SuperMembers3.kt")
         public void testSuperMembers3() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/SuperMembers3.kt");
+            runTest("idea/idea-completion/testData/basic/common/SuperMembers3.kt");
         }
 
         @TestMetadata("SuperMembers4.kt")
         public void testSuperMembers4() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/SuperMembers4.kt");
+            runTest("idea/idea-completion/testData/basic/common/SuperMembers4.kt");
         }
 
         @TestMetadata("TopLevelClassCompletionInQualifiedCall.kt")
         public void testTopLevelClassCompletionInQualifiedCall() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/TopLevelClassCompletionInQualifiedCall.kt");
+            runTest("idea/idea-completion/testData/basic/common/TopLevelClassCompletionInQualifiedCall.kt");
         }
 
         @TestMetadata("TopLevelClassName1.kt")
         public void testTopLevelClassName1() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/TopLevelClassName1.kt");
+            runTest("idea/idea-completion/testData/basic/common/TopLevelClassName1.kt");
         }
 
         @TestMetadata("topLevelClassName2.kt")
         public void testTopLevelClassName2() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/topLevelClassName2.kt");
+            runTest("idea/idea-completion/testData/basic/common/topLevelClassName2.kt");
         }
 
         @TestMetadata("TopLevelClassName4.kt")
         public void testTopLevelClassName4() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/TopLevelClassName4.kt");
+            runTest("idea/idea-completion/testData/basic/common/TopLevelClassName4.kt");
         }
 
         @TestMetadata("TopLevelClassName5.kt")
         public void testTopLevelClassName5() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/TopLevelClassName5.kt");
+            runTest("idea/idea-completion/testData/basic/common/TopLevelClassName5.kt");
         }
 
         @TestMetadata("TopLevelClassName6.kt")
         public void testTopLevelClassName6() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/TopLevelClassName6.kt");
+            runTest("idea/idea-completion/testData/basic/common/TopLevelClassName6.kt");
         }
 
         @TestMetadata("TopLevelClassName-3.kt")
         public void testTopLevelClassName_3() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/TopLevelClassName-3.kt");
+            runTest("idea/idea-completion/testData/basic/common/TopLevelClassName-3.kt");
         }
 
         @TestMetadata("TypeArgCompletionBug.kt")
         public void testTypeArgCompletionBug() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/TypeArgCompletionBug.kt");
+            runTest("idea/idea-completion/testData/basic/common/TypeArgCompletionBug.kt");
         }
 
         @TestMetadata("TypeArgFromTheSameFile.kt")
         public void testTypeArgFromTheSameFile() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/TypeArgFromTheSameFile.kt");
+            runTest("idea/idea-completion/testData/basic/common/TypeArgFromTheSameFile.kt");
         }
 
         @TestMetadata("TypeArgOfOwnerClass.kt")
         public void testTypeArgOfOwnerClass() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/TypeArgOfOwnerClass.kt");
+            runTest("idea/idea-completion/testData/basic/common/TypeArgOfOwnerClass.kt");
         }
 
         @TestMetadata("TypeParameterFromOuterClass.kt")
         public void testTypeParameterFromOuterClass() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/TypeParameterFromOuterClass.kt");
+            runTest("idea/idea-completion/testData/basic/common/TypeParameterFromOuterClass.kt");
         }
 
         @TestMetadata("VariableClassName.kt")
         public void testVariableClassName() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/VariableClassName.kt");
+            runTest("idea/idea-completion/testData/basic/common/VariableClassName.kt");
         }
 
         @TestMetadata("idea/idea-completion/testData/basic/common/annotations")
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Annotations extends AbstractJSBasicCompletionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             @TestMetadata("AfterPackageName.kt")
             public void testAfterPackageName() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/annotations/AfterPackageName.kt");
+                runTest("idea/idea-completion/testData/basic/common/annotations/AfterPackageName.kt");
             }
 
             public void testAllFilesPresentInAnnotations() throws Exception {
@@ -727,147 +735,147 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
 
             @TestMetadata("Annotated.kt")
             public void testAnnotated() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/annotations/Annotated.kt");
+                runTest("idea/idea-completion/testData/basic/common/annotations/Annotated.kt");
             }
 
             @TestMetadata("AnnotationTarget.kt")
             public void testAnnotationTarget() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/annotations/AnnotationTarget.kt");
+                runTest("idea/idea-completion/testData/basic/common/annotations/AnnotationTarget.kt");
             }
 
             @TestMetadata("Deprecated.kt")
             public void testDeprecated() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/annotations/Deprecated.kt");
+                runTest("idea/idea-completion/testData/basic/common/annotations/Deprecated.kt");
             }
 
             @TestMetadata("Deprecated2.kt")
             public void testDeprecated2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/annotations/Deprecated2.kt");
+                runTest("idea/idea-completion/testData/basic/common/annotations/Deprecated2.kt");
             }
 
             @TestMetadata("ForType.kt")
             public void testForType() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/annotations/ForType.kt");
+                runTest("idea/idea-completion/testData/basic/common/annotations/ForType.kt");
             }
 
             @TestMetadata("FunctionAnnotation1.kt")
             public void testFunctionAnnotation1() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/annotations/FunctionAnnotation1.kt");
+                runTest("idea/idea-completion/testData/basic/common/annotations/FunctionAnnotation1.kt");
             }
 
             @TestMetadata("FunctionAnnotation2.kt")
             public void testFunctionAnnotation2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/annotations/FunctionAnnotation2.kt");
+                runTest("idea/idea-completion/testData/basic/common/annotations/FunctionAnnotation2.kt");
             }
 
             @TestMetadata("NoCatchParameterAutopopup.kt")
             public void testNoCatchParameterAutopopup() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/annotations/NoCatchParameterAutopopup.kt");
+                runTest("idea/idea-completion/testData/basic/common/annotations/NoCatchParameterAutopopup.kt");
             }
 
             @TestMetadata("NoSetterParameterAutopopup.kt")
             public void testNoSetterParameterAutopopup() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/annotations/NoSetterParameterAutopopup.kt");
+                runTest("idea/idea-completion/testData/basic/common/annotations/NoSetterParameterAutopopup.kt");
             }
 
             @TestMetadata("OnlyAnnotations.kt")
             public void testOnlyAnnotations() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/annotations/OnlyAnnotations.kt");
+                runTest("idea/idea-completion/testData/basic/common/annotations/OnlyAnnotations.kt");
             }
 
             @TestMetadata("ParameterAnnotation1.kt")
             public void testParameterAnnotation1() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/annotations/ParameterAnnotation1.kt");
+                runTest("idea/idea-completion/testData/basic/common/annotations/ParameterAnnotation1.kt");
             }
 
             @TestMetadata("ParameterAnnotation2.kt")
             public void testParameterAnnotation2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/annotations/ParameterAnnotation2.kt");
+                runTest("idea/idea-completion/testData/basic/common/annotations/ParameterAnnotation2.kt");
             }
 
             @TestMetadata("ParameterAnnotation3.kt")
             public void testParameterAnnotation3() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/annotations/ParameterAnnotation3.kt");
+                runTest("idea/idea-completion/testData/basic/common/annotations/ParameterAnnotation3.kt");
             }
 
             @TestMetadata("ParameterAnnotation4.kt")
             public void testParameterAnnotation4() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/annotations/ParameterAnnotation4.kt");
+                runTest("idea/idea-completion/testData/basic/common/annotations/ParameterAnnotation4.kt");
             }
 
             @TestMetadata("ParameterAnnotation5.kt")
             public void testParameterAnnotation5() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/annotations/ParameterAnnotation5.kt");
+                runTest("idea/idea-completion/testData/basic/common/annotations/ParameterAnnotation5.kt");
             }
 
             @TestMetadata("ParameterAnnotation6.kt")
             public void testParameterAnnotation6() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/annotations/ParameterAnnotation6.kt");
+                runTest("idea/idea-completion/testData/basic/common/annotations/ParameterAnnotation6.kt");
             }
 
             @TestMetadata("ParameterAnnotation7.kt")
             public void testParameterAnnotation7() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/annotations/ParameterAnnotation7.kt");
+                runTest("idea/idea-completion/testData/basic/common/annotations/ParameterAnnotation7.kt");
             }
 
             @TestMetadata("ParameterAnnotation8.kt")
             public void testParameterAnnotation8() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/annotations/ParameterAnnotation8.kt");
+                runTest("idea/idea-completion/testData/basic/common/annotations/ParameterAnnotation8.kt");
             }
 
             @TestMetadata("ParameterAnnotation9.kt")
             public void testParameterAnnotation9() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/annotations/ParameterAnnotation9.kt");
+                runTest("idea/idea-completion/testData/basic/common/annotations/ParameterAnnotation9.kt");
             }
 
             @TestMetadata("ParameterAnnotationArgs.kt")
             public void testParameterAnnotationArgs() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/annotations/ParameterAnnotationArgs.kt");
+                runTest("idea/idea-completion/testData/basic/common/annotations/ParameterAnnotationArgs.kt");
             }
 
             @TestMetadata("ParameterAnnotationAutoPopup1.kt")
             public void testParameterAnnotationAutoPopup1() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/annotations/ParameterAnnotationAutoPopup1.kt");
+                runTest("idea/idea-completion/testData/basic/common/annotations/ParameterAnnotationAutoPopup1.kt");
             }
 
             @TestMetadata("ParameterAnnotationAutoPopup2.kt")
             public void testParameterAnnotationAutoPopup2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/annotations/ParameterAnnotationAutoPopup2.kt");
+                runTest("idea/idea-completion/testData/basic/common/annotations/ParameterAnnotationAutoPopup2.kt");
             }
 
             @TestMetadata("TopLevelAnnotation1.kt")
             public void testTopLevelAnnotation1() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/annotations/TopLevelAnnotation1.kt");
+                runTest("idea/idea-completion/testData/basic/common/annotations/TopLevelAnnotation1.kt");
             }
 
             @TestMetadata("TopLevelAnnotation2.kt")
             public void testTopLevelAnnotation2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/annotations/TopLevelAnnotation2.kt");
+                runTest("idea/idea-completion/testData/basic/common/annotations/TopLevelAnnotation2.kt");
             }
 
             @TestMetadata("TopLevelAnnotation3.kt")
             public void testTopLevelAnnotation3() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/annotations/TopLevelAnnotation3.kt");
+                runTest("idea/idea-completion/testData/basic/common/annotations/TopLevelAnnotation3.kt");
             }
 
             @TestMetadata("TopLevelAnnotation4.kt")
             public void testTopLevelAnnotation4() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/annotations/TopLevelAnnotation4.kt");
+                runTest("idea/idea-completion/testData/basic/common/annotations/TopLevelAnnotation4.kt");
             }
 
             @TestMetadata("TopLevelAnnotationArg1.kt")
             public void testTopLevelAnnotationArg1() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/annotations/TopLevelAnnotationArg1.kt");
+                runTest("idea/idea-completion/testData/basic/common/annotations/TopLevelAnnotationArg1.kt");
             }
 
             @TestMetadata("TopLevelAnnotationArg2.kt")
             public void testTopLevelAnnotationArg2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/annotations/TopLevelAnnotationArg2.kt");
+                runTest("idea/idea-completion/testData/basic/common/annotations/TopLevelAnnotationArg2.kt");
             }
 
             @TestMetadata("TypeAliasToAnnotation.kt")
             public void testTypeAliasToAnnotation() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/annotations/TypeAliasToAnnotation.kt");
+                runTest("idea/idea-completion/testData/basic/common/annotations/TypeAliasToAnnotation.kt");
             }
         }
 
@@ -875,83 +883,87 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class AutoPopup extends AbstractJSBasicCompletionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInAutoPopup() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/idea-completion/testData/basic/common/autoPopup"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("AutopopupInFunExtensionReceiver.kt")
             public void testAutopopupInFunExtensionReceiver() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/autoPopup/AutopopupInFunExtensionReceiver.kt");
+                runTest("idea/idea-completion/testData/basic/common/autoPopup/AutopopupInFunExtensionReceiver.kt");
             }
 
             @TestMetadata("GenericExtensionFunTypeArgument.kt")
             public void testGenericExtensionFunTypeArgument() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/autoPopup/GenericExtensionFunTypeArgument.kt");
+                runTest("idea/idea-completion/testData/basic/common/autoPopup/GenericExtensionFunTypeArgument.kt");
             }
 
             @TestMetadata("GenericExtensionFunTypeArgument2.kt")
             public void testGenericExtensionFunTypeArgument2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/autoPopup/GenericExtensionFunTypeArgument2.kt");
+                runTest("idea/idea-completion/testData/basic/common/autoPopup/GenericExtensionFunTypeArgument2.kt");
             }
 
             @TestMetadata("InExtFunName.kt")
             public void testInExtFunName() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/autoPopup/InExtFunName.kt");
+                runTest("idea/idea-completion/testData/basic/common/autoPopup/InExtFunName.kt");
             }
 
             @TestMetadata("InGenericExtFunName.kt")
             public void testInGenericExtFunName() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/autoPopup/InGenericExtFunName.kt");
+                runTest("idea/idea-completion/testData/basic/common/autoPopup/InGenericExtFunName.kt");
             }
 
             @TestMetadata("InValExtType.kt")
             public void testInValExtType() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/autoPopup/InValExtType.kt");
+                runTest("idea/idea-completion/testData/basic/common/autoPopup/InValExtType.kt");
             }
 
             @TestMetadata("NoAutoPopupAfterNumberLiteral.kt")
             public void testNoAutoPopupAfterNumberLiteral() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/autoPopup/NoAutoPopupAfterNumberLiteral.kt");
+                runTest("idea/idea-completion/testData/basic/common/autoPopup/NoAutoPopupAfterNumberLiteral.kt");
             }
 
             @TestMetadata("NoAutoPopupInValName.kt")
             public void testNoAutoPopupInValName() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/autoPopup/NoAutoPopupInValName.kt");
+                runTest("idea/idea-completion/testData/basic/common/autoPopup/NoAutoPopupInValName.kt");
             }
 
             @TestMetadata("NoAutopopupInFunName.kt")
             public void testNoAutopopupInFunName() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/autoPopup/NoAutopopupInFunName.kt");
+                runTest("idea/idea-completion/testData/basic/common/autoPopup/NoAutopopupInFunName.kt");
             }
 
             @TestMetadata("NoAutopopupInGenericFunName.kt")
             public void testNoAutopopupInGenericFunName() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/autoPopup/NoAutopopupInGenericFunName.kt");
+                runTest("idea/idea-completion/testData/basic/common/autoPopup/NoAutopopupInGenericFunName.kt");
             }
 
             @TestMetadata("NoAutopopupInGenericValName.kt")
             public void testNoAutopopupInGenericValName() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/autoPopup/NoAutopopupInGenericValName.kt");
+                runTest("idea/idea-completion/testData/basic/common/autoPopup/NoAutopopupInGenericValName.kt");
             }
 
             @TestMetadata("NoAutopopupInGenericVarName.kt")
             public void testNoAutopopupInGenericVarName() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/autoPopup/NoAutopopupInGenericVarName.kt");
+                runTest("idea/idea-completion/testData/basic/common/autoPopup/NoAutopopupInGenericVarName.kt");
             }
 
             @TestMetadata("NoAutopopupInVarName.kt")
             public void testNoAutopopupInVarName() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/autoPopup/NoAutopopupInVarName.kt");
+                runTest("idea/idea-completion/testData/basic/common/autoPopup/NoAutopopupInVarName.kt");
             }
 
             @TestMetadata("NoSecondPressCompletionInAutoPopup.kt")
             public void testNoSecondPressCompletionInAutoPopup() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/autoPopup/NoSecondPressCompletionInAutoPopup.kt");
+                runTest("idea/idea-completion/testData/basic/common/autoPopup/NoSecondPressCompletionInAutoPopup.kt");
             }
 
             @TestMetadata("OnlyScopedClassesWithoutExplicit.kt")
             public void testOnlyScopedClassesWithoutExplicit() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/autoPopup/OnlyScopedClassesWithoutExplicit.kt");
+                runTest("idea/idea-completion/testData/basic/common/autoPopup/OnlyScopedClassesWithoutExplicit.kt");
             }
         }
 
@@ -959,19 +971,23 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class BoldOrGrayed extends AbstractJSBasicCompletionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             @TestMetadata("AfterNullable.kt")
             public void testAfterNullable() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/boldOrGrayed/AfterNullable.kt");
+                runTest("idea/idea-completion/testData/basic/common/boldOrGrayed/AfterNullable.kt");
             }
 
             @TestMetadata("AfterNullableAutoCast.kt")
             public void testAfterNullableAutoCast() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/boldOrGrayed/AfterNullableAutoCast.kt");
+                runTest("idea/idea-completion/testData/basic/common/boldOrGrayed/AfterNullableAutoCast.kt");
             }
 
             @TestMetadata("AfterNullableAutoCast2.kt")
             public void testAfterNullableAutoCast2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/boldOrGrayed/AfterNullableAutoCast2.kt");
+                runTest("idea/idea-completion/testData/basic/common/boldOrGrayed/AfterNullableAutoCast2.kt");
             }
 
             public void testAllFilesPresentInBoldOrGrayed() throws Exception {
@@ -980,82 +996,82 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
 
             @TestMetadata("ImmediateExtensionMembers1.kt")
             public void testImmediateExtensionMembers1() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/boldOrGrayed/ImmediateExtensionMembers1.kt");
+                runTest("idea/idea-completion/testData/basic/common/boldOrGrayed/ImmediateExtensionMembers1.kt");
             }
 
             @TestMetadata("ImmediateExtensionMembers2.kt")
             public void testImmediateExtensionMembers2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/boldOrGrayed/ImmediateExtensionMembers2.kt");
+                runTest("idea/idea-completion/testData/basic/common/boldOrGrayed/ImmediateExtensionMembers2.kt");
             }
 
             @TestMetadata("ImmediateExtensionMembers3.kt")
             public void testImmediateExtensionMembers3() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/boldOrGrayed/ImmediateExtensionMembers3.kt");
+                runTest("idea/idea-completion/testData/basic/common/boldOrGrayed/ImmediateExtensionMembers3.kt");
             }
 
             @TestMetadata("ImmediateExtensionMembers4.kt")
             public void testImmediateExtensionMembers4() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/boldOrGrayed/ImmediateExtensionMembers4.kt");
+                runTest("idea/idea-completion/testData/basic/common/boldOrGrayed/ImmediateExtensionMembers4.kt");
             }
 
             @TestMetadata("ImmediateExtensionMembersGeneric.kt")
             public void testImmediateExtensionMembersGeneric() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/boldOrGrayed/ImmediateExtensionMembersGeneric.kt");
+                runTest("idea/idea-completion/testData/basic/common/boldOrGrayed/ImmediateExtensionMembersGeneric.kt");
             }
 
             @TestMetadata("ImmediateMembers1.kt")
             public void testImmediateMembers1() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/boldOrGrayed/ImmediateMembers1.kt");
+                runTest("idea/idea-completion/testData/basic/common/boldOrGrayed/ImmediateMembers1.kt");
             }
 
             @TestMetadata("ImmediateMembers2.kt")
             public void testImmediateMembers2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/boldOrGrayed/ImmediateMembers2.kt");
+                runTest("idea/idea-completion/testData/basic/common/boldOrGrayed/ImmediateMembers2.kt");
             }
 
             @TestMetadata("ImmediateMembers3.kt")
             public void testImmediateMembers3() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/boldOrGrayed/ImmediateMembers3.kt");
+                runTest("idea/idea-completion/testData/basic/common/boldOrGrayed/ImmediateMembers3.kt");
             }
 
             @TestMetadata("ImmediateMembers4.kt")
             public void testImmediateMembers4() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/boldOrGrayed/ImmediateMembers4.kt");
+                runTest("idea/idea-completion/testData/basic/common/boldOrGrayed/ImmediateMembers4.kt");
             }
 
             @TestMetadata("ImmediateMembers5.kt")
             public void testImmediateMembers5() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/boldOrGrayed/ImmediateMembers5.kt");
+                runTest("idea/idea-completion/testData/basic/common/boldOrGrayed/ImmediateMembers5.kt");
             }
 
             @TestMetadata("InExtensionForNullable.kt")
             public void testInExtensionForNullable() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/boldOrGrayed/InExtensionForNullable.kt");
+                runTest("idea/idea-completion/testData/basic/common/boldOrGrayed/InExtensionForNullable.kt");
             }
 
             @TestMetadata("KT9835.kt")
             public void testKT9835() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/boldOrGrayed/KT9835.kt");
+                runTest("idea/idea-completion/testData/basic/common/boldOrGrayed/KT9835.kt");
             }
 
             @TestMetadata("NonPredictableSmartCast.kt")
             public void testNonPredictableSmartCast() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/boldOrGrayed/NonPredictableSmartCast.kt");
+                runTest("idea/idea-completion/testData/basic/common/boldOrGrayed/NonPredictableSmartCast.kt");
             }
 
             @TestMetadata("NonPredictableSmartCastWithWrongReturnType.kt")
             public void testNonPredictableSmartCastWithWrongReturnType() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/boldOrGrayed/NonPredictableSmartCastWithWrongReturnType.kt");
+                runTest("idea/idea-completion/testData/basic/common/boldOrGrayed/NonPredictableSmartCastWithWrongReturnType.kt");
             }
 
             @TestMetadata("SafeCallAfterNullable.kt")
             public void testSafeCallAfterNullable() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/boldOrGrayed/SafeCallAfterNullable.kt");
+                runTest("idea/idea-completion/testData/basic/common/boldOrGrayed/SafeCallAfterNullable.kt");
             }
 
             @TestMetadata("TwoReceivers.kt")
             public void testTwoReceivers() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/boldOrGrayed/TwoReceivers.kt");
+                runTest("idea/idea-completion/testData/basic/common/boldOrGrayed/TwoReceivers.kt");
             }
         }
 
@@ -1063,48 +1079,52 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class CallableReference extends AbstractJSBasicCompletionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInCallableReference() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/idea-completion/testData/basic/common/callableReference"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("EmptyQualifier.kt")
             public void testEmptyQualifier() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/callableReference/EmptyQualifier.kt");
+                runTest("idea/idea-completion/testData/basic/common/callableReference/EmptyQualifier.kt");
             }
 
             @TestMetadata("EmptyQualifierInExtensionFun.kt")
             public void testEmptyQualifierInExtensionFun() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/callableReference/EmptyQualifierInExtensionFun.kt");
+                runTest("idea/idea-completion/testData/basic/common/callableReference/EmptyQualifierInExtensionFun.kt");
             }
 
             @TestMetadata("ExpressionQualifier.kt")
             public void testExpressionQualifier() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/callableReference/ExpressionQualifier.kt");
+                runTest("idea/idea-completion/testData/basic/common/callableReference/ExpressionQualifier.kt");
             }
 
             @TestMetadata("GenericConstructor.kt")
             public void testGenericConstructor() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/callableReference/GenericConstructor.kt");
+                runTest("idea/idea-completion/testData/basic/common/callableReference/GenericConstructor.kt");
             }
 
             @TestMetadata("HigherOrderFunction.kt")
             public void testHigherOrderFunction() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/callableReference/HigherOrderFunction.kt");
+                runTest("idea/idea-completion/testData/basic/common/callableReference/HigherOrderFunction.kt");
             }
 
             @TestMetadata("NonEmptyQualifier.kt")
             public void testNonEmptyQualifier() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/callableReference/NonEmptyQualifier.kt");
+                runTest("idea/idea-completion/testData/basic/common/callableReference/NonEmptyQualifier.kt");
             }
 
             @TestMetadata("SyntheticExtensions.kt")
             public void testSyntheticExtensions() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/callableReference/SyntheticExtensions.kt");
+                runTest("idea/idea-completion/testData/basic/common/callableReference/SyntheticExtensions.kt");
             }
 
             @TestMetadata("SyntheticExtensions2.kt")
             public void testSyntheticExtensions2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/callableReference/SyntheticExtensions2.kt");
+                runTest("idea/idea-completion/testData/basic/common/callableReference/SyntheticExtensions2.kt");
             }
         }
 
@@ -1112,14 +1132,18 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class DslMarker extends AbstractJSBasicCompletionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             @TestMetadata("2dslsInsideOtherChild.kt")
             public void test2dslsInsideOtherChild() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/dslMarker/2dslsInsideOtherChild.kt");
+                runTest("idea/idea-completion/testData/basic/common/dslMarker/2dslsInsideOtherChild.kt");
             }
 
             @TestMetadata("2receivers.kt")
             public void test2receivers() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/dslMarker/2receivers.kt");
+                runTest("idea/idea-completion/testData/basic/common/dslMarker/2receivers.kt");
             }
 
             public void testAllFilesPresentInDslMarker() throws Exception {
@@ -1128,22 +1152,22 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
 
             @TestMetadata("child.kt")
             public void testChild() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/dslMarker/child.kt");
+                runTest("idea/idea-completion/testData/basic/common/dslMarker/child.kt");
             }
 
             @TestMetadata("compositeDsl.kt")
             public void testCompositeDsl() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/dslMarker/compositeDsl.kt");
+                runTest("idea/idea-completion/testData/basic/common/dslMarker/compositeDsl.kt");
             }
 
             @TestMetadata("container.kt")
             public void testContainer() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/dslMarker/container.kt");
+                runTest("idea/idea-completion/testData/basic/common/dslMarker/container.kt");
             }
 
             @TestMetadata("root.kt")
             public void testRoot() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/dslMarker/root.kt");
+                runTest("idea/idea-completion/testData/basic/common/dslMarker/root.kt");
             }
         }
 
@@ -1151,28 +1175,32 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class ExtensionFunctionTypeValues extends AbstractJSBasicCompletionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInExtensionFunctionTypeValues() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/idea-completion/testData/basic/common/extensionFunctionTypeValues"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("ImplicitReceiver.kt")
             public void testImplicitReceiver() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/extensionFunctionTypeValues/ImplicitReceiver.kt");
+                runTest("idea/idea-completion/testData/basic/common/extensionFunctionTypeValues/ImplicitReceiver.kt");
             }
 
             @TestMetadata("SafeCall.kt")
             public void testSafeCall() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/extensionFunctionTypeValues/SafeCall.kt");
+                runTest("idea/idea-completion/testData/basic/common/extensionFunctionTypeValues/SafeCall.kt");
             }
 
             @TestMetadata("Simple.kt")
             public void testSimple() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/extensionFunctionTypeValues/Simple.kt");
+                runTest("idea/idea-completion/testData/basic/common/extensionFunctionTypeValues/Simple.kt");
             }
 
             @TestMetadata("SmartCast.kt")
             public void testSmartCast() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/extensionFunctionTypeValues/SmartCast.kt");
+                runTest("idea/idea-completion/testData/basic/common/extensionFunctionTypeValues/SmartCast.kt");
             }
         }
 
@@ -1180,123 +1208,127 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Extensions extends AbstractJSBasicCompletionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInExtensions() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/idea-completion/testData/basic/common/extensions"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("ComplexCapture.kt")
             public void testComplexCapture() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/extensions/ComplexCapture.kt");
+                runTest("idea/idea-completion/testData/basic/common/extensions/ComplexCapture.kt");
             }
 
             @TestMetadata("ComplexCapture2.kt")
             public void testComplexCapture2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/extensions/ComplexCapture2.kt");
+                runTest("idea/idea-completion/testData/basic/common/extensions/ComplexCapture2.kt");
             }
 
             @TestMetadata("ExtensionInExtendedClass.kt")
             public void testExtensionInExtendedClass() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/extensions/ExtensionInExtendedClass.kt");
+                runTest("idea/idea-completion/testData/basic/common/extensions/ExtensionInExtendedClass.kt");
             }
 
             @TestMetadata("ExtensionInExtendedClassThis.kt")
             public void testExtensionInExtendedClassThis() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/extensions/ExtensionInExtendedClassThis.kt");
+                runTest("idea/idea-completion/testData/basic/common/extensions/ExtensionInExtendedClassThis.kt");
             }
 
             @TestMetadata("ExtensionInExtension.kt")
             public void testExtensionInExtension() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/extensions/ExtensionInExtension.kt");
+                runTest("idea/idea-completion/testData/basic/common/extensions/ExtensionInExtension.kt");
             }
 
             @TestMetadata("ExtensionInExtensionThis.kt")
             public void testExtensionInExtensionThis() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/extensions/ExtensionInExtensionThis.kt");
+                runTest("idea/idea-completion/testData/basic/common/extensions/ExtensionInExtensionThis.kt");
             }
 
             @TestMetadata("ExtensionOnFQObject.kt")
             public void testExtensionOnFQObject() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/extensions/ExtensionOnFQObject.kt");
+                runTest("idea/idea-completion/testData/basic/common/extensions/ExtensionOnFQObject.kt");
             }
 
             @TestMetadata("ExtensionOnNestedClassObject.kt")
             public void testExtensionOnNestedClassObject() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/extensions/ExtensionOnNestedClassObject.kt");
+                runTest("idea/idea-completion/testData/basic/common/extensions/ExtensionOnNestedClassObject.kt");
             }
 
             @TestMetadata("Extensions.kt")
             public void testExtensions() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/extensions/Extensions.kt");
+                runTest("idea/idea-completion/testData/basic/common/extensions/Extensions.kt");
             }
 
             @TestMetadata("InvalidTypeParameters.kt")
             public void testInvalidTypeParameters() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/extensions/InvalidTypeParameters.kt");
+                runTest("idea/idea-completion/testData/basic/common/extensions/InvalidTypeParameters.kt");
             }
 
             @TestMetadata("IrrelevantExtension.kt")
             public void testIrrelevantExtension() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/extensions/IrrelevantExtension.kt");
+                runTest("idea/idea-completion/testData/basic/common/extensions/IrrelevantExtension.kt");
             }
 
             @TestMetadata("JavaTypeExtension.kt")
             public void testJavaTypeExtension() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/extensions/JavaTypeExtension.kt");
+                runTest("idea/idea-completion/testData/basic/common/extensions/JavaTypeExtension.kt");
             }
 
             @TestMetadata("KotlinGenericTypeExtension.kt")
             public void testKotlinGenericTypeExtension() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/extensions/KotlinGenericTypeExtension.kt");
+                runTest("idea/idea-completion/testData/basic/common/extensions/KotlinGenericTypeExtension.kt");
             }
 
             @TestMetadata("KotlinTypeExtension.kt")
             public void testKotlinTypeExtension() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/extensions/KotlinTypeExtension.kt");
+                runTest("idea/idea-completion/testData/basic/common/extensions/KotlinTypeExtension.kt");
             }
 
             @TestMetadata("MemberExtensionFromWith.kt")
             public void testMemberExtensionFromWith() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/extensions/MemberExtensionFromWith.kt");
+                runTest("idea/idea-completion/testData/basic/common/extensions/MemberExtensionFromWith.kt");
             }
 
             @TestMetadata("MemberExtensionWithoutExplicitReceiver.kt")
             public void testMemberExtensionWithoutExplicitReceiver() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/extensions/MemberExtensionWithoutExplicitReceiver.kt");
+                runTest("idea/idea-completion/testData/basic/common/extensions/MemberExtensionWithoutExplicitReceiver.kt");
             }
 
             @TestMetadata("MemberExtensionsFromMemberExtension.kt")
             public void testMemberExtensionsFromMemberExtension() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/extensions/MemberExtensionsFromMemberExtension.kt");
+                runTest("idea/idea-completion/testData/basic/common/extensions/MemberExtensionsFromMemberExtension.kt");
             }
 
             @TestMetadata("NoDuplicatedMethodForSmartCast.kt")
             public void testNoDuplicatedMethodForSmartCast() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/extensions/NoDuplicatedMethodForSmartCast.kt");
+                runTest("idea/idea-completion/testData/basic/common/extensions/NoDuplicatedMethodForSmartCast.kt");
             }
 
             @TestMetadata("NoExtensionFromOuter.kt")
             public void testNoExtensionFromOuter() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/extensions/NoExtensionFromOuter.kt");
+                runTest("idea/idea-completion/testData/basic/common/extensions/NoExtensionFromOuter.kt");
             }
 
             @TestMetadata("NoMemberExtensionsFromCompanionObject.kt")
             public void testNoMemberExtensionsFromCompanionObject() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/extensions/NoMemberExtensionsFromCompanionObject.kt");
+                runTest("idea/idea-completion/testData/basic/common/extensions/NoMemberExtensionsFromCompanionObject.kt");
             }
 
             @TestMetadata("StarTypeArg.kt")
             public void testStarTypeArg() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/extensions/StarTypeArg.kt");
+                runTest("idea/idea-completion/testData/basic/common/extensions/StarTypeArg.kt");
             }
 
             @TestMetadata("WrongExplicitReceiver.kt")
             public void testWrongExplicitReceiver() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/extensions/WrongExplicitReceiver.kt");
+                runTest("idea/idea-completion/testData/basic/common/extensions/WrongExplicitReceiver.kt");
             }
 
             @TestMetadata("WrongImplicitReceiver.kt")
             public void testWrongImplicitReceiver() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/extensions/WrongImplicitReceiver.kt");
+                runTest("idea/idea-completion/testData/basic/common/extensions/WrongImplicitReceiver.kt");
             }
         }
 
@@ -1304,14 +1336,18 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class FromSmart extends AbstractJSBasicCompletionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             @TestMetadata("AfterAs.kt")
             public void testAfterAs() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/fromSmart/AfterAs.kt");
+                runTest("idea/idea-completion/testData/basic/common/fromSmart/AfterAs.kt");
             }
 
             @TestMetadata("AfterAsNoDuplicates.kt")
             public void testAfterAsNoDuplicates() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/fromSmart/AfterAsNoDuplicates.kt");
+                runTest("idea/idea-completion/testData/basic/common/fromSmart/AfterAsNoDuplicates.kt");
             }
 
             public void testAllFilesPresentInFromSmart() throws Exception {
@@ -1320,52 +1356,52 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
 
             @TestMetadata("ArrayLiteralAnnotationConstructorAsDefaultValueForArray.kt")
             public void testArrayLiteralAnnotationConstructorAsDefaultValueForArray() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/fromSmart/ArrayLiteralAnnotationConstructorAsDefaultValueForArray.kt");
+                runTest("idea/idea-completion/testData/basic/common/fromSmart/ArrayLiteralAnnotationConstructorAsDefaultValueForArray.kt");
             }
 
             @TestMetadata("ArrayLiteralAnnotationConstructorAsDefaultValueForVararg.kt")
             public void testArrayLiteralAnnotationConstructorAsDefaultValueForVararg() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/fromSmart/ArrayLiteralAnnotationConstructorAsDefaultValueForVararg.kt");
+                runTest("idea/idea-completion/testData/basic/common/fromSmart/ArrayLiteralAnnotationConstructorAsDefaultValueForVararg.kt");
             }
 
             @TestMetadata("ArrayLiteralAnnotationUseForArray.kt")
             public void testArrayLiteralAnnotationUseForArray() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/fromSmart/ArrayLiteralAnnotationUseForArray.kt");
+                runTest("idea/idea-completion/testData/basic/common/fromSmart/ArrayLiteralAnnotationUseForArray.kt");
             }
 
             @TestMetadata("ArrayLiteralAnnotationUseForVararg.kt")
             public void testArrayLiteralAnnotationUseForVararg() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/fromSmart/ArrayLiteralAnnotationUseForVararg.kt");
+                runTest("idea/idea-completion/testData/basic/common/fromSmart/ArrayLiteralAnnotationUseForVararg.kt");
             }
 
             @TestMetadata("EnumEntries.kt")
             public void testEnumEntries() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/fromSmart/EnumEntries.kt");
+                runTest("idea/idea-completion/testData/basic/common/fromSmart/EnumEntries.kt");
             }
 
             @TestMetadata("JavaStaticMethods.kt")
             public void testJavaStaticMethods() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/fromSmart/JavaStaticMethods.kt");
+                runTest("idea/idea-completion/testData/basic/common/fromSmart/JavaStaticMethods.kt");
             }
 
             @TestMetadata("JavaStaticMethods2.kt")
             public void testJavaStaticMethods2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/fromSmart/JavaStaticMethods2.kt");
+                runTest("idea/idea-completion/testData/basic/common/fromSmart/JavaStaticMethods2.kt");
             }
 
             @TestMetadata("MultipleArgs.kt")
             public void testMultipleArgs() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/fromSmart/MultipleArgs.kt");
+                runTest("idea/idea-completion/testData/basic/common/fromSmart/MultipleArgs.kt");
             }
 
             @TestMetadata("PropertyDelegate.kt")
             public void testPropertyDelegate() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/fromSmart/PropertyDelegate.kt");
+                runTest("idea/idea-completion/testData/basic/common/fromSmart/PropertyDelegate.kt");
             }
 
             @TestMetadata("WhenByEnum.kt")
             public void testWhenByEnum() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/fromSmart/WhenByEnum.kt");
+                runTest("idea/idea-completion/testData/basic/common/fromSmart/WhenByEnum.kt");
             }
         }
 
@@ -1373,58 +1409,62 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class FromUnresolvedNames extends AbstractJSBasicCompletionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInFromUnresolvedNames() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/idea-completion/testData/basic/common/fromUnresolvedNames"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("FunctionInCompanionObject.kt")
             public void testFunctionInCompanionObject() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/fromUnresolvedNames/FunctionInCompanionObject.kt");
+                runTest("idea/idea-completion/testData/basic/common/fromUnresolvedNames/FunctionInCompanionObject.kt");
             }
 
             @TestMetadata("LocalVal.kt")
             public void testLocalVal() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/fromUnresolvedNames/LocalVal.kt");
+                runTest("idea/idea-completion/testData/basic/common/fromUnresolvedNames/LocalVal.kt");
             }
 
             @TestMetadata("MemberFunction.kt")
             public void testMemberFunction() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/fromUnresolvedNames/MemberFunction.kt");
+                runTest("idea/idea-completion/testData/basic/common/fromUnresolvedNames/MemberFunction.kt");
             }
 
             @TestMetadata("MemberProperty.kt")
             public void testMemberProperty() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/fromUnresolvedNames/MemberProperty.kt");
+                runTest("idea/idea-completion/testData/basic/common/fromUnresolvedNames/MemberProperty.kt");
             }
 
             @TestMetadata("NotForExtensionFunction.kt")
             public void testNotForExtensionFunction() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/fromUnresolvedNames/NotForExtensionFunction.kt");
+                runTest("idea/idea-completion/testData/basic/common/fromUnresolvedNames/NotForExtensionFunction.kt");
             }
 
             @TestMetadata("Parameter.kt")
             public void testParameter() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/fromUnresolvedNames/Parameter.kt");
+                runTest("idea/idea-completion/testData/basic/common/fromUnresolvedNames/Parameter.kt");
             }
 
             @TestMetadata("TopLevelClass.kt")
             public void testTopLevelClass() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/fromUnresolvedNames/TopLevelClass.kt");
+                runTest("idea/idea-completion/testData/basic/common/fromUnresolvedNames/TopLevelClass.kt");
             }
 
             @TestMetadata("TopLevelFunction.kt")
             public void testTopLevelFunction() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/fromUnresolvedNames/TopLevelFunction.kt");
+                runTest("idea/idea-completion/testData/basic/common/fromUnresolvedNames/TopLevelFunction.kt");
             }
 
             @TestMetadata("TopLevelInterface.kt")
             public void testTopLevelInterface() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/fromUnresolvedNames/TopLevelInterface.kt");
+                runTest("idea/idea-completion/testData/basic/common/fromUnresolvedNames/TopLevelInterface.kt");
             }
 
             @TestMetadata("TopLevelObject.kt")
             public void testTopLevelObject() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/fromUnresolvedNames/TopLevelObject.kt");
+                runTest("idea/idea-completion/testData/basic/common/fromUnresolvedNames/TopLevelObject.kt");
             }
         }
 
@@ -1432,23 +1472,27 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class GetOperator extends AbstractJSBasicCompletionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInGetOperator() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/idea-completion/testData/basic/common/getOperator"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("Extension.kt")
             public void testExtension() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/getOperator/Extension.kt");
+                runTest("idea/idea-completion/testData/basic/common/getOperator/Extension.kt");
             }
 
             @TestMetadata("NotForSafeCall.kt")
             public void testNotForSafeCall() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/getOperator/NotForSafeCall.kt");
+                runTest("idea/idea-completion/testData/basic/common/getOperator/NotForSafeCall.kt");
             }
 
             @TestMetadata("Simple.kt")
             public void testSimple() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/getOperator/Simple.kt");
+                runTest("idea/idea-completion/testData/basic/common/getOperator/Simple.kt");
             }
         }
 
@@ -1456,58 +1500,62 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class HighOrderFunctions extends AbstractJSBasicCompletionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInHighOrderFunctions() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/idea-completion/testData/basic/common/highOrderFunctions"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("ContextVariables1.kt")
             public void testContextVariables1() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/highOrderFunctions/ContextVariables1.kt");
+                runTest("idea/idea-completion/testData/basic/common/highOrderFunctions/ContextVariables1.kt");
             }
 
             @TestMetadata("ContextVariables2.kt")
             public void testContextVariables2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/highOrderFunctions/ContextVariables2.kt");
+                runTest("idea/idea-completion/testData/basic/common/highOrderFunctions/ContextVariables2.kt");
             }
 
             @TestMetadata("ContextVariables3.kt")
             public void testContextVariables3() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/highOrderFunctions/ContextVariables3.kt");
+                runTest("idea/idea-completion/testData/basic/common/highOrderFunctions/ContextVariables3.kt");
             }
 
             @TestMetadata("ContextVariablesFilter.kt")
             public void testContextVariablesFilter() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/highOrderFunctions/ContextVariablesFilter.kt");
+                runTest("idea/idea-completion/testData/basic/common/highOrderFunctions/ContextVariablesFilter.kt");
             }
 
             @TestMetadata("ContextVariablesMap.kt")
             public void testContextVariablesMap() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/highOrderFunctions/ContextVariablesMap.kt");
+                runTest("idea/idea-completion/testData/basic/common/highOrderFunctions/ContextVariablesMap.kt");
             }
 
             @TestMetadata("ContextVariablesShadowing.kt")
             public void testContextVariablesShadowing() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/highOrderFunctions/ContextVariablesShadowing.kt");
+                runTest("idea/idea-completion/testData/basic/common/highOrderFunctions/ContextVariablesShadowing.kt");
             }
 
             @TestMetadata("HigherOrderFunction1.kt")
             public void testHigherOrderFunction1() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/highOrderFunctions/HigherOrderFunction1.kt");
+                runTest("idea/idea-completion/testData/basic/common/highOrderFunctions/HigherOrderFunction1.kt");
             }
 
             @TestMetadata("HigherOrderFunction2.kt")
             public void testHigherOrderFunction2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/highOrderFunctions/HigherOrderFunction2.kt");
+                runTest("idea/idea-completion/testData/basic/common/highOrderFunctions/HigherOrderFunction2.kt");
             }
 
             @TestMetadata("OptionalParameters.kt")
             public void testOptionalParameters() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/highOrderFunctions/OptionalParameters.kt");
+                runTest("idea/idea-completion/testData/basic/common/highOrderFunctions/OptionalParameters.kt");
             }
 
             @TestMetadata("SuspendFunction.kt")
             public void testSuspendFunction() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/highOrderFunctions/SuspendFunction.kt");
+                runTest("idea/idea-completion/testData/basic/common/highOrderFunctions/SuspendFunction.kt");
             }
         }
 
@@ -1515,38 +1563,42 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class InStringLiterals extends AbstractJSBasicCompletionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInInStringLiterals() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/idea-completion/testData/basic/common/inStringLiterals"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("EA76497.kt")
             public void testEA76497() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/inStringLiterals/EA76497.kt");
+                runTest("idea/idea-completion/testData/basic/common/inStringLiterals/EA76497.kt");
             }
 
             @TestMetadata("StringTemplate1.kt")
             public void testStringTemplate1() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/inStringLiterals/StringTemplate1.kt");
+                runTest("idea/idea-completion/testData/basic/common/inStringLiterals/StringTemplate1.kt");
             }
 
             @TestMetadata("StringTemplate2.kt")
             public void testStringTemplate2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/inStringLiterals/StringTemplate2.kt");
+                runTest("idea/idea-completion/testData/basic/common/inStringLiterals/StringTemplate2.kt");
             }
 
             @TestMetadata("StringTemplateDot.kt")
             public void testStringTemplateDot() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/inStringLiterals/StringTemplateDot.kt");
+                runTest("idea/idea-completion/testData/basic/common/inStringLiterals/StringTemplateDot.kt");
             }
 
             @TestMetadata("StringTemplateDot2.kt")
             public void testStringTemplateDot2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/inStringLiterals/StringTemplateDot2.kt");
+                runTest("idea/idea-completion/testData/basic/common/inStringLiterals/StringTemplateDot2.kt");
             }
 
             @TestMetadata("StringTemplateDotSomething.kt")
             public void testStringTemplateDotSomething() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/inStringLiterals/StringTemplateDotSomething.kt");
+                runTest("idea/idea-completion/testData/basic/common/inStringLiterals/StringTemplateDotSomething.kt");
             }
         }
 
@@ -1554,58 +1606,62 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class LambdaSignature extends AbstractJSBasicCompletionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInLambdaSignature() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/idea-completion/testData/basic/common/lambdaSignature"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("ParameterName1.kt")
             public void testParameterName1() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/lambdaSignature/ParameterName1.kt");
+                runTest("idea/idea-completion/testData/basic/common/lambdaSignature/ParameterName1.kt");
             }
 
             @TestMetadata("ParameterName2.kt")
             public void testParameterName2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/lambdaSignature/ParameterName2.kt");
+                runTest("idea/idea-completion/testData/basic/common/lambdaSignature/ParameterName2.kt");
             }
 
             @TestMetadata("ParameterName3.kt")
             public void testParameterName3() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/lambdaSignature/ParameterName3.kt");
+                runTest("idea/idea-completion/testData/basic/common/lambdaSignature/ParameterName3.kt");
             }
 
             @TestMetadata("ParameterName4.kt")
             public void testParameterName4() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/lambdaSignature/ParameterName4.kt");
+                runTest("idea/idea-completion/testData/basic/common/lambdaSignature/ParameterName4.kt");
             }
 
             @TestMetadata("ParameterName5.kt")
             public void testParameterName5() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/lambdaSignature/ParameterName5.kt");
+                runTest("idea/idea-completion/testData/basic/common/lambdaSignature/ParameterName5.kt");
             }
 
             @TestMetadata("ParameterType1.kt")
             public void testParameterType1() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/lambdaSignature/ParameterType1.kt");
+                runTest("idea/idea-completion/testData/basic/common/lambdaSignature/ParameterType1.kt");
             }
 
             @TestMetadata("ParameterType2.kt")
             public void testParameterType2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/lambdaSignature/ParameterType2.kt");
+                runTest("idea/idea-completion/testData/basic/common/lambdaSignature/ParameterType2.kt");
             }
 
             @TestMetadata("ParameterType3.kt")
             public void testParameterType3() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/lambdaSignature/ParameterType3.kt");
+                runTest("idea/idea-completion/testData/basic/common/lambdaSignature/ParameterType3.kt");
             }
 
             @TestMetadata("ParameterType4.kt")
             public void testParameterType4() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/lambdaSignature/ParameterType4.kt");
+                runTest("idea/idea-completion/testData/basic/common/lambdaSignature/ParameterType4.kt");
             }
 
             @TestMetadata("ParameterType5.kt")
             public void testParameterType5() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/lambdaSignature/ParameterType5.kt");
+                runTest("idea/idea-completion/testData/basic/common/lambdaSignature/ParameterType5.kt");
             }
         }
 
@@ -1613,19 +1669,23 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class NamedArguments extends AbstractJSBasicCompletionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             @TestMetadata("AfterBrace.kt")
             public void testAfterBrace() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/namedArguments/AfterBrace.kt");
+                runTest("idea/idea-completion/testData/basic/common/namedArguments/AfterBrace.kt");
             }
 
             @TestMetadata("AfterComma.kt")
             public void testAfterComma() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/namedArguments/AfterComma.kt");
+                runTest("idea/idea-completion/testData/basic/common/namedArguments/AfterComma.kt");
             }
 
             @TestMetadata("AfterVararg.kt")
             public void testAfterVararg() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/namedArguments/AfterVararg.kt");
+                runTest("idea/idea-completion/testData/basic/common/namedArguments/AfterVararg.kt");
             }
 
             public void testAllFilesPresentInNamedArguments() throws Exception {
@@ -1634,82 +1694,82 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
 
             @TestMetadata("BooleanArgumentExpected.kt")
             public void testBooleanArgumentExpected() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/namedArguments/BooleanArgumentExpected.kt");
+                runTest("idea/idea-completion/testData/basic/common/namedArguments/BooleanArgumentExpected.kt");
             }
 
             @TestMetadata("CompactTypeNames.kt")
             public void testCompactTypeNames() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/namedArguments/CompactTypeNames.kt");
+                runTest("idea/idea-completion/testData/basic/common/namedArguments/CompactTypeNames.kt");
             }
 
             @TestMetadata("ForEmptyParametersFunction.kt")
             public void testForEmptyParametersFunction() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/namedArguments/ForEmptyParametersFunction.kt");
+                runTest("idea/idea-completion/testData/basic/common/namedArguments/ForEmptyParametersFunction.kt");
             }
 
             @TestMetadata("InParameterExpression.kt")
             public void testInParameterExpression() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/namedArguments/InParameterExpression.kt");
+                runTest("idea/idea-completion/testData/basic/common/namedArguments/InParameterExpression.kt");
             }
 
             @TestMetadata("NamedArgumentsFromOverloads.kt")
             public void testNamedArgumentsFromOverloads() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/namedArguments/NamedArgumentsFromOverloads.kt");
+                runTest("idea/idea-completion/testData/basic/common/namedArguments/NamedArgumentsFromOverloads.kt");
             }
 
             @TestMetadata("NamedArgumentsFromOverloads2.kt")
             public void testNamedArgumentsFromOverloads2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/namedArguments/NamedArgumentsFromOverloads2.kt");
+                runTest("idea/idea-completion/testData/basic/common/namedArguments/NamedArgumentsFromOverloads2.kt");
             }
 
             @TestMetadata("NoAlreadyUsedParameters.kt")
             public void testNoAlreadyUsedParameters() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/namedArguments/NoAlreadyUsedParameters.kt");
+                runTest("idea/idea-completion/testData/basic/common/namedArguments/NoAlreadyUsedParameters.kt");
             }
 
             @TestMetadata("NoParamsFromUnapplicableOverload.kt")
             public void testNoParamsFromUnapplicableOverload() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/namedArguments/NoParamsFromUnapplicableOverload.kt");
+                runTest("idea/idea-completion/testData/basic/common/namedArguments/NoParamsFromUnapplicableOverload.kt");
             }
 
             @TestMetadata("NotAfterDot.kt")
             public void testNotAfterDot() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/namedArguments/NotAfterDot.kt");
+                runTest("idea/idea-completion/testData/basic/common/namedArguments/NotAfterDot.kt");
             }
 
             @TestMetadata("NotInBrackets.kt")
             public void testNotInBrackets() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/namedArguments/NotInBrackets.kt");
+                runTest("idea/idea-completion/testData/basic/common/namedArguments/NotInBrackets.kt");
             }
 
             @TestMetadata("NotInElse.kt")
             public void testNotInElse() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/namedArguments/NotInElse.kt");
+                runTest("idea/idea-completion/testData/basic/common/namedArguments/NotInElse.kt");
             }
 
             @TestMetadata("NotOnlyNamedArguments.kt")
             public void testNotOnlyNamedArguments() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/namedArguments/NotOnlyNamedArguments.kt");
+                runTest("idea/idea-completion/testData/basic/common/namedArguments/NotOnlyNamedArguments.kt");
             }
 
             @TestMetadata("NotOnlyNamedArguments2.kt")
             public void testNotOnlyNamedArguments2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/namedArguments/NotOnlyNamedArguments2.kt");
+                runTest("idea/idea-completion/testData/basic/common/namedArguments/NotOnlyNamedArguments2.kt");
             }
 
             @TestMetadata("OfConstructor.kt")
             public void testOfConstructor() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/namedArguments/OfConstructor.kt");
+                runTest("idea/idea-completion/testData/basic/common/namedArguments/OfConstructor.kt");
             }
 
             @TestMetadata("OnlyNamedArguments.kt")
             public void testOnlyNamedArguments() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/namedArguments/OnlyNamedArguments.kt");
+                runTest("idea/idea-completion/testData/basic/common/namedArguments/OnlyNamedArguments.kt");
             }
 
             @TestMetadata("WithParameterExpression.kt")
             public void testWithParameterExpression() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/namedArguments/WithParameterExpression.kt");
+                runTest("idea/idea-completion/testData/basic/common/namedArguments/WithParameterExpression.kt");
             }
         }
 
@@ -1717,43 +1777,47 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class NoCompletion extends AbstractJSBasicCompletionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInNoCompletion() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/idea-completion/testData/basic/common/noCompletion"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("DoNotCompleteForErrorReceivers.kt")
             public void testDoNotCompleteForErrorReceivers() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/noCompletion/DoNotCompleteForErrorReceivers.kt");
+                runTest("idea/idea-completion/testData/basic/common/noCompletion/DoNotCompleteForErrorReceivers.kt");
             }
 
             @TestMetadata("DoNotCompleteForErrorReceiversForce.kt")
             public void testDoNotCompleteForErrorReceiversForce() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/noCompletion/DoNotCompleteForErrorReceiversForce.kt");
+                runTest("idea/idea-completion/testData/basic/common/noCompletion/DoNotCompleteForErrorReceiversForce.kt");
             }
 
             @TestMetadata("InPackageBegin.kt")
             public void testInPackageBegin() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/noCompletion/InPackageBegin.kt");
+                runTest("idea/idea-completion/testData/basic/common/noCompletion/InPackageBegin.kt");
             }
 
             @TestMetadata("NoCompletionAfterBigFloat.kt")
             public void testNoCompletionAfterBigFloat() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/noCompletion/NoCompletionAfterBigFloat.kt");
+                runTest("idea/idea-completion/testData/basic/common/noCompletion/NoCompletionAfterBigFloat.kt");
             }
 
             @TestMetadata("NoCompletionAfterFloat.kt")
             public void testNoCompletionAfterFloat() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/noCompletion/NoCompletionAfterFloat.kt");
+                runTest("idea/idea-completion/testData/basic/common/noCompletion/NoCompletionAfterFloat.kt");
             }
 
             @TestMetadata("NoCompletionAfterInt.kt")
             public void testNoCompletionAfterInt() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/noCompletion/NoCompletionAfterInt.kt");
+                runTest("idea/idea-completion/testData/basic/common/noCompletion/NoCompletionAfterInt.kt");
             }
 
             @TestMetadata("NoCompletionAfterLong.kt")
             public void testNoCompletionAfterLong() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/noCompletion/NoCompletionAfterLong.kt");
+                runTest("idea/idea-completion/testData/basic/common/noCompletion/NoCompletionAfterLong.kt");
             }
         }
 
@@ -1761,23 +1825,27 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Objects extends AbstractJSBasicCompletionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInObjects() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/idea-completion/testData/basic/common/objects"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("PropertyFromCompanionObjectFromTypeAliasToNestedInObjectClass.kt")
             public void testPropertyFromCompanionObjectFromTypeAliasToNestedInObjectClass() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/objects/PropertyFromCompanionObjectFromTypeAliasToNestedInObjectClass.kt");
+                runTest("idea/idea-completion/testData/basic/common/objects/PropertyFromCompanionObjectFromTypeAliasToNestedInObjectClass.kt");
             }
 
             @TestMetadata("PropertyOfTypeAliasToObject.kt")
             public void testPropertyOfTypeAliasToObject() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/objects/PropertyOfTypeAliasToObject.kt");
+                runTest("idea/idea-completion/testData/basic/common/objects/PropertyOfTypeAliasToObject.kt");
             }
 
             @TestMetadata("TypeAliasToNestedObject.kt")
             public void testTypeAliasToNestedObject() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/objects/TypeAliasToNestedObject.kt");
+                runTest("idea/idea-completion/testData/basic/common/objects/TypeAliasToNestedObject.kt");
             }
         }
 
@@ -1785,23 +1853,27 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class OperatorNames extends AbstractJSBasicCompletionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInOperatorNames() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/idea-completion/testData/basic/common/operatorNames"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("NoOperatorNameForTopLevel.kt")
             public void testNoOperatorNameForTopLevel() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/operatorNames/NoOperatorNameForTopLevel.kt");
+                runTest("idea/idea-completion/testData/basic/common/operatorNames/NoOperatorNameForTopLevel.kt");
             }
 
             @TestMetadata("OperatorNameForExtension.kt")
             public void testOperatorNameForExtension() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/operatorNames/OperatorNameForExtension.kt");
+                runTest("idea/idea-completion/testData/basic/common/operatorNames/OperatorNameForExtension.kt");
             }
 
             @TestMetadata("OperatorNameForMember.kt")
             public void testOperatorNameForMember() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/operatorNames/OperatorNameForMember.kt");
+                runTest("idea/idea-completion/testData/basic/common/operatorNames/OperatorNameForMember.kt");
             }
         }
 
@@ -1809,24 +1881,28 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Override extends AbstractJSBasicCompletionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             @TestMetadata("AfterFunKeyword.kt")
             public void testAfterFunKeyword() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/override/AfterFunKeyword.kt");
+                runTest("idea/idea-completion/testData/basic/common/override/AfterFunKeyword.kt");
             }
 
             @TestMetadata("AfterValKeyword.kt")
             public void testAfterValKeyword() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/override/AfterValKeyword.kt");
+                runTest("idea/idea-completion/testData/basic/common/override/AfterValKeyword.kt");
             }
 
             @TestMetadata("AfterValKeywordInConstructorParameter.kt")
             public void testAfterValKeywordInConstructorParameter() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/override/AfterValKeywordInConstructorParameter.kt");
+                runTest("idea/idea-completion/testData/basic/common/override/AfterValKeywordInConstructorParameter.kt");
             }
 
             @TestMetadata("AfterVarKeyword.kt")
             public void testAfterVarKeyword() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/override/AfterVarKeyword.kt");
+                runTest("idea/idea-completion/testData/basic/common/override/AfterVarKeyword.kt");
             }
 
             public void testAllFilesPresentInOverride() throws Exception {
@@ -1835,42 +1911,42 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
 
             @TestMetadata("Generics.kt")
             public void testGenerics() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/override/Generics.kt");
+                runTest("idea/idea-completion/testData/basic/common/override/Generics.kt");
             }
 
             @TestMetadata("InConstructorParameters.kt")
             public void testInConstructorParameters() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/override/InConstructorParameters.kt");
+                runTest("idea/idea-completion/testData/basic/common/override/InConstructorParameters.kt");
             }
 
             @TestMetadata("InConstructorParameters2.kt")
             public void testInConstructorParameters2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/override/InConstructorParameters2.kt");
+                runTest("idea/idea-completion/testData/basic/common/override/InConstructorParameters2.kt");
             }
 
             @TestMetadata("NoOverrideAfterFunKeyword.kt")
             public void testNoOverrideAfterFunKeyword() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/override/NoOverrideAfterFunKeyword.kt");
+                runTest("idea/idea-completion/testData/basic/common/override/NoOverrideAfterFunKeyword.kt");
             }
 
             @TestMetadata("PreferImplementToOverride.kt")
             public void testPreferImplementToOverride() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/override/PreferImplementToOverride.kt");
+                runTest("idea/idea-completion/testData/basic/common/override/PreferImplementToOverride.kt");
             }
 
             @TestMetadata("SecondConstructorParameter.kt")
             public void testSecondConstructorParameter() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/override/SecondConstructorParameter.kt");
+                runTest("idea/idea-completion/testData/basic/common/override/SecondConstructorParameter.kt");
             }
 
             @TestMetadata("Simple.kt")
             public void testSimple() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/override/Simple.kt");
+                runTest("idea/idea-completion/testData/basic/common/override/Simple.kt");
             }
 
             @TestMetadata("TypeFunctionName.kt")
             public void testTypeFunctionName() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/override/TypeFunctionName.kt");
+                runTest("idea/idea-completion/testData/basic/common/override/TypeFunctionName.kt");
             }
         }
 
@@ -1878,143 +1954,147 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class ParameterNameAndType extends AbstractJSBasicCompletionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInParameterNameAndType() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/idea-completion/testData/basic/common/parameterNameAndType"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("ByAbbreviation.kt")
             public void testByAbbreviation() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/parameterNameAndType/ByAbbreviation.kt");
+                runTest("idea/idea-completion/testData/basic/common/parameterNameAndType/ByAbbreviation.kt");
             }
 
             @TestMetadata("NoAutoInsertion.kt")
             public void testNoAutoInsertion() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/parameterNameAndType/NoAutoInsertion.kt");
+                runTest("idea/idea-completion/testData/basic/common/parameterNameAndType/NoAutoInsertion.kt");
             }
 
             @TestMetadata("NoDuplication.kt")
             public void testNoDuplication() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/parameterNameAndType/NoDuplication.kt");
+                runTest("idea/idea-completion/testData/basic/common/parameterNameAndType/NoDuplication.kt");
             }
 
             @TestMetadata("NoDuplicationJava.kt")
             public void testNoDuplicationJava() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/parameterNameAndType/NoDuplicationJava.kt");
+                runTest("idea/idea-completion/testData/basic/common/parameterNameAndType/NoDuplicationJava.kt");
             }
 
             @TestMetadata("NoFromFileAndFromClassesDuplication.kt")
             public void testNoFromFileAndFromClassesDuplication() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/parameterNameAndType/NoFromFileAndFromClassesDuplication.kt");
+                runTest("idea/idea-completion/testData/basic/common/parameterNameAndType/NoFromFileAndFromClassesDuplication.kt");
             }
 
             @TestMetadata("NotForAnnnotationTypeConstructor.kt")
             public void testNotForAnnnotationTypeConstructor() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/parameterNameAndType/NotForAnnnotationTypeConstructor.kt");
+                runTest("idea/idea-completion/testData/basic/common/parameterNameAndType/NotForAnnnotationTypeConstructor.kt");
             }
 
             @TestMetadata("NotForAnonymousFunction.kt")
             public void testNotForAnonymousFunction() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/parameterNameAndType/NotForAnonymousFunction.kt");
+                runTest("idea/idea-completion/testData/basic/common/parameterNameAndType/NotForAnonymousFunction.kt");
             }
 
             @TestMetadata("NotForCatchParameter.kt")
             public void testNotForCatchParameter() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/parameterNameAndType/NotForCatchParameter.kt");
+                runTest("idea/idea-completion/testData/basic/common/parameterNameAndType/NotForCatchParameter.kt");
             }
 
             @TestMetadata("NotForLambdaParameter1.kt")
             public void testNotForLambdaParameter1() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/parameterNameAndType/NotForLambdaParameter1.kt");
+                runTest("idea/idea-completion/testData/basic/common/parameterNameAndType/NotForLambdaParameter1.kt");
             }
 
             @TestMetadata("NotForLambdaParameter2.kt")
             public void testNotForLambdaParameter2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/parameterNameAndType/NotForLambdaParameter2.kt");
+                runTest("idea/idea-completion/testData/basic/common/parameterNameAndType/NotForLambdaParameter2.kt");
             }
 
             @TestMetadata("NotForLambdaParameter3.kt")
             public void testNotForLambdaParameter3() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/parameterNameAndType/NotForLambdaParameter3.kt");
+                runTest("idea/idea-completion/testData/basic/common/parameterNameAndType/NotForLambdaParameter3.kt");
             }
 
             @TestMetadata("NotForSetterParameter.kt")
             public void testNotForSetterParameter() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/parameterNameAndType/NotForSetterParameter.kt");
+                runTest("idea/idea-completion/testData/basic/common/parameterNameAndType/NotForSetterParameter.kt");
             }
 
             @TestMetadata("NotImported.kt")
             public void testNotImported() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/parameterNameAndType/NotImported.kt");
+                runTest("idea/idea-completion/testData/basic/common/parameterNameAndType/NotImported.kt");
             }
 
             @TestMetadata("NotImportedJava.kt")
             public void testNotImportedJava() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/parameterNameAndType/NotImportedJava.kt");
+                runTest("idea/idea-completion/testData/basic/common/parameterNameAndType/NotImportedJava.kt");
             }
 
             @TestMetadata("ParametersInFile.kt")
             public void testParametersInFile() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/parameterNameAndType/ParametersInFile.kt");
+                runTest("idea/idea-completion/testData/basic/common/parameterNameAndType/ParametersInFile.kt");
             }
 
             @TestMetadata("ParametersInFileInaccessibleType.kt")
             public void testParametersInFileInaccessibleType() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/parameterNameAndType/ParametersInFileInaccessibleType.kt");
+                runTest("idea/idea-completion/testData/basic/common/parameterNameAndType/ParametersInFileInaccessibleType.kt");
             }
 
             @TestMetadata("ParametersInFileInaccessibleType2.kt")
             public void testParametersInFileInaccessibleType2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/parameterNameAndType/ParametersInFileInaccessibleType2.kt");
+                runTest("idea/idea-completion/testData/basic/common/parameterNameAndType/ParametersInFileInaccessibleType2.kt");
             }
 
             @TestMetadata("ParametersInFileTypeParameter1.kt")
             public void testParametersInFileTypeParameter1() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/parameterNameAndType/ParametersInFileTypeParameter1.kt");
+                runTest("idea/idea-completion/testData/basic/common/parameterNameAndType/ParametersInFileTypeParameter1.kt");
             }
 
             @TestMetadata("ParametersInFileTypeParameter2.kt")
             public void testParametersInFileTypeParameter2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/parameterNameAndType/ParametersInFileTypeParameter2.kt");
+                runTest("idea/idea-completion/testData/basic/common/parameterNameAndType/ParametersInFileTypeParameter2.kt");
             }
 
             @TestMetadata("ParametersInFileTypeParameter3.kt")
             public void testParametersInFileTypeParameter3() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/parameterNameAndType/ParametersInFileTypeParameter3.kt");
+                runTest("idea/idea-completion/testData/basic/common/parameterNameAndType/ParametersInFileTypeParameter3.kt");
             }
 
             @TestMetadata("Simple.kt")
             public void testSimple() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/parameterNameAndType/Simple.kt");
+                runTest("idea/idea-completion/testData/basic/common/parameterNameAndType/Simple.kt");
             }
 
             @TestMetadata("URLConnection.kt")
             public void testURLConnection() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/parameterNameAndType/URLConnection.kt");
+                runTest("idea/idea-completion/testData/basic/common/parameterNameAndType/URLConnection.kt");
             }
 
             @TestMetadata("UserPrefix1.kt")
             public void testUserPrefix1() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/parameterNameAndType/UserPrefix1.kt");
+                runTest("idea/idea-completion/testData/basic/common/parameterNameAndType/UserPrefix1.kt");
             }
 
             @TestMetadata("UserPrefix2.kt")
             public void testUserPrefix2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/parameterNameAndType/UserPrefix2.kt");
+                runTest("idea/idea-completion/testData/basic/common/parameterNameAndType/UserPrefix2.kt");
             }
 
             @TestMetadata("UserPrefix3.kt")
             public void testUserPrefix3() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/parameterNameAndType/UserPrefix3.kt");
+                runTest("idea/idea-completion/testData/basic/common/parameterNameAndType/UserPrefix3.kt");
             }
 
             @TestMetadata("ValParameter.kt")
             public void testValParameter() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/parameterNameAndType/ValParameter.kt");
+                runTest("idea/idea-completion/testData/basic/common/parameterNameAndType/ValParameter.kt");
             }
 
             @TestMetadata("VarParameter.kt")
             public void testVarParameter() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/parameterNameAndType/VarParameter.kt");
+                runTest("idea/idea-completion/testData/basic/common/parameterNameAndType/VarParameter.kt");
             }
         }
 
@@ -2022,103 +2102,107 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Shadowing extends AbstractJSBasicCompletionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInShadowing() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/idea-completion/testData/basic/common/shadowing"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("InInitializer1.kt")
             public void testInInitializer1() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/shadowing/InInitializer1.kt");
+                runTest("idea/idea-completion/testData/basic/common/shadowing/InInitializer1.kt");
             }
 
             @TestMetadata("InInitializer2.kt")
             public void testInInitializer2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/shadowing/InInitializer2.kt");
+                runTest("idea/idea-completion/testData/basic/common/shadowing/InInitializer2.kt");
             }
 
             @TestMetadata("InInitializer3.kt")
             public void testInInitializer3() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/shadowing/InInitializer3.kt");
+                runTest("idea/idea-completion/testData/basic/common/shadowing/InInitializer3.kt");
             }
 
             @TestMetadata("InInitializer4.kt")
             public void testInInitializer4() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/shadowing/InInitializer4.kt");
+                runTest("idea/idea-completion/testData/basic/common/shadowing/InInitializer4.kt");
             }
 
             @TestMetadata("InInitializer5.kt")
             public void testInInitializer5() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/shadowing/InInitializer5.kt");
+                runTest("idea/idea-completion/testData/basic/common/shadowing/InInitializer5.kt");
             }
 
             @TestMetadata("InInitializer6.kt")
             public void testInInitializer6() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/shadowing/InInitializer6.kt");
+                runTest("idea/idea-completion/testData/basic/common/shadowing/InInitializer6.kt");
             }
 
             @TestMetadata("InInitializer7.kt")
             public void testInInitializer7() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/shadowing/InInitializer7.kt");
+                runTest("idea/idea-completion/testData/basic/common/shadowing/InInitializer7.kt");
             }
 
             @TestMetadata("Locals1.kt")
             public void testLocals1() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/shadowing/Locals1.kt");
+                runTest("idea/idea-completion/testData/basic/common/shadowing/Locals1.kt");
             }
 
             @TestMetadata("Locals2.kt")
             public void testLocals2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/shadowing/Locals2.kt");
+                runTest("idea/idea-completion/testData/basic/common/shadowing/Locals2.kt");
             }
 
             @TestMetadata("Overloads.kt")
             public void testOverloads() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/shadowing/Overloads.kt");
+                runTest("idea/idea-completion/testData/basic/common/shadowing/Overloads.kt");
             }
 
             @TestMetadata("OverloadsAndVararg.kt")
             public void testOverloadsAndVararg() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/shadowing/OverloadsAndVararg.kt");
+                runTest("idea/idea-completion/testData/basic/common/shadowing/OverloadsAndVararg.kt");
             }
 
             @TestMetadata("PreferCloserMember.kt")
             public void testPreferCloserMember() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/shadowing/PreferCloserMember.kt");
+                runTest("idea/idea-completion/testData/basic/common/shadowing/PreferCloserMember.kt");
             }
 
             @TestMetadata("PreferCloserReceiverGeneric.kt")
             public void testPreferCloserReceiverGeneric() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/shadowing/PreferCloserReceiverGeneric.kt");
+                runTest("idea/idea-completion/testData/basic/common/shadowing/PreferCloserReceiverGeneric.kt");
             }
 
             @TestMetadata("PreferMemberExtension.kt")
             public void testPreferMemberExtension() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/shadowing/PreferMemberExtension.kt");
+                runTest("idea/idea-completion/testData/basic/common/shadowing/PreferMemberExtension.kt");
             }
 
             @TestMetadata("PreferMemberToExtension.kt")
             public void testPreferMemberToExtension() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/shadowing/PreferMemberToExtension.kt");
+                runTest("idea/idea-completion/testData/basic/common/shadowing/PreferMemberToExtension.kt");
             }
 
             @TestMetadata("PreferMemberToGlobal.kt")
             public void testPreferMemberToGlobal() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/shadowing/PreferMemberToGlobal.kt");
+                runTest("idea/idea-completion/testData/basic/common/shadowing/PreferMemberToGlobal.kt");
             }
 
             @TestMetadata("PreferMoreSpecificExtension.kt")
             public void testPreferMoreSpecificExtension() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/shadowing/PreferMoreSpecificExtension.kt");
+                runTest("idea/idea-completion/testData/basic/common/shadowing/PreferMoreSpecificExtension.kt");
             }
 
             @TestMetadata("PreferMoreSpecificExtensionGeneric.kt")
             public void testPreferMoreSpecificExtensionGeneric() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/shadowing/PreferMoreSpecificExtensionGeneric.kt");
+                runTest("idea/idea-completion/testData/basic/common/shadowing/PreferMoreSpecificExtensionGeneric.kt");
             }
 
             @TestMetadata("PreferMoreSpecificExtensionGenericWithParam.kt")
             public void testPreferMoreSpecificExtensionGenericWithParam() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/shadowing/PreferMoreSpecificExtensionGenericWithParam.kt");
+                runTest("idea/idea-completion/testData/basic/common/shadowing/PreferMoreSpecificExtensionGenericWithParam.kt");
             }
         }
 
@@ -2126,43 +2210,47 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class SmartCast extends AbstractJSBasicCompletionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInSmartCast() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/idea-completion/testData/basic/common/smartCast"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("MemberExtensionAfterThisSmartCast.kt")
             public void testMemberExtensionAfterThisSmartCast() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/smartCast/MemberExtensionAfterThisSmartCast.kt");
+                runTest("idea/idea-completion/testData/basic/common/smartCast/MemberExtensionAfterThisSmartCast.kt");
             }
 
             @TestMetadata("MembersAfterSmartCast.kt")
             public void testMembersAfterSmartCast() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/smartCast/MembersAfterSmartCast.kt");
+                runTest("idea/idea-completion/testData/basic/common/smartCast/MembersAfterSmartCast.kt");
             }
 
             @TestMetadata("SmartCastAfterIf.kt")
             public void testSmartCastAfterIf() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/smartCast/SmartCastAfterIf.kt");
+                runTest("idea/idea-completion/testData/basic/common/smartCast/SmartCastAfterIf.kt");
             }
 
             @TestMetadata("SmartCastAfterIfMethod.kt")
             public void testSmartCastAfterIfMethod() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/smartCast/SmartCastAfterIfMethod.kt");
+                runTest("idea/idea-completion/testData/basic/common/smartCast/SmartCastAfterIfMethod.kt");
             }
 
             @TestMetadata("SmartCastForThis.kt")
             public void testSmartCastForThis() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/smartCast/SmartCastForThis.kt");
+                runTest("idea/idea-completion/testData/basic/common/smartCast/SmartCastForThis.kt");
             }
 
             @TestMetadata("SmartCastInWhen.kt")
             public void testSmartCastInWhen() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/smartCast/SmartCastInWhen.kt");
+                runTest("idea/idea-completion/testData/basic/common/smartCast/SmartCastInWhen.kt");
             }
 
             @TestMetadata("SmartCastThis.kt")
             public void testSmartCastThis() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/smartCast/SmartCastThis.kt");
+                runTest("idea/idea-completion/testData/basic/common/smartCast/SmartCastThis.kt");
             }
         }
 
@@ -2170,53 +2258,57 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class StaticMembers extends AbstractJSBasicCompletionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInStaticMembers() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/idea-completion/testData/basic/common/staticMembers"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("ImportsFromEnumEntry.kt")
             public void testImportsFromEnumEntry() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/staticMembers/ImportsFromEnumEntry.kt");
+                runTest("idea/idea-completion/testData/basic/common/staticMembers/ImportsFromEnumEntry.kt");
             }
 
             @TestMetadata("ImportsFromNonObject.kt")
             public void testImportsFromNonObject() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/staticMembers/ImportsFromNonObject.kt");
+                runTest("idea/idea-completion/testData/basic/common/staticMembers/ImportsFromNonObject.kt");
             }
 
             @TestMetadata("ImportsFromObjectNoDuplicates.kt")
             public void testImportsFromObjectNoDuplicates() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/staticMembers/ImportsFromObjectNoDuplicates.kt");
+                runTest("idea/idea-completion/testData/basic/common/staticMembers/ImportsFromObjectNoDuplicates.kt");
             }
 
             @TestMetadata("JavaStaticFields.kt")
             public void testJavaStaticFields() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/staticMembers/JavaStaticFields.kt");
+                runTest("idea/idea-completion/testData/basic/common/staticMembers/JavaStaticFields.kt");
             }
 
             @TestMetadata("JavaStaticFieldsFromImports.kt")
             public void testJavaStaticFieldsFromImports() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/staticMembers/JavaStaticFieldsFromImports.kt");
+                runTest("idea/idea-completion/testData/basic/common/staticMembers/JavaStaticFieldsFromImports.kt");
             }
 
             @TestMetadata("JavaStaticMethods.kt")
             public void testJavaStaticMethods() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/staticMembers/JavaStaticMethods.kt");
+                runTest("idea/idea-completion/testData/basic/common/staticMembers/JavaStaticMethods.kt");
             }
 
             @TestMetadata("JavaStaticMethodsFromImports.kt")
             public void testJavaStaticMethodsFromImports() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/staticMembers/JavaStaticMethodsFromImports.kt");
+                runTest("idea/idea-completion/testData/basic/common/staticMembers/JavaStaticMethodsFromImports.kt");
             }
 
             @TestMetadata("JavaStaticMethodsNoDuplicates.kt")
             public void testJavaStaticMethodsNoDuplicates() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/staticMembers/JavaStaticMethodsNoDuplicates.kt");
+                runTest("idea/idea-completion/testData/basic/common/staticMembers/JavaStaticMethodsNoDuplicates.kt");
             }
 
             @TestMetadata("JavaStaticMethodsNoDuplicatesFromBases.kt")
             public void testJavaStaticMethodsNoDuplicatesFromBases() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/staticMembers/JavaStaticMethodsNoDuplicatesFromBases.kt");
+                runTest("idea/idea-completion/testData/basic/common/staticMembers/JavaStaticMethodsNoDuplicatesFromBases.kt");
             }
         }
 
@@ -2224,43 +2316,47 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class SubstitutedSignature extends AbstractJSBasicCompletionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInSubstitutedSignature() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/idea-completion/testData/basic/common/substitutedSignature"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("SubstitutedSignature1.kt")
             public void testSubstitutedSignature1() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/substitutedSignature/SubstitutedSignature1.kt");
+                runTest("idea/idea-completion/testData/basic/common/substitutedSignature/SubstitutedSignature1.kt");
             }
 
             @TestMetadata("SubstitutedSignature2.kt")
             public void testSubstitutedSignature2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/substitutedSignature/SubstitutedSignature2.kt");
+                runTest("idea/idea-completion/testData/basic/common/substitutedSignature/SubstitutedSignature2.kt");
             }
 
             @TestMetadata("SubstitutedSignature3.kt")
             public void testSubstitutedSignature3() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/substitutedSignature/SubstitutedSignature3.kt");
+                runTest("idea/idea-completion/testData/basic/common/substitutedSignature/SubstitutedSignature3.kt");
             }
 
             @TestMetadata("SubstitutedSignature4.kt")
             public void testSubstitutedSignature4() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/substitutedSignature/SubstitutedSignature4.kt");
+                runTest("idea/idea-completion/testData/basic/common/substitutedSignature/SubstitutedSignature4.kt");
             }
 
             @TestMetadata("SubstitutedSignature5.kt")
             public void testSubstitutedSignature5() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/substitutedSignature/SubstitutedSignature5.kt");
+                runTest("idea/idea-completion/testData/basic/common/substitutedSignature/SubstitutedSignature5.kt");
             }
 
             @TestMetadata("SubstitutedSignature6.kt")
             public void testSubstitutedSignature6() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/substitutedSignature/SubstitutedSignature6.kt");
+                runTest("idea/idea-completion/testData/basic/common/substitutedSignature/SubstitutedSignature6.kt");
             }
 
             @TestMetadata("SubstitutedSignatureSOE.kt")
             public void testSubstitutedSignatureSOE() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/substitutedSignature/SubstitutedSignatureSOE.kt");
+                runTest("idea/idea-completion/testData/basic/common/substitutedSignature/SubstitutedSignatureSOE.kt");
             }
         }
 
@@ -2268,53 +2364,57 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Super extends AbstractJSBasicCompletionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInSuper() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/idea-completion/testData/basic/common/super"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("QualifierType1.kt")
             public void testQualifierType1() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/super/QualifierType1.kt");
+                runTest("idea/idea-completion/testData/basic/common/super/QualifierType1.kt");
             }
 
             @TestMetadata("QualifierType2.kt")
             public void testQualifierType2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/super/QualifierType2.kt");
+                runTest("idea/idea-completion/testData/basic/common/super/QualifierType2.kt");
             }
 
             @TestMetadata("QualifierType3.kt")
             public void testQualifierType3() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/super/QualifierType3.kt");
+                runTest("idea/idea-completion/testData/basic/common/super/QualifierType3.kt");
             }
 
             @TestMetadata("QualifierType4.kt")
             public void testQualifierType4() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/super/QualifierType4.kt");
+                runTest("idea/idea-completion/testData/basic/common/super/QualifierType4.kt");
             }
 
             @TestMetadata("QualifierType5.kt")
             public void testQualifierType5() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/super/QualifierType5.kt");
+                runTest("idea/idea-completion/testData/basic/common/super/QualifierType5.kt");
             }
 
             @TestMetadata("QualifierType6.kt")
             public void testQualifierType6() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/super/QualifierType6.kt");
+                runTest("idea/idea-completion/testData/basic/common/super/QualifierType6.kt");
             }
 
             @TestMetadata("QualifierTypeAny.kt")
             public void testQualifierTypeAny() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/super/QualifierTypeAny.kt");
+                runTest("idea/idea-completion/testData/basic/common/super/QualifierTypeAny.kt");
             }
 
             @TestMetadata("QualifierTypeAnyInInterface.kt")
             public void testQualifierTypeAnyInInterface() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/super/QualifierTypeAnyInInterface.kt");
+                runTest("idea/idea-completion/testData/basic/common/super/QualifierTypeAnyInInterface.kt");
             }
 
             @TestMetadata("QualifierTypeGeneric.kt")
             public void testQualifierTypeGeneric() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/super/QualifierTypeGeneric.kt");
+                runTest("idea/idea-completion/testData/basic/common/super/QualifierTypeGeneric.kt");
             }
         }
 
@@ -2322,53 +2422,57 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class TypeArgsOrNot extends AbstractJSBasicCompletionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInTypeArgsOrNot() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/idea-completion/testData/basic/common/typeArgsOrNot"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("ConstructorTypeArg.kt")
             public void testConstructorTypeArg() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/typeArgsOrNot/ConstructorTypeArg.kt");
+                runTest("idea/idea-completion/testData/basic/common/typeArgsOrNot/ConstructorTypeArg.kt");
             }
 
             @TestMetadata("FunctionTypeArg.kt")
             public void testFunctionTypeArg() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/typeArgsOrNot/FunctionTypeArg.kt");
+                runTest("idea/idea-completion/testData/basic/common/typeArgsOrNot/FunctionTypeArg.kt");
             }
 
             @TestMetadata("FunctionTypeArg2.kt")
             public void testFunctionTypeArg2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/typeArgsOrNot/FunctionTypeArg2.kt");
+                runTest("idea/idea-completion/testData/basic/common/typeArgsOrNot/FunctionTypeArg2.kt");
             }
 
             @TestMetadata("LessThan.kt")
             public void testLessThan() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/typeArgsOrNot/LessThan.kt");
+                runTest("idea/idea-completion/testData/basic/common/typeArgsOrNot/LessThan.kt");
             }
 
             @TestMetadata("NestedTypeArg.kt")
             public void testNestedTypeArg() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/typeArgsOrNot/NestedTypeArg.kt");
+                runTest("idea/idea-completion/testData/basic/common/typeArgsOrNot/NestedTypeArg.kt");
             }
 
             @TestMetadata("SecondTypeArg.kt")
             public void testSecondTypeArg() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/typeArgsOrNot/SecondTypeArg.kt");
+                runTest("idea/idea-completion/testData/basic/common/typeArgsOrNot/SecondTypeArg.kt");
             }
 
             @TestMetadata("SecondTypeArg2.kt")
             public void testSecondTypeArg2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/typeArgsOrNot/SecondTypeArg2.kt");
+                runTest("idea/idea-completion/testData/basic/common/typeArgsOrNot/SecondTypeArg2.kt");
             }
 
             @TestMetadata("SecondTypeArg3.kt")
             public void testSecondTypeArg3() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/typeArgsOrNot/SecondTypeArg3.kt");
+                runTest("idea/idea-completion/testData/basic/common/typeArgsOrNot/SecondTypeArg3.kt");
             }
 
             @TestMetadata("SecondTypeArg4.kt")
             public void testSecondTypeArg4() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/typeArgsOrNot/SecondTypeArg4.kt");
+                runTest("idea/idea-completion/testData/basic/common/typeArgsOrNot/SecondTypeArg4.kt");
             }
         }
 
@@ -2376,23 +2480,27 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class VariableNameAndType extends AbstractJSBasicCompletionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInVariableNameAndType() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/idea-completion/testData/basic/common/variableNameAndType"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("Lateinit.kt")
             public void testLateinit() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/variableNameAndType/Lateinit.kt");
+                runTest("idea/idea-completion/testData/basic/common/variableNameAndType/Lateinit.kt");
             }
 
             @TestMetadata("Local.kt")
             public void testLocal() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/variableNameAndType/Local.kt");
+                runTest("idea/idea-completion/testData/basic/common/variableNameAndType/Local.kt");
             }
 
             @TestMetadata("TopLevel.kt")
             public void testTopLevel() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/variableNameAndType/TopLevel.kt");
+                runTest("idea/idea-completion/testData/basic/common/variableNameAndType/TopLevel.kt");
             }
         }
 
@@ -2400,73 +2508,77 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
         @TestDataPath("$PROJECT_ROOT")
         @RunWith(JUnit3RunnerWithInners.class)
         public static class Visibility extends AbstractJSBasicCompletionTest {
+            private void runTest(String testDataFilePath) throws Exception {
+                KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+            }
+
             public void testAllFilesPresentInVisibility() throws Exception {
                 KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/idea-completion/testData/basic/common/visibility"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
             }
 
             @TestMetadata("KT9970.kt")
             public void testKT9970() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/visibility/KT9970.kt");
+                runTest("idea/idea-completion/testData/basic/common/visibility/KT9970.kt");
             }
 
             @TestMetadata("VisibilityClassMembersFromExternal.kt")
             public void testVisibilityClassMembersFromExternal() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/visibility/VisibilityClassMembersFromExternal.kt");
+                runTest("idea/idea-completion/testData/basic/common/visibility/VisibilityClassMembersFromExternal.kt");
             }
 
             @TestMetadata("VisibilityClassMembersFromExternalForce.kt")
             public void testVisibilityClassMembersFromExternalForce() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/visibility/VisibilityClassMembersFromExternalForce.kt");
+                runTest("idea/idea-completion/testData/basic/common/visibility/VisibilityClassMembersFromExternalForce.kt");
             }
 
             @TestMetadata("VisibilityInSubclass.kt")
             public void testVisibilityInSubclass() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/visibility/VisibilityInSubclass.kt");
+                runTest("idea/idea-completion/testData/basic/common/visibility/VisibilityInSubclass.kt");
             }
 
             @TestMetadata("VisibilityInSubclassForce.kt")
             public void testVisibilityInSubclassForce() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/visibility/VisibilityInSubclassForce.kt");
+                runTest("idea/idea-completion/testData/basic/common/visibility/VisibilityInSubclassForce.kt");
             }
 
             @TestMetadata("VisibilityPrivateToThis.kt")
             public void testVisibilityPrivateToThis() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/visibility/VisibilityPrivateToThis.kt");
+                runTest("idea/idea-completion/testData/basic/common/visibility/VisibilityPrivateToThis.kt");
             }
 
             @TestMetadata("VisibilityPrivateToThisInConstructor.kt")
             public void testVisibilityPrivateToThisInConstructor() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/visibility/VisibilityPrivateToThisInConstructor.kt");
+                runTest("idea/idea-completion/testData/basic/common/visibility/VisibilityPrivateToThisInConstructor.kt");
             }
 
             @TestMetadata("VisibilityPrivateToThisInConstructorWithThis.kt")
             public void testVisibilityPrivateToThisInConstructorWithThis() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/visibility/VisibilityPrivateToThisInConstructorWithThis.kt");
+                runTest("idea/idea-completion/testData/basic/common/visibility/VisibilityPrivateToThisInConstructorWithThis.kt");
             }
 
             @TestMetadata("VisibilityPrivateToThisInSpecialScope.kt")
             public void testVisibilityPrivateToThisInSpecialScope() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/visibility/VisibilityPrivateToThisInSpecialScope.kt");
+                runTest("idea/idea-completion/testData/basic/common/visibility/VisibilityPrivateToThisInSpecialScope.kt");
             }
 
             @TestMetadata("VisibilityPrivateToThisWithReceiver.kt")
             public void testVisibilityPrivateToThisWithReceiver() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/visibility/VisibilityPrivateToThisWithReceiver.kt");
+                runTest("idea/idea-completion/testData/basic/common/visibility/VisibilityPrivateToThisWithReceiver.kt");
             }
 
             @TestMetadata("VisibilityPrivateToThisWithReceiver2.kt")
             public void testVisibilityPrivateToThisWithReceiver2() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/visibility/VisibilityPrivateToThisWithReceiver2.kt");
+                runTest("idea/idea-completion/testData/basic/common/visibility/VisibilityPrivateToThisWithReceiver2.kt");
             }
 
             @TestMetadata("VisibilityPrivateToThisWithThis.kt")
             public void testVisibilityPrivateToThisWithThis() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/visibility/VisibilityPrivateToThisWithThis.kt");
+                runTest("idea/idea-completion/testData/basic/common/visibility/VisibilityPrivateToThisWithThis.kt");
             }
 
             @TestMetadata("VisibilityPrivateToThisWithWrongThis.kt")
             public void testVisibilityPrivateToThisWithWrongThis() throws Exception {
-                KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/common/visibility/VisibilityPrivateToThisWithWrongThis.kt");
+                runTest("idea/idea-completion/testData/basic/common/visibility/VisibilityPrivateToThisWithWrongThis.kt");
             }
         }
     }
@@ -2475,33 +2587,37 @@ public class JSBasicCompletionTestGenerated extends AbstractJSBasicCompletionTes
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Js extends AbstractJSBasicCompletionTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInJs() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/idea-completion/testData/basic/js"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("AutoForceCompletion.kt")
         public void testAutoForceCompletion() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/js/AutoForceCompletion.kt");
+            runTest("idea/idea-completion/testData/basic/js/AutoForceCompletion.kt");
         }
 
         @TestMetadata("DoNotPreferDynamic.kt")
         public void testDoNotPreferDynamic() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/js/DoNotPreferDynamic.kt");
+            runTest("idea/idea-completion/testData/basic/js/DoNotPreferDynamic.kt");
         }
 
         @TestMetadata("DynamicKeyword.kt")
         public void testDynamicKeyword() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/js/DynamicKeyword.kt");
+            runTest("idea/idea-completion/testData/basic/js/DynamicKeyword.kt");
         }
 
         @TestMetadata("InPackage.kt")
         public void testInPackage() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/js/InPackage.kt");
+            runTest("idea/idea-completion/testData/basic/js/InPackage.kt");
         }
 
         @TestMetadata("JSStd.kt")
         public void testJSStd() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/basic/js/JSStd.kt");
+            runTest("idea/idea-completion/testData/basic/js/JSStd.kt");
         }
     }
 }

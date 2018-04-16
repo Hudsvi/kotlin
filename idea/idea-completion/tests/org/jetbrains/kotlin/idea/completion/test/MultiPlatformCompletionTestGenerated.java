@@ -21,27 +21,31 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class MultiPlatformCompletionTestGenerated extends AbstractMultiPlatformCompletionTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInMultiPlatform() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/idea-completion/testData/multiPlatform"), Pattern.compile("^([^\\.]+)$"), TargetBackend.ANY, false);
     }
 
     @TestMetadata("classInCommon")
     public void testClassInCommon() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/multiPlatform/classInCommon/");
+        runTest("idea/idea-completion/testData/multiPlatform/classInCommon/");
     }
 
     @TestMetadata("classInPlatform")
     public void testClassInPlatform() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/multiPlatform/classInPlatform/");
+        runTest("idea/idea-completion/testData/multiPlatform/classInPlatform/");
     }
 
     @TestMetadata("functionInCommon")
     public void testFunctionInCommon() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/multiPlatform/functionInCommon/");
+        runTest("idea/idea-completion/testData/multiPlatform/functionInCommon/");
     }
 
     @TestMetadata("functionInPlatform")
     public void testFunctionInPlatform() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/idea-completion/testData/multiPlatform/functionInPlatform/");
+        runTest("idea/idea-completion/testData/multiPlatform/functionInPlatform/");
     }
 }

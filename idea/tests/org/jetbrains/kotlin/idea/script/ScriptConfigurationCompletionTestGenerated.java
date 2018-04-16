@@ -21,17 +21,21 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class ScriptConfigurationCompletionTestGenerated extends AbstractScriptConfigurationCompletionTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInCompletion() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/script/definition/completion"), Pattern.compile("^([^\\.]+)$"), TargetBackend.ANY, false);
     }
 
     @TestMetadata("conflictingModule")
     public void testConflictingModule() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/script/definition/completion/conflictingModule/");
+        runTest("idea/testData/script/definition/completion/conflictingModule/");
     }
 
     @TestMetadata("conflictingModuleJavaLib")
     public void testConflictingModuleJavaLib() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/script/definition/completion/conflictingModuleJavaLib/");
+        runTest("idea/testData/script/definition/completion/conflictingModuleJavaLib/");
     }
 }

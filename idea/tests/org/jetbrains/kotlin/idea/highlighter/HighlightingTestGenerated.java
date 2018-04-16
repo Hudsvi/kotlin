@@ -21,201 +21,209 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class HighlightingTestGenerated extends AbstractHighlightingTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInHighlighter() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/highlighter"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
     }
 
     @TestMetadata("Annotations.kt")
     public void testAnnotations() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/Annotations.kt");
+        runTest("idea/testData/highlighter/Annotations.kt");
     }
 
     @TestMetadata("Dynamic.kt")
     public void testDynamic() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/Dynamic.kt");
+        runTest("idea/testData/highlighter/Dynamic.kt");
     }
 
     @TestMetadata("Enums.kt")
     public void testEnums() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/Enums.kt");
+        runTest("idea/testData/highlighter/Enums.kt");
     }
 
     @TestMetadata("Field.kt")
     public void testField() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/Field.kt");
+        runTest("idea/testData/highlighter/Field.kt");
     }
 
     @TestMetadata("Functions.kt")
     public void testFunctions() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/Functions.kt");
+        runTest("idea/testData/highlighter/Functions.kt");
     }
 
     @TestMetadata("InvokeCall.kt")
     public void testInvokeCall() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/InvokeCall.kt");
+        runTest("idea/testData/highlighter/InvokeCall.kt");
     }
 
     @TestMetadata("JavaTypes.kt")
     public void testJavaTypes() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/JavaTypes.kt");
+        runTest("idea/testData/highlighter/JavaTypes.kt");
     }
 
     @TestMetadata("KDoc.kt")
     public void testKDoc() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/KDoc.kt");
+        runTest("idea/testData/highlighter/KDoc.kt");
     }
 
     @TestMetadata("KotlinInjection.kt")
     public void testKotlinInjection() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/KotlinInjection.kt");
+        runTest("idea/testData/highlighter/KotlinInjection.kt");
     }
 
     @TestMetadata("Labels.kt")
     public void testLabels() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/Labels.kt");
+        runTest("idea/testData/highlighter/Labels.kt");
     }
 
     @TestMetadata("NamedArguments.kt")
     public void testNamedArguments() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/NamedArguments.kt");
+        runTest("idea/testData/highlighter/NamedArguments.kt");
     }
 
     @TestMetadata("NonNullAssertion.kt")
     public void testNonNullAssertion() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/NonNullAssertion.kt");
+        runTest("idea/testData/highlighter/NonNullAssertion.kt");
     }
 
     @TestMetadata("Object.kt")
     public void testObject() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/Object.kt");
+        runTest("idea/testData/highlighter/Object.kt");
     }
 
     @TestMetadata("SmartCast.kt")
     public void testSmartCast() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/SmartCast.kt");
+        runTest("idea/testData/highlighter/SmartCast.kt");
     }
 
     @TestMetadata("SyntheticExtensionProperty.kt")
     public void testSyntheticExtensionProperty() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/SyntheticExtensionProperty.kt");
+        runTest("idea/testData/highlighter/SyntheticExtensionProperty.kt");
     }
 
     @TestMetadata("Todo.kt")
     public void testTodo() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/Todo.kt");
+        runTest("idea/testData/highlighter/Todo.kt");
     }
 
     @TestMetadata("TopLevelOpenSuspendFun.kt")
     public void testTopLevelOpenSuspendFun() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/TopLevelOpenSuspendFun.kt");
+        runTest("idea/testData/highlighter/TopLevelOpenSuspendFun.kt");
     }
 
     @TestMetadata("TypeAlias.kt")
     public void testTypeAlias() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/TypeAlias.kt");
+        runTest("idea/testData/highlighter/TypeAlias.kt");
     }
 
     @TestMetadata("TypesAndAnnotations.kt")
     public void testTypesAndAnnotations() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/TypesAndAnnotations.kt");
+        runTest("idea/testData/highlighter/TypesAndAnnotations.kt");
     }
 
     @TestMetadata("Variables.kt")
     public void testVariables() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/Variables.kt");
+        runTest("idea/testData/highlighter/Variables.kt");
     }
 
     @TestMetadata("VariablesAsFunctions.kt")
     public void testVariablesAsFunctions() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/VariablesAsFunctions.kt");
+        runTest("idea/testData/highlighter/VariablesAsFunctions.kt");
     }
 
     @TestMetadata("idea/testData/highlighter/deprecated")
     @TestDataPath("$PROJECT_ROOT")
     @RunWith(JUnit3RunnerWithInners.class)
     public static class Deprecated extends AbstractHighlightingTest {
+        private void runTest(String testDataFilePath) throws Exception {
+            KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+        }
+
         public void testAllFilesPresentInDeprecated() throws Exception {
             KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/highlighter/deprecated"), Pattern.compile("^(.+)\\.kt$"), TargetBackend.ANY, true);
         }
 
         @TestMetadata("Class.kt")
         public void testClass() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/deprecated/Class.kt");
+            runTest("idea/testData/highlighter/deprecated/Class.kt");
         }
 
         @TestMetadata("ClassObject.kt")
         public void testClassObject() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/deprecated/ClassObject.kt");
+            runTest("idea/testData/highlighter/deprecated/ClassObject.kt");
         }
 
         @TestMetadata("Constructor.kt")
         public void testConstructor() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/deprecated/Constructor.kt");
+            runTest("idea/testData/highlighter/deprecated/Constructor.kt");
         }
 
         @TestMetadata("ExtensionFunction.kt")
         public void testExtensionFunction() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/deprecated/ExtensionFunction.kt");
+            runTest("idea/testData/highlighter/deprecated/ExtensionFunction.kt");
         }
 
         @TestMetadata("Function.kt")
         public void testFunction() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/deprecated/Function.kt");
+            runTest("idea/testData/highlighter/deprecated/Function.kt");
         }
 
         @TestMetadata("Get.kt")
         public void testGet() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/deprecated/Get.kt");
+            runTest("idea/testData/highlighter/deprecated/Get.kt");
         }
 
         @TestMetadata("Getter.kt")
         public void testGetter() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/deprecated/Getter.kt");
+            runTest("idea/testData/highlighter/deprecated/Getter.kt");
         }
 
         @TestMetadata("Inc.kt")
         public void testInc() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/deprecated/Inc.kt");
+            runTest("idea/testData/highlighter/deprecated/Inc.kt");
         }
 
         @TestMetadata("Invalid.kt")
         public void testInvalid() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/deprecated/Invalid.kt");
+            runTest("idea/testData/highlighter/deprecated/Invalid.kt");
         }
 
         @TestMetadata("Invoke.kt")
         public void testInvoke() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/deprecated/Invoke.kt");
+            runTest("idea/testData/highlighter/deprecated/Invoke.kt");
         }
 
         @TestMetadata("Operation.kt")
         public void testOperation() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/deprecated/Operation.kt");
+            runTest("idea/testData/highlighter/deprecated/Operation.kt");
         }
 
         @TestMetadata("Property.kt")
         public void testProperty() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/deprecated/Property.kt");
+            runTest("idea/testData/highlighter/deprecated/Property.kt");
         }
 
         @TestMetadata("RangeTo.kt")
         public void testRangeTo() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/deprecated/RangeTo.kt");
+            runTest("idea/testData/highlighter/deprecated/RangeTo.kt");
         }
 
         @TestMetadata("Setter.kt")
         public void testSetter() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/deprecated/Setter.kt");
+            runTest("idea/testData/highlighter/deprecated/Setter.kt");
         }
 
         @TestMetadata("SuperCall.kt")
         public void testSuperCall() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/deprecated/SuperCall.kt");
+            runTest("idea/testData/highlighter/deprecated/SuperCall.kt");
         }
 
         @TestMetadata("Trait.kt")
         public void testTrait() throws Exception {
-            KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/highlighter/deprecated/Trait.kt");
+            runTest("idea/testData/highlighter/deprecated/Trait.kt");
         }
     }
 }

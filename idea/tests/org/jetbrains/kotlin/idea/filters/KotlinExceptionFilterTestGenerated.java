@@ -21,97 +21,101 @@ import java.util.regex.Pattern;
 @TestDataPath("$PROJECT_ROOT")
 @RunWith(JUnit3RunnerWithInners.class)
 public class KotlinExceptionFilterTestGenerated extends AbstractKotlinExceptionFilterTest {
+    private void runTest(String testDataFilePath) throws Exception {
+        KotlinTestUtils.runTest(this::doTest, TargetBackend.ANY, testDataFilePath);
+    }
+
     public void testAllFilesPresentInExceptionFilter() throws Exception {
         KotlinTestUtils.assertAllTestsPresentByMetadata(this.getClass(), new File("idea/testData/debugger/exceptionFilter"), Pattern.compile("^([^\\.]+)$"), TargetBackend.ANY, false);
     }
 
     @TestMetadata("breakpointReachedAt")
     public void testBreakpointReachedAt() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/debugger/exceptionFilter/breakpointReachedAt/");
+        runTest("idea/testData/debugger/exceptionFilter/breakpointReachedAt/");
     }
 
     @TestMetadata("inlineFunCallInLibrary")
     public void testInlineFunCallInLibrary() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/debugger/exceptionFilter/inlineFunCallInLibrary/");
+        runTest("idea/testData/debugger/exceptionFilter/inlineFunCallInLibrary/");
     }
 
     @TestMetadata("inlineFunFromLibrary")
     public void testInlineFunFromLibrary() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/debugger/exceptionFilter/inlineFunFromLibrary/");
+        runTest("idea/testData/debugger/exceptionFilter/inlineFunFromLibrary/");
     }
 
     @TestMetadata("inlineFunInnerClassFromLibrary")
     public void testInlineFunInnerClassFromLibrary() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/debugger/exceptionFilter/inlineFunInnerClassFromLibrary/");
+        runTest("idea/testData/debugger/exceptionFilter/inlineFunInnerClassFromLibrary/");
     }
 
     @TestMetadata("inlineFunctionAnotherFile")
     public void testInlineFunctionAnotherFile() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/debugger/exceptionFilter/inlineFunctionAnotherFile/");
+        runTest("idea/testData/debugger/exceptionFilter/inlineFunctionAnotherFile/");
     }
 
     @TestMetadata("inlineFunctionAnotherFileWithSmapApplied")
     public void testInlineFunctionAnotherFileWithSmapApplied() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/debugger/exceptionFilter/inlineFunctionAnotherFileWithSmapApplied/");
+        runTest("idea/testData/debugger/exceptionFilter/inlineFunctionAnotherFileWithSmapApplied/");
     }
 
     @TestMetadata("inlineFunctionInnerClass")
     public void testInlineFunctionInnerClass() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/debugger/exceptionFilter/inlineFunctionInnerClass/");
+        runTest("idea/testData/debugger/exceptionFilter/inlineFunctionInnerClass/");
     }
 
     @TestMetadata("inlineFunctionObjectLiteral")
     public void testInlineFunctionObjectLiteral() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/debugger/exceptionFilter/inlineFunctionObjectLiteral/");
+        runTest("idea/testData/debugger/exceptionFilter/inlineFunctionObjectLiteral/");
     }
 
     @TestMetadata("inlineFunctionSameFile")
     public void testInlineFunctionSameFile() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/debugger/exceptionFilter/inlineFunctionSameFile/");
+        runTest("idea/testData/debugger/exceptionFilter/inlineFunctionSameFile/");
     }
 
     @TestMetadata("kotlinClass")
     public void testKotlinClass() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/debugger/exceptionFilter/kotlinClass/");
+        runTest("idea/testData/debugger/exceptionFilter/kotlinClass/");
     }
 
     @TestMetadata("kt2489")
     public void testKt2489() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/debugger/exceptionFilter/kt2489/");
+        runTest("idea/testData/debugger/exceptionFilter/kt2489/");
     }
 
     @TestMetadata("kt2489_2")
     public void testKt2489_2() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/debugger/exceptionFilter/kt2489_2/");
+        runTest("idea/testData/debugger/exceptionFilter/kt2489_2/");
     }
 
     @TestMetadata("librarySources1")
     public void testLibrarySources1() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/debugger/exceptionFilter/librarySources1/");
+        runTest("idea/testData/debugger/exceptionFilter/librarySources1/");
     }
 
     @TestMetadata("librarySources2")
     public void testLibrarySources2() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/debugger/exceptionFilter/librarySources2/");
+        runTest("idea/testData/debugger/exceptionFilter/librarySources2/");
     }
 
     @TestMetadata("librarySources3")
     public void testLibrarySources3() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/debugger/exceptionFilter/librarySources3/");
+        runTest("idea/testData/debugger/exceptionFilter/librarySources3/");
     }
 
     @TestMetadata("librarySources4")
     public void testLibrarySources4() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/debugger/exceptionFilter/librarySources4/");
+        runTest("idea/testData/debugger/exceptionFilter/librarySources4/");
     }
 
     @TestMetadata("multiSamePackage")
     public void testMultiSamePackage() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/debugger/exceptionFilter/multiSamePackage/");
+        runTest("idea/testData/debugger/exceptionFilter/multiSamePackage/");
     }
 
     @TestMetadata("simple")
     public void testSimple() throws Exception {
-        KotlinTestUtils.runTest(this::doTest,TargetBackend.ANY, "idea/testData/debugger/exceptionFilter/simple/");
+        runTest("idea/testData/debugger/exceptionFilter/simple/");
     }
 }
