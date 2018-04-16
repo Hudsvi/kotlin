@@ -49,7 +49,7 @@ public class SingleClassTestModel implements TestClassModel {
     private Collection<MethodModel> methods;
 
     private final boolean skipIgnored;
-    private final boolean useAnnotatedRunner;
+    private final String testRunnerMethodName;
 
     public SingleClassTestModel(
             @NotNull File rootFile,
@@ -59,7 +59,7 @@ public class SingleClassTestModel implements TestClassModel {
             @NotNull String testClassName,
             @NotNull TargetBackend targetBackend,
             boolean skipIgnored,
-            boolean useAnnotatedRunner
+            String testRunnerMethodName
     ) {
         this.rootFile = rootFile;
         this.filenamePattern = filenamePattern;
@@ -68,7 +68,7 @@ public class SingleClassTestModel implements TestClassModel {
         this.testClassName = testClassName;
         this.targetBackend = targetBackend;
         this.skipIgnored = skipIgnored;
-        this.useAnnotatedRunner = useAnnotatedRunner;
+        this.testRunnerMethodName = testRunnerMethodName;
     }
 
     @NotNull
@@ -81,7 +81,9 @@ public class SingleClassTestModel implements TestClassModel {
     @Override
     public Collection<MethodModel> getMethods() {
         if (methods == null) {
-            List<TestMethodModel> result = new ArrayList<>();
+            List<MethodModel> result = new ArrayList<>();
+
+            result.add(new RunTestMethodModel(targetBackend, doTestMethodName, testRunnerMethodName));
 
             result.add(new TestAllFilesPresentMethodModel());
 
@@ -102,7 +104,7 @@ public class SingleClassTestModel implements TestClassModel {
     @NotNull
     private Collection<TestMethodModel> getTestMethodsFromFile(File file) {
         return Collections.singletonList(new SimpleTestMethodModel(
-                rootFile, file, doTestMethodName, filenamePattern, checkFilenameStartsLowerCase, targetBackend, skipIgnored, useAnnotatedRunner
+                rootFile, file, filenamePattern, checkFilenameStartsLowerCase, targetBackend, skipIgnored
         ));
     }
 

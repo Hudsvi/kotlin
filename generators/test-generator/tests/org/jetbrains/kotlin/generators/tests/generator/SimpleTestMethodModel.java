@@ -28,32 +28,25 @@ public class SimpleTestMethodModel implements TestMethodModel {
     @NotNull
     private final File file;
     @NotNull
-    private final String doTestMethodName;
-    @NotNull
     private final Pattern filenamePattern;
     @NotNull
     private final TargetBackend targetBackend;
 
     private final boolean skipIgnored;
-    private final boolean useAnnotatedRunner;
 
     public SimpleTestMethodModel(
             @NotNull File rootDir,
             @NotNull File file,
-            @NotNull String doTestMethodName,
             @NotNull Pattern filenamePattern,
             @Nullable Boolean checkFilenameStartsLowerCase,
             @NotNull TargetBackend targetBackend,
-            boolean skipIgnored,
-            boolean useAnnotatedRunner
+            boolean skipIgnored
     ) {
         this.rootDir = rootDir;
         this.file = file;
-        this.doTestMethodName = doTestMethodName;
         this.filenamePattern = filenamePattern;
         this.targetBackend = targetBackend;
         this.skipIgnored = skipIgnored;
-        this.useAnnotatedRunner = useAnnotatedRunner;
 
         if (checkFilenameStartsLowerCase != null) {
             char c = file.getName().charAt(0);
@@ -69,11 +62,7 @@ public class SimpleTestMethodModel implements TestMethodModel {
     @Override
     public void generateBody(@NotNull Printer p) {
         String filePath = KotlinTestUtils.getFilePath(file) + (file.isDirectory() ? "/" : "");
-        String runner = useAnnotatedRunner ? "runTest" : "runTest0";
-        String targetBackendParam =
-                targetBackend == TargetBackend.ANY ? "" : ", " + TargetBackend.class.getSimpleName() + "." + targetBackend.toString();
-
-        p.println("KotlinTestUtils.", runner, "(this::", doTestMethodName, targetBackendParam, ", \"", filePath, "\");");
+        p.println(RunTestMethodModel.METHOD_NAME, "(\"", filePath, "\");");
     }
 
     @Override

@@ -1029,16 +1029,8 @@ public class KotlinTestUtils {
         void invoke(String filePath) throws Exception;
     }
 
-    public static void runTest(DoTest test, @TestDataFile String testDataFile) throws Exception {
-        runTest(test, TargetBackend.ANY, testDataFile);
-    }
-
     public static void runTest(DoTest test, TargetBackend targetBackend, @TestDataFile String testDataFile) throws Exception {
         runTest0(test, targetBackend, testDataFile);
-    }
-
-    public static void runTest0(DoTest test, String testDataFile) throws Exception {
-        runTest0(test, TargetBackend.ANY, testDataFile);
     }
 
     public static void runTest0(DoTest test, TargetBackend targetBackend, String testDataFilePath) throws Exception {
@@ -1074,7 +1066,6 @@ public class KotlinTestUtils {
 
             throw new AssertionError("Looks like this test can be unmuted. Remove IGNORE_BACKEND directive.");
         }
-
     }
 
     public static String getTestsRoot(@NotNull Class<?> testCaseClass) {

@@ -23,7 +23,7 @@ import java.lang.IllegalArgumentException
 import java.util.*
 import java.util.regex.Pattern
 
-class TestGroup(private val testsRoot: String, val testDataRoot: String, val useAnnotatedRunner: Boolean) {
+class TestGroup(private val testsRoot: String, val testDataRoot: String, val testRunnerMethodName: String) {
     inline fun <reified T: TestCase> testClass(
             suiteTestClassName: String = getDefaultSuiteTestClassName(T::class.java.simpleName),
             noinline init: TestClass.() -> Unit
@@ -68,20 +68,20 @@ class TestGroup(private val testsRoot: String, val testDataRoot: String, val use
                     if (singleClass) {
                         if (excludeDirs.isNotEmpty()) error("excludeDirs is unsupported for SingleClassTestModel yet")
                         SingleClassTestModel(rootFile, compiledPattern, filenameStartsLowerCase, testMethod, className, targetBackend,
-                                             skipIgnored, useAnnotatedRunner)
+                                             skipIgnored, testRunnerMethodName)
                     }
                     else {
                         SimpleTestClassModel(rootFile, recursive, excludeParentDirs,
                                              compiledPattern, filenameStartsLowerCase, testMethod, className,
-                                             targetBackend, excludeDirs, skipIgnored, useAnnotatedRunner)
+                                             targetBackend, excludeDirs, skipIgnored, testRunnerMethodName)
                     }
             )
         }
     }
 }
 
-fun testGroup(testsRoot: String, testDataRoot: String, useAnnotatedRunner: Boolean = true, init: TestGroup.() -> Unit) {
-    TestGroup(testsRoot, testDataRoot, useAnnotatedRunner).init()
+fun testGroup(testsRoot: String, testDataRoot: String, testRunnerMethodName: String = "runTest", init: TestGroup.() -> Unit) {
+    TestGroup(testsRoot, testDataRoot, testRunnerMethodName).init()
 }
 
 fun getDefaultSuiteTestClassName(baseTestClassName: String): String {
