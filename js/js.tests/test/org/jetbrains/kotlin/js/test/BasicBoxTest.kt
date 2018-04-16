@@ -72,7 +72,8 @@ abstract class BasicBoxTest(
         pathToRootOutputDir: String = BasicBoxTest.TEST_DATA_DIR_PATH,
         private val typedArraysEnabled: Boolean = true,
         private val generateSourceMap: Boolean = false,
-        private val generateNodeJsRunner: Boolean = true
+        private val generateNodeJsRunner: Boolean = true,
+        private val targetBackend: TargetBackend = TargetBackend.JS
 ) : KotlinTestWithEnvironment() {
     val additionalCommonFileDirectories = mutableListOf<String>()
 
@@ -168,7 +169,10 @@ abstract class BasicBoxTest(
                 FileUtil.writeToFile(File(nodeRunnerName), nodeRunnerText)
             }
 
-            runGeneratedCode(allJsFiles, mainModuleName, testPackage, testFunction, expectedResult, withModuleSystem)
+            val dontRunGeneratedCode = InTextDirectivesUtils.dontRunGeneratedCode(targetBackend, file)
+            if (!dontRunGeneratedCode) {
+                runGeneratedCode(allJsFiles, mainModuleName, testPackage, testFunction, expectedResult, withModuleSystem)
+            }
 
             performAdditionalChecks(generatedJsFiles.map { it.first }, outputPrefixFile, outputPostfixFile)
 
@@ -202,16 +206,19 @@ abstract class BasicBoxTest(
                 }
 
                 val outputDirForMinification = getOutputDir(file, testGroupOutputDirForMinification)
-                minifyAndRun(
-                    workDir = File(outputDirForMinification, file.nameWithoutExtension),
-                    allJsFiles = allJsFiles,
-                    generatedJsFiles = generatedJsFiles,
-                    expectedResult = expectedResult,
-                    testModuleName = mainModuleName,
-                    testPackage = testPackage,
-                    testFunction = testFunction,
-                    withModuleSystem = withModuleSystem,
-                    minificationThresholdChecker =  thresholdChecker)
+
+                if (!dontRunGeneratedCode) {
+                    minifyAndRun(
+                        workDir = File(outputDirForMinification, file.nameWithoutExtension),
+                        allJsFiles = allJsFiles,
+                        generatedJsFiles = generatedJsFiles,
+                        expectedResult = expectedResult,
+                        testModuleName = mainModuleName,
+                        testPackage = testPackage,
+                        testFunction = testFunction,
+                        withModuleSystem = withModuleSystem,
+                        minificationThresholdChecker =  thresholdChecker)
+                }
             }
         }
     }
