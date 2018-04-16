@@ -1,4 +1,3 @@
-// IGNORE_BACKEND: JS_IR
 // EXPECTED_REACHABLE_NODES: 1127
 open class Base() {
     fun n(n: Int): Int = n + 1
